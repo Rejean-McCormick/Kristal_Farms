@@ -1,0 +1,29 @@
+name: Workstream
+description: Track an orchestrated body of work
+title: "[WORKSTREAM] "
+labels: ["workstream"]
+body:
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs / evidence
+  - type: textarea
+    id: next_gate
+    attributes:
+      label: Next decision or gate
+    validations:
+      required: true
+  - type: textarea
+    id: next_output
+    attributes:
+      label: Single next deliverable

@@ -1,0 +1,25 @@
+name: Decision
+description: Record and resolve a project decision
+title: "[DECISION] "
+labels: ["decision"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision to make
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / source files
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options and tradeoffs
+  - type: textarea
+    id: impact
+    attributes:
+      label: Documents, data, workstreams and releases affected

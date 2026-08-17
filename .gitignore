@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+~$*.docx
+*.tmp
+*.swp
+.env
+.venv/
+__pycache__/

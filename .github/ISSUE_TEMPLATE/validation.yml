@@ -1,0 +1,41 @@
+name: Claim validation
+description: Validate a technical, economic, ecological, site, connectivity, security, community or market claim
+title: "[VALIDATE] "
+labels: ["validation"]
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim / assumption
+    validations:
+      required: true
+  - type: dropdown
+    id: class
+    attributes:
+      label: Current claim class
+      options:
+        - Source-supported but not independently validated
+        - Screening assumption
+        - Owner strategic hypothesis
+        - Previously validated; refresh required
+    validations:
+      required: true
+  - type: textarea
+    id: current_source
+    attributes:
+      label: Current source / owner-direction record
+  - type: textarea
+    id: evidence_needed
+    attributes:
+      label: Evidence required to close
+    validations:
+      required: true
+  - type: textarea
+    id: external_use
+    attributes:
+      label: Where this claim is currently or potentially used externally
+  - type: textarea
+    id: sensitivity
+    attributes:
+      label: Share/sensitivity constraints
+      description: Note exact site, fibre route, marine landing, security, rights/community or commercial sensitivity.
