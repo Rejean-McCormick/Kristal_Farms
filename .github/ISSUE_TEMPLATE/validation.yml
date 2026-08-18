@@ -12,30 +12,32 @@ body:
   - type: dropdown
     id: class
     attributes:
-      label: Current claim class
+      label: Current confidence level
       options:
-        - Source-supported but not independently validated
-        - Screening assumption
-        - Owner strategic hypothesis
-        - Previously validated; refresh required
+        - Design principle
+        - Working assumption
+        - Screening evidence
+        - Strategic hypothesis
+        - Validated site fact
+        - Operational result
     validations:
       required: true
   - type: textarea
     id: current_source
     attributes:
-      label: Current source / owner-direction record
+      label: Current source / evidence
   - type: textarea
     id: evidence_needed
     attributes:
-      label: Evidence required to close
+      label: Evidence required to close or promote
     validations:
       required: true
   - type: textarea
-    id: external_use
+    id: use
     attributes:
-      label: Where this claim is currently or potentially used externally
+      label: Where the claim is used or proposed to be used
   - type: textarea
-    id: sensitivity
+    id: restrictions
     attributes:
-      label: Share/sensitivity constraints
-      description: Note exact site, fibre route, marine landing, security, rights/community or commercial sensitivity.
+      label: Concrete confidentiality / privacy / security restrictions, if any
+      description: Public by default; list only a specific restriction that actually applies.

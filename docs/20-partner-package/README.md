@@ -1,28 +1,42 @@
-# Partner Package
+# Partner Package — Inherited v1 Set
 
-The numbered `00`–`14` set is the complete **v1 Nain/Labrador partner package** retained for traceability and ongoing partner work.
+The numbered `00`–`14` package is the complete inherited **v1 Nain/Labrador partner package**. Its Markdown, PDFs and French DOCX/PDF representations are retained unchanged for traceability and partner-package rebuilding.
 
-## v2 strategic status
+## Current narrative status
 
-The repository now contains a broader v2 platform strategy: local consumption of difficult-to-export renewable energy, fibre export of digital value, heat reuse, data-security differentiation, coastal/subsea fibre research, secure brownfield/mine archetypes, harmonious integration, a potential northern fibre network and future AI-compute positioning.
+The current public project narrative is **not** the old v2/v3 working overview. It is the 2026-08-18 English public wiki in [`../../public-wiki/`](../../public-wiki/Home.md).
 
-Those elements are **not silently inserted into the polished v1 package**. Some are new strategic hypotheses requiring validation, and the existing PDFs/DOCX should not be presented as if they already contain the v2 narrative.
+The older v2/v3 working partner overviews and rebuild maps are preserved under:
 
-Use:
+- `archive/partner-narrative-pre-wiki/`
 
-- [`../00-control/STRATEGIC_PRINCIPLES.md`](../00-control/STRATEGIC_PRINCIPLES.md) for control framing;
-- [`../10-core/strategy/PLATFORM_VISION_EN.md`](../10-core/strategy/PLATFORM_VISION_EN.md) and the French counterpart for v2 narrative;
-- [`V2_REBUILD_MAP.md`](V2_REBUILD_MAP.md) for how each partner document should evolve.
+They should not be presented as the current narrative.
 
-## Representations retained
+## What the v1 package still provides
 
-- `en/markdown/` — v1 working edit/review source inherited from the previous repository.
-- `en/pdf/` — v1 formatted English outputs.
-- `fr/pdf/` — v1 formatted French outputs.
-- `fr/docx-logo/` — v1 French DOCX files with branding/logo plus searchable Markdown extracts.
+The numbered package remains a major source for:
 
-## First application vs platform
+- Nain/Labrador first-application framing;
+- partner roles;
+- cost-advantage reasoning;
+- technical architecture;
+- heat-first/community value;
+- fibre and black-box tenancy;
+- commercial/SLA structure;
+- roadmap and decision gates;
+- governance/FPIC/community benefits;
+- metrics and audit;
+- risk register.
 
-Nain remains the current first target and the Labrador coast remains the first replication/application corridor in the v1 package. The v2 strategy positions this as **the first application of a broader platform**, not as the only possible future geography or site archetype.
+## Formal rebuild rule
 
-Any major external narrative change must first be recorded through `docs/00-control/DECISIONS_REQUIRED.md`, `CLAIMS_TO_VALIDATE.md` and `PROJECT_STATE.md`.
+A future formal partner package should be rebuilt from:
+
+1. the current public wiki framing;
+2. the detailed technical source set;
+3. the current decision and validation registers;
+4. site-specific evidence appropriate to the release.
+
+Do not relabel the existing formatted v1 PDFs/DOCX as synchronized with the current wiki.
+
+Historical distribution/NDA labels inside inherited documents describe their original package state; current repository visibility is governed by [`../00-control/PUBLICATION_POLICY.md`](../00-control/PUBLICATION_POLICY.md).

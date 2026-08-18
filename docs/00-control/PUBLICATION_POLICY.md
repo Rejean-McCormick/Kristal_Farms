@@ -1,69 +1,51 @@
-# Publication Policy — Public by Default
+# Publication Policy — Public Working Repository
 
-**Status:** repository control decision  
-**Effective:** 2026-08-17
+Kristal Farms is intended to be developed transparently.
 
-## Principle
+A public repository can include unfinished research without pretending it is final. The repository therefore distinguishes visibility from validation.
 
-Kristal Farms is developed as a **public working project**. The repository may openly contain:
+## Public by default
 
-- strategic vision and evolving project architecture;
-- preliminary site, hydro, climate and infrastructure screening;
-- working economic models and assumptions;
-- unresolved decisions and competing hypotheses;
-- partner-document drafts and superseded versions;
-- research that still needs stronger sourcing, provided its limitations are explicit;
-- public datasets and derived analysis;
-- technical specifications that are appropriate for open review;
-- community, dignity, language, education and governance frameworks under development.
+The public repository may contain:
 
-Public visibility is not equivalent to validation, endorsement, engineering approval, investment approval, permitting approval or legal advice. Status labels and caveats remain part of the substance of the repository.
+- design principles;
+- working assumptions;
+- screening evidence;
+- strategic hypotheses;
+- unresolved decisions;
+- working economic examples;
+- superseded material retained for traceability;
+- source-hygiene issues that are clearly labelled and not promoted as authoritative evidence.
 
-## What stays out of the public repository
+## Confidence labels
 
-Only material with a concrete restriction should be excluded, especially:
+Use the confidence model from [`../../public-wiki/Public-Repository-and-Confidence-Levels.md`](../../public-wiki/Public-Repository-and-Confidence-Levels.md):
 
-1. credentials, passwords, API keys, tokens, private keys and other secrets;
-2. personal information that should not be publicly disclosed;
-3. confidential third-party information received under NDA, contract or another legal restriction;
-4. non-public tenant/customer data, models, logs or security credentials;
-5. detailed operational-security information where disclosure would create a credible physical, cyber or infrastructure risk;
-6. information a host community or rights-holder has lawfully provided on a confidential basis;
-7. material whose copyright or licence does not permit repository publication.
+- Design principle
+- Working assumption
+- Screening evidence
+- Strategic hypothesis
+- Validated site fact
+- Operational result
 
-Such material should never be committed and should live outside the repository or in an explicitly ignored local path.
+## Keep out of the public repository
 
-## Working research and imperfect citations
+Do not commit:
 
-A file can be **public but not publication-ready**. For example, a research note containing assistant-era citation tokens may remain visible for provenance and collaborative cleanup, but claims from it must not be promoted into an authoritative partner, engineering, regulatory or investor document until re-sourced.
+- credentials, passwords, API keys, tokens or private keys;
+- private tenant data, models, application logs or security credentials;
+- personal information that is not intended for public disclosure;
+- legally or contractually restricted third-party material;
+- confidential information supplied by a community or rights holder;
+- operational-security details whose disclosure would create a credible physical, cyber or infrastructure risk;
+- material whose copyright or licence does not permit repository publication.
 
-Use labels such as:
+## Working research
 
-- `WORKING DRAFT`;
-- `PRELIMINARY SCREENING`;
-- `HYPOTHESIS`;
-- `SOURCE HYGIENE REQUIRED`;
-- `NOT ENGINEERING-VALIDATED`;
-- `SUPERSEDED`;
-- `CURRENT CONTROL`.
+A source can remain publicly visible while still being unsuitable for promotion into a formal engineering, regulatory, commercial or partner claim.
 
-## Site and map data
-
-Site, hydro and map screening data are public by default when they are derived from public or publishable sources. Exact future security layouts, access-control systems, tenant security configurations, unpublished critical-infrastructure vulnerabilities or confidential rights-holder information are not.
-
-## Economics
-
-Working economics may be public. Every material numeric claim should carry its assumptions, source/provenance and an `as-of` date when time-sensitive. Public availability must not be mistaken for an investment representation or validated business case.
-
-## Public wiki
-
-`public-wiki/` is the plain-language public entry point. It should summarize the current project faithfully while clearly separating:
-
-- established design principles;
-- current working choices;
-- long-term vision;
-- hypotheses still requiring evidence.
+Research with incomplete citations, assistant/UI citation artifacts or uncertain provenance must remain labelled until re-sourced. This is a **promotion blocker**, not automatically a visibility blocker.
 
 ## Licence
 
-A public GitHub repository is viewable by everyone, but public visibility does not automatically grant reuse rights. A separate licence decision is required before representing the documentation, data or code as open-source/open-content.
+Public visibility does not by itself grant reuse rights. No open-source or open-document licence is assigned by the current supplied materials.

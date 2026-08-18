@@ -1,53 +1,35 @@
 # Contributing
 
-Kristal Farms is developed as a **public working repository**. Contributions, critique, source corrections, validation work and competing hypotheses are welcome when they preserve provenance and clearly distinguish evidence from proposal.
+Kristal Farms is a public working project.
 
-Do not commit secrets, personal information, contractually restricted third-party material, confidential rights-holder information or operational-security details whose disclosure creates a credible risk. See `docs/00-control/PUBLICATION_POLICY.md`.
+Useful contributions include:
 
-## Branching
+- corrections to site or hydro data;
+- better transmission and road benchmarks;
+- cooling and heat-recovery engineering;
+- fibre-route and telecom analysis;
+- environmental lifecycle comparisons;
+- community-governance design;
+- northern construction experience;
+- security architecture;
+- economic-model review;
+- academic and training partnerships;
+- corrections to citations and source quality.
 
-Use short-lived branches and pull requests. Keep changes scoped to one decision/workstream where practical.
+## Contribution principle
 
-Suggested prefixes:
-- `decision/`
-- `validate/`
-- `site/`
-- `economics/`
-- `partner/`
-- `translation/`
-- `data/`
-- `education/`
-- `dignity/`
+A contribution is strongest when it distinguishes:
 
-## Required PR notes
+1. **evidence** — what a source or measurement establishes;
+2. **assumption** — what is being used for modelling;
+3. **inference** — what follows from the evidence;
+4. **decision** — what the project chooses to do;
+5. **result** — what has actually been measured in operation.
 
-Every substantive PR should identify:
-- workstream;
-- decision/validation issue affected;
-- source/evidence;
-- files changed;
-- whether EN/FR sync is required;
-- share-level impact;
-- numeric claims added/changed;
-- unresolved caveats;
-- human-dignity, language, safeguarding or academic-governance impact when applicable.
+Open development is most useful when disagreement improves the model rather than being hidden.
 
-## Source discipline
+## Repository hygiene
 
-Never overwrite raw source/data to “clean it up.” Preserve supplied files and add a transformed copy with provenance.
+Do not commit credentials, private tenant data, PII, restricted third-party material, confidential rights-holder information or operational-security details whose disclosure creates a credible risk.
 
-## Partner documents
-
-The numbered EN Markdown is the temporary edit source pending D-003. Do not edit a PDF as the master copy.
-
-
-## Human / education programs
-
-Changes concerning welcoming communities, students, language, culture, rites, education or universities must also identify:
-
-- affected host community / rights-holder decision process;
-- applicable language and education-law review needed;
-- Human Dignity Framework impact;
-- safeguarding/privacy implications;
-- whether an accreditation or credential-recognition claim is being introduced;
-- whether a person can participate, decline a cultural practice, transfer, or leave without losing essential rights.
+When changing the public narrative, update the source/validation controls rather than editing the wiki in isolation.

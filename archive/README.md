@@ -1,7 +1,14 @@
 # Archive
 
-`pre-refactor/` preserves the previous repository's top-level control files so the restructuring can be audited.
+This directory preserves superseded repository and narrative layers for traceability.
 
-Use this directory only for superseded controlled outputs or deliberate historical snapshots.
+Current material should be read from the root README, `public-wiki/`, and `docs/00-control/`.
 
-Do not move raw supplied sources here; originals belong under `sources/originals/` or `sources/legacy/`.
+## Archive contents
+
+- `pre-refactor/` — earlier repository instructions and README state;
+- `partner-narrative-pre-wiki/` — superseded v2/v3 working partner narratives and rebuild maps;
+- `strategy-pre-wiki/` — superseded pre-wiki platform vision documents;
+- `refactor-history/` — prior refactor notes.
+
+Archive presence does not make a document current.

@@ -1,19 +1,14 @@
-# Kristal Farms — Public Wiki
+# Kristal Farms Public Wiki — English
 
-**Status:** public-facing draft; review before publication.
+This directory contains the rebuilt public-facing English wiki for Kristal Farms.
 
-This folder is intentionally written for a general audience and is separate from the repository's technical/control documentation.
+It is based on the supplied project documentation and is intentionally different from the internal/partner documentation:
 
-## GitHub Wiki-ready files
+- simpler language;
+- stronger explanation of the structural infrastructure thesis;
+- explicit separation of design principles, working assumptions and unvalidated strategic opportunities;
+- no assumption that all northern land is ecologically low-value;
+- no claim that preliminary site numbers are construction-ready;
+- public working status by default.
 
-`Home.md`, `_Sidebar.md` and `_Footer.md` follow the conventional GitHub Wiki layout. The remaining Markdown files are individual wiki pages.
-
-## Editorial rules
-
-- Explain before using jargon.
-- Separate demonstrated facts from concepts still under study.
-- Do not publish precise site, hydrology, security or commercial data from the private repository.
-- Do not convert preliminary economics into public promises.
-- Keep territorial politics outside the Kristal Farms project narrative.
-- Preserve the distinction between training/research ambitions and accredited university status.
-- Treat host-community rights, language, consent and human dignity as design requirements rather than promotional claims.
+For GitHub Wiki, `Home.md`, `_Sidebar.md` and `_Footer.md` are ready to use.

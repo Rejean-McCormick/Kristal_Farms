@@ -1,5 +1,5 @@
 name: Strategic hypothesis
-description: Track a new strategic idea before it becomes an external project claim
+description: Track a strategic idea before it becomes a validated site fact or operational result
 title: "[HYPOTHESIS] "
 labels: ["hypothesis", "validation"]
 body:
@@ -13,29 +13,29 @@ body:
   - type: textarea
     id: rationale
     attributes:
-      label: Strategic rationale / owner direction
+      label: Source / strategic rationale
   - type: textarea
     id: evidence
     attributes:
       label: Existing evidence
-      description: List files/sources that support only the parts they actually establish.
+      description: List only what the current sources actually establish.
   - type: textarea
     id: proof
     attributes:
       label: Evidence required to promote the claim
     validations:
       required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Current confidence level
+      options:
+        - Strategic hypothesis
+        - Screening evidence
+        - Working assumption
+    validations:
+      required: true
   - type: textarea
     id: impacts
     attributes:
-      label: Architecture, economics, community/environment, security and release impacts
-  - type: dropdown
-    id: share
-    attributes:
-      label: Current share level
-      options:
-        - Internal only
-        - NDA / controlled data room
-        - Candidate for external use after validation
-    validations:
-      required: true
+      label: Architecture, economics, environment/community, security and narrative impacts

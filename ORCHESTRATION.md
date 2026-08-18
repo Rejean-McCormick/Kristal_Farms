@@ -1,35 +1,32 @@
 # ORCHESTRATION
 
-This is the operating rule for the repository.
+The repository should keep the public narrative, technical evidence and validation status aligned without collapsing them into one document.
 
-## The chain
+## Chain
 
-**Evidence → Decision → Architecture/Economics → Community & rights process → Human-dignity / academic-governance review where applicable → Partner narrative → Bilingual release → Gate review**
+**Source / measurement → confidence label → decision → architecture/economics → site/community process → public narrative → formal partner material → gate / operational result**
 
-A file can contribute to the chain without becoming the source of truth for the whole project.
+## Contribution discipline
 
-## Weekly control loop
+Distinguish:
 
-1. Review open decisions.
-2. Review validation blockers.
-3. Update workstream status.
-4. Promote only evidence-backed changes.
-5. Synchronize EN/FR.
-6. Update release/share level.
-7. Record what changed.
+1. **evidence** — what a source or measurement establishes;
+2. **assumption** — what is being used for modelling;
+3. **inference** — what follows from the evidence;
+4. **decision** — what the project chooses to do;
+5. **result** — what has actually been measured in operation.
 
-## Release gates
+## Change rule
 
-A partner/data-room release should not ship unless:
-- project scope is consistent across the package;
-- long-term human/education concepts are clearly distinguished from operating commitments;
-- any education/university claim has the appropriate governance/accreditation maturity label;
-- Nain and other site claims are properly caveated;
-- numeric claims have source/as-of control;
-- no assistant/UI citation tokens remain;
-- EN/FR versions are synchronized;
-- share levels are explicitly approved;
-- precise site data is cleared for release;
-- the data-room index matches the release contents.
+When a material source or decision changes:
 
-See `docs/00-control/`.
+1. update the relevant confidence/validation item;
+2. update `PROJECT_STATE.md` if project state changes;
+3. update technical/economic material when its underlying evidence changes;
+4. update the public wiki if the public explanation changes;
+5. update formal partner material only after the claim is appropriate for that use;
+6. update the changelog and manifest.
+
+## Gate rule
+
+A site or phase should be able to **repeat, adjust, scale, relocate, reduce or stop**. Failure to meet a gate is a valid project result, not a documentation failure.

@@ -29,12 +29,14 @@
 - Added WS-21 and D-019 through D-022 for education, language, dignity safeguards and international-student mix.
 - Expanded validation controls so university status, credential portability and language models cannot be asserted without evidence and applicable approvals.
 - Added bilingual implementation templates for host-language charters and staged education/university gates.
-## 2026-08-17 — Public-by-default repository policy
+## 2026-08-18 — Repository realignment to rebuilt English public wiki
 
-- Changed repository visibility doctrine from private/NDA-first to **public working repository**.
-- Added `docs/00-control/PUBLICATION_POLICY.md`.
-- Clarified that “not publication-ready” blocks promotion as an authoritative claim, not public visibility.
-- Restricted exclusions to concrete secrets, privacy, legal/copyright/confidentiality and operational-security reasons.
-- Updated GitHub setup instructions to create a public repository.
-- Integrated `public-wiki/` as the plain-language public entry point.
+- Installed the supplied rebuilt English public wiki as the current public narrative.
+- Realigned the root README and control layer to the wiki thesis and confidence model.
+- Made structural infrastructure advantage a qualifying site-selection requirement, with site-specific measurement still required.
+- Replaced generic “low biodiversity” framing with low ecological sensitivity / low habitat conflict.
+- Set the repository policy to public working by default while retaining concrete confidentiality/security exclusions.
+- Archived superseded v2/v3 working partner narratives and pre-wiki platform vision instead of deleting them.
+- Preserved the supplied technical, partner, data, research, PDF/DOCX and source-original layers.
+- Added a narrative-to-source map so wiki pages resolve back to the underlying evidence base.
 

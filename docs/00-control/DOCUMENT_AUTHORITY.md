@@ -1,64 +1,30 @@
-# Document Authority Model
+# Document Authority
 
-This file prevents the repository from turning into a pile of mutually contradictory “final” documents.
+No single file is the source of truth for every type of statement. Authority depends on the question being asked.
 
-## Control classes
-
-| Class | Meaning | Current examples |
+| Class | Role | Current location |
 |---|---|---|
-| **C0 — Control** | Governs project state, strategic principles, decisions, validation, share level and synchronization. | `docs/00-control/*` |
-| **C1A — Platform narrative** | Main editable v3 strategic narrative. Defines what Kristal Farms is as a repeatable platform, while clearly marking hypotheses. | Platform Vision EN/FR; Human Infrastructure Vision EN/FR; International Learning Vision EN/FR; Human Dignity Framework EN/FR |
-| **C1B — Site/reference architecture narrative** | Detailed working architecture for a site archetype. | Internal Reference; deployment plans |
-| **C1C — Partner working narrative** | External-facing Markdown. `v3-working/` is the current platform draft; `v2-working/` is superseded; numbered set remains v1/Nain-Labrador until rebuilt. | `docs/20-partner-package/v3-working/*`; `docs/20-partner-package/v2-working/*`; `en/markdown/*` |
-| **C2 — Derived deliverable** | Human-facing export/translation. Must not become an independent source of truth. | EN PDFs; FR PDFs; FR logo DOCX |
-| **C3 — Structured evidence** | Supplied datasets/workbooks. Authoritative only for what the file records, as of its source date. | CSVs; XLSX |
-| **C4 — Working research/source** | Analysis, screening, cost studies, source reports and extracted text requiring validation before promotion. | site screening; economics; research |
-| **C4O — Owner strategic direction** | Project-owner ideas/intent recorded for traceability. Authoritative for intended strategy, **not evidence that factual claims are true**. | `sources/owner-direction/*` |
-| **C5 — Legacy/archive** | Older or superseded material retained for traceability. | `sources/legacy/`; `archive/` |
+| **A0 — Current public narrative** | Current English explanation, terminology, confidence framing and project thesis. | `public-wiki/*` |
+| **A1 — Control** | Project state, decisions, validation, authority, publication and orchestration rules. | `docs/00-control/*` |
+| **A2 — Technical baseline** | Detailed architecture and operating model. | `docs/10-core/Kristal_Farms_Internal_Reference.md` and relevant numbered partner technical documents |
+| **A3 — Deployment / governance frameworks** | Harmonious deployment, human infrastructure, dignity, language and education pathways. | `docs/10-core/deployment/*`, `docs/10-core/strategy/*`, `docs/10-core/education/*` |
+| **A4 — Working evidence** | Site screening, economic studies, transmission/cooling comparisons and supporting research. | `docs/30-site-screening/*`, `docs/40-economics/*`, `docs/50-research/*` |
+| **A5 — Structured supplied data** | Raw CSV/XLSX datasets and their catalogue. | `data/raw/*`, `data/catalog/*` |
+| **A6 — Source originals** | Preserved supplied original files and earlier source material. | `sources/originals/*`, `sources/legacy/*`, `sources/owner-direction/*` |
+| **A7 — Inherited deliverables** | Existing Nain/Labrador partner package and formatted outputs. Useful evidence of prior project framing, but not the current public narrative. | `docs/20-partner-package/*` |
+| **A8 — Archive** | Superseded repository/narrative layers retained for history. | `archive/*` |
 
-## Current strategic source of truth
+## Conflict rules
 
-For **what the platform is intended to become**, use this order:
+1. **For current project framing and terminology**, use the current public wiki plus control documents.
+2. **For a technical claim**, use the detailed technical source, not a wiki summary.
+3. **For a numeric/economic claim**, use the underlying study/workbook and its as-of/source context.
+4. **For a site fact**, use current site-specific evidence and the relevant confidence label.
+5. **For a discrepancy between a supplied original and a searchable extraction**, preserve the original as authoritative for what was supplied.
+6. **For historical v1/v2/v3 narrative differences**, do not silently merge them. The current wiki supersedes the old working narrative, while the old files remain traceable.
 
-1. `docs/00-control/STRATEGIC_PRINCIPLES.md` — control framing and claim discipline;
-2. matched strategy files in `docs/10-core/strategy/` — platform, human infrastructure, international learning and human-dignity narratives;
-3. `docs/00-control/PROJECT_STATE.md` — current evidence/status;
-4. decisions and validation registers.
+## Current narrative transition
 
-The detailed Internal Reference remains the primary source for the **community-integrated hydro/heat architecture**, not for every future site archetype.
+The older v2/v3 working partner narratives and pre-wiki platform vision have been moved to `archive/` because the uploaded 2026-08-18 English wiki now provides the clearest current public structure:
 
-## Current editing source for the partner set
-
-The numbered English Markdown files remain the edit source for the **v1 partner package** because that is the inherited workflow. They are not automatically authoritative over the newer platform strategy.
-
-Until the v3 partner rebuild is completed, any conflict is handled as follows:
-
-- v3 strategic/control documents govern platform intent;
-- v1 partner Markdown governs what the old partner package currently says;
-- existing PDFs/DOCX remain historical formatted representations of v1;
-- the repository must not label the v1 package “v3 synchronized.”
-
-## Promotion rule
-
-A claim moves from owner/source/research to partner material only when:
-
-1. the source or owner-direction origin is identified;
-2. the claim status is recorded;
-3. evidence conflicts are resolved or disclosed;
-4. required technical/commercial/community/environment/security validation is completed;
-5. a project decision approves the external framing where needed;
-6. partner Markdown is updated;
-7. bilingual deliverables are synchronized;
-8. the change is recorded in `CHANGELOG.md` and the manifest.
-
-## Never do this
-
-- Do not treat a PDF as “more final” simply because it looks polished.
-- Do not turn project-owner vision into independent evidence.
-- Do not call a learning site an accredited university or promise recognized credentials before the relevant authority/partner pathway is established.
-- Do not interpret host-language primacy as authority to ignore applicable language law or individual access rights.
-- Do not state lower ecological footprint, lower cost, subsea access, mine security or future AI market size as established without the required evidence.
-- Do not merge Nain, Nunavik and platform-wide scope without an explicit decision.
-- Do not convert a screening estimate into a construction-ready claim.
-- Do not expose exact site, fibre or security details merely because they exist in the repository.
-- Do not update one language and leave the paired release stale without marking it.
+**core idea → structural advantage → transmission vs digital export → cooling → heat → fibre → security → environmental selection → harmonious deployment → first application → network/AI → human/education layers → evidence/confidence.**

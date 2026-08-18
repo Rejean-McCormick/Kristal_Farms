@@ -1,52 +1,41 @@
 # Decisions Required
 
-These are unresolved project choices exposed by the combined source set and v3 strategic direction. The repository does not decide them by implication.
+The current public wiki resolves several framing questions that were previously open. Remaining choices must still be made explicitly rather than by implication.
+
+## Decided framing
+
+| ID | Decision | Current disposition |
+|---|---|---|
+| **B-001** | Territorial politics | **Decided:** separatism, border revision, sovereignty disputes and territorial-status strategies are outside the operational Kristal Farms scope. |
+| **B-002** | Repository visibility | **Decided:** public working repository. Public visibility and validation are separate concepts. |
+| **B-003** | Master project framing | **Decided:** “Bring compute to renewable energy, consume the electricity locally, export digital value by fibre, and reuse the heat.” |
+| **B-004** | Site qualification | **Decided:** structural advantage is a site-selection requirement. A candidate must show a compelling full-system advantage rather than qualify merely because renewable energy exists. |
+| **B-005** | Environmental wording | **Decided:** use low ecological sensitivity / low habitat conflict and preference for disturbed land where practical; do not use generic “low biodiversity” claims. |
+| **B-006** | First application | **Decided for current documentation:** Nain remains the first application / first target in the inherited partner package while the broader platform is the master narrative. |
+| **B-007** | Public narrative authority | **Decided:** the 2026-08-18 English public wiki is the current public narrative; older v2/v3 working narratives are superseded and archived. |
+
+## Open decisions
 
 | ID | Decision | Current evidence / direction | Default handling until decided |
 |---|---|---|---|
-| **D-001** | Is the near-term program strictly **Nain/Labrador-first**, or should the external narrative become a broader Québec–Labrador/northern platform? | Partner package is Nain/Labrador-first; data and owner strategy broaden the platform. | Keep Nain as first application; use broader platform framing in v3 working strategy while the partner package is rebuilt. |
-| **D-002** | Is **coastal wind** an official first deployment layer, or an optional bootstrap concept? | Gradual-deployment plan puts wind before small hydro/compute; existing partner package leads with hydro. | Treat wind as site-dependent enabling option, not mandatory architecture. |
-| **D-003** | Which language/file type is the master for bilingual partner documents? | EN Markdown is previous edit source; FR DOCX/PDF are formatted deliverables. | Continue EN Markdown as temporary v1 edit source; v3 strategy has matched EN/FR Markdown. |
-| **D-004** | Can the Nain/Fraser **15–20 MW** screening concept be used externally, and with what caveat? | Existing partner package and village inventory use it as preliminary basis. | Keep “preliminary / subject to hydrology, engineering, permitting and community validation.” |
-| **D-005** | What is the approved citation standard for research and partner documents? | Some supplied research contains non-portable assistant/UI citation tokens. | Keep affected research publicly visible if useful for provenance, but label it source-hygiene-required and do not promote its claims into authoritative materials until re-sourced. |
-| **D-006** | What is the repository/share policy? | Owner direction is explicit: the project repository should be public. | **DECIDED — public by default.** Exclude only secrets, PII, legally restricted third-party material, confidential rights-holder material and genuine operational-security details. See `PUBLICATION_POLICY.md`. |
-| **D-007** | How should site/map/fibre/security precision be shared externally? | Map dataset has 88 points; v3 adds fibre, secure-site, human-infrastructure and learning strategy. | Public screening/site data by default; withhold only confidential inputs or details that create a credible operational-security risk. |
-| **D-008** | How often must economic, tariff and comparable-infrastructure assumptions be refreshed? | Cost studies contain dated market/tariff/project benchmarks. | Require an “as-of” date and source check before external numeric claims. |
-| **D-009** | Is the **Kristals** knowledge commons part of Phase 1, later upside, or a separate program? | Internal reference develops it deeply; partner package treats it as optional. | Keep optional and non-core in first partner narrative. |
-| **D-010** | Is `initkoa.org` approved branding for Kristal Farms deliverables? | It appears in a supplied French deployment-plan source. | Preserve source; do not propagate automatically. |
-| **D-011** | Is the v3 master framing officially **“bring compute to difficult-to-export renewable energy; export value by fibre”**? | Strongly aligned with existing architecture and explicit owner direction. | Use as current control framing; formal partner release still awaits rebuild/claim validation. |
-| **D-012** | Is **lower ecological footprint than long transmission** an approved external claim, or only a hypothesis until comparative lifecycle/site studies are complete? | Existing docs support shorter corridors and reduced clearing logic; no complete lifecycle comparison. | Treat as hypothesis; say “potential to reduce” only with caveat. |
-| **D-013** | Is **subsea/coastal fibre** a core platform pillar or an optional site-specific connectivity strategy? | Owner direction; existing project is coastal and fibre-dependent, but no marine route feasibility is supplied. | Strategic research pillar; no route promise. |
-| **D-014** | Should **decommissioned mines / hardened brownfields** become an official secure-site archetype? | Owner direction only; no candidate/site feasibility in current repository. | Keep as exploratory archetype and research workstream. |
-| **D-015** | Should a **northern fibre crown / multi-node network** become the target regional architecture? | Owner direction; existing partner docs are primarily site-to-hub connectivity. | Treat as future reference-architecture work, not current committed network. |
-| **D-016** | Should **future AI compute infrastructure for Québec/Labrador** be an external strategic positioning? | Owner direction; no current demand forecast or tenant commitments in repo. | Use as long-term opportunity statement, not quantitative market claim. |
-| **D-017** | Is the phrase **“illuminate the brain” / “illuminer le cerveau”** approved brand language? | Owner creative framing. | Keep as creative narrative; exclude from technical/regulatory claims unless deliberately approved for that context. |
-| **D-018** | What common specifications define a Kristal Farms node across community, coastal, secure-brownfield and regional archetypes? | Current technical docs define the community-integrated architecture only. | Develop v3 reference architecture before claiming platform standardization. |
-
-
-| **D-019** | What is the approved education progression: training/research partnerships only, or an explicit long-term pathway toward Kristal Farms-affiliated universities? | Owner direction supports international universities; no accreditation or institutional partners are established in the repo. | Use staged pathway language; do not claim university status until requirements are met. |
-| **D-020** | What formal role should host-people languages have in each campus/community institution? | Owner direction calls for host peoples' languages to be institutionally primary; applicable language law and community preferences vary by site. | Require a site/institution language charter; target official host-language standing and primacy within project-controlled local institutions to the maximum extent permitted by law and rights. |
-| **D-021** | Which Human Dignity safeguards are non-negotiable across culturally distinct communities and education programs? | New framework proposes consent, equality, safety, conscience, privacy, independent remedy, child safeguarding, freedom of movement and host-community rights. | Treat the framework as interim strategic safeguard; obtain human-rights, community and legal review before program launch. |
-| **D-022** | What share and role should international students/researchers have relative to local and host-community learners? | Owner direction supports an international portion and temporary skills-development/return pathways; no capacity model exists. | Do not set a quota yet; model housing, services, language, program capacity and local access before targets. |
-
-## Decided scope boundary
-
-**B-001 — Territorial politics excluded (2026-08-17).** Kristal Farms will not include separatism, border revision, sovereignty disputes, territorial occupation strategies or internationalization of Labrador as a political objective in the operational project repository. Long-term human/community infrastructure may be developed separately within the existing legal order.
-
-**B-002 — Public repository by default (2026-08-17).** Kristal Farms documentation is developed openly. Working, preliminary and imperfect material may be visible when properly labeled. Only concrete confidentiality, privacy, legal/copyright or operational-security restrictions justify keeping material out of Git.
-
+| **D-002** | Is coastal wind an official first deployment layer or an optional bootstrap concept? | Gradual-deployment plan puts wind before small hydro/compute; existing partner package leads with hydro. | Treat wind as site-dependent enabling option, not mandatory architecture. |
+| **D-003** | What is the future master language/file type for formal bilingual partner documents? | EN Markdown is previous v1 edit source; FR DOCX/PDF are formatted deliverables; current public wiki is English. | Preserve v1 pairings; rebuild formal bilingual package only when requested. |
+| **D-004** | Can the Nain/Fraser 15–20 MW screening concept be used in a formal external proposal, and with what caveat? | Current wiki and screening material treat it as preliminary. | Use only as preliminary screening evidence pending hydrology, engineering, permitting and community validation. |
+| **D-005** | What citation standard is required before a working research note becomes authoritative evidence? | Some supplied research contains non-portable assistant/UI citation tokens. | Keep public if useful, but block promotion until re-sourced. |
+| **D-007** | Which site/fibre/security details create a real operational-security or confidentiality risk? | Public-by-default policy is established; some future infrastructure details may still be sensitive. | Withhold only concrete restricted/sensitive details, not whole workstreams by default. |
+| **D-008** | How often must tariffs, cost benchmarks and market assumptions be refreshed? | Working studies contain dated market/project benchmarks. | Require as-of date and source check before formal numeric use. |
+| **D-009** | Is Kristals part of Phase 1, later upside, or a separate program? | Internal reference develops it; current wiki treats it as a knowledge-commons layer. | Keep optional/non-core until explicitly activated. |
+| **D-010** | Is `initkoa.org` approved branding for Kristal Farms deliverables? | Appears in a supplied French deployment-plan source. | Preserve source; do not propagate automatically. |
+| **D-013** | Is subsea/coastal fibre a core platform pillar or a site-specific connectivity strategy? | Current wiki treats it as an opportunity where coastal access supports it; no marine route feasibility is supplied. | Strategic/site-dependent option; no route promise. |
+| **D-014** | When does a decommissioned mine/brownfield become an approved secure-site archetype? | Current wiki includes it as a possible higher-assurance variant; no candidate feasibility is established. | Keep as strategic hypothesis until candidate-specific engineering exists. |
+| **D-015** | Should a northern fibre crown/network become the target regional architecture? | Current wiki presents it as a long-term network concept. | Do not imply a committed route/topology. |
+| **D-016** | What market evidence is required before future AI compute becomes a quantitative demand case? | Current wiki explicitly says regional share, committed tenants, rack densities, MW/GW requirements and future economics are not proven. | Keep qualitative until market evidence is added. |
+| **D-018** | What common specifications define all site archetypes? | Current detailed architecture is strongest for the community-integrated node; wiki defines additional archetypes. | Develop common interfaces only from validated technical work. |
+| **D-019** | What is the approved education progression beyond training/research partnerships? | Current wiki uses staged progression toward possible accredited institutions. | Do not claim university status before applicable requirements are satisfied. |
+| **D-020** | What formal role should host-people languages have at each site/institution? | Existing dignity/language documents define the principle; site law and community preferences vary. | Use site/institution language charter and applicable-law/community review. |
+| **D-021** | Which Human Dignity safeguards become formal operating policy? | Existing framework defines consent, equality, safety, conscience, privacy, remedy, child safeguarding, freedom of movement and host-community rights. | Treat as strategic safeguard until reviewed for operational adoption. |
+| **D-022** | What share/role should international students and researchers have? | Current strategy supports international participation and skills circulation; no capacity model exists. | Do not set a quota without capacity and program evidence. |
 
 ## Decision record format
 
-When a decision is made, record:
-
-- decision ID;
-- date;
-- decision;
-- owner/approver;
-- source/evidence reviewed;
-- documents/data affected;
-- required follow-up;
-- superseded decision, if any.
-
-Use the GitHub `Decision` issue template for discussion before changing this file.
+Record date, decision, owner/approver, evidence reviewed, affected documents/data, follow-up and any superseded decision. Use the GitHub Decision issue template for discussion.

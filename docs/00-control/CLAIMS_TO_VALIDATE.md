@@ -1,94 +1,61 @@
-# Claims to Validate
+# Claims and Assumptions to Validate
 
-This register is a project-control list, not a finding that any claim is wrong. It separates **source-supported concepts**, **screening assumptions**, and **owner strategic hypotheses** from externally defensible claims.
+The public repository may contain these statements as working material. This register controls when they may be promoted into site-specific, engineering, regulatory, investor or formal partner claims.
 
-## Site and renewable resources
+## Structural advantage
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Claim / assumption | Current confidence | Validation required |
 |---|---|---|
-| Nain / Fraser River concept around 15–20 MW | Screening basis, not completed feasibility. | Hydrology, head/flow, seasonal low flow, civil concept, environment/permitting, rights/community process, cost. |
-| Other Labrador river potential/capacity records | Dataset mixes installed, historical, preliminary, planned and identified potential. | Record-by-record current source check. |
-| Nunavik river opportunity ranking | Studies combine evidence of different maturity. | Official hydrology, protected-area/land regime, project status, community/rights process, access/logistics. |
-| “Massive valorization” of previously inaccessible rivers/resources | Strategic thesis could overgeneralize; some resources may be protected, uneconomic, technically unsuitable or socially unacceptable. | Portfolio screening with exclusion criteria, developable capacity, economics and community/environment gates. |
-| Coastal wind as startup energy | General exposure is not a site-specific wind assessment. | Wind data, icing, geotechnical, avian/environmental, logistics, interconnection, economics. |
+| A qualifying Kristal Farms site should deliver a **significantly lower total infrastructure burden** than the realistic long-distance electricity-export alternative. | Design principle / strategic thesis | Full site-specific comparison including generation, local connection, compute, cooling/heat, fibre, logistics, environmental effects, community process, reliability and lifetime economics. |
+| Avoiding long HV transmission can remove or reduce major line, substation, right-of-way, access and loss costs. | Design principle supported by working comparisons | Actual alternative route, voltage, substations, access, permitting, lifecycle and cost estimate for each site. |
+| Coastal/modular logistics can materially reduce major new road requirements. | Working structural assumption | Site logistics plan, port capability, road alternatives, construction quantities and cost. |
 
-## Avoided transmission / environmental footprint
+## Working economic examples
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Working example | Status | Required control |
 |---|---|---|
-| Local compute is **less expensive** than long electrical transmission | Depends on distance, voltage, load, reliability, compute/fibre capex and site conditions. | Comparable alternatives, same service level, full capex/opex/lifecycle sensitivity. |
-| Local compute has **lower ecological footprint** than a long transmission line | Shorter corridor may reduce clearing/fragmentation, but compute, fibre, generation and cooling also have impacts. | Lifecycle/site comparison: land, habitat, materials, carbon, water, roads, substations, construction, restoration. |
-| Long HV corridor can be avoided | Some sites may still require significant network works. | Utility interconnection study and site electrical architecture. |
-| Transmission $/km benchmark | Screening cost varies strongly by voltage, terrain, logistics, routing and scope. | Comparable project basis + site-specific route/cost study. |
+| ~C$1.09M/km northern Ontario transmission comparison | Working benchmark | Preserve source/as-of context; do not treat as a site quotation. |
+| ~C$5M/km Québec 735 kV screening comparison | Working benchmark | Preserve the documented exclusions; do not treat as a project quotation. |
+| ~C$3M/km northern all-season-road illustration | Working benchmark | Replace with site/terrain-specific estimate before formal use. |
+| Cooling around 8–15% of total cost; potentially 10–20% for some high-density configurations | Working source estimate | Confirm scope/definitions and apply only to relevant comparison case. |
+| PUE target around 1.10–1.20 | Working target assumption | Engineering model, climate/load profile, equipment selection, commissioning and operational measurement. |
+| HUF scenarios of 50%, 70% and 90% | Illustrative scenarios | Site heat-demand model, temperature compatibility, storage, network losses and measured operation. |
 
-## Climate, cooling and heat
+## Nain / first application
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Claim / assumption | Current confidence | Validation required |
 |---|---|---|
-| Cold climate materially lowers cooling cost/PUE | Depends on density, cooling architecture and operating conditions. | Site climate + design model + benchmark. |
-| Bay/seawater rejection and ΔT limits | Limits are site- and permit-specific. | Regulator criteria, thermal plume, intake/outfall design. |
-| Heat demand available for reuse | Heat-first economics depend on actual sink profiles. | Building-by-building load, supply-temperature compatibility, seasonal profiles, greenhouse/storage sizing. |
-| Low-impact / near-zero consumptive water design | Architecture supports this in principle but site implementation matters. | Water balance, cooling design, permits and commissioning data. |
+| Nain is the first current target/application in the documentation. | Current project framing | Maintain unless owner/project decision changes. |
+| Preliminary Fraser River concept around 15–20 MW. | Screening evidence | Hydrology, firm winter power, fish/environment, rights/community process, civil/electrical design, cost and permits. |
+| Port/village-edge compute can support local heat use. | Design concept | Pad-yard location, actual heat users, temperatures, pipe routes, seasonal balance, land/access. |
+| Fibre can support the required compute export. | Open site requirement | Route, latency, capacity, redundancy, carrier, construction/repair plan and SLA evidence. |
 
-## Fibre / subsea connectivity
+## Environment and cooling
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Claim / assumption | Current confidence | Validation required |
 |---|---|---|
-| Coastal location gives **direct access to the seabed for fibre** | Coastline alone does not establish a feasible/permitable landing or route. | Landing-zone study, seabed/bathymetry, rights, permits, environment, carrier design, shore-end engineering. |
-| Subsea fibre is cheaper/better than terrestrial alternatives | Strongly route- and scale-dependent. | Route alternatives, capex/opex, repair model, latency/capacity, risk comparison. |
-| A **northern fibre crown/ring** can connect multiple sites economically | No network architecture or cost case yet. | Node locations, topology, traffic model, carrier participation, marine/terrestrial route costs, redundancy analysis. |
-| Fibre availability/latency/path diversity can meet AI tenant SLAs | Existing documents are conceptual. | Carrier data, route ownership, capacity reservation, latency tests, failover tests, repair/MTTR plan. |
+| Selected sites can have low ecological sensitivity / low habitat conflict or use previously disturbed land. | Site-selection criterion | Site-specific habitat, water, fish, cultural/rights, protected-area and land-use review. |
+| Closed-loop/non-contact cooling can minimize consumptive cooling water use. | Detailed design principle | Site water/cooling design, environmental temperature limits, commissioning and operating data. |
+| Cold climate materially reduces cooling burden. | Structural working thesis | Site weather, thermal design, backup rejection, capex/opex comparison and measured PUE once operating. |
+| Local-consumption/fibre-export can reduce lifecycle ecological burden versus long transmission. | Strategic hypothesis / qualifying target | Comparative lifecycle and corridor study for the actual alternatives. |
 
-## Data security and secure infrastructure
+## Fibre, security and network
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Claim / assumption | Current confidence | Validation required |
 |---|---|---|
-| Black-box tenancy materially improves tenant data security | Strong architectural separation, but security outcomes depend on implementation/threat model. | Threat model, interface specification, network architecture, audit, access controls, contractual boundary. |
-| Decommissioned/deep mines provide **increased security** | Depth/access can help physical protection but introduce ventilation, water, egress, fire and operational risks. | Candidate-specific geotechnical, physical-security, fire/life-safety, ventilation, flooding, access, remediation and operations study. |
-| Confidential computing / attestation options meet tenant requirements | Tenant compliance/security needs vary. | Hardware/software architecture, attestation design, independent security assessment, tenant requirements. |
+| Black-box tenancy materially strengthens the tenant trust boundary. | Detailed architecture principle | Threat model, interface/security specification, access controls, network design, audit and contractual boundary. |
+| Coastal sites can support subsea fibre opportunities. | Strategic hypothesis | Landing feasibility, route, permits, carrier/ownership model, cost and environmental review. |
+| A northern fibre crown/network can create network effects across multiple nodes. | Long-term strategic hypothesis | Node set, route/topology, traffic, economics, redundancy, repair and carrier participation. |
+| Decommissioned mines/brownfields can support higher-assurance compute. | Strategic hypothesis | Candidate-specific geotechnical, fire/life-safety, ventilation, power, fibre, access and security engineering. |
 
-## Economics and commercial model
+## Long-term platform
 
-| Claim / assumption | Why validation is needed | Required evidence |
+| Claim / assumption | Current confidence | Validation required |
 |---|---|---|
-| Electricity/tariff advantage | Tariffs and large-load treatment change. | Current utility tariff/service conditions for specific load/site. |
-| Cooling share of data-centre cost | Depends on architecture, density, capex treatment, climate and accounting. | Defined cost model + comparable benchmarks. |
-| Partner cost-advantage workbook outputs | Illustrative assumptions need dated sources and scenario definitions. | Workbook audit, source cells, version control. |
-| Heat reuse creates meaningful economic/community value | Depends on avoided fuel, loop capex, load factor and ownership model. | Heat tariff/avoided-cost model + real demand. |
+| Québec/Labrador can host a growing share of future AI compute through this architecture. | Strategic opportunity | Tenant demand, workload fit, rack density, total capacity, fibre, competition and economics. |
+| International learning programs can transfer northern infrastructure skills. | Long-term program design | Academic/technical partners, curriculum, legal mobility, housing/services, credential portability and operating finance. |
+| Kristal Farms-affiliated university institutions may eventually be possible. | Long-term vision | Applicable authorization/accreditation, academic governance, faculty, research capacity, finance and degree recognition. |
 
-## Future AI market / regional platform
+## Source hygiene
 
-| Claim / assumption | Why validation is needed | Required evidence |
-|---|---|---|
-| AI compute demand will rise enough to absorb a large Québec–Labrador platform | Directionally plausible but repository has no controlled forecast. | Current market research, power-demand forecasts, tenant pipeline, workload segmentation. |
-| Québec/Labrador can host a significant share of future AI compute | Requires comparative competitiveness and infrastructure capacity. | Resource/capacity inventory, fibre, capex, latency, regulation, security, workforce and competitor benchmark. |
-| Northern construction expertise becomes a durable competitive moat | Needs repeat deployments and measurable performance. | Skills map, training outcomes, project delivery metrics, vendor ecosystem, lessons-learned program. |
-
-
-## International education / university network
-
-| Claim / assumption | Why validation is needed | Required evidence |
-|---|---|---|
-| Kristal Farms can become an international university network | No accreditation, degree-granting authority, faculty model, institutional partner or sustainable academic budget is established. | Jurisdiction-specific accreditation/degree-authority review, governance design, qualified academic partners, faculty/research plan, financing and credential-recognition pathway. |
-| International students can travel north, develop skills and return with portable qualifications | Depends on program quality, legal mobility pathways, recognition of credentials and home-country/institution partnerships. | Partner MOUs, visa/status review, credential portability, curriculum mapping, student-support and return-network design. |
-| Host-people languages can be the institutionally primary languages | Appropriate as a design objective but must be reconciled with applicable public-language, education, employment and accessibility requirements. | Host-community decision, language-law review, operational language charter, translation capacity and teaching-resource plan. |
-| Cultural rites/customs can be institutionally protected within a common dignity framework | Requires clear governance so cultural autonomy and individual rights are both protected. | Human-rights/legal review, community consultation, safeguarding rules, consent/opt-out procedures, independent complaint and remedy mechanisms. |
-
-## Community / governance / territory
-
-Validate with relevant rights holders and communities:
-
-- FPIC/CLPE process and terminology;
-- decision rights and project-governance model;
-- benefit-agreement structure;
-- heat allocation priorities;
-- local hiring/training commitments;
-- public dashboard data;
-- grievance and incident procedures;
-- land, water, marine and cultural-rights implications of energy, fibre and site infrastructure.
-
-## Publication hygiene
-
-Any document containing `turn...search`, `filecite`, private-use citation symbols, or other assistant/UI reference markers must be re-sourced before external use.
-
-Owner strategic direction is traceable in `sources/owner-direction/` but is **not independent evidence**.
+Research containing assistant/UI citation artifacts may remain visible for provenance and cleanup, but its claims must not be promoted as independently verified evidence until re-sourced.

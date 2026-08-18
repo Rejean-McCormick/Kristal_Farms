@@ -1,48 +1,51 @@
 # Kristal Farms
 
-> **Une idée simple : utiliser l'énergie renouvelable là où elle se trouve, transformer cette énergie en calcul, exporter la valeur par fibre et réutiliser la chaleur localement.**
+**Public working wiki — English**
 
-Kristal Farms explore une nouvelle façon de développer des infrastructures numériques dans les régions nordiques. Plutôt que de présumer que toute ressource énergétique éloignée doit être transportée vers de grands centres de consommation, le projet étudie une autre possibilité : **amener une partie de la demande de calcul près de l'énergie**.
+Kristal Farms is a northern infrastructure model built around a simple inversion:
 
-Le modèle réunit plusieurs éléments qui sont souvent développés séparément :
+> **Bring compute to renewable energy, consume the electricity locally, export digital value by fibre, and reuse the heat.**
 
-- énergie renouvelable locale;
-- calcul informatique à haute densité;
-- fibre optique comme corridor d'export numérique;
-- récupération de chaleur;
-- sécurité physique et séparation des données;
-- construction modulaire et progressive;
-- infrastructures communautaires adaptées au climat;
-- formation, recherche et transfert international de savoir-faire.
+The model is designed for remote northern sites where moving electricity to distant markets can require large transmission corridors, substations, access works and long construction schedules. Instead of treating remoteness and cold as disadvantages, Kristal Farms tries to make them part of the infrastructure advantage.
 
-## Pourquoi maintenant?
+For the class of sites Kristal Farms is designed to select, the goal is a **significantly lower total infrastructure burden** than the realistic alternative of exporting electricity over long distances. A site should not qualify merely because it has renewable energy. It should demonstrate a strong combination of:
 
-L'intelligence artificielle, le calcul scientifique et d'autres usages numériques demandent de plus en plus de puissance informatique. En parallèle, certaines ressources renouvelables nordiques restent difficiles ou coûteuses à valoriser parce qu'elles sont éloignées des grands réseaux et des grands marchés.
+- renewable energy close to the load;
+- short local electrical connections;
+- cold-climate cooling advantage;
+- marine or compact logistics where available;
+- a credible fibre export path;
+- useful local heat demand;
+- low ecological conflict or previously disturbed land;
+- community and rights-holder support;
+- modularity, reversibility and measurable economics.
 
-Kristal Farms cherche à savoir si ces deux réalités peuvent se rencontrer de façon utile : **une énergie locale alimente du calcul local, le résultat du calcul voyage par fibre, et la chaleur des machines devient une ressource pour le territoire.**
+Kristal Farms is therefore more than a data-centre concept. It combines **energy, compute, fibre, heat, security, community infrastructure, northern engineering capability and knowledge transfer**.
 
-## Ce que le projet veut éviter
+## Start here
 
-Kristal Farms n'est pas présenté comme une solution sans impact ni comme un mégaprojet à construire d'un seul coup. Chaque site doit démontrer sa pertinence technique, économique, environnementale et communautaire. Les options doivent être comparées, les droits existants respectés et l'infrastructure doit pouvoir évoluer par étapes.
+- [[The Core Idea]]
+- [[Why the North]]
+- [[Structural Cost Advantage]]
+- [[Transmission vs Digital Export]]
+- [[Cold Climate Cooling]]
+- [[Heat First]]
+- [[Fibre as the Export Corridor]]
+- [[Secure Compute and Black Box Tenancy]]
+- [[Environmental Design and Site Selection]]
+- [[Harmonious Deployment]]
+- [[Nain First Application]]
+- [[From One Site to a Northern Network]]
+- [[International Learning and Universities]]
+- [[FAQ]]
 
-## Le wiki en quelques pages
+## Public working status
 
-- [Le concept en une minute](Le-concept-en-une-minute.md)
-- [Pourquoi le Nord?](Pourquoi-le-Nord.md)
-- [Énergie locale et rivières](Energie-locale-et-rivieres.md)
-- [Calcul sécurisé et données](Calcul-securise-et-donnees.md)
-- [Fibre et connectivité](Fibre-et-connectivite.md)
-- [Chaleur et infrastructures locales](Chaleur-et-infrastructures-locales.md)
-- [Environnement et empreinte](Environnement-et-empreinte.md)
-- [Déploiement progressif](Deploiement-progressif.md)
-- [Communautés, langues et dignité](Communautes-langues-et-dignite.md)
-- [Éducation et universités internationales](Education-et-universites-internationales.md)
-- [Sites et architectures possibles](Sites-et-architectures.md)
-- [Vision à long terme](Vision-a-long-terme.md)
-- [Ce qui reste à valider](Ce-qui-reste-a-valider.md)
-- [Questions fréquentes](Questions-frequentes.md)
-- [Glossaire](Glossaire.md)
+This wiki explains the project openly. It distinguishes between:
 
-## Statut
+- **baseline design principles** already developed in the project documentation;
+- **working economic assumptions** that require site-specific validation;
+- **strategic opportunities** such as subsea fibre, secure mine sites and a northern fibre network;
+- **long-term visions** such as international learning campuses and university partnerships.
 
-Kristal Farms est un projet en développement. Ce wiki explique la **vision et le modèle étudié**. Il ne remplace pas les études d'ingénierie, les évaluations environnementales, les processus communautaires, les permis, les ententes commerciales ni les décisions d'investissement propres à chaque site.
+Transparency does not mean every number is final. It means the assumptions, uncertainties and validation gates are visible.

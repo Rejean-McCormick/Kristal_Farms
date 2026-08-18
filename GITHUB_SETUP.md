@@ -1,28 +1,40 @@
 # GitHub Setup
 
-Create the remote as **public**. Kristal Farms uses a public-by-default working-repository policy; review `PUBLICATION_POLICY.md` before committing any genuinely restricted material.
+Kristal Farms is intended to be a **public working repository**.
+
+## Create the repository
 
 ```bash
 git init
-git add .
-git commit -m "Kristal Farms v3: platform, human infrastructure and international learning"
+git add -A
+git commit -m "Realign Kristal Farms repository to current public wiki"
 git branch -M main
+```
 
-# Create an empty public repository in GitHub, then:
-git remote add origin <YOUR_GITHUB_REPO_URL>
+Create an empty **public** GitHub repository, then:
+
+```bash
+git remote add origin <REPOSITORY_URL>
 git push -u origin main
 ```
 
-If GitHub CLI is installed and authenticated:
+With GitHub CLI:
 
 ```bash
-gh repo create kristal-farms-docs --public --description "Kristal Farms: cold-climate infrastructure for using difficult-to-export renewable energy on site—secure compute, fibre export, heat reuse, harmonious community integration, northern capability building, and international learning." --source=. --remote=origin --push
+gh repo create kristal-farms-docs --public --description "Kristal Farms — northern infrastructure model bringing compute to renewable energy, exporting digital value by fibre, and reusing heat." --source=. --remote=origin --push
 ```
 
-Before publishing or pushing new source material, review:
+## GitHub Wiki
+
+The source for the public wiki is in `public-wiki/`. Follow `public-wiki/WIKI_SETUP.md` to publish it to the separate `.wiki.git` repository.
+
+## Before pushing new material
+
+Review:
+
 - `docs/00-control/PUBLICATION_POLICY.md`
-- `docs/00-control/DOCUMENT_AUTHORITY.md`
-- `docs/00-control/DECISIONS_REQUIRED.md`
 - `docs/00-control/CONTENT_SANITATION.md`
-- `docs/00-control/SCOPE_BOUNDARIES.md`
-- `docs/10-core/strategy/HUMAN_DIGNITY_FRAMEWORK_EN.md`
+- `docs/00-control/CLAIMS_TO_VALIDATE.md`
+- `docs/00-control/DOCUMENT_AUTHORITY.md`
+
+Do not commit secrets, private tenant/customer data, personal information, legally restricted material or concrete operational-security details that create a credible risk.

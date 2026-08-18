@@ -1,44 +1,26 @@
-# Content Sanitation / Citation Hygiene
+# Content and Source Hygiene
 
-## Promotion blockers, not visibility blockers
+## Promotion blockers, not automatic visibility blockers
 
-The following working files contain non-portable assistant/UI-style citation artifacts. They may remain visible in this public working repository for provenance and collaborative cleanup, but they must **not be promoted as authoritative evidence or copied into formal partner, engineering, regulatory or investor claims** until they are re-sourced:
+Working research can remain public while still being unsuitable as authoritative evidence.
+
+The following files contain non-portable assistant/UI-style citation artifacts and require source cleanup before their claims are promoted into formal engineering, regulatory, investor or partner material:
 
 - `docs/30-site-screening/nunavik/Rivieres_littoral_ouest_Nord_quebecois_nord_La_Grande.md`
 - `docs/50-research/Partners_inventory_deep-research-report.md`
 
-Examples include:
-- `turn...search...` reference IDs;
-- assistant entity/citation markers;
+## Scan before formal promotion
+
+Check for:
+
+- `turn...search` tokens;
+- `filecite` tokens;
 - private-use Unicode citation symbols;
-- `filecite`-style tokens embedded in source text.
+- unsupported precise numeric claims;
+- obsolete as-of dates;
+- source links that no longer identify the referenced evidence;
+- language that converts a working assumption into an operational result.
 
-These markers are not stable bibliographic references.
+## Public repository exclusions
 
-A legacy source under `sources/legacy/` also contains an opaque assistant-era reference. Legacy material is never authoritative/publication-ready by default, even when it is publicly visible in the repository.
-
-## Remediation
-
-For each affected claim:
-1. identify the underlying human-readable source;
-2. record title/organization/date/URL or project document;
-3. distinguish primary source from inference;
-4. replace UI tokens with normal citations;
-5. re-check time-sensitive claims for the intended publication date;
-6. only then promote the claim into partner material.
-
-## URL sanitation
-
-Searchable Markdown extractions created during this refactor remove `utm_source=chatgpt.com` tracking parameters from normal source URLs. The original supplied DOCX remains preserved unchanged.
-
-## Formal-release scan
-
-Before release, scan non-legacy material for:
-- `turn[0-9]`;
-- `filecite`;
-- private-use Unicode characters;
-- raw AI/tool markup;
-- placeholder citations;
-- AI-session tracking parameters;
-- unverified “current” claims;
-- internal-only file paths or notes.
+Credentials, private tenant data, PII, legally restricted material, confidential rights-holder information and credible operational-security details should remain outside Git. See `PUBLICATION_POLICY.md`.

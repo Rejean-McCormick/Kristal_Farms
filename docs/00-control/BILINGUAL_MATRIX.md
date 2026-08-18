@@ -1,48 +1,45 @@
 # Bilingual Matrix
 
-The repository currently contains three narrative generations:
+**As of:** 2026-08-18
 
-1. **v3 strategic layer** — current platform, human-infrastructure, international-learning and dignity framing;
-2. **v3 working partner overview** — current matched external draft, not yet formatted/released;
-3. **v1 numbered partner package** — complete in file representation but not yet content-synchronized to v3 strategy.
+The current public wiki is English. The repository still contains substantial matched English/French project material, but the new wiki has not been translated into a current French wiki in this repository state.
 
-`v2-working/` is retained only for traceability.
+## Current public narrative
 
-## A. v3 strategic layer
-
-| Narrative | EN | FR | Status |
+| Layer | English | French | Status |
 |---|---:|---:|---|
-| Platform vision | ✅ | ✅ | ✅ matched v3 narrative |
-| Human infrastructure / welcoming communities | ✅ | ✅ | ✅ matched strategic concept |
-| International learning / university pathway | ✅ | ✅ | ✅ matched strategic concept |
-| Human Dignity Framework | ✅ | ✅ | ✅ matched interim safeguard framework |
-| Working partner platform overview | ✅ | ✅ | ✅ matched v3 draft; not formatted/released |
+| Rebuilt public wiki | ✅ | — | English is the current public narrative |
+| Human infrastructure vision | ✅ | ✅ | Matched supporting strategy |
+| Human Dignity Framework | ✅ | ✅ | Matched supporting framework |
+| International learning vision | ✅ | ✅ | Matched supporting strategy |
+| Education program gates | ✅ | ✅ | Matched supporting framework |
+| Language charter template | ✅ | ✅ | Matched supporting template |
+| Gradual/harmonious deployment plan | ✅ | ✅ | Matched supplied program material |
 
-## B. v1 numbered partner package
+## Inherited v1 partner package
 
-| # | Document | EN Markdown | EN PDF | FR PDF | FR logo DOCX | v3 narrative status |
-|---:|---|---:|---:|---:|---:|---|
-| 00 | Executive Overview | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — rebuild around platform thesis + maturity layers |
-| 01 | Partner Ask and Roles | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — add infrastructure, security, academic/training partner classes as appropriate |
-| 02 | Project Concept | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — align local-energy/fibre-export thesis |
-| 03 | Site and Resource | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — keep Nain application distinct from platform scope |
-| 04 | Community and Benefits | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — align human-infrastructure and dignity safeguards carefully |
-| 05 | Energy / Heat | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — validate comparative claims |
-| 06 | Technical Architecture | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — community-integrated archetype; v3 reference architecture needed |
-| 07 | Connectivity | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — distinguish terrestrial baseline from subsea hypothesis |
-| 08 | Security / Tenancy | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — align black-box threat model and secure-site variants |
-| 09 | Governance | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — extend only where human/education governance is approved |
-| 10 | Economics | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — refresh assumptions and transmission comparison |
-| 11 | Metrics | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — add v3 validation/gate metrics only after definitions |
-| 12 | Risk | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — add platform, security, fibre and human-program risks |
-| 13 | Roadmap | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — harmonize staged deployment + capability/learning pathway |
-| 14 | Data Room / Next Steps | ✅ | ✅ | ✅ | ✅ | ⚠️ v1 — rebuild share levels and v3 authority model |
+All 15 numbered documents retain the supplied representations:
 
-## C. Editing rule
+| # | Document family | EN Markdown | EN PDF | FR PDF | FR logo DOCX |
+|---:|---|:---:|:---:|:---:|:---:|
+| 00 | Partner Overview | ✅ | ✅ | ✅ | ✅ |
+| 01 | Partner Ask and Roles | ✅ | ✅ | ✅ | ✅ |
+| 02 | Labrador Coast Project Thesis | ✅ | ✅ | ✅ | ✅ |
+| 03 | Cost Advantage and Strategic Rationale | ✅ | ✅ | ✅ | ✅ |
+| 04 | Project Map and Site Inventory | ✅ | ✅ | ✅ | ✅ |
+| 05 | Hydro Screening Appendix | ✅ | ✅ | ✅ | ✅ |
+| 06 | Technical Architecture | ✅ | ✅ | ✅ | ✅ |
+| 07 | Heat Recycling and Community Value | ✅ | ✅ | ✅ | ✅ |
+| 08 | Connectivity and Black-Box Tenancy | ✅ | ✅ | ✅ | ✅ |
+| 09 | Commercial Model and SLA | ✅ | ✅ | ✅ | ✅ |
+| 10 | Project Roadmap and Decision Gates | ✅ | ✅ | ✅ | ✅ |
+| 11 | Governance / FPIC / Community Benefits | ✅ | ✅ | ✅ | ✅ |
+| 12 | Metrics / Dashboard / Audit | ✅ | ✅ | ✅ | ✅ |
+| 13 | Risk Register | ✅ | ✅ | ✅ | ✅ |
+| 14 | Data Room Index | ✅ | ✅ | ✅ | ✅ |
 
-Until D-003 and the v3 package rebuild are resolved:
+## Synchronization rule
 
-1. keep EN and FR strategic Markdown pairs synchronized;
-2. treat the 00–14 set as **v1 historical/current partner material**, not as v3 synchronized;
-3. approve v3 claim changes through control/validation first;
-4. regenerate formatted deliverables only after the selected v3 Markdown package is approved.
+The inherited 00–14 package is **v1 historical/current partner material**, not a synchronized representation of the rebuilt English wiki.
+
+A future bilingual formal package should be rebuilt from the current public narrative and validated source material rather than by relabelling the existing PDFs/DOCX.

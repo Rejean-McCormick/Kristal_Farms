@@ -6,24 +6,25 @@
 ## Evidence
 
 - Source files / datasets:
-- Owner-direction source, if applicable:
 - As-of date for numeric/current claims:
+- Confidence level before this change:
+- Confidence level after this change:
 
 ## Change
 
 - What changed:
 - Why:
-- Is this a validated claim, screening assumption or strategic hypothesis?
+- Is this evidence, assumption, inference, decision or result?
 
-## Release impact
+## Alignment checklist
 
-- [ ] Platform thesis vs site-specific architecture reviewed
-- [ ] EN/FR synchronization reviewed
-- [ ] Share level reviewed
-- [ ] Numeric claims validated/caveated
-- [ ] Ecological/transmission comparisons disclose their basis
-- [ ] Fibre/subsea/security details are appropriately restricted
-- [ ] Future-AI market statements are evidence-backed or labelled as scenarios
-- [ ] No assistant/UI citation tokens
-- [ ] Data-room index impact reviewed
-- [ ] Manifest/changelog updated if release contents changed
+- [ ] Current public wiki impact reviewed
+- [ ] Underlying technical/source material reviewed
+- [ ] Numeric claims retain source/as-of context
+- [ ] Structural cost/footprint claims distinguish design requirement from site-specific proof
+- [ ] Environmental language uses site sensitivity/conflict evidence rather than generic “low biodiversity” claims
+- [ ] Nain/site claims retain their current confidence level
+- [ ] Fibre/subsea/mine/future-AI/university claims remain at the evidence level actually supported
+- [ ] No assistant/UI citation tokens are promoted as authoritative evidence
+- [ ] No credentials, PII, private tenant data, restricted material or credible operational-security secrets are introduced
+- [ ] Changelog / manifest updated when release contents change

@@ -1,189 +1,72 @@
 # Project State
 
-**As of:** 2026-08-17  
-**Status:** Working synthesis of supplied materials plus project-owner strategic direction; not an engineering approval, environmental conclusion, market forecast or investment decision.
+**As of:** 2026-08-18  
+**Status:** Public working synthesis of supplied Kristal Farms material and the current English public wiki. This is not an engineering approval, environmental conclusion, market forecast, construction authorization or investment decision.
 
-## 1. Strategic model — v3
+## Current public thesis
 
-The repository now distinguishes two layers:
+> **Bring compute to renewable energy, consume the electricity locally, export digital value by fibre, and reuse the heat.**
 
-### A. Source-supported baseline
+For the class of sites Kristal Farms is designed to select, the project goal is a **significantly lower total infrastructure burden** than the realistic alternative of exporting electricity over long distances.
 
-The supplied internal reference and partner package consistently describe a cold-climate modular compute model that places compute close to local renewable energy and heat users, exports compute results over fibre, reuses server heat before rejection, uses black-box tenancy, and expands through staged, reversible deployment with community governance/FPIC and public metrics.
+The qualifying rule is explicit: a site should advance only when the full system shows a compelling combination of energy, short local electrical connection, cold-climate cooling, logistics, fibre, useful heat, low ecological conflict, community/rights-holder support, modularity, reversibility and measurable economics.
 
-Primary internal reference: [`Kristal_Farms_Internal_Reference.md`](../10-core/Kristal_Farms_Internal_Reference.md)
+## Well-developed design principles
 
-### B. Owner strategic direction added 2026-08-17
+The supplied documentation consistently develops:
 
-The v3 platform framing broadens the project from a Nain-first hydro/compute application into a possible **northern compute infrastructure platform**. The strategic direction is to test whether Québec and Labrador can use cold climate, difficult-to-export renewable resources, fibre, coastal access, heat recovery, modular construction and differentiated physical/data security to support a network of compute nodes.
+- local consumption of renewable power;
+- short local electrical integration;
+- modular containerized compute pads;
+- heat-first operation;
+- closed-loop/non-contact cooling;
+- black-box tenancy;
+- fibre as the compute-export path;
+- staged expansion;
+- community governance/FPIC;
+- public metrics;
+- reversibility and restoration.
 
-New strategic hypotheses include:
+These are **design principles**, not proof that a specific site has already been built.
 
-- local renewable consumption may avoid part of the cost and ecological footprint of long electrical transmission;
-- coastal sites may support direct or advantageous subsea-fibre connectivity;
-- decommissioned mines/brownfield infrastructure may support higher-security compute variants;
-- a connected "northern fibre crown" could increase resilience and network value;
-- accumulated cold-climate construction and operations expertise could become a strategic asset;
-- future AI demand may create a large market for this infrastructure.
+## Current first-site hypothesis
 
-These are **not yet validated facts**. They have been converted into decisions, claims-to-validate and research workstreams.
+- Nain is the first target in the inherited partner package.
+- A preliminary 15–20 MW Fraser River concept exists in the screening material.
+- The site is not construction-ready and requires hydrology, engineering, fibre, environmental, community and economic validation.
 
-Source classes:
+## Working economic assumptions
 
-- [`2026-08-17-strategic-direction.md`](../../sources/owner-direction/2026-08-17-strategic-direction.md)
-- [`2026-08-17-international-learning-direction.md`](../../sources/owner-direction/2026-08-17-international-learning-direction.md)
+The current working source set includes:
 
-Strategic narrative: [`PLATFORM_VISION_EN.md`](../10-core/strategy/PLATFORM_VISION_EN.md) / [`VISION_PLATEFORME_FR.md`](../10-core/strategy/VISION_PLATEFORME_FR.md)
+- northern Ontario transmission comparison: approximately C$1.09M/km;
+- Québec 735 kV screening comparison: approximately C$5M/km;
+- illustrative northern all-season-road comparison: approximately C$3M/km;
+- complete cooling estimate around 8–15% of total cost for a modern centre, with 10–20% used for some high-density configurations;
+- a future Kristal Farms PUE target assumption around 1.10–1.20;
+- illustrative HUF scenarios of 50%, 70% and 90%.
 
-## 2. Platform architecture
+These are **working examples and assumptions**, not construction bids, site quotations or measured operating results. Their correct use is to show why site-specific comparison matters.
 
-The v3 strategy separates the overall platform from site-specific architectures.
+## Strategic opportunities still being tested
 
-Current archetypes:
+- exact cost advantage versus each realistic transmission alternative;
+- lifecycle ecological comparison;
+- subsea fibre routes and landing points;
+- a northern fibre crown/network;
+- decommissioned-mine secure compute;
+- large future AI demand;
+- international university institutions;
+- long-term welcoming-community programs.
 
-1. **Community-integrated node** — renewable energy + modular compute + heat reuse + local fibre/port/community integration.
-2. **Coastal connectivity node** — marine logistics and potential terrestrial/subsea fibre advantage.
-3. **Secure brownfield/mine node** — exploratory higher-security physical infrastructure; dedicated engineering required.
-4. **Regional node** — larger scale only where energy, fibre, environmental, community/rights and economic conditions support it.
+## Environmental selection rule
 
-The existing detailed internal reference remains primarily the first archetype.
+The project does not use “low biodiversity” as the public criterion. Preferred sites are described in terms of **low ecological sensitivity and low habitat conflict**, with preference for existing or previously disturbed industrial/port land where practical.
 
-## 3. Current site hierarchy in the supplied structured inventory
+Site exclusion is part of the model. A resource can be technically interesting and still be rejected because of protected status, habitat, cultural use, rights, construction burden or other impacts.
 
-The village inventory contains **21 community records**:
+## Narrative authority
 
-- **Tier 1 — Develop first:** Nain.
-- **Tier 2 — Reference case:** Inukjuak / Innavik.
-- **Tier 3 — Screen next:** 11 communities.
-- **Tier 4 — Appendix / not active:** 7 communities.
-- **Boundary case:** Chisasibi.
+The current English public narrative is [`../../public-wiki/`](../../public-wiki/Home.md). The technical evidence base remains the detailed internal reference, partner technical documents, screening studies, economics, raw data and supplied originals.
 
-This supports the existing partner narrative that Nain is the first target while adding a broader screening universe.
-
-Dataset: [`kristal_farms_village_inventory.csv`](../../data/raw/kristal_farms_village_inventory.csv)
-
-## 4. Labrador hydro evidence base
-
-The supplied Labrador hydro dataset contains **58 records** across operating, planned, partially harnessed, unexploited, preliminary, interprovincial, former and small-hydro categories.
-
-- 57 records are marked mappable.
-- 22 records are explicitly marked `needs_review = true`.
-- The data carries a `status_checked_date` field and must be treated as dated source evidence, not timeless project truth.
-
-Datasets:
-
-- [`labrador_hydroelectric_potential.csv`](../../data/raw/labrador_hydroelectric_potential.csv)
-- [`labrador_hydro_google_mymaps_points_v1.csv`](../../data/raw/labrador_hydro_google_mymaps_points_v1.csv)
-
-## 5. Deployment concept
-
-The supplied EN/FR gradual-deployment documents propose a broader sequence:
-
-**coastal wind → local training → construction energy → site preparation → fibre/monitoring → small hydro assets → modular compute → heat recovery → expansion**
-
-The v3 strategy generalizes this as an **integration sequence** rather than making coastal wind mandatory everywhere. The exact order remains site-dependent.
-
-Working documents:
-
-- [`Gradual_and_Harmonious_Deployment_Plan_EN.md`](../10-core/deployment/Gradual_and_Harmonious_Deployment_Plan_EN.md)
-- [`Plan_de_deploiement_graduel_et_harmonieux_FR.md`](../10-core/deployment/Plan_de_deploiement_graduel_et_harmonieux_FR.md)
-
-## 6. Québec / Nunavik research
-
-The current source set adds:
-
-- river inventories north of Chisasibi / La Grande;
-- west-coast Nunavik transmission-cost screening;
-- precipitation source data;
-- broader community screening.
-
-These expand the evidence base, but the current numbered partner package remains Labrador-coast/Nain-first. Nunavik therefore remains a **research and replication/screening workstream** unless a project-scope decision changes that.
-
-## 7. Transmission avoidance and ecological footprint
-
-The repository includes a working transmission-cost screen and partner documents that argue for short MV/local delivery rather than new long HV corridors. This supports the **question** of transmission avoidance but does not yet prove a universal cost or environmental advantage.
-
-The v3 requirement is a site-specific comparison that includes both sides of the system: generation, local feeder, compute, fibre, cooling/heat infrastructure versus the realistic electrical-export alternative, including lifecycle land/ecological effects.
-
-Research agenda: [`STRATEGIC_INFRASTRUCTURE_RESEARCH_AGENDA.md`](../30-site-screening/infrastructure/STRATEGIC_INFRASTRUCTURE_RESEARCH_AGENDA.md)
-
-## 8. Fibre / subsea strategy
-
-Existing documents already treat fibre as essential because the project exports compute rather than electricity. The new owner direction elevates coastal/subsea fibre and a possible northern fibre ring/crown to a strategic platform workstream.
-
-Current status: **concept / screening only**. No specific marine route, landing point, capacity, right, permit, cost or carrier arrangement is validated by the current repository.
-
-## 9. Data security and secure-site variants
-
-The existing black-box model is well developed in the internal reference and partner package: the host manages physical infrastructure while tenant data, models, software and logs remain outside the host boundary.
-
-The v3 strategy adds a separate research track for **decommissioned mines and hardened brownfield sites** as potential higher-physical-security compute locations.
-
-Current status: **site-archetype hypothesis only**. The repository contains no completed mine candidate inventory or mine-specific geotechnical, fire/life-safety, ventilation, flooding, remediation, power or fibre feasibility.
-
-## 10. Economics
-
-The repository includes:
-
-- the existing partner cost workbook;
-- an economic cost-advantage and savings model;
-- a Canada server-farm cost distribution/cooling report;
-- a west-Nunavik transmission-cost benchmark.
-
-These are useful working inputs, but several inputs are market-, tariff-, project- or date-sensitive and require refresh/validation before use as hard partner or investor claims.
-
-The workbook remains an illustrative cost-index conversation model (100 conventional vs 40 Kristal Farms, savings gap 60); final values require engineering, tariffs, site selection, heat demand, fibre design and partner commitments.
-
-## 11. Future AI compute opportunity
-
-The v3 strategy positions growing AI compute intensity as a possible long-term demand driver for a Québec–Labrador platform.
-
-Current status: **strategic market hypothesis**. The repository does not yet contain a validated forecast of AI demand, tenant commitments, addressable market, regional market share, rack density trajectory or required capacity.
-
-## 12. Human infrastructure / welcoming-community concept
-
-The owner vision also extends beyond technical infrastructure toward climate-adapted northern living environments and, over the long term, the possibility of welcoming voluntary culturally distinct newcomer communities through lawful pathways. The working concept emphasizes high-quality indoor civic space, housing, health, education, food production, culture, flexible use of favourable outdoor conditions, portability and a real right to leave rather than a company-town dependency.
-
-Current status: **long-term strategic concept only**. No immigration pathway, settlement partner, funding model, community agreement or operating program is established by the current repository. Specific communities should not be presented as committed participants without actual partnership and consent.
-
-This concept is explicitly separated from territorial politics. Separatism, border revision, sovereignty disputes and internationalization of Labrador as a jurisdictional objective are outside project scope. See [`SCOPE_BOUNDARIES.md`](SCOPE_BOUNDARIES.md).
-
-Strategy: [`HUMAN_INFRASTRUCTURE_VISION_EN.md`](../10-core/strategy/HUMAN_INFRASTRUCTURE_VISION_EN.md) / [`VISION_INFRASTRUCTURE_HUMAINE_FR.md`](../10-core/strategy/VISION_INFRASTRUCTURE_HUMAINE_FR.md)
-
-
-## 13. International learning / university pathway
-
-The latest owner direction adds a distinct education and research layer. The long-term concept is to convert real northern infrastructure expertise into technical training, applied research, visiting-student/research programs, recognized joint credentials and, only where the necessary approvals and governance exist, potential university institutions.
-
-A defining principle is **skills circulation**: some learners may come from other countries or communities for a defined period, build practical and academic capabilities, and return with portable skills, credentials and professional networks. International participation is therefore not synonymous with permanent settlement.
-
-The proposed language model aims, where the host people so choose and to the maximum extent permitted by applicable law, to designate the language or languages of the host people as official local institutional languages within project-controlled community/cultural life, while using translation and additional working languages for science and international exchange.
-
-Culture, rites, religion and customs are supported within a common Human Dignity Framework that also protects individual consent, equality, safety, freedom of conscience, privacy, child safeguarding, independent remedy and a real ability to leave.
-
-Current status: **long-term strategic concept / governance design**. No Kristal Farms site is represented as an accredited university, and the repository contains no established degree-granting authority, academic accreditation, international-student quota or institutional partner commitment.
-
-Strategy:
-
-- [`INTERNATIONAL_LEARNING_VISION_EN.md`](../10-core/strategy/INTERNATIONAL_LEARNING_VISION_EN.md) / [`VISION_APPRENTISSAGE_INTERNATIONAL_FR.md`](../10-core/strategy/VISION_APPRENTISSAGE_INTERNATIONAL_FR.md)
-- [`HUMAN_DIGNITY_FRAMEWORK_EN.md`](../10-core/strategy/HUMAN_DIGNITY_FRAMEWORK_EN.md) / [`CADRE_DIGNITE_HUMAINE_FR.md`](../10-core/strategy/CADRE_DIGNITE_HUMAINE_FR.md)
-
-## 14. Bilingual partner package
-
-For each numbered partner document `00` through `14`, the repository retains:
-
-- English Markdown;
-- English PDF;
-- French PDF;
-- French DOCX with logo;
-- searchable Markdown extraction of the French DOCX.
-
-These files represent the **v1 Nain/Labrador partner package**. They predate the full v3 platform framing and are therefore not considered synchronized with the new strategic layer until rebuilt/reviewed.
-
-See [`BILINGUAL_MATRIX.md`](BILINGUAL_MATRIX.md) and [`V3_REBUILD_MAP.md`](../20-partner-package/V3_REBUILD_MAP.md).
-
-## 15. Known source hygiene issue
-
-At least one Nunavik research document and the existing deep-research report contain assistant/UI-style citation artifacts such as `turn...search`, `filecite`, or private-use citation markers. These are **not publication-ready citations**.
-
-See [`CONTENT_SANITATION.md`](CONTENT_SANITATION.md).
+See [`DOCUMENT_AUTHORITY.md`](DOCUMENT_AUTHORITY.md) and [`NARRATIVE_SOURCE_MAP.md`](NARRATIVE_SOURCE_MAP.md).

@@ -1,4 +1,4 @@
-# Scope Boundaries — v3
+# Scope Boundaries — Current
 
 **Status:** Repository control decision  
 **Effective:** 2026-08-17
