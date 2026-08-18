@@ -12,3 +12,4 @@ restricted/
 secrets/
 *.pem
 *.key
+GitSink.bat
