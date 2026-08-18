@@ -1,6 +1,6 @@
 # Kristal Farms — Documentation & Orchestration Repository
 
-> **Recommended visibility: PRIVATE.** This repository contains internal reference material, preliminary site and hydro screening, economic assumptions, source research, and partner-facing drafts.
+> **Visibility: PUBLIC WORKING REPOSITORY.** Kristal Farms is being developed in the open. This repository intentionally exposes working hypotheses, preliminary screening, research, decisions, caveats and evolving documentation so that the project can be examined, challenged and improved. A file being public does **not** mean that every claim in it is validated or adopted.
 
 ## Project thesis
 
@@ -38,11 +38,12 @@ The underlying project model combines cold-climate renewable power, village-adja
 5. [`CLAIMS_TO_VALIDATE.md`](docs/00-control/CLAIMS_TO_VALIDATE.md) — claims that require engineering, commercial, regulatory, community, or source validation before hard external use.
 6. [`BILINGUAL_MATRIX.md`](docs/00-control/BILINGUAL_MATRIX.md) — EN/FR partner-package pairing.
 7. [`DATA_CATALOG.md`](data/catalog/DATA_CATALOG.md) — structured data inventory.
-8. [`SCOPE_BOUNDARIES.md`](docs/00-control/SCOPE_BOUNDARIES.md) — what the project explicitly includes and excludes.
-9. [`INTERNATIONAL_LEARNING_VISION_EN.md`](docs/10-core/strategy/INTERNATIONAL_LEARNING_VISION_EN.md) / [`VISION_APPRENTISSAGE_INTERNATIONAL_FR.md`](docs/10-core/strategy/VISION_APPRENTISSAGE_INTERNATIONAL_FR.md) — long-term education, skills-circulation and university pathway.
-10. [`HUMAN_DIGNITY_FRAMEWORK_EN.md`](docs/10-core/strategy/HUMAN_DIGNITY_FRAMEWORK_EN.md) / [`CADRE_DIGNITE_HUMAINE_FR.md`](docs/10-core/strategy/CADRE_DIGNITE_HUMAINE_FR.md) — cultural pluralism and individual-rights safeguards.
-11. [`EDUCATION_PROGRAM_GATES_EN.md`](docs/10-core/education/EDUCATION_PROGRAM_GATES_EN.md) / [`JALONS_PROGRAMME_EDUCATION_UNIVERSITE_FR.md`](docs/10-core/education/JALONS_PROGRAMME_EDUCATION_UNIVERSITE_FR.md) — gates from training to potential university status.
-12. [`LANGUAGE_CHARTER_TEMPLATE_EN.md`](docs/10-core/education/LANGUAGE_CHARTER_TEMPLATE_EN.md) / [`GABARIT_CHARTE_LINGUISTIQUE_FR.md`](docs/10-core/education/GABARIT_CHARTE_LINGUISTIQUE_FR.md) — site-level host-language implementation template.
+8. [`PUBLICATION_POLICY.md`](docs/00-control/PUBLICATION_POLICY.md) — public-by-default repository policy and the narrow categories that stay out of Git.
+9. [`SCOPE_BOUNDARIES.md`](docs/00-control/SCOPE_BOUNDARIES.md) — what the project explicitly includes and excludes.
+10. [`INTERNATIONAL_LEARNING_VISION_EN.md`](docs/10-core/strategy/INTERNATIONAL_LEARNING_VISION_EN.md) / [`VISION_APPRENTISSAGE_INTERNATIONAL_FR.md`](docs/10-core/strategy/VISION_APPRENTISSAGE_INTERNATIONAL_FR.md) — long-term education, skills-circulation and university pathway.
+11. [`HUMAN_DIGNITY_FRAMEWORK_EN.md`](docs/10-core/strategy/HUMAN_DIGNITY_FRAMEWORK_EN.md) / [`CADRE_DIGNITE_HUMAINE_FR.md`](docs/10-core/strategy/CADRE_DIGNITE_HUMAINE_FR.md) — cultural pluralism and individual-rights safeguards.
+12. [`EDUCATION_PROGRAM_GATES_EN.md`](docs/10-core/education/EDUCATION_PROGRAM_GATES_EN.md) / [`JALONS_PROGRAMME_EDUCATION_UNIVERSITE_FR.md`](docs/10-core/education/JALONS_PROGRAMME_EDUCATION_UNIVERSITE_FR.md) — gates from training to potential university status.
+13. [`LANGUAGE_CHARTER_TEMPLATE_EN.md`](docs/10-core/education/LANGUAGE_CHARTER_TEMPLATE_EN.md) / [`GABARIT_CHARTE_LINGUISTIQUE_FR.md`](docs/10-core/education/GABARIT_CHARTE_LINGUISTIQUE_FR.md) — site-level host-language implementation template.
 
 ## Repository architecture
 
@@ -58,6 +59,7 @@ The underlying project model combines cold-climate renewable power, village-adja
 ├── data/
 │   ├── raw/                     # Supplied CSV/XLSX datasets, unchanged
 │   └── catalog/                 # Dataset descriptions and controls
+├── public-wiki/                  # Public-facing plain-language GitHub Wiki source
 ├── sources/
 │   ├── originals/               # New supplied originals, preserved
 │   ├── extracted/               # Searchable Markdown extracts of DOCX sources
@@ -87,8 +89,10 @@ Do not promote a source claim directly into a partner document. Route changes th
 4. synchronize EN/FR deliverables;
 5. update the data-room index and changelog.
 
-## Distribution rule
+## Publication rule
 
-Presence in the repository does **not** mean public/shareable. Raw research, internal synthesis, precise site data, economics, and citation-contaminated extracts should remain private or NDA-controlled until explicitly cleared.
+This repository is **public by default**. Drafts, hypotheses, unvalidated calculations and imperfect research may remain visible when their status and limitations are clear. “Not publication-ready” means “do not promote this as an authoritative project claim yet”; it does **not** automatically mean “hide this file.”
 
-No open-source or open-document license is assigned.
+Material should stay **out of the public repository** only when there is a concrete reason, such as credentials/secrets, personal information, legally or contractually restricted third-party material, or operational security details whose disclosure would create a real risk. See [`PUBLICATION_POLICY.md`](docs/00-control/PUBLICATION_POLICY.md).
+
+Public visibility does not by itself grant reuse rights. No open-source or open-document license is assigned yet.

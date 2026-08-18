@@ -1,8 +1,8 @@
 # Content Sanitation / Citation Hygiene
 
-## Publication blockers
+## Promotion blockers, not visibility blockers
 
-The following working files contain non-portable assistant/UI-style citation artifacts and must remain internal until they are re-sourced:
+The following working files contain non-portable assistant/UI-style citation artifacts. They may remain visible in this public working repository for provenance and collaborative cleanup, but they must **not be promoted as authoritative evidence or copied into formal partner, engineering, regulatory or investor claims** until they are re-sourced:
 
 - `docs/30-site-screening/nunavik/Rivieres_littoral_ouest_Nord_quebecois_nord_La_Grande.md`
 - `docs/50-research/Partners_inventory_deep-research-report.md`
@@ -15,7 +15,7 @@ Examples include:
 
 These markers are not stable bibliographic references.
 
-A legacy source under `sources/legacy/` also contains an opaque assistant-era reference. Legacy material is never publication-ready by default.
+A legacy source under `sources/legacy/` also contains an opaque assistant-era reference. Legacy material is never authoritative/publication-ready by default, even when it is publicly visible in the repository.
 
 ## Remediation
 
@@ -31,7 +31,7 @@ For each affected claim:
 
 Searchable Markdown extractions created during this refactor remove `utm_source=chatgpt.com` tracking parameters from normal source URLs. The original supplied DOCX remains preserved unchanged.
 
-## Release scan
+## Formal-release scan
 
 Before release, scan non-legacy material for:
 - `turn[0-9]`;

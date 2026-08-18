@@ -6,3 +6,9 @@ Thumbs.db
 .env
 .venv/
 __pycache__/
+# Local-only restricted material (never commit)
+private/
+restricted/
+secrets/
+*.pem
+*.key

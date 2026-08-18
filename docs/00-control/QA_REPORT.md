@@ -24,18 +24,20 @@
 
 ## Link check
 
-A repository-wide relative Markdown-link check of active root/docs/catalog material checked **103** normal relative links and found **0 missing**.
+A repository-wide relative Markdown-link check of active root/docs/catalog/wiki material checked **137** relative links and found **0 missing**. GitHub Wiki extensionless sidebar links were resolved against their `.md` pages.
 
 The preserved pre-refactor archive contains **10 stale relative links** that point to its historical folder layout. They are intentionally not rewritten because the archive is retained as a snapshot, not active navigation. One legacy source also contains an opaque `file://file_...` style reference inherited from its source environment; it is retained rather than repaired by guessing.
 
-## Publication blockers
+## Publication / promotion status
+
+The repository is **public by default** under `PUBLICATION_POLICY.md`. Working drafts and imperfect research may remain visible when clearly labeled. “Not publication-ready” blocks promotion as authoritative evidence; it does not automatically block repository visibility.
 
 Two working research files contain non-portable assistant/UI citation artifacts:
 
 - `docs/30-site-screening/nunavik/Rivieres_littoral_ouest_Nord_quebecois_nord_La_Grande.md`
 - `docs/50-research/Partners_inventory_deep-research-report.md`
 
-Both are explicitly marked with a publication-blocker warning.
+Both require citation cleanup before their claims are promoted into formal partner, engineering, regulatory or investor materials.
 
 ## Source hygiene
 
@@ -43,9 +45,11 @@ Both are explicitly marked with a publication-blocker warning.
 - Original supplied DOCX sources remain unchanged.
 - No missing sources were invented to repair citation artifacts.
 - Literary/fictional/ethics-demo material is not treated as factual project evidence unless separately promoted through project control.
+- A basic credential/secret-pattern scan of the public working tree found no obvious private keys, GitHub/API tokens, AWS access-key IDs or password assignments.
 
 ## Final repository size
 
-- Files: **178**
-- Size: **47.5 MiB**
+- Files: **199** (including the manifest)
+- Size: **47.6 MiB**
+- Public wiki: **19 Markdown files** under `public-wiki/`
 - Hash manifest: `data/catalog/FILE_MANIFEST.csv`

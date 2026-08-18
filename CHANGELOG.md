@@ -29,4 +29,12 @@
 - Added WS-21 and D-019 through D-022 for education, language, dignity safeguards and international-student mix.
 - Expanded validation controls so university status, credential portability and language models cannot be asserted without evidence and applicable approvals.
 - Added bilingual implementation templates for host-language charters and staged education/university gates.
+## 2026-08-17 — Public-by-default repository policy
+
+- Changed repository visibility doctrine from private/NDA-first to **public working repository**.
+- Added `docs/00-control/PUBLICATION_POLICY.md`.
+- Clarified that “not publication-ready” blocks promotion as an authoritative claim, not public visibility.
+- Restricted exclusions to concrete secrets, privacy, legal/copyright/confidentiality and operational-security reasons.
+- Updated GitHub setup instructions to create a public repository.
+- Integrated `public-wiki/` as the plain-language public entry point.
 

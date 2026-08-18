@@ -1,5 +1,9 @@
 # Contributing
 
+Kristal Farms is developed as a **public working repository**. Contributions, critique, source corrections, validation work and competing hypotheses are welcome when they preserve provenance and clearly distinguish evidence from proposal.
+
+Do not commit secrets, personal information, contractually restricted third-party material, confidential rights-holder information or operational-security details whose disclosure creates a credible risk. See `docs/00-control/PUBLICATION_POLICY.md`.
+
 ## Branching
 
 Use short-lived branches and pull requests. Keep changes scoped to one decision/workstream where practical.

@@ -4,6 +4,7 @@
 
 - [Strategic Principles — v3](STRATEGIC_PRINCIPLES.md)
 - [Scope Boundaries — v3](SCOPE_BOUNDARIES.md)
+- [Publication Policy — Public by Default](PUBLICATION_POLICY.md)
 - [Project State](PROJECT_STATE.md)
 - [Release Status](RELEASE_STATUS.md)
 - [Decisions Required](DECISIONS_REQUIRED.md)

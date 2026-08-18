@@ -6,14 +6,14 @@
 
 | Layer | Status | External use |
 |---|---|---|
-| v3 Strategic Principles | **Current control** | Internal; can inform external drafting, not a released brochure |
-| v3 Platform Vision EN/FR | **Current matched strategic narrative** | Controlled/internal or NDA until claims/share policy approved |
-| v3 Working Partner Overview EN/FR | **Current draft matched pair** | Candidate for partner review after decision/claim gate; no formatted release yet |
+| v3 Strategic Principles | **Current control** | Public working control; not a final brochure or engineering approval |
+| v3 Platform Vision EN/FR | **Current matched strategic narrative** | Public working narrative; claims remain subject to validation status |
+| v3 Working Partner Overview EN/FR | **Current draft matched pair** | Public draft; candidate for formal partner release after decision/claim gate |
 | v2 Working Partner Overview EN/FR | **Superseded working draft** | Retained for traceability; do not present as current |
 | v1 Numbered Partner Markdown 00–14 | **Complete v1 package** | Existing Nain/Labrador narrative; not v3 synchronized |
 | v1 EN/FR PDFs + FR logo DOCX | **Complete formatted v1 deliverables** | Do not present as v3 |
-| Site/hydro/economic research | **Working evidence** | Selective/NDA only; validate currentness and citations |
-| Precise maps / future fibre / security site data | **Sensitive** | Private unless explicitly cleared |
+| Site/hydro/economic research | **Working evidence** | Public working evidence unless a specific legal/security restriction applies; validate currentness and citations |
+| Site/maps/future fibre concepts | **Working / mixed sensitivity** | Public by default; exclude only genuine operational-security, confidential or restricted details |
 | Mine/brownfield strategy | **Hypothesis/research track** | Do not present candidate/site feasibility until studied |
 | Subsea-fibre / northern fibre crown | **Hypothesis/research track** | Do not imply route, landing, carrier or permit certainty |
 | Future AI platform demand | **Market hypothesis** | Use qualitative opportunity language only until market work is complete |
@@ -34,4 +34,4 @@ A v3 partner release requires:
 
 ## Current recommendation
 
-Use the v3 platform vision and v3 working partner overview for **controlled strategic discussion**, while using the v1 numbered package only as supporting Nain/Labrador material with an explicit version note.
+Use the v3 platform vision and v3 working partner overview as the **public working strategic narrative**, while using the v1 numbered package only as supporting Nain/Labrador material with an explicit version note. Formal partner, investor, regulatory or engineering claims still pass the applicable decision and validation gates.

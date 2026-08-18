@@ -1,0 +1,18 @@
+**Kristal Farms — Wiki public**
+
+- [Accueil](Home)
+- [Le concept en une minute](Le-concept-en-une-minute)
+- [Pourquoi le Nord?](Pourquoi-le-Nord)
+- [Énergie locale et rivières](Energie-locale-et-rivieres)
+- [Calcul sécurisé et données](Calcul-securise-et-donnees)
+- [Fibre et connectivité](Fibre-et-connectivite)
+- [Chaleur et infrastructures locales](Chaleur-et-infrastructures-locales)
+- [Environnement et empreinte](Environnement-et-empreinte)
+- [Déploiement progressif](Deploiement-progressif)
+- [Communautés, langues et dignité](Communautes-langues-et-dignite)
+- [Éducation et universités](Education-et-universites-internationales)
+- [Sites et architectures](Sites-et-architectures)
+- [Vision à long terme](Vision-a-long-terme)
+- [Ce qui reste à valider](Ce-qui-reste-a-valider)
+- [Questions fréquentes](Questions-frequentes)
+- [Glossaire](Glossaire)
