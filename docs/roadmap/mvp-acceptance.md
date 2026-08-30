@@ -29,6 +29,6 @@ A professional can verify that:
 - public layers load from a scalable static/tile path;
 - core data is not embedded in frontend constants;
 - policy validation blocks ranking violations;
-- Pass 8 import has repeatable QA;
+- current fixture/data imports have repeatable QA;
 - public/private publication checks exist;
 - critical Showcase flows support reduced motion.

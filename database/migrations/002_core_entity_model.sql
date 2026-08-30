@@ -26,7 +26,7 @@ CREATE INDEX IF NOT EXISTS core_asset_geom_gix ON core.asset USING gist (geometr
 
 CREATE TABLE IF NOT EXISTS core.project (
   entity_id uuid PRIMARY KEY REFERENCES core.entity(id) ON DELETE CASCADE,
-  project_type text NOT NULL, role text NOT NULL CHECK (role IN ('external_reference','kristal_candidate','kristal_project')),
+  project_type text NOT NULL, role text NOT NULL CHECK (role IN ('external_reference','kristal_farms_candidate','kristal_farms_project')),
   project_status text, geometry geometry(Geometry,4326), developer text, operator text, technology text, capacity_mw numeric,
   metadata jsonb NOT NULL DEFAULT '{}'::jsonb
 );
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS core.corridor (
 );
 CREATE INDEX IF NOT EXISTS core_corridor_geom_gix ON core.corridor USING gist (geometry);
 
--- Pass 11 refinement required by Hydro Resource Atlas. Rivers, watersheds and reaches are natural features, not projects.
+-- Hydro Resource Atlas refinement: rivers, watersheds and reaches are natural features, not projects.
 CREATE TABLE IF NOT EXISTS core.natural_feature (
   entity_id uuid PRIMARY KEY REFERENCES core.entity(id) ON DELETE CASCADE,
   feature_type text NOT NULL CHECK (feature_type IN ('river','watershed','river_reach','lake','coastline','other')),

@@ -1,6 +1,6 @@
 # ADR-009 — Natural features for hydrology
 
-**Status:** Accepted for Pass 11 foundation
+**Status:** Accepted
 
 ## Context
 
@@ -14,4 +14,4 @@ A WSC hydrometric station is a `core.asset`; the river it monitors is a `core.na
 
 ## Consequence
 
-Pass 9–10 can migrate without turning station points into river geometry or projects. Future accepted WSC/GRHQ/Canada1Water geometry can attach to the natural feature without changing its canonical ID.
+Historical hydro research can be migrated without turning station points into river geometry or projects. Future accepted WSC/GRHQ/Canada1Water geometry can attach to the natural feature without changing its canonical ID.

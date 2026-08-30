@@ -22,7 +22,7 @@ Do not pin versions in this document; pin them in repository toolchain files so 
 2. copy documented local environment template
 3. start PostGIS and supporting services
 4. run database migrations
-5. load fixtures / Pass 8 development dataset
+5. load `data/fixtures/current` or another explicitly selected development dataset
 6. start API services
 7. start Web application
 8. run health and QA checks

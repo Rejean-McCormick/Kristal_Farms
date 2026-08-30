@@ -2,7 +2,7 @@
 
 ## Purpose
 
-QGIS is the professional desktop GIS interface for authorized analysis and editing against the same canonical PostGIS data used by the Web platform.
+QGIS is the professional desktop GIS interface for authorized analysis and editing against the same canonical PostGIS data used by the Kristal Farms Web application.
 
 ## Access model
 

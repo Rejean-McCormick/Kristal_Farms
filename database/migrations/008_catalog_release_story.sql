@@ -1,4 +1,4 @@
--- Pass 13: data-driven catalog, releases and showcase stories.
+-- Data-driven catalog, releases and showcase stories.
 CREATE TABLE IF NOT EXISTS system.release (
   id uuid PRIMARY KEY,
   release_key text NOT NULL UNIQUE,

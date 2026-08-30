@@ -5,7 +5,7 @@
 
 ## Context
 
-The platform must scale beyond static GeoJSON, support GIS professionals, preserve relationships/provenance, and serve multiple interfaces.
+The application and data system must scale beyond static GeoJSON, support GIS professionals, preserve relationships/provenance, and serve multiple interfaces.
 
 ## Decision
 

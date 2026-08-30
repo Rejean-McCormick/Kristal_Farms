@@ -1,4 +1,4 @@
--- Pass 12: time-series provenance and derivation model.
+-- Time-series provenance and derivation model.
 CREATE TABLE IF NOT EXISTS research.observation_series (
   id uuid PRIMARY KEY,
   subject_id uuid NOT NULL REFERENCES core.entity(id) ON DELETE CASCADE,

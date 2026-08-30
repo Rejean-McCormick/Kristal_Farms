@@ -1,6 +1,6 @@
 # Accessibility
 
-The visual impact of the platform must not depend on excluding keyboard, low-vision, or screen-reader users.
+The visual impact of the application must not depend on excluding keyboard, low-vision, or screen-reader users.
 
 ## Requirements
 

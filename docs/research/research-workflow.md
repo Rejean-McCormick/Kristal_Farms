@@ -2,7 +2,7 @@
 
 ## Objective
 
-Move from external information to traceable platform evidence without losing source scope, uncertainty, or superseded states.
+Move from external information to traceable Kristal Farms evidence without losing source scope, uncertainty, or superseded states.
 
 ## Workflow
 

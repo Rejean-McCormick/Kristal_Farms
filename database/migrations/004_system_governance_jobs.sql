@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS system.governance_state (
   effective_from date NOT NULL, metadata jsonb NOT NULL DEFAULT '{}'::jsonb
 );
 INSERT INTO system.governance_state(singleton,screening_mode,ranking_allowed,effective_from,metadata)
-VALUES (true,'unranked',false,DATE '2026-08-30','{"source":"Kristal platform architecture v0.1"}'::jsonb)
+VALUES (true,'unranked',false,DATE '2026-08-30','{"source":"Kristal Farms application architecture v0.1"}'::jsonb)
 ON CONFLICT(singleton) DO UPDATE SET screening_mode=EXCLUDED.screening_mode, ranking_allowed=EXCLUDED.ranking_allowed, effective_from=EXCLUDED.effective_from, metadata=EXCLUDED.metadata;
 
 CREATE TABLE IF NOT EXISTS system.metric_registry (

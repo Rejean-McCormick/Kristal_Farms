@@ -12,7 +12,7 @@ class EntityType(str,Enum):
 class EvidenceStatus(str,Enum):
     verified='verified'; supported='supported'; scoped='scoped'; unverified='unverified'; conflicting='conflicting'; unknown='unknown'
 class ProjectRole(str,Enum):
-    external_reference='external_reference'; kristal_candidate='kristal_candidate'; kristal_project='kristal_project'
+    external_reference='external_reference'; kristal_farms_candidate='kristal_farms_candidate'; kristal_farms_project='kristal_farms_project'
 class SourceType(str,Enum):
     user_input='user_input'; engineering_assumption='engineering_assumption'; derived='derived'; evidence='evidence'; default='default'
 

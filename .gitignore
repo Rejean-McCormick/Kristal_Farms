@@ -1,8 +1,33 @@
+# OS / editor
 .DS_Store
 Thumbs.db
 ~$*.docx
 *.tmp
 *.swp
+
+# Secrets / local environments
 .env
+.env.*
+!.env.example
 .venv/
+venv/
+
+# Python
 __pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+coverage/
+
+# Documentation builds
+site/
+
+# IDE
+.vscode/
+.idea/

@@ -1,140 +1,63 @@
-# Strategic Principles — v3
+# Strategic Principles
 
-**Status:** Control framing for the repository  
-**Effective:** 2026-08-17  
-**Purpose:** Define the project thesis without turning unvalidated strategic hypotheses into engineering, environmental, commercial, or market facts.
+**Status:** Current project-control framing.
+**Purpose:** Define Kristal Farms clearly without promoting hypotheses into facts.
 
-## 1. Master thesis
+## 1. Bring the load to the energy
 
-Kristal Farms is a **cold-climate distributed compute infrastructure model** designed to place modular compute close to renewable energy that is local, remote, constrained, or costly to export electrically.
+Kristal Farms studies whether flexible compute can be located close to remote renewable generation so that digital value moves by fibre instead of requiring every unit of electricity to travel through long new road and high-voltage export corridors.
 
-The model seeks to:
+This inversion is the core project thesis.
 
-1. **consume renewable power locally** rather than defaulting to long-distance electricity transmission;
-2. **export digital value by fibre** in the form of compute services and results;
-3. **reuse server heat locally** before storage or rejection;
-4. operate in **cold-climate, low-impact or previously disturbed locations** where siting can reduce unnecessary new disturbance;
-5. create a **clear security boundary** between the infrastructure host and tenant data through black-box tenancy and optional higher-assurance configurations;
-6. deploy in **modular, reversible stages** aligned with community process, infrastructure readiness, heat sinks, fibre, environmental constraints and economics;
-7. build a **repeatable northern infrastructure capability** rather than a single isolated data-centre project.
+## 2. Roads and long HV corridors are part of the resource-access problem
 
-## 2. The inversion at the centre of the model
+The structural value proposition is not merely cheap electricity. Some northern hydro resources are difficult to develop because their delivery infrastructure can dominate project complexity. Kristal Farms therefore compares the full enabling infrastructure required by two architectures:
 
-Conventional remote-energy development often asks:
+- remote generation → long road/HV export → distant load;
+- remote generation → local flexible compute → fibre export.
 
-> How do we transport electricity from a remote resource to an existing load centre?
+The second architecture is not assumed to win universally. It must be tested corridor by corridor.
 
-Kristal Farms asks:
+## 3. Community priority is non-negotiable
 
-> Can we bring a transportable digital load to the renewable resource, use the energy locally, then move the value over fibre?
+Existing northern community grids are protected infrastructure, not assumed multi-megawatt compute supplies. In modeled systems, community and critical demand are served before flexible compute.
 
-This inversion is the strategic core of the project.
+## 4. New generation and compute scale together
 
-## 3. Resource valorization thesis
+A multi-megawatt Kristal Farms node requires its own sourced generation and electrical architecture. Planning margin, unused nameplate capacity or a map marker must never be converted into hosting capacity by implication.
 
-The project should investigate whether rivers, coastal renewable resources, and other energy assets that appear difficult to monetize because of distance from major grids can become economically useful when paired with modular compute.
+## 5. Siting remains open
 
-This is a **resource-access thesis**, not a blanket claim that every remote river should be developed. Candidate resources must pass hydrology, rights, environmental, community, construction, fibre, heat-use and economic gates.
+Compute may be generation-side, community/port-side or split. The choice is determined by site evidence: electrical distance, fibre, logistics, maintenance, environment, security, heat value and community preference.
 
-## 4. Environmental footprint thesis
+## 6. Fibre is the primary digital-value corridor
 
-Kristal Farms should compare a local-consumption architecture against realistic alternatives, including long transmission corridors, using a full lifecycle and site-specific methodology.
+Fibre route, capacity, redundancy, landing, provider, repair model and SLA are project evidence requirements. A conceptual line on a map is not a confirmed route.
 
-The working hypothesis is that some sites may reduce land disturbance, corridor clearing, new substations, line losses, construction logistics and other impacts by avoiding long-distance electrical export. This must be demonstrated per site; the repository must not state that Kristal Farms is categorically lower-impact than a transmission project without a documented comparison basis.
+## 7. Heat is optional value
 
-Preferred siting principles include:
+Server heat is a co-product. It should be recovered when there is a technically and economically credible use, not treated as a universal requirement that dictates every site layout.
 
-- existing or previously disturbed industrial/port land where practical;
-- compact modular yards;
-- no unnecessary long HV corridors;
-- non-contact cooling interfaces;
-- near-zero consumptive cooling-water design where feasible;
-- heat reuse before rejection;
-- reversibility and restoration planning;
-- explicit ecological, cultural and community screening.
+## 8. Marine logistics can replace part of the road burden
 
-## 5. Fibre as the export infrastructure
+Where geography supports it, ports and sealift can carry heavy equipment, containers, workers, parts and community freight. Port presence is not proof of heavy-lift capability; facility-specific evidence is required.
 
-Fibre is not a secondary utility in the model. It is the **export corridor for digital value**.
+## 9. Shared interfaces, separate authority
 
-Coastal sites may create a strategic opportunity to evaluate:
+The project should standardize physical and commercial interfaces while avoiding unnecessary concentration of control. Tenant digital sovereignty, community decision rights and infrastructure ownership/governance should remain separable.
 
-- direct connection to terrestrial backbone fibre;
-- marine landing points;
-- subsea or coastal fibre routes;
-- route diversity and ring architectures;
-- protected connectivity between multiple northern compute nodes.
+## 10. Evidence before ranking
 
-No route, landing right, seabed permission, capacity, latency or cost assumption is considered validated until supported by telecom, marine, regulatory, rights-holder and engineering evidence.
+The system distinguishes facts, observations, derived values, assumptions and unknowns. Evidence completeness is not site quality. Ranking remains disabled until methodology and governance explicitly authorize it.
 
-## 6. Data-security model
+## 11. Pilot for learning, then replicate
 
-Kristal Farms treats infrastructure security and tenant-data confidentiality as separate layers.
+The development loop is:
 
-The baseline **black-box tenancy** model means the host manages physical services — power, cooling, fibre handoff, physical security, metering, alarms and infrastructure health — without access to tenant applications, models, datasets, logs or packet payloads.
+> **design/build → operate → measure → correct → standardize → replicate/scale**
 
-The platform should also study higher-assurance site variants, including:
+The pilot proves architecture and operating methods; it does not need to prove every long-term vision component.
 
-- confidential-computing / attestation options;
-- physically isolated network and power zones;
-- controlled-access brownfield industrial facilities;
-- deep or decommissioned mine infrastructure where technically, legally, environmentally and economically suitable.
+## 12. Long-term network logic
 
-Deep-mine use is an **exploratory secure-infrastructure hypothesis**, not part of the baseline village heat-reuse architecture.
-
-## 7. Harmonious integration
-
-Deployment must be designed as an integration process, not as an infrastructure imposition.
-
-The working program sequence may include:
-
-**local skills and engagement → enabling energy / construction infrastructure → site preparation → fibre and monitoring → renewable generation integration → modular compute → heat recovery → measured expansion**
-
-The exact sequence can vary by site. Coastal wind may be a bootstrap option at some locations; hydro may be the primary anchor at others.
-
-## 8. Northern compute platform thesis
-
-The long-term vision is to test whether Québec and Labrador can develop a **distributed northern compute platform** built around renewable energy, cold climate, fibre, modular construction, physical-security options, local heat value and specialized northern engineering expertise.
-
-The platform concept may eventually include:
-
-- a portfolio of renewable-energy sites rather than one campus;
-- a resilient fibre backbone or "northern fibre crown" linking selected nodes;
-- differentiated site classes for community-integrated compute, secure/brownfield compute, and larger regional campuses;
-- local and regional operating expertise for construction and maintenance in cold, coastal and remote conditions;
-- capacity suitable for increasingly power-intensive AI workloads, subject to demonstrated demand, grid/resource availability, fibre and economics.
-
-This is a **strategic direction**. Claims about future AI demand, Québec/Labrador market share or regional hosting capacity require external market and infrastructure validation.
-
-## 9. Human infrastructure and welcoming communities
-
-If the platform creates durable value, Kristal Farms may study how that economic base can support higher-quality northern housing, health, education, food, culture, recreation and indoor civic infrastructure. A longer-term concept is a voluntary mosaic of culturally distinct communities, including lawful newcomer communities, designed around autonomy, portability, freedom of movement, host-community consent and non-displacement.
-
-The concept is governed by [`HUMAN_INFRASTRUCTURE_VISION_EN.md`](../10-core/strategy/HUMAN_INFRASTRUCTURE_VISION_EN.md) and [`VISION_INFRASTRUCTURE_HUMAINE_FR.md`](../10-core/strategy/VISION_INFRASTRUCTURE_HUMAINE_FR.md). It is not an immigration commitment and does not itself confer legal status.
-
-
-## 10. International learning, research and skills circulation
-
-The platform may develop an education layer that turns real northern infrastructure capability into transferable knowledge. The intended progression is **technical training → applied research partnerships → visiting-student/research programs → recognized joint credentials → potential accredited university structures**, only as governance and accreditation allow.
-
-A portion of learners may be international and may come for defined periods specifically to acquire skills and return to their home communities or countries. The strategic objective is circulation of capability rather than forced retention.
-
-Host peoples' languages should, where the host people so choose and to the maximum extent permitted by applicable law, hold official local institutional standing and primacy in project-controlled community/cultural life, with translation and additional working languages supporting international science and exchange. Cultural autonomy, rites and customs operate inside the Human Dignity Framework: community identity is protected without removing individual consent, equality, safety, freedom of conscience, privacy, independent remedy or freedom to leave.
-
-See the matched international-learning vision and Human Dignity Framework in `docs/10-core/strategy/`.
-
-## 11. Territorial-political scope boundary
-
-Kristal Farms does **not** pursue or depend on separatism, sovereignty claims, border revision, territorial occupation strategies or internationalization of Labrador as a jurisdictional objective. Site development is assumed to occur within applicable existing legal, regulatory, rights-holder and community-consent frameworks.
-
-See [`SCOPE_BOUNDARIES.md`](SCOPE_BOUNDARIES.md).
-
-## 12. Communication principle
-
-The phrase **"illuminate the brain"** may be used as an internal or creative narrative device for the idea of turning Québec's northern renewable-resource geography into a connected computational layer. It is not a technical claim and should not replace precise project language in engineering, regulatory, community or investment documents.
-
-## 13. Non-negotiable repository discipline
-
-A strategic idea becomes an external claim only after it is routed through:
-
-**source/evidence → validation → decision → architecture/economics → community/environment review → partner narrative → bilingual release**.
+If individual nodes prove viable, they may form a chain of hydro/compute/fibre/port nodes across northern Québec and Labrador, with marine logistics and fibre as primary corridors and shorter electrical interties where they improve resilience.

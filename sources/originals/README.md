@@ -1,13 +1,13 @@
 # Original Supplied Sources
 
-Original analysis/source DOCX files from the 2026-08-17 source drop are preserved under `new-2026-08-17/analysis/`.
+Original supplied files are preserved here for provenance and reprocessing. Their presence does **not** make their claims current project direction or validated evidence.
 
-French partner DOCX-with-logo files are original formatted deliverables and are stored once under:
+The active repository separates:
 
-`docs/20-partner-package/fr/docx-logo/`
+- original source files under `sources/originals/`;
+- structured source/evidence records under `data/fixtures/current/` and the operational database model;
+- current project-direction records under `sources/owner-direction/`;
+- superseded extracts, old partner material and historical research under `archive/`;
+- raw machine-readable datasets under `data/raw/` where appropriate.
 
-Raw CSV/XLSX files are stored once under:
-
-`data/raw/`
-
-The repository avoids duplicate binary copies where a file already has a clear operational home.
+Do not copy an old source narrative into active documentation without checking its scope, date, terminology and current authority.

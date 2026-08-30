@@ -1,0 +1,631 @@
+{
+  "type": "FeatureCollection",
+  "name": "hydrometric_stations_public",
+  "version": "2026.08.30",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "c8781e4e-6bdb-5606-9617-5cb71e05e6bc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71361111,
+          50.42722222
+        ]
+      },
+      "properties": {
+        "entity_id": "c8781e4e-6bdb-5606-9617-5cb71e05e6bc",
+        "canonical_key": "asset:wsc-station:02wb003",
+        "station_number": "02WB003",
+        "name": "02WB003 — Natashquan River / Rivière Natashquan",
+        "river_entity_id": "1ad5acab-f39d-5970-bfd9-55131e3e9fd4",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "region": "Côte-Nord / Minganie",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 15400,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bbd890d3-73ce-560e-87a0-865f90b75995",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.59916667,
+          50.70194444
+        ]
+      },
+      "properties": {
+        "entity_id": "bbd890d3-73ce-560e-87a0-865f90b75995",
+        "canonical_key": "asset:wsc-station:02xa006",
+        "station_number": "02XA006",
+        "name": "02XA006 — Petit Mécatina River / Rivière du Petit Mécatina",
+        "river_entity_id": "a60e91f7-1640-50dd-9f4e-337c9e25ebea",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "region": "Basse-Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 19200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2c7f1403-3378-5bf0-b49e-9dd0d67094ac",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7025,
+          51.6125
+        ]
+      },
+      "properties": {
+        "entity_id": "2c7f1403-3378-5bf0-b49e-9dd0d67094ac",
+        "canonical_key": "asset:wsc-station:02xb001",
+        "station_number": "02XB001",
+        "name": "02XB001 — Saint-Augustin River / Rivière Saint-Augustin",
+        "river_entity_id": "3d678c66-4b9a-57b3-8c15-53bd89fd3439",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "region": "Basse-Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 5770,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ea9a772c-3c6e-50fa-bda6-5e3d771df0f4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.6,
+          51.7725
+        ]
+      },
+      "properties": {
+        "entity_id": "ea9a772c-3c6e-50fa-bda6-5e3d771df0f4",
+        "canonical_key": "asset:wsc-station:02xc001",
+        "station_number": "02XC001",
+        "name": "02XC001 — Saint-Paul River / Rivière Saint-Paul",
+        "river_entity_id": "46cef33c-e524-5787-8dc3-a0b124e36865",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "region": "Basse-Côte-Nord",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 5510,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4d9fe3ea-f3a3-5ab0-b8f4-844c6878ebea",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.99083333,
+          50.38361111
+        ]
+      },
+      "properties": {
+        "entity_id": "4d9fe3ea-f3a3-5ab0-b8f4-844c6878ebea",
+        "canonical_key": "asset:wsc-station:02wc001",
+        "station_number": "02WC001",
+        "name": "02WC001 — Etamamiou River / Rivière Etamamiou",
+        "river_entity_id": "324fd842-e1c0-5cd5-bcbe-1ad6e61244b1",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "region": "Basse-Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 2930,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "c2515397-3ab5-5530-ba5e-94282a4a9c63",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.44694444,
+          50.39666667
+        ]
+      },
+      "properties": {
+        "entity_id": "c2515397-3ab5-5530-ba5e-94282a4a9c63",
+        "canonical_key": "asset:wsc-station:02wc002",
+        "station_number": "02WC002",
+        "name": "02WC002 — Olomane River / Rivière Olomane",
+        "river_entity_id": "8c39de66-6b4c-51d2-b628-1b6b12172bf4",
+        "river_name": "Olomane River / Rivière Olomane",
+        "region": "Basse-Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 5250,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "601ca63c-eb29-5aba-b516-6e847f396ea1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1175,
+          50.2475
+        ]
+      },
+      "properties": {
+        "entity_id": "601ca63c-eb29-5aba-b516-6e847f396ea1",
+        "canonical_key": "asset:wsc-station:02wa002",
+        "station_number": "02WA002",
+        "name": "02WA002 — Aguanus River / Rivière Aguanus",
+        "river_entity_id": "44da1d1d-0c41-56dc-8dcc-3c33155e42cb",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "region": "Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 5610,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "19ea269a-e647-59ca-ae11-32fea4844c42",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.21222222,
+          50.25305556
+        ]
+      },
+      "properties": {
+        "entity_id": "19ea269a-e647-59ca-ae11-32fea4844c42",
+        "canonical_key": "asset:wsc-station:02wa001",
+        "station_number": "02WA001",
+        "name": "02WA001 — Nabisipi River / Rivière Nabisipi",
+        "river_entity_id": "454ba21c-f16c-51a4-b0d7-35ca6d0eb5ff",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "region": "Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 2100,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "d9668c74-dab6-5f03-9c6e-2b1d2c597ec4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.42583333,
+          50.3775
+        ]
+      },
+      "properties": {
+        "entity_id": "d9668c74-dab6-5f03-9c6e-2b1d2c597ec4",
+        "canonical_key": "asset:wsc-station:02vb003",
+        "station_number": "02VB003",
+        "name": "02VB003 — Magpie River / Rivière Magpie",
+        "river_entity_id": "cedabc62-52aa-544d-8845-690af765f5d8",
+        "river_name": "Magpie River / Rivière Magpie",
+        "region": "Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 7570,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "91822d01-067e-599d-8e69-c48761492af9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.71833333,
+          51.76722222
+        ]
+      },
+      "properties": {
+        "entity_id": "91822d01-067e-599d-8e69-c48761492af9",
+        "canonical_key": "asset:wsc-station:02vc002",
+        "station_number": "02VC002",
+        "name": "02VC002 — Romaine River / Rivière Romaine",
+        "river_entity_id": "759d3e76-ed93-5a82-8a53-b52e1f737ef3",
+        "river_name": "Romaine River / Rivière Romaine",
+        "region": "Côte-Nord",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 6700,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fab18acc-fc67-5f21-935c-4e366cc32ed1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.20833333,
+          56.86111111
+        ]
+      },
+      "properties": {
+        "entity_id": "fab18acc-fc67-5f21-935c-4e366cc32ed1",
+        "canonical_key": "asset:wsc-station:03fa002",
+        "station_number": "03FA002",
+        "name": "03FA002 — Nastapoka River / Rivière Nastapoka",
+        "river_entity_id": "b09345fd-ae35-55bd-9188-bff76087eeb0",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "region": "Nunavik / Hudson Bay",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 13000,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "586ff527-9914-5636-8929-f518b746ddd1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96611111,
+          58.50833333
+        ]
+      },
+      "properties": {
+        "entity_id": "586ff527-9914-5636-8929-f518b746ddd1",
+        "canonical_key": "asset:wsc-station:03gb001",
+        "station_number": "03GB001",
+        "name": "03GB001 — Innuksuac River / Rivière Innuksuac",
+        "river_entity_id": "15613e33-b32e-5705-adaa-25cc0720bc9d",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "region": "Nunavik / Hudson Bay",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 11500,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "8733780f-6129-58a6-bb63-b540b05e2e89",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.24472222,
+          59.56666667
+        ]
+      },
+      "properties": {
+        "entity_id": "8733780f-6129-58a6-bb63-b540b05e2e89",
+        "canonical_key": "asset:wsc-station:03gc001",
+        "station_number": "03GC001",
+        "name": "03GC001 — Kogaluc River / Rivière Kogaluc",
+        "river_entity_id": "d9cb4c85-3ee4-55b7-955e-0965323ebfbb",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "region": "Nunavik / Hudson Bay",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 12200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "d76b30a7-1649-5a24-a182-29d9344c2fce",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13055556,
+          60.06666667
+        ]
+      },
+      "properties": {
+        "entity_id": "d76b30a7-1649-5a24-a182-29d9344c2fce",
+        "canonical_key": "asset:wsc-station:03ha003",
+        "station_number": "03HA003",
+        "name": "03HA003 — Arnaud River / Rivière Arnaud (Payne)",
+        "river_entity_id": "8bc80e2a-61c8-5155-ade4-07c94275ae05",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "region": "Nunavik / Ungava Bay",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 42200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "98feb142-f058-5b80-b337-1ce309282ab9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.42055556,
+          58.64027778
+        ]
+      },
+      "properties": {
+        "entity_id": "98feb142-f058-5b80-b337-1ce309282ab9",
+        "canonical_key": "asset:wsc-station:03jb001",
+        "station_number": "03JB001",
+        "name": "03JB001 — Leaf River / Rivière aux Feuilles",
+        "river_entity_id": "dd7de1f3-ed11-5a59-b91c-abbefbea0cf3",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "region": "Nunavik / Ungava Bay",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 40200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "36891671-423d-5593-b3de-2272a8e71702",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.59083333,
+          57.68694444
+        ]
+      },
+      "properties": {
+        "entity_id": "36891671-423d-5593-b3de-2272a8e71702",
+        "canonical_key": "asset:wsc-station:03kc004",
+        "station_number": "03KC004",
+        "name": "03KC004 — Aux Mélèzes River / Rivière aux Mélèzes",
+        "river_entity_id": "7ef13c93-0a6f-540f-afc1-0cea57498a07",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "region": "Nunavik / Koksoak system",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 41200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "d9573e89-b21c-5743-b1ef-10d8313fe14d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.58333333,
+          57.88333333
+        ]
+      },
+      "properties": {
+        "entity_id": "d9573e89-b21c-5743-b1ef-10d8313fe14d",
+        "canonical_key": "asset:wsc-station:03mb002",
+        "station_number": "03MB002",
+        "name": "03MB002 — Great Whale River / Grande rivière de la Baleine",
+        "river_entity_id": "965013b9-9884-54ac-981f-fd0caa2cff1a",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "region": "Nunavik / Hudson Bay",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 29700,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "29c7dbbb-0b1c-594d-b893-95966cd17c65",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.84361111,
+          58.15472222
+        ]
+      },
+      "properties": {
+        "entity_id": "29c7dbbb-0b1c-594d-b893-95966cd17c65",
+        "canonical_key": "asset:wsc-station:03me002",
+        "station_number": "03ME002",
+        "name": "03ME002 — George River / Rivière George",
+        "river_entity_id": "d6352b82-b00e-5b90-8fc3-b93112c101d5",
+        "river_name": "George River / Rivière George",
+        "region": "Nunavik / Labrador peninsula",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 35200,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ee02edd8-d0d2-5a47-9081-cda9f2235676",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.30166667,
+          55.23388889
+        ]
+      },
+      "properties": {
+        "entity_id": "ee02edd8-d0d2-5a47-9081-cda9f2235676",
+        "canonical_key": "asset:wsc-station:03nf001",
+        "station_number": "03NF001",
+        "name": "03NF001 — Ugjoktok River",
+        "river_entity_id": "c6b3034e-210e-5566-b5a2-4955e6adf302",
+        "river_name": "Ugjoktok River",
+        "region": "North Labrador",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 7550,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "add4bf24-ed61-5cdf-b827-038ab1833746",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97722222,
+          54.62361111
+        ]
+      },
+      "properties": {
+        "entity_id": "add4bf24-ed61-5cdf-b827-038ab1833746",
+        "canonical_key": "asset:wsc-station:03ng001",
+        "station_number": "03NG001",
+        "name": "03NG001 — Kanairiktok River",
+        "river_entity_id": "f7b20362-acc7-5606-844f-dc971d13977e",
+        "river_name": "Kanairiktok River",
+        "region": "North / central Labrador",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 8910,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "d3d5217a-88f0-5915-a821-721e67d8d846",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.42666667,
+          54.13166667
+        ]
+      },
+      "properties": {
+        "entity_id": "d3d5217a-88f0-5915-a821-721e67d8d846",
+        "canonical_key": "asset:wsc-station:03pb002",
+        "station_number": "03PB002",
+        "name": "03PB002 — Naskaupi River",
+        "river_entity_id": "95b3136f-9a3c-5b76-ad7b-f046e4164e9a",
+        "river_name": "Naskaupi River",
+        "region": "Lake Melville / central Labrador",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 4300,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "641e26a5-e91c-5901-8f61-0fc6c0951663",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18166667,
+          52.61583333
+        ]
+      },
+      "properties": {
+        "entity_id": "641e26a5-e91c-5901-8f61-0fc6c0951663",
+        "canonical_key": "asset:wsc-station:03oe002",
+        "station_number": "03OE002",
+        "name": "03OE002 — Minipi River",
+        "river_entity_id": "e46c125d-14b6-5fb4-aeb9-deeecafcca0b",
+        "river_name": "Minipi River",
+        "region": "Central / southeast Labrador",
+        "status": "discontinued",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 2330,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "b08eca46-0f99-575c-b842-d4e83fe8cd30",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.49361111,
+          53.53416667
+        ]
+      },
+      "properties": {
+        "entity_id": "b08eca46-0f99-575c-b842-d4e83fe8cd30",
+        "canonical_key": "asset:wsc-station:03qc001",
+        "station_number": "03QC001",
+        "name": "03QC001 — Eagle River",
+        "river_entity_id": "c8e8cf1c-0c8a-502b-939f-7bceb953ecfa",
+        "river_name": "Eagle River",
+        "region": "Southeast Labrador",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 10800,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ec789c7c-9661-5c7b-96de-7a44ad6535a3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.87111111,
+          52.64861111
+        ]
+      },
+      "properties": {
+        "entity_id": "ec789c7c-9661-5c7b-96de-7a44ad6535a3",
+        "canonical_key": "asset:wsc-station:03qc002",
+        "station_number": "03QC002",
+        "name": "03QC002 — Alexis River",
+        "river_entity_id": "ac33ba3a-cf18-5cb4-9f1a-46272d8f6f1e",
+        "river_name": "Alexis River",
+        "region": "Southeast Labrador",
+        "status": "active",
+        "evidence_status": "verified_station_metadata",
+        "gross_drainage_area_km2": 2310,
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "geometry_role": "official_hydrometric_station_position"
+      }
+    }
+  ]
+}

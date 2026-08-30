@@ -1,4 +1,4 @@
--- Pass 11 foundation
+-- Kristal Farms schema foundation
 CREATE EXTENSION IF NOT EXISTS postgis;
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 

@@ -1,0 +1,27 @@
+{
+  "release_id": "2026.08.30",
+  "generated_at": "2026-08-30",
+  "immutable": true,
+  "screening_mode": "unranked",
+  "ranking_allowed": false,
+  "public_outputs": [
+    "communities_public.geojson",
+    "community_context_public.json",
+    "economic_benchmarks_public.json",
+    "economic_frontier_cases_public.csv",
+    "economic_frontier_cases_recomputed.csv",
+    "economic_frontier_summary_public.json",
+    "entity_search_public.json",
+    "evidence_panel_summary_public.json",
+    "external_reference_energy_public.json",
+    "hydro_evidence_matrix_public.json",
+    "hydrometric_stations_public.geojson"
+  ],
+  "semantics": [
+    "community and critical loads have priority over flexible compute",
+    "planning margin is not validated compute hosting capacity",
+    "economic frontiers are research comparisons, not site economics",
+    "no project NPV/IRR or site ranking is published",
+    "unknown geometry and unpriced infrastructure remain explicit"
+  ]
+}

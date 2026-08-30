@@ -24,7 +24,7 @@
 - provenance;
 - units;
 - geometry validity;
-- Pass 8 migration expectations;
+- canonical fixture and ingestion expectations;
 - publication classification checks.
 
 ### UI tests

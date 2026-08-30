@@ -2,4 +2,4 @@
 
 **Status:** Accepted
 
-Hydrologic validity dates describe the measured phenomenon. Publication/retrieval/release metadata describe when Kristal learned it. Both must be preserved for reproducible releases and source corrections.
+Hydrologic validity dates describe the measured phenomenon. Publication/retrieval/release metadata describe when Kristal Farms recorded it. Both must be preserved for reproducible releases and source corrections.

@@ -1,6 +1,6 @@
 # ADR-008 — Canonical entity supertype
 
-**Status:** Accepted for Pass 11 foundation
+**Status:** Accepted
 
 ## Context
 

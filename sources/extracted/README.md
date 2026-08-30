@@ -1,10 +1,14 @@
 # Searchable Extractions
 
-To avoid duplicate content, searchable Markdown extractions are stored in the workstream where they are used:
+This directory is reserved for searchable text extractions that are still useful as controlled source material.
 
-- deployment concepts → `docs/10-core/deployment/`
-- partner French DOCX extracts → `docs/20-partner-package/fr/docx-logo/`
-- site screening → `docs/30-site-screening/`
-- economics → `docs/40-economics/`
+Superseded DOCX/PDF-derived narratives and older research extractions are stored under `archive/` rather than mixed with active project documentation. Current project claims should be supported through structured source/evidence records or current controlled documents, not by promoting an extraction simply because it is searchable.
 
-Each extraction has front matter identifying the supplied source file and extraction status.
+When adding an extraction, record:
+
+- original source filename;
+- publisher/author if known;
+- publication or source date if known;
+- extraction method and date;
+- whether the extraction is authoritative, contextual, legacy or unverified;
+- the canonical source/evidence identifier when one exists.

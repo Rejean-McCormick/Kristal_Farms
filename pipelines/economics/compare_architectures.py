@@ -16,12 +16,12 @@ def reference_frontier(hv_km, road_km, fibre_km, *, tx_low, tx_high, road_low, r
       "conventional_export_reference_high_cad":conventional_high,
       "fibre_funding_proxy_low_cad":fibre_low,
       "fibre_funding_proxy_high_cad":fibre_high,
-      "remaining_unpriced_kristal_budget_conservative_cad":conventional_low-fibre_high,
-      "remaining_unpriced_kristal_budget_optimistic_cad":conventional_high-fibre_low,
+      "remaining_unpriced_kristal_farms_budget_conservative_cad":conventional_low-fibre_high,
+      "remaining_unpriced_kristal_farms_budget_optimistic_cad":conventional_high-fibre_low,
       "not_net_savings":True,
       "not_site_estimate":True,
-      "unpriced_kristal_items_remain_open":True,
+      "unpriced_kristal_farms_items_remain_open":True,
     }
 
 def complete_project_economics(*args, **kwargs):
-    raise RuntimeError("Pass 14 deliberately does not compute bankable project NPV/IRR without complete site-specific capex, opex, revenue, financing, tax, hydrology and engineering inputs.")
+    raise RuntimeError("economic architecture deliberately does not compute bankable project NPV/IRR without complete site-specific capex, opex, revenue, financing, tax, hydrology and engineering inputs.")

@@ -8,6 +8,6 @@ SELECT 'KR-08', e.id::text, 'ranking metadata present while ranking_allowed=fals
 FROM core.entity e CROSS JOIN system.governance_state g
 WHERE g.ranking_allowed=false AND (e.metadata ? 'rank' OR e.metadata ? 'score' OR e.metadata ? 'priority_score')
 UNION ALL
-SELECT 'KR-07', p.entity_id::text, 'external reference metadata also marks project as Kristal candidate'
+SELECT 'KR-07', p.entity_id::text, 'external reference metadata also marks project as Kristal Farms candidate'
 FROM core.project p
-WHERE p.role='external_reference' AND COALESCE((p.metadata->>'kristal_candidate')::boolean,false)=true;
+WHERE p.role='external_reference' AND COALESCE((p.metadata->>'kristal_farms_candidate')::boolean,false)=true;

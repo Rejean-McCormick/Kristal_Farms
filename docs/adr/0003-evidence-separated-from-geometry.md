@@ -5,7 +5,7 @@
 
 ## Context
 
-Pass 8 contains valid research records whose geometry is intentionally null. Forcing every claim into a map geometry would invent spatial precision and blur the difference between evidence and physical objects.
+Historical research contains valid records whose geometry is intentionally null. Forcing every claim into a map geometry would invent spatial precision and blur the difference between evidence and physical objects.
 
 ## Decision
 

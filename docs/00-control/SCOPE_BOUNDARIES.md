@@ -1,55 +1,44 @@
-# Scope Boundaries — v3
+# Scope Boundaries
 
-**Status:** Repository control decision  
-**Effective:** 2026-08-17
+**Status:** Active repository control decision
+**Effective:** 2026-08-30
 
 ## In scope
 
-Kristal Farms is an infrastructure, energy, compute, connectivity, security, heat-reuse, community-benefit and northern-capability project.
+Kristal Farms develops and evaluates a northern infrastructure architecture built around new or suitable renewable generation, protected community energy interfaces, flexible compute, fibre connectivity and practical marine/land logistics.
 
-The long-term strategy may study:
+The repository may study:
 
-- local use of difficult-to-export renewable energy;
-- cold-climate compute and heat recovery;
-- terrestrial and subsea fibre;
-- secure brownfield / mine-based compute variants;
-- community-integrated infrastructure;
-- workforce, housing and indoor civic infrastructure adapted to northern conditions;
-- voluntary welcoming of culturally diverse immigrant communities through lawful pathways and host-community partnerships;
-- international technical learning, visiting-student/research programs, academic partnerships and potential future university institutions;
-- host-language strengthening, translation/interpretation capacity and culturally rooted education;
-- long-term development of a connected northern compute platform.
+- hydro and other renewable-resource evidence;
+- generation-side, community-side and hybrid compute layouts;
+- serviced compute pads and tenant-operated hardware;
+- fibre routes, capacity, redundancy and landing requirements;
+- ports, marine logistics, local access and maintenance;
+- optional heat recovery where useful heat justifies the added system;
+- community energy resilience and critical-load priority;
+- environmental, rights, governance and regulatory constraints;
+- workforce, housing, training and other enabling infrastructure when relevant to a corridor or project dossier;
+- reproducible scenario and economic comparison methods.
 
 ## Explicitly out of scope
 
-The operational Kristal Farms repository does **not** pursue, depend on, or advocate:
+Kristal Farms does **not** depend on or advocate:
 
-- Québec or Labrador separatism;
-- a change to the Québec–Labrador boundary;
-- sovereignty or territorial-status disputes;
-- territorial occupation as a political or legal strategy;
-- internationalization of Labrador as a jurisdictional objective;
-- confrontation intended to provoke a constitutional or international territorial dispute.
+- changes to provincial, territorial or international boundaries;
+- separatism or sovereignty claims;
+- territorial occupation or confrontation as a development strategy;
+- displacement of existing communities;
+- company-town dependency or coercive control through housing, employment, infrastructure or data access;
+- automatic site ranking without an approved, transparent methodology.
 
-All site development is assumed to occur within the **applicable existing legal, regulatory, rights-holder and community-consent frameworks**.
+All project concepts are assumed to operate within applicable law and regulatory requirements and with the rights, authority and participation of affected Indigenous peoples and communities.
 
-## Human-development boundary
+## Human and institutional infrastructure
 
-A long-term welcoming-community concept may be explored as a social and infrastructure program, but it must remain distinct from territorial politics. It must be designed around voluntary participation, lawful immigration/status pathways, non-displacement of existing communities, Indigenous and local rights, cultural and linguistic autonomy, freedom of movement, portability of documents and skills, and a real ability for participating communities to refuse or limit expansion.
+Training, research, housing, community facilities and future academic institutions may be studied as enabling or long-term infrastructure. They are not prerequisites for proving the first energy/compute node.
 
-Kristal Farms must not become a company-town dependency or use infrastructure, housing, employment, data access or immigration vulnerability as leverage over residents.
+Any such program must preserve voluntary participation, individual safety, freedom of movement, non-displacement, portable credentials where applicable and independent remedies. A project must not claim university status, recognized degrees or formal institutional partnerships before those facts exist.
 
+## Evidence boundary
 
-## Education and cultural boundary
-
-Kristal Farms may study training centres, research institutes, international learning programs, academic partnerships and eventually accredited university structures. **The project must not call a site a university or promise recognized degrees until the relevant accreditation, governance, faculty, financing and credential-recognition requirements are satisfied.**
-
-Education programs must be structured around voluntary participation, portable credentials and a real ability to return to a learner's home community or country. International education is a skills-circulation model, not a mechanism for creating dependency on Kristal Farms.
-
-Each host community or institution may establish a language charter that, to the maximum extent permitted by applicable law and as determined with the host people, designates the host people's language or languages as official community/institutional languages within project-controlled local cultural and civic life. Additional teaching and working languages may support science, technical exchange and international participation.
-
-Culture, rites, religion and customs are protected as part of community autonomy, while individual participation remains voluntary. No cultural practice can be used by the project to justify coercion, violence, discrimination, denial of essential services, unlawful restriction of movement or loss of an independent remedy. See the matched Human Dignity Framework in `docs/10-core/strategy/`.
-
-## Source boundary
-
-Literary, fictional, satirical and ethics-demo materials may inspire questions or safeguards, but they are **not factual evidence, legal authority, engineering evidence or adopted project policy** unless a principle is separately reviewed and approved into the control layer.
+Historical, literary, fictional or exploratory material may inform questions and safeguards, but it is not factual evidence, legal authority, engineering evidence or adopted project policy unless separately validated and promoted into the active control layer.

@@ -4,7 +4,7 @@ This file is a high-priority implementation contract for any AI agent modifying 
 
 ## Product intent
 
-Kristal Farms is not a generic mapping demo. It is an evidence-driven geospatial platform with a public promotional surface and a professional technical surface sharing the same data model.
+Kristal Farms is a physical northern energy/compute/fibre infrastructure project supported by an evidence-driven geospatial application. The Showcase, Explorer and Scenario Studio share the same governed data model; the software exists to explain, evaluate and develop Kristal Farms rather than becoming a separate product identity.
 
 ## Non-negotiable architecture rules
 

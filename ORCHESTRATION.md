@@ -1,35 +1,35 @@
-# ORCHESTRATION
+# Repository Orchestration
 
-This is the operating rule for the repository.
+Kristal Farms work follows a controlled chain from evidence to project decisions.
 
-## The chain
+## Core chain
 
-**Evidence → Decision → Architecture/Economics → Community & rights process → Human-dignity / academic-governance review where applicable → Partner narrative → Bilingual release → Gate review**
+**Source → evidence/observation → validation → canonical data → analysis/scenario → decision gate → publishable release**
 
-A file can contribute to the chain without becoming the source of truth for the whole project.
+Community, Indigenous rights, environmental review, engineering, logistics, telecom and economics are independent evidence domains. No single technical layer can silently override the others.
 
-## Weekly control loop
+## Working loop
 
-1. Review open decisions.
-2. Review validation blockers.
-3. Update workstream status.
-4. Promote only evidence-backed changes.
-5. Synchronize EN/FR.
-6. Update release/share level.
-7. Record what changed.
+1. Review open decisions and evidence gaps.
+2. Update the relevant corridor or domain dossier.
+3. Preserve source provenance and uncertainty.
+4. Run automated validation and tests.
+5. Promote only reviewed data into canonical/current state.
+6. Regenerate publishable views from canonical data.
+7. Review security, rights, privacy and public-release implications.
+8. Record material architecture decisions in ADRs.
 
 ## Release gates
 
-A partner/data-room release should not ship unless:
-- project scope is consistent across the package;
-- long-term human/education concepts are clearly distinguished from operating commitments;
-- any education/university claim has the appropriate governance/accreditation maturity label;
-- Nain and other site claims are properly caveated;
-- numeric claims have source/as-of control;
-- no assistant/UI citation tokens remain;
-- EN/FR versions are synchronized;
-- share levels are explicitly approved;
-- precise site data is cleared for release;
-- the data-room index matches the release contents.
+A public or partner-facing release should not ship unless:
 
-See `docs/00-control/`.
+- project scope and terminology are current;
+- numeric claims retain source/as-of context;
+- approximate, conceptual and verified geometry are visually distinct;
+- external references are not presented as Kristal Farms projects;
+- screening remains unranked unless governance explicitly changes that policy;
+- restricted data is excluded before artifact generation;
+- site-specific claims are no stronger than the underlying evidence;
+- current documentation, machine-readable contracts and publish outputs agree.
+
+See `docs/00-control/` and `docs/adr/`.

@@ -1,4 +1,4 @@
-# Architecture de référence Kristal Farms — état canonique final
+# Architecture de référence Kristal Farms
 
 ## Thèse centrale
 
@@ -12,7 +12,6 @@ La réduction ou l’évitement des longues routes et lignes HV est une proposit
 
 - Côte-Nord : géographie de pilote/apprentissage.
 - Québec nordique et Labrador : territoire de déploiement à long terme où l’éloignement des routes/HV peut créer le contraste structurel le plus fort.
-- Nain : cas historique/de référence, **pas premier site actif**.
 
 ## Architecture physique
 
@@ -44,4 +43,4 @@ Le capital peut financer l’infrastructure sans acquérir automatiquement le co
 
 ## État du screening
 
-Il n’existe **aucun classement actif de sites**. Les anciens tiers et le Nain-first sont de la provenance seulement. Toute priorisation future exige des preuves transparentes en hydrologie, terrain/head, environnement, gouvernance communautaire/autochtone, logistique, télécom, architecture électrique et économie actuelle.
+Il n’existe **aucun classement actif de sites**. Toute priorisation future exige des preuves transparentes en hydrologie, terrain/head, environnement, gouvernance communautaire/autochtone, logistique, télécom, architecture électrique et économie actuelle.

@@ -1,119 +1,107 @@
 # Strategic Infrastructure Research Agenda
 
-**Status:** Research agenda — no item below is automatically project-approved.
+**Status:** Active research agenda. No item below is automatically project-approved.
 
-This agenda converts the expanded Kristal Farms vision into evidence-producing work.
+This agenda turns the Kristal Farms architecture into evidence-producing work.
 
-## A. Avoided-transmission economics and ecological footprint
+## A. Transmission and access alternatives
 
 ### Question
-When is local renewable consumption plus fibre materially less expensive and/or lower-impact than exporting electricity over a long transmission corridor?
+When can local renewable consumption plus fibre materially reduce the cost, footprint or delivery burden associated with long electrical-export and road infrastructure?
 
 ### Required work
-- define comparable functional units (MW delivered, reliability, lifetime, distance);
-- compare capex/opex, losses, schedule and maintenance;
-- map right-of-way, clearing, access roads, substations and construction logistics;
-- compare lifecycle land disturbance, materials, carbon, habitat fragmentation and restoration;
-- include the footprint of generation, local feeder, compute, fibre, cooling and heat system;
-- run sensitivity by voltage, terrain, distance, load factor and fibre-route cost.
+- define comparable functional units and reliability requirements;
+- compare CAPEX/OPEX, losses, schedule and maintenance;
+- map right-of-way, clearing, substations and construction access;
+- include the local feeder, compute site, fibre, cooling and logistics requirements;
+- run sensitivity by voltage, terrain, distance, load factor and fibre-route cost;
+- replace generic benchmarks with corridor-specific quotations before investment decisions.
 
 ### Output
-Site-specific **Transmission-vs-Local-Compute Comparison** with transparent assumptions.
+Corridor-specific **Electrical Export vs Local Compute Comparison** with explicit assumptions and unknowns.
 
 ## B. Coastal and subsea fibre
 
 ### Question
-Can selected coastal sites obtain a durable connectivity advantage through direct marine or coastal fibre routes?
+Can selected coastal nodes obtain durable connectivity through existing, extended or new coastal/subsea fibre?
 
 ### Required work
-- map existing carrier/backbone assets;
-- identify feasible landing zones without publishing sensitive coordinates;
-- bathymetry/seabed and marine-risk review;
-- Indigenous/community/land and marine rights review;
-- permitting and environmental review;
-- cable route, armouring, burial and shore-end concept;
-- capacity, latency, redundancy, repair vessel and spares strategy;
-- cost comparison against terrestrial alternatives;
-- multi-node ring / "northern fibre crown" scenarios.
+- map documented carrier/backbone assets and service relationships;
+- identify candidate landing areas without inventing precise routes;
+- review seabed, marine risk, rights and permitting;
+- define capacity, redundancy, repair and spares requirements;
+- compare terrestrial and marine alternatives;
+- obtain carrier and marine-construction quotations for advanced dossiers.
 
 ### Output
-Coastal Fibre Opportunity Map + route-class feasibility matrix.
+Fibre evidence map + route-class feasibility matrix.
 
-## C. Secure mine and brownfield compute
+## C. Serviced compute sites
 
 ### Question
-Can decommissioned mines or hardened brownfield sites provide a differentiated high-security compute environment?
+Which standardized external interfaces allow multiple tenant compute designs to operate reliably in northern conditions?
 
 ### Required work
-- inventory candidate mines/brownfields and ownership status;
-- geotechnical stability and ground support;
-- flooding/water management;
-- ventilation and heat removal;
-- fire detection, suppression, refuge and egress;
-- power access and redundancy;
-- fibre availability/path diversity;
-- physical access control and zoning;
-- environmental liabilities/remediation;
-- construction logistics and equipment dimensions;
-- lifecycle economics versus surface facilities.
+- power quality, MV/LV handoff and protection;
+- liquid/air cooling interfaces and heat rejection;
+- fibre handoff, redundancy and monitoring;
+- physical security and tenant sovereignty boundary;
+- metering, telemetry and maintenance access;
+- module dimensions, lifting/transport requirements and laydown;
+- cold-weather commissioning, icing, spares and emergency operations.
 
 ### Output
-Secure Site Archetype Standard + candidate-screening matrix.
+Serviced Compute Site Interface Standard.
 
-## D. Northern compute corridor / fibre crown
+## D. Multi-node northern network
 
 ### Question
-Could multiple validated nodes become more valuable as a network than as isolated sites?
+When do several validated nodes become more valuable and resilient as a network than as isolated projects?
 
 ### Required work
-- node classes and capacity ranges;
-- inter-node fibre topology;
-- common technical interfaces;
-- workload mobility and tenant architecture;
-- operating/NOC model;
-- common spares and repair logistics;
-- cybersecurity and trust zoning;
-- shared workforce/training strategy;
-- phased capital plan;
-- governance across sites and jurisdictions.
+- node classes and common interfaces;
+- inter-node fibre topology and repair strategy;
+- marine logistics and common spares;
+- workload mobility and tenant requirements;
+- shorter electrical interties where locally justified;
+- workforce/training and operating model;
+- governance across communities and jurisdictions.
 
 ### Output
-Northern Compute Platform Reference Architecture.
+Northern Node Network Reference Architecture.
 
-## E. Future AI demand and tenant fit
+## E. Tenant and workload fit
 
 ### Question
-Which AI/compute workloads actually benefit from this platform and what are their power, network, security and service requirements?
+Which compute workloads value remote modular capacity, energy flexibility, sovereignty and northern location enough to support the infrastructure?
 
 ### Required work
-- training vs inference vs batch/HPC workload classes;
-- accelerator density and liquid-cooling requirements;
-- latency sensitivity;
-- data gravity and sovereignty requirements;
-- tenant security/compliance needs;
-- willingness to use remote modular capacity;
-- contract duration and curtailment flexibility;
+- training, inference, batch and HPC workload classes;
+- accelerator density and cooling needs;
+- latency/data-gravity constraints;
+- security and data-sovereignty requirements;
+- curtailment flexibility and contract duration;
+- hardware ownership and refresh cycles;
 - demand scenarios rather than single-point forecasts.
 
 ### Output
-Tenant Requirements Matrix + market-demand scenarios.
+Tenant Requirements Matrix + demand scenarios.
 
 ## F. Northern construction and operating capability
 
 ### Question
-What repeatable expertise must be built to make the model scalable?
+What repeatable expertise is required to scale the model?
 
 ### Required work
-- cold-climate civil standards;
-- modular electrical/piping interfaces;
+- cold-climate civil/electrical standards;
+- modular interfaces;
 - marine/sealift logistics;
-- fibre construction/repair capability;
+- fibre construction and repair;
 - remote commissioning and telemetry;
-- local training pathways;
-- emergency response;
-- spare-parts strategy;
+- local workforce and training pathways;
+- emergency response and spare-parts strategy;
 - standardized acceptance tests;
-- knowledge transfer between sites.
+- learning transfer between nodes.
 
 ### Output
 Kristal Farms Northern Infrastructure Playbook.

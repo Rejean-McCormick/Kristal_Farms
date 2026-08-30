@@ -1,3 +1,3 @@
 # Transform pipelines
 
-Implementation home for normalized/derived transforms. Existing pass-specific research scripts remain provenance inputs; operational transforms must preserve lineage.
+Implementation home for normalized and derived transformations. Operational transforms must preserve source lineage, units, time semantics and the distinction between observed, derived and assumed values. Historical research scripts are retained under `archive/` for provenance only.

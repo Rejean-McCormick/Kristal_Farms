@@ -15,8 +15,8 @@ restricted
 
 ```text
 external_reference
-kristal_candidate
-kristal_project
+kristal_farms_candidate
+kristal_farms_project
 ```
 
 ## Evidence verification

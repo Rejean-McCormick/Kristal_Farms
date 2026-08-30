@@ -1,0 +1,1276 @@
+{
+  "release": "2026.08.30",
+  "immutable": true,
+  "items": [
+    {
+      "entity_id": "1ad5acab-f39d-5970-bfd9-55131e3e9fd4",
+      "name": "Natashquan River / Rivière Natashquan",
+      "facts": 4,
+      "supported": 1,
+      "conflicting": 1,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "537c87a7-55d1-5a17-850b-a2d7d1af565c",
+        "c64c0297-0147-53b5-8d41-61bd906dbec5",
+        "cd67ac59-a127-5df6-a3be-9a5804133feb",
+        "825a99a6-aad9-5120-bc7c-d1e8413e023c",
+        "7111faa8-369c-5cea-9644-b7d4d1906b3b",
+        "0f9f0bc7-e8f5-5d81-a109-fc28485564ad"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c8781e4e-6bdb-5606-9617-5cb71e05e6bc",
+      "name": "02WB003 — Natashquan River / Rivière Natashquan",
+      "facts": 4,
+      "supported": 1,
+      "conflicting": 1,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "537c87a7-55d1-5a17-850b-a2d7d1af565c",
+        "c64c0297-0147-53b5-8d41-61bd906dbec5",
+        "cd67ac59-a127-5df6-a3be-9a5804133feb",
+        "825a99a6-aad9-5120-bc7c-d1e8413e023c",
+        "7111faa8-369c-5cea-9644-b7d4d1906b3b",
+        "0f9f0bc7-e8f5-5d81-a109-fc28485564ad"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "a60e91f7-1640-50dd-9f4e-337c9e25ebea",
+      "name": "Petit Mécatina River / Rivière du Petit Mécatina",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "a9338a7b-594a-5492-a5f3-1403acc97a80",
+        "a5f6f2ab-f9e8-5281-b542-15952b414097",
+        "c81173c7-99d5-5e6c-b296-454e58cb8b42"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "bbd890d3-73ce-560e-87a0-865f90b75995",
+      "name": "02XA006 — Petit Mécatina River / Rivière du Petit Mécatina",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "a9338a7b-594a-5492-a5f3-1403acc97a80",
+        "a5f6f2ab-f9e8-5281-b542-15952b414097",
+        "c81173c7-99d5-5e6c-b296-454e58cb8b42"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "3d678c66-4b9a-57b3-8c15-53bd89fd3439",
+      "name": "Saint-Augustin River / Rivière Saint-Augustin",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ac270e50-2655-5e61-a52f-7dc0e9b0790a",
+        "2fdcf49c-8c96-5085-bdb2-d43501318d33",
+        "f698f9e6-e331-51fc-abd0-43117a13bb06"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2c7f1403-3378-5bf0-b49e-9dd0d67094ac",
+      "name": "02XB001 — Saint-Augustin River / Rivière Saint-Augustin",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ac270e50-2655-5e61-a52f-7dc0e9b0790a",
+        "2fdcf49c-8c96-5085-bdb2-d43501318d33",
+        "f698f9e6-e331-51fc-abd0-43117a13bb06"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "46cef33c-e524-5787-8dc3-a0b124e36865",
+      "name": "Saint-Paul River / Rivière Saint-Paul",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "dd9e10a5-d6ca-533b-8565-20707487e97e",
+        "a50475b9-d247-57f1-9ebd-20453d67d2dd",
+        "8f405b8e-1de5-5212-bc9c-ae644e1b5edf"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ea9a772c-3c6e-50fa-bda6-5e3d771df0f4",
+      "name": "02XC001 — Saint-Paul River / Rivière Saint-Paul",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "dd9e10a5-d6ca-533b-8565-20707487e97e",
+        "a50475b9-d247-57f1-9ebd-20453d67d2dd",
+        "8f405b8e-1de5-5212-bc9c-ae644e1b5edf"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "324fd842-e1c0-5cd5-bcbe-1ad6e61244b1",
+      "name": "Etamamiou River / Rivière Etamamiou",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3c6c0f91-7ad2-5408-9beb-824d84ba6e26",
+        "5be84bb1-ce02-530b-a26d-bc28fec927d6",
+        "a978d8ea-dc39-50fe-b93a-7a7efffefcfd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4d9fe3ea-f3a3-5ab0-b8f4-844c6878ebea",
+      "name": "02WC001 — Etamamiou River / Rivière Etamamiou",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3c6c0f91-7ad2-5408-9beb-824d84ba6e26",
+        "5be84bb1-ce02-530b-a26d-bc28fec927d6",
+        "a978d8ea-dc39-50fe-b93a-7a7efffefcfd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8c39de66-6b4c-51d2-b628-1b6b12172bf4",
+      "name": "Olomane River / Rivière Olomane",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ca7e324e-1d95-537e-8bd5-7b565af26cb0",
+        "5934a399-8a87-5746-affa-58876204023c",
+        "f956fa0b-04d5-5542-8764-937901de96b5"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c2515397-3ab5-5530-ba5e-94282a4a9c63",
+      "name": "02WC002 — Olomane River / Rivière Olomane",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ca7e324e-1d95-537e-8bd5-7b565af26cb0",
+        "5934a399-8a87-5746-affa-58876204023c",
+        "f956fa0b-04d5-5542-8764-937901de96b5"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "44da1d1d-0c41-56dc-8dcc-3c33155e42cb",
+      "name": "Aguanus River / Rivière Aguanus",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "f2fb7bdf-bb47-58ac-9c00-9523644158c3",
+        "f5c70b8f-94e3-5112-aa06-41e7a1ed61db",
+        "3f33edda-e41c-59fe-a086-1507afbe4c19"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "601ca63c-eb29-5aba-b516-6e847f396ea1",
+      "name": "02WA002 — Aguanus River / Rivière Aguanus",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "f2fb7bdf-bb47-58ac-9c00-9523644158c3",
+        "f5c70b8f-94e3-5112-aa06-41e7a1ed61db",
+        "3f33edda-e41c-59fe-a086-1507afbe4c19"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "454ba21c-f16c-51a4-b0d7-35ca6d0eb5ff",
+      "name": "Nabisipi River / Rivière Nabisipi",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "203004a5-a9d9-5ac3-8304-081a87bed4d0",
+        "34625e16-1be7-5bb5-aa37-06ef6402f0b8",
+        "a3e66c42-577a-5fec-844c-5fdec76579a5"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "19ea269a-e647-59ca-ae11-32fea4844c42",
+      "name": "02WA001 — Nabisipi River / Rivière Nabisipi",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "203004a5-a9d9-5ac3-8304-081a87bed4d0",
+        "34625e16-1be7-5bb5-aa37-06ef6402f0b8",
+        "a3e66c42-577a-5fec-844c-5fdec76579a5"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "cedabc62-52aa-544d-8845-690af765f5d8",
+      "name": "Magpie River / Rivière Magpie",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "8c624b3a-f607-57b3-8b37-d979c5e00c45",
+        "31f7b98d-b893-5ab3-ac8c-010cfd5fa9a6",
+        "97caf916-a771-5e16-8911-23f0ba86ef60"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9668c74-dab6-5f03-9c6e-2b1d2c597ec4",
+      "name": "02VB003 — Magpie River / Rivière Magpie",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "8c624b3a-f607-57b3-8b37-d979c5e00c45",
+        "31f7b98d-b893-5ab3-ac8c-010cfd5fa9a6",
+        "97caf916-a771-5e16-8911-23f0ba86ef60"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "759d3e76-ed93-5a82-8a53-b52e1f737ef3",
+      "name": "Romaine River / Rivière Romaine",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "02598718-4bb6-5b23-b5d5-c934c1aa5347",
+        "92d8c08a-7203-502a-a60a-cdc46ba81506",
+        "0299817b-8788-5715-94d5-82314949a983"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "91822d01-067e-599d-8e69-c48761492af9",
+      "name": "02VC002 — Romaine River / Rivière Romaine",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "02598718-4bb6-5b23-b5d5-c934c1aa5347",
+        "92d8c08a-7203-502a-a60a-cdc46ba81506",
+        "0299817b-8788-5715-94d5-82314949a983"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b09345fd-ae35-55bd-9188-bff76087eeb0",
+      "name": "Nastapoka River / Rivière Nastapoka",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 1,
+      "evidence_ids": [
+        "d11d7d4a-fa92-5c51-aee3-483324b9edd6",
+        "7688771e-d5de-5508-b2c7-89fcbbe620f5",
+        "619c18cb-9230-5480-9e57-da4c5d884031",
+        "9bf69a56-d17a-5340-b88e-c2274848eeca"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "fab18acc-fc67-5f21-935c-4e366cc32ed1",
+      "name": "03FA002 — Nastapoka River / Rivière Nastapoka",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "d11d7d4a-fa92-5c51-aee3-483324b9edd6",
+        "7688771e-d5de-5508-b2c7-89fcbbe620f5",
+        "619c18cb-9230-5480-9e57-da4c5d884031"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "15613e33-b32e-5705-adaa-25cc0720bc9d",
+      "name": "Innuksuac River / Rivière Innuksuac",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "253f2de8-7da1-504e-adcb-6289ae55d62e",
+        "6417c3ca-b00f-59b0-b96b-bbff5dd0452d",
+        "de676509-903b-5130-a8df-3934b4c9f7a4"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "586ff527-9914-5636-8929-f518b746ddd1",
+      "name": "03GB001 — Innuksuac River / Rivière Innuksuac",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "253f2de8-7da1-504e-adcb-6289ae55d62e",
+        "6417c3ca-b00f-59b0-b96b-bbff5dd0452d",
+        "de676509-903b-5130-a8df-3934b4c9f7a4"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9cb4c85-3ee4-55b7-955e-0965323ebfbb",
+      "name": "Kogaluc River / Rivière Kogaluc",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "34d9d0ba-33b6-599e-9d61-8c605902d903",
+        "368b5517-1934-5e0a-bf88-6b17e6014022",
+        "3e3bd98f-9974-5f62-86b6-cd7e24ea29fd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8733780f-6129-58a6-bb63-b540b05e2e89",
+      "name": "03GC001 — Kogaluc River / Rivière Kogaluc",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "34d9d0ba-33b6-599e-9d61-8c605902d903",
+        "368b5517-1934-5e0a-bf88-6b17e6014022",
+        "3e3bd98f-9974-5f62-86b6-cd7e24ea29fd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8bc80e2a-61c8-5155-ade4-07c94275ae05",
+      "name": "Arnaud River / Rivière Arnaud (Payne)",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 1,
+      "evidence_ids": [
+        "2c58c37f-3328-5104-bdf1-5162bec73e5c",
+        "f7ce5f01-082b-573c-a50b-2a385f0e6c23",
+        "92166554-4206-5c25-91e3-02b0e8a68149",
+        "8e9c968b-43d7-5929-894b-3dd178c1af42"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d76b30a7-1649-5a24-a182-29d9344c2fce",
+      "name": "03HA003 — Arnaud River / Rivière Arnaud (Payne)",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "2c58c37f-3328-5104-bdf1-5162bec73e5c",
+        "f7ce5f01-082b-573c-a50b-2a385f0e6c23",
+        "92166554-4206-5c25-91e3-02b0e8a68149"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "dd7de1f3-ed11-5a59-b91c-abbefbea0cf3",
+      "name": "Leaf River / Rivière aux Feuilles",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 1,
+      "evidence_ids": [
+        "3d99b89b-9644-54f4-8b67-11dd4f6aa54a",
+        "0ce22e0e-fc73-5745-90bf-9e70616dbbdb",
+        "a247e080-03b5-5331-a032-5b86adc2a561",
+        "e86241e2-9bc3-5b8a-8640-2cd8534121be"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "98feb142-f058-5b80-b337-1ce309282ab9",
+      "name": "03JB001 — Leaf River / Rivière aux Feuilles",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3d99b89b-9644-54f4-8b67-11dd4f6aa54a",
+        "0ce22e0e-fc73-5745-90bf-9e70616dbbdb",
+        "a247e080-03b5-5331-a032-5b86adc2a561"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7ef13c93-0a6f-540f-afc1-0cea57498a07",
+      "name": "Aux Mélèzes River / Rivière aux Mélèzes",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "90d51f43-e431-553e-8a33-1b150c5c0732",
+        "ae16356e-4a38-5a09-884b-9009b975158b",
+        "060c983c-d140-5dfd-ad7c-6ebccd88cadd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "36891671-423d-5593-b3de-2272a8e71702",
+      "name": "03KC004 — Aux Mélèzes River / Rivière aux Mélèzes",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "90d51f43-e431-553e-8a33-1b150c5c0732",
+        "ae16356e-4a38-5a09-884b-9009b975158b",
+        "060c983c-d140-5dfd-ad7c-6ebccd88cadd"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "965013b9-9884-54ac-981f-fd0caa2cff1a",
+      "name": "Great Whale River / Grande rivière de la Baleine",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 1,
+      "evidence_ids": [
+        "92a5991f-aae8-593a-8684-e2cbe036af4a",
+        "39a8ec7c-be3d-539d-bc2f-a6e3049ee7b0",
+        "d55f2e66-8ad7-54e8-a181-4957624cff56",
+        "7653ac3b-c0fe-51f3-93ee-bee33362124b"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9573e89-b21c-5743-b1ef-10d8313fe14d",
+      "name": "03MB002 — Great Whale River / Grande rivière de la Baleine",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "92a5991f-aae8-593a-8684-e2cbe036af4a",
+        "39a8ec7c-be3d-539d-bc2f-a6e3049ee7b0",
+        "d55f2e66-8ad7-54e8-a181-4957624cff56"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d6352b82-b00e-5b90-8fc3-b93112c101d5",
+      "name": "George River / Rivière George",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 1,
+      "evidence_ids": [
+        "6c85ec46-6fe2-569f-9137-ceb0a2c85175",
+        "d6b63c0d-b1bf-5315-8352-cca1b723e277",
+        "ee4b708c-3671-5e4b-9b41-67defa34f6c8",
+        "b3b63842-733a-5b56-a27a-a845795014b6"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "29c7dbbb-0b1c-594d-b893-95966cd17c65",
+      "name": "03ME002 — George River / Rivière George",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "6c85ec46-6fe2-569f-9137-ceb0a2c85175",
+        "d6b63c0d-b1bf-5315-8352-cca1b723e277",
+        "ee4b708c-3671-5e4b-9b41-67defa34f6c8"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c6b3034e-210e-5566-b5a2-4955e6adf302",
+      "name": "Ugjoktok River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "d470b12e-1580-576d-9343-d00c2cdd9b3c",
+        "bf90c118-c39a-500b-a66c-aec70c1a3183",
+        "02d530dd-45cd-579d-91dc-a8f7989eb4fc"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ee02edd8-d0d2-5a47-9081-cda9f2235676",
+      "name": "03NF001 — Ugjoktok River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "d470b12e-1580-576d-9343-d00c2cdd9b3c",
+        "bf90c118-c39a-500b-a66c-aec70c1a3183",
+        "02d530dd-45cd-579d-91dc-a8f7989eb4fc"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "f7b20362-acc7-5606-844f-dc971d13977e",
+      "name": "Kanairiktok River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "9333e125-5903-5f43-ba12-3b4aa9602113",
+        "91a8188b-5339-51e1-b0a2-b3e11ca20c58",
+        "45c1e61e-f332-51a7-89be-d2e187016e18"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "add4bf24-ed61-5cdf-b827-038ab1833746",
+      "name": "03NG001 — Kanairiktok River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "9333e125-5903-5f43-ba12-3b4aa9602113",
+        "91a8188b-5339-51e1-b0a2-b3e11ca20c58",
+        "45c1e61e-f332-51a7-89be-d2e187016e18"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "95b3136f-9a3c-5b76-ad7b-f046e4164e9a",
+      "name": "Naskaupi River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3bc31e42-84bb-5bda-9a5c-cdfa5e88efbf",
+        "ede1a1f6-5262-5535-bd58-ebe4361b1daa",
+        "57753db3-925d-52bc-8b06-ae62de5c8768"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d3d5217a-88f0-5915-a821-721e67d8d846",
+      "name": "03PB002 — Naskaupi River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3bc31e42-84bb-5bda-9a5c-cdfa5e88efbf",
+        "ede1a1f6-5262-5535-bd58-ebe4361b1daa",
+        "57753db3-925d-52bc-8b06-ae62de5c8768"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e46c125d-14b6-5fb4-aeb9-deeecafcca0b",
+      "name": "Minipi River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "535d523e-2dc0-5f8a-a7b5-f254736a49ed",
+        "a642e5da-189a-5ed7-a833-ca9189aa1c2e",
+        "92a8c920-30bc-502b-980e-dd3fd2ce4854"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "641e26a5-e91c-5901-8f61-0fc6c0951663",
+      "name": "03OE002 — Minipi River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "535d523e-2dc0-5f8a-a7b5-f254736a49ed",
+        "a642e5da-189a-5ed7-a833-ca9189aa1c2e",
+        "92a8c920-30bc-502b-980e-dd3fd2ce4854"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c8e8cf1c-0c8a-502b-939f-7bceb953ecfa",
+      "name": "Eagle River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "896d55de-d86f-5fc5-9205-8a61aed776fb",
+        "eadf6b61-a3cc-51b1-937d-7acad7df3236",
+        "7cfd6b43-38f9-53ec-8a00-9b5ef898f3e3"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b08eca46-0f99-575c-b842-d4e83fe8cd30",
+      "name": "03QC001 — Eagle River",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "896d55de-d86f-5fc5-9205-8a61aed776fb",
+        "eadf6b61-a3cc-51b1-937d-7acad7df3236",
+        "7cfd6b43-38f9-53ec-8a00-9b5ef898f3e3"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ac33ba3a-cf18-5cb4-9f1a-46272d8f6f1e",
+      "name": "Alexis River",
+      "facts": 6,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "7cc97cf8-d875-53d4-a2fa-9ba45f083520",
+        "71b16a5e-7833-5653-b298-4634744f3a59",
+        "cb44d39f-8928-5d3f-9e02-6637343f7446",
+        "a4def7d9-5de6-5cb2-a9de-ee3e213ae3b1",
+        "dbad3347-1141-58e4-950c-19e97f433c98",
+        "604cb10d-a9fe-50f9-82eb-4151b3a03f72"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ec789c7c-9661-5c7b-96de-7a44ad6535a3",
+      "name": "03QC002 — Alexis River",
+      "facts": 6,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "7cc97cf8-d875-53d4-a2fa-9ba45f083520",
+        "71b16a5e-7833-5653-b298-4634744f3a59",
+        "cb44d39f-8928-5d3f-9e02-6637343f7446",
+        "a4def7d9-5de6-5cb2-a9de-ee3e213ae3b1",
+        "dbad3347-1141-58e4-950c-19e97f433c98",
+        "604cb10d-a9fe-50f9-82eb-4151b3a03f72"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+      "name": "Nain",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "c37fb19b-0d89-5d08-9d98-7d2a45c9aff7",
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "664545fc-d0f4-5caa-9278-510a50261908",
+      "name": "Inukjuak",
+      "facts": 4,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "fca094ac-f766-55cb-918f-99cb0c411703",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50",
+        "f7f3c7c7-728a-5b6b-8e19-1d32018cb5c3"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "50330e9a-b932-515e-a865-bceb668aadd3",
+      "name": "Kuujjuaraapik",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "c85aeedb-30d0-578d-9734-b8e03262bbf6",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "62ac2ffe-be96-5a7b-84df-3d82a892f092",
+      "name": "Umiujaq",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "3a55ad5e-eb1c-5e42-9f09-b72a9b8602f2",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e00199cc-0e09-5984-a972-200508477085",
+      "name": "Kangiqsualujjuaq",
+      "facts": 2,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "718cc7c7-5b70-5173-bbf1-cc3ac429fecc",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "97c7593b-446f-5d9a-a8b0-c866aff76414",
+      "name": "Tasiujaq",
+      "facts": 2,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "0ad53176-019b-582d-bd3d-d8f288e98f27",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "fb68046b-06d8-5282-adc5-58528d35e115",
+      "name": "Kangirsuk",
+      "facts": 2,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "b3cf0757-4d28-5eb1-a784-09adcac22cb4",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2165eaf4-9f32-54db-9641-3467d2ab2320",
+      "name": "Kuujjuaq",
+      "facts": 2,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ea56038b-d120-53d8-bae3-73f17a78cde9",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+      "name": "Akulivik",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "95ec0e5e-c9a2-5243-a41a-9c5dd6213f44",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "6f38f123-be06-51c9-bba1-26d1fc51dc6e"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+      "name": "Aupaluk",
+      "facts": 2,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "a44395d8-bd7f-5c4e-a8eb-7a0b615d550d",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+      "name": "Ivujivik",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "42d3f68f-d0ff-5eeb-9694-6b59409d04a6",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "6f38f123-be06-51c9-bba1-26d1fc51dc6e"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+      "name": "Kangiqsujuaq",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "54bedc5c-de4d-52c5-a9b0-0f0d714b51fb",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "6f38f123-be06-51c9-bba1-26d1fc51dc6e"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+      "name": "Puvirnituq",
+      "facts": 4,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "50c3737a-1b74-5177-9ca0-fda2ca6c6eb3",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50",
+        "29c9a290-95f1-507c-b9b6-f36eae981c9a"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+      "name": "Quaqtaq",
+      "facts": 3,
+      "supported": 2,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "eb6e4ef0-c9c1-5b40-82f3-e95b081c25fa",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "bebd64b0-120e-5525-a8b5-ce359866a280",
+        "45dc24ca-fa2f-5fd2-992d-74edcd0571d2"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+      "name": "Salluit",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "207902eb-b930-50b2-85bb-6006dcae7d79",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "6f38f123-be06-51c9-bba1-26d1fc51dc6e"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "26738a50-a36b-5cc6-bc87-39101cb50114",
+      "name": "Chisasibi",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "c5470652-0e4b-5f4d-ba44-b150db9a15d7",
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36",
+        "c4fa8f65-7cae-500e-a914-f27a94eab2d4",
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+      "name": "Hopedale",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "21611492-dcd7-5659-9b6d-7c02e1311f6f",
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+      "name": "Makkovik",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "f4f47070-5cf4-520f-a6d6-b9872ab8a69b",
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+      "name": "Postville",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "97ef72a1-936e-5932-9d9a-8c083543cfc4",
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+      "name": "Rigolet",
+      "facts": 3,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "a9cf0c3a-c068-536e-82d4-494ff280fa8d",
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e32d796e-ed8c-55a1-b0c2-aaa684b43231",
+      "name": "Natuashish",
+      "facts": 3,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b",
+        "77fbcc4a-c367-548e-abb2-31301cef90e9",
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "f7f934ce-67d5-5d8d-892a-f29207b31544",
+      "name": "Naniwa Sipi / Qikirtajuaq area",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2a6986b3-ec4e-5cae-b7b5-0adafa5b030a",
+      "name": "Côte-Nord hydro research corridor",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ee5ce01d-7aa7-5fff-a8b4-8b0de6d7bc86"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d4ed0683-dd0b-5239-84cc-c4955d7718c6",
+      "name": "Nunavik Hudson Coast research corridor",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ddfc611a-90f1-501c-a661-62eee39e8f89",
+      "name": "Nunavik Hudson Strait research corridor",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ff5cce79-237b-507d-bd5e-fa4784d16112",
+      "name": "Nunavik Ungava research corridor",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "959c6b89-d70f-5fc9-bee4-8f1f1aefa55a",
+      "name": "North Labrador research corridor",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "6a353a9b-e772-5042-8d4d-bfef3c5eec9f",
+      "name": "Central / Southeast Labrador hydro research corridor",
+      "facts": 0,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2f1385fb-ecc1-5e58-98c8-3e385c7404c6",
+      "name": "Nunavik regional marine-port system",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "11bbc71e-74dd-5a34-a21a-b06a231c5d36"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "45f613fb-fc6a-5a57-bfcb-1de57590b927",
+      "name": "EAUFON-1 Hudson Coast fibre",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "cb6a4e5a-fe30-5eda-8e30-cee0427d7e50"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7c791567-4c4f-5d97-8a6a-fd5b0d9376b7",
+      "name": "EAUFON-2 Hudson Strait fibre",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "6f38f123-be06-51c9-bba1-26d1fc51dc6e"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "984c6ece-b0bf-5d86-91fe-f7af052c4e4d",
+      "name": "EAUFON-3 Ungava Bay final phase",
+      "facts": 0,
+      "supported": 1,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "bebd64b0-120e-5525-a8b5-ce359866a280"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4e9f5ad3-b8d2-5ba6-9c5d-a52f45ab2c83",
+      "name": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "15a06f1a-94bb-5ca3-b534-6acf8c1f835b"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "6ab5eacd-2354-596f-8930-6b0ff539724e",
+      "name": "Labrador North Wireless Broadband Project",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "77fbcc4a-c367-548e-abb2-31301cef90e9"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b2e45581-46eb-573e-af76-20a589e1abaa",
+      "name": "Rigolet remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "1d151156-d2c6-5eb7-9f41-22abca5f8cf5",
+      "name": "Makkovik remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "543101cb-ba79-5b96-aa53-ca59529c4397",
+      "name": "Postville remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "57e73ec9-ca5b-5b6c-a47f-4209869ca71b",
+      "name": "Hopedale remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d1e33c3e-ede7-51a9-8cdf-931f86b43053",
+      "name": "Nain remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "34ba4649-7c1a-574e-afb3-2941354c26e7",
+      "name": "Natuashish remote diesel plant",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "16afb313-40e0-5e7a-b65f-bdc24e813e24"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
+      "name": "Innavik",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "f7f3c7c7-728a-5b6b-8e19-1d32018cb5c3"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "165aa1a2-ca63-5029-9f69-82048b6958c3",
+      "name": "Lac-Robertson generating station",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "ee5ce01d-7aa7-5fff-a8b4-8b0de6d7bc86"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
+      "name": "Quaqtaq wind electricity-supply project",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "45dc24ca-fa2f-5fd2-992d-74edcd0571d2"
+      ],
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4f6a0b62-883c-5a64-8fc6-dca525c7ec42",
+      "name": "Puvirnituq wind electricity-supply project",
+      "facts": 1,
+      "supported": 0,
+      "conflicting": 0,
+      "unverified_or_unknown": 0,
+      "evidence_ids": [
+        "29c9a290-95f1-507c-b9b6-f36eae981c9a"
+      ],
+      "ranking_allowed": false
+    }
+  ]
+}

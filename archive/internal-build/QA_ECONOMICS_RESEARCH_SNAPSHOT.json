@@ -1,0 +1,49 @@
+{
+  "version": "2026.08.30",
+  "generated_at": "2026-08-30",
+  "pass": true,
+  "counts": {
+    "canonical_entities": 92,
+    "sources": 45,
+    "evidence": 127,
+    "economic_benchmarks": 10,
+    "scenario_templates": 3,
+    "scenario_assumptions": 20,
+    "scenario_comparisons": 1,
+    "scenario_results": 3,
+    "sensitivity_cases": 64,
+    "catalog_layers": 15,
+    "showcase_scenes": 7
+  },
+  "checks": {
+    "all_benchmarks_not_site_estimates": true,
+    "all_sensitivity_cases_not_site": true,
+    "all_sensitivity_cases_not_net_savings": true,
+    "no_forbidden_result_keys": true,
+    "unpriced_kristal_items_explicit": true,
+    "ranking_disabled": true,
+    "release_immutable": true,
+    "public_summary_says_not_savings": true,
+    "public_benchmarks_not_site_estimates": true,
+    "platform_markdown_links_checked": 0,
+    "platform_missing_links": [],
+    "docs_markdown_links_checked": 140,
+    "docs_missing_links": [],
+    "pytest_tests": 36,
+    "recompute_matches_published": true,
+    "scripts_compile": true
+  },
+  "frontier_summary": {
+    "case_count": 64,
+    "conservative_positive_cases": 60,
+    "conservative_nonpositive_cases": 4,
+    "optimistic_positive_cases": 64,
+    "conservative_min_cad": -95177403.29,
+    "conservative_max_cad": 830916603.96,
+    "conservative_median_cad": 263362653.98000002,
+    "optimistic_min_cad": 75234045.42,
+    "optimistic_max_cad": 1295462141.09,
+    "optimistic_median_cad": 497045980.935,
+    "interpretation": "Structural sensitivity only. This is not project NPV, project savings, bankability, or a site ranking."
+  }
+}

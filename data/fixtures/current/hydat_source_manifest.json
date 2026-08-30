@@ -1,0 +1,65 @@
+{
+  "schema_version": "2026.08.30",
+  "generated_at": "2026-08-30",
+  "release": "HYDAT_20260717",
+  "runtime_materialization_status": "blocked_runtime_dns",
+  "collections": {
+    "daily": {
+      "collection": "hydrometric-daily-mean",
+      "metric": "daily_mean_discharge_m3s",
+      "definition": "daily mean = average of unit values for a day"
+    },
+    "monthly": {
+      "collection": "hydrometric-monthly-mean",
+      "metric": "monthly_mean_discharge_m3s",
+      "definition": "monthly mean = average of daily means for a month"
+    },
+    "annual_statistics": {
+      "collection": "hydrometric-annual-statistics",
+      "metrics": [
+        "annual_max_daily_mean_discharge_m3s",
+        "annual_min_daily_mean_discharge_m3s"
+      ],
+      "definition": "annual max/min of daily mean values"
+    }
+  },
+  "stations": [
+    "02VB003",
+    "02VC002",
+    "02WA001",
+    "02WA002",
+    "02WB003",
+    "02WC001",
+    "02WC002",
+    "02XA006",
+    "02XB001",
+    "02XC001",
+    "03FA002",
+    "03GB001",
+    "03GC001",
+    "03HA003",
+    "03JB001",
+    "03KC004",
+    "03MB002",
+    "03ME002",
+    "03NF001",
+    "03NG001",
+    "03OE002",
+    "03PB002",
+    "03QC001",
+    "03QC002"
+  ],
+  "paging": {
+    "limit": 5000,
+    "service_max_features_per_query": 10000,
+    "strategy": "offset+limit until no features/next link"
+  },
+  "guards": [
+    "raw API responses are immutable ingest artifacts",
+    "source release and retrieval time are mandatory",
+    "quality/provisional flags preserved",
+    "derived statistics require algorithm version and coverage metadata",
+    "design_flow_m3s is never auto-derived",
+    "capacity_mw is never produced by hydrology pipeline"
+  ]
+}

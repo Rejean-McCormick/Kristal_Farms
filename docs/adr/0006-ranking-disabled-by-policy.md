@@ -5,7 +5,7 @@
 
 ## Context
 
-Legacy site tiers exist in historical research, but current owner direction supersedes the Nain-first hierarchy and requires unranked evidence screening.
+Legacy site tiers exist in historical research, but current direction supersedes those rankings and requires unranked evidence screening.
 
 ## Decision
 

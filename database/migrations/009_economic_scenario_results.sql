@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS scenario.comparison (
   id uuid PRIMARY KEY,
   name text NOT NULL,
   conventional_scenario_id uuid NOT NULL REFERENCES scenario.scenario(id) ON DELETE RESTRICT,
-  kristal_scenario_id uuid NOT NULL REFERENCES scenario.scenario(id) ON DELETE RESTRICT,
+  kristal_farms_scenario_id uuid NOT NULL REFERENCES scenario.scenario(id) ON DELETE RESTRICT,
   comparison_class text NOT NULL,
   status text NOT NULL,
   algorithm_key text NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS scenario.sensitivity_case (
 INSERT INTO system.algorithm_registry(algorithm_key,version,semantic_class,description,parameters_schema,prohibited_outputs)
 VALUES (
  'economics.enabling_infrastructure_frontier','1.0.0','derived_economic_frontier',
- 'Compares evidence-backed project/funding ratios across distance stress cases and solves remaining budget headroom for unpriced Kristal-specific enabling infrastructure. It is not project NPV or savings.',
+ 'Compares evidence-backed project/funding ratios across distance stress cases and solves remaining budget headroom for unpriced Kristal Farms-specific enabling infrastructure. It is not project NPV or savings.',
  '{"hv_distance_km":{"type":"array"},"road_distance_km":{"type":"array"},"fibre_distance_km":{"type":"array"}}'::jsonb,
  ARRAY['project_irr','bankable_npv','site_score','priority_rank','net_savings_claim']
 ) ON CONFLICT DO NOTHING;

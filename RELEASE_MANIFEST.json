@@ -1,41 +1,18 @@
 {
-  "repository": "kristal-farms",
-  "canonical": true,
-  "effective_date": "2026-08-30",
-  "wiki_repository": "Kristal_Farms.wiki",
-  "file_count": 710,
-  "top_level_directories": [
-    ".github",
-    ".pytest_cache",
-    "apps",
-    "archive",
-    "contracts",
-    "data",
-    "database",
-    "docs",
-    "infra",
-    "packages",
-    "pipelines",
-    "scripts",
-    "services",
-    "sources",
-    "tests"
-  ],
-  "research_baseline": "Passes 1–14 complete; next mode is corridor/site dossiers",
-  "application_surfaces": [
+  "project": "Kristal Farms",
+  "release": "2026.08.30",
+  "status": "research foundation / unranked screening",
+  "canonical_repository": "kristal-farms",
+  "operational_data_model": "PostgreSQL + PostGIS",
+  "public_surfaces": [
     "Showcase",
-    "Explorer",
-    "Scenario Studio"
+    "Explorer"
   ],
-  "database_source_of_truth": "PostgreSQL/PostGIS (target operational architecture)",
+  "scenario_surface": "Scenario Studio",
   "ranking_allowed": false,
-  "semantic_kristal_dependency": false,
-  "qa": {
-    "unified_repo_qa": true,
-    "pytest": "36 passed",
-    "pass11_validator": true,
-    "pass12_validator": true,
-    "pass13_validator": true,
-    "pass14_validator": true
-  }
+  "notes": [
+    "No site is selected by this release.",
+    "Public geometry and evidence retain provenance and confidence semantics.",
+    "Project-specific engineering and economics belong in corridor/site dossiers."
+  ]
 }

@@ -1,101 +1,106 @@
 # Kristal Farms
 
-> Northern energy / compute / fibre research, evidence system, geospatial application, and scenario-analysis monorepo.
+Kristal Farms is a northern energy-and-compute infrastructure project built around a simple inversion:
 
-## Canonical repository
+> **Bring flexible compute to remote renewable energy and export digital value by fibre instead of defaulting to long roads and long high-voltage export corridors.**
 
-This is the **single canonical Kristal Farms repository**. It consolidates:
+The project focuses on northern Québec and Labrador, where hydro resources, marine logistics, community infrastructure and telecommunications can be evaluated as one system.
 
-- the cumulative research/evidence program through Pass 14;
-- the PostGIS/application data model developed in Passes 11–14;
-- the supplied Kristal Farms application documentation v0.1;
-- database migrations, ingestion/validation/economic pipelines, schemas, catalog configuration, fixtures and public-release artifacts;
-- the target implementation structure for Showcase, Explorer and Scenario Studio.
+## What Kristal Farms is
 
-The GitHub Wiki is intentionally a **separate repository**: `Kristal_Farms.wiki`.
+Kristal Farms combines four infrastructure layers:
 
-## Naming boundary
+1. **Remote renewable generation** — primarily hydro where technically, environmentally and socially justified.
+2. **Protected community interface** — community and critical loads have priority over flexible compute.
+3. **Serviced compute sites** — power, cooling interface, fibre handoff, physical security, metering and logistics; tenants may bring and control their own hardware and software.
+4. **Digital export by fibre** — move computation and data products rather than defaulting to long-distance electrical export.
 
-**Kristal Farms is not the Kristal/Kristals semantic-knowledge system.**
+Marine access, local roads, heat reuse, storage and short electrical interties are site-specific components, not universal requirements.
 
-Kristal Farms may host many kinds of compute workloads. Kristals may be hosted or used elsewhere. There is no architectural dependency between the two projects.
+## Application
 
-The working name `kristal-platform` / “Kristal Geospatial Platform” used during Passes 11–14 is **superseded**. Its useful code, migrations and data contracts are absorbed here as Kristal Farms application/data infrastructure. The old wording is retained only in `archive/naming-superseded/` for provenance.
+The repository also contains the architecture and data contracts for the Kristal Farms application:
 
-## Product surfaces
+- **Showcase** — guided public narrative;
+- **Explorer** — evidence-first professional geospatial workspace;
+- **Scenario Studio** — reproducible infrastructure and economic comparisons.
 
-1. **Showcase** — public narrative experience.
-2. **Explorer** — evidence-first professional map and data interface.
-3. **Scenario Studio** — reproducible scenario comparison and economics.
+The application is data-driven. PostgreSQL/PostGIS is the intended operational source of truth; MapLibre/deck.gl, OGC APIs, QGIS workflows and immutable public releases consume derived views and artifacts.
 
-All three share the same canonical data model. PostGIS is the intended operational source of truth; GeoJSON/PMTiles/COG and similar outputs are published artifacts.
+## Evidence discipline
+
+The repository deliberately separates facts, observations, derived values, assumptions and unknowns.
+
+Core rules:
+
+- planning margin is **not** validated compute-hosting capacity;
+- community loads are priority loads;
+- external projects are references unless explicitly reclassified;
+- evidence may be valid without geometry;
+- a gauge point is not a dam site;
+- terrain drop is not project head;
+- a benchmark is not a site cost;
+- unknown or unpriced values remain explicit;
+- site ranking is disabled until a transparent methodology and governance decision exist.
 
 ## Repository layout
 
 ```text
 kristal-farms/
-├── apps/web/
-├── services/
-│   ├── kristal-farms-api/
-│   ├── ogc-api/
-│   └── tiles/
-├── packages/
-│   ├── schemas/
-│   ├── catalog/
-│   ├── map-style/
-│   ├── ui/
-│   ├── showcase/
-│   └── shared/
-├── pipelines/
-├── database/
-├── contracts/
-├── data/
-├── docs/
-├── sources/
-├── tests/
-├── scripts/
-├── infra/
-└── archive/
+├── apps/                   # Web application implementation home
+├── services/               # Domain API, OGC API and tile services
+├── packages/               # Schemas, catalog, map style, UI/shared packages
+├── database/               # PostGIS migrations, views, functions and seeds
+├── pipelines/              # Ingestion, transformation, validation and economics
+├── contracts/              # Machine-readable API/data/policy contracts
+├── data/                   # Current fixtures, public releases and controlled inputs
+├── docs/                   # Product, architecture, domain and research documentation
+├── sources/                # Controlled source material and project-direction records
+├── tests/                  # Automated model/data/economic tests
+├── infra/                  # Deployment configuration
+└── archive/                # Superseded material and historical research snapshots
 ```
 
 ## Start here
 
-### Application / implementation
+### Project and domain
 
-- [`docs/product/vision.md`](docs/product/vision.md)
-- [`docs/architecture/overview.md`](docs/architecture/overview.md)
-- [`docs/architecture/repository-structure.md`](docs/architecture/repository-structure.md)
-- [`docs/data/data-model.md`](docs/data/data-model.md)
-- [`docs/data/evidence-model.md`](docs/data/evidence-model.md)
-- [`docs/product/explorer.md`](docs/product/explorer.md)
-- [`docs/product/showcase.md`](docs/product/showcase.md)
-- [`docs/product/scenario-studio.md`](docs/product/scenario-studio.md)
+- [Project state](docs/00-control/PROJECT_STATE.md)
+- [Strategic principles](docs/00-control/STRATEGIC_PRINCIPLES.md)
+- [Reference architecture — English](docs/10-core/Kristal_Farms_Reference_Architecture_EN.md)
+- [Architecture de référence — français](docs/10-core/Architecture_de_reference_Kristal_Farms_FR.md)
+- [Deployment strategy — English](docs/10-core/deployment/DEPLOYMENT_STRATEGY_EN.md)
+- [Stratégie de déploiement — français](docs/10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
+- [Corridor dossier strategy](docs/00-control/CORRIDOR_DOSSIER_STRATEGY.md)
 
-### Kristal Farms research / project state
+### Application and data
 
-- [`docs/00-control/PROJECT_STATE.md`](docs/00-control/PROJECT_STATE.md)
-- [`docs/00-control/MASTER_INDEX.md`](docs/00-control/MASTER_INDEX.md)
-- [`docs/10-core/Kristal_Farms_Reference_Architecture_EN.md`](docs/10-core/Kristal_Farms_Reference_Architecture_EN.md)
-- [`docs/10-core/Architecture_de_reference_Kristal_Farms_FR.md`](docs/10-core/Architecture_de_reference_Kristal_Farms_FR.md)
-- [`docs/40-economics/`](docs/40-economics/)
-- [`docs/50-research/`](docs/50-research/)
-- [`docs/60-application-data/`](docs/60-application-data/)
+- [Documentation index](docs/index.md)
+- [Product vision](docs/product/vision.md)
+- [Architecture overview](docs/architecture/overview.md)
+- [Data model](docs/data/data-model.md)
+- [Evidence model](docs/data/evidence-model.md)
+- [Explorer](docs/product/explorer.md)
+- [Showcase](docs/product/showcase.md)
+- [Scenario Studio](docs/product/scenario-studio.md)
 
-## Current research governance
+### Research methods
 
-- screening mode: **unranked**;
-- `ranking_allowed = false`;
-- existing autonomous-grid planning margin is **not** compute-hosting capacity;
-- community loads are priority loads;
-- multi-MW Kristal Farms concepts require their own generation/electrical architecture;
-- external renewable projects are references unless explicitly reclassified;
-- evidence may be valid without geometry;
-- unknown values stay unknown rather than being silently filled.
+- [Hydro Resource Atlas method](docs/30-site-screening/hydro-atlas/HYDRO_RESOURCE_ATLAS_METHOD.md)
+- [Hydro geometry pipeline](docs/30-site-screening/hydro-atlas/GEOMETRY_PIPELINE_METHOD.md)
+- [Economic architecture frontier](docs/40-economics/ECONOMIC_ARCHITECTURE_FRONTIER.md)
+- [Economic benchmark register](docs/40-economics/ECONOMIC_BENCHMARK_REGISTER.md)
 
-## Implementation status
+## Current status
 
-The repository contains a mature research/evidence baseline, PostGIS migrations/contracts, operational research pipelines and publish fixtures, but **does not contain a completed production web application or API service**. The `apps/` and `services/` directories are implementation homes defined by the supplied application architecture, not invented completed software.
+The repository contains a substantial evidence base, current canonical fixtures, reproducible research pipelines, PostGIS schema/migrations, economic sensitivity tooling and public-release artifacts. It does **not** yet establish a selected project site, buildable hydro capacity, environmental authorization, community authorization, fibre route, heavy-lift logistics plan or bankable project economics.
+
+Development now proceeds through named **corridor and site dossiers** that replace general proxies with real geometry, hydrology, engineering, logistics, rights/governance work, commercial quotations and project-specific economics.
 
 ## Wiki
 
-The explanatory/public wiki is maintained separately in the **`Kristal_Farms.wiki`** repository. It is not the source of truth for technical/evidence state.
+The GitHub Wiki is maintained as a separate repository: `Kristal_Farms.wiki`. It is an explanatory surface, not the technical source of truth.
+
+## Long-horizon concepts
+
+Optional human-infrastructure, learning and education concepts are isolated under [`docs/70-long-horizon/`](docs/70-long-horizon/README.md). They are not prerequisites for the first energy/compute project and must not be presented as committed institutions or programs.

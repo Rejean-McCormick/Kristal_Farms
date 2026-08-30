@@ -1,4 +1,4 @@
-# Final Canonical Project Direction
+# Kristal Farms Reference Architecture
 
 ## Core thesis
 
@@ -12,7 +12,6 @@ Avoiding or materially reducing long roads and HV corridors is a primary structu
 
 - Côte-Nord is the preferred pilot/learning geography because it can combine northern conditions with more practical access and logistics.
 - The long-term resource thesis extends farther north through Québec and Labrador, where road/HV remoteness creates the strongest structural contrast.
-- Nain is a historical/reference application, **not the active first-ranked site**.
 
 ## Physical architecture
 
@@ -54,4 +53,4 @@ Capital may finance infrastructure, but capital should not automatically acquire
 
 ## Current screening rule
 
-There is **no active site rank**. Historical tiers and Nain-first material are provenance only. Future prioritization requires transparent evidence across hydrology, terrain/head, environment, Indigenous/community governance, logistics, telecom, electrical architecture and current economics.
+There is **no active site rank**. Future prioritization requires transparent evidence across hydrology, terrain/head, environment, Indigenous/community governance, logistics, telecom, electrical architecture and current economics.

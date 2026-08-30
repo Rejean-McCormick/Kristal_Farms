@@ -65,7 +65,7 @@ metadata
 id
 name
 project_type
-role                external_reference | kristal_candidate | kristal_project
+role                external_reference | kristal_farms_candidate | kristal_farms_project
 status
 geometry
 developer

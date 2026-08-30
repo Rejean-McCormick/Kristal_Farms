@@ -1,20 +1,20 @@
-# Hydro Atlas Source Hierarchy — Pass 9
+# Hydro Atlas source hierarchy
 
 ## Québec
 
-1. WSC station metadata and WSC station-basin polygons for gauge-linked hydrology.
+1. WSC station metadata and station-basin polygons for gauge-linked hydrology.
 2. GRHQ for connected hydrography across Québec.
-3. GRHQ-HR only where actual coverage is verified; it is not assumed in Nunavik.
-4. HRDEM Mosaic for elevation only after the river line is known.
-5. Canada1Water/NHN as national/cross-border supporting network.
+3. GRHQ-HR only where actual coverage is verified.
+4. HRDEM Mosaic for elevation only after the connected river line is known.
+5. Canada1Water/NHN as national/cross-border supporting network where needed.
 
 ## Labrador
 
-1. WSC station metadata and WSC station-basin polygons.
-2. Canada1Water/NHN Strahler network for national connected hydrography.
-3. HRDEM Mosaic for terrain after the line geometry is ingested.
-4. Supplied historical Labrador hydro files only as contextual evidence, never as substitute authoritative geometry.
+1. WSC station metadata and station-basin polygons.
+2. Canada1Water/NHN for connected national hydrography.
+3. HRDEM Mosaic for terrain after line geometry is accepted.
+4. Historical Labrador hydro files as contextual evidence only, never substitute authoritative geometry.
 
 ## Data governance
 
-The most recent source does not automatically overwrite a different datum silently. Source date and provenance remain attached. If WSC polygon-derived drainage area and WSC station metadata differ, pass 9 keeps the official station metadata value and records the polygon prerelease warning.
+A newer source does not silently overwrite a differently defined datum. Source date, definition and provenance remain attached. If polygon-derived drainage area and station metadata differ, both records remain distinguishable until the definition difference is resolved.

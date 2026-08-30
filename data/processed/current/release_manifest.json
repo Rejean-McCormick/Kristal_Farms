@@ -1,0 +1,19 @@
+{
+  "release_id": "2026.08.30",
+  "generated_at": "2026-08-30",
+  "immutable": true,
+  "base_release": "2026.08.30",
+  "screening_mode": "unranked",
+  "ranking_allowed": false,
+  "public_outputs": [
+    "economic_frontier_summary_public.json",
+    "economic_frontier_cases_public.csv",
+    "economic_benchmarks_public.json"
+  ],
+  "semantics": [
+    "economic results are reference frontiers, not site economics",
+    "no project NPV/IRR",
+    "no site rank",
+    "unpriced Kristal Farms-specific infrastructure stays explicit"
+  ]
+}

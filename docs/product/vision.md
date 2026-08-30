@@ -1,10 +1,10 @@
-# Product vision
+# Application product vision
 
 ## Positioning
 
-Kristal Farms should initially feel like a polished technical product rather than a static consulting map. The public experience must communicate an ambitious infrastructure thesis while allowing professionals to inspect the underlying evidence.
+The Kristal Farms application should initially feel like a polished technical product rather than a static consulting map. The public experience must communicate an ambitious infrastructure thesis while allowing professionals to inspect the underlying evidence.
 
-The same platform should later support site screening and scenario analysis without a foundational rewrite.
+The same application and governed data foundation should later support site screening and scenario analysis without a foundational rewrite.
 
 ## Product surfaces
 
@@ -24,7 +24,7 @@ Success means a non-specialist can understand:
 
 A professional geospatial workspace exposing layers, sources, metadata, uncertainty, timeline, filters, and exports.
 
-Success means a GIS or energy professional recognizes the platform as a serious technical information system, not a marketing illustration.
+Success means a GIS or energy professional recognizes the application as a serious technical information system, not a marketing illustration.
 
 ### Scenario Studio
 

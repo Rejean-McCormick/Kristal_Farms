@@ -23,4 +23,4 @@ Source class informs review and presentation but does not automatically determin
 
 ## Current research
 
-Pass 8 already uses controlled source IDs and quality labels. Migration should preserve these source descriptors while mapping them into the canonical source model.
+Controlled source IDs and quality labels are preserved in the canonical source/evidence model. Source descriptors remain attached through ingestion and publication rather than being flattened into map styling.

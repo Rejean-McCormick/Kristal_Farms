@@ -13,4 +13,4 @@ Support PostGIS/QGIS workflows and standards-oriented geospatial APIs, initially
 
 ## Consequences
 
-The platform retains an open data architecture. Domain-specific workflows may still use a separate FastAPI service rather than forcing them into OGC feature semantics.
+The application retains an open data architecture. Domain-specific workflows may still use a separate FastAPI service rather than forcing them into OGC feature semantics.

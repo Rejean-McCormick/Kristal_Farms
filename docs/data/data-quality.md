@@ -37,6 +37,6 @@
 
 Critical QA failures must block publication. Warnings may be allowed only when documented and visible in the release report.
 
-## Pass 8 baseline
+## Current fixture baseline
 
-The provided Pass 8 bundle reports 6 layers, 72 features, 15 sources, 21 screening override rows, no unexpected non-null geometries, no unknown source IDs, and no ranking-policy violations. Treat these as migration checks, not eternal target counts.
+The active fixture under `data/fixtures/current/` is cumulative and validated by the repository test suite. Historical migration counts are preserved in `archive/research-snapshots/` and are not product acceptance criteria.

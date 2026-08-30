@@ -1,22 +1,20 @@
 # Hydrology observation pipeline
 
-## Source
+## Source model
 
-ECCC exposes monitoring-station, HYDAT daily-mean and HYDAT monthly-mean collections through MSC GeoMet OGC API. Wateroffice also documents a CSV historical daily-mean endpoint.
+Official hydrometric data is ingested into a source-preserving workflow:
 
-## Import rule
+`raw response → staging normalized rows → research source/evidence → research observation`
 
-`raw response -> staging normalized rows -> research.evidence/source -> research.observation`
-
-Do not write raw API rows directly to `core`.
+Raw API rows are never written directly into `core` entities.
 
 ## Metrics
 
-- `daily_mean_discharge_m3s`: source observation
-- `monthly_mean_discharge_m3s`: source observation
-- future seasonal/low-flow statistics: `derived`, with algorithm/model version in metadata
-- `design_flow_m3s`: engineering value; must never be auto-created from daily/monthly observations
+- `daily_mean_discharge_m3s` — source observation;
+- `monthly_mean_discharge_m3s` — source observation;
+- seasonal/climatological statistics — derived observations with algorithm version;
+- `design_flow_m3s` — engineering value and therefore never auto-created from daily/monthly observations.
 
-## Current Pass 11 state
+## Current runtime state
 
-Network calls are represented as jobs but not executed in this runtime because container DNS access to ECCC hosts is unavailable. No flow value is therefore added to the fixture.
+Hydrology ingestion jobs are registered for the canonical WSC stations, but the full source series were not materialized in the research runtime because the external hosts were not reachable from that execution environment. No flow values were fabricated to fill the gap.

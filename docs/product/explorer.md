@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Explorer is the professional view of the same platform used by the Showcase.
+The Explorer is the professional workspace built on the same governed data used by the Showcase.
 
 ## Core capabilities
 

@@ -1,7 +1,7 @@
 # ADR-014 — Integrated atlas uses relations, not synthetic geometry
 
 ## Status
-Accepted — Pass 13
+Accepted
 
 ## Context
 The integrated atlas must connect rivers, communities, ports, telecom, energy and logistics even when exact facility/route geometry is absent.

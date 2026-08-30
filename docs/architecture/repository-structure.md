@@ -36,7 +36,6 @@ kristal-farms/
 │   ├── publish/
 │   ├── catalog/
 │   ├── examples/
-│   └── legacy/
 ├── docs/
 ├── sources/
 ├── scripts/
@@ -49,15 +48,15 @@ kristal-farms/
 ## What belongs where
 
 - `apps/`, `services/`: production implementation homes. They are scaffold-only until actual code is written.
-- `database/`, `pipelines/`, `packages/`: application/data foundation developed through Pass 14.
+- `database/`, `pipelines/`, `packages/`: application/data foundation and reproducible analysis code.
 - `contracts/`: machine-readable API, schema, release, story, layer and policy contracts.
 - `data/raw/`: immutable/source data.
-- `data/processed/`: pass/research outputs with provenance.
-- `data/fixtures/`: loadable canonical app/data fixtures.
-- `data/publish/`: immutable public-release artifacts.
-- `docs/00-control` through `docs/50-research`: cumulative Kristal Farms research/program documentation.
+- `data/processed/current/`: current derived research outputs with provenance.
+- `data/fixtures/current/`: loadable canonical application/data fixtures.
+- `data/publish/current/`: current immutable public-release artifacts.
+- `docs/00-control` through `docs/50-research`: active Kristal Farms project/research documentation.
 - `docs/architecture`, `docs/data`, `docs/product`, etc.: active application implementation documentation.
-- `docs/60-application-data`: migration/data-contract documents from Passes 11–14, renamed into Kristal Farms terminology.
+- `docs/60-application-data`: current application-specific research/data contracts.
 - `archive/`: superseded/historical material that must not control active state.
 
 ## Separate wiki

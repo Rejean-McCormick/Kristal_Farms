@@ -12,9 +12,9 @@ scenes:
     layers:
       visible: [communities]
 
-  - id: kristal-architecture
+  - id: kristal-farms-architecture
     title: New generation to fibre value export
-    panel: story.kristal-architecture
+    panel: story.kristal-farms-architecture
     focus_entity: REF-INNAVIK
     camera:
       center: [-77.9, 58.45]

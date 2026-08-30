@@ -1,0 +1,834 @@
+{
+  "release": "2026.08.30",
+  "immutable": true,
+  "items": [
+    {
+      "entity_id": "1ad5acab-f39d-5970-bfd9-55131e3e9fd4",
+      "canonical_key": "natural:river:qc:natashquan",
+      "name": "Natashquan River / Rivière Natashquan",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Côte-Nord / Minganie",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c8781e4e-6bdb-5606-9617-5cb71e05e6bc",
+      "canonical_key": "asset:wsc-station:02wb003",
+      "name": "02WB003 — Natashquan River / Rivière Natashquan",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Côte-Nord / Minganie",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "a60e91f7-1640-50dd-9f4e-337c9e25ebea",
+      "canonical_key": "natural:river:qc:petit-mecatina",
+      "name": "Petit Mécatina River / Rivière du Petit Mécatina",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "bbd890d3-73ce-560e-87a0-865f90b75995",
+      "canonical_key": "asset:wsc-station:02xa006",
+      "name": "02XA006 — Petit Mécatina River / Rivière du Petit Mécatina",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "3d678c66-4b9a-57b3-8c15-53bd89fd3439",
+      "canonical_key": "natural:river:qc:saint-augustin",
+      "name": "Saint-Augustin River / Rivière Saint-Augustin",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2c7f1403-3378-5bf0-b49e-9dd0d67094ac",
+      "canonical_key": "asset:wsc-station:02xb001",
+      "name": "02XB001 — Saint-Augustin River / Rivière Saint-Augustin",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "46cef33c-e524-5787-8dc3-a0b124e36865",
+      "canonical_key": "natural:river:qc:saint-paul",
+      "name": "Saint-Paul River / Rivière Saint-Paul",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ea9a772c-3c6e-50fa-bda6-5e3d771df0f4",
+      "canonical_key": "asset:wsc-station:02xc001",
+      "name": "02XC001 — Saint-Paul River / Rivière Saint-Paul",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "324fd842-e1c0-5cd5-bcbe-1ad6e61244b1",
+      "canonical_key": "natural:river:qc:etamamiou",
+      "name": "Etamamiou River / Rivière Etamamiou",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4d9fe3ea-f3a3-5ab0-b8f4-844c6878ebea",
+      "canonical_key": "asset:wsc-station:02wc001",
+      "name": "02WC001 — Etamamiou River / Rivière Etamamiou",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8c39de66-6b4c-51d2-b628-1b6b12172bf4",
+      "canonical_key": "natural:river:qc:olomane",
+      "name": "Olomane River / Rivière Olomane",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c2515397-3ab5-5530-ba5e-94282a4a9c63",
+      "canonical_key": "asset:wsc-station:02wc002",
+      "name": "02WC002 — Olomane River / Rivière Olomane",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "44da1d1d-0c41-56dc-8dcc-3c33155e42cb",
+      "canonical_key": "natural:river:qc:aguanus",
+      "name": "Aguanus River / Rivière Aguanus",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "601ca63c-eb29-5aba-b516-6e847f396ea1",
+      "canonical_key": "asset:wsc-station:02wa002",
+      "name": "02WA002 — Aguanus River / Rivière Aguanus",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "454ba21c-f16c-51a4-b0d7-35ca6d0eb5ff",
+      "canonical_key": "natural:river:qc:nabisipi",
+      "name": "Nabisipi River / Rivière Nabisipi",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "19ea269a-e647-59ca-ae11-32fea4844c42",
+      "canonical_key": "asset:wsc-station:02wa001",
+      "name": "02WA001 — Nabisipi River / Rivière Nabisipi",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "cedabc62-52aa-544d-8845-690af765f5d8",
+      "canonical_key": "natural:river:qc:magpie",
+      "name": "Magpie River / Rivière Magpie",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9668c74-dab6-5f03-9c6e-2b1d2c597ec4",
+      "canonical_key": "asset:wsc-station:02vb003",
+      "name": "02VB003 — Magpie River / Rivière Magpie",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "759d3e76-ed93-5a82-8a53-b52e1f737ef3",
+      "canonical_key": "natural:river:qc:romaine",
+      "name": "Romaine River / Rivière Romaine",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "91822d01-067e-599d-8e69-c48761492af9",
+      "canonical_key": "asset:wsc-station:02vc002",
+      "name": "02VC002 — Romaine River / Rivière Romaine",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b09345fd-ae35-55bd-9188-bff76087eeb0",
+      "canonical_key": "natural:river:qc:nastapoka",
+      "name": "Nastapoka River / Rivière Nastapoka",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "fab18acc-fc67-5f21-935c-4e366cc32ed1",
+      "canonical_key": "asset:wsc-station:03fa002",
+      "name": "03FA002 — Nastapoka River / Rivière Nastapoka",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "15613e33-b32e-5705-adaa-25cc0720bc9d",
+      "canonical_key": "natural:river:qc:innuksuac",
+      "name": "Innuksuac River / Rivière Innuksuac",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "586ff527-9914-5636-8929-f518b746ddd1",
+      "canonical_key": "asset:wsc-station:03gb001",
+      "name": "03GB001 — Innuksuac River / Rivière Innuksuac",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9cb4c85-3ee4-55b7-955e-0965323ebfbb",
+      "canonical_key": "natural:river:qc:kogaluc",
+      "name": "Kogaluc River / Rivière Kogaluc",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8733780f-6129-58a6-bb63-b540b05e2e89",
+      "canonical_key": "asset:wsc-station:03gc001",
+      "name": "03GC001 — Kogaluc River / Rivière Kogaluc",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8bc80e2a-61c8-5155-ade4-07c94275ae05",
+      "canonical_key": "natural:river:qc:arnaud",
+      "name": "Arnaud River / Rivière Arnaud (Payne)",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d76b30a7-1649-5a24-a182-29d9344c2fce",
+      "canonical_key": "asset:wsc-station:03ha003",
+      "name": "03HA003 — Arnaud River / Rivière Arnaud (Payne)",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "dd7de1f3-ed11-5a59-b91c-abbefbea0cf3",
+      "canonical_key": "natural:river:qc:leaf",
+      "name": "Leaf River / Rivière aux Feuilles",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "98feb142-f058-5b80-b337-1ce309282ab9",
+      "canonical_key": "asset:wsc-station:03jb001",
+      "name": "03JB001 — Leaf River / Rivière aux Feuilles",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7ef13c93-0a6f-540f-afc1-0cea57498a07",
+      "canonical_key": "natural:river:qc:aux-melezes",
+      "name": "Aux Mélèzes River / Rivière aux Mélèzes",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Koksoak system",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "36891671-423d-5593-b3de-2272a8e71702",
+      "canonical_key": "asset:wsc-station:03kc004",
+      "name": "03KC004 — Aux Mélèzes River / Rivière aux Mélèzes",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Koksoak system",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "965013b9-9884-54ac-981f-fd0caa2cff1a",
+      "canonical_key": "natural:river:qc:great-whale",
+      "name": "Great Whale River / Grande rivière de la Baleine",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d9573e89-b21c-5743-b1ef-10d8313fe14d",
+      "canonical_key": "asset:wsc-station:03mb002",
+      "name": "03MB002 — Great Whale River / Grande rivière de la Baleine",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d6352b82-b00e-5b90-8fc3-b93112c101d5",
+      "canonical_key": "natural:river:qc-nl:george",
+      "name": "George River / Rivière George",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Nunavik / Labrador peninsula",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "29c7dbbb-0b1c-594d-b893-95966cd17c65",
+      "canonical_key": "asset:wsc-station:03me002",
+      "name": "03ME002 — George River / Rivière George",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Nunavik / Labrador peninsula",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c6b3034e-210e-5566-b5a2-4955e6adf302",
+      "canonical_key": "natural:river:nl:ugjoktok",
+      "name": "Ugjoktok River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "North Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ee02edd8-d0d2-5a47-9081-cda9f2235676",
+      "canonical_key": "asset:wsc-station:03nf001",
+      "name": "03NF001 — Ugjoktok River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "North Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "f7b20362-acc7-5606-844f-dc971d13977e",
+      "canonical_key": "natural:river:nl:kanairiktok",
+      "name": "Kanairiktok River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "North / central Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "add4bf24-ed61-5cdf-b827-038ab1833746",
+      "canonical_key": "asset:wsc-station:03ng001",
+      "name": "03NG001 — Kanairiktok River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "North / central Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "95b3136f-9a3c-5b76-ad7b-f046e4164e9a",
+      "canonical_key": "natural:river:nl:naskaupi",
+      "name": "Naskaupi River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Lake Melville / central Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d3d5217a-88f0-5915-a821-721e67d8d846",
+      "canonical_key": "asset:wsc-station:03pb002",
+      "name": "03PB002 — Naskaupi River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Lake Melville / central Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e46c125d-14b6-5fb4-aeb9-deeecafcca0b",
+      "canonical_key": "natural:river:nl:minipi",
+      "name": "Minipi River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Central / southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "641e26a5-e91c-5901-8f61-0fc6c0951663",
+      "canonical_key": "asset:wsc-station:03oe002",
+      "name": "03OE002 — Minipi River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Central / southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c8e8cf1c-0c8a-502b-939f-7bceb953ecfa",
+      "canonical_key": "natural:river:nl:eagle",
+      "name": "Eagle River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b08eca46-0f99-575c-b842-d4e83fe8cd30",
+      "canonical_key": "asset:wsc-station:03qc001",
+      "name": "03QC001 — Eagle River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ac33ba3a-cf18-5cb4-9f1a-46272d8f6f1e",
+      "canonical_key": "natural:river:nl:alexis",
+      "name": "Alexis River",
+      "entity_type": "natural_feature",
+      "status": "research_reference",
+      "region": "Southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ec789c7c-9661-5c7b-96de-7a44ad6535a3",
+      "canonical_key": "asset:wsc-station:03qc002",
+      "name": "03QC002 — Alexis River",
+      "entity_type": "asset",
+      "status": "operational_or_historical_monitoring_asset",
+      "region": "Southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+      "canonical_key": "place:community:nl:nain",
+      "name": "Nain",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "664545fc-d0f4-5caa-9278-510a50261908",
+      "canonical_key": "place:community:qc:inukjuak",
+      "name": "Inukjuak",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "50330e9a-b932-515e-a865-bceb668aadd3",
+      "canonical_key": "place:community:qc:kuujjuaraapik",
+      "name": "Kuujjuaraapik",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "62ac2ffe-be96-5a7b-84df-3d82a892f092",
+      "canonical_key": "place:community:qc:umiujaq",
+      "name": "Umiujaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e00199cc-0e09-5984-a972-200508477085",
+      "canonical_key": "place:community:qc:kangiqsualujjuaq",
+      "name": "Kangiqsualujjuaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "97c7593b-446f-5d9a-a8b0-c866aff76414",
+      "canonical_key": "place:community:qc:tasiujaq",
+      "name": "Tasiujaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "fb68046b-06d8-5282-adc5-58528d35e115",
+      "canonical_key": "place:community:qc:kangirsuk",
+      "name": "Kangirsuk",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2165eaf4-9f32-54db-9641-3467d2ab2320",
+      "canonical_key": "place:community:qc:kuujjuaq",
+      "name": "Kuujjuaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Koksoak-Ungava",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+      "canonical_key": "place:community:qc:akulivik",
+      "name": "Akulivik",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson coast",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+      "canonical_key": "place:community:qc:aupaluk",
+      "name": "Aupaluk",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Ungava coast",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+      "canonical_key": "place:community:qc:ivujivik",
+      "name": "Ivujivik",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+      "canonical_key": "place:community:qc:kangiqsujuaq",
+      "name": "Kangiqsujuaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+      "canonical_key": "place:community:qc:puvirnituq",
+      "name": "Puvirnituq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+      "canonical_key": "place:community:qc:quaqtaq",
+      "name": "Quaqtaq",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Strait / Ungava side",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+      "canonical_key": "place:community:qc:salluit",
+      "name": "Salluit",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "26738a50-a36b-5cc6-bc87-39101cb50114",
+      "canonical_key": "place:community:qc:chisasibi",
+      "name": "Chisasibi",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "James Bay / outside Nunavik territory",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+      "canonical_key": "place:community:nl:hopedale",
+      "name": "Hopedale",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+      "canonical_key": "place:community:nl:makkovik",
+      "name": "Makkovik",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+      "canonical_key": "place:community:nl:postville",
+      "name": "Postville",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+      "canonical_key": "place:community:nl:rigolet",
+      "name": "Rigolet",
+      "entity_type": "place",
+      "status": "research_reference",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "e32d796e-ed8c-55a1-b0c2-aaa684b43231",
+      "canonical_key": "place:community:nl:natuashish",
+      "name": "Natuashish",
+      "entity_type": "place",
+      "status": "supporting_context",
+      "region": "North Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "f7f934ce-67d5-5d8d-892a-f29207b31544",
+      "canonical_key": "place:geographic-context:qc:naniwa-sipi-qikirtajuaq-area",
+      "name": "Naniwa Sipi / Qikirtajuaq area",
+      "entity_type": "place",
+      "status": "legacy_geographic_context",
+      "region": "Southern Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2a6986b3-ec4e-5cae-b7b5-0adafa5b030a",
+      "canonical_key": "corridor:conceptual:cote-nord",
+      "name": "Côte-Nord hydro research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Côte-Nord / Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d4ed0683-dd0b-5239-84cc-c4955d7718c6",
+      "canonical_key": "corridor:conceptual:nunavik-hudson",
+      "name": "Nunavik Hudson Coast research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Nunavik / Hudson Coast",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ddfc611a-90f1-501c-a661-62eee39e8f89",
+      "canonical_key": "corridor:conceptual:nunavik-hudson-strait",
+      "name": "Nunavik Hudson Strait research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "ff5cce79-237b-507d-bd5e-fa4784d16112",
+      "canonical_key": "corridor:conceptual:nunavik-ungava",
+      "name": "Nunavik Ungava research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "959c6b89-d70f-5fc9-bee4-8f1f1aefa55a",
+      "canonical_key": "corridor:conceptual:north-labrador",
+      "name": "North Labrador research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Nunatsiavut / North Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "6a353a9b-e772-5042-8d4d-bfef3c5eec9f",
+      "canonical_key": "corridor:conceptual:central-southeast-labrador",
+      "name": "Central / Southeast Labrador hydro research corridor",
+      "entity_type": "corridor",
+      "status": "research_grouping",
+      "region": "Central / Southeast Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "2f1385fb-ecc1-5e58-98c8-3e385c7404c6",
+      "canonical_key": "asset:regional-marine-port-system:qc:nunavik",
+      "name": "Nunavik regional marine-port system",
+      "entity_type": "asset",
+      "status": "current_regional_infrastructure_context",
+      "region": "Nunavik",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "45f613fb-fc6a-5a57-bfcb-1de57590b927",
+      "canonical_key": "corridor:fibre:nunavik:eaufon-1",
+      "name": "EAUFON-1 Hudson Coast fibre",
+      "entity_type": "corridor",
+      "status": "operating",
+      "region": "Nunavik",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "7c791567-4c4f-5d97-8a6a-fd5b0d9376b7",
+      "canonical_key": "corridor:fibre:nunavik:eaufon-2",
+      "name": "EAUFON-2 Hudson Strait fibre",
+      "entity_type": "corridor",
+      "status": "operating",
+      "region": "Nunavik",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "984c6ece-b0bf-5d86-91fe-f7af052c4e4d",
+      "canonical_key": "corridor:fibre:nunavik:eaufon-3",
+      "name": "EAUFON-3 Ungava Bay final phase",
+      "entity_type": "corridor",
+      "status": "planned_2027",
+      "region": "Nunavik",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4e9f5ad3-b8d2-5ba6-9c5d-a52f45ab2c83",
+      "canonical_key": "corridor:marine:nl:goose-bay-nain-ferry",
+      "name": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+      "entity_type": "corridor",
+      "status": "current_service_program",
+      "region": null,
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "6ab5eacd-2354-596f-8930-6b0ff539724e",
+      "canonical_key": "project:external:nl:labrador-north-wireless-broadband",
+      "name": "Labrador North Wireless Broadband Project",
+      "entity_type": "project",
+      "status": "provider_withdrawn_2025",
+      "region": null,
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b2e45581-46eb-573e-af76-20a589e1abaa",
+      "canonical_key": "asset:remote-diesel-plant:nl:rigolet",
+      "name": "Rigolet remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "1d151156-d2c6-5eb7-9f41-22abca5f8cf5",
+      "canonical_key": "asset:remote-diesel-plant:nl:makkovik",
+      "name": "Makkovik remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "543101cb-ba79-5b96-aa53-ca59529c4397",
+      "canonical_key": "asset:remote-diesel-plant:nl:postville",
+      "name": "Postville remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "57e73ec9-ca5b-5b6c-a47f-4209869ca71b",
+      "canonical_key": "asset:remote-diesel-plant:nl:hopedale",
+      "name": "Hopedale remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "d1e33c3e-ede7-51a9-8cdf-931f86b43053",
+      "canonical_key": "asset:remote-diesel-plant:nl:nain",
+      "name": "Nain remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "34ba4649-7c1a-574e-afb3-2941354c26e7",
+      "canonical_key": "asset:remote-diesel-plant:nl:natuashish",
+      "name": "Natuashish remote diesel plant",
+      "entity_type": "asset",
+      "status": "current_asset_reference",
+      "region": "Labrador",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
+      "canonical_key": "project:external:qc:innavik",
+      "name": "Innavik",
+      "entity_type": "project",
+      "status": "operating",
+      "region": null,
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "165aa1a2-ca63-5029-9f69-82048b6958c3",
+      "canonical_key": "asset:hydro-generating-station:qc:lac-robertson",
+      "name": "Lac-Robertson generating station",
+      "entity_type": "asset",
+      "status": "operating_reference",
+      "region": "Basse-Côte-Nord",
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
+      "canonical_key": "project:external:qc:quaqtaq-wind",
+      "name": "Quaqtaq wind electricity-supply project",
+      "entity_type": "project",
+      "status": "contract_authorized_2025",
+      "region": null,
+      "ranking_allowed": false
+    },
+    {
+      "entity_id": "4f6a0b62-883c-5a64-8fc6-dca525c7ec42",
+      "canonical_key": "project:external:qc:puvirnituq-wind",
+      "name": "Puvirnituq wind electricity-supply project",
+      "entity_type": "project",
+      "status": "contract_authorized_2025",
+      "region": null,
+      "ranking_allowed": false
+    }
+  ]
+}

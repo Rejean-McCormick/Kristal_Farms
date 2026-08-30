@@ -5,6 +5,14 @@ site_dir: site
 
 nav:
   - Home: index.md
+  - Project:
+      - Project State: 00-control/PROJECT_STATE.md
+      - Strategic Principles: 00-control/STRATEGIC_PRINCIPLES.md
+      - Reference Architecture — EN: 10-core/Kristal_Farms_Reference_Architecture_EN.md
+      - Architecture de référence — FR: 10-core/Architecture_de_reference_Kristal_Farms_FR.md
+      - Deployment Strategy — EN: 10-core/deployment/DEPLOYMENT_STRATEGY_EN.md
+      - Stratégie de déploiement — FR: 10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md
+      - Corridor Dossier Strategy: 00-control/CORRIDOR_DOSSIER_STRATEGY.md
   - Product:
       - Vision: product/vision.md
       - Showcase: product/showcase.md
@@ -18,7 +26,7 @@ nav:
       - Repository Structure: architecture/repository-structure.md
       - Frontend: architecture/frontend.md
       - Backend: architecture/backend.md
-      - Data Platform: architecture/data-platform.md
+      - Data Architecture: architecture/data-architecture.md
       - Deployment: architecture/deployment.md
       - Security: architecture/security.md
       - Performance: architecture/performance.md
@@ -37,7 +45,6 @@ nav:
       - Ingestion: data/ingestion.md
       - Publishing: data/publishing.md
       - Release Versioning: data/release-versioning.md
-      - Pass 8 Migration: data/pass8-migration.md
   - Frontend:
       - Cartography: frontend/cartography.md
       - Layer Catalog: frontend/layer-catalog.md
@@ -82,6 +89,8 @@ nav:
   - Roadmap:
       - Implementation Plan: roadmap/implementation-plan.md
       - MVP Acceptance: roadmap/mvp-acceptance.md
+  - Long-Horizon Concepts:
+      - Overview: 70-long-horizon/README.md
 
 markdown_extensions:
   - admonition

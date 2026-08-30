@@ -10,7 +10,7 @@ Deliver:
 - canonical IDs;
 - evidence/source model;
 - layer catalog schema;
-- Pass 8 importer;
+- controlled research-data importer;
 - QA framework;
 - initial public release pipeline.
 
