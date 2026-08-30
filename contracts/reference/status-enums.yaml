@@ -1,0 +1,27 @@
+version: "1.0"
+project_role:
+  - external_reference
+  - kristal_candidate
+  - kristal_project
+evidence_verification:
+  - verified
+  - supported
+  - scoped
+  - unverified
+  - conflicting
+  - unknown
+scenario_status:
+  - draft
+  - working
+  - shared
+  - archived
+assumption_source_type:
+  - user_input
+  - engineering_assumption
+  - derived
+  - evidence
+  - default
+siting_variant:
+  - generation_side
+  - community_side
+  - split

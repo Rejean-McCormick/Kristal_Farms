@@ -1,0 +1,100 @@
+site_name: Kristal Farms
+site_description: Architecture, data, APIs, operations and product documentation for Kristal Farms.
+docs_dir: docs
+site_dir: site
+
+nav:
+  - Home: index.md
+  - Product:
+      - Vision: product/vision.md
+      - Showcase: product/showcase.md
+      - Explorer: product/explorer.md
+      - Scenario Studio: product/scenario-studio.md
+  - Getting Started:
+      - Local Development: getting-started/local-development.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Technology Stack: architecture/technology-stack.md
+      - Repository Structure: architecture/repository-structure.md
+      - Frontend: architecture/frontend.md
+      - Backend: architecture/backend.md
+      - Data Platform: architecture/data-platform.md
+      - Deployment: architecture/deployment.md
+      - Security: architecture/security.md
+      - Performance: architecture/performance.md
+      - Observability: architecture/observability.md
+  - Domain:
+      - Kristal Farms Principles: domain/kristal-farms-principles.md
+      - Screening Governance: domain/screening-governance.md
+      - Glossary: domain/glossary.md
+  - Data:
+      - Data Model: data/data-model.md
+      - Evidence Model: data/evidence-model.md
+      - Provenance: data/provenance.md
+      - Temporal Model: data/temporal-model.md
+      - Spatial Standards: data/spatial-standards.md
+      - Data Quality: data/data-quality.md
+      - Ingestion: data/ingestion.md
+      - Publishing: data/publishing.md
+      - Release Versioning: data/release-versioning.md
+      - Pass 8 Migration: data/pass8-migration.md
+  - Frontend:
+      - Cartography: frontend/cartography.md
+      - Layer Catalog: frontend/layer-catalog.md
+      - State & Permalinks: frontend/state-and-permalinks.md
+      - Accessibility: frontend/accessibility.md
+      - Design System: frontend/design-system.md
+  - APIs:
+      - Overview: api/overview.md
+      - Kristal Farms API: api/kristal-farms-api.md
+      - OGC API: api/ogc-api.md
+      - Tiles: api/tiles.md
+      - Authentication: api/authentication.md
+      - Errors: api/errors.md
+  - Scenarios:
+      - Scenario Model: scenarios/scenario-model.md
+      - Engine Contract: scenarios/engine-contract.md
+      - Reproducibility: scenarios/reproducibility.md
+  - Research:
+      - Workflow: research/research-workflow.md
+  - Testing:
+      - Strategy: testing/testing-strategy.md
+      - Data Tests: testing/data-tests.md
+      - Visual Regression: testing/visual-regression.md
+  - Security:
+      - Threat Model: security/threat-model.md
+  - Reference:
+      - Status Enums: reference/status-enums.md
+      - Units: reference/units.md
+      - Source Quality: reference/source-quality.md
+  - Operations:
+      - Environments: operations/environments.md
+      - QGIS Workflow: operations/qgis-workflow.md
+      - Release Runbook: operations/release-runbook.md
+      - Data Release Runbook: operations/data-release-runbook.md
+      - Backup & Restore: operations/backup-restore.md
+      - Incident Response: operations/incident-response.md
+  - Contributing:
+      - Development Workflow: contributing/development-workflow.md
+      - Documentation: contributing/documentation.md
+      - Pull Requests: contributing/pull-requests.md
+  - ADRs: adr/README.md
+  - Roadmap:
+      - Implementation Plan: roadmap/implementation-plan.md
+      - MVP Acceptance: roadmap/mvp-acceptance.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy

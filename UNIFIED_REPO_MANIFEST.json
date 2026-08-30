@@ -1,0 +1,21 @@
+{
+  "repository": "kristal-farms",
+  "canonical": true,
+  "wiki_repository": "Kristal_Farms.wiki",
+  "effective_date": "2026-08-30",
+  "merged_inputs": [
+    "kristal-farms-docs Pass 14 cumulative worktree",
+    "Pass 14 application/data foundation formerly distributed under working name kristal-platform",
+    "Kristal Farms application documentation v0.1"
+  ],
+  "naming": {
+    "canonical_product": "Kristal Farms",
+    "superseded_working_names": [
+      "Kristal Platform",
+      "Kristal Geospatial Platform",
+      "kristal-platform"
+    ],
+    "semantic_kristal_dependency": false
+  },
+  "implementation_status": "research/data/application architecture baseline; production web/API not yet implemented"
+}

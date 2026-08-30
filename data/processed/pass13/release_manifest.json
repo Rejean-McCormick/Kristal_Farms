@@ -1,0 +1,17 @@
+{
+  "id": "21853dc7-03d0-5450-a0ce-b60d016c221b",
+  "release_key": "2026.08.30-pass13",
+  "release_date": "2026-08-30",
+  "immutable": true,
+  "screening_mode": "unranked",
+  "ranking_allowed": false,
+  "metadata": {
+    "platform_pass": "13",
+    "catalog_version": "pass13.0",
+    "story_version": "pass13.0",
+    "public_entities": 92,
+    "community_points": 20,
+    "hydrometric_station_points": 24,
+    "legacy_tiers_publicly_published": false
+  }
+}

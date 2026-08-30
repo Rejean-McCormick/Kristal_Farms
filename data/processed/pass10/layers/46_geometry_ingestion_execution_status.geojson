@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "Geometry ingestion execution status",
+  "description": "Actual Pass 10 execution attempts. Official services are registered/verified where possible, but this runtime cannot resolve external hosts; no fallback natural-feature geometry is created.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "EXEC-WSC-MDA02",
+      "geometry": null,
+      "properties": {
+        "id": "EXEC-WSC-MDA02",
+        "name": "WSC MDA 02 GeoJSON package",
+        "feature_type": "geometry_pipeline_execution_status",
+        "verification_status": "execution_attempt_recorded",
+        "confidence": "high_for_attempt_result",
+        "source_ids": [
+          "SRC-WSC-BASIN-DIRECTORY"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "execution_status_no_geometry",
+        "endpoint": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_02.zip",
+        "container_result": "container_dns_resolution_failed_2026_08_30",
+        "web_verification_state": "web_directory_verified_binary_not_materialized",
+        "ingested": false,
+        "fallback_geometry_created": false,
+        "next_action": "rerun supplied pass10 scripts in a network-enabled environment"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EXEC-WSC-MDA03",
+      "geometry": null,
+      "properties": {
+        "id": "EXEC-WSC-MDA03",
+        "name": "WSC MDA 03 GeoJSON package",
+        "feature_type": "geometry_pipeline_execution_status",
+        "verification_status": "execution_attempt_recorded",
+        "confidence": "high_for_attempt_result",
+        "source_ids": [
+          "SRC-WSC-BASIN-DIRECTORY"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "execution_status_no_geometry",
+        "endpoint": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_03.zip",
+        "container_result": "container_dns_resolution_failed_2026_08_30",
+        "web_verification_state": "web_directory_verified_binary_not_materialized",
+        "ingested": false,
+        "fallback_geometry_created": false,
+        "next_action": "rerun supplied pass10 scripts in a network-enabled environment"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EXEC-GRHQ-L15",
+      "geometry": null,
+      "properties": {
+        "id": "EXEC-GRHQ-L15",
+        "name": "GRHQ REST layer 15",
+        "feature_type": "geometry_pipeline_execution_status",
+        "verification_status": "execution_attempt_recorded",
+        "confidence": "high_for_attempt_result",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "execution_status_no_geometry",
+        "endpoint": "https://servicescarto.mern.gouv.qc.ca/pes/rest/services/Territoire/GRHQ_WMS/MapServer/15",
+        "container_result": "container_dns_resolution_failed_2026_08_30",
+        "web_verification_state": "web_service_schema_verified_query_data_not_materialized",
+        "ingested": false,
+        "fallback_geometry_created": false,
+        "next_action": "rerun supplied pass10 scripts in a network-enabled environment"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EXEC-C1W",
+      "geometry": null,
+      "properties": {
+        "id": "EXEC-C1W",
+        "name": "Canada1Water REST endpoint",
+        "feature_type": "geometry_pipeline_execution_status",
+        "verification_status": "execution_attempt_recorded",
+        "confidence": "high_for_attempt_result",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "execution_status_no_geometry",
+        "endpoint": "https://maps-cartes.services.geo.ca/server_serveur/rest/services/NRCan/c1w_stream_index_en/MapServer/0",
+        "container_result": "container_dns_resolution_failed_2026_08_30",
+        "web_verification_state": "official_endpoint_registered_binary_or_features_not_materialized",
+        "ingested": false,
+        "fallback_geometry_created": false,
+        "next_action": "rerun supplied pass10 scripts in a network-enabled environment"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EXEC-HRDEM-STAC",
+      "geometry": null,
+      "properties": {
+        "id": "EXEC-HRDEM-STAC",
+        "name": "HRDEM STAC API",
+        "feature_type": "geometry_pipeline_execution_status",
+        "verification_status": "execution_attempt_recorded",
+        "confidence": "high_for_attempt_result",
+        "source_ids": [
+          "SRC-HRDEM-STAC-API"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "execution_status_no_geometry",
+        "endpoint": "https://datacube.services.geo.ca/stac/api/",
+        "container_result": "container_dns_resolution_failed_2026_08_30",
+        "web_verification_state": "web_STAC_root_and_open_government_resources_verified_assets_not_materialized",
+        "ingested": false,
+        "fallback_geometry_created": false,
+        "next_action": "rerun supplied pass10 scripts in a network-enabled environment"
+      }
+    }
+  ]
+}

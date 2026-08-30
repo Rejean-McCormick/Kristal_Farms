@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.example/contracts/showcase-story.schema.json",
+  "title": "Kristal Farms Showcase Story",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scenes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "camera"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "panel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "focus_entity": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "camera": {
+            "type": "object",
+            "required": [
+              "center",
+              "zoom"
+            ],
+            "properties": {
+              "center": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "zoom": {
+                "type": "number"
+              },
+              "pitch": {
+                "type": "number"
+              },
+              "bearing": {
+                "type": "number"
+              },
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "layers": {
+            "type": "object",
+            "properties": {
+              "visible": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "hidden": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "animation": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

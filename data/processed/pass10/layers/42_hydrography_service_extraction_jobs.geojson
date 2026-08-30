@@ -1,0 +1,1091 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "Hydrography service extraction jobs",
+  "description": "Deterministic extraction jobs for GRHQ (Québec) and Canada1Water/NHN (Labrador). All accepted reach geometry remains null pending execution and manual connectivity review.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02WB003",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02WB003",
+        "name": "02WB003 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02WB003",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "region": "Côte-Nord / Minganie",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02WB003",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02XA006",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02XA006",
+        "name": "02XA006 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02XA006",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "region": "Basse-Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02XA006",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02XB001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02XB001",
+        "name": "02XB001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02XB001",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "region": "Basse-Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02XB001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02XC001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02XC001",
+        "name": "02XC001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02XC001",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "region": "Basse-Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02XC001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02WC001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02WC001",
+        "name": "02WC001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02WC001",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "region": "Basse-Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02WC001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02WC002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02WC002",
+        "name": "02WC002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02WC002",
+        "river_name": "Olomane River / Rivière Olomane",
+        "region": "Basse-Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02WC002",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02WA002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02WA002",
+        "name": "02WA002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02WA002",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "region": "Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02WA002",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02WA001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02WA001",
+        "name": "02WA001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02WA001",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "region": "Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02WA001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02VB003",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02VB003",
+        "name": "02VB003 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02VB003",
+        "river_name": "Magpie River / Rivière Magpie",
+        "region": "Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02VB003",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-02VC002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-02VC002",
+        "name": "02VC002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "02VC002",
+        "river_name": "Romaine River / Rivière Romaine",
+        "region": "Côte-Nord",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-02VC002",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03FA002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03FA002",
+        "name": "03FA002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03FA002",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "region": "Nunavik / Hudson Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03FA002",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03GB001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03GB001",
+        "name": "03GB001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03GB001",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "region": "Nunavik / Hudson Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03GB001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03GC001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03GC001",
+        "name": "03GC001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03GC001",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "region": "Nunavik / Hudson Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03GC001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03HA003",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03HA003",
+        "name": "03HA003 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03HA003",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "region": "Nunavik / Ungava Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03HA003",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03JB001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03JB001",
+        "name": "03JB001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03JB001",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "region": "Nunavik / Ungava Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03JB001",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03KC004",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03KC004",
+        "name": "03KC004 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03KC004",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "region": "Nunavik / Koksoak system",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03KC004",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03MB002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03MB002",
+        "name": "03MB002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03MB002",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "region": "Nunavik / Hudson Bay",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "request_window_id": "WINDOW-03MB002",
+        "method": "GRHQ_REST_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03ME002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03ME002",
+        "name": "03ME002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15",
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03ME002",
+        "river_name": "George River / Rivière George",
+        "region": "Nunavik / Labrador peninsula",
+        "source_choice": [
+          "SRC-GRHQ-REST-L15",
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03ME002",
+        "method": "dual_GRHQ_Canada1Water_spatial_clip_then_manual_cross_border_reconciliation",
+        "requested_fields": [
+          "UDH",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "TOPONYME",
+          "CODE_SOURC_DONNE",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03NF001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03NF001",
+        "name": "03NF001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03NF001",
+        "river_name": "Ugjoktok River",
+        "region": "North Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03NF001",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03NG001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03NG001",
+        "name": "03NG001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03NG001",
+        "river_name": "Kanairiktok River",
+        "region": "North / central Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03NG001",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03PB002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03PB002",
+        "name": "03PB002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03PB002",
+        "river_name": "Naskaupi River",
+        "region": "Lake Melville / central Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03PB002",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03OE002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03OE002",
+        "name": "03OE002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03OE002",
+        "river_name": "Minipi River",
+        "region": "Central / southeast Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03OE002",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03QC001",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03QC001",
+        "name": "03QC001 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03QC001",
+        "river_name": "Eagle River",
+        "region": "Southeast Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03QC001",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROJOB-03QC002",
+      "geometry": null,
+      "properties": {
+        "id": "HYDROJOB-03QC002",
+        "name": "03QC002 — hydrography extraction job",
+        "feature_type": "official_hydrography_extraction_job",
+        "verification_status": "source_endpoint_registered_execution_pending",
+        "confidence": "high_for_source_choice_none_for_unextracted_reach",
+        "source_ids": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "job_record_no_geometry",
+        "station_number": "03QC002",
+        "river_name": "Alexis River",
+        "region": "Southeast Labrador",
+        "source_choice": [
+          "SRC-CANADA1WATER-REST"
+        ],
+        "request_window_id": "WINDOW-03QC002",
+        "method": "Canada1Water_spatial_clip_then_manual_connected_reach_review",
+        "requested_fields": [
+          "schema_to_be_discovered_at_execution",
+          "preserve_all_network_and_provenance_fields"
+        ],
+        "spatial_query_first": true,
+        "toponym_filter_only_as_candidate_hint": true,
+        "connected_reach_manual_review_required": true,
+        "accepted_connected_reach_geometry": null,
+        "accepted_reach_id": null,
+        "flow_direction_verified": false,
+        "warning": "Automatic name match or proximity may create candidate segments only. No segment becomes an authoritative research reach without connectivity/manual review."
+      }
+    }
+  ]
+}

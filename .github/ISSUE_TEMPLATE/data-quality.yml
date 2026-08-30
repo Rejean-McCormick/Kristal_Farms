@@ -1,0 +1,31 @@
+name: Data quality issue
+description: Report a source, provenance, geometry, unit, status, or interpretation problem
+title: "[Data]: "
+labels: [data-quality]
+body:
+  - type: input
+    id: entity
+    attributes:
+      label: Entity / record ID
+  - type: textarea
+    id: issue
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Supporting source or evidence
+      description: Do not paste confidential source material into a public issue.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Cosmetic/metadata
+        - Material interpretation
+        - Public misinformation risk
+        - Security/privacy risk
+    validations:
+      required: true

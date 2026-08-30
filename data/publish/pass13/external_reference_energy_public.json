@@ -1,0 +1,57 @@
+{
+  "release": "2026.08.30-pass13",
+  "immutable": true,
+  "items": [
+    {
+      "entity_id": "6ab5eacd-2354-596f-8930-6b0ff539724e",
+      "name": "Labrador North Wireless Broadband Project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "status": "provider_withdrawn_2025",
+      "technology": "broadband",
+      "capacity_mw": null,
+      "geometry": null
+    },
+    {
+      "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
+      "name": "Innavik",
+      "entity_type": "project",
+      "role": "external_reference",
+      "status": "operating",
+      "technology": "run_of_river_hydro",
+      "capacity_mw": 7.5,
+      "geometry": null
+    },
+    {
+      "entity_id": "165aa1a2-ca63-5029-9f69-82048b6958c3",
+      "name": "Lac-Robertson generating station",
+      "entity_type": "asset",
+      "role": "external_reference",
+      "status": "operating_reference",
+      "technology": "hydroelectricity",
+      "capacity_value": 21,
+      "capacity_unit": "MW",
+      "geometry": null
+    },
+    {
+      "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
+      "name": "Quaqtaq wind electricity-supply project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "status": "contract_authorized_2025",
+      "technology": "wind_plus_storage",
+      "capacity_mw": null,
+      "geometry": null
+    },
+    {
+      "entity_id": "4f6a0b62-883c-5a64-8fc6-dca525c7ec42",
+      "name": "Puvirnituq wind electricity-supply project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "status": "contract_authorized_2025",
+      "technology": "wind_plus_storage",
+      "capacity_mw": null,
+      "geometry": null
+    }
+  ]
+}

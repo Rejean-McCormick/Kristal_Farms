@@ -1,0 +1,104 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "Hydrography schema registry",
+  "description": "Source schemas and runtime discovery requirements needed before extracted geometry can be accepted.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "SCHEMA-GRHQ-L15",
+      "geometry": null,
+      "properties": {
+        "id": "SCHEMA-GRHQ-L15",
+        "name": "GRHQ flow-continuity line schema",
+        "feature_type": "hydrography_service_schema_registry",
+        "verification_status": "official_service_schema_verified",
+        "confidence": "high",
+        "source_ids": [
+          "SRC-GRHQ-REST-L15"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "schema_record_no_geometry",
+        "geometry_type": "polyline",
+        "supported_query_formats": [
+          "JSON",
+          "geoJSON",
+          "PBF"
+        ],
+        "spatial_reference_service": 3857,
+        "max_record_count": 2000,
+        "fields": [
+          "UDH",
+          "ENABLED",
+          "TYPECE",
+          "PERENNITE",
+          "FONCTION",
+          "ISOLE",
+          "O_STRAHLER",
+          "O_HORTON",
+          "LONGUEUR_M",
+          "DIST_DE_M",
+          "CODE_PRECI_PLANI",
+          "TOPONYME",
+          "CODE_PRODU",
+          "CODE_SOURC_DONNE",
+          "CODE_METHO_PRODU",
+          "DATE_SOURCE",
+          "DATE_MAJ",
+          "OBJECTID"
+        ],
+        "automatic_acceptance_allowed": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SCHEMA-CANADA1WATER",
+      "geometry": null,
+      "properties": {
+        "id": "SCHEMA-CANADA1WATER",
+        "name": "Canada1Water/NHN stream schema discovery gate",
+        "feature_type": "hydrography_service_schema_registry",
+        "verification_status": "official_dataset_and_endpoint_registered_schema_runtime_discovery_required",
+        "confidence": "high_for_source_family_lower_for_current_service_schema",
+        "source_ids": [
+          "SRC-CANADA1WATER-NHN-STRAHLER",
+          "SRC-CANADA1WATER-REST"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "schema_record_no_geometry",
+        "geometry_type": "polyline_expected",
+        "required_semantics": [
+          "stream network geometry",
+          "Strahler/order information where provided",
+          "graph/connectivity identifiers",
+          "source/provenance attributes"
+        ],
+        "runtime_schema_discovery_required": true,
+        "automatic_acceptance_allowed": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SCHEMA-WSC-BASINS",
+      "geometry": null,
+      "properties": {
+        "id": "SCHEMA-WSC-BASINS",
+        "name": "WSC basin-polygon matching schema gate",
+        "feature_type": "hydrography_service_schema_registry",
+        "verification_status": "official_package_registry_verified_binary_schema_runtime_discovery_required",
+        "confidence": "high_for_package_and_station_registry",
+        "source_ids": [
+          "SRC-WSC-BASIN-POLYGONS",
+          "SRC-WSC-INCLUDED-STATIONS"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "schema_record_no_geometry",
+        "geometry_type": "polygon",
+        "target_match_key": "WSC station number; actual package property name discovered at runtime",
+        "station_count_expected": 24,
+        "automatic_field_guessing_without_validation": false
+      }
+    }
+  ]
+}

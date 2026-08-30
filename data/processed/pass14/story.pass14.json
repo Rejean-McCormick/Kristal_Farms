@@ -1,0 +1,125 @@
+{
+  "version": "pass14.0",
+  "generated_at": "2026-08-30",
+  "screening_mode": "unranked",
+  "ranking_allowed": false,
+  "story_id": "kristal-core-thesis",
+  "title": "Kristal Farms — Northern Energy-to-Compute Atlas",
+  "design_reference_image": "data/examples/pass13/kristal_farms_corridor_nordique_integre_design_reference.png",
+  "design_reference_semantics": "conceptual_only_not_data_source",
+  "scenes": [
+    {
+      "id": "north-context",
+      "title": "A vast northern resource geography",
+      "camera": {
+        "preset": "northern-quebec-labrador"
+      },
+      "visible_layers": [
+        "communities",
+        "hydrometric_stations"
+      ],
+      "narrative_key": "north_context",
+      "claims": [
+        "Show community reference points and official WSC station points; do not show invented river lines."
+      ]
+    },
+    {
+      "id": "isolated-systems",
+      "title": "Existing remote systems are community infrastructure",
+      "camera": {
+        "preset": "nunavik-and-labrador"
+      },
+      "visible_layers": [
+        "communities",
+        "energy_context",
+        "external_reference_energy"
+      ],
+      "narrative_key": "existing_systems",
+      "claims": [
+        "Existing community energy systems are context, not assumed multi-MW compute capacity."
+      ]
+    },
+    {
+      "id": "connectivity",
+      "title": "Marine logistics and fibre shape what is possible",
+      "camera": {
+        "preset": "northern-coasts"
+      },
+      "visible_layers": [
+        "communities",
+        "marine_context",
+        "telecom_context"
+      ],
+      "narrative_key": "connectivity",
+      "claims": [
+        "Operating, planned and unresolved telecom states must remain visually distinct.",
+        "Marine service context is not heavy-lift certification."
+      ]
+    },
+    {
+      "id": "hydro-evidence",
+      "title": "Hydrology first, site claims later",
+      "camera": {
+        "preset": "hydro-atlas"
+      },
+      "visible_layers": [
+        "hydrometric_stations",
+        "hydro_rivers",
+        "hydro_screening_matrix",
+        "hydrology_observations"
+      ],
+      "narrative_key": "hydro_evidence",
+      "claims": [
+        "Station point is not a dam site.",
+        "Missing river/basin geometry remains missing."
+      ]
+    },
+    {
+      "id": "kristal-architecture",
+      "title": "New generation → protected community interface → flexible compute → fibre",
+      "camera": {
+        "preset": "architecture-diagram"
+      },
+      "visible_layers": [
+        "communities",
+        "external_reference_energy",
+        "telecom_context"
+      ],
+      "narrative_key": "architecture",
+      "claims": [
+        "This scene explains project architecture; it is not a site map."
+      ]
+    },
+    {
+      "id": "economic-frontier",
+      "title": "When moving data can beat moving electrons",
+      "camera": {
+        "preset": "architecture-economics"
+      },
+      "visible_layers": [
+        "economic_benchmarks",
+        "architecture_comparison",
+        "economic_frontier"
+      ],
+      "narrative_key": "economic_frontier",
+      "claims": [
+        "Reference projects show long transmission and northern roads can carry very large infrastructure burdens.",
+        "The frontier is not a site NPV: fibre values are funding proxies and Kristal-specific pads, local electrical works, ports and landings remain unpriced.",
+        "Some short-export/long-fibre stress cases do not show conservative headroom; Kristal is not assumed to win everywhere."
+      ]
+    },
+    {
+      "id": "open-explorer",
+      "title": "Open the evidence",
+      "camera": {
+        "preset": "current"
+      },
+      "visible_layers": [
+        "communities",
+        "hydrometric_stations"
+      ],
+      "narrative_key": "open_explorer",
+      "action": "OPEN_EXPLORER"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$defs": {
+    "EntityType": {
+      "enum": [
+        "place",
+        "asset",
+        "project",
+        "corridor",
+        "natural_feature"
+      ],
+      "title": "EntityType",
+      "type": "string"
+    },
+    "Visibility": {
+      "enum": [
+        "PUBLIC",
+        "PARTNER",
+        "INTERNAL",
+        "RESTRICTED"
+      ],
+      "title": "Visibility",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "canonical_key": {
+      "title": "Canonical Key",
+      "type": "string"
+    },
+    "entity_type": {
+      "$ref": "#/$defs/EntityType"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
+    },
+    "visibility": {
+      "$ref": "#/$defs/Visibility",
+      "default": "PUBLIC"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_key",
+    "entity_type",
+    "name"
+  ],
+  "title": "Entity",
+  "type": "object"
+}

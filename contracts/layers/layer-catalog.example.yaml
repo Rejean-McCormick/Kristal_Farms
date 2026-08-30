@@ -1,0 +1,56 @@
+schema_version: "1.0"
+layers:
+  - id: communities
+    title: Communities
+    group: community
+    classification: public
+    source:
+      type: pmtiles
+      collection: communities
+    geometry:
+      types: [Point]
+    display:
+      renderer: maplibre
+      layer_type: symbol
+      style_token: community.default
+      min_zoom: 2
+    inspector:
+      title_field: name
+      fields: [region, jurisdiction, screening_state]
+      evidence_enabled: true
+    filters:
+      - field: region
+        type: categorical
+    timeline:
+      enabled: false
+    export:
+      enabled: true
+
+  - id: reference_projects
+    title: Renewable reference projects
+    group: energy
+    classification: public
+    source:
+      type: vector_tiles
+      collection: reference_projects
+    geometry:
+      types: [Point, Polygon]
+    display:
+      renderer: maplibre
+      layer_type: symbol
+      style_token: project.external_reference
+    inspector:
+      title_field: name
+      fields: [technology, capacity_mw, status, role]
+      evidence_enabled: true
+    filters:
+      - field: technology
+        type: categorical
+      - field: status
+        type: categorical
+    timeline:
+      enabled: true
+      start_field: valid_from
+      end_field: valid_to
+    export:
+      enabled: true

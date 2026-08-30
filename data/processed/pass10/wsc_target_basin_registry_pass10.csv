@@ -1,0 +1,25 @@
+station_number,river_name,region,jurisdiction,wsc_basin_registry_status,official_mda_package,basin_polygon_officially_listed,basin_polygon_geometry_ingested,warning
+02WB003,Natashquan River / Rivière Natashquan,Côte-Nord / Minganie,Québec,active,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02XA006,Petit Mécatina River / Rivière du Petit Mécatina,Basse-Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02XB001,Saint-Augustin River / Rivière Saint-Augustin,Basse-Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02XC001,Saint-Paul River / Rivière Saint-Paul,Basse-Côte-Nord,Québec,active,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02WC001,Etamamiou River / Rivière Etamamiou,Basse-Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02WC002,Olomane River / Rivière Olomane,Basse-Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02WA002,Aguanus River / Rivière Aguanus,Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02WA001,Nabisipi River / Rivière Nabisipi,Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02VB003,Magpie River / Rivière Magpie,Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+02VC002,Romaine River / Rivière Romaine,Côte-Nord,Québec,discontinued,MDA_ADP_02.zip,true,false,registry inclusion is not local geometry and not a project site
+03FA002,Nastapoka River / Rivière Nastapoka,Nunavik / Hudson Bay,Québec,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03GB001,Innuksuac River / Rivière Innuksuac,Nunavik / Hudson Bay,Québec,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03GC001,Kogaluc River / Rivière Kogaluc,Nunavik / Hudson Bay,Québec,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03HA003,Arnaud River / Rivière Arnaud (Payne),Nunavik / Ungava Bay,Québec,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03JB001,Leaf River / Rivière aux Feuilles,Nunavik / Ungava Bay,Québec,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03KC004,Aux Mélèzes River / Rivière aux Mélèzes,Nunavik / Koksoak system,Québec,active,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03MB002,Great Whale River / Grande rivière de la Baleine,Nunavik / Hudson Bay,Québec,active,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03ME002,George River / Rivière George,Nunavik / Labrador peninsula,Québec / Labrador watershed context,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03NF001,Ugjoktok River,North Labrador,Newfoundland and Labrador,active,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03NG001,Kanairiktok River,North / central Labrador,Newfoundland and Labrador,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03PB002,Naskaupi River,Lake Melville / central Labrador,Newfoundland and Labrador,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03OE002,Minipi River,Central / southeast Labrador,Newfoundland and Labrador,discontinued,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03QC001,Eagle River,Southeast Labrador,Newfoundland and Labrador,active,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site
+03QC002,Alexis River,Southeast Labrador,Newfoundland and Labrador,active,MDA_ADP_03.zip,true,false,registry inclusion is not local geometry and not a project site

@@ -1,0 +1,55 @@
+{
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "layers": [
+    {
+      "file": "34_authoritative_watershed_polygons.geojson",
+      "title": "Authoritative watershed polygon registry",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "WSC station-basin records for the pass-9 river set. Official packages are identified, but polygon geometry is intentionally null because binary ingestion failed."
+    },
+    {
+      "file": "35_authoritative_river_reaches.geojson",
+      "title": "Authoritative river reach registry",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "River research objects linked to official hydrometric anchors and authoritative hydrography sources. Line geometry remains null until GRHQ/Canada1Water data are actually ingested."
+    },
+    {
+      "file": "36_dem_terrain_profiles.geojson",
+      "title": "DEM terrain profile status",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "Tracks HRDEM readiness for each pass-9 reach. All terrain-drop and hydraulic-head fields remain null."
+    },
+    {
+      "file": "37_hydrology_observation_profiles.geojson",
+      "title": "Hydrometric observation profiles",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Official WSC station points and drainage-area metadata for 24 river references. Flow series/statistics are not fabricated and remain unpopulated until HYDAT/official series extraction."
+    },
+    {
+      "file": "38_hydro_research_reaches.geojson",
+      "title": "Hydro resource research reaches",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "Unranked river research objects. These are not candidate dam coordinates and contain no invented head, design flow, MW, CAPEX or LCOE."
+    },
+    {
+      "file": "39_reach_logistics_context.geojson",
+      "title": "Hydro reach logistics context",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "Join/status layer for community, port, road and fibre research. It intentionally does not recreate prior generated map geometries that are unavailable in this runtime."
+    },
+    {
+      "file": "40_hydro_opportunity_evidence_matrix.geojson",
+      "title": "Hydro atlas evidence completeness matrix",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Per-river evidence completeness for the Hydro Resource Atlas. Despite the legacy filename concept “opportunity”, this layer contains no opportunity/suitability score or ranking."
+    }
+  ]
+}

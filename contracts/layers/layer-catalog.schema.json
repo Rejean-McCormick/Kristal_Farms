@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.example/contracts/layer-catalog.schema.json",
+  "title": "Kristal Farms Layer Catalog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "layers"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/layer"
+      }
+    }
+  },
+  "$defs": {
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "group",
+        "classification",
+        "source",
+        "display"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "public",
+            "partner",
+            "internal",
+            "restricted"
+          ]
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "vector_tiles",
+                "pmtiles",
+                "ogc_features",
+                "geojson_small",
+                "cog",
+                "api_derived",
+                "scenario"
+              ]
+            },
+            "collection": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "geometry": {
+          "type": "object",
+          "properties": {
+            "types": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "Point",
+                  "MultiPoint",
+                  "LineString",
+                  "MultiLineString",
+                  "Polygon",
+                  "MultiPolygon"
+                ]
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "display": {
+          "type": "object",
+          "required": [
+            "renderer"
+          ],
+          "properties": {
+            "renderer": {
+              "enum": [
+                "maplibre",
+                "deckgl",
+                "custom"
+              ]
+            },
+            "layer_type": {
+              "type": "string"
+            },
+            "style_token": {
+              "type": "string"
+            },
+            "min_zoom": {
+              "type": "number"
+            },
+            "max_zoom": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": true
+        },
+        "inspector": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "timeline": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "export": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

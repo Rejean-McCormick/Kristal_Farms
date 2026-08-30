@@ -1,0 +1,195 @@
+{
+  "version": "pass12.0",
+  "generated_at": "2026-08-30",
+  "screening_mode": "unranked",
+  "ranking_allowed": false,
+  "layers": [
+    {
+      "id": "hydrometric_stations",
+      "title": "Hydrometric stations",
+      "group": "RESEARCH",
+      "source": {
+        "type": "vector_tiles",
+        "collection": "publish.hydrometric_stations_v1"
+      },
+      "geometry": {
+        "types": [
+          "Point"
+        ]
+      },
+      "display": {
+        "renderer": "maplibre",
+        "layer_type": "symbol",
+        "min_zoom": 2,
+        "max_zoom": 18
+      },
+      "evidence": {
+        "enabled": true
+      },
+      "filters": [
+        "operational_status",
+        "station_number"
+      ],
+      "timeline": {
+        "enabled": false
+      },
+      "permissions": {
+        "public": true
+      },
+      "semantics": {
+        "geometry_role": "official_hydrometric_station_position",
+        "not_project_site": true
+      }
+    },
+    {
+      "id": "hydro_rivers",
+      "title": "Hydro research rivers",
+      "group": "RESEARCH",
+      "source": {
+        "type": "ogc_features",
+        "collection": "natural-features"
+      },
+      "geometry": {
+        "types": [
+          "LineString",
+          "MultiLineString",
+          "null"
+        ]
+      },
+      "display": {
+        "renderer": "maplibre",
+        "layer_type": "line",
+        "min_zoom": 2,
+        "max_zoom": 18
+      },
+      "evidence": {
+        "enabled": true
+      },
+      "filters": [
+        "status",
+        "jurisdiction"
+      ],
+      "timeline": {
+        "enabled": false
+      },
+      "permissions": {
+        "public": true
+      },
+      "semantics": {
+        "null_geometry_allowed": true,
+        "ranking_allowed": false
+      }
+    },
+    {
+      "id": "hydro_screening_matrix",
+      "title": "Hydro evidence matrix",
+      "group": "ANALYSIS",
+      "source": {
+        "type": "api",
+        "collection": "screening-dimension-state"
+      },
+      "geometry": {
+        "types": [
+          "null"
+        ]
+      },
+      "display": {
+        "renderer": "panel_only"
+      },
+      "evidence": {
+        "enabled": true
+      },
+      "filters": [
+        "dimension",
+        "status"
+      ],
+      "timeline": {
+        "enabled": true,
+        "start_field": "last_reviewed"
+      },
+      "permissions": {
+        "public": true
+      },
+      "semantics": {
+        "not_a_score": true,
+        "ranking_allowed": false
+      }
+    },
+    {
+      "id": "hydrology_observations",
+      "title": "Hydrology observations",
+      "group": "RESEARCH",
+      "source": {
+        "type": "api",
+        "collection": "publish.hydrology_observations_v1"
+      },
+      "geometry": {
+        "types": [
+          "null"
+        ]
+      },
+      "display": {
+        "renderer": "panel_and_chart"
+      },
+      "evidence": {
+        "enabled": true
+      },
+      "filters": [
+        "metric",
+        "derivation_type",
+        "quality_code",
+        "is_provisional"
+      ],
+      "timeline": {
+        "enabled": true,
+        "start_field": "valid_from",
+        "end_field": "valid_to"
+      },
+      "permissions": {
+        "public": true
+      },
+      "semantics": {
+        "facts_observations_derived_separated": true,
+        "design_flow_auto_derivation": false,
+        "ranking_allowed": false
+      }
+    },
+    {
+      "id": "hydrology_series_status",
+      "title": "Hydrology source-series status",
+      "group": "ANALYSIS",
+      "source": {
+        "type": "api",
+        "collection": "hydrology-series-status"
+      },
+      "geometry": {
+        "types": [
+          "null"
+        ]
+      },
+      "display": {
+        "renderer": "panel_only"
+      },
+      "evidence": {
+        "enabled": true
+      },
+      "filters": [
+        "status",
+        "source_release",
+        "metric"
+      ],
+      "timeline": {
+        "enabled": true,
+        "start_field": "record_start",
+        "end_field": "record_end"
+      },
+      "permissions": {
+        "public": true
+      },
+      "semantics": {
+        "empty_series_not_map_feature": true,
+        "not_site_merit": true
+      }
+    }
+  ]
+}

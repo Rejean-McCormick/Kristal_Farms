@@ -1,0 +1,25 @@
+river_name,station_number,latitude,longitude,gross_drainage_area_km2,region,research_role,site_selection_status,official_basin_geometry_ingested,official_river_line_ingested,flow_series_ingested,dem_profile_ingested
+Natashquan River / Rivière Natashquan,02WB003,50.42722222,-61.71361111,15400,Côte-Nord / Minganie,research_reach,unranked_evidence_screening,False,False,False,False
+Petit Mécatina River / Rivière du Petit Mécatina,02XA006,50.70194444,-59.59916667,19200,Basse-Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Saint-Augustin River / Rivière Saint-Augustin,02XB001,51.6125,-58.7025,5770,Basse-Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Saint-Paul River / Rivière Saint-Paul,02XC001,51.7725,-57.6,5510,Basse-Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Etamamiou River / Rivière Etamamiou,02WC001,50.38361111,-59.99083333,2930,Basse-Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Olomane River / Rivière Olomane,02WC002,50.39666667,-60.44694444,5250,Basse-Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Aguanus River / Rivière Aguanus,02WA002,50.2475,-62.1175,5610,Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Nabisipi River / Rivière Nabisipi,02WA001,50.25305556,-62.21222222,2100,Côte-Nord,research_reach,unranked_evidence_screening,False,False,False,False
+Magpie River / Rivière Magpie,02VB003,50.3775,-64.42583333,7570,Côte-Nord,comparison_reach_not_priority,unranked_evidence_screening,False,False,False,False
+Romaine River / Rivière Romaine,02VC002,51.76722222,-63.71833333,6700,Côte-Nord,comparison_existing_hydro_context,unranked_evidence_screening,False,False,False,False
+Nastapoka River / Rivière Nastapoka,03FA002,56.86111111,-76.20833333,13000,Nunavik / Hudson Bay,research_reach,unranked_evidence_screening,False,False,False,False
+Innuksuac River / Rivière Innuksuac,03GB001,58.50833333,-77.96611111,11500,Nunavik / Hudson Bay,research_reach,unranked_evidence_screening,False,False,False,False
+Kogaluc River / Rivière Kogaluc,03GC001,59.56666667,-77.24472222,12200,Nunavik / Hudson Bay,research_reach,unranked_evidence_screening,False,False,False,False
+Arnaud River / Rivière Arnaud (Payne),03HA003,60.06666667,-71.13055556,42200,Nunavik / Ungava Bay,research_reach,unranked_evidence_screening,False,False,False,False
+Leaf River / Rivière aux Feuilles,03JB001,58.64027778,-70.42055556,40200,Nunavik / Ungava Bay,research_reach,unranked_evidence_screening,False,False,False,False
+Aux Mélèzes River / Rivière aux Mélèzes,03KC004,57.68694444,-69.59083333,41200,Nunavik / Koksoak system,research_context_complex_system,unranked_evidence_screening,False,False,False,False
+Great Whale River / Grande rivière de la Baleine,03MB002,57.88333333,-67.58333333,29700,Nunavik / Hudson Bay,comparison_legacy_large_project_context,unranked_evidence_screening,False,False,False,False
+George River / Rivière George,03ME002,58.15472222,-65.84361111,35200,Nunavik / Labrador peninsula,research_context_large_remote_river,unranked_evidence_screening,False,False,False,False
+Ugjoktok River,03NF001,55.23388889,-61.30166667,7550,North Labrador,research_reach,unranked_evidence_screening,False,False,False,False
+Kanairiktok River,03NG001,54.62361111,-60.97722222,8910,North / central Labrador,research_reach,unranked_evidence_screening,False,False,False,False
+Naskaupi River,03PB002,54.13166667,-61.42666667,4300,Lake Melville / central Labrador,research_reach,unranked_evidence_screening,False,False,False,False
+Minipi River,03OE002,52.61583333,-61.18166667,2330,Central / southeast Labrador,research_reach,unranked_evidence_screening,False,False,False,False
+Eagle River,03QC001,53.53416667,-57.49361111,10800,Southeast Labrador,research_reach,unranked_evidence_screening,False,False,False,False
+Alexis River,03QC002,52.64861111,-56.87111111,2310,Southeast Labrador,research_reach,unranked_evidence_screening,False,False,False,False

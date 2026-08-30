@@ -1,0 +1,32 @@
+{
+  "schema_version": "pass11.0",
+  "generated_at": "2026-08-30",
+  "counts": {
+    "entities": 48,
+    "natural_features": 24,
+    "assets": 24,
+    "sources": 19,
+    "evidence": 48,
+    "observations": 24,
+    "screening_states": 240,
+    "ingestion_jobs": 125,
+    "dataset_schemas": 3
+  },
+  "checks": {
+    "validator_exit_code": 0,
+    "validator_output": "{\n  \"pass\": true,\n  \"errors\": [],\n  \"counts\": {\n    \"entities\": 48,\n    \"assets\": 24,\n    \"observations\": 24,\n    \"screening_states\": 240,\n    \"dataset_schemas\": 3,\n    \"ingestion_jobs\": 125\n  }\n}",
+    "pytest_exit_code": 0,
+    "pytest_output": "......                                                                   [100%]\n6 passed in 0.08s",
+    "missing_relative_markdown_links": [],
+    "river_geometry_non_null": [],
+    "engineering_metrics_present": [],
+    "ranking_metadata_present": [],
+    "relative_markdown_links_checked": 122
+  },
+  "network_execution": {
+    "container_dns_eccc_available": false,
+    "flow_jobs_executed": false,
+    "reason": "Name resolution failure in container; jobs queued; API contracts verified via web."
+  },
+  "pass": true
+}

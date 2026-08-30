@@ -1,0 +1,14 @@
+flowchart TD
+  Public[Public visitors] --> Web[Kristal Farms Web]
+  Pros[Energy / GIS / telecom professionals] --> Web
+  Pros --> QGIS[QGIS]
+  Web --> API[Kristal Farms API]
+  Web --> OGC[OGC API]
+  Web --> Tiles[Map tiles]
+  API --> DB[(PostGIS)]
+  OGC --> DB
+  Tiles --> DB
+  QGIS --> DB
+  DB --> Release[Public release pipeline]
+  Release --> CDN[PMTiles / COG on CDN]
+  Web --> CDN

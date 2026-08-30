@@ -1,0 +1,29 @@
+{
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "summary": {
+    "layers": 7,
+    "features": 128,
+    "targets": 24,
+    "wsc_targets_officially_listed": 24,
+    "operational_request_windows": 24,
+    "natural_feature_geometries_newly_ingested": 0,
+    "sources": 15
+  },
+  "checks": {
+    "unknown_source_ids": [],
+    "duplicate_feature_ids": [],
+    "invalid_point_coordinates": [],
+    "non_null_geometry_missing_geometry_role": [],
+    "unexpected_natural_feature_geometry": [],
+    "request_window_semantic_errors": [],
+    "forbidden_ranking_fields": [],
+    "unsupported_head_flow_capacity_values": [],
+    "script_compile_errors": []
+  },
+  "synthetic_terrain_test": {
+    "passed": true,
+    "output": "PASS synthetic terrain test\n"
+  },
+  "pass": true
+}

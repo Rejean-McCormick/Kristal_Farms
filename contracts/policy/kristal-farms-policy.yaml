@@ -1,0 +1,24 @@
+policy_version: "2026.08.30"
+
+screening:
+  mode: unranked_evidence_screening
+  ranking_allowed: false
+  priority_inference_allowed: false
+
+energy_hosting:
+  community_load_priority_required: true
+  planning_margin_is_compute_capacity: false
+  multi_mw_compute_requires_generation_concept: true
+  compute_siting_variants:
+    - generation_side
+    - community_side
+    - split
+  heat_reuse_required: false
+  fibre_is_primary_value_export_corridor: true
+
+references:
+  external_projects_default_role: external_reference
+
+publication:
+  frontend_hiding_counts_as_access_control: false
+  restricted_data_in_public_artifacts_allowed: false

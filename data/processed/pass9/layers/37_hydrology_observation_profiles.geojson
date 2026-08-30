@@ -1,0 +1,1209 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "title": "Hydrometric observation profiles",
+  "description": "Official WSC station points and drainage-area metadata for 24 river references. Flow series/statistics are not fabricated and remain unpopulated until HYDAT/official series extraction.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02WB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71361111,
+          50.42722222
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02WB003",
+        "name": "02WB003 — Natashquan River / Rivière Natashquan",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02WB003",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02WB003",
+        "official_watercourse_name": "NATASHQUAN (RIVIERE) À 0,6 KM EN AVAL DE LA DÉCHARGE DU LAC ALIESTE",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "region": "Côte-Nord / Minganie",
+        "latitude_dms": [
+          50,
+          25,
+          38
+        ],
+        "longitude_dms_west": [
+          61,
+          42,
+          49
+        ],
+        "gross_drainage_area_km2": 15400,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02XA006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.59916667,
+          50.70194444
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02XA006",
+        "name": "02XA006 — Petit Mécatina River / Rivière du Petit Mécatina",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02XA006",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02XA006",
+        "official_watercourse_name": "PETIT MECATINA (RIVIERE DU)",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "region": "Basse-Côte-Nord",
+        "latitude_dms": [
+          50,
+          42,
+          7
+        ],
+        "longitude_dms_west": [
+          59,
+          35,
+          57
+        ],
+        "gross_drainage_area_km2": 19200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02XB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7025,
+          51.6125
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02XB001",
+        "name": "02XB001 — Saint-Augustin River / Rivière Saint-Augustin",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02XB001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02XB001",
+        "official_watercourse_name": "SAINT-AUGUSTIN (RIVIERE) EN AVAL DE LA RIVIERE A LAMOUCHE",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "region": "Basse-Côte-Nord",
+        "latitude_dms": [
+          51,
+          36,
+          45
+        ],
+        "longitude_dms_west": [
+          58,
+          42,
+          9
+        ],
+        "gross_drainage_area_km2": 5770,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02XC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.6,
+          51.7725
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02XC001",
+        "name": "02XC001 — Saint-Paul River / Rivière Saint-Paul",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02XC001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02XC001",
+        "official_watercourse_name": "SAINT-PAUL (RIVIERE) À 0,5 KM DU RUISSEAU CHANION",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "region": "Basse-Côte-Nord",
+        "latitude_dms": [
+          51,
+          46,
+          21
+        ],
+        "longitude_dms_west": [
+          57,
+          36,
+          0
+        ],
+        "gross_drainage_area_km2": 5510,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02WC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.99083333,
+          50.38361111
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02WC001",
+        "name": "02WC001 — Etamamiou River / Rivière Etamamiou",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02WC001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02WC001",
+        "official_watercourse_name": "ETAMAMIOU (RIVIERE) PRES DE L'EMBOUCHURE",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "region": "Basse-Côte-Nord",
+        "latitude_dms": [
+          50,
+          23,
+          1
+        ],
+        "longitude_dms_west": [
+          59,
+          59,
+          27
+        ],
+        "gross_drainage_area_km2": 2930,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02WC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.44694444,
+          50.39666667
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02WC002",
+        "name": "02WC002 — Olomane River / Rivière Olomane",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02WC002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02WC002",
+        "official_watercourse_name": "OLOMAN (RIVIERE) EN AVAL DE LA RIVIERE WABOUCHAGAMOU",
+        "river_name": "Olomane River / Rivière Olomane",
+        "region": "Basse-Côte-Nord",
+        "latitude_dms": [
+          50,
+          23,
+          48
+        ],
+        "longitude_dms_west": [
+          60,
+          26,
+          49
+        ],
+        "gross_drainage_area_km2": 5250,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02WA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1175,
+          50.2475
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02WA002",
+        "name": "02WA002 — Aguanus River / Rivière Aguanus",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02WA002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02WA002",
+        "official_watercourse_name": "AGUANUS (RIVIERE) EN AMONT DE LA RIVIERE DANY",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "region": "Côte-Nord",
+        "latitude_dms": [
+          50,
+          14,
+          51
+        ],
+        "longitude_dms_west": [
+          62,
+          7,
+          3
+        ],
+        "gross_drainage_area_km2": 5610,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02WA001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.21222222,
+          50.25305556
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02WA001",
+        "name": "02WA001 — Nabisipi River / Rivière Nabisipi",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02WA001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02WA001",
+        "official_watercourse_name": "NABISIPI (RIVIERE) A 2.4 KM DE L'EMBOUCHURE",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "region": "Côte-Nord",
+        "latitude_dms": [
+          50,
+          15,
+          11
+        ],
+        "longitude_dms_west": [
+          62,
+          12,
+          44
+        ],
+        "gross_drainage_area_km2": 2100,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02VB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.42583333,
+          50.3775
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02VB003",
+        "name": "02VB003 — Magpie River / Rivière Magpie",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02VB003",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02VB003",
+        "official_watercourse_name": "MAGPIE (RIVIERE)",
+        "river_name": "Magpie River / Rivière Magpie",
+        "region": "Côte-Nord",
+        "latitude_dms": [
+          50,
+          22,
+          39
+        ],
+        "longitude_dms_west": [
+          64,
+          25,
+          33
+        ],
+        "gross_drainage_area_km2": 7570,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-02VC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.71833333,
+          51.76722222
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-02VC002",
+        "name": "02VC002 — Romaine River / Rivière Romaine",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "02VC002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=02VC002",
+        "official_watercourse_name": "ROMAINE (RIVIERE) EN AVAL DE LA RIVIERE AUX SAUTERELLES",
+        "river_name": "Romaine River / Rivière Romaine",
+        "region": "Côte-Nord",
+        "latitude_dms": [
+          51,
+          46,
+          2
+        ],
+        "longitude_dms_west": [
+          63,
+          43,
+          6
+        ],
+        "gross_drainage_area_km2": 6700,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03FA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.20833333,
+          56.86111111
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03FA002",
+        "name": "03FA002 — Nastapoka River / Rivière Nastapoka",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03FA002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03FA002",
+        "official_watercourse_name": "NASTAPOCA (RIVIERE) PRES DE L'EMBOUCHURE",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "region": "Nunavik / Hudson Bay",
+        "latitude_dms": [
+          56,
+          51,
+          40
+        ],
+        "longitude_dms_west": [
+          76,
+          12,
+          30
+        ],
+        "gross_drainage_area_km2": 13000,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03GB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96611111,
+          58.50833333
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03GB001",
+        "name": "03GB001 — Innuksuac River / Rivière Innuksuac",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03GB001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03GB001",
+        "official_watercourse_name": "INNUKSUAC (RIVIERE) PRES DE L'EMBOUCHURE",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "region": "Nunavik / Hudson Bay",
+        "latitude_dms": [
+          58,
+          30,
+          30
+        ],
+        "longitude_dms_west": [
+          77,
+          57,
+          58
+        ],
+        "gross_drainage_area_km2": 11500,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03GC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.24472222,
+          59.56666667
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03GC001",
+        "name": "03GC001 — Kogaluc River / Rivière Kogaluc",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03GC001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03GC001",
+        "official_watercourse_name": "KOGALUC (RIVIERE) PRES DE L'EMBOUCHURE",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "region": "Nunavik / Hudson Bay",
+        "latitude_dms": [
+          59,
+          34,
+          0
+        ],
+        "longitude_dms_west": [
+          77,
+          14,
+          41
+        ],
+        "gross_drainage_area_km2": 12200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03HA003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13055556,
+          60.06666667
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03HA003",
+        "name": "03HA003 — Arnaud River / Rivière Arnaud (Payne)",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03HA003",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03HA003",
+        "official_watercourse_name": "ARNAUD (PAYNE)(RIVIERE) EN AVAL DE LA RIVIERE VACHON-2",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "region": "Nunavik / Ungava Bay",
+        "latitude_dms": [
+          60,
+          4,
+          0
+        ],
+        "longitude_dms_west": [
+          71,
+          7,
+          50
+        ],
+        "gross_drainage_area_km2": 42200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03JB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.42055556,
+          58.64027778
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03JB001",
+        "name": "03JB001 — Leaf River / Rivière aux Feuilles",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03JB001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03JB001",
+        "official_watercourse_name": "FEUILLES (RIVIERE AUX) EN AVAL DE LA RIVIERE PELADEAU",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "region": "Nunavik / Ungava Bay",
+        "latitude_dms": [
+          58,
+          38,
+          25
+        ],
+        "longitude_dms_west": [
+          70,
+          25,
+          14
+        ],
+        "gross_drainage_area_km2": 40200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03KC004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.59083333,
+          57.68694444
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03KC004",
+        "name": "03KC004 — Aux Mélèzes River / Rivière aux Mélèzes",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03KC004",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03KC004",
+        "official_watercourse_name": "MELEZES (RIVIERE AUX) À 7,6 KM EN AMONT DE LA CONFLUENCE AVEC LA KOKSOAK",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "region": "Nunavik / Koksoak system",
+        "latitude_dms": [
+          57,
+          41,
+          13
+        ],
+        "longitude_dms_west": [
+          69,
+          35,
+          27
+        ],
+        "gross_drainage_area_km2": 41200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03MB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.58333333,
+          57.88333333
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03MB002",
+        "name": "03MB002 — Great Whale River / Grande rivière de la Baleine",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03MB002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03MB002",
+        "official_watercourse_name": "BALEINE (RIVIERE A LA) À 40,2 KM DE L'EMBOUCHURE",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "region": "Nunavik / Hudson Bay",
+        "latitude_dms": [
+          57,
+          53,
+          0
+        ],
+        "longitude_dms_west": [
+          67,
+          35,
+          0
+        ],
+        "gross_drainage_area_km2": 29700,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03ME002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.84361111,
+          58.15472222
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03ME002",
+        "name": "03ME002 — George River / Rivière George",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03ME002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03ME002",
+        "official_watercourse_name": "GEORGE (RIVIERE) AUX CHUTES HELEN",
+        "river_name": "George River / Rivière George",
+        "region": "Nunavik / Labrador peninsula",
+        "latitude_dms": [
+          58,
+          9,
+          17
+        ],
+        "longitude_dms_west": [
+          65,
+          50,
+          37
+        ],
+        "gross_drainage_area_km2": 35200,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03NF001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.30166667,
+          55.23388889
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03NF001",
+        "name": "03NF001 — Ugjoktok River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03NF001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03NF001",
+        "official_watercourse_name": "UGJOKTOK RIVER BELOW HARP LAKE",
+        "river_name": "Ugjoktok River",
+        "region": "North Labrador",
+        "latitude_dms": [
+          55,
+          14,
+          2
+        ],
+        "longitude_dms_west": [
+          61,
+          18,
+          6
+        ],
+        "gross_drainage_area_km2": 7550,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03NG001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97722222,
+          54.62361111
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03NG001",
+        "name": "03NG001 — Kanairiktok River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03NG001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03NG001",
+        "official_watercourse_name": "KANAIRIKTOK RIVER BELOW SNEGAMOOK LAKE",
+        "river_name": "Kanairiktok River",
+        "region": "North / central Labrador",
+        "latitude_dms": [
+          54,
+          37,
+          25
+        ],
+        "longitude_dms_west": [
+          60,
+          58,
+          38
+        ],
+        "gross_drainage_area_km2": 8910,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03PB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.42666667,
+          54.13166667
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03PB002",
+        "name": "03PB002 — Naskaupi River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03PB002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03PB002",
+        "official_watercourse_name": "NASKAUPI RIVER BELOW NASKAUPI LAKE",
+        "river_name": "Naskaupi River",
+        "region": "Lake Melville / central Labrador",
+        "latitude_dms": [
+          54,
+          7,
+          54
+        ],
+        "longitude_dms_west": [
+          61,
+          25,
+          36
+        ],
+        "gross_drainage_area_km2": 4300,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03OE002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18166667,
+          52.61583333
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03OE002",
+        "name": "03OE002 — Minipi River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03OE002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03OE002",
+        "official_watercourse_name": "MINIPI RIVER NEAR MINIPI LAKE",
+        "river_name": "Minipi River",
+        "region": "Central / southeast Labrador",
+        "latitude_dms": [
+          52,
+          36,
+          57
+        ],
+        "longitude_dms_west": [
+          61,
+          10,
+          54
+        ],
+        "gross_drainage_area_km2": 2330,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03QC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.49361111,
+          53.53416667
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03QC001",
+        "name": "03QC001 — Eagle River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03QC001",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03QC001",
+        "official_watercourse_name": "EAGLE RIVER ABOVE FALLS",
+        "river_name": "Eagle River",
+        "region": "Southeast Labrador",
+        "latitude_dms": [
+          53,
+          32,
+          3
+        ],
+        "longitude_dms_west": [
+          57,
+          29,
+          37
+        ],
+        "gross_drainage_area_km2": 10800,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HYDROMET-03QC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.87111111,
+          52.64861111
+        ]
+      },
+      "properties": {
+        "id": "HYDROMET-03QC002",
+        "name": "03QC002 — Alexis River",
+        "feature_type": "official_hydrometric_station_observation_profile",
+        "verification_status": "official_station_metadata_ingested_flow_series_not_ingested",
+        "confidence": "high_for_station_point_and_drainage_metadata",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE",
+          "SRC-WSC-DRAINAGE-UPDATE-2026"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position",
+        "station_number": "03QC002",
+        "station_reference_url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03QC002",
+        "official_watercourse_name": "ALEXIS RIVER NEAR PORT HOPE SIMPSON",
+        "river_name": "Alexis River",
+        "region": "Southeast Labrador",
+        "latitude_dms": [
+          52,
+          38,
+          55
+        ],
+        "longitude_dms_west": [
+          56,
+          52,
+          16
+        ],
+        "gross_drainage_area_km2": 2310,
+        "gross_drainage_area_definition": "WSC station metadata; largest possible physical area that could potentially contribute surface runoff to the station",
+        "station_status": null,
+        "daily_series_ingested": false,
+        "monthly_series_ingested": false,
+        "mean_annual_discharge_m3s": null,
+        "monthly_mean_discharge_m3s": null,
+        "low_flow_metric": null,
+        "high_flow_metric": null,
+        "hydat_extraction_required": true,
+        "note": "Point is a gauge/reference location, not a dam, intake or powerhouse."
+      }
+    }
+  ]
+}

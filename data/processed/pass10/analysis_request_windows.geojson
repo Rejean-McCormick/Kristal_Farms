@@ -1,0 +1,1329 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "Hydro analysis request windows",
+  "description": "Fixed 100 km × 100 km nominal service-query windows centred on official station points. These are operational geometries only, never basin or project boundaries.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "WINDOW-02WB003",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.0165693273947,
+              49.97561202219647
+            ],
+            [
+              -61.00324712739386,
+              50.87454204233419
+            ],
+            [
+              -62.42397509260614,
+              50.87454204233419
+            ],
+            [
+              -62.4106528926053,
+              49.97561202219647
+            ],
+            [
+              -61.0165693273947,
+              49.97561202219647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02WB003",
+        "name": "02WB003 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02WB003",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "region": "Côte-Nord / Minganie",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02XA006",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.8981252339012,
+              50.250335224601095
+            ],
+            [
+              -58.884593959701974,
+              51.149221819556686
+            ],
+            [
+              -60.31373938029804,
+              51.149221819556686
+            ],
+            [
+              -60.30020810609881,
+              50.250335224601095
+            ],
+            [
+              -58.8981252339012,
+              50.250335224601095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02XA006",
+        "name": "02XA006 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02XA006",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "region": "Basse-Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02XB001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -57.98774700155667,
+              51.160892032658104
+            ],
+            [
+              -57.97349110774113,
+              52.059635186638026
+            ],
+            [
+              -59.43150889225887,
+              52.059635186638026
+            ],
+            [
+              -59.41725299844333,
+              51.160892032658104
+            ],
+            [
+              -57.98774700155667,
+              51.160892032658104
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02XB001",
+        "name": "02XB001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02XB001",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "region": "Basse-Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02XC001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -56.882762999423704,
+              51.32089191990395
+            ],
+            [
+              -56.868374515285,
+              52.219609952943735
+            ],
+            [
+              -58.331625484715005,
+              52.219609952943735
+            ],
+            [
+              -58.317237000576306,
+              51.32089191990395
+            ],
+            [
+              -56.882762999423704,
+              51.32089191990395
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02XC001",
+        "name": "02XC001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02XC001",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "region": "Basse-Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02WC001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.294420801505275,
+              49.932000731377734
+            ],
+            [
+              -59.28113140101667,
+              50.83093765093115
+            ],
+            [
+              -60.70053525898332,
+              50.83093765093115
+            ],
+            [
+              -60.68724585849472,
+              49.932000731377734
+            ],
+            [
+              -59.294420801505275,
+              49.932000731377734
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02WC001",
+        "name": "02WC001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02WC001",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "region": "Basse-Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02WC002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -59.75034369787723,
+              49.94505634621596
+            ],
+            [
+              -59.737044489519555,
+              50.843991200174216
+            ],
+            [
+              -61.15684439048045,
+              50.843991200174216
+            ],
+            [
+              -61.143545182122786,
+              49.94505634621596
+            ],
+            [
+              -59.75034369787723,
+              49.94505634621596
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02WC002",
+        "name": "02WC002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02WC002",
+        "river_name": "Olomane River / Rivière Olomane",
+        "region": "Basse-Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02WA002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.42304149524654,
+              49.795889013838355
+            ],
+            [
+              -61.40985378563018,
+              50.694847476568796
+            ],
+            [
+              -62.82514621436982,
+              50.694847476568796
+            ],
+            [
+              -62.81195850475348,
+              49.795889013838355
+            ],
+            [
+              -61.42304149524654,
+              49.795889013838355
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02WA002",
+        "name": "02WA002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02WA002",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "region": "Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02WA001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -61.517684251122624,
+              49.80144459990989
+            ],
+            [
+              -61.504492410811004,
+              50.700402183034235
+            ],
+            [
+              -62.919952029189,
+              50.700402183034235
+            ],
+            [
+              -62.906760188877385,
+              49.80144459990989
+            ],
+            [
+              -61.517684251122624,
+              49.80144459990989
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02WA001",
+        "name": "02WA001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02WA001",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "region": "Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02VB003",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.72950885398363,
+              49.92588959550129
+            ],
+            [
+              -63.716224041157396,
+              50.82482748197656
+            ],
+            [
+              -65.1354426188426,
+              50.82482748197656
+            ],
+            [
+              -65.12215780601638,
+              49.92588959550129
+            ],
+            [
+              -63.72950885398363,
+              49.92588959550129
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02VB003",
+        "name": "02VB003 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02VB003",
+        "river_name": "Magpie River / Rivière Magpie",
+        "region": "Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-02VC002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -63.0011786324998,
+              51.31561414525796
+            ],
+            [
+              -62.98679454803145,
+              52.21433300651592
+            ],
+            [
+              -64.44987211196855,
+              52.21433300651592
+            ],
+            [
+              -64.43548802750018,
+              51.31561414525796
+            ],
+            [
+              -63.0011786324998,
+              51.31561414525796
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-02VC002",
+        "name": "02VC002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "02VC002",
+        "river_name": "Romaine River / Rivière Romaine",
+        "region": "Côte-Nord",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03FA002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -75.39836415866581,
+              56.40943684936606
+            ],
+            [
+              -75.37872489225477,
+              57.30737329749277
+            ],
+            [
+              -77.03794176774524,
+              57.30737329749277
+            ],
+            [
+              -77.0183025013342,
+              56.40943684936606
+            ],
+            [
+              -75.39836415866581,
+              56.40943684936606
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03FA002",
+        "name": "03FA002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03FA002",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "region": "Nunavik / Hudson Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03GB001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -77.11920715183317,
+              58.056605702481235
+            ],
+            [
+              -77.09730760652376,
+              58.95429815635989
+            ],
+            [
+              -78.83491461347626,
+              58.95429815635989
+            ],
+            [
+              -78.81301506816683,
+              58.056605702481235
+            ],
+            [
+              -77.11920715183317,
+              58.056605702481235
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03GB001",
+        "name": "03GB001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03GB001",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "region": "Nunavik / Hudson Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03GC001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -76.3718577598105,
+              59.1148944300408
+            ],
+            [
+              -76.34831025270651,
+              60.01243290053025
+            ],
+            [
+              -78.14113418729347,
+              60.01243290053025
+            ],
+            [
+              -78.1175866801895,
+              59.1148944300408
+            ],
+            [
+              -76.3718577598105,
+              59.1148944300408
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03GC001",
+        "name": "03GC001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03GC001",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "region": "Nunavik / Hudson Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03HA003",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.24475601012759,
+              59.61487025893205
+            ],
+            [
+              -70.22036893746728,
+              60.51233677909589
+            ],
+            [
+              -72.04074218253272,
+              60.51233677909589
+            ],
+            [
+              -72.01635510987242,
+              59.61487025893205
+            ],
+            [
+              -70.24475601012759,
+              59.61487025893205
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03HA003",
+        "name": "03HA003 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03HA003",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "region": "Nunavik / Ungava Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03JB001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -69.5705155294485,
+              58.188545055151394
+            ],
+            [
+              -69.54841952079856,
+              59.086218189134875
+            ],
+            [
+              -71.29269159920143,
+              59.086218189134875
+            ],
+            [
+              -71.2705955905515,
+              58.188545055151394
+            ],
+            [
+              -69.5705155294485,
+              58.188545055151394
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03JB001",
+        "name": "03JB001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03JB001",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "region": "Nunavik / Ungava Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03KC004",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -68.7628451994552,
+              57.23524573333042
+            ],
+            [
+              -68.74211552663698,
+              58.13305921874202
+            ],
+            [
+              -70.43955113336301,
+              58.13305921874202
+            ],
+            [
+              -70.4188214605448,
+              57.23524573333042
+            ],
+            [
+              -68.7628451994552,
+              57.23524573333042
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03KC004",
+        "name": "03KC004 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03KC004",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "region": "Nunavik / Koksoak system",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03MB002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -66.75091550691265,
+              57.43162813926288
+            ],
+            [
+              -66.72991419644404,
+              58.32941256929934
+            ],
+            [
+              -68.43675246355598,
+              58.32941256929934
+            ],
+            [
+              -68.41575115308737,
+              57.43162813926288
+            ],
+            [
+              -66.75091550691265,
+              57.43162813926288
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03MB002",
+        "name": "03MB002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03MB002",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "region": "Nunavik / Hudson Bay",
+        "jurisdiction": "Québec",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03ME002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -65.00497681015084,
+              57.7030076282219
+            ],
+            [
+              -64.98359190088775,
+              58.600752027492234
+            ],
+            [
+              -66.70363031911225,
+              58.600752027492234
+            ],
+            [
+              -66.68224540984916,
+              57.7030076282219
+            ],
+            [
+              -65.00497681015084,
+              57.7030076282219
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03ME002",
+        "name": "03ME002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03ME002",
+        "river_name": "George River / Rivière George",
+        "region": "Nunavik / Labrador peninsula",
+        "jurisdiction": "Québec / Labrador watershed context",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03NF001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.52453991054796,
+              54.78225046170694
+            ],
+            [
+              -60.50682858293483,
+              55.680432680191885
+            ],
+            [
+              -62.096504757065176,
+              55.680432680191885
+            ],
+            [
+              -62.07879342945205,
+              54.78225046170694
+            ],
+            [
+              -60.52453991054796,
+              54.78225046170694
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03NF001",
+        "name": "03NF001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03NF001",
+        "river_name": "Ugjoktok River",
+        "region": "North Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03NG001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.21157905693616,
+              54.17198226574398
+            ],
+            [
+              -60.19452394733125,
+              55.07025776018703
+            ],
+            [
+              -61.75992049266876,
+              55.07025776018703
+            ],
+            [
+              -61.74286538306385,
+              54.17198226574398
+            ],
+            [
+              -60.21157905693616,
+              54.17198226574398
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03NG001",
+        "name": "03NG001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03NG001",
+        "river_name": "Kanairiktok River",
+        "region": "North / central Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03PB002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.66997392148506,
+              53.68004413988356
+            ],
+            [
+              -60.65342392360647,
+              54.578395227429816
+            ],
+            [
+              -62.199909416393545,
+              54.578395227429816
+            ],
+            [
+              -62.183359418514954,
+              53.68004413988356
+            ],
+            [
+              -60.66997392148506,
+              53.68004413988356
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03PB002",
+        "name": "03PB002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03PB002",
+        "river_name": "Naskaupi River",
+        "region": "Lake Melville / central Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03OE002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -60.45094988518279,
+              52.164222917582535
+            ],
+            [
+              -60.43583474075612,
+              53.06280900111549
+            ],
+            [
+              -61.927498599243876,
+              53.06280900111549
+            ],
+            [
+              -61.91238345481721,
+              52.164222917582535
+            ],
+            [
+              -60.45094988518279,
+              52.164222917582535
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03OE002",
+        "name": "03OE002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03OE002",
+        "river_name": "Minipi River",
+        "region": "Central / southeast Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03QC001",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -56.747437992789656,
+              53.08255019702135
+            ],
+            [
+              -56.73147461329101,
+              53.980993555183396
+            ],
+            [
+              -58.255747606709,
+              53.980993555183396
+            ],
+            [
+              -58.239784227210365,
+              53.08255019702135
+            ],
+            [
+              -56.747437992789656,
+              53.08255019702135
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03QC001",
+        "name": "03QC001 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03QC001",
+        "river_name": "Eagle River",
+        "region": "Southeast Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "WINDOW-03QC002",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -56.13985691924032,
+              52.19700054608578
+            ],
+            [
+              -56.12471255300803,
+              53.09558151750368
+            ],
+            [
+              -57.61750966699197,
+              53.09558151750368
+            ],
+            [
+              -57.60236530075968,
+              52.19700054608578
+            ],
+            [
+              -56.13985691924032,
+              52.19700054608578
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "WINDOW-03QC002",
+        "name": "03QC002 — fixed 50 km half-width analysis request window",
+        "feature_type": "analysis_request_window",
+        "verification_status": "deterministic_operational_geometry_derived_from_official_station_point",
+        "confidence": "high_for_geometry_math_not_a_natural_feature",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "analysis_request_window_not_basin_or_reach",
+        "station_number": "03QC002",
+        "river_name": "Alexis River",
+        "region": "Southeast Labrador",
+        "jurisdiction": "Newfoundland and Labrador",
+        "window_method": "local_azimuthal_equidistant_square_centered_on_WSC_station",
+        "halfwidth_km": 50,
+        "nominal_width_km": 100,
+        "basin_extent_inference": false,
+        "river_extent_inference": false,
+        "site_boundary_inference": false,
+        "reason": "Limit service queries to a deterministic near-station research window. Expand explicitly if the connected reach requires it.",
+        "warning": "This polygon is an operational query window only. It must never be rendered or described as a watershed, project area or development boundary."
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.example/contracts/evidence.schema.json",
+  "title": "Kristal Farms Evidence",
+  "type": "object",
+  "required": [
+    "id",
+    "claim",
+    "verification_status",
+    "source_ids"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "evidence_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification_status": {
+      "enum": [
+        "verified",
+        "supported",
+        "scoped",
+        "unverified",
+        "conflicting",
+        "unknown"
+      ]
+    },
+    "confidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "last_verified": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "valid_from": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-08-30",
+  "sources": [
+    {
+      "id": "935146a7-40d1-5c1a-840b-6a9638abe802",
+      "source_key": "SRC-HQ-MICOUA-SAGUENAY-2023",
+      "title": "Ligne à 735 kV Micoua–Saguenay : un défi de 262 km",
+      "publisher": "Hydro-Québec",
+      "source_type": "official_completed_project_release",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/saguenay-lac-saint-jean/ligne-a-735-kv-micoua-saguenay-un-defi-de-262-km.html",
+      "publication_date": "2023-12-07",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "project_cost_cad": 1271000000,
+        "line_length_km": 262,
+        "scope_note": "Total project cost divided by line length is a project-total-per-line-km ratio, not a line-only unit cost."
+      }
+    },
+    {
+      "id": "90f267f3-c417-5d71-8b0c-bd83ff41c8f5",
+      "source_key": "SRC-HQ-CHAMOUCHOUANE-2019",
+      "title": "Projet à 735 kV Chamouchouane–Bout-de-l’Île — infrastructures construites au coût de 1,3 G$",
+      "publisher": "Hydro-Québec",
+      "source_type": "official_completed_project_release",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-inaugure-des-infrastructures-construites-au-cout-de-1-3-g.html",
+      "publication_date": "2019-09-20",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "project_cost_cad": 1300000000,
+        "line_length_km": 439,
+        "components": "420 km main line + 19 km segment + Judith-Jasmin 735/120/25-kV substation",
+        "scope_note": "Ratio includes a substation and project components; not a line-only construction cost."
+      }
+    },
+    {
+      "id": "54b3a28e-f5f2-58f4-a1d4-27dc7b27ee2d",
+      "source_key": "SRC-NL-ROAD-NORTH-ALLNORTH-2026",
+      "title": "Final Draft Project Summary Report — Pre-Feasibility Study for a Road into Northern Labrador",
+      "publisher": "Newfoundland and Labrador House of Assembly / Allnorth",
+      "source_type": "official_publicly_tabled_study",
+      "url": "https://www.assembly.nl.ca/business/electronicdocuments/Allnorth-ProjectSummaryReport-RoadToTheNorth.pdf",
+      "publication_date": "2026-06-02",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "new_road_km": 809,
+        "road_construction_rom_cad": 2100000000,
+        "paving_increment_cad": 600000000,
+        "annual_maintenance_cad": 13000000,
+        "pricing_basis": "current-year pricing in study; inflation/location adjusted from similar work",
+        "scope_note": "ROM pre-feasibility estimate, not site-specific Kristal access-road estimate."
+      }
+    },
+    {
+      "id": "7177d6a1-c527-55b6-8bb2-444aa90e3fa5",
+      "source_key": "SRC-CRTC-NUNAVIK-FIBRE-2024",
+      "title": "Telecom Decision CRTC 2024-163 — KRG transport fibre project",
+      "publisher": "CRTC",
+      "source_type": "official_funding_decision",
+      "url": "https://crtc.gc.ca/eng/archive/2024/2024-163.pdf",
+      "publication_date": "2024-07-22",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "approved_funding_cad": 79419117,
+        "fibre_km": 933,
+        "scope_note": "Up to CRTC contribution divided by route length is a funding-intensity proxy, not proven total project unit cost."
+      }
+    },
+    {
+      "id": "5df8bfa0-269a-5a3b-b152-cbb9a603e9ba",
+      "source_key": "SRC-CRTC-NUNAVUT-FIBRE-2024",
+      "title": "Telecom Decision CRTC 2024-149 — Nunavut transport fibre project",
+      "publisher": "CRTC",
+      "source_type": "official_funding_decision",
+      "url": "https://web.crtc.gc.ca/eng/archive/2024/2024-149.htm",
+      "publication_date": "2024-07-04",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "approved_funding_cad": 271937242,
+        "fibre_km": 1300,
+        "scope_note": "Up to CRTC contribution divided by route length is a funding-intensity proxy, not proven total project unit cost."
+      }
+    },
+    {
+      "id": "298c2bec-b858-5cdf-8cf9-73a7f56d8c72",
+      "source_key": "SRC-UPTIME-SURVEY-2025",
+      "title": "Uptime Institute Global Data Center Survey 2025",
+      "publisher": "Uptime Institute",
+      "source_type": "industry_survey",
+      "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0",
+      "publication_date": "2025-07-29",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "new_facility_pue_avg": 1.48,
+        "large_20mw_plus_pue_avg": 1.44,
+        "scope_note": "Industry efficiency context only; Kristal PUE is not assumed from this benchmark."
+      }
+    },
+    {
+      "id": "79377c26-acfd-5d98-966a-e05f4b8cf0d5",
+      "source_key": "SRC-HQ-DATACENTER-PROPOSAL-2026",
+      "title": "Des tarifs pour les centres de données…",
+      "publisher": "Hydro-Québec",
+      "source_type": "official_tariff_proposal_release",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/tarifs-centres-donnees-chaines-blocs-refleteront-valeur-electricite-renouvelable.html",
+      "publication_date": "2026-02-19",
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "proposed_threshold_mw": 5,
+        "proposed_average_price_cad_per_kwh": 0.13,
+        "final": false
+      }
+    },
+    {
+      "id": "64bd4d4b-af14-5daf-a8d0-51d02c4c21af",
+      "source_key": "SRC-REGIE-R4333-CURRENT-2026",
+      "title": "R-4333-2026 — Demande relative à la fixation des tarifs centres de données",
+      "publisher": "Régie de l’énergie du Québec",
+      "source_type": "official_current_regulatory_docket",
+      "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/r-4333-2026",
+      "publication_date": null,
+      "retrieved_at": "2026-08-30",
+      "document_reference": null,
+      "license": null,
+      "metadata": {
+        "status_as_of": "2026-08-30",
+        "final_tariff_decision_found": false,
+        "latest_material_seen": "2026-08-26 expert-witness request; docket remains active",
+        "scope_note": "Do not assume tariff applicability or exemption for dedicated/local generation architecture."
+      }
+    }
+  ]
+}

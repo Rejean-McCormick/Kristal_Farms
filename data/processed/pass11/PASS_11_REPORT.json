@@ -1,0 +1,39 @@
+{
+  "schema_version": "pass11.0",
+  "generated_at": "2026-08-30",
+  "title": "Pass 11 — Platform-native hydrology foundation",
+  "orientation_change": "Pass-numbered GeoJSON remains reproducible input; canonical operational objects map to PostGIS core/research/system and publish views.",
+  "counts": {
+    "canonical_entities": 48,
+    "rivers": 24,
+    "wsc_station_assets": 24,
+    "entity_relations": 24,
+    "sources": 19,
+    "evidence": 48,
+    "observations": 24,
+    "screening_dimension_states": 240,
+    "ingestion_jobs": 125,
+    "dataset_schemas": 3
+  },
+  "geometry_state": {
+    "physical_geometries_ingested": 24,
+    "physical_geometry_type": "WSC station Point only",
+    "river_geometries_ingested": 0,
+    "watershed_geometries_ingested": 0,
+    "fake_geometry_created": false
+  },
+  "engineering_values": {
+    "project_head": null,
+    "design_flow": null,
+    "capacity_mw": null,
+    "ranking_allowed": false
+  },
+  "network_state": "Container DNS cannot resolve ECCC hosts; HYDAT jobs are queued/not executed. Web documentation confirms GeoMet/Wateroffice service contracts.",
+  "architectural_refinements": [
+    "core.entity supertype",
+    "core.natural_feature subtype",
+    "screening matrix as research state not score",
+    "ingestion jobs as system objects not map layers",
+    "publish views as web-facing source"
+  ]
+}

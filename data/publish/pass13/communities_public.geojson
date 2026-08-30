@@ -1,0 +1,547 @@
+{
+  "type": "FeatureCollection",
+  "release": "2026.08.30-pass13",
+  "immutable": true,
+  "features": [
+    {
+      "type": "Feature",
+      "id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.2041,
+          60.8006
+        ]
+      },
+      "properties": {
+        "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+        "name": "Akulivik",
+        "region": "Nunavik / Hudson coast",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.5996,
+          59.2967
+        ]
+      },
+      "properties": {
+        "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+        "name": "Aupaluk",
+        "region": "Nunavik / Ungava coast",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "26738a50-a36b-5cc6-bc87-39101cb50114",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8849,
+          53.7906
+        ]
+      },
+      "properties": {
+        "entity_id": "26738a50-a36b-5cc6-bc87-39101cb50114",
+        "name": "Chisasibi",
+        "region": "James Bay / outside Nunavik territory",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.2117,
+          55.4542
+        ]
+      },
+      "properties": {
+        "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+        "name": "Hopedale",
+        "region": "Nunatsiavut / Labrador",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "scheduled_north_labrador_ferry_stop",
+        "telecom_context": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road_context": null,
+        "energy_context": "remote_diesel_plant_context",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "664545fc-d0f4-5caa-9278-510a50261908",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.1014,
+          58.4547
+        ]
+      },
+      "properties": {
+        "entity_id": "664545fc-d0f4-5caa-9278-510a50261908",
+        "name": "Inukjuak",
+        "region": "Nunavik / Hudson Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": "operating_external_reference_hydro_innavik",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.9253,
+          62.4173
+        ]
+      },
+      "properties": {
+        "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+        "name": "Ivujivik",
+        "region": "Nunavik / Hudson Strait",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "e00199cc-0e09-5984-a972-200508477085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.9926,
+          58.7114
+        ]
+      },
+      "properties": {
+        "entity_id": "e00199cc-0e09-5984-a972-200508477085",
+        "name": "Kangiqsualujjuaq",
+        "region": "Nunavik / Ungava Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.9603,
+          61.5973
+        ]
+      },
+      "properties": {
+        "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+        "name": "Kangiqsujuaq",
+        "region": "Nunavik / Hudson Strait",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fb68046b-06d8-5282-adc5-58528d35e115",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.9994,
+          60.0236
+        ]
+      },
+      "properties": {
+        "entity_id": "fb68046b-06d8-5282-adc5-58528d35e115",
+        "name": "Kangirsuk",
+        "region": "Nunavik / Ungava Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2165eaf4-9f32-54db-9641-3467d2ab2320",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.4043,
+          58.1003
+        ]
+      },
+      "properties": {
+        "entity_id": "2165eaf4-9f32-54db-9641-3467d2ab2320",
+        "name": "Kuujjuaq",
+        "region": "Nunavik / Koksoak-Ungava",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "50330e9a-b932-515e-a865-bceb668aadd3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.75,
+          55.283
+        ]
+      },
+      "properties": {
+        "entity_id": "50330e9a-b932-515e-a865-bceb668aadd3",
+        "name": "Kuujjuaraapik",
+        "region": "Nunavik / Hudson Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.1765,
+          55.0869
+        ]
+      },
+      "properties": {
+        "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+        "name": "Makkovik",
+        "region": "Nunatsiavut / Labrador",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "scheduled_north_labrador_ferry_stop",
+        "telecom_context": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road_context": null,
+        "energy_context": "remote_diesel_plant_context",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.6925,
+          56.5428
+        ]
+      },
+      "properties": {
+        "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+        "name": "Nain",
+        "region": "Nunatsiavut / Labrador",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "scheduled_north_labrador_ferry_stop",
+        "telecom_context": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road_context": null,
+        "energy_context": "remote_diesel_plant_context",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.7853,
+          54.9106
+        ]
+      },
+      "properties": {
+        "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+        "name": "Postville",
+        "region": "Nunatsiavut / Labrador",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "scheduled_north_labrador_ferry_stop",
+        "telecom_context": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road_context": null,
+        "energy_context": "remote_diesel_plant_context",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2756,
+          60.0338
+        ]
+      },
+      "properties": {
+        "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+        "name": "Puvirnituq",
+        "region": "Nunavik / Hudson Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": "wind_supply_contract_authorized_operation_not_verified",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.6164,
+          61.0465
+        ]
+      },
+      "properties": {
+        "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+        "name": "Quaqtaq",
+        "region": "Nunavik / Hudson Strait / Ungava side",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": "wind_supply_contract_authorized_operation_not_verified",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4289,
+          54.1797
+        ]
+      },
+      "properties": {
+        "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+        "name": "Rigolet",
+        "region": "Nunatsiavut / Labrador",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "scheduled_north_labrador_ferry_stop",
+        "telecom_context": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road_context": null,
+        "energy_context": "remote_diesel_plant_context",
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6333,
+          62.2
+        ]
+      },
+      "properties": {
+        "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+        "name": "Salluit",
+        "region": "Nunavik / Hudson Strait",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "97c7593b-446f-5d9a-a8b0-c866aff76414",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.9306,
+          58.6956
+        ]
+      },
+      "properties": {
+        "entity_id": "97c7593b-446f-5d9a-a8b0-c866aff76414",
+        "name": "Tasiujaq",
+        "region": "Nunavik / Ungava Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "planned_fibre_2027",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "62ac2ffe-be96-5a7b-84df-3d82a892f092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.5528,
+          56.5536
+        ]
+      },
+      "properties": {
+        "entity_id": "62ac2ffe-be96-5a7b-84df-3d82a892f092",
+        "name": "Umiujaq",
+        "region": "Nunavik / Hudson Bay",
+        "screening_mode": "unranked",
+        "ranking_allowed": false,
+        "marine_context": "regional_14_port_system_context",
+        "telecom_context": "operating_fibre",
+        "road_context": "no_intercommunity_or_southern_road_link",
+        "energy_context": null,
+        "evidence_panel_enabled": true,
+        "legacy_classification_published": false,
+        "geometry_role": "legacy_approximate_community_centroid",
+        "geometry_precision": "approximate_reference",
+        "not_facility_coordinate": true
+      }
+    }
+  ]
+}

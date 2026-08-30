@@ -1,0 +1,21 @@
+{
+  "release_version": "2026.08.30-r1",
+  "generated_at": "2026-08-30T14:00:00Z",
+  "database_migration": "example",
+  "policy_version": "2026.08.30",
+  "collections": [
+    "communities",
+    "reference_projects"
+  ],
+  "artifacts": [
+    {
+      "path": "kristal-core.pmtiles",
+      "sha256": "<sha256>",
+      "classification": "public"
+    }
+  ],
+  "qa": {
+    "passed": true,
+    "report": "qa-report.json"
+  }
+}

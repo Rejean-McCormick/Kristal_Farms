@@ -1,0 +1,1185 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "Reach/terrain evidence gate",
+  "description": "Hard per-river gate preventing DEM/head/MW/ranking calculations before official geometry and manual connectivity review.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "GATE-02WB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71361111,
+          50.42722222
+        ]
+      },
+      "properties": {
+        "id": "GATE-02WB003",
+        "name": "02WB003 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02WB003",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02XA006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.59916667,
+          50.70194444
+        ]
+      },
+      "properties": {
+        "id": "GATE-02XA006",
+        "name": "02XA006 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02XA006",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02XB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7025,
+          51.6125
+        ]
+      },
+      "properties": {
+        "id": "GATE-02XB001",
+        "name": "02XB001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02XB001",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02XC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.6,
+          51.7725
+        ]
+      },
+      "properties": {
+        "id": "GATE-02XC001",
+        "name": "02XC001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02XC001",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02WC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.99083333,
+          50.38361111
+        ]
+      },
+      "properties": {
+        "id": "GATE-02WC001",
+        "name": "02WC001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02WC001",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02WC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.44694444,
+          50.39666667
+        ]
+      },
+      "properties": {
+        "id": "GATE-02WC002",
+        "name": "02WC002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02WC002",
+        "river_name": "Olomane River / Rivière Olomane",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02WA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1175,
+          50.2475
+        ]
+      },
+      "properties": {
+        "id": "GATE-02WA002",
+        "name": "02WA002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02WA002",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02WA001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.21222222,
+          50.25305556
+        ]
+      },
+      "properties": {
+        "id": "GATE-02WA001",
+        "name": "02WA001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02WA001",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02VB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.42583333,
+          50.3775
+        ]
+      },
+      "properties": {
+        "id": "GATE-02VB003",
+        "name": "02VB003 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02VB003",
+        "river_name": "Magpie River / Rivière Magpie",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-02VC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.71833333,
+          51.76722222
+        ]
+      },
+      "properties": {
+        "id": "GATE-02VC002",
+        "name": "02VC002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "02VC002",
+        "river_name": "Romaine River / Rivière Romaine",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03FA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.20833333,
+          56.86111111
+        ]
+      },
+      "properties": {
+        "id": "GATE-03FA002",
+        "name": "03FA002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03FA002",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03GB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96611111,
+          58.50833333
+        ]
+      },
+      "properties": {
+        "id": "GATE-03GB001",
+        "name": "03GB001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03GB001",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03GC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.24472222,
+          59.56666667
+        ]
+      },
+      "properties": {
+        "id": "GATE-03GC001",
+        "name": "03GC001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03GC001",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03HA003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13055556,
+          60.06666667
+        ]
+      },
+      "properties": {
+        "id": "GATE-03HA003",
+        "name": "03HA003 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03HA003",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03JB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.42055556,
+          58.64027778
+        ]
+      },
+      "properties": {
+        "id": "GATE-03JB001",
+        "name": "03JB001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03JB001",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03KC004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.59083333,
+          57.68694444
+        ]
+      },
+      "properties": {
+        "id": "GATE-03KC004",
+        "name": "03KC004 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03KC004",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03MB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.58333333,
+          57.88333333
+        ]
+      },
+      "properties": {
+        "id": "GATE-03MB002",
+        "name": "03MB002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03MB002",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03ME002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.84361111,
+          58.15472222
+        ]
+      },
+      "properties": {
+        "id": "GATE-03ME002",
+        "name": "03ME002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03ME002",
+        "river_name": "George River / Rivière George",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03NF001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.30166667,
+          55.23388889
+        ]
+      },
+      "properties": {
+        "id": "GATE-03NF001",
+        "name": "03NF001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03NF001",
+        "river_name": "Ugjoktok River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03NG001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97722222,
+          54.62361111
+        ]
+      },
+      "properties": {
+        "id": "GATE-03NG001",
+        "name": "03NG001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03NG001",
+        "river_name": "Kanairiktok River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03PB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.42666667,
+          54.13166667
+        ]
+      },
+      "properties": {
+        "id": "GATE-03PB002",
+        "name": "03PB002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03PB002",
+        "river_name": "Naskaupi River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03OE002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18166667,
+          52.61583333
+        ]
+      },
+      "properties": {
+        "id": "GATE-03OE002",
+        "name": "03OE002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03OE002",
+        "river_name": "Minipi River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03QC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.49361111,
+          53.53416667
+        ]
+      },
+      "properties": {
+        "id": "GATE-03QC001",
+        "name": "03QC001 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03QC001",
+        "river_name": "Eagle River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "GATE-03QC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.87111111,
+          52.64861111
+        ]
+      },
+      "properties": {
+        "id": "GATE-03QC002",
+        "name": "03QC002 — reach/terrain evidence gate",
+        "feature_type": "reach_terrain_evidence_gate",
+        "verification_status": "machine_gate_currently_closed",
+        "confidence": "high_for_repository_state",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_as_gate_anchor",
+        "station_number": "03QC002",
+        "river_name": "Alexis River",
+        "wsc_basin_officially_listed": true,
+        "wsc_basin_geometry_ingested": false,
+        "authoritative_hydrography_candidates_extracted": false,
+        "connected_reach_manually_accepted": false,
+        "flow_direction_verified": false,
+        "hrdem_assets_discovered": false,
+        "terrain_profile_extracted": false,
+        "hydrology_series_ingested": false,
+        "terrain_evidence_ready": false,
+        "project_head_allowed": false,
+        "design_flow_allowed": false,
+        "capacity_mw_allowed": false,
+        "ranking_allowed": false,
+        "gate_requirements": [
+          "official basin polygon ingested",
+          "authoritative hydrography candidate extraction",
+          "manual connected-reach acceptance",
+          "flow direction verified",
+          "HRDEM DTM asset discovered",
+          "terrain sampling completed with provenance",
+          "hydrology series separately validated"
+        ],
+        "warning": "Until the gate opens, no terrain/head/MW/site-ranking field may be populated."
+      }
+    }
+  ]
+}

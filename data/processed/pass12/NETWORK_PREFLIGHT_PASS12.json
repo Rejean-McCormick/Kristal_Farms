@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-08-30",
+  "runtime": "container",
+  "hosts": {
+    "api.weather.gc.ca": {
+      "resolved": false
+    },
+    "wateroffice.ec.gc.ca": {
+      "resolved": false
+    },
+    "www.cehq.gouv.qc.ca": {
+      "resolved": false
+    }
+  },
+  "effect": "No bulk HYDAT/CEHQ raw files were downloaded in-container; jobs remain retryable.",
+  "fallback_values_invented": false
+}

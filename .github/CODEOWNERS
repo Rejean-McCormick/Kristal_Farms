@@ -1,0 +1,7 @@
+# Replace placeholders with actual GitHub teams/users when the repository is created.
+/docs/                     @OWNER
+/contracts/                @OWNER
+/database/                 @OWNER
+/pipelines/                @OWNER
+/apps/web/                 @OWNER
+/services/                 @OWNER

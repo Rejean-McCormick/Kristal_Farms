@@ -1,0 +1,8 @@
+flowchart LR
+  External[External source] --> Raw[raw]
+  Raw --> Staging[staging]
+  Staging --> Validate[validation]
+  Validate --> Core[core / research]
+  Core --> QA[QA]
+  QA --> Publish[publish views]
+  Publish --> Artifacts[PMTiles / COG / exports]

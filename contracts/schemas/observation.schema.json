@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.example/contracts/observation.schema.json",
+  "title": "Kristal Farms Observation",
+  "type": "object",
+  "required": [
+    "id",
+    "subject_type",
+    "subject_id",
+    "metric",
+    "unit",
+    "evidence_id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "subject_type": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "metric": {
+      "type": "string"
+    },
+    "value_numeric": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "value_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "valid_from": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+version: "1.0"
+levels:
+  public:
+    public_artifact_allowed: true
+  partner:
+    public_artifact_allowed: false
+  internal:
+    public_artifact_allowed: false
+  restricted:
+    public_artifact_allowed: false

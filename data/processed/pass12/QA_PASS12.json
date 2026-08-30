@@ -1,0 +1,39 @@
+{
+  "schema_version": "pass12.0",
+  "generated_at": "2026-08-30",
+  "pass": true,
+  "counts": {
+    "canonical_entities": 48,
+    "hydrometric_stations": 24,
+    "sources_total": 25,
+    "evidence_total": 79,
+    "pass12_hydrology_evidence_records": 31,
+    "observations_total": 34,
+    "real_materialized_observation_series": 0,
+    "screening_dimension_states": 240,
+    "ingestion_jobs_total": 150,
+    "hydat_station_collection_jobs": 72,
+    "metrics_registered": 22,
+    "pytest_tests": 12
+  },
+  "checks": {
+    "pytest_returncode": 0,
+    "validator_returncode": 0,
+    "all_72_hydat_jobs_blocked_runtime_dns": true,
+    "no_real_series_fabricated": true,
+    "forbidden_engineering_metrics_absent": true,
+    "natashquan_wsc_gross_area_preserved": true,
+    "natashquan_cehq_area_preserved_separately": true,
+    "natashquan_discrepancy_explicit": true,
+    "ranking_disabled": true,
+    "catalog_errors": [],
+    "app_markdown_links_checked": 0,
+    "app_missing_links": [],
+    "docs_markdown_links_checked": 126,
+    "docs_missing_links": [],
+    "synthetic_fixture_marked_synthetic": true
+  },
+  "test_output": "............                                                             [100%]\n12 passed in 0.24s",
+  "validator_output": "{\n  \"pass\": true,\n  \"errors\": [],\n  \"counts\": {\n    \"entities\": 48,\n    \"sources\": 25,\n    \"evidence\": 79,\n    \"observations\": 34,\n    \"observation_series\": 0,\n    \"screening_states\": 240,\n    \"ingestion_jobs\": 150,\n    \"hydat_station_collection_jobs\": 72\n  }\n}",
+  "runtime_limit": "Container DNS did not resolve api.weather.gc.ca, wateroffice.ec.gc.ca, or www.cehq.gouv.qc.ca; official bulk series were therefore not materialized."
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "layers": [
+    {
+      "file": "41_wsc_basin_polygon_availability.geojson",
+      "title": "WSC basin polygon availability",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Confirms all 24 pass-9 hydrometric anchors are explicitly listed in the official WSC basin-polygon distribution while keeping actual polygon geometry absent until binary ingestion succeeds."
+    },
+    {
+      "file": "42_hydrography_service_extraction_jobs.geojson",
+      "title": "Hydrography service extraction jobs",
+      "features": 24,
+      "non_null_geometry": 0,
+      "description": "Deterministic extraction jobs for GRHQ (Québec) and Canada1Water/NHN (Labrador). All accepted reach geometry remains null pending execution and manual connectivity review."
+    },
+    {
+      "file": "43_hydro_analysis_request_windows.geojson",
+      "title": "Hydro analysis request windows",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Fixed 100 km × 100 km nominal service-query windows centred on official station points. These are operational geometries only, never basin or project boundaries."
+    },
+    {
+      "file": "44_hydrography_attribute_schema_registry.geojson",
+      "title": "Hydrography schema registry",
+      "features": 3,
+      "non_null_geometry": 0,
+      "description": "Source schemas and runtime discovery requirements needed before extracted geometry can be accepted."
+    },
+    {
+      "file": "45_hrdem_stac_extraction_jobs.geojson",
+      "title": "HRDEM STAC extraction jobs",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Per-river terrain extraction jobs tied to operational windows. Terrain fields remain null until authoritative connected flowlines pass the manual review gate."
+    },
+    {
+      "file": "46_geometry_ingestion_execution_status.geojson",
+      "title": "Geometry ingestion execution status",
+      "features": 5,
+      "non_null_geometry": 0,
+      "description": "Actual Pass 10 execution attempts. Official services are registered/verified where possible, but this runtime cannot resolve external hosts; no fallback natural-feature geometry is created."
+    },
+    {
+      "file": "47_reach_terrain_evidence_gate.geojson",
+      "title": "Reach/terrain evidence gate",
+      "features": 24,
+      "non_null_geometry": 24,
+      "description": "Hard per-river gate preventing DEM/head/MW/ranking calculations before official geometry and manual connectivity review."
+    }
+  ]
+}

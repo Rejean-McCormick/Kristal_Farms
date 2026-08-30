@@ -1,0 +1,11 @@
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.csv text eol=lf
+
+# Raw supplied data must remain byte-preserved.
+data/raw/*.csv binary
+
+*.pdf binary
+*.docx binary
+*.xlsx binary

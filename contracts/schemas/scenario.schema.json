@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.example/contracts/scenario.schema.json",
+  "title": "Kristal Farms Scenario Input",
+  "type": "object",
+  "required": [
+    "name",
+    "base_data_version",
+    "assumptions"
+  ],
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "base_data_version": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "siting_variant": {
+      "enum": [
+        "generation_side",
+        "community_side",
+        "split"
+      ]
+    },
+    "assumptions": {
+      "type": "object",
+      "properties": {
+        "generation_mw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "community_priority_mw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reserve_mw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "compute_min_mw": {
+          "type": "number",
+          "minimum": 0
+        },
+        "compute_max_mw": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "principle": "No authoritative geometry, no substitute geometry.",
+  "attempts": [
+    {
+      "id": "WSC-MDA02-GEOJSON",
+      "source_id": "SRC-WSC-BASIN-DIRECTORY",
+      "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_02.zip",
+      "published_size": "337 MB",
+      "target": "Côte-Nord / Québec 02-prefixed hydrometric basin polygons",
+      "result": "download_failed_in_execution_environment",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "WSC-MDA03-GEOJSON",
+      "source_id": "SRC-WSC-BASIN-DIRECTORY",
+      "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_03.zip",
+      "published_size": "27 MB",
+      "target": "Nunavik / Labrador 03-prefixed hydrometric basin polygons",
+      "result": "download_failed_in_execution_environment",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "GRHQ-FLOWLINES",
+      "source_id": "SRC-GRHQ",
+      "target": "Québec connected river flowlines by UDH",
+      "result": "dataset_and_download-index_verified_but_UDH_binary_geometry_not_ingested",
+      "ingested": false,
+      "fallback_geometry_created": false,
+      "note": "Full GRHQ covers all Québec; northern source geometry is based on CanVec 1:50,000. Exact UDH packages remain to be retrieved."
+    },
+    {
+      "id": "CANADA1WATER-ATLANTIC-HUDSON",
+      "source_id": "SRC-CANADA1WATER-NHN-STRAHLER",
+      "target": "Labrador / cross-border connected stream network",
+      "result": "regional_package_urls_verified_but_binary_not_ingested",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "HRDEM-TERRAIN",
+      "source_id": "SRC-HRDEM-MOSAIC",
+      "target": "terrain profiles along connected reaches",
+      "result": "service_verified_extraction_deferred_until_flowline_geometry_exists",
+      "ingested": false,
+      "fallback_geometry_created": false
+    }
+  ],
+  "wsc_prerelease_caution": "WSC states basin polygons are prerelease and polygon-derived areas may differ from official station drainage areas until final review; station metadata remains the authoritative drainage-area value in this pass."
+}

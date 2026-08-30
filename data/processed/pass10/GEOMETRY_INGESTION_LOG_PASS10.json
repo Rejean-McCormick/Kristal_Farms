@@ -1,0 +1,68 @@
+{
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "principle": "No authoritative natural-feature geometry -> no substitute natural-feature geometry.",
+  "current_runtime_network": "external DNS resolution unavailable in container",
+  "attempts": [
+    {
+      "id": "EXEC-WSC-MDA02",
+      "name": "WSC MDA 02 GeoJSON package",
+      "source_id": "SRC-WSC-BASIN-DIRECTORY",
+      "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_02.zip",
+      "container_result": "container_dns_resolution_failed_2026_08_30",
+      "web_state": "web_directory_verified_binary_not_materialized",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "EXEC-WSC-MDA03",
+      "name": "WSC MDA 03 GeoJSON package",
+      "source_id": "SRC-WSC-BASIN-DIRECTORY",
+      "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/MDA_ADP_03.zip",
+      "container_result": "container_dns_resolution_failed_2026_08_30",
+      "web_state": "web_directory_verified_binary_not_materialized",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "EXEC-GRHQ-L15",
+      "name": "GRHQ REST layer 15",
+      "source_id": "SRC-GRHQ-REST-L15",
+      "url": "https://servicescarto.mern.gouv.qc.ca/pes/rest/services/Territoire/GRHQ_WMS/MapServer/15",
+      "container_result": "container_dns_resolution_failed_2026_08_30",
+      "web_state": "web_service_schema_verified_query_data_not_materialized",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "EXEC-C1W",
+      "name": "Canada1Water REST endpoint",
+      "source_id": "SRC-CANADA1WATER-REST",
+      "url": "https://maps-cartes.services.geo.ca/server_serveur/rest/services/NRCan/c1w_stream_index_en/MapServer/0",
+      "container_result": "container_dns_resolution_failed_2026_08_30",
+      "web_state": "official_endpoint_registered_binary_or_features_not_materialized",
+      "ingested": false,
+      "fallback_geometry_created": false
+    },
+    {
+      "id": "EXEC-HRDEM-STAC",
+      "name": "HRDEM STAC API",
+      "source_id": "SRC-HRDEM-STAC-API",
+      "url": "https://datacube.services.geo.ca/stac/api/",
+      "container_result": "container_dns_resolution_failed_2026_08_30",
+      "web_state": "web_STAC_root_and_open_government_resources_verified_assets_not_materialized",
+      "ingested": false,
+      "fallback_geometry_created": false
+    }
+  ],
+  "wsc_registry_validation": {
+    "targets": 24,
+    "officially_listed": 24,
+    "not_listed": 0,
+    "statuses": {
+      "discontinued": 17,
+      "active": 7
+    }
+  },
+  "next_execution": "Run scripts/pass10/run_pass10_pipeline.py in a network-enabled environment, then complete MANUAL_REVIEW_GATE before HRDEM."
+}

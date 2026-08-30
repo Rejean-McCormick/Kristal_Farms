@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-30",
+  "pass9_qa": true,
+  "relative_markdown_links_checked": 110,
+  "missing_relative_links": [],
+  "raw_hashes": {
+    "data/raw/kristal_farms_village_inventory.csv": "8a36409940b17052a2fb5df532107b9980349cfa08ec8c5580edd7d72d5a88e8",
+    "data/raw/labrador_hydroelectric_potential.csv": "82c5b56e57475e8f1996be3b690eb249862d913deed71a627c84fb3c2b75a297"
+  },
+  "pass": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "summary": {
+    "layers": 7,
+    "features": 168,
+    "target_rivers": 24,
+    "official_wsc_station_points": 24,
+    "sources": 11
+  },
+  "checks": {
+    "unknown_source_ids": [],
+    "duplicate_feature_ids": [],
+    "invalid_point_coordinates": [],
+    "non_null_geometry_missing_geometry_role": [],
+    "unexpected_basin_geometry": [],
+    "unexpected_river_line_geometry": [],
+    "unsupported_head_flow_capacity_values": [],
+    "non_null_ranking_values": [],
+    "missing_station_ids": [],
+    "extra_station_ids": [],
+    "fallback_geometry_created": []
+  },
+  "pass": true
+}

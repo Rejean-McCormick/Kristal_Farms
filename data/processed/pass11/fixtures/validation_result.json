@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "errors": [],
+  "counts": {
+    "entities": 48,
+    "assets": 24,
+    "observations": 24,
+    "screening_states": 240
+  }
+}

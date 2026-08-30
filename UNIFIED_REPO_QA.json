@@ -1,0 +1,10 @@
+{
+  "effective_date": "2026-08-30",
+  "active_markdown_links_checked": 161,
+  "missing_relative_links": [],
+  "unexpected_superseded_name_occurrences": [],
+  "missing_required_directories": [],
+  "old_kristal_models_module_exists": false,
+  "new_kristal_farms_models_module_exists": true,
+  "pass": true
+}

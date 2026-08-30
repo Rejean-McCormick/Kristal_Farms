@@ -1,0 +1,873 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass10.0",
+  "generated_at": "2026-08-30",
+  "title": "WSC basin polygon availability",
+  "description": "Confirms all 24 pass-9 hydrometric anchors are explicitly listed in the official WSC basin-polygon distribution while keeping actual polygon geometry absent until binary ingestion succeeds.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02WB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71361111,
+          50.42722222
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02WB003",
+        "name": "02WB003 — Natashquan River / Rivière Natashquan",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02WB003",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Natashquan River / Rivière Natashquan",
+        "region": "Côte-Nord / Minganie",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02XA006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.59916667,
+          50.70194444
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02XA006",
+        "name": "02XA006 — Petit Mécatina River / Rivière du Petit Mécatina",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02XA006",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Petit Mécatina River / Rivière du Petit Mécatina",
+        "region": "Basse-Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02XB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7025,
+          51.6125
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02XB001",
+        "name": "02XB001 — Saint-Augustin River / Rivière Saint-Augustin",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02XB001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Saint-Augustin River / Rivière Saint-Augustin",
+        "region": "Basse-Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02XC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.6,
+          51.7725
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02XC001",
+        "name": "02XC001 — Saint-Paul River / Rivière Saint-Paul",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02XC001",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Saint-Paul River / Rivière Saint-Paul",
+        "region": "Basse-Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02WC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.99083333,
+          50.38361111
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02WC001",
+        "name": "02WC001 — Etamamiou River / Rivière Etamamiou",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02WC001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Etamamiou River / Rivière Etamamiou",
+        "region": "Basse-Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02WC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.44694444,
+          50.39666667
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02WC002",
+        "name": "02WC002 — Olomane River / Rivière Olomane",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02WC002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Olomane River / Rivière Olomane",
+        "region": "Basse-Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02WA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1175,
+          50.2475
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02WA002",
+        "name": "02WA002 — Aguanus River / Rivière Aguanus",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02WA002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Aguanus River / Rivière Aguanus",
+        "region": "Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02WA001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.21222222,
+          50.25305556
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02WA001",
+        "name": "02WA001 — Nabisipi River / Rivière Nabisipi",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02WA001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Nabisipi River / Rivière Nabisipi",
+        "region": "Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02VB003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.42583333,
+          50.3775
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02VB003",
+        "name": "02VB003 — Magpie River / Rivière Magpie",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02VB003",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Magpie River / Rivière Magpie",
+        "region": "Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-02VC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.71833333,
+          51.76722222
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-02VC002",
+        "name": "02VC002 — Romaine River / Rivière Romaine",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "02VC002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Romaine River / Rivière Romaine",
+        "region": "Côte-Nord",
+        "major_drainage_area": "02",
+        "official_geometry_package": "MDA_ADP_02.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03FA002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.20833333,
+          56.86111111
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03FA002",
+        "name": "03FA002 — Nastapoka River / Rivière Nastapoka",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03FA002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Nastapoka River / Rivière Nastapoka",
+        "region": "Nunavik / Hudson Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03GB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96611111,
+          58.50833333
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03GB001",
+        "name": "03GB001 — Innuksuac River / Rivière Innuksuac",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03GB001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Innuksuac River / Rivière Innuksuac",
+        "region": "Nunavik / Hudson Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03GC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.24472222,
+          59.56666667
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03GC001",
+        "name": "03GC001 — Kogaluc River / Rivière Kogaluc",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03GC001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Kogaluc River / Rivière Kogaluc",
+        "region": "Nunavik / Hudson Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03HA003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13055556,
+          60.06666667
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03HA003",
+        "name": "03HA003 — Arnaud River / Rivière Arnaud (Payne)",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03HA003",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Arnaud River / Rivière Arnaud (Payne)",
+        "region": "Nunavik / Ungava Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03JB001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.42055556,
+          58.64027778
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03JB001",
+        "name": "03JB001 — Leaf River / Rivière aux Feuilles",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03JB001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Leaf River / Rivière aux Feuilles",
+        "region": "Nunavik / Ungava Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03KC004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.59083333,
+          57.68694444
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03KC004",
+        "name": "03KC004 — Aux Mélèzes River / Rivière aux Mélèzes",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03KC004",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Aux Mélèzes River / Rivière aux Mélèzes",
+        "region": "Nunavik / Koksoak system",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03MB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.58333333,
+          57.88333333
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03MB002",
+        "name": "03MB002 — Great Whale River / Grande rivière de la Baleine",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03MB002",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Great Whale River / Grande rivière de la Baleine",
+        "region": "Nunavik / Hudson Bay",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03ME002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.84361111,
+          58.15472222
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03ME002",
+        "name": "03ME002 — George River / Rivière George",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03ME002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "George River / Rivière George",
+        "region": "Nunavik / Labrador peninsula",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03NF001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.30166667,
+          55.23388889
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03NF001",
+        "name": "03NF001 — Ugjoktok River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03NF001",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Ugjoktok River",
+        "region": "North Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03NG001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97722222,
+          54.62361111
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03NG001",
+        "name": "03NG001 — Kanairiktok River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03NG001",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Kanairiktok River",
+        "region": "North / central Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03PB002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.42666667,
+          54.13166667
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03PB002",
+        "name": "03PB002 — Naskaupi River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03PB002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Naskaupi River",
+        "region": "Lake Melville / central Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03OE002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18166667,
+          52.61583333
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03OE002",
+        "name": "03OE002 — Minipi River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03OE002",
+        "station_status_in_basin_registry": "discontinued",
+        "river_name": "Minipi River",
+        "region": "Central / southeast Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03QC001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.49361111,
+          53.53416667
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03QC001",
+        "name": "03QC001 — Eagle River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03QC001",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Eagle River",
+        "region": "Southeast Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "BASIN-AVAIL-03QC002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.87111111,
+          52.64861111
+        ]
+      },
+      "properties": {
+        "id": "BASIN-AVAIL-03QC002",
+        "name": "03QC002 — Alexis River",
+        "feature_type": "wsc_basin_polygon_availability_anchor",
+        "verification_status": "official_station_confirmed_in_basin_polygon_inclusion_registry_geometry_not_ingested",
+        "confidence": "high_for_inclusion_and_station_anchor_none_for_uningested_polygon",
+        "source_ids": [
+          "SRC-WSC-INCLUDED-STATIONS",
+          "SRC-WSC-BASIN-DIRECTORY",
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "official_hydrometric_station_position_used_only_as_basin_registry_anchor",
+        "station_number": "03QC002",
+        "station_status_in_basin_registry": "active",
+        "river_name": "Alexis River",
+        "region": "Southeast Labrador",
+        "major_drainage_area": "03",
+        "official_geometry_package": "MDA_ADP_03.zip",
+        "basin_polygon_officially_listed": true,
+        "basin_polygon_geometry_ingested": false,
+        "basin_geometry": null,
+        "project_site_polygon": false,
+        "warning": "Point geometry is the WSC station only. It is not the basin polygon, river reach, intake, powerhouse or dam site."
+      }
+    }
+  ]
+}

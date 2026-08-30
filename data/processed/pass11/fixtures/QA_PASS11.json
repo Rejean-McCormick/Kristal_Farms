@@ -1,0 +1,32 @@
+{
+  "schema_version": "pass11.0",
+  "generated_at": "2026-08-30",
+  "counts": {
+    "entities": 48,
+    "natural_features": 24,
+    "assets": 24,
+    "entity_relations": 24,
+    "sources": 19,
+    "evidence": 48,
+    "observations": 24,
+    "screening_states": 240,
+    "ingestion_jobs": 72,
+    "publish_features": 24
+  },
+  "checks": {
+    "validator_exit_code": 0,
+    "pytest_exit_code": 0,
+    "pytest_output": ".....                                                                    [100%]\n5 passed in 0.11s",
+    "relation_errors": [],
+    "missing_relative_markdown_links": [],
+    "river_geometry_non_null": [],
+    "engineering_metrics_present": [],
+    "ranking_metadata_present": []
+  },
+  "network_execution": {
+    "container_dns_eccc_available": false,
+    "flow_jobs_executed": false,
+    "reason": "Name resolution failure in container; jobs are queued and source contracts verified via web documentation."
+  },
+  "pass": true
+}

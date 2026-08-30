@@ -1,0 +1,116 @@
+{
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "sources": [
+    {
+      "id": "SRC-WSC-BASIN-POLYGONS",
+      "title": "National hydrometric network basin polygons",
+      "authority": "Environment and Climate Change Canada / Water Survey of Canada",
+      "source_type": "official_geospatial_dataset",
+      "url": "https://open.canada.ca/data/en/dataset/0c121878-ac23-46f5-95df-eb9960753375",
+      "accessed": "2026-08-30",
+      "scope": "Official/prerelease drainage-area polygons for active and discontinued discharge stations; distributed by major drainage area.",
+      "quality": "authoritative_prerelease_geometry"
+    },
+    {
+      "id": "SRC-WSC-BASIN-DIRECTORY",
+      "title": "Hydrometric Network Basin Polygons — distribution directory",
+      "authority": "Environment and Climate Change Canada / Water Survey of Canada",
+      "source_type": "official_distribution_directory",
+      "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+      "accessed": "2026-08-30",
+      "scope": "Lists MDA_ADP_02.zip (337 MB) and MDA_ADP_03.zip (27 MB) GeoJSON packages used by this pass.",
+      "quality": "authoritative_distribution"
+    },
+    {
+      "id": "SRC-WSC-BASIN-NOTICE-2026",
+      "title": "Wateroffice drainage-basin delineation notice",
+      "authority": "Environment and Climate Change Canada / Water Survey of Canada",
+      "source_type": "official_current_notice",
+      "url": "https://wateroffice.ec.gc.ca/map/",
+      "accessed": "2026-08-30",
+      "scope": "States basin polygons are prerelease and polygon-derived drainage areas may differ from official station drainage areas until final review.",
+      "quality": "authoritative_current_notice"
+    },
+    {
+      "id": "SRC-WSC-DRAINAGE-UPDATE-2026",
+      "title": "Updated drainage areas for WSC hydrometric basins",
+      "authority": "Environment and Climate Change Canada / Water Survey of Canada",
+      "source_type": "official_current_update",
+      "url": "https://wateroffice.ec.gc.ca/news_e.html",
+      "accessed": "2026-08-30",
+      "scope": "July 2026 notice says gross/effective drainage areas were updated from the NHS basin delineation project and will be the source going forward.",
+      "quality": "authoritative_current_update"
+    },
+    {
+      "id": "SRC-WSC-STATION-REFERENCE",
+      "title": "Water Survey of Canada Station Reference Index",
+      "authority": "Environment and Climate Change Canada / Water Survey of Canada",
+      "source_type": "official_station_metadata",
+      "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+      "accessed": "2026-08-30",
+      "scope": "Official station identifiers, watercourses, DMS coordinates and gross/effective drainage-area metadata.",
+      "quality": "authoritative_current_metadata"
+    },
+    {
+      "id": "SRC-GRHQ",
+      "title": "Géobase du réseau hydrographique du Québec (GRHQ)",
+      "authority": "Ministère des Ressources naturelles et des Forêts, Québec",
+      "source_type": "official_hydrography_dataset",
+      "url": "https://donneesquebec.ca/recherche/recherche/dataset/grhq",
+      "accessed": "2026-08-30",
+      "scope": "Common Québec hydrography reference. Uses BDTQ 1:20,000 in the south and CanVec 1:50,000 in the north; includes geometric flow-continuity lines. Covers all Québec.",
+      "quality": "authoritative_current"
+    },
+    {
+      "id": "SRC-GRHQ-HR",
+      "title": "Géobase du réseau hydrographique du Québec à haute résolution (GRHQ-HR)",
+      "authority": "Ministère des Ressources naturelles et des Forêts, Québec",
+      "source_type": "official_high_resolution_hydrography_dataset",
+      "url": "https://www.donneesquebec.ca/recherche/dataset/geobase-du-reseau-hydrographique-du-quebec-a-haute-resolution-grhq-hr",
+      "accessed": "2026-08-30",
+      "scope": "1:2,000 LiDAR-derived hydrocoherent network deployed progressively for southern Québec; not assumed to cover northern study reaches.",
+      "quality": "authoritative_current_partial_coverage"
+    },
+    {
+      "id": "SRC-HRDEM-MOSAIC",
+      "title": "High Resolution Digital Elevation Model Mosaic (HRDEM Mosaic) — CanElevation Series",
+      "authority": "Natural Resources Canada",
+      "source_type": "official_elevation_dataset_service",
+      "url": "https://open.canada.ca/data/en/dataset/0fe65119-e96e-4a57-8bfe-9d9245fba06b",
+      "accessed": "2026-08-30",
+      "scope": "Continuous representation of available HRDEM data; northern source includes satellite-derived elevation. DTM/DSM and derived slope available via WMS/WCS/STAC; CGVD2013 heights.",
+      "quality": "authoritative_current"
+    },
+    {
+      "id": "SRC-CANADA1WATER-NHN-STRAHLER",
+      "title": "Canada1Water Classification of the National Hydro Network: Stream Order and Graph Refinement",
+      "authority": "Natural Resources Canada / Geological Survey of Canada",
+      "source_type": "official_national_hydrography_dataset",
+      "url": "https://open.canada.ca/data/en/dataset/1c0e8a4e-952c-cd7a-1be8-29691aea2cd1",
+      "accessed": "2026-08-30",
+      "scope": "National seamless NHN-derived stream network with graph corrections and Strahler classification, distributed in regional GeoPackage models including Atlantic and Hudson.",
+      "quality": "authoritative_completed_dataset"
+    },
+    {
+      "id": "SRC-LEGACY-VILLAGE-INVENTORY",
+      "title": "Kristal Farms village inventory — legacy raw evidence",
+      "authority": "Kristal Farms supplied repository",
+      "source_type": "internal_legacy_raw_dataset",
+      "local_path": "data/raw/kristal_farms_village_inventory.csv",
+      "accessed": "2026-08-30",
+      "scope": "Legacy associations between selected communities and river/hydro anchors. Tiers/priority labels are not current decision state.",
+      "quality": "internal_legacy_context"
+    },
+    {
+      "id": "SRC-LEGACY-LAB-HYDRO",
+      "title": "Labrador hydro potential — supplied raw evidence",
+      "authority": "Kristal Farms supplied repository",
+      "source_type": "internal_legacy_raw_dataset",
+      "local_path": "data/raw/labrador_hydroelectric_potential.csv",
+      "accessed": "2026-08-30",
+      "scope": "Historical/current supplied Labrador hydro screening records. Used only as context; status/MW claims retain their own dates and review flags.",
+      "quality": "mixed_source_internal_compilation"
+    }
+  ]
+}

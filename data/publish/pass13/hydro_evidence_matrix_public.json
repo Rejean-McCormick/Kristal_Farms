@@ -1,0 +1,2399 @@
+{
+  "release": "2026.08.30-pass13",
+  "immutable": true,
+  "not_a_score": true,
+  "items": [
+    {
+      "entity_id": "1ad5acab-f39d-5970-bfd9-55131e3e9fd4",
+      "name": "Natashquan River / Rivière Natashquan",
+      "canonical_key": "natural:river:qc:natashquan",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_sources_plus_current_cehq_metadata_and_historical_flow_summary_raw_hydat_series_not_materialized",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "a60e91f7-1640-50dd-9f4e-337c9e25ebea",
+      "name": "Petit Mécatina River / Rivière du Petit Mécatina",
+      "canonical_key": "natural:river:qc:petit-mecatina",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "3d678c66-4b9a-57b3-8c15-53bd89fd3439",
+      "name": "Saint-Augustin River / Rivière Saint-Augustin",
+      "canonical_key": "natural:river:qc:saint-augustin",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "46cef33c-e524-5787-8dc3-a0b124e36865",
+      "name": "Saint-Paul River / Rivière Saint-Paul",
+      "canonical_key": "natural:river:qc:saint-paul",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "324fd842-e1c0-5cd5-bcbe-1ad6e61244b1",
+      "name": "Etamamiou River / Rivière Etamamiou",
+      "canonical_key": "natural:river:qc:etamamiou",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "8c39de66-6b4c-51d2-b628-1b6b12172bf4",
+      "name": "Olomane River / Rivière Olomane",
+      "canonical_key": "natural:river:qc:olomane",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "44da1d1d-0c41-56dc-8dcc-3c33155e42cb",
+      "name": "Aguanus River / Rivière Aguanus",
+      "canonical_key": "natural:river:qc:aguanus",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "454ba21c-f16c-51a4-b0d7-35ca6d0eb5ff",
+      "name": "Nabisipi River / Rivière Nabisipi",
+      "canonical_key": "natural:river:qc:nabisipi",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "cedabc62-52aa-544d-8845-690af765f5d8",
+      "name": "Magpie River / Rivière Magpie",
+      "canonical_key": "natural:river:qc:magpie",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "759d3e76-ed93-5a82-8a53-b52e1f737ef3",
+      "name": "Romaine River / Rivière Romaine",
+      "canonical_key": "natural:river:qc:romaine",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "b09345fd-ae35-55bd-9188-bff76087eeb0",
+      "name": "Nastapoka River / Rivière Nastapoka",
+      "canonical_key": "natural:river:qc:nastapoka",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "partial",
+          "evidence_completeness": "legacy_environment_context_only_current_authoritative_layers_not_ingested",
+          "open_questions": [
+            "Ingest current protected-area/habitat/species datasets",
+            "Validate current legal protection and cumulative effects",
+            "Separate environment evidence from legacy Kristal screening conclusions"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "partial",
+          "evidence_completeness": "community_telecom_context_known_compute_grade_capacity_unverified",
+          "open_questions": [
+            "Verify exact fibre/backhaul route to any future site",
+            "Verify capacity, redundancy, landing/provider/SLA",
+            "Do not infer site fibre from community service"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "partial",
+          "evidence_completeness": "regional_marine_access_context_linked_route_to_river_not_validated",
+          "open_questions": [
+            "Identify exact facility geometry and capacity",
+            "Validate river-to-port/road route and heavy-cargo constraints",
+            "Do not interpret community marine service as reach access"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "partial",
+          "evidence_completeness": "legacy_community_context_linked_no_partnership_or_consent_inference",
+          "open_questions": [
+            "Validate current community relationship to any future river concept",
+            "Document community priorities and partnership/consent process separately",
+            "Do not infer support from geographic context"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "15613e33-b32e-5705-adaa-25cc0720bc9d",
+      "name": "Innuksuac River / Rivière Innuksuac",
+      "canonical_key": "natural:river:qc:innuksuac",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "d9cb4c85-3ee4-55b7-955e-0965323ebfbb",
+      "name": "Kogaluc River / Rivière Kogaluc",
+      "canonical_key": "natural:river:qc:kogaluc",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "8bc80e2a-61c8-5155-ade4-07c94275ae05",
+      "name": "Arnaud River / Rivière Arnaud (Payne)",
+      "canonical_key": "natural:river:qc:arnaud",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "partial",
+          "evidence_completeness": "legacy_environment_context_only_current_authoritative_layers_not_ingested",
+          "open_questions": [
+            "Ingest current protected-area/habitat/species datasets",
+            "Validate current legal protection and cumulative effects",
+            "Separate environment evidence from legacy Kristal screening conclusions"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "partial",
+          "evidence_completeness": "community_telecom_context_known_compute_grade_capacity_unverified",
+          "open_questions": [
+            "Verify exact fibre/backhaul route to any future site",
+            "Verify capacity, redundancy, landing/provider/SLA",
+            "Do not infer site fibre from community service"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "partial",
+          "evidence_completeness": "regional_marine_access_context_linked_route_to_river_not_validated",
+          "open_questions": [
+            "Identify exact facility geometry and capacity",
+            "Validate river-to-port/road route and heavy-cargo constraints",
+            "Do not interpret community marine service as reach access"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "partial",
+          "evidence_completeness": "legacy_community_context_linked_no_partnership_or_consent_inference",
+          "open_questions": [
+            "Validate current community relationship to any future river concept",
+            "Document community priorities and partnership/consent process separately",
+            "Do not infer support from geographic context"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "dd7de1f3-ed11-5a59-b91c-abbefbea0cf3",
+      "name": "Leaf River / Rivière aux Feuilles",
+      "canonical_key": "natural:river:qc:leaf",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "partial",
+          "evidence_completeness": "legacy_environment_context_only_current_authoritative_layers_not_ingested",
+          "open_questions": [
+            "Ingest current protected-area/habitat/species datasets",
+            "Validate current legal protection and cumulative effects",
+            "Separate environment evidence from legacy Kristal screening conclusions"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "partial",
+          "evidence_completeness": "community_telecom_context_known_compute_grade_capacity_unverified",
+          "open_questions": [
+            "Verify exact fibre/backhaul route to any future site",
+            "Verify capacity, redundancy, landing/provider/SLA",
+            "Do not infer site fibre from community service"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "partial",
+          "evidence_completeness": "regional_marine_access_context_linked_route_to_river_not_validated",
+          "open_questions": [
+            "Identify exact facility geometry and capacity",
+            "Validate river-to-port/road route and heavy-cargo constraints",
+            "Do not interpret community marine service as reach access"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "partial",
+          "evidence_completeness": "legacy_community_context_linked_no_partnership_or_consent_inference",
+          "open_questions": [
+            "Validate current community relationship to any future river concept",
+            "Document community priorities and partnership/consent process separately",
+            "Do not infer support from geographic context"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "7ef13c93-0a6f-540f-afc1-0cea57498a07",
+      "name": "Aux Mélèzes River / Rivière aux Mélèzes",
+      "canonical_key": "natural:river:qc:aux-melezes",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "965013b9-9884-54ac-981f-fd0caa2cff1a",
+      "name": "Great Whale River / Grande rivière de la Baleine",
+      "canonical_key": "natural:river:qc:great-whale",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "partial",
+          "evidence_completeness": "legacy_environment_context_only_current_authoritative_layers_not_ingested",
+          "open_questions": [
+            "Ingest current protected-area/habitat/species datasets",
+            "Validate current legal protection and cumulative effects",
+            "Separate environment evidence from legacy Kristal screening conclusions"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "partial",
+          "evidence_completeness": "community_telecom_context_known_compute_grade_capacity_unverified",
+          "open_questions": [
+            "Verify exact fibre/backhaul route to any future site",
+            "Verify capacity, redundancy, landing/provider/SLA",
+            "Do not infer site fibre from community service"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "partial",
+          "evidence_completeness": "regional_marine_access_context_linked_route_to_river_not_validated",
+          "open_questions": [
+            "Identify exact facility geometry and capacity",
+            "Validate river-to-port/road route and heavy-cargo constraints",
+            "Do not interpret community marine service as reach access"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "partial",
+          "evidence_completeness": "legacy_community_context_linked_no_partnership_or_consent_inference",
+          "open_questions": [
+            "Validate current community relationship to any future river concept",
+            "Document community priorities and partnership/consent process separately",
+            "Do not infer support from geographic context"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "d6352b82-b00e-5b90-8fc3-b93112c101d5",
+      "name": "George River / Rivière George",
+      "canonical_key": "natural:river:qc-nl:george",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "partial",
+          "evidence_completeness": "legacy_environment_context_only_current_authoritative_layers_not_ingested",
+          "open_questions": [
+            "Ingest current protected-area/habitat/species datasets",
+            "Validate current legal protection and cumulative effects",
+            "Separate environment evidence from legacy Kristal screening conclusions"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "partial",
+          "evidence_completeness": "community_telecom_context_known_compute_grade_capacity_unverified",
+          "open_questions": [
+            "Verify exact fibre/backhaul route to any future site",
+            "Verify capacity, redundancy, landing/provider/SLA",
+            "Do not infer site fibre from community service"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "partial",
+          "evidence_completeness": "regional_marine_access_context_linked_route_to_river_not_validated",
+          "open_questions": [
+            "Identify exact facility geometry and capacity",
+            "Validate river-to-port/road route and heavy-cargo constraints",
+            "Do not interpret community marine service as reach access"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "partial",
+          "evidence_completeness": "legacy_community_context_linked_no_partnership_or_consent_inference",
+          "open_questions": [
+            "Validate current community relationship to any future river concept",
+            "Document community priorities and partnership/consent process separately",
+            "Do not infer support from geographic context"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "c6b3034e-210e-5566-b5a2-4955e6adf302",
+      "name": "Ugjoktok River",
+      "canonical_key": "natural:river:nl:ugjoktok",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "f7b20362-acc7-5606-844f-dc971d13977e",
+      "name": "Kanairiktok River",
+      "canonical_key": "natural:river:nl:kanairiktok",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "95b3136f-9a3c-5b76-ad7b-f046e4164e9a",
+      "name": "Naskaupi River",
+      "canonical_key": "natural:river:nl:naskaupi",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "e46c125d-14b6-5fb4-aeb9-deeecafcca0b",
+      "name": "Minipi River",
+      "canonical_key": "natural:river:nl:minipi",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "c8e8cf1c-0c8a-502b-939f-7bceb953ecfa",
+      "name": "Eagle River",
+      "canonical_key": "natural:river:nl:eagle",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_hydat_sources_registered_series_not_materialized_runtime_dns_blocked",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    },
+    {
+      "entity_id": "ac33ba3a-cf18-5cb4-9f1a-46272d8f6f1e",
+      "name": "Alexis River",
+      "canonical_key": "natural:river:nl:alexis",
+      "screening_mode": "unranked",
+      "ranking_allowed": false,
+      "dimensions": {
+        "energy": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate energy evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "hydrology": {
+          "status": "partial",
+          "evidence_completeness": "official_sources_plus_long_record_method_reference_raw_hydat_series_not_materialized",
+          "open_questions": [
+            "Execute station-filtered HYDAT daily/monthly/annual ingestion",
+            "Preserve source release, quality codes, provisional status and retrieval time",
+            "Quantify gaps and record completeness before derived statistics",
+            "Derive climatological/seasonal statistics only after completeness gate",
+            "Do not auto-derive design flow or MW"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "environment": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate environment evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "rights_governance": {
+          "status": "research_required",
+          "evidence_completeness": "community_context_does_not_establish_rights_governance_clearance_or_consent",
+          "open_questions": [
+            "Identify applicable Indigenous rights/governance context for the specific river/reach",
+            "Document engagement/consent/authorization requirements with competent parties",
+            "Do not infer support from proximity or regional governance"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "telecom": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate telecom evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "logistics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate logistics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "community": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate community evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "regulation": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate regulation evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "economics": {
+          "status": "research_required",
+          "evidence_completeness": "not_migrated_in_pass11",
+          "open_questions": [
+            "Join/migrate economics evidence before any site decision"
+          ],
+          "last_reviewed": "2026-08-30"
+        },
+        "engineering": {
+          "status": "research_required",
+          "evidence_completeness": "official_basin_and_reach_geometry_not_yet_ingested",
+          "open_questions": [
+            "Ingest basin polygon",
+            "Accept connected river reach",
+            "Extract HRDEM terrain profile",
+            "Project head remains undefined"
+          ],
+          "last_reviewed": "2026-08-30"
+        }
+      }
+    }
+  ]
+}

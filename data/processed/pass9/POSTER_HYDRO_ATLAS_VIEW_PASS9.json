@@ -1,0 +1,34 @@
+{
+  "version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "purpose": "Hydro Resource Atlas / future public poster preparation",
+  "default_layers": [
+    {
+      "file": "37_hydrology_observation_profiles.geojson",
+      "visibility": true,
+      "meaning": "official hydrometric reference point, not hydro site"
+    },
+    {
+      "file": "40_hydro_opportunity_evidence_matrix.geojson",
+      "visibility": true,
+      "meaning": "evidence completeness symbol, not site quality"
+    },
+    {
+      "file": "38_hydro_research_reaches.geojson",
+      "visibility": false,
+      "meaning": "research object/callout; no geometry"
+    }
+  ],
+  "future_layers_after_geometry_ingestion": [
+    "34_authoritative_watershed_polygons.geojson",
+    "35_authoritative_river_reaches.geojson",
+    "36_dem_terrain_profiles.geojson"
+  ],
+  "rules": [
+    "Never style evidence completeness green=good/red=bad.",
+    "Never render station points as dams.",
+    "Never connect gauges into synthetic river lines.",
+    "Only render watershed/river geometry after authoritative binary ingestion.",
+    "Keep comparator/existing-project contexts visually separate from unranked new-resource research."
+  ]
+}

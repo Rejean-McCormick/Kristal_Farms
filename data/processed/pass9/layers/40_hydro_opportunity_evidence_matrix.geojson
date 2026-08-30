@@ -1,0 +1,1257 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": "pass9.0",
+  "generated_at": "2026-08-30",
+  "title": "Hydro atlas evidence completeness matrix",
+  "description": "Per-river evidence completeness for the Hydro Resource Atlas. Despite the legacy filename concept “opportunity”, this layer contains no opportunity/suitability score or ranking.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-NATASHQUAN",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.71361111,
+          50.42722222
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-NATASHQUAN",
+        "name": "Natashquan River / Rivière Natashquan — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-NATASHQUAN",
+        "region": "Côte-Nord / Minganie",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-PETIT-MECATINA",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.59916667,
+          50.70194444
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-PETIT-MECATINA",
+        "name": "Petit Mécatina River / Rivière du Petit Mécatina — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-PETIT-MECATINA",
+        "region": "Basse-Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-SAINT-AUGUSTIN",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.7025,
+          51.6125
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-SAINT-AUGUSTIN",
+        "name": "Saint-Augustin River / Rivière Saint-Augustin — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-SAINT-AUGUSTIN",
+        "region": "Basse-Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-SAINT-PAUL",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.6,
+          51.7725
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-SAINT-PAUL",
+        "name": "Saint-Paul River / Rivière Saint-Paul — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-SAINT-PAUL",
+        "region": "Basse-Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-ETAMAMIOU",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.99083333,
+          50.38361111
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-ETAMAMIOU",
+        "name": "Etamamiou River / Rivière Etamamiou — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-ETAMAMIOU",
+        "region": "Basse-Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-OLOMANE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.44694444,
+          50.39666667
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-OLOMANE",
+        "name": "Olomane River / Rivière Olomane — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-OLOMANE",
+        "region": "Basse-Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-AGUANUS",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.1175,
+          50.2475
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-AGUANUS",
+        "name": "Aguanus River / Rivière Aguanus — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-AGUANUS",
+        "region": "Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-NABISIPI",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.21222222,
+          50.25305556
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-NABISIPI",
+        "name": "Nabisipi River / Rivière Nabisipi — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-NABISIPI",
+        "region": "Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-MAGPIE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.42583333,
+          50.3775
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-MAGPIE",
+        "name": "Magpie River / Rivière Magpie — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-MAGPIE",
+        "region": "Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-ROMAINE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.71833333,
+          51.76722222
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-ROMAINE",
+        "name": "Romaine River / Rivière Romaine — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-ROMAINE",
+        "region": "Côte-Nord",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-NASTAPOKA",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.20833333,
+          56.86111111
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-NASTAPOKA",
+        "name": "Nastapoka River / Rivière Nastapoka — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-NASTAPOKA",
+        "region": "Nunavik / Hudson Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-INNUKSUAC",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96611111,
+          58.50833333
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-INNUKSUAC",
+        "name": "Innuksuac River / Rivière Innuksuac — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-INNUKSUAC",
+        "region": "Nunavik / Hudson Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-KOGALUC",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.24472222,
+          59.56666667
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-KOGALUC",
+        "name": "Kogaluc River / Rivière Kogaluc — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-KOGALUC",
+        "region": "Nunavik / Hudson Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 3,
+        "documentation_band": "hydrometric_anchor_only",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-ARNAUD",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.13055556,
+          60.06666667
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-ARNAUD",
+        "name": "Arnaud River / Rivière Arnaud (Payne) — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-ARNAUD",
+        "region": "Nunavik / Ungava Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-LEAF",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.42055556,
+          58.64027778
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-LEAF",
+        "name": "Leaf River / Rivière aux Feuilles — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-LEAF",
+        "region": "Nunavik / Ungava Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-AUX-MELEZES",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.59083333,
+          57.68694444
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-AUX-MELEZES",
+        "name": "Aux Mélèzes River / Rivière aux Mélèzes — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-AUX-MELEZES",
+        "region": "Nunavik / Koksoak system",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-GREAT-WHALE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.58333333,
+          57.88333333
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-GREAT-WHALE",
+        "name": "Great Whale River / Grande rivière de la Baleine — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-GREAT-WHALE",
+        "region": "Nunavik / Hudson Bay",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-GEORGE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.84361111,
+          58.15472222
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-GEORGE",
+        "name": "George River / Rivière George — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-GEORGE",
+        "region": "Nunavik / Labrador peninsula",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": true,
+          "legacy_labrador_hydro_context_present": false
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-UGJOKTOK",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.30166667,
+          55.23388889
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-UGJOKTOK",
+        "name": "Ugjoktok River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-UGJOKTOK",
+        "region": "North Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-KANAIRIKTOK",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.97722222,
+          54.62361111
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-KANAIRIKTOK",
+        "name": "Kanairiktok River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-KANAIRIKTOK",
+        "region": "North / central Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-NASKAUPI",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.42666667,
+          54.13166667
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-NASKAUPI",
+        "name": "Naskaupi River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-NASKAUPI",
+        "region": "Lake Melville / central Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-MINIPI",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.18166667,
+          52.61583333
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-MINIPI",
+        "name": "Minipi River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-MINIPI",
+        "region": "Central / southeast Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-EAGLE",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.49361111,
+          53.53416667
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-EAGLE",
+        "name": "Eagle River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-EAGLE",
+        "region": "Southeast Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EVIDENCE-ALEXIS",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.87111111,
+          52.64861111
+        ]
+      },
+      "properties": {
+        "id": "EVIDENCE-ALEXIS",
+        "name": "Alexis River — hydro atlas evidence completeness",
+        "feature_type": "documentation_evidence_matrix",
+        "verification_status": "derived_from_pass9_registry_presence_not_site_quality",
+        "confidence": "high_for_repository_presence_absence_only",
+        "source_ids": [
+          "SRC-WSC-STATION-REFERENCE"
+        ],
+        "last_verified": "2026-08-30",
+        "geometry_role": "hydrometric_anchor_for_evidence_visualization_not_site",
+        "reach_id": "HYDRO-RESEARCH-ALEXIS",
+        "region": "Southeast Labrador",
+        "documentation_dimensions": {
+          "official_station_point": true,
+          "official_station_drainage_metadata": true,
+          "official_basin_package_identified": true,
+          "official_basin_polygon_ingested": false,
+          "authoritative_connected_flowline_ingested": false,
+          "official_flow_series_ingested": false,
+          "dem_profile_ingested": false,
+          "terrain_drop_derived": false,
+          "project_head_defined": false,
+          "environmental_constraints_joined": false,
+          "rights_governance_context_joined": false,
+          "port_ground_logistics_joined": false,
+          "fibre_capacity_joined": false,
+          "engineering_concept_defined": false,
+          "current_economics_defined": false,
+          "legacy_community_context_present": false,
+          "legacy_labrador_hydro_context_present": true
+        },
+        "documentation_dimensions_present_count": 4,
+        "documentation_band": "hydrometric_anchor_plus_legacy_context",
+        "suitability_score": null,
+        "opportunity_score": null,
+        "priority_rank": null,
+        "site_quality_inference_allowed": false,
+        "ranking_allowed": false,
+        "warning": "This is an evidence-completeness layer. More documentation does not mean a better or more acceptable hydro site."
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "version": "pass14.0",
+  "rules": {
+    "marker_size_encodes_merit": false,
+    "color_encodes_site_quality": false,
+    "ranking_badges_allowed": false,
+    "status_styles": {
+      "verified": "solid",
+      "supported": "solid_light",
+      "scoped": "outline",
+      "unverified": "dashed_outline",
+      "conflicting": "split_or_warning",
+      "unknown": "question"
+    },
+    "role_styles": {
+      "community": "circle",
+      "hydrometric_station": "small_dot",
+      "external_reference": "triangle",
+      "conceptual_corridor": "panel_only",
+      "unknown_geometry": "no_map_symbol"
+    },
+    "planned_vs_operating": {
+      "operating": "solid",
+      "planned": "dashed",
+      "withdrawn_or_unresolved": "warning_outline"
+    }
+  },
+  "generated_at": "2026-08-30",
+  "economic_semantics": {
+    "positive_headroom_label": "remaining budget before unpriced Kristal-specific infrastructure",
+    "negative_headroom_label": "reference components do not create conservative headroom",
+    "forbidden_labels": [
+      "savings",
+      "profit",
+      "bankable NPV",
+      "winning site"
+    ],
+    "benchmark_style": "reference band, never map ranking"
+  }
+}
