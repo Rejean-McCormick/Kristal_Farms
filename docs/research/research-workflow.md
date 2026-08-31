@@ -39,3 +39,11 @@ Important unresolved questions should be represented explicitly. A non-finding c
 ## Owner direction
 
 Owner direction may establish project intent and screening governance but remains distinct from independent technical evidence.
+
+## Repository boundary
+
+Exploratory research code belongs under the top-level `research/` workspace. Reproducible ingestion, normalization, validation and publication belong under `pipelines/` and the governed data platform.
+
+A research conclusion is not an Observatory input until it has been promoted through a reproducible pipeline/contract and published as governed data. `apps/web` must not import or execute files from `research/` or `pipelines/`.
+
+See [Workspace boundaries](../architecture/workspace-boundaries.md).

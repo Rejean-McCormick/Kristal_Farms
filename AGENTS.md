@@ -18,6 +18,8 @@ Kristal Farms is a physical northern energy/compute/fibre infrastructure project
 8. **External reference projects remain references** unless a governed data change explicitly changes their role.
 9. **Public/private separation happens before publication.** Never place restricted records in public PMTiles/COG artifacts and rely on frontend hiding.
 10. **The model layer owns business rules.** React components should present results, not implement scientific or regulatory logic.
+11. **Respect the three-system boundary.** `research/` is exploratory, the data platform publishes governed contracts, and `apps/`/`services/` consume them. Product runtime code must not import or execute `research/` or `pipelines/`.
+12. **Published artifacts are read-only product inputs.** Development bridges may read `data/publish/...`; product code must not mutate published artifacts or reach into `data/raw/`.
 
 ## Preferred implementation pattern
 

@@ -24,6 +24,7 @@ node_modules/
 .next/
 dist/
 coverage/
+*.tsbuildinfo
 
 # Documentation builds
 site/

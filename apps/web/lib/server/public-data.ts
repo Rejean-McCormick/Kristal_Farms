@@ -20,18 +20,39 @@ const repoRoot = process.env.KRISTAL_REPO_ROOT
     ? path.resolve(workingDirectory, "../..")
     : workingDirectory;
 const publishRoot = path.join(repoRoot, "data", "publish", "current");
-const fixturesRoot = path.join(repoRoot, "data", "fixtures", "current");
+const catalogPath = path.join(repoRoot, "packages", "catalog", "catalog.json");
 
 async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, "utf8")) as T;
 }
 
-async function readJsonLines<T>(filePath: string): Promise<T[]> {
-  const content = await readFile(filePath, "utf8");
-  return content
-    .split(/\r?\n/)
-    .filter(Boolean)
-    .map((line) => JSON.parse(line) as T);
+type StableLayerCatalog = {
+  layers: Array<{
+    id: string;
+    title: string;
+    group: string;
+    display: {
+      renderer: string;
+      layer_type?: string;
+      min_zoom?: number;
+      max_zoom?: number;
+    };
+    evidence?: { enabled?: boolean };
+    permissions?: { public?: boolean };
+    semantics?: Record<string, unknown>;
+  }>;
+};
+
+function normalizeLayerCatalog(input: StableLayerCatalog): LayerCatalogEntry[] {
+  return input.layers.map((layer) => ({
+    id: layer.id,
+    title: layer.title,
+    layer_group: layer.group,
+    display_config: layer.display,
+    evidence_config: layer.evidence,
+    permissions: layer.permissions,
+    semantics: layer.semantics,
+  }));
 }
 
 function normalizeCollection(
@@ -57,7 +78,7 @@ function normalizeCollection(
 }
 
 export async function getExplorerBootstrap(): Promise<ExplorerBootstrap> {
-  const [release, communitiesRaw, stationsRaw, layerCatalog] = await Promise.all([
+  const [release, communitiesRaw, stationsRaw, stableLayerCatalog] = await Promise.all([
     readJson<{
       release_id: string;
       generated_at: string;
@@ -66,9 +87,10 @@ export async function getExplorerBootstrap(): Promise<ExplorerBootstrap> {
     }>(path.join(publishRoot, "release_manifest.json")),
     readJson<PublicFeatureCollection>(path.join(publishRoot, "communities_public.geojson")),
     readJson<PublicFeatureCollection>(path.join(publishRoot, "hydrometric_stations_public.geojson")),
-    readJsonLines<LayerCatalogEntry>(path.join(fixturesRoot, "system_layer_catalog.jsonl")),
+    readJson<StableLayerCatalog>(catalogPath),
   ]);
 
+  const layerCatalog = normalizeLayerCatalog(stableLayerCatalog);
   const mapLayers = layerCatalog.filter(
     (layer) =>
       layer.permissions?.public !== false &&

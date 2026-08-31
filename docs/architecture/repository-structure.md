@@ -1,63 +1,85 @@
 # Repository structure
 
-Kristal Farms uses **one canonical monorepo**. The GitHub Wiki is the only intentionally separate repository.
+Kristal Farms uses **one canonical monorepo with three logical systems**. The GitHub Wiki is the only intentionally separate repository.
 
 ```text
 kristal-farms/
-├── apps/
-│   └── web/
-├── services/
-│   ├── kristal-farms-api/
-│   ├── ogc-api/
-│   └── tiles/
-├── packages/
-│   ├── schemas/
-│   ├── catalog/
-│   ├── map-style/
-│   ├── ui/
-│   ├── showcase/
-│   └── shared/
-├── pipelines/
+├── research/               # Knowledge: exploratory/non-runtime work
+│   ├── hydrology/
+│   ├── energy/
+│   ├── communities/
+│   └── experiments/
+├── pipelines/              # Data platform: reproducible ingest/transform/QA/publish
 │   ├── ingest/
 │   ├── transform/
 │   ├── validate/
 │   ├── economics/
 │   └── publish/
-├── database/
-│   ├── migrations/
-│   ├── functions/
-│   ├── views/
-│   └── seeds/
-├── contracts/
+├── database/               # Data platform: PostGIS operational source of truth
+├── contracts/              # Data platform: machine-readable boundaries
+├── packages/               # Stable schemas/catalog/map-style/shared packages
 ├── data/
 │   ├── raw/
 │   ├── processed/
 │   ├── fixtures/
 │   ├── publish/
 │   ├── catalog/
-│   ├── examples/
+│   └── examples/
+├── apps/
+│   └── web/                # Product: Showcase / Observatory / Scenario Studio
+├── services/
+│   ├── kristal-farms-api/
+│   ├── ogc-api/
+│   └── tiles/
 ├── docs/
 ├── sources/
-├── scripts/
 ├── tests/
 ├── infra/
 ├── archive/
 └── .github/
 ```
 
-## What belongs where
+## Logical system 1 — Knowledge / research
 
-- `apps/`, `services/`: production implementation homes. They are scaffold-only until actual code is written.
-- `database/`, `pipelines/`, `packages/`: application/data foundation and reproducible analysis code.
+- `research/`: active exploratory code, notebooks, candidate analysis and methodological experiments.
+- `sources/`: controlled source material and owner-direction records.
+- `docs/00-control` through `docs/50-research`: active project/research documentation.
+- `archive/`: superseded/historical research that must not control active state.
+
+Research can be incomplete. It is not a runtime dependency and it is not publishable merely because it is committed.
+
+## Logical system 2 — Data platform / contract
+
+- `database/`: canonical operational PostGIS schemas and views.
+- `pipelines/`: reproducible ingest, transform, validation, economics and publish logic.
 - `contracts/`: machine-readable API, schema, release, story, layer and policy contracts.
-- `data/raw/`: immutable/source data.
+- `packages/`: stable schemas, catalog, cartographic semantics and shared implementation packages.
+- `data/raw/`: source-faithful/controlled input artifacts.
 - `data/processed/current/`: current derived research outputs with provenance.
-- `data/fixtures/current/`: loadable canonical application/data fixtures.
+- `data/fixtures/current/`: loadable canonical development/application fixtures.
 - `data/publish/current/`: current immutable public-release artifacts.
-- `docs/00-control` through `docs/50-research`: active Kristal Farms project/research documentation.
-- `docs/architecture`, `docs/data`, `docs/product`, etc.: active application implementation documentation.
-- `docs/60-application-data`: current application-specific research/data contracts.
-- `archive/`: superseded/historical material that must not control active state.
+
+This system turns research into reproducible, governed data.
+
+## Logical system 3 — Product
+
+- `apps/web/`: Showcase, Explorer/Observatory and Scenario Studio implementation.
+- `services/`: domain API, OGC API and tile delivery.
+- `docs/architecture`, `docs/data`, `docs/product`, etc.: product/application implementation documentation.
+
+Product code consumes governed APIs/tiles, stable packages/contracts or immutable publish artifacts. It must not import or execute `research/` or `pipelines/`.
+
+## Direction of dependency
+
+```text
+research
+   ↓ promote/review
+data platform + contracts
+   ↓ publish/API/tiles
+product
+```
+
+See [Workspace boundaries](workspace-boundaries.md) and [ADR-020](../adr/0020-one-monorepo-three-logical-systems.md).
 
 ## Separate wiki
 

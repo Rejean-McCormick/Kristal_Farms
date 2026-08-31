@@ -10,6 +10,8 @@ Changes to data semantics, architecture, security boundaries, publication rules 
 
 Every substantive research change should identify the affected workstream/decision, sources/evidence, numeric claims, unresolved caveats, share-level impact and whether EN/FR synchronization is required. Never overwrite raw source data to “clean it up”; preserve supplied inputs and add transformed data with provenance.
 
+Exploratory code belongs under `research/`. Reproducible production transforms belong under `pipelines/`. A research result must be promoted through validation/contracts before `apps/` or `services/` depend on it; direct runtime imports from `research/` or `pipelines/` are prohibited.
+
 ## Human/community programs
 
 Changes concerning host communities, education, language, culture, housing or human infrastructure must identify the relevant rights-holder/community decision process, safeguarding/privacy implications and applicable legal/governance questions.

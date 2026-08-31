@@ -29,3 +29,5 @@ rejected
 - [0005 — Immutable public data releases](0005-immutable-public-data-releases.md)
 - [0006 — Ranking disabled by policy](0006-ranking-disabled-by-policy.md)
 - [0007 — Cesium deferred](0007-cesium-deferred.md)
+
+- [0020 — One monorepo with three logical systems](0020-one-monorepo-three-logical-systems.md)

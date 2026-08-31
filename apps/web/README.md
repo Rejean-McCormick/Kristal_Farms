@@ -11,6 +11,7 @@ Implemented in this slice:
 - Next.js + TypeScript application shell;
 - MapLibre GL JS map canvas;
 - governed public communities and hydrometric stations read server-side from `data/publish/current`;
+- stable layer-catalog metadata read from `packages/catalog/catalog.json`;
 - layer-catalog-driven visibility controls for the implemented map layers;
 - proximity, delayed hover, selected and dimmed map feature states;
 - semantic community and station markers with larger invisible pointer hit areas;
@@ -45,7 +46,7 @@ or replace the development raster style in `lib/map-style.ts` with the governed 
 
 ## Data boundary
 
-The client does **not** embed canonical community/station fixtures as React constants. Route handlers under `app/api/explorer/` read the current public release server-side. This is a vertical slice over published artifacts; the production data path remains the architecture defined by the repository:
+The client does **not** embed canonical community/station fixtures as React constants. Route handlers under `app/api/explorer/` read the current public release server-side, while stable layer metadata comes from `packages/catalog`. The Web application does **not** read `research/`, `pipelines/`, `data/raw/` or `data/fixtures/` at runtime. This is a vertical slice over governed published artifacts; the production data path remains the architecture defined by the repository:
 
 ```text
 UI -> typed client -> API / tiles -> PostGIS

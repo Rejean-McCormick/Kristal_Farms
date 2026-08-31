@@ -27,6 +27,17 @@ The repository also contains the architecture, data contracts, and an initial Ob
 
 The application is data-driven. PostgreSQL/PostGIS is the intended operational source of truth; MapLibre/deck.gl, OGC APIs, QGIS workflows and immutable public releases consume derived views and artifacts.
 
+### Monorepo boundaries
+
+Kristal Farms stays in **one canonical repository**, but development is divided into three logical systems:
+
+```text
+research/ -> pipelines + data + contracts/packages -> apps/services
+KNOWLEDGE        DATA PLATFORM / CONTRACT              PRODUCT
+```
+
+`apps/web` may consume governed APIs, stable packages/contracts and immutable `data/publish` artifacts. It must not import or execute code from `research/` or `pipelines/`. See [Workspace boundaries](docs/architecture/workspace-boundaries.md) and [ADR-020](docs/adr/0020-one-monorepo-three-logical-systems.md).
+
 ## Evidence discipline
 
 The repository deliberately separates facts, observations, derived values, assumptions and unknowns.
@@ -47,16 +58,17 @@ Core rules:
 
 ```text
 kristal-farms/
-├── apps/                   # Web application implementation home
-├── services/               # Domain API, OGC API and tile services
-├── packages/               # Schemas, catalog, map style, UI/shared packages
+├── research/               # Active exploratory work; never a product runtime dependency
+├── pipelines/              # Reproducible ingest, transformation, validation and publishing
 ├── database/               # PostGIS migrations, views, functions and seeds
-├── pipelines/              # Ingestion, transformation, validation and economics
 ├── contracts/              # Machine-readable API/data/policy contracts
-├── data/                   # Current fixtures, public releases and controlled inputs
-├── docs/                   # Product, architecture, domain and research documentation
+├── packages/               # Schemas, catalog, map style, UI/shared packages
+├── data/                   # Raw, processed/current and immutable publish artifacts
+├── apps/                   # Product applications, including Observatory
+├── services/               # Domain API, OGC API and tile services
+├── docs/                   # Project, research, architecture and product documentation
 ├── sources/                # Controlled source material and project-direction records
-├── tests/                  # Automated model/data/economic tests
+├── tests/                  # Automated model/data/economic/architecture tests
 ├── infra/                  # Deployment configuration
 └── archive/                # Superseded material and historical research snapshots
 ```

@@ -13,6 +13,7 @@ This changelog records product and repository releases. Superseded material is p
 - Added an evidence-backed economic architecture frontier that compares enabling-infrastructure alternatives without presenting benchmarks as site costs or producing bankable NPV/IRR.
 - Standardized the active release layout under `data/fixtures/current`, `data/publish/current`, `packages/catalog/catalog.json` and `packages/showcase/story.json`.
 - Added the first Observatory Explorer vertical slice: MapLibre semantic point rendering, proximity/hover/selection states, evidence-first Inspector, screen-space relation constellation, layer controls, search and shareable map/entity state.
+- Formalized one canonical monorepo with three enforced logical systems: exploratory `research/`, governed data platform/contracts, and product `apps/`/`services/`; added architecture guardrails preventing product runtime imports from research/pipelines.
 
 ## Earlier material
 

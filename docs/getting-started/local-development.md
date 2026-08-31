@@ -1,6 +1,6 @@
 # Local development
 
-This document describes the intended developer experience once implementation code is added.
+This document describes the local developer workflow and the separation between research, data-platform and product work.
 
 ## Prerequisites
 
@@ -14,6 +14,17 @@ Expected tool classes:
 - optional QGIS for GIS workflows.
 
 Do not pin versions in this document; pin them in repository toolchain files so CI and local environments share the same source of truth.
+
+## Choose the workspace first
+
+Before running code, identify the system being changed:
+
+- exploratory investigation → `research/`;
+- reproducible ingestion/validation/publication → `pipelines/`, `database/`, `contracts/`, `packages/`, `data/`;
+- Observatory/product UI → `apps/web/`;
+- API/tiles → `services/`.
+
+Do not make the Web application execute a research script to obtain data. Promote data first, then consume the governed artifact/API.
 
 ## Expected startup flow
 
@@ -37,3 +48,15 @@ Use explicitly labeled fixtures or imported research datasets. Never silently fa
 ## AI-assisted development
 
 AI coding agents must read root `AGENTS.md`, machine contracts, and relevant ADRs before generating implementation changes.
+
+### Observatory-only quick start
+
+The current vertical slice can run against the checked-in immutable public release without starting PostGIS/services:
+
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`. This development bridge reads `data/publish/current` and the stable layer catalog package server-side. It does not read `research/`, `pipelines/`, `data/raw/` or application fixtures at runtime.

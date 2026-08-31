@@ -24,6 +24,7 @@ nav:
       - Overview: architecture/overview.md
       - Technology Stack: architecture/technology-stack.md
       - Repository Structure: architecture/repository-structure.md
+      - Workspace Boundaries: architecture/workspace-boundaries.md
       - Frontend: architecture/frontend.md
       - Backend: architecture/backend.md
       - Data Architecture: architecture/data-architecture.md

@@ -4,7 +4,15 @@ Kristal Farms work follows a controlled chain from evidence to project decisions
 
 ## Core chain
 
-**Source → evidence/observation → validation → canonical data → analysis/scenario → decision gate → publishable release**
+**Source → research → reproducible pipeline → evidence/observation → validation → canonical data → decision gate → publishable release → product**
+
+The repository uses a directional dependency rule:
+
+```text
+research/ -> pipelines/data/contracts/packages -> apps/services
+```
+
+`apps/` and `services/` must not execute exploratory research or ETL code at runtime.
 
 Community, Indigenous rights, environmental review, engineering, logistics, telecom and economics are independent evidence domains. No single technical layer can silently override the others.
 

@@ -70,3 +70,20 @@ The system is **modular, data-driven, and standards-aware**, but not microservic
 ## Evolution strategy
 
 The MVP may begin with PostGIS + Web + static PMTiles. Martin, pygeoapi, and dedicated scenario services can be activated incrementally without changing the data model.
+
+## Monorepo system boundaries
+
+The deployment architecture above is complemented by a repository dependency boundary:
+
+```text
+Knowledge / research
+    research/
+       ↓ explicit promotion
+Data platform / contract
+    pipelines/ + database/ + contracts/ + packages/ + data/
+       ↓ publish views / immutable releases / APIs / tiles
+Product
+    apps/ + services/
+```
+
+Product runtime code must not import or execute research or pipeline code. See [Workspace boundaries](workspace-boundaries.md).
