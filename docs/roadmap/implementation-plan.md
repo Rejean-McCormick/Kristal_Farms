@@ -1,5 +1,11 @@
 # Implementation plan
 
+## Current web implementation checkpoint
+
+The repository contains the first Observatory Explorer vertical slice under `apps/web/`. It implements the shared map interaction foundation over the current public release: communities and hydrometric stations, proximity/hover/selection, search, catalog visibility controls, persistent Entity Inspector, evidence summary, non-geographic relation constellation, comparison pins and shareable URL state.
+
+This checkpoint does **not** mark Phase 1 or Phase 2 complete. Terrain/globe narrative work, the complete layer catalog, filters, timeline, exports, production tiles/API integration and full comparison workflows remain roadmap items.
+
 ## Phase 0 — Foundation
 
 Deliver:
@@ -19,6 +25,7 @@ Deliver:
 Deliver:
 
 - visual identity and base map;
+- Observatory interaction foundation (semantic symbols, hover/focus, persistent selection);
 - globe/terrain entry scene;
 - northern communities;
 - external renewable reference projects;
@@ -36,6 +43,7 @@ Deliver:
 - filters;
 - timeline;
 - evidence matrix;
+- full Entity Inspector, relation constellation and compare interaction;
 - shareable URLs;
 - metadata/export;
 - live API/OGC access where justified;

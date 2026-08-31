@@ -19,9 +19,10 @@ This documentation covers the **Kristal Farms infrastructure project** and the a
 3. [Kristal Farms domain principles](domain/kristal-farms-principles.md)
 4. [Data model](data/data-model.md)
 5. [Evidence model](data/evidence-model.md)
-6. [Layer catalog](frontend/layer-catalog.md)
-7. [API overview](api/overview.md)
-8. [Implementation plan](roadmap/implementation-plan.md)
+6. [Map observatory interaction](frontend/map-observatory-interaction.md)
+7. [Layer catalog](frontend/layer-catalog.md)
+8. [API overview](api/overview.md)
+9. [Implementation plan](roadmap/implementation-plan.md)
 
 ## Documentation authority
 

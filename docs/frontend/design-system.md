@@ -38,3 +38,7 @@ corridor.conceptual
 ```
 
 Do not create `site.good`, `site.bad`, or equivalent ranking semantics while ranking is disabled.
+
+## Map interaction character
+
+The map-specific expression of these tokens is defined in [Map observatory interaction](map-observatory-interaction.md). The “Observatory” language is intentionally restrained: precision, hierarchy, evidence state, and responsive focus create the technical character; permanent glow and decorative telemetry do not.

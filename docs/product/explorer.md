@@ -36,3 +36,7 @@ Selecting a feature should reveal more than a popup. The primary inspector shoul
 - exact-looking markers for approximate locations;
 - derived capacity claims without methodology;
 - UI-only permission hiding.
+
+## Observatory interaction language
+
+Explorer uses the shared [Map observatory interaction](../frontend/map-observatory-interaction.md) language: the map stays calm at rest, hover/focus performs lightweight recognition, and persistent selection opens the evidence-first Entity Inspector. Non-geometric relations are presented as UI relations rather than synthetic map geometry.

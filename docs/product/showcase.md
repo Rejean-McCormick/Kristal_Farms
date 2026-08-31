@@ -43,3 +43,7 @@ layers:
 focus_entity: REF-INNAVIK
 panel: architecture-intro
 ```
+
+## Observatory interaction language
+
+Showcase shares the [Map observatory interaction](../frontend/map-observatory-interaction.md) language with Explorer, but may use cinematic camera motion, temporary terrain/globe emphasis, and screen-space relation graphics. These effects must preserve evidence semantics and must not create synthetic geographic infrastructure.

@@ -47,6 +47,7 @@ nav:
       - Release Versioning: data/release-versioning.md
   - Frontend:
       - Cartography: frontend/cartography.md
+      - Map Observatory Interaction: frontend/map-observatory-interaction.md
       - Layer Catalog: frontend/layer-catalog.md
       - State & Permalinks: frontend/state-and-permalinks.md
       - Accessibility: frontend/accessibility.md

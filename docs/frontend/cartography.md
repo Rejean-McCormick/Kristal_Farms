@@ -47,3 +47,7 @@ Energy or fibre flow animations must represent system relationships, not simulat
 ## Accessibility
 
 Do not rely on color alone. Ensure symbols, strokes, labels, and inspector text also communicate status.
+
+## Interaction specification
+
+Hover, selection, relation constellations, approximate-geometry cues, camera behavior, and the dark “observation instrument” treatment are specified in [Map observatory interaction](map-observatory-interaction.md). This document remains the source for general cartographic semantics; the observatory document defines how those semantics behave interactively.

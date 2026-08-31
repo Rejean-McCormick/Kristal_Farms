@@ -19,10 +19,10 @@ Marine access, local roads, heat reuse, storage and short electrical interties a
 
 ## Application
 
-The repository also contains the architecture and data contracts for the Kristal Farms application:
+The repository also contains the architecture, data contracts, and an initial Observatory Explorer web implementation for the Kristal Farms application:
 
 - **Showcase** — guided public narrative;
-- **Explorer** — evidence-first professional geospatial workspace;
+- **Explorer** — evidence-first professional geospatial workspace; the first MapLibre Observatory vertical slice lives in [`apps/web/`](apps/web/);
 - **Scenario Studio** — reproducible infrastructure and economic comparisons.
 
 The application is data-driven. PostgreSQL/PostGIS is the intended operational source of truth; MapLibre/deck.gl, OGC APIs, QGIS workflows and immutable public releases consume derived views and artifacts.
@@ -81,6 +81,7 @@ kristal-farms/
 - [Data model](docs/data/data-model.md)
 - [Evidence model](docs/data/evidence-model.md)
 - [Explorer](docs/product/explorer.md)
+- [Map observatory interaction](docs/frontend/map-observatory-interaction.md)
 - [Showcase](docs/product/showcase.md)
 - [Scenario Studio](docs/product/scenario-studio.md)
 

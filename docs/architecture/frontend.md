@@ -62,3 +62,7 @@ Generic map layers must be instantiated from the layer catalog. Custom React cod
 ## Type safety
 
 Frontend types should be generated or shared from machine-readable contracts wherever practical. Avoid hand-maintained duplicate enums between frontend and backend.
+
+## Map observatory interaction
+
+Explorer and Showcase share the interaction model defined in [Map observatory interaction](../frontend/map-observatory-interaction.md). Ordinary geographic features remain MapLibre-rendered and catalog-driven. React owns hover cards, the persistent Entity Inspector, relation UI, comparison surfaces, and other non-geographic investigation controls. Transient hover state remains local UI state; selected entity and safe comparison IDs participate in shareable URL state.

@@ -10,7 +10,10 @@ Visual regression is valuable for:
 - hypothesis vs verified styling;
 - terrain-enabled scenes;
 - Evidence Panel layout;
-- reduced-motion variants.
+- reduced-motion variants;
+- Observatory idle/proximity/hover/selected states;
+- approximate-geometry treatments;
+- relation constellation and compare surfaces.
 
 ## Avoid brittle tests
 

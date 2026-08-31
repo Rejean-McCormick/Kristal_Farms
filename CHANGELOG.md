@@ -12,6 +12,7 @@ This changelog records product and repository releases. Superseded material is p
 - Added an integrated atlas model connecting hydrology, communities, energy references, telecom, marine logistics and evidence state without synthetic geometry.
 - Added an evidence-backed economic architecture frontier that compares enabling-infrastructure alternatives without presenting benchmarks as site costs or producing bankable NPV/IRR.
 - Standardized the active release layout under `data/fixtures/current`, `data/publish/current`, `packages/catalog/catalog.json` and `packages/showcase/story.json`.
+- Added the first Observatory Explorer vertical slice: MapLibre semantic point rendering, proximity/hover/selection states, evidence-first Inspector, screen-space relation constellation, layer controls, search and shareable map/entity state.
 
 ## Earlier material
 
