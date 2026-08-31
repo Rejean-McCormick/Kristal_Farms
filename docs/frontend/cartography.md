@@ -51,3 +51,18 @@ Do not rely on color alone. Ensure symbols, strokes, labels, and inspector text 
 ## Interaction specification
 
 Hover, selection, relation constellations, approximate-geometry cues, camera behavior, and the dark “observation instrument” treatment are specified in [Map observatory interaction](map-observatory-interaction.md). This document remains the source for general cartographic semantics; the observatory document defines how those semantics behave interactively.
+
+
+## Observatory v0.2.4 basemap behavior
+
+The product applies a stable Observatory theme over the contextual vector style:
+
+- generic park/protected-area and landuse/landcover fills are hidden to avoid
+  zoom-threshold surface pop-in;
+- Natural Earth shaded relief is kept visible beyond the upstream default fade
+  and then transitions into a neutral dark land background;
+- photographic imagery, when present, is a manually published local snapshot
+  under `apps/web/public/imagery/`, never a runtime satellite API;
+- contextual hydrography and labels remain above photographic imagery;
+- all photographic imagery remains context-only unless separately governed as
+  evidence.

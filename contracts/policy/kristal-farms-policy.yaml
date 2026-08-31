@@ -1,4 +1,4 @@
-policy_version: "2026.08.30"
+policy_version: "2026.08.31"
 
 screening:
   mode: unranked_evidence_screening
@@ -22,3 +22,18 @@ references:
 publication:
   frontend_hiding_counts_as_access_control: false
   restricted_data_in_public_artifacts_allowed: false
+
+international_tenancy:
+  policy_contract: international-tenant-governance.yaml
+  jurisdiction_schedule: jurisdiction-eligibility.yaml
+  counterparty_screening_before_access: true
+  numeric_ethics_score_allowed: false
+  us_counterparties_eligible_for_tenant_roles: false
+  us_counterparty_exclusion_implies_us_technology_embargo: false
+
+tenant_confidentiality:
+  content_blind_by_design: true
+  tenant_controls_private_keys: true
+  routine_private_content_inspection_allowed: false
+  operator_key_escrow_required: false
+  standing_decryption_backdoor_allowed: false

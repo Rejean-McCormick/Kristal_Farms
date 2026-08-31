@@ -1,7 +1,7 @@
 # Scope Boundaries
 
 **Status:** Active repository control decision
-**Effective:** 2026-08-30
+**Effective:** 2026-08-31
 
 ## In scope
 
@@ -18,7 +18,11 @@ The repository may study:
 - community energy resilience and critical-load priority;
 - environmental, rights, governance and regulatory constraints;
 - workforce, housing, training and other enabling infrastructure when relevant to a corridor or project dossier;
-- reproducible scenario and economic comparison methods.
+- reproducible scenario and economic comparison methods;
+- international tenant/offtaker/operator research and counterparty due diligence;
+- tenant-controlled encrypted environments (black-box tenancy), including confidentiality, cryptographic and operational service boundaries;
+- optional reuse of mine/brownfield infrastructure where current condition, rights, restoration obligations and engineering support it;
+- mine-pit pumped-storage concepts, including historical open pits and coastal/seawater variants, where environmental and system constraints are explicitly evaluated.
 
 ## Explicitly out of scope
 
@@ -42,3 +46,11 @@ Any such program must preserve voluntary participation, individual safety, freed
 ## Evidence boundary
 
 Historical, literary, fictional or exploratory material may inform questions and safeguards, but it is not factual evidence, legal authority, engineering evidence or adopted project policy unless separately validated and promoted into the active control layer.
+
+## International tenancy boundary
+
+Kristal Farms may adopt project-specific commercial exclusions that are stricter than minimum legal eligibility. The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles. Other jurisdictions and organizations are evaluated using the responsible international tenancy policy rather than inferred from map, market-size or nationality alone.
+
+The project screens **counterparties before access**. It does not make routine inspection or decryption of tenant application content a condition of tenancy. Technology-origin restrictions are a separate policy question and must not be inferred from counterparty exclusions.
+
+See [Responsible International Tenancy and Counterparty Governance](INTERNATIONAL_TENANT_GOVERNANCE.md).

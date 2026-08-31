@@ -9,3 +9,10 @@ data/raw/*.csv binary
 *.pdf binary
 *.docx binary
 *.xlsx binary
+
+# Geospatial imagery is binary. Use Git LFS separately when file size requires it.
+*.tif binary
+*.tiff binary
+*.jp2 binary
+*.png binary
+*.webp binary

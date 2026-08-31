@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { EntityDetail } from "../../lib/explorer-types";
+import type { EntityDetail, EvidenceRecord } from "../../lib/explorer-types";
 import { humanizeToken } from "../../lib/format";
 import { RelationConstellation } from "./RelationConstellation";
 
-type InspectorTab = "overview" | "relations" | "evidence";
+type InspectorTab = "overview" | "hydrology" | "relations" | "evidence";
 
 type Props = {
   entityId: string | null;
@@ -45,13 +45,15 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
 
   if (!entityId) return null;
 
+  const tabs: InspectorTab[] = detail?.screeningDimensions.length
+    ? ["overview", "hydrology", "relations", "evidence"]
+    : ["overview", "relations", "evidence"];
+
   return (
     <aside className="inspector" aria-label="Entity inspector">
       <div className="inspector__chrome">
         <span>ENTITY INSPECTOR</span>
-        <button type="button" onClick={onClose} aria-label="Close inspector">
-          ×
-        </button>
+        <button type="button" onClick={onClose} aria-label="Close inspector">×</button>
       </div>
 
       {loading && !detail ? (
@@ -62,22 +64,23 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
       ) : detail ? (
         <>
           <header className="inspector__header">
-            <div className="inspector__eyebrow">
-              {detail.featureKind === "community" ? "Community" : "Hydrometric station"}
-            </div>
+            <div className="inspector__eyebrow">{kindLabel(detail.featureKind)}</div>
             <h1>{detail.title}</h1>
             {detail.subtitle && <p>{detail.subtitle}</p>}
             <div className="status-row">
-              <span className="status-pill">
-                <span aria-hidden="true">{detail.geometryPrecision === "official" ? "●" : "◌"}</span>
-                {detail.geometryPrecision === "official" ? "Official geometry" : "Approximate geometry"}
+              <span className={`status-pill is-${detail.mapGeometryStatus}`}>
+                <span aria-hidden="true">{geometryGlyph(detail.mapGeometryStatus)}</span>
+                {geometryLabel(detail.mapGeometryStatus)}
               </span>
               {detail.status && <span className="status-pill is-muted">{detail.status}</span>}
             </div>
           </header>
 
-          <nav className="inspector__tabs" aria-label="Inspector sections">
-            {(["overview", "relations", "evidence"] as const).map((item) => (
+          <nav
+            className={`inspector__tabs ${tabs.length === 4 ? "has-four" : ""}`}
+            aria-label="Inspector sections"
+          >
+            {tabs.map((item) => (
               <button
                 type="button"
                 key={item}
@@ -101,28 +104,68 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
                   ))}
                 </div>
 
-                <div className="precision-note">
+                <div className={`precision-note is-${detail.mapGeometryStatus}`}>
                   <span className="precision-note__mark" aria-hidden="true">
-                    {detail.notFacilityCoordinate ? "◌" : "+"}
+                    {geometryGlyph(detail.mapGeometryStatus)}
                   </span>
                   <div>
-                    <strong>{detail.notFacilityCoordinate ? "Reference geometry" : "Published geometry"}</strong>
-                    <p>
-                      {detail.notFacilityCoordinate
-                        ? "This coordinate is an approximate community reference and must not be interpreted as a facility location."
-                        : humanizeToken(detail.geometryRole)}
-                    </p>
+                    <strong>{geometryLabel(detail.mapGeometryStatus)}</strong>
+                    <p>{detail.mapNote ?? humanizeToken(detail.geometryRole)}</p>
                   </div>
                 </div>
 
-                <button
-                  className={`compare-action ${compared ? "is-active" : ""}`}
-                  type="button"
-                  onClick={() => onAddCompare(detail.entityId)}
-                  aria-pressed={compared}
-                >
-                  {compared ? "Pinned for comparison" : "Pin for comparison"}
-                </button>
+                {detail.featureKind !== "river" && (
+                  <button
+                    className={`compare-action ${compared ? "is-active" : ""}`}
+                    type="button"
+                    onClick={() => onAddCompare(detail.entityId)}
+                    aria-pressed={compared}
+                  >
+                    {compared ? "Pinned for comparison" : "Pin for comparison"}
+                  </button>
+                )}
+              </section>
+            )}
+
+            {tab === "hydrology" && (
+              <section>
+                <div className="section-heading">
+                  <span>HYDROLOGY / ENGINEERING GATES</span>
+                  <small>Evidence state · no site ranking or design inference</small>
+                </div>
+                {detail.screeningDimensions.length ? (
+                  <div className="screening-dimensions">
+                    {detail.screeningDimensions.map((dimension) => (
+                      <article className="screening-card" key={dimension.id}>
+                        <div className="screening-card__header">
+                          <span>{dimension.label}</span>
+                          <strong className={`screening-state is-${dimension.status}`}>
+                            {humanizeToken(dimension.status)}
+                          </strong>
+                        </div>
+                        {dimension.appliesTo && (
+                          <div className="screening-card__applies">Applies to {dimension.appliesTo}</div>
+                        )}
+                        <p>{humanizeToken(dimension.evidenceCompleteness)}</p>
+                        {dimension.openQuestions.length > 0 && (
+                          <div className="open-questions">
+                            <span>OPEN QUESTIONS</span>
+                            <ul>
+                              {dimension.openQuestions.map((question) => (
+                                <li key={question}>{question}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {dimension.lastReviewed && (
+                          <small>Last reviewed {dimension.lastReviewed}</small>
+                        )}
+                      </article>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="empty-state">No public hydrology screening state is attached.</p>
+                )}
               </section>
             )}
 
@@ -132,15 +175,19 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
                   <span>RELATION MODEL</span>
                   <small>Screen-space only · no route geometry asserted</small>
                 </div>
-                <RelationConstellation title={detail.title} relations={detail.relations} />
+                {detail.relations.length ? (
+                  <RelationConstellation title={detail.title} relations={detail.relations} />
+                ) : (
+                  <p className="empty-state">No public relation is attached to this entity.</p>
+                )}
               </section>
             )}
 
             {tab === "evidence" && (
               <section>
                 <div className="section-heading">
-                  <span>EVIDENCE SUMMARY</span>
-                  <small>Release {detail.release}</small>
+                  <span>EVIDENCE</span>
+                  <small>Release {detail.release} · human-readable public records</small>
                 </div>
                 {detail.evidence ? (
                   <>
@@ -154,12 +201,17 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
                         glyph="?"
                       />
                     </div>
-                    <div className="evidence-ids">
-                      <span>Evidence records</span>
-                      {detail.evidence.evidence_ids.map((id) => (
-                        <code key={id}>{id}</code>
-                      ))}
-                    </div>
+                    {detail.evidenceRecords.length ? (
+                      <div className="evidence-records">
+                        {detail.evidenceRecords.map((record) => (
+                          <EvidenceRecordCard key={record.id} record={record} />
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="empty-state evidence-fallback">
+                        Evidence summary exists, but human-readable public evidence records are unavailable in this release.
+                      </p>
+                    )}
                   </>
                 ) : (
                   <p className="empty-state">
@@ -180,6 +232,59 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
       )}
     </aside>
   );
+}
+
+function EvidenceRecordCard({ record }: { record: EvidenceRecord }) {
+  return (
+    <article className="evidence-record">
+      <div className="evidence-record__header">
+        <span>{humanizeToken(record.evidence_type)}</span>
+        <strong className={`evidence-status is-${record.status}`}>{humanizeToken(record.status)}</strong>
+      </div>
+      <p>{record.claim}</p>
+      <div className="evidence-record__meta">
+        {record.confidence && <span>Confidence · {humanizeToken(record.confidence)}</span>}
+        {record.retrieved_at && <span>Retrieved · {record.retrieved_at}</span>}
+      </div>
+      {record.sources.length > 0 && (
+        <div className="evidence-sources">
+          {record.sources.map((source) =>
+            source.url ? (
+              <a key={`${record.id}:${source.id}`} href={source.url} target="_blank" rel="noreferrer">
+                <span>{source.publisher ?? humanizeToken(source.source_type)}</span>
+                <strong>{source.title}</strong>
+                <small>{humanizeToken(source.role)} ↗</small>
+              </a>
+            ) : (
+              <div key={`${record.id}:${source.id}`}>
+                <span>{source.publisher ?? humanizeToken(source.source_type)}</span>
+                <strong>{source.title}</strong>
+              </div>
+            ),
+          )}
+        </div>
+      )}
+      <code className="evidence-record__id">{record.id}</code>
+    </article>
+  );
+}
+
+function kindLabel(kind: EntityDetail["featureKind"]) {
+  if (kind === "community") return "Community";
+  if (kind === "river") return "River research reference";
+  return "Hydrometric station";
+}
+
+function geometryGlyph(status: EntityDetail["mapGeometryStatus"]) {
+  if (status === "official") return "●";
+  if (status === "approximate") return "◌";
+  return "∅";
+}
+
+function geometryLabel(status: EntityDetail["mapGeometryStatus"]) {
+  if (status === "official") return "Official geometry";
+  if (status === "approximate") return "Approximate geometry";
+  return "Governed geometry unavailable";
 }
 
 function EvidenceMetric({ label, value, glyph }: { label: string; value: number; glyph: string }) {

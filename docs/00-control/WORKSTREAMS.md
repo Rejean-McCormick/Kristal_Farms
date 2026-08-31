@@ -18,5 +18,7 @@ Kristal Farms work is organized by project dependencies, evidence gates and deli
 | **WS-12 Workforce & operations** | Build repeatable northern construction, maintenance and training capability. | Operations playbook and capability plan. |
 | **WS-13 Community value & heat** | Evaluate heat and other local co-benefits where site-specific demand exists. | Heat/load study and benefit options. |
 | **WS-14 Long-term network** | Test multi-node fibre/marine/electrical resilience once individual nodes are credible. | Regional topology scenarios. |
+| **WS-15 International tenancy & counterparty governance** | Build a responsible, jurisdiction-aware international tenant pipeline while preserving content-blind tenancy. | Eligibility register, due-diligence workflow, tenant requirement matrix and contractual control set. |
+| **WS-16 Mine infrastructure reuse & storage** | Test whether northern mining assets can reduce new-build scope through underground/industrial reuse, surface brownfields or mine-pit pumped storage. | Unranked mine inventory, source-backed geometry/infrastructure evidence and reuse-specific engineering/environmental gates. |
 
 Every workstream should have an owner, current status, next decision, evidence links, risks and a single next deliverable.

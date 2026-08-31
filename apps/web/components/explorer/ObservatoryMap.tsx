@@ -1,45 +1,84 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import maplibregl, {
-  type MapGeoJSONFeature,
-  type MapMouseEvent,
-  type Map as MapLibreMap,
+import * as maplibregl from "maplibre-gl";
+import type {
+  MapGeoJSONFeature,
+  MapMouseEvent,
+  Map as MapLibreMap,
 } from "maplibre-gl";
 import type {
   ExplorerBootstrap,
+  LocalImageryManifest,
   MapCameraState,
+  ObservatoryVisibleLayers,
   PublicMapFeature,
+  PublicRiverReference,
 } from "../../lib/explorer-types";
-import { createObservatoryStyle } from "../../lib/map-style";
-import { HoverCard } from "./HoverCard";
+import {
+  addLocalSatelliteImagery,
+  applyObservatoryBasemapTheme,
+  createObservatoryStyle,
+  setBasemapLabelsVisible,
+  setContextualHydrographyVisible,
+  setLocalSatelliteImageryVisible,
+  type BasemapLayerIndex,
+} from "../../lib/map-style";
+import { HoverCard, type HoverTarget } from "./HoverCard";
 
 const COMMUNITY_SOURCE = "communities";
 const STATION_SOURCE = "hydrometric-stations";
 const COMMUNITY_HIT = "communities-hit";
 const STATION_HIT = "stations-hit";
-const INTERACTIVE_LAYERS = [COMMUNITY_HIT, STATION_HIT];
-const HOVER_DELAY_MS = 95;
-const HOVER_EXIT_GRACE_MS = 130;
+const POINT_INTERACTIVE_LAYERS = [COMMUNITY_HIT, STATION_HIT];
 
-type Candidate = {
+const RIVER_HOVER_SOURCE = "contextual-waterway-hover-source";
+const RIVER_HOVER_LAYER = "contextual-waterway-hover-layer";
+const RIVER_SELECTED_SOURCE = "contextual-waterway-selected-source";
+const RIVER_SELECTED_LAYER = "contextual-waterway-selected-layer";
+
+const HOVER_DELAY_MS = 90;
+const HOVER_EXIT_GRACE_MS = 135;
+const CONTEXT_SOURCE_LABEL = "OpenMapTiles / OpenStreetMap context";
+
+type PointCandidate = {
+  kind: "point";
   source: string;
   id: string;
   entityId: string;
   feature: PublicMapFeature;
 };
 
+type RiverCandidate = {
+  kind: "river";
+  key: string;
+  name: string;
+  geometry: GeoJSON.Geometry;
+  anchorCoordinates: [number, number];
+  matchedRiver: PublicRiverReference | null;
+};
+
+type Candidate = PointCandidate | RiverCandidate;
+
 type Props = {
   data: ExplorerBootstrap;
   selectedEntityId: string | null;
-  visibleLayers: { communities: boolean; hydrometric_stations: boolean };
+  visibleLayers: ObservatoryVisibleLayers;
   compareIds: string[];
   initialCamera: MapCameraState;
+  autoFitOnLoad: boolean;
+  resetViewRequest: number;
+  localImagery: LocalImageryManifest | null;
   onSelect: (entityId: string | null) => void;
   onCameraChange: (camera: MapCameraState) => void;
   onCursorChange: (lng: number, lat: number) => void;
   onZoomChange: (zoom: number) => void;
 };
+
+const emptyFeatureCollection = (): GeoJSON.FeatureCollection => ({
+  type: "FeatureCollection",
+  features: [],
+});
 
 export function ObservatoryMap({
   data,
@@ -47,6 +86,9 @@ export function ObservatoryMap({
   visibleLayers,
   compareIds,
   initialCamera,
+  autoFitOnLoad,
+  resetViewRequest,
+  localImagery,
   onSelect,
   onCameraChange,
   onCursorChange,
@@ -54,14 +96,21 @@ export function ObservatoryMap({
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
+  const basemapLayersRef = useRef<BasemapLayerIndex>({ labelLayerIds: [], waterwayLayerIds: [] });
+  const visibleLayersRef = useRef(visibleLayers);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const exitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const proximityRef = useRef<Candidate | null>(null);
   const hoveredRef = useRef<Candidate | null>(null);
+  const selectedContextRiverEntityRef = useRef<string | null>(null);
   const cardEngagedRef = useRef(false);
   const [mapReady, setMapReady] = useState(false);
   const [hovered, setHovered] = useState<Candidate | null>(null);
   const [anchor, setAnchor] = useState({ x: 0, y: 0, width: 0, height: 0 });
+
+  useEffect(() => {
+    visibleLayersRef.current = visibleLayers;
+  }, [visibleLayers]);
 
   const allFeatures = useMemo(
     () => [...data.communities.features, ...data.stations.features],
@@ -78,7 +127,7 @@ export function ObservatoryMap({
   };
 
   const setFeatureState = useCallback(
-    (candidate: Candidate | null, state: "proximity" | "hovered", value: boolean) => {
+    (candidate: PointCandidate | null, state: "proximity" | "hovered", value: boolean) => {
       const map = mapRef.current;
       if (!map || !candidate) return;
       try {
@@ -90,17 +139,38 @@ export function ObservatoryMap({
     [],
   );
 
+  const setRiverOverlay = useCallback((sourceId: string, geometry: GeoJSON.Geometry | null) => {
+    const map = mapRef.current;
+    if (!map) return;
+    const source = map.getSource(sourceId) as maplibregl.GeoJSONSource | undefined;
+    if (!source) return;
+    source.setData(
+      geometry
+        ? ({
+            type: "Feature",
+            properties: {},
+            geometry,
+          } satisfies GeoJSON.Feature)
+        : emptyFeatureCollection(),
+    );
+  }, []);
+
   const clearHovered = useCallback(() => {
     clearTimer(hoverTimerRef);
-    if (hoveredRef.current) setFeatureState(hoveredRef.current, "hovered", false);
+    if (hoveredRef.current?.kind === "point") {
+      setFeatureState(hoveredRef.current, "hovered", false);
+    }
     hoveredRef.current = null;
     setHovered(null);
   }, [setFeatureState]);
 
   const clearProximity = useCallback(() => {
-    if (proximityRef.current) setFeatureState(proximityRef.current, "proximity", false);
+    if (proximityRef.current?.kind === "point") {
+      setFeatureState(proximityRef.current, "proximity", false);
+    }
+    if (proximityRef.current?.kind === "river") setRiverOverlay(RIVER_HOVER_SOURCE, null);
     proximityRef.current = null;
-  }, [setFeatureState]);
+  }, [setFeatureState, setRiverOverlay]);
 
   const scheduleExit = useCallback(() => {
     clearTimer(exitTimerRef);
@@ -115,7 +185,9 @@ export function ObservatoryMap({
     const map = mapRef.current;
     const container = containerRef.current;
     if (!map || !container) return;
-    const projected = map.project(candidate.feature.geometry.coordinates);
+    const coordinates =
+      candidate.kind === "point" ? candidate.feature.geometry.coordinates : candidate.anchorCoordinates;
+    const projected = map.project(coordinates);
     setAnchor({
       x: projected.x,
       y: projected.y,
@@ -123,6 +195,11 @@ export function ObservatoryMap({
       height: container.clientHeight,
     });
   }, []);
+
+  const candidateIdentity = (candidate: Candidate | null) => {
+    if (!candidate) return null;
+    return candidate.kind === "point" ? `point:${candidate.entityId}` : `river:${candidate.key}`;
+  };
 
   const engageCandidate = useCallback(
     (candidate: Candidate | null) => {
@@ -133,31 +210,39 @@ export function ObservatoryMap({
         return;
       }
 
-      const sameProximity = proximityRef.current?.entityId === candidate.entityId;
+      const sameProximity = candidateIdentity(proximityRef.current) === candidateIdentity(candidate);
       if (!sameProximity) {
         clearHovered();
         clearProximity();
         proximityRef.current = candidate;
-        setFeatureState(candidate, "proximity", true);
+        if (candidate.kind === "point") {
+          setFeatureState(candidate, "proximity", true);
+        } else {
+          setRiverOverlay(RIVER_HOVER_SOURCE, candidate.geometry);
+        }
+      } else if (candidate.kind === "river") {
+        // Rendered vector geometry can change as the cursor crosses tile boundaries.
+        proximityRef.current = candidate;
+        setRiverOverlay(RIVER_HOVER_SOURCE, candidate.geometry);
       }
 
       updateAnchor(candidate);
 
-      if (hoveredRef.current?.entityId === candidate.entityId) return;
+      if (candidateIdentity(hoveredRef.current) === candidateIdentity(candidate)) return;
       clearTimer(hoverTimerRef);
       hoverTimerRef.current = setTimeout(() => {
-        if (proximityRef.current?.entityId !== candidate.entityId) return;
+        if (candidateIdentity(proximityRef.current) !== candidateIdentity(candidate)) return;
         hoveredRef.current = candidate;
-        setFeatureState(candidate, "hovered", true);
+        if (candidate.kind === "point") setFeatureState(candidate, "hovered", true);
         setHovered(candidate);
         updateAnchor(candidate);
       }, HOVER_DELAY_MS);
     },
-    [clearHovered, clearProximity, scheduleExit, setFeatureState, updateAnchor],
+    [clearHovered, clearProximity, scheduleExit, setFeatureState, setRiverOverlay, updateAnchor],
   );
 
-  const resolveCandidate = useCallback(
-    (event: MapMouseEvent): Candidate | null => {
+  const resolvePointCandidate = useCallback(
+    (event: MapMouseEvent): PointCandidate | null => {
       const map = mapRef.current;
       if (!map) return null;
       const radius = 15;
@@ -165,7 +250,7 @@ export function ObservatoryMap({
         [event.point.x - radius, event.point.y - radius],
         [event.point.x + radius, event.point.y + radius],
       ];
-      const rendered = map.queryRenderedFeatures(box, { layers: INTERACTIVE_LAYERS });
+      const rendered = map.queryRenderedFeatures(box, { layers: POINT_INTERACTIVE_LAYERS });
       let best: { rendered: MapGeoJSONFeature; distance: number } | null = null;
 
       for (const renderedFeature of rendered) {
@@ -181,6 +266,7 @@ export function ObservatoryMap({
       if (!feature || best.rendered.id === undefined) return null;
 
       return {
+        kind: "point",
         source: best.rendered.source,
         id: String(best.rendered.id),
         entityId,
@@ -190,8 +276,50 @@ export function ObservatoryMap({
     [featureByEntityId],
   );
 
+  const resolveRiverCandidate = useCallback(
+    (event: MapMouseEvent): RiverCandidate | null => {
+      const map = mapRef.current;
+      if (!map || !visibleLayersRef.current.contextual_hydrography) return null;
+      const waterwayLayers = basemapLayersRef.current.waterwayLayerIds;
+      if (!waterwayLayers.length) return null;
+
+      const radius = 5;
+      const box: [[number, number], [number, number]] = [
+        [event.point.x - radius, event.point.y - radius],
+        [event.point.x + radius, event.point.y + radius],
+      ];
+      const rendered = map.queryRenderedFeatures(box, { layers: waterwayLayers });
+
+      for (const feature of rendered) {
+        if (feature.geometry.type !== "LineString" && feature.geometry.type !== "MultiLineString") continue;
+        const name = getWaterwayName(feature);
+        if (!name) continue;
+        const matchedRiver = matchRiverReference(name, data.rivers);
+        return {
+          kind: "river",
+          key: matchedRiver?.entity_id ?? normalizeWaterName(name),
+          name,
+          geometry: feature.geometry as GeoJSON.Geometry,
+          anchorCoordinates: [event.lngLat.lng, event.lngLat.lat],
+          matchedRiver,
+        };
+      }
+      return null;
+    },
+    [data.rivers],
+  );
+
+  const resolveCandidate = useCallback(
+    (event: MapMouseEvent): Candidate | null => {
+      return resolvePointCandidate(event) ?? resolveRiverCandidate(event);
+    },
+    [resolvePointCandidate, resolveRiverCandidate],
+  );
+
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
+
+    maplibregl.setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
 
     const map = new maplibregl.Map({
       container: containerRef.current,
@@ -201,15 +329,27 @@ export function ObservatoryMap({
       bearing: initialCamera.bearing,
       pitch: initialCamera.pitch,
       minZoom: 2.25,
-      maxZoom: 14,
+      maxZoom: 20,
       attributionControl: false,
       cooperativeGestures: false,
     });
 
     mapRef.current = map;
     map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
+    map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-left");
 
     map.on("load", () => {
+      basemapLayersRef.current = applyObservatoryBasemapTheme(map);
+
+      const localSatelliteAvailable = addLocalSatelliteImagery(map, localImagery);
+      if (localSatelliteAvailable) {
+        setLocalSatelliteImageryVisible(map, visibleLayersRef.current.satellite);
+      }
+
+      map.addSource(RIVER_HOVER_SOURCE, { type: "geojson", data: emptyFeatureCollection() });
+      map.addSource(RIVER_SELECTED_SOURCE, { type: "geojson", data: emptyFeatureCollection() });
+      addContextualRiverOverlayLayers(map);
+
       map.addSource(COMMUNITY_SOURCE, {
         type: "geojson",
         data: data.communities as GeoJSON.FeatureCollection,
@@ -221,7 +361,17 @@ export function ObservatoryMap({
 
       addCommunityLayers(map);
       addStationLayers(map);
+      setBasemapLabelsVisible(map, basemapLayersRef.current.labelLayerIds, visibleLayersRef.current.labels);
+      setContextualHydrographyVisible(
+        map,
+        basemapLayersRef.current.waterwayLayerIds,
+        visibleLayersRef.current.contextual_hydrography,
+      );
       setMapReady(true);
+
+      if (autoFitOnLoad) {
+        window.requestAnimationFrame(() => fitToObservatoryExtent(map, data, false, 0));
+      }
     });
 
     map.on("mousemove", (event) => {
@@ -238,7 +388,21 @@ export function ObservatoryMap({
 
     map.on("click", (event) => {
       const candidate = resolveCandidate(event);
-      onSelect(candidate?.entityId ?? null);
+      if (candidate?.kind === "point") {
+        selectedContextRiverEntityRef.current = null;
+        setRiverOverlay(RIVER_SELECTED_SOURCE, null);
+        onSelect(candidate.entityId);
+        return;
+      }
+      if (candidate?.kind === "river" && candidate.matchedRiver) {
+        selectedContextRiverEntityRef.current = candidate.matchedRiver.entity_id;
+        setRiverOverlay(RIVER_SELECTED_SOURCE, candidate.geometry);
+        onSelect(candidate.matchedRiver.entity_id);
+        return;
+      }
+      selectedContextRiverEntityRef.current = null;
+      setRiverOverlay(RIVER_SELECTED_SOURCE, null);
+      onSelect(null);
     });
 
     map.on("move", () => {
@@ -263,54 +427,165 @@ export function ObservatoryMap({
       map.remove();
       mapRef.current = null;
     };
-  }, [data, engageCandidate, initialCamera, onCameraChange, onCursorChange, onSelect, onZoomChange, resolveCandidate, scheduleExit, updateAnchor]);
+  }, [
+    autoFitOnLoad,
+    data,
+    engageCandidate,
+    initialCamera,
+    onCameraChange,
+    onCursorChange,
+    onSelect,
+    onZoomChange,
+    resolveCandidate,
+    scheduleExit,
+    setRiverOverlay,
+    updateAnchor,
+  ]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map || !localImagery?.available) return;
+
+    const available = addLocalSatelliteImagery(map, localImagery);
+    if (available) {
+      setLocalSatelliteImageryVisible(map, visibleLayers.satellite);
+    }
+  }, [localImagery, mapReady, visibleLayers.satellite]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!mapReady || !map) return;
     const visibility = (visible: boolean) => (visible ? "visible" : "none") as "visible" | "none";
-    for (const layer of ["communities-halo", "communities-marker", COMMUNITY_HIT]) {
+
+    for (const layer of [
+      "communities-focus",
+      "communities-halo",
+      "communities-marker",
+      COMMUNITY_HIT,
+    ]) {
       map.setLayoutProperty(layer, "visibility", visibility(visibleLayers.communities));
     }
-    for (const layer of ["stations-halo", "stations-marker", STATION_HIT]) {
+    for (const layer of ["stations-focus", "stations-halo", "stations-marker", STATION_HIT]) {
       map.setLayoutProperty(layer, "visibility", visibility(visibleLayers.hydrometric_stations));
     }
-  }, [mapReady, visibleLayers]);
+    map.setLayoutProperty(
+      "communities-label",
+      "visibility",
+      visibility(visibleLayers.communities && visibleLayers.labels),
+    );
+    map.setLayoutProperty(
+      "stations-label",
+      "visibility",
+      visibility(visibleLayers.hydrometric_stations && visibleLayers.labels),
+    );
+
+    setLocalSatelliteImageryVisible(map, visibleLayers.satellite);
+    setBasemapLabelsVisible(map, basemapLayersRef.current.labelLayerIds, visibleLayers.labels);
+    setContextualHydrographyVisible(
+      map,
+      basemapLayersRef.current.waterwayLayerIds,
+      visibleLayers.contextual_hydrography,
+    );
+    map.setLayoutProperty(
+      RIVER_HOVER_LAYER,
+      "visibility",
+      visibility(visibleLayers.contextual_hydrography),
+    );
+    map.setLayoutProperty(
+      RIVER_SELECTED_LAYER,
+      "visibility",
+      visibility(visibleLayers.contextual_hydrography),
+    );
+
+    if (!visibleLayers.contextual_hydrography) {
+      clearHovered();
+      clearProximity();
+    }
+  }, [mapReady, visibleLayers, clearHovered, clearProximity]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map || resetViewRequest <= 0) return;
+    fitToObservatoryExtent(map, data, Boolean(selectedEntityId), 520);
+  }, [data, mapReady, resetViewRequest]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!mapReady || !map) return;
 
+    const selectedRiver = data.rivers.find((river) => river.entity_id === selectedEntityId) ?? null;
+
     for (const feature of allFeatures) {
-      const source = feature.properties.feature_kind === "community" ? COMMUNITY_SOURCE : STATION_SOURCE;
+      const source =
+        feature.properties.feature_kind === "community" ? COMMUNITY_SOURCE : STATION_SOURCE;
       const selected = feature.properties.entity_id === selectedEntityId;
       const compared = compareIds.includes(feature.properties.entity_id);
+      const related = Boolean(
+        selectedRiver && feature.properties.river_entity_id === selectedRiver.entity_id,
+      );
       map.setFeatureState(
         { source, id: feature.id },
-        { selected, compared, dimmed: Boolean(selectedEntityId) && !selected && !compared },
+        {
+          selected,
+          compared,
+          related,
+          dimmed: Boolean(selectedEntityId) && !selected && !compared && !related,
+        },
       );
     }
 
-    if (!selectedEntityId) return;
-    const selected = featureByEntityId.get(selectedEntityId);
-    if (!selected) return;
+    if (selectedContextRiverEntityRef.current !== selectedEntityId) {
+      selectedContextRiverEntityRef.current = null;
+      setRiverOverlay(RIVER_SELECTED_SOURCE, null);
+    }
 
-    const rightPadding = typeof window !== "undefined" && window.innerWidth >= 860 ? 430 : 24;
+    if (!selectedEntityId) return;
+    const selectedFeature = featureByEntityId.get(selectedEntityId);
+    const targetCoordinates = selectedFeature?.geometry.coordinates ?? selectedRiver?.anchor?.coordinates;
+    if (!targetCoordinates) return;
+
+    const rightPadding = typeof window !== "undefined" && window.innerWidth >= 860 ? 450 : 24;
+    const targetZoom = selectedRiver
+      ? 5.3
+      : selectedFeature?.properties.feature_kind === "hydrometric_station"
+        ? 6.35
+        : 5.7;
     map.easeTo({
-      center: selected.geometry.coordinates,
-      duration: 520,
+      center: targetCoordinates,
+      zoom: Math.max(map.getZoom(), targetZoom),
+      duration: 560,
       padding: { top: 70, right: rightPadding, bottom: 70, left: 70 },
       essential: false,
     });
-  }, [allFeatures, compareIds, featureByEntityId, mapReady, selectedEntityId]);
+  }, [
+    allFeatures,
+    compareIds,
+    data.rivers,
+    featureByEntityId,
+    mapReady,
+    selectedEntityId,
+    setRiverOverlay,
+  ]);
 
   const keyboardTargets = useMemo(
-    () => allFeatures.filter((feature) => {
-      if (feature.properties.feature_kind === "community") return visibleLayers.communities;
-      return visibleLayers.hydrometric_stations;
-    }),
+    () =>
+      allFeatures.filter((feature) => {
+        if (feature.properties.feature_kind === "community") return visibleLayers.communities;
+        return visibleLayers.hydrometric_stations;
+      }),
     [allFeatures, visibleLayers],
   );
+
+  const hoverTarget: HoverTarget | null = hovered
+    ? hovered.kind === "point"
+      ? { kind: "point", feature: hovered.feature }
+      : {
+          kind: "contextual_river",
+          name: hovered.name,
+          matchedRiver: hovered.matchedRiver,
+          contextSource: CONTEXT_SOURCE_LABEL,
+        }
+    : null;
 
   return (
     <div className="map-stage" ref={containerRef}>
@@ -319,8 +594,10 @@ export function ObservatoryMap({
           map={mapRef.current}
           features={keyboardTargets}
           onFocus={(feature) => {
-            const source = feature.properties.feature_kind === "community" ? COMMUNITY_SOURCE : STATION_SOURCE;
-            const candidate: Candidate = {
+            const source =
+              feature.properties.feature_kind === "community" ? COMMUNITY_SOURCE : STATION_SOURCE;
+            const candidate: PointCandidate = {
+              kind: "point",
               source,
               id: feature.id,
               entityId: feature.properties.entity_id,
@@ -328,7 +605,7 @@ export function ObservatoryMap({
             };
             cardEngagedRef.current = true;
             engageCandidate(candidate);
-            if (hoveredRef.current?.entityId !== candidate.entityId) {
+            if (candidateIdentity(hoveredRef.current) !== candidateIdentity(candidate)) {
               clearTimer(hoverTimerRef);
               hoveredRef.current = candidate;
               setFeatureState(candidate, "hovered", true);
@@ -344,9 +621,9 @@ export function ObservatoryMap({
         />
       )}
 
-      {hovered && (
+      {hovered && hoverTarget && (
         <HoverCard
-          feature={hovered.feature}
+          target={hoverTarget}
           x={anchor.x}
           y={anchor.y}
           viewportWidth={anchor.width}
@@ -359,30 +636,144 @@ export function ObservatoryMap({
             cardEngagedRef.current = false;
             scheduleExit();
           }}
-          onSelect={() => onSelect(hovered.entityId)}
+          onSelect={
+            hovered.kind === "point"
+              ? () => onSelect(hovered.entityId)
+              : hovered.matchedRiver
+                ? () => {
+                    selectedContextRiverEntityRef.current = hovered.matchedRiver!.entity_id;
+                    setRiverOverlay(RIVER_SELECTED_SOURCE, hovered.geometry);
+                    onSelect(hovered.matchedRiver!.entity_id);
+                  }
+                : undefined
+          }
         />
       )}
     </div>
   );
 }
 
+function fitToObservatoryExtent(
+  map: MapLibreMap,
+  data: ExplorerBootstrap,
+  inspectorOpen: boolean,
+  duration: number,
+) {
+  const coordinates = [
+    ...data.communities.features.map((feature) => feature.geometry.coordinates),
+    ...data.stations.features.map((feature) => feature.geometry.coordinates),
+  ];
+
+  if (!coordinates.length) return;
+
+  const bounds = coordinates.reduce(
+    (current, coordinate) => current.extend(coordinate),
+    new maplibregl.LngLatBounds(coordinates[0], coordinates[0]),
+  );
+
+  const wide = typeof window !== "undefined" && window.innerWidth >= 860;
+
+  map.fitBounds(bounds, {
+    padding: {
+      top: wide ? 96 : 72,
+      right: wide && inspectorOpen ? 500 : wide ? 110 : 48,
+      bottom: wide ? 88 : 72,
+      left: wide ? 110 : 48,
+    },
+    maxZoom: 5.6,
+    duration,
+    essential: false,
+  });
+}
+
+function addContextualRiverOverlayLayers(map: MapLibreMap) {
+  map.addLayer({
+    id: RIVER_SELECTED_LAYER,
+    type: "line",
+    source: RIVER_SELECTED_SOURCE,
+    paint: {
+      "line-color": "#59dcff",
+      "line-opacity": 0.92,
+      "line-width": ["interpolate", ["linear"], ["zoom"], 3, 2.2, 7, 4.4, 12, 7.2],
+      "line-blur": 0.6,
+    },
+  });
+
+  map.addLayer({
+    id: RIVER_HOVER_LAYER,
+    type: "line",
+    source: RIVER_HOVER_SOURCE,
+    paint: {
+      "line-color": "#74e4ff",
+      "line-opacity": 0.9,
+      "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1.8, 7, 3.6, 12, 6],
+      "line-blur": 0.35,
+    },
+  });
+}
+
 function addCommunityLayers(map: MapLibreMap) {
+  map.addLayer({
+    id: "communities-focus",
+    type: "circle",
+    source: COMMUNITY_SOURCE,
+    paint: {
+      "circle-radius": ["case", ["boolean", ["feature-state", "selected"], false], 22, 0],
+      "circle-color": "rgba(0,0,0,0)",
+      "circle-stroke-color": "#ffc27b",
+      "circle-stroke-width": ["case", ["boolean", ["feature-state", "selected"], false], 1.2, 0],
+      "circle-stroke-opacity": ["case", ["boolean", ["feature-state", "selected"], false], 0.72, 0],
+    },
+  });
+
   map.addLayer({
     id: "communities-halo",
     type: "circle",
     source: COMMUNITY_SOURCE,
     paint: {
       "circle-radius": [
-        "case",
-        ["boolean", ["feature-state", "selected"], false],
-        18,
-        ["boolean", ["feature-state", "hovered"], false],
-        14,
-        ["boolean", ["feature-state", "compared"], false],
-        11,
-        ["boolean", ["feature-state", "proximity"], false],
-        10,
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          18,
+          ["boolean", ["feature-state", "hovered"], false],
+          14,
+          ["boolean", ["feature-state", "compared"], false],
+          11,
+          ["boolean", ["feature-state", "proximity"], false],
+          10,
+          5.5,
+        ],
         7,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          18,
+          ["boolean", ["feature-state", "hovered"], false],
+          14,
+          ["boolean", ["feature-state", "compared"], false],
+          11,
+          ["boolean", ["feature-state", "proximity"], false],
+          10,
+          8.5,
+        ],
+        11,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          18,
+          ["boolean", ["feature-state", "hovered"], false],
+          14,
+          ["boolean", ["feature-state", "compared"], false],
+          11,
+          ["boolean", ["feature-state", "proximity"], false],
+          10,
+          11,
+        ],
       ],
       "circle-color": [
         "case",
@@ -395,9 +786,9 @@ function addCommunityLayers(map: MapLibreMap) {
       "circle-opacity": [
         "case",
         ["boolean", ["feature-state", "selected"], false],
-        0.16,
+        0.18,
         ["boolean", ["feature-state", "hovered"], false],
-        0.13,
+        0.14,
         ["boolean", ["feature-state", "compared"], false],
         0.11,
         ["boolean", ["feature-state", "proximity"], false],
@@ -429,28 +820,73 @@ function addCommunityLayers(map: MapLibreMap) {
     source: COMMUNITY_SOURCE,
     paint: {
       "circle-radius": [
-        "case",
-        ["boolean", ["feature-state", "selected"], false],
-        5.8,
-        ["boolean", ["feature-state", "hovered"], false],
-        5.2,
-        4.4,
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          6.1,
+          ["boolean", ["feature-state", "hovered"], false],
+          5.4,
+          3.7,
+        ],
+        7,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          6.1,
+          ["boolean", ["feature-state", "hovered"], false],
+          5.4,
+          4.8,
+        ],
+        11,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          6.1,
+          ["boolean", ["feature-state", "hovered"], false],
+          5.4,
+          6.2,
+        ],
       ],
       "circle-color": "#ff9f43",
       "circle-opacity": [
         "case",
         ["boolean", ["feature-state", "dimmed"], false],
-        0.28,
+        0.26,
         0.96,
       ],
       "circle-stroke-color": "#ffe0b3",
-      "circle-stroke-width": 1.25,
+      "circle-stroke-width": 1.15,
       "circle-stroke-opacity": [
         "case",
         ["boolean", ["feature-state", "dimmed"], false],
-        0.24,
+        0.22,
         0.78,
       ],
+    },
+  });
+
+  map.addLayer({
+    id: "communities-label",
+    type: "symbol",
+    source: COMMUNITY_SOURCE,
+    minzoom: 4.2,
+    layout: {
+      "text-field": ["get", "name"],
+      "text-size": ["interpolate", ["linear"], ["zoom"], 4.2, 9, 8, 11, 12, 13],
+      "text-offset": [0, 1.15],
+      "text-anchor": "top",
+      "text-allow-overlap": false,
+      "text-padding": 4,
+    },
+    paint: {
+      "text-color": "#e4b67f",
+      "text-halo-color": "rgba(4,10,15,.92)",
+      "text-halo-width": 1.2,
+      "text-opacity": ["case", ["boolean", ["feature-state", "dimmed"], false], 0.25, 0.82],
     },
   });
 
@@ -468,26 +904,99 @@ function addCommunityLayers(map: MapLibreMap) {
 
 function addStationLayers(map: MapLibreMap) {
   map.addLayer({
-    id: "stations-halo",
+    id: "stations-focus",
     type: "circle",
     source: STATION_SOURCE,
     paint: {
       "circle-radius": [
         "case",
         ["boolean", ["feature-state", "selected"], false],
-        14,
-        ["boolean", ["feature-state", "hovered"], false],
+        20,
+        ["boolean", ["feature-state", "related"], false],
+        15,
+        0,
+      ],
+      "circle-color": "rgba(0,0,0,0)",
+      "circle-stroke-color": [
+        "case",
+        ["boolean", ["feature-state", "related"], false],
+        "#54e1c1",
+        "#75ddff",
+      ],
+      "circle-stroke-width": [
+        "case",
+        ["any", ["boolean", ["feature-state", "selected"], false], ["boolean", ["feature-state", "related"], false]],
+        1.15,
+        0,
+      ],
+      "circle-stroke-opacity": [
+        "case",
+        ["any", ["boolean", ["feature-state", "selected"], false], ["boolean", ["feature-state", "related"], false]],
+        0.78,
+        0,
+      ],
+    },
+  });
+
+  map.addLayer({
+    id: "stations-halo",
+    type: "circle",
+    source: STATION_SOURCE,
+    paint: {
+      "circle-radius": [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          14,
+          ["boolean", ["feature-state", "related"], false],
+          12,
+          ["boolean", ["feature-state", "hovered"], false],
+          11,
+          ["boolean", ["feature-state", "compared"], false],
+          9,
+          ["boolean", ["feature-state", "proximity"], false],
+          8,
+          3.5,
+        ],
+        7,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          14,
+          ["boolean", ["feature-state", "related"], false],
+          12,
+          ["boolean", ["feature-state", "hovered"], false],
+          11,
+          ["boolean", ["feature-state", "compared"], false],
+          9,
+          ["boolean", ["feature-state", "proximity"], false],
+          8,
+          5.5,
+        ],
         11,
-        ["boolean", ["feature-state", "compared"], false],
-        9,
-        ["boolean", ["feature-state", "proximity"], false],
-        8,
-        4.5,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          14,
+          ["boolean", ["feature-state", "related"], false],
+          12,
+          ["boolean", ["feature-state", "hovered"], false],
+          11,
+          ["boolean", ["feature-state", "compared"], false],
+          9,
+          ["boolean", ["feature-state", "proximity"], false],
+          8,
+          8,
+        ],
       ],
       "circle-color": [
         "case",
-        ["boolean", ["feature-state", "selected"], false],
-        "#58d8ff",
+        ["boolean", ["feature-state", "related"], false],
+        "#54e1c1",
         ["boolean", ["feature-state", "compared"], false],
         "#54e1c1",
         "#58d8ff",
@@ -495,7 +1004,9 @@ function addStationLayers(map: MapLibreMap) {
       "circle-opacity": [
         "case",
         ["boolean", ["feature-state", "selected"], false],
-        0.18,
+        0.19,
+        ["boolean", ["feature-state", "related"], false],
+        0.16,
         ["boolean", ["feature-state", "hovered"], false],
         0.13,
         ["boolean", ["feature-state", "compared"], false],
@@ -504,7 +1015,12 @@ function addStationLayers(map: MapLibreMap) {
         0.08,
         0.02,
       ],
-      "circle-stroke-color": "#75ddff",
+      "circle-stroke-color": [
+        "case",
+        ["boolean", ["feature-state", "related"], false],
+        "#79f0d6",
+        "#75ddff",
+      ],
       "circle-stroke-width": [
         "case",
         ["boolean", ["feature-state", "selected"], false],
@@ -529,23 +1045,79 @@ function addStationLayers(map: MapLibreMap) {
     source: STATION_SOURCE,
     paint: {
       "circle-radius": [
-        "case",
-        ["boolean", ["feature-state", "selected"], false],
-        4.6,
-        ["boolean", ["feature-state", "hovered"], false],
-        3.8,
-        2.7,
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          4.9,
+          ["boolean", ["feature-state", "related"], false],
+          4.2,
+          ["boolean", ["feature-state", "hovered"], false],
+          3.8,
+          2.2,
+        ],
+        7,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          4.9,
+          ["boolean", ["feature-state", "related"], false],
+          4.2,
+          ["boolean", ["feature-state", "hovered"], false],
+          3.8,
+          3,
+        ],
+        11,
+        [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          4.9,
+          ["boolean", ["feature-state", "related"], false],
+          4.2,
+          ["boolean", ["feature-state", "hovered"], false],
+          3.8,
+          4.2,
+        ],
       ],
-      "circle-color": "#5bd4ff",
+      "circle-color": [
+        "case",
+        ["boolean", ["feature-state", "related"], false],
+        "#54e1c1",
+        "#5bd4ff",
+      ],
       "circle-opacity": [
         "case",
         ["boolean", ["feature-state", "dimmed"], false],
-        0.24,
+        0.22,
         0.98,
       ],
       "circle-stroke-color": "#d9f8ff",
       "circle-stroke-width": 0.9,
       "circle-stroke-opacity": 0.84,
+    },
+  });
+
+  map.addLayer({
+    id: "stations-label",
+    type: "symbol",
+    source: STATION_SOURCE,
+    minzoom: 6.1,
+    layout: {
+      "text-field": ["get", "station_number"],
+      "text-size": ["interpolate", ["linear"], ["zoom"], 6.1, 8, 10, 10.5, 13, 12],
+      "text-offset": [0, 1],
+      "text-anchor": "top",
+      "text-allow-overlap": false,
+      "text-padding": 4,
+    },
+    paint: {
+      "text-color": "#7bcce2",
+      "text-halo-color": "rgba(4,10,15,.92)",
+      "text-halo-width": 1.1,
+      "text-opacity": ["case", ["boolean", ["feature-state", "dimmed"], false], 0.2, 0.78],
     },
   });
 
@@ -559,6 +1131,46 @@ function addStationLayers(map: MapLibreMap) {
       "circle-opacity": 0.001,
     },
   });
+}
+
+function getWaterwayName(feature: MapGeoJSONFeature): string | null {
+  const p = feature.properties ?? {};
+  const candidates = [p["name:en"], p["name:fr"], p.name, p["name_int"]];
+  for (const value of candidates) {
+    if (typeof value === "string" && value.trim()) return value.trim();
+  }
+  return null;
+}
+
+function normalizeWaterName(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\b(river|riviere|rivière|riv|stream|brook|ruisseau|fleuve)\b/g, " ")
+    .replace(/\b(the|de|du|des|la|le|les|d)\b/g, " ")
+    .replace(/[^a-z0-9]+/g, "")
+    .trim();
+}
+
+function matchRiverReference(
+  mapName: string,
+  rivers: PublicRiverReference[],
+): PublicRiverReference | null {
+  const normalized = normalizeWaterName(mapName);
+  if (normalized.length < 4) return null;
+
+  for (const river of rivers) {
+    for (const alias of river.aliases) {
+      const candidate = normalizeWaterName(alias);
+      if (!candidate) continue;
+      if (candidate === normalized) return river;
+      if (candidate.length >= 6 && normalized.length >= 6) {
+        if (candidate.includes(normalized) || normalized.includes(candidate)) return river;
+      }
+    }
+  }
+  return null;
 }
 
 function AccessibleFeatureTargets({

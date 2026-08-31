@@ -1,22 +1,31 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import type { PublicMapFeature } from "../../lib/explorer-types";
+import type { PublicMapFeature, PublicRiverReference } from "../../lib/explorer-types";
 import { formatNumber, humanizeToken } from "../../lib/format";
 
+export type HoverTarget =
+  | { kind: "point"; feature: PublicMapFeature }
+  | {
+      kind: "contextual_river";
+      name: string;
+      matchedRiver: PublicRiverReference | null;
+      contextSource: string;
+    };
+
 type Props = {
-  feature: PublicMapFeature;
+  target: HoverTarget;
   x: number;
   y: number;
   viewportWidth: number;
   viewportHeight: number;
   onPointerEnter: () => void;
   onPointerLeave: () => void;
-  onSelect: () => void;
+  onSelect?: () => void;
 };
 
 export function HoverCard({
-  feature,
+  target,
   x,
   y,
   viewportWidth,
@@ -25,9 +34,8 @@ export function HoverCard({
   onPointerLeave,
   onSelect,
 }: Props) {
-  const p = feature.properties;
-  const cardWidth = 312;
-  const cardHeightEstimate = p.feature_kind === "community" ? 270 : 255;
+  const cardWidth = 326;
+  const cardHeightEstimate = target.kind === "contextual_river" ? 245 : 270;
   const placeLeft = x + cardWidth + 32 > viewportWidth;
   const placeAbove = y + cardHeightEstimate + 24 > viewportHeight;
 
@@ -39,6 +47,47 @@ export function HoverCard({
     })`,
   };
 
+  if (target.kind === "contextual_river") {
+    const river = target.matchedRiver;
+    return (
+      <div
+        className="hover-card hover-card--river"
+        style={style}
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+        role="dialog"
+        aria-label={`Map summary for ${river?.name ?? target.name}`}
+      >
+        <div className="hover-card__eyebrow">
+          <span>River context</span>
+          <span className="status-glyph" aria-hidden="true">≈</span>
+          <span>{river ? "Kristal match" : "Basemap only"}</span>
+        </div>
+        <div className="hover-card__title">{river?.name ?? target.name}</div>
+        <div className="hover-card__subtitle">
+          {river?.region ?? `Contextual hydrography · ${target.name}`}
+        </div>
+        <div className="hover-card__facts">
+          <CompactFact label="Reference" value={river ? "Research entity" : "Context only"} />
+          <CompactFact label="Station" value={river?.anchor_station_number ?? "—"} />
+          <CompactFact
+            label="Geometry"
+            value={river ? "Kristal flowline pending" : "External basemap"}
+          />
+        </div>
+        <div className="hover-card__footer">
+          <span>{target.contextSource} · contextual line, not governed Kristal geometry</span>
+          {onSelect && river && (
+            <button type="button" onClick={onSelect}>
+              Inspect <span aria-hidden="true">↗</span>
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  const p = target.feature.properties;
   return (
     <div
       className="hover-card"
@@ -92,10 +141,11 @@ export function HoverCard({
             ? "Reference point · not a facility location"
             : "Official hydrometric station position"}
         </span>
-        <button type="button" onClick={onSelect}>
-          Inspect
-          <span aria-hidden="true">↗</span>
-        </button>
+        {onSelect && (
+          <button type="button" onClick={onSelect}>
+            Inspect <span aria-hidden="true">↗</span>
+          </button>
+        )}
       </div>
     </div>
   );

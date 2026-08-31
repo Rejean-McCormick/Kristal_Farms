@@ -27,6 +27,12 @@ Le calcul peut être près de la production, près d'une communauté/port, ou r�
 
 Kristal Farms peut fournir les services d'infrastructure pendant que les locataires gardent la souveraineté sur leurs serveurs, systèmes d'exploitation, modèles, données, journaux et clés. L'hôte exploite les services physiques; le locataire contrôle la charge numérique.
 
+## Location internationale
+
+Kristal Farms vise un marché international de locataires tout en restant sélectif sur ses contreparties. La juridiction, la propriété effective et le contrôle, l'exposition aux sanctions/contrôles commerciaux et la conduite responsable sont examinés avant la contractualisation. La politique actuelle du propriétaire exclut les contreparties établies ou contrôlées aux États-Unis des rôles de locataire, acheteur ferme principal (*anchor offtaker*) et opérateur-locataire.
+
+Le modèle normal est un **environnement chiffré sous contrôle du locataire** : l'hôte exploite les services physiques convenus et la télémétrie minimale nécessaire, tandis que le calcul privé reste aveugle au contenu pour les opérations courantes de l'hôte.
+
 ## Géographie et croissance
 
 La Côte-Nord est une géographie pratique de pilote/apprentissage. La thèse à plus long terme s'étend plus au nord au Québec et au Labrador, là où l'absence de routes et la distance d'export électrique peuvent créer le contraste structurel le plus fort.

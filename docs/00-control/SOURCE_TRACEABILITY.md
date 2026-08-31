@@ -10,6 +10,7 @@ Kristal Farms separates project intent from external evidence.
 - **Academic / consultant:** research evidence; methodology and date must be retained.
 - **Project direction:** authoritative for Kristal Farms intent only, not independent evidence of technical/economic feasibility.
 - **Legacy source:** retained for provenance; may be superseded or conflict with current direction.
+- **User-provided concept note:** preserves a supplied hypothesis or framing for provenance; it can seed research questions but is not independent technical evidence until its claims are separately sourced/validated.
 
 ## Current project-direction records
 
@@ -17,6 +18,10 @@ Kristal Farms separates project intent from external evidence.
 - `sources/owner-direction/2026-08-30-hydro-resource-atlas-direction.md`
 - `sources/owner-direction/2026-08-30-application-data-direction.md`
 - `sources/owner-direction/2026-08-30-economic-comparison-direction.md`
+
+## Current user-provided research sources
+
+- `sources/user-provided/step_mine_ocean.md` — coastal mine-pit/ocean pumped-storage concept note; preserved verbatim and treated as a research hypothesis source.
 
 ## Traceability rule
 

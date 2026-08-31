@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal-farms.example/contracts/schemas/tenant-eligibility-record.schema.json",
+  "title": "Tenant Eligibility Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "classification",
+    "legal_counterparty_name",
+    "incorporation_jurisdiction",
+    "commercial_role",
+    "eligibility_state",
+    "decision_date",
+    "policy_version"
+  ],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "classification": {"const": "RESTRICTED"},
+    "legal_counterparty_name": {"type": "string", "minLength": 1},
+    "incorporation_jurisdiction": {"type": "string", "minLength": 2},
+    "commercial_role": {
+      "enum": ["tenant", "anchor_offtaker", "tenant_operator", "reseller", "other_material_counterparty"]
+    },
+    "eligibility_state": {
+      "enum": ["ELIGIBLE", "ENHANCED_DUE_DILIGENCE", "SUSPENDED", "INELIGIBLE"]
+    },
+    "policy_version": {"type": "string", "minLength": 1},
+    "decision_date": {"type": "string", "format": "date"},
+    "next_review_date": {"type": ["string", "null"], "format": "date"},
+    "ownership_control_verified": {"type": "boolean"},
+    "sanctions_screening_completed": {"type": "boolean"},
+    "export_control_review_required": {"type": "boolean"},
+    "reseller_or_subtenant_model": {"type": "boolean"},
+    "high_level_workload_class": {"type": ["string", "null"]},
+    "evidence_refs": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "decision_basis": {
+      "type": "array",
+      "items": {"enum": ["project_policy", "legal_requirement", "commercial_risk", "responsible_business_conduct", "unresolved"]},
+      "uniqueItems": true
+    },
+    "notes": {"type": ["string", "null"]}
+  }
+}

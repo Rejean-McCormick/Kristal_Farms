@@ -8,12 +8,14 @@ The project focuses on northern Québec and Labrador, where hydro resources, mar
 
 ## What Kristal Farms is
 
-Kristal Farms combines four infrastructure layers:
+Kristal Farms combines six infrastructure and governance layers:
 
 1. **Remote renewable generation** — primarily hydro where technically, environmentally and socially justified.
 2. **Protected community interface** — community and critical loads have priority over flexible compute.
 3. **Serviced compute sites** — power, cooling interface, fibre handoff, physical security, metering and logistics; tenants may bring and control their own hardware and software.
 4. **Digital export by fibre** — move computation and data products rather than defaulting to long-distance electrical export.
+5. **Responsible international tenancy** — screen jurisdictions, legal counterparties, beneficial ownership/control and sanctions/trade exposure before access; the current owner policy excludes United States-based or United States-controlled counterparties from tenant/anchor-offtaker/tenant-operator roles.
+6. **Content-blind tenant environments** — tenants control private compute and cryptographic keys; Kristal Farms operates shared physical services without routine inspection of private models, datasets or application content.
 
 Marine access, local roads, heat reuse, storage and short electrical interties are site-specific components, not universal requirements.
 
@@ -84,6 +86,9 @@ kristal-farms/
 - [Deployment strategy — English](docs/10-core/deployment/DEPLOYMENT_STRATEGY_EN.md)
 - [Stratégie de déploiement — français](docs/10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 - [Corridor dossier strategy](docs/00-control/CORRIDOR_DOSSIER_STRATEGY.md)
+- [Responsible international tenant governance](docs/00-control/INTERNATIONAL_TENANT_GOVERNANCE.md)
+- [Tenant-controlled encrypted environment — English](docs/10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md)
+- [Environnement chiffré sous contrôle du locataire — français](docs/10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
 
 ### Application and data
 
@@ -103,12 +108,18 @@ kristal-farms/
 - [Hydro geometry pipeline](docs/30-site-screening/hydro-atlas/GEOMETRY_PIPELINE_METHOD.md)
 - [Economic architecture frontier](docs/40-economics/ECONOMIC_ARCHITECTURE_FRONTIER.md)
 - [Economic benchmark register](docs/40-economics/ECONOMIC_BENCHMARK_REGISTER.md)
+- [Mine reuse screening method](docs/30-site-screening/mine-reuse/MINE_REUSE_SCREENING_METHOD.md)
+- [Underground compute / mine infrastructure reuse](docs/30-site-screening/mine-reuse/UNDERGROUND_COMPUTE_REUSE.md)
+- [Mine-pit reservoir / pumped-storage research](docs/30-site-screening/mine-reuse/MINE_RESERVOIR_PUMPED_STORAGE.md)
+- [Northern mine-reuse research inventory](docs/50-research/mines/NORTHERN_MINE_REUSE_INVENTORY.md)
 
 ## Current status
 
-The repository contains a substantial evidence base, current canonical fixtures, reproducible research pipelines, PostGIS schema/migrations, economic sensitivity tooling and public-release artifacts. It does **not** yet establish a selected project site, buildable hydro capacity, environmental authorization, community authorization, fibre route, heavy-lift logistics plan or bankable project economics.
+The repository contains a substantial evidence base, current canonical fixtures, reproducible research pipelines, PostGIS schema/migrations, economic sensitivity tooling and public-release artifacts. It does **not** yet establish a selected project site, buildable hydro capacity, environmental authorization, community authorization, fibre route, heavy-lift logistics plan, committed international anchor tenant/offtake agreement or bankable project economics.
 
 Development now proceeds through named **corridor and site dossiers** that replace general proxies with real geometry, hydrology, engineering, logistics, rights/governance work, commercial quotations and project-specific economics.
+
+A new exploratory mine-reuse workstream also tests whether existing mining assets can reduce new-build scope. It treats **recent underground/care-and-maintenance mines** as potential infrastructure-reuse analogues and **open-pit mines of any age** as possible pumped-storage reservoir research objects where geometry, environment and system value justify study. No mine is selected by this policy.
 
 ## Wiki
 

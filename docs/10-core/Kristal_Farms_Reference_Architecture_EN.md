@@ -47,6 +47,18 @@ The program can use small, medium and larger hydro/renewable projects where just
 
 Shared physical-service interfaces and tenant-controlled digital systems are a core commercial boundary: Kristal Farms can meter and operate physical services without requiring access to tenant application data.
 
+## International tenant governance
+
+Kristal Farms is intended to be internationally marketable while remaining selective about counterparties. Tenant eligibility is determined before access through jurisdictional, ownership/control, sanctions/trade-control and responsible-business due diligence. The current owner policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles.
+
+This commercial exclusion does not itself create a technology-origin embargo.
+
+## Content-blind tenancy
+
+The normal tenant environment is a **tenant-controlled encrypted environment** (commercial shorthand: black-box tenancy). Kristal Farms operates the shared physical-service plane; the tenant controls private compute. Routine operations do not require operator access to private models, datasets, application payloads or tenant cryptographic keys.
+
+Compliance is therefore counterparty- and contract-based rather than content-inspection-based. See `docs/00-control/INTERNATIONAL_TENANT_GOVERNANCE.md` and `docs/security/TENANT_CONFIDENTIALITY_BOUNDARY.md`.
+
 ## Governance / anti-capture
 
 Capital may finance infrastructure, but capital should not automatically acquire control over community land, housing, energy, port, fibre, employment and governance. The project should preserve shared interfaces with separated authority and design anti-capture mechanisms before land/infrastructure appreciation creates incentives for concentration.

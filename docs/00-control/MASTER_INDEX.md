@@ -11,6 +11,7 @@
 - [Workstreams](WORKSTREAMS.md)
 - [Release Status](RELEASE_STATUS.md)
 - [Corridor Dossier Strategy](CORRIDOR_DOSSIER_STRATEGY.md)
+- [Responsible International Tenant Governance](INTERNATIONAL_TENANT_GOVERNANCE.md)
 
 ## Reference architecture
 
@@ -20,6 +21,8 @@
 - [Vision Kristal Farms — FR](../10-core/strategy/VISION_KRISTAL_FARMS_FR.md)
 - [Deployment Strategy — EN](../10-core/deployment/DEPLOYMENT_STRATEGY_EN.md)
 - [Stratégie de déploiement — FR](../10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
+- [Tenant-Controlled Encrypted Environment — EN](../10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md)
+- [Environnement chiffré sous contrôle du locataire — FR](../10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
 
 ## Hydro and site research
 
@@ -29,6 +32,9 @@
 - [Manual Reach Review Gate](../30-site-screening/hydro-atlas/MANUAL_REVIEW_GATE.md)
 - [Service Endpoints](../30-site-screening/hydro-atlas/SERVICE_ENDPOINTS.md)
 - [Geometry Ingestion Status](../30-site-screening/hydro-atlas/GEOMETRY_INGESTION_STATUS.md)
+- [Mine Reuse Screening Method](../30-site-screening/mine-reuse/MINE_REUSE_SCREENING_METHOD.md)
+- [Underground Compute / Mine Infrastructure Reuse](../30-site-screening/mine-reuse/UNDERGROUND_COMPUTE_REUSE.md)
+- [Mine-Pit Reservoir and Pumped-Storage Research](../30-site-screening/mine-reuse/MINE_RESERVOIR_PUMPED_STORAGE.md)
 
 ## Economics
 
@@ -62,6 +68,21 @@
 - [API Overview](../api/overview.md)
 - [Scenario Model](../scenarios/scenario-model.md)
 - [Implementation Plan](../roadmap/implementation-plan.md)
+
+## Mine-reuse research
+
+- [Northern Mine Reuse Inventory](../50-research/mines/NORTHERN_MINE_REUSE_INVENTORY.md)
+- Exploratory structured inventory: `../../research/mines/northern_mine_reuse_inventory.csv`
+
+## International commercial research
+
+- [International Tenant Landscape](../50-research/commercial/INTERNATIONAL_TENANT_LANDSCAPE.md)
+- [International Tenant Screening Reference Base](../50-research/governance/INTERNATIONAL_TENANT_SCREENING_REFERENCE_BASE.md)
+
+## Operations and security
+
+- [Tenant Due-Diligence Runbook](../operations/TENANT_DUE_DILIGENCE_RUNBOOK.md)
+- [Tenant Confidentiality Boundary](../security/TENANT_CONFIDENTIALITY_BOUNDARY.md)
 
 ## Historical material
 

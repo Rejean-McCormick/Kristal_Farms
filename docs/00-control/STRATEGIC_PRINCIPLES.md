@@ -61,3 +61,21 @@ The pilot proves architecture and operating methods; it does not need to prove e
 ## 12. Long-term network logic
 
 If individual nodes prove viable, they may form a chain of hydro/compute/fibre/port nodes across northern Québec and Labrador, with marine logistics and fibre as primary corridors and shorter electrical interties where they improve resilience.
+
+## 13. International tenancy is selective, not indiscriminate
+
+Kristal Farms may serve an international compute market while declining counterparties or control structures that do not meet project governance, responsible-business or jurisdictional-risk criteria. Commercial scale does not override eligibility. The current owner policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles unless a later explicit C0 decision changes that rule.
+
+Country and organization review must be evidence-backed and categorical, not a numerical moral score. The policy applies to legal counterparties and control structures, not to individuals based on nationality or other protected characteristics.
+
+## 14. Select counterparties; do not inspect private compute
+
+Tenant sovereignty includes a content-blind operating boundary. Kristal Farms may operate power, cooling, fibre, physical security and minimum necessary service telemetry without requiring routine access to tenant models, datasets, application payloads or cryptographic keys.
+
+Responsible-tenancy controls therefore occur primarily through jurisdictional eligibility, beneficial-ownership/effective-control review, sanctions and trade-control screening, contract and lawful process. Kristal Farms must not claim that it verifies encrypted private workload content when the architecture is deliberately designed not to expose it.
+
+## 15. Reuse existing industrial excavation where it is genuinely advantageous
+
+Kristal Farms may reuse mine or brownfield infrastructure when reuse reduces total system cost, schedule, surface disturbance or operating risk **after** accounting for restoration, geotechnical, environmental, rights/governance and integration obligations.
+
+This principle does not make mining assets a siting requirement. Recent underground mines may be especially relevant to preserved industrial infrastructure; historical open pits remain eligible for pumped-storage research because reservoir suitability depends primarily on geometry and site condition rather than closure date.

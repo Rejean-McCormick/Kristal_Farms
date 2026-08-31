@@ -2,8 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
+  EntityKind,
   ExplorerBootstrap,
+  LocalImageryManifest,
   MapCameraState,
+  ObservatoryVisibleLayers,
   PublicMapFeature,
 } from "../../lib/explorer-types";
 import { formatCoordinate } from "../../lib/format";
@@ -19,6 +22,14 @@ const DEFAULT_CAMERA: MapCameraState = {
   pitch: 0,
 };
 
+type SearchItem = {
+  entityId: string;
+  kind: EntityKind;
+  title: string;
+  subtitle: string;
+  keywords: string;
+};
+
 export function ObservatoryExplorer() {
   const [bootstrap, setBootstrap] = useState<ExplorerBootstrap | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -29,12 +40,17 @@ export function ObservatoryExplorer() {
   const [searchQuery, setSearchQuery] = useState("");
   const [cursor, setCursor] = useState({ lng: DEFAULT_CAMERA.lng, lat: DEFAULT_CAMERA.lat });
   const [zoom, setZoom] = useState(DEFAULT_CAMERA.zoom);
-  const [initialCamera] = useState<MapCameraState>(() => readCameraFromUrl());
+  const [initialView] = useState(() => readInitialViewFromUrl());
+  const [resetViewRequest, setResetViewRequest] = useState(0);
+  const [localImagery, setLocalImagery] = useState<LocalImageryManifest | null>(null);
   const handleCursorChange = useCallback((lng: number, lat: number) => setCursor({ lng, lat }), []);
 
-  const [visibleLayers, setVisibleLayers] = useState({
+  const [visibleLayers, setVisibleLayers] = useState<ObservatoryVisibleLayers>({
     communities: true,
     hydrometric_stations: true,
+    contextual_hydrography: true,
+    satellite: false,
+    labels: true,
   });
 
   useEffect(() => {
@@ -55,6 +71,28 @@ export function ObservatoryExplorer() {
       .catch((caught: unknown) => {
         if ((caught as Error).name !== "AbortError") setError((caught as Error).message);
       });
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("/imagery/local-satellite.json", { signal: controller.signal, cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return (await response.json()) as LocalImageryManifest;
+      })
+      .then((manifest) => {
+        if (!manifest) return;
+        setLocalImagery(manifest);
+        if (manifest.available) {
+          setVisibleLayers((current) => ({ ...current, satellite: true }));
+        }
+      })
+      .catch((caught: unknown) => {
+        if ((caught as Error).name !== "AbortError") setLocalImagery(null);
+      });
+
     return () => controller.abort();
   }, []);
 
@@ -126,23 +164,44 @@ export function ObservatoryExplorer() {
   );
 
   const compareFeatures = useMemo(
-    () => compareIds.map((id) => allFeatures.find((feature) => feature.properties.entity_id === id)).filter((feature): feature is PublicMapFeature => Boolean(feature)),
+    () =>
+      compareIds
+        .map((id) => allFeatures.find((feature) => feature.properties.entity_id === id))
+        .filter((feature): feature is PublicMapFeature => Boolean(feature)),
     [allFeatures, compareIds],
   );
 
+  const searchItems = useMemo<SearchItem[]>(() => {
+    if (!bootstrap) return [];
+    const points: SearchItem[] = allFeatures.map((feature) => {
+      const p = feature.properties;
+      return {
+        entityId: p.entity_id,
+        kind: p.feature_kind,
+        title: p.feature_kind === "hydrometric_station" ? p.station_number ?? p.name : p.name,
+        subtitle: p.feature_kind === "hydrometric_station" ? p.river_name ?? p.region ?? "" : p.region ?? "",
+        keywords: [p.name, p.region ?? "", p.station_number ?? "", p.river_name ?? ""].join(" "),
+      };
+    });
+    const rivers: SearchItem[] = bootstrap.rivers.map((river) => ({
+      entityId: river.entity_id,
+      kind: "river",
+      title: river.name,
+      subtitle: [river.region, river.anchor_station_number ? `Station ${river.anchor_station_number}` : null]
+        .filter(Boolean)
+        .join(" · "),
+      keywords: [river.name, river.region ?? "", ...river.aliases, river.anchor_station_number ?? ""].join(" "),
+    }));
+    return [...rivers, ...points];
+  }, [allFeatures, bootstrap]);
+
   const searchResults = useMemo(() => {
     const q = searchQuery.trim().toLocaleLowerCase();
-    if (!q) return allFeatures.slice(0, 8);
-    return allFeatures
-      .filter((feature) => {
-        const p = feature.properties;
-        return [p.name, p.region ?? "", p.station_number ?? "", p.river_name ?? ""]
-          .join(" ")
-          .toLocaleLowerCase()
-          .includes(q);
-      })
-      .slice(0, 12);
-  }, [allFeatures, searchQuery]);
+    if (!q) return searchItems.slice(0, 10);
+    return searchItems
+      .filter((item) => item.keywords.toLocaleLowerCase().includes(q))
+      .slice(0, 14);
+  }, [searchItems, searchQuery]);
 
   if (error) {
     return (
@@ -159,12 +218,12 @@ export function ObservatoryExplorer() {
       <main className="boot-screen">
         <div className="boot-screen__reticle" aria-hidden="true">◎</div>
         <span>KRISTAL / NORTHERN ATLAS</span>
-        <strong>Initializing observatory</strong>
+        <strong>Initializing geographic observatory</strong>
       </main>
     );
   }
 
-  const activeLayerCount = Number(visibleLayers.communities) + Number(visibleLayers.hydrometric_stations);
+  const activeLayerCount = Object.values(visibleLayers).filter(Boolean).length;
 
   return (
     <main className="observatory-shell">
@@ -173,7 +232,10 @@ export function ObservatoryExplorer() {
         selectedEntityId={selectedEntityId}
         visibleLayers={visibleLayers}
         compareIds={compareIds}
-        initialCamera={initialCamera}
+        initialCamera={initialView.camera}
+        autoFitOnLoad={!initialView.fromUrl}
+        resetViewRequest={resetViewRequest}
+        localImagery={localImagery}
         onSelect={selectEntity}
         onCursorChange={handleCursorChange}
         onZoomChange={setZoom}
@@ -183,7 +245,7 @@ export function ObservatoryExplorer() {
       <header className="top-hud">
         <div className="brand-lockup">
           <span>KRISTAL / NORTHERN ATLAS</span>
-          <strong>OBSERVATORY · EXPLORER</strong>
+          <strong>OBSERVATORY · GEOGRAPHIC EXPLORER</strong>
         </div>
         <div className="top-actions">
           <button
@@ -196,6 +258,18 @@ export function ObservatoryExplorer() {
           >
             Search
             <kbd>/</kbd>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setResetViewRequest((value) => value + 1);
+              setSearchOpen(false);
+              setLayersOpen(false);
+            }}
+            title="Fit map to the published Kristal extent"
+          >
+            Reset view
+            <span className="reset-glyph" aria-hidden="true">⌖</span>
           </button>
           <button
             type="button"
@@ -223,33 +297,26 @@ export function ObservatoryExplorer() {
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}
             placeholder="Community, station, river…"
-            aria-label="Search communities and hydrometric stations"
+            aria-label="Search communities, rivers and hydrometric stations"
           />
           <div className="search-results">
-            {searchResults.map((feature) => (
+            {searchResults.map((item) => (
               <button
                 type="button"
-                key={feature.id}
+                key={`${item.kind}:${item.entityId}`}
                 onClick={() => {
-                  selectEntity(feature.properties.entity_id);
+                  selectEntity(item.entityId);
                   setSearchOpen(false);
                 }}
               >
-                <span className={`search-dot is-${feature.properties.feature_kind}`} aria-hidden="true" />
+                <span className={`search-dot is-${item.kind}`} aria-hidden="true" />
                 <span>
-                  <strong>
-                    {feature.properties.feature_kind === "hydrometric_station"
-                      ? feature.properties.station_number
-                      : feature.properties.name}
-                  </strong>
-                  <small>
-                    {feature.properties.feature_kind === "hydrometric_station"
-                      ? feature.properties.river_name
-                      : feature.properties.region}
-                  </small>
+                  <strong>{item.title}</strong>
+                  <small>{item.subtitle}</small>
                 </span>
               </button>
             ))}
+            {!searchResults.length && <p className="search-empty">No matching governed entity.</p>}
           </div>
         </section>
       )}
@@ -260,8 +327,10 @@ export function ObservatoryExplorer() {
             <span>LAYER CATALOG</span>
             <button type="button" onClick={() => setLayersOpen(false)} aria-label="Close layers">×</button>
           </div>
+
+          <div className="layer-section-label">Governed overlays</div>
           {bootstrap.layers.map((layer) => {
-            const key = layer.id as keyof typeof visibleLayers;
+            const key = layer.id as "communities" | "hydrometric_stations";
             const enabled = Boolean(visibleLayers[key]);
             return (
               <label className="layer-row" key={layer.id}>
@@ -281,7 +350,46 @@ export function ObservatoryExplorer() {
               </label>
             );
           })}
-          <div className="layer-panel__note">Catalog-driven · ranking semantics disabled</div>
+
+          <div className="layer-section-label">Photographic context</div>
+          <ContextLayerRow
+            id="satellite"
+            title={localImagery?.title ?? "Local satellite imagery"}
+            subtitle={
+              localImagery?.available
+                ? `Static repo snapshot · Z${localImagery.minzoom}–Z${localImagery.maxzoom}`
+                : "No local tile snapshot published yet"
+            }
+            checked={visibleLayers.satellite && Boolean(localImagery?.available)}
+            disabled={!localImagery?.available}
+            status={!localImagery?.available ? "LOCAL" : undefined}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, satellite: checked }))
+            }
+          />
+
+          <div className="layer-section-label">Context map</div>
+          <ContextLayerRow
+            id="contextual_hydrography"
+            title="Hydrography context"
+            subtitle="OpenMapTiles / OpenStreetMap · interactive context"
+            checked={visibleLayers.contextual_hydrography}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, contextual_hydrography: checked }))
+            }
+          />
+          <ContextLayerRow
+            id="labels"
+            title="Map labels"
+            subtitle="Places, water names and Observatory labels"
+            checked={visibleLayers.labels}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, labels: checked }))
+            }
+          />
+          <div className="layer-panel__note">
+            Satellite imagery is a manually published static snapshot stored in the repo; it is context, not Kristal evidence. Context hydrography is also non-evidence. River research geometry remains unavailable until an authoritative connected flowline is ingested.
+          </div>
         </section>
       )}
 
@@ -294,6 +402,7 @@ export function ObservatoryExplorer() {
       </div>
 
       <div className="release-hud">
+        <span>{bootstrap.rivers.length} RIVER REFERENCES</span>
         <span>{bootstrap.communities.features.length} COMMUNITIES</span>
         <span>{bootstrap.stations.features.length} HYDROMETRIC STATIONS</span>
         <span>{activeLayerCount} LAYERS ACTIVE</span>
@@ -316,17 +425,60 @@ export function ObservatoryExplorer() {
   );
 }
 
-function readCameraFromUrl(): MapCameraState {
-  if (typeof window === "undefined") return DEFAULT_CAMERA;
+function ContextLayerRow({
+  id,
+  title,
+  subtitle,
+  checked,
+  disabled = false,
+  status,
+  onChange,
+}: {
+  id: "contextual_hydrography" | "satellite" | "labels";
+  title: string;
+  subtitle: string;
+  checked: boolean;
+  disabled?: boolean;
+  status?: string;
+  onChange: (checked: boolean) => void;
+}) {
+  return (
+    <label className={`layer-row${disabled ? " is-disabled" : ""}`}>
+      <input
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.checked)}
+      />
+      <span className={`layer-symbol is-${id}`} aria-hidden="true" />
+      <span>
+        <strong>{title}</strong>
+        <small>{subtitle}</small>
+      </span>
+      <em>{status ?? (checked ? "ON" : "OFF")}</em>
+    </label>
+  );
+}
+
+function readInitialViewFromUrl(): { camera: MapCameraState; fromUrl: boolean } {
+  if (typeof window === "undefined") return { camera: DEFAULT_CAMERA, fromUrl: false };
+
   const raw = new URLSearchParams(window.location.search).get("view");
-  if (!raw) return DEFAULT_CAMERA;
+  if (!raw) return { camera: DEFAULT_CAMERA, fromUrl: false };
+
   const values = raw.split(",").map(Number);
-  if (values.length < 3 || values.some((value) => !Number.isFinite(value))) return DEFAULT_CAMERA;
+  if (values.length < 3 || values.some((value) => !Number.isFinite(value))) {
+    return { camera: DEFAULT_CAMERA, fromUrl: false };
+  }
+
   return {
-    lng: values[0],
-    lat: values[1],
-    zoom: values[2],
-    bearing: values[3] ?? 0,
-    pitch: values[4] ?? 0,
+    fromUrl: true,
+    camera: {
+      lng: values[0],
+      lat: values[1],
+      zoom: values[2],
+      bearing: values[3] ?? 0,
+      pitch: values[4] ?? 0,
+    },
   };
 }

@@ -1,0 +1,23 @@
+policy_version: "2026.08.31"
+policy_name: jurisdiction_eligibility_schedule
+
+default_nonlisted_state: ENHANCED_DUE_DILIGENCE
+
+jurisdictions:
+  - code: US
+    name: United States
+    state: INELIGIBLE
+    scope:
+      - tenant
+      - anchor_offtaker
+      - tenant_operator
+    basis: owner_policy
+    effective: "2026-08-31"
+    legal_prohibition_claimed: false
+    technology_origin_embargo_implied: false
+    review_requires_explicit_c0_decision: true
+
+notes:
+  - "Absence from this schedule does not mean automatic eligibility."
+  - "Country-level status is a counterparty-risk control and not a judgment about individuals or populations."
+  - "Additional jurisdiction entries require dated evidence and an explicit project-control decision."

@@ -34,6 +34,18 @@ This register identifies questions that remain open. It is not a finding that a 
 | Cold climate creates a specific PUE/cooling advantage | Site climate and actual cooling design. |
 | Heat recovery creates project/community value | Real heat sinks, temperatures, load profiles, distribution design and economics. |
 
+## Mine infrastructure reuse and storage
+
+| Claim / assumption | Required evidence |
+|---|---|
+| A recently closed underground mine can reduce compute-site CAPEX | Current ownership/rights, underground condition, dewatering, ground support, ventilation, egress, power, communications, heat-rejection concept, code/occupancy review and equal-scope reuse-vs-new-build estimate. |
+| Historical mine electrical infrastructure implies capacity is available today | Current utility/interconnection evidence. Historical voltage or mine load is not hosting capacity. |
+| Underground placement is inherently a secure “bunker” | Security and engineering design for the specific hazards/standards claimed. Underground location alone does not establish blast, EMP, fire, flood or continuity performance. |
+| An open pit can serve as a pumped-storage reservoir | Source-backed pit geometry, bathymetry/usable volume, operating water levels, gross/net head, hydraulic route, water balance, geotechnics, seepage, water chemistry and environmental/rights review. |
+| An old mine is too old to consider as a storage reservoir | Not assumed. Mine age is metadata; reservoir screening is controlled by geometry, geotechnical/environmental condition, water system and grid value. |
+| The ocean can be used as the lower reservoir without material penalty | Seawater-compatible turbine/pump/material design, liner/seepage strategy, groundwater protection, marine intake/outfall study, corrosion/biofouling plan and permitting. |
+| Pumped storage creates additional net generation | Not supportable. Storage shifts energy in time and must include pumping energy and round-trip losses. |
+
 ## Commercial and regulatory
 
 | Claim / assumption | Required evidence |
@@ -45,3 +57,13 @@ This register identifies questions that remain open. It is not a finding that a 
 ## Governance and community
 
 Any project dossier must validate rights-holder/community process, decision rights, land/water/marine implications, benefit arrangements, workforce effects, grievance/remedy mechanisms and anti-capture safeguards before presenting community participation as established.
+
+## International tenancy and commercial demand
+
+| Claim / assumption | Required evidence |
+|---|---|
+| A named international organization is interested in leasing Kristal Farms capacity | Direct communication, RFI/RFP response, requirements exchange, LOI or other attributable commercial evidence. A research inventory is not evidence of interest. |
+| A non-U.S. organization is automatically eligible because of its home country | Legal-counterparty, beneficial-ownership/effective-control, sanctions, trade-control and responsible-business due diligence. |
+| A tenant can use a northern site without material product impact | Workload-specific latency, network, reliability, curtailment, cooling, density, maintenance and data-residency requirements. |
+| Black-box tenancy means Kristal Farms can guarantee the tenant's private workload content is ethically compliant | Not supportable. The model intentionally avoids routine access to private encrypted content; governance occurs through counterparty selection, contract and lawful process. |
+| Excluding U.S. counterparties also excludes U.S.-origin technology | Not assumed. Technology-origin/export-control policy is a separate decision. |

@@ -14,6 +14,9 @@ Particular attention is required for:
 - OIDC configuration;
 - public artifact generation;
 - export/download authorization;
-- scenario privacy.
+- scenario privacy;
+- tenant confidentiality and cryptographic separation;
+- provider/tenant logical-access boundaries;
+- due-diligence records containing ownership/control or compliance information.
 
-See [Security architecture](docs/architecture/security.md).
+See [Security architecture](docs/architecture/security.md) and [Tenant Confidentiality Boundary](docs/security/TENANT_CONFIDENTIALITY_BOUNDARY.md).

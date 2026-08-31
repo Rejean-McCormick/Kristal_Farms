@@ -31,3 +31,5 @@ rejected
 - [0007 — Cesium deferred](0007-cesium-deferred.md)
 
 - [0020 — One monorepo with three logical systems](0020-one-monorepo-three-logical-systems.md)
+- [0021 — Tenant environments are content-blind by design](0021-content-blind-tenant-environments.md)
+- [0022 — Responsible-tenancy controls are counterparty-based](0022-counterparty-screening-before-tenancy.md)

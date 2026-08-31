@@ -27,6 +27,12 @@ Compute can sit near generation, near a community/port, or be split between both
 
 Kristal Farms can provide infrastructure services while tenants retain sovereignty over their servers, operating systems, models, data, logs and keys. The host operates physical services; the tenant controls the digital workload.
 
+## International tenancy
+
+Kristal Farms is intended to serve an international tenant market while remaining selective about counterparties. Jurisdictional eligibility, beneficial ownership/effective control, sanctions/trade exposure and responsible-business conduct are reviewed before contracting. The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles.
+
+The normal tenancy model is a **tenant-controlled encrypted environment**: the host runs agreed physical services and minimum necessary service telemetry while private compute remains content-blind to routine host operations.
+
 ## Geography and scaling
 
 Côte-Nord is a practical pilot/learning geography. The longer-term thesis extends farther north through Québec and Labrador, where lack of roads and long electrical-export distance can create the strongest structural contrast.

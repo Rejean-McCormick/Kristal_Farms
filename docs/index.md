@@ -11,6 +11,8 @@ This documentation covers the **Kristal Farms infrastructure project** and the a
 3. [Reference architecture — English](10-core/Kristal_Farms_Reference_Architecture_EN.md) or [français](10-core/Architecture_de_reference_Kristal_Farms_FR.md)
 4. [Deployment strategy — English](10-core/deployment/DEPLOYMENT_STRATEGY_EN.md) or [français](10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 5. [Corridor dossier strategy](00-control/CORRIDOR_DOSSIER_STRATEGY.md)
+6. [Responsible international tenant governance](00-control/INTERNATIONAL_TENANT_GOVERNANCE.md)
+7. [Tenant-controlled encrypted environment — English](10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md) or [français](10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
 
 ### Application and data
 
@@ -23,6 +25,20 @@ This documentation covers the **Kristal Farms infrastructure project** and the a
 7. [Layer catalog](frontend/layer-catalog.md)
 8. [API overview](api/overview.md)
 9. [Implementation plan](roadmap/implementation-plan.md)
+
+### Mine infrastructure reuse and storage
+
+1. [Mine reuse screening method](30-site-screening/mine-reuse/MINE_REUSE_SCREENING_METHOD.md)
+2. [Underground compute / mine infrastructure reuse](30-site-screening/mine-reuse/UNDERGROUND_COMPUTE_REUSE.md)
+3. [Mine-pit reservoir and pumped-storage research](30-site-screening/mine-reuse/MINE_RESERVOIR_PUMPED_STORAGE.md)
+4. [Northern mine-reuse inventory](50-research/mines/NORTHERN_MINE_REUSE_INVENTORY.md)
+
+### International tenancy
+
+1. [Responsible international tenant governance](00-control/INTERNATIONAL_TENANT_GOVERNANCE.md)
+2. [Tenant confidentiality boundary](security/TENANT_CONFIDENTIALITY_BOUNDARY.md)
+3. [Tenant due-diligence runbook](operations/TENANT_DUE_DILIGENCE_RUNBOOK.md)
+4. [International tenant landscape](50-research/commercial/INTERNATIONAL_TENANT_LANDSCAPE.md)
 
 ## Documentation authority
 

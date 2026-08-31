@@ -12,3 +12,9 @@ The application uses a canonical relational/geospatial model rather than treatin
 6. Public Web layers are derived from `publish` views and immutable releases.
 
 The current fixture contains 24 river natural features and 24 WSC hydrometric-station assets. Only the official station positions have physical geometry in the current canonical fixture; river and watershed geometry remains null until authoritative geometry is ingested and accepted.
+
+## Mine-reuse research boundary
+
+Mine-reuse records remain exploratory until a source-backed inventory and stable semantics justify promotion. During research, mines should normally use existing `asset`/`project` entity patterns plus explicit metadata for lifecycle, mine method, underground condition, pit/reservoir geometry, restoration status and enabling infrastructure. Do not add `available_compute_mw`, pumped-storage capacity or security claims by inference.
+
+If mine-reuse fields become routinely queried or published, promote them through migrations/contracts/tests rather than leaving core semantics only in JSONB.

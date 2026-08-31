@@ -104,3 +104,7 @@ Recommended human-readable prefixes are acceptable for imported research records
 ## Extension fields
 
 Use typed columns for frequently queried or semantically important fields. Use `metadata JSONB` for sparse source-specific extensions. Do not put core semantics only in JSONB if the application needs to filter, validate, index, or govern them.
+
+### Mine-reuse research extensions
+
+Until a governed mine-specific model is justified, represent a mine as an existing `asset` or external-reference `project` and keep sparse research fields in metadata. Preserve separate semantics for lifecycle status, mine method, restoration responsibility, underground condition, pit/reservoir geometry and enabling infrastructure. Historical mine load must never populate current available compute capacity, and total pit excavation must never be treated as usable pumped-storage volume without a derivation.

@@ -1,0 +1,17 @@
+{
+  "schema": "kristal-local-imagery/v1",
+  "id": "local-satellite",
+  "title": "Local satellite imagery",
+  "available": false,
+  "tile_template": "/imagery/local-satellite/{z}/{x}/{y}.png",
+  "tile_size": 256,
+  "minzoom": 7,
+  "maxzoom": 13,
+  "bounds": null,
+  "source": null,
+  "acquired": null,
+  "license": null,
+  "attribution": null,
+  "source_sha256": null,
+  "generated_at": null
+}

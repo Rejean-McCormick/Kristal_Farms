@@ -40,3 +40,21 @@ Mitigation: domain-policy tests, catalog semantics, inspector labels, ADR/policy
 Secrets committed or exposed client-side.
 
 Mitigation: secret management, scanning, least-privilege roles, rotation procedures.
+
+### Tenant confidentiality boundary failure
+
+Operator tooling, support access or incident response creates unnecessary access to private tenant models, datasets, payloads or keys.
+
+Mitigation: content-blind-by-design architecture, tenant-controlled keys, least-access support, physical/logical separation, access logging and no default key escrow.
+
+### Counterparty-policy bypass
+
+A prohibited or unreviewed party obtains capacity through nominee ownership, undisclosed control, reseller/subtenant chains or material ownership changes.
+
+Mitigation: beneficial-ownership/effective-control review, sanctions/trade screening, contractual disclosure obligations, downstream eligibility controls and periodic re-review.
+
+### False compliance assurance
+
+Kristal Farms marketing implies that private encrypted workloads have been inspected or certified as ethically compliant even though the service is intentionally content-blind.
+
+Mitigation: precise public wording, counterparty-based governance, explicit documentation of the visibility boundary and prohibition on unsupported workload-content claims.

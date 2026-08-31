@@ -13,6 +13,7 @@
     "economic_frontier_summary_public.json",
     "entity_search_public.json",
     "evidence_panel_summary_public.json",
+    "evidence_records_public.json",
     "external_reference_energy_public.json",
     "hydro_evidence_matrix_public.json",
     "hydrometric_stations_public.geojson"

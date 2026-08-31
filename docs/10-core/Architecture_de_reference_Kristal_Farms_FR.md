@@ -37,6 +37,18 @@ La chaleur est un coproduit utile, pas une règle universelle de localisation. E
 
 Le programme peut utiliser des projets hydro/renouvelables petits, moyens ou plus grands lorsque justifiés, avec une croissance du calcul pad par pad. Des nœuds réussis peuvent former un chapelet côtier/de bassins relié principalement par fibre et logistique maritime, avec des interconnexions électriques plus courtes lorsqu’elles apportent de la résilience.
 
+## Gouvernance internationale des locataires
+
+Kristal Farms vise un marché international tout en restant sélectif sur ses contreparties. L'admissibilité est établie avant l'accès à partir de la juridiction, de la propriété effective et du contrôle, des sanctions/contrôles commerciaux et d'une diligence raisonnable de conduite responsable. La politique actuelle du propriétaire exclut les contreparties établies ou contrôlées aux États-Unis des rôles de locataire, acheteur ferme principal (*anchor offtaker*) et opérateur-locataire.
+
+Cette exclusion commerciale ne constitue pas, à elle seule, un embargo sur l'origine technologique.
+
+## Location aveugle au contenu
+
+L'environnement normal est un **environnement chiffré sous contrôle du locataire** (raccourci commercial : location « black box »). Kristal Farms exploite le plan des services physiques partagés; le locataire contrôle le calcul privé. L'exploitation normale n'exige pas l'accès de Kristal Farms aux modèles privés, jeux de données, contenus applicatifs ou clés cryptographiques du locataire.
+
+La conformité repose donc sur la contrepartie et le contrat plutôt que sur l'inspection du contenu. Voir `docs/00-control/INTERNATIONAL_TENANT_GOVERNANCE.md` et `docs/security/TENANT_CONFIDENTIALITY_BOUNDARY.md`.
+
 ## Gouvernance et anti-capture
 
 Le capital peut financer l’infrastructure sans acquérir automatiquement le contrôle de la terre, du logement, de l’énergie, du port, de la fibre, de l’emploi et de la gouvernance communautaire.

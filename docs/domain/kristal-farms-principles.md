@@ -43,3 +43,15 @@ Current screening is unranked evidence screening. The system must obey `ranking_
 ## KP-10 — Regulatory applicability is open
 
 Do not encode assumptions that dedicated local generation is automatically outside utility, tariff, selection, interconnection, environmental, or other regulatory requirements.
+
+## KP-11 — International counterparty eligibility is explicit
+
+International tenants, anchor offtakers and tenant-operators must pass the applicable jurisdictional and counterparty-governance process before contracting. Absence from a restricted-jurisdiction schedule is not automatic approval under the current default.
+
+## KP-12 — Counterparty policy is not content surveillance
+
+Responsible-tenancy controls are enforced through legal-counterparty identification, beneficial ownership/effective control, sanctions/trade review, contract and externally verifiable information. Do not require routine inspection of encrypted private tenant compute as the enforcement mechanism.
+
+## KP-13 — Tenant private compute remains tenant-controlled
+
+Unless a separately contracted managed service explicitly changes the boundary, tenants retain control of private application systems, models, datasets and cryptographic keys. Kristal Farms may operate purpose-limited physical/service telemetry without claiming access to or certification of private workload content.

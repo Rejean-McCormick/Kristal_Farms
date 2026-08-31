@@ -2,6 +2,24 @@
 
 This changelog records product and repository releases. Superseded material is preserved under `archive/` for provenance.
 
+## 2026-08-31 — Mine infrastructure reuse and pumped-storage research (working update)
+
+- Added WS-16 for mine infrastructure reuse and storage, preserving unranked screening and corridor/site dossier governance.
+- Separated two hypotheses: recent underground/care-and-maintenance mine infrastructure for compute-support reuse, and open-pit mines as pumped-storage reservoirs.
+- Explicitly allowed **historical/old open-pit mines** in reservoir screening; recency is a preference for preserved underground/industrial assets, not a reservoir eligibility rule.
+- Added mine-reuse screening semantics, engineering/environmental gates and anti-inference rules for historical power, mine depth, pit volume, availability and “bunker” security claims.
+- Added northern research objects (Renard, Schefferville cluster, Lac Jeannine, Asbestos Hill/Purtuniq) as unranked leads/reference cases, plus Kidston and Okinawa pumped-storage precedents.
+- Preserved the user-supplied coastal mine/ocean STEP concept note under `sources/user-provided/` for provenance.
+
+## 2026-08-31 — Responsible international tenancy and black-box boundary (working update)
+
+- Added C0 responsible international tenancy and counterparty-governance policy.
+- Recorded the current owner-directed exclusion of United States-based or United States-controlled tenant, anchor-offtaker and tenant-operator counterparties, without implying a technology-origin embargo.
+- Added categorical eligibility states and beneficial-ownership/effective-control, sanctions and trade-control due-diligence requirements.
+- Formalized tenant-controlled encrypted environments (black-box tenancy) and content-blind operations: no routine private-content inspection, default operator key escrow or standing decryption backdoor.
+- Added international tenant research inventory and external responsible-business/sanctions reference base.
+- Added ADR-0021/0022 and machine-readable international-tenancy policy contract.
+
 ## 2026-08-30 — Foundation release
 
 - Established the single `kristal-farms` monorepo for project research, application architecture, data contracts and reproducible analysis.
