@@ -20,5 +20,6 @@ Kristal Farms work is organized by project dependencies, evidence gates and deli
 | **WS-14 Long-term network** | Test multi-node fibre/marine/electrical resilience once individual nodes are credible. | Regional topology scenarios. |
 | **WS-15 International tenancy & counterparty governance** | Build a responsible, jurisdiction-aware international tenant pipeline while preserving content-blind tenancy. | Eligibility register, due-diligence workflow, tenant requirement matrix and contractual control set. |
 | **WS-16 Mine infrastructure reuse & storage** | Test whether northern mining assets can reduce new-build scope through underground/industrial reuse, surface brownfields or mine-pit pumped storage. | Unranked mine inventory, source-backed geometry/infrastructure evidence and reuse-specific engineering/environmental gates. |
+| **WS-17 International mobilization & distributed resilience** | Validate multi-country demand for tenant-controlled compute and coordinate the Canadian, telecom, marine and site-enabling conditions without implying a defence alliance. | Tenant requirement exchanges/LOIs, government coordination map, carrier feasibility responses, concentration-risk register and international portfolio gates. |
 
 Every workstream should have an owner, current status, next decision, evidence links, risks and a single next deliverable.

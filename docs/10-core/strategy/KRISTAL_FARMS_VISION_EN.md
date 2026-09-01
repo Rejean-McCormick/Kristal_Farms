@@ -29,7 +29,7 @@ Kristal Farms can provide infrastructure services while tenants retain sovereign
 
 ## International tenancy
 
-Kristal Farms is intended to serve an international tenant market while remaining selective about counterparties. Jurisdictional eligibility, beneficial ownership/effective control, sanctions/trade exposure and responsible-business conduct are reviewed before contracting. The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles.
+Kristal Farms is intended to serve an international tenant market while remaining selective about counterparties. The machine-readable jurisdiction schedule, beneficial ownership/effective control, downstream-customer exposure, sanctions/trade exposure and responsible-business conduct are reviewed before contracting.
 
 The normal tenancy model is a **tenant-controlled encrypted environment**: the host runs agreed physical services and minimum necessary service telemetry while private compute remains content-blind to routine host operations.
 

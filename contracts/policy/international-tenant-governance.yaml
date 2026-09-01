@@ -1,28 +1,19 @@
-policy_version: "2026.08.31"
+policy_version: 2026.08.31-r2-proposed
 policy_name: responsible_international_tenancy
 jurisdiction_schedule: jurisdiction-eligibility.yaml
-
 eligibility:
   states:
-    - ELIGIBLE
-    - ENHANCED_DUE_DILIGENCE
-    - SUSPENDED
-    - INELIGIBLE
+  - ELIGIBLE
+  - ENHANCED_DUE_DILIGENCE
+  - SUSPENDED
+  - INELIGIBLE
   numeric_ethics_score_allowed: false
   decision_subject: legal_counterparty_and_control_structure
   protected_characteristic_inference_allowed: false
-
 owner_directed_exclusions:
-  counterparty_jurisdictions:
-    - jurisdiction: US
-      scope:
-        - tenant
-        - anchor_offtaker
-        - tenant_operator
-      status: INELIGIBLE
-      basis: owner_policy
-      technology_origin_embargo_implied: false
-
+  source_of_truth: jurisdiction-eligibility.yaml
+  schedule_is_authoritative: true
+  technology_origin_embargo_implied: false
 counterparty_due_diligence:
   beneficial_ownership_required: true
   effective_control_required: true
@@ -32,7 +23,8 @@ counterparty_due_diligence:
   reseller_subtenant_controls_required: true
   high_level_workload_class_may_be_requested: true
   private_model_or_dataset_disclosure_required: false
-
+  downstream_customer_exposure_required_when_capacity_is_resold: true
+  change_of_control_notification_required: true
 black_box_tenancy:
   normative_term: tenant_controlled_encrypted_environment
   commercial_shorthand: black_box_tenancy
@@ -43,7 +35,6 @@ black_box_tenancy:
   operator_key_escrow_required: false
   covert_monitoring_allowed: false
   standing_decryption_backdoor_allowed: false
-
 operator_observability:
   power_and_metering: true
   cooling_and_environmental_telemetry: true
@@ -51,34 +42,38 @@ operator_observability:
   network_availability_and_aggregate_utilization: true
   shared_infrastructure_security_signals: true
   application_payload_decryption_required: false
-
 legal_process:
   validate_authority: true
   minimize_scope: true
   disclose_only_data_possessed_or_controlled: true
   tenant_notice_when_legally_permitted: true
   create_persistent_decryption_capability: false
-
 review_triggers:
-  - sanctions_or_binding_legal_prohibition
-  - beneficial_ownership_or_control_change
-  - material_misrepresentation
-  - substantiated_sanctions_evasion
-  - serious_externally_verifiable_policy_conflict
-  - shared_infrastructure_abuse
-  - legal_inability_to_continue_service
-
-
+- sanctions_or_binding_legal_prohibition
+- beneficial_ownership_or_control_change
+- material_misrepresentation
+- substantiated_sanctions_evasion
+- serious_externally_verifiable_policy_conflict
+- shared_infrastructure_abuse
+- legal_inability_to_continue_service
 presumptive_risk_treatment:
   ineligible_when_substantiated:
-    - sanctions_evasion_or_prohibited_party_concealment
-    - material_eligibility_fraud
-    - institutional_purpose_of_state_directed_repression_or_unlawful_mass_surveillance
-    - offensive_cyber_activity_directed_at_civilian_or_shared_infrastructure
+  - sanctions_evasion_or_prohibited_party_concealment
+  - material_eligibility_fraud
+  - institutional_purpose_of_state_directed_repression_or_unlawful_mass_surveillance
+  - offensive_cyber_activity_directed_at_civilian_or_shared_infrastructure
   enhanced_due_diligence:
-    - military_or_defence_counterparty
-    - intelligence_or_state_security_counterparty
-    - biometric_or_population_scale_surveillance_provider
-    - high_risk_dual_use_technology_provider
-    - reseller_or_subtenant_aggregator
+  - military_or_defence_counterparty
+  - intelligence_or_state_security_counterparty
+  - biometric_or_population_scale_surveillance_provider
+  - high_risk_dual_use_technology_provider
+  - reseller_or_subtenant_aggregator
   private_workload_content_inspection_is_enforcement_method: false
+policy_status: PROPOSED_C0_ADOPTION
+downstream_tenancy:
+  eligibility_boundary_inherited_by_resellers_and_subtenants: true
+  unverified_global_resale_pool_allowed: false
+  dedicated_capacity_pool_required_when_global_pool_can_serve_ineligible_counterparties: true
+  commercial_allocation_records_auditable: true
+  private_workload_content_auditable: false
+  suspension_allowed_when_downstream_eligibility_cannot_be_verified: true

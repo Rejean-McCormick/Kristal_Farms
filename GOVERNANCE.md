@@ -31,3 +31,11 @@ No maintainer or contributor may enable site ranking merely as a UI enhancement.
 The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles. Other jurisdictions default to enhanced due diligence unless an explicit schedule says otherwise. A technology-origin embargo must not be inferred from this counterparty rule.
 
 Black-box tenancy is content-blind by design: governance is based on counterparty identity/control, sanctions/trade review, contract and external evidence rather than decryption of private tenant workloads.
+
+## Founder/owner project direction
+
+Owner/founder direction may establish intended project strategy but does not become external evidence merely by being recorded. Direction from the founder and sole member of Initiative kOA should be preserved under `sources/owner-direction/` and translated into controlled project documents with explicit evidence gates.
+
+## International resilience governance
+
+A diversified international tenant portfolio is an allowed resilience objective. Documentation must distinguish **commercial/diplomatic stakeholder diversification** from a military alliance or state security guarantee. No contributor may claim that foreign tenancy creates extraterritoriality, collective defence, automatic government intervention or immunity from Canadian law without explicit authoritative evidence.

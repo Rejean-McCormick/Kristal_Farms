@@ -49,7 +49,7 @@ Historical, literary, fictional or exploratory material may inform questions and
 
 ## International tenancy boundary
 
-Kristal Farms may adopt project-specific commercial exclusions that are stricter than minimum legal eligibility. The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles. Other jurisdictions and organizations are evaluated using the responsible international tenancy policy rather than inferred from map, market-size or nationality alone.
+Kristal Farms may adopt project-specific commercial exclusions that are stricter than minimum legal eligibility. Explicit country-level exclusions and holds are governed by the current machine-readable jurisdiction schedule; other jurisdictions and organizations are evaluated using the responsible international tenancy policy rather than inferred from map, market size or nationality alone.
 
 The project screens **counterparties before access**. It does not make routine inspection or decryption of tenant application content a condition of tenancy. Technology-origin restrictions are a separate policy question and must not be inferred from counterparty exclusions.
 

@@ -1,5 +1,5 @@
 import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
-import type { LocalImageryManifest } from "./explorer-types";
+import type { LocalImageryManifest, LocalTerrainManifest } from "./explorer-types";
 
 const DEFAULT_VECTOR_STYLE = "https://tiles.openfreemap.org/styles/liberty";
 
@@ -7,12 +7,14 @@ const LOCAL_SATELLITE_SOURCE_ID = "kristal-local-satellite-source";
 const LOCAL_SATELLITE_LAYER_ID = "kristal-local-satellite";
 
 /**
- * The v0.2 development basemap uses an OpenMapTiles/OpenStreetMap vector style
- * with no application API key. Production may point NEXT_PUBLIC_BASE_STYLE_URL
- * at a self-hosted or otherwise approved MapLibre style.
+ * Observatory v0.3.3 defaults to a Kristal-branded VECTOR ATLAS.
  *
- * The Observatory theme is applied after style load so the upstream vector
- * schema remains queryable for contextual hydrography.
+ * OpenFreeMap/OpenMapTiles remains the contextual basemap, but the visual
+ * language is intentionally reduced to the objects useful to Kristal:
+ * water, waterways, buildings, transport access, infrastructure/facility
+ * context, boundaries and labels.
+ *
+ * Photographic imagery is optional and never enabled automatically.
  */
 export function createObservatoryStyle(): string | StyleSpecification {
   return process.env.NEXT_PUBLIC_BASE_STYLE_URL ?? DEFAULT_VECTOR_STYLE;
@@ -20,7 +22,11 @@ export function createObservatoryStyle(): string | StyleSpecification {
 
 export type BasemapLayerIndex = {
   labelLayerIds: string[];
+  hydrographyLayerIds: string[];
   waterwayLayerIds: string[];
+  buildingLayerIds: string[];
+  transportLayerIds: string[];
+  facilityLayerIds: string[];
 };
 
 type StyleLayerLike = {
@@ -30,155 +36,331 @@ type StyleLayerLike = {
   "source-layer"?: string;
 };
 
+const FACILITY_LAYER_HINTS = [
+  "aerodrome",
+  "airport",
+  "airfield",
+  "ferry",
+  "harbour",
+  "harbor",
+  "port",
+  "public",
+  "hospital",
+  "health",
+  "clinic",
+  "pharmacy",
+  "fire",
+  "police",
+  "post",
+  "school",
+  "education",
+  "college",
+  "university",
+  "transport",
+  "fuel",
+  "power",
+  "utility",
+  "communications",
+  "telecom",
+];
+
+function safeLayout(map: MapLibreMap, layerId: string, property: string, value: unknown) {
+  try {
+    map.setLayoutProperty(layerId, property, value);
+  } catch {
+    // Upstream styles differ; unsupported properties are ignored.
+  }
+}
+
+function safePaint(map: MapLibreMap, layerId: string, property: string, value: unknown) {
+  try {
+    map.setPaintProperty(layerId, property, value);
+  } catch {
+    // Upstream styles differ; unsupported properties are ignored.
+  }
+}
+
+function isFacilityPoiLayer(id: string) {
+  return FACILITY_LAYER_HINTS.some((hint) => id.includes(hint));
+}
+
 export function applyObservatoryBasemapTheme(map: MapLibreMap): BasemapLayerIndex {
-  const style = map.getStyle();
   const labels: string[] = [];
+  const hydrography: string[] = [];
   const waterways: string[] = [];
+  const buildings: string[] = [];
+  const transport: string[] = [];
+  const facilities: string[] = [];
+
+  const style = map.getStyle();
 
   for (const rawLayer of style.layers ?? []) {
     const layer = rawLayer as StyleLayerLike;
     const sourceLayer = (layer["source-layer"] ?? "").toLowerCase();
     const id = layer.id.toLowerCase();
 
-    try {
-      if (layer.type === "background") {
-        map.setPaintProperty(layer.id, "background-color", "#131b20");
-        continue;
-      }
+    if (layer.type === "background") {
+      // Kristal brand land: intentionally bold and uniform at every zoom.
+      // Water/hydrography remains blue and carries the geographic structure.
+      safePaint(map, layer.id, "background-color", "#1E6864");
+      continue;
+    }
 
-      if (layer.type === "raster") {
-        const sourceId = (layer.source ?? "").toLowerCase();
-        const isNaturalEarth =
-          layer.id.toLowerCase() === "natural_earth" ||
-          sourceId.includes("ne2_shaded") ||
-          sourceId.includes("natural_earth");
+    // v0.3.3 VECTOR ATLAS: remove shaded-relief / Natural Earth raster context.
+    // Local satellite is added later as a separate explicitly toggled layer.
+    if (layer.type === "raster" || layer.type === "hillshade") {
+      safeLayout(map, layer.id, "visibility", "none");
+      continue;
+    }
 
-        if (isNaturalEarth) {
-          // OpenFreeMap Liberty normally fades this Natural Earth shaded raster
-          // almost completely by z6 and stops rendering it at z7. That exposes
-          // the Observatory background and makes land appear progressively black.
-          //
-          // Keep it alive a little longer using source overzoom, then fade it
-          // gently into the neutral Observatory land background.
-          map.setLayerZoomRange(layer.id, 0, 9.5);
-          map.setPaintProperty(layer.id, "raster-opacity", [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            0, 0.62,
-            4, 0.52,
-            6, 0.44,
-            7.5, 0.30,
-            9, 0.10,
-            9.5, 0.0,
-          ]);
-          map.setPaintProperty(layer.id, "raster-saturation", -0.55);
-          map.setPaintProperty(layer.id, "raster-contrast", 0.06);
-          map.setPaintProperty(layer.id, "raster-brightness-min", 0.12);
-          map.setPaintProperty(layer.id, "raster-brightness-max", 0.74);
-        }
-        continue;
-      }
+    const isParkOrLandTheme =
+      sourceLayer === "park" ||
+      sourceLayer.includes("protected") ||
+      sourceLayer.includes("landcover") ||
+      sourceLayer.includes("landuse") ||
+      id.includes("park") ||
+      id.includes("protected") ||
+      id.includes("landcover") ||
+      id.includes("landuse");
 
-      if (layer.type === "symbol") {
-        const isPoi = sourceLayer.includes("poi") || id.includes("poi");
-        if (isPoi) {
-          map.setLayoutProperty(layer.id, "visibility", "none");
-          continue;
-        }
-        labels.push(layer.id);
-        if (sourceLayer.includes("water") || id.includes("water") || id.includes("river")) {
-          map.setPaintProperty(layer.id, "text-color", "#5f9eb0");
-          map.setPaintProperty(layer.id, "text-halo-color", "rgba(3, 10, 15, .92)");
-          map.setPaintProperty(layer.id, "text-halo-width", 1.25);
-        } else {
-          map.setPaintProperty(layer.id, "text-color", "#748992");
-          map.setPaintProperty(layer.id, "text-halo-color", "rgba(3, 9, 14, .88)");
-          map.setPaintProperty(layer.id, "text-halo-width", 1.1);
-        }
-        continue;
-      }
+    if (isParkOrLandTheme) {
+      safeLayout(map, layer.id, "visibility", "none");
+      continue;
+    }
 
+    if (sourceLayer === "housenumber" || id.includes("housenumber")) {
+      safeLayout(map, layer.id, "visibility", "none");
+      continue;
+    }
+
+    const isWater = sourceLayer === "water" || id.includes("water_fill") || id === "water";
+    const isWaterway =
+      sourceLayer === "waterway" ||
+      sourceLayer.includes("waterway") ||
+      id.includes("waterway") ||
+      id.includes("river");
+    const isBuilding = sourceLayer.includes("building") || id.includes("building");
+    const isTransportGeometry = sourceLayer === "transportation";
+    const isAeroway =
+      sourceLayer === "aeroway" ||
+      sourceLayer === "aerodrome_label" ||
+      id.includes("aeroway") ||
+      id.includes("aerodrome") ||
+      id.includes("airport");
+    const isPoi = sourceLayer === "poi" || sourceLayer.includes("poi");
+    const isFacilityPoi = isPoi && isFacilityPoiLayer(id);
+    const isBoundary = sourceLayer.includes("boundary") || id.includes("boundary") || id.includes("admin_");
+
+    if (isWater) {
+      hydrography.push(layer.id);
       if (layer.type === "fill") {
-        const isPark =
-          sourceLayer === "park" ||
-          sourceLayer.includes("protected") ||
-          id === "park" ||
-          id.includes("park_") ||
-          id.includes("protected");
+        safePaint(map, layer.id, "fill-color", [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          0, "#082633",
+          8, "#0a3142",
+          14, "#0d3d52",
+          20, "#104a61",
+        ]);
+        safePaint(map, layer.id, "fill-opacity", 0.98);
+      } else if (layer.type === "line") {
+        safePaint(map, layer.id, "line-color", "#43a3c2");
+        safePaint(map, layer.id, "line-opacity", 0.92);
+      }
+      continue;
+    }
 
-        const isLandTheme =
-          sourceLayer.includes("landcover") ||
-          sourceLayer.includes("landuse") ||
-          id.includes("landcover") ||
-          id.includes("landuse");
+    if (isWaterway) {
+      hydrography.push(layer.id);
+      if (layer.type === "line") {
+        waterways.push(layer.id);
+        const isMajorRiver = id.includes("river") || id.includes("canal");
+        safePaint(map, layer.id, "line-color", isMajorRiver ? "#4bb2d3" : "#3f94b0");
+        safePaint(map, layer.id, "line-opacity", isMajorRiver ? 0.96 : 0.82);
+        safePaint(map, layer.id, "line-width", [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7, isMajorRiver ? 0.7 : 0.35,
+          11, isMajorRiver ? 1.25 : 0.65,
+          14, isMajorRiver ? 2.2 : 1.05,
+          17, isMajorRiver ? 3.1 : 1.45,
+          20, isMajorRiver ? 4.0 : 1.9,
+        ]);
+      }
+      if (layer.type === "symbol") {
+        safeLayout(map, layer.id, "text-font", ["Noto Sans Regular"]);
+        safeLayout(map, layer.id, "text-size", [
+          "interpolate", ["linear"], ["zoom"],
+          5, 11.5,
+          8, 12.5,
+          11, 13.5,
+          14, 15,
+          18, 16,
+        ]);
+        safePaint(map, layer.id, "text-color", "#9bdcf0");
+        safePaint(map, layer.id, "text-halo-color", "rgba(3, 12, 17, .98)");
+        safePaint(map, layer.id, "text-halo-width", 1.8);
+        safePaint(map, layer.id, "text-halo-blur", 0.25);
+        labels.push(layer.id);
+      }
+      continue;
+    }
 
-        if (sourceLayer === "water" || id.includes("water")) {
-          map.setPaintProperty(layer.id, "fill-color", "#071820");
-          map.setPaintProperty(layer.id, "fill-opacity", 0.94);
-        } else if (isPark) {
-          // Liberty renders parks/protected areas as large pale-green polygons.
-          // They are contextual basemap data, not Kristal evidence, and visually
-          // overwhelm the Observatory at regional zoom levels.
-          map.setLayoutProperty(layer.id, "visibility", "none");
-        } else if (isLandTheme) {
-          // Keep the Observatory regional view clean. Generic OSM landcover /
-          // landuse polygons are not part of the evidence model and otherwise
-          // appear suddenly as the vector style crosses minzoom thresholds.
-          //
-          // Preserve ice as subtle geographic context; hide the rest.
-          if (id.includes("ice") || id.includes("glacier")) {
-            map.setPaintProperty(layer.id, "fill-color", "#101b22");
-            map.setPaintProperty(layer.id, "fill-opacity", 0.34);
-          } else {
-            map.setLayoutProperty(layer.id, "visibility", "none");
-          }
-        } else if (sourceLayer.includes("building")) {
-          map.setPaintProperty(layer.id, "fill-color", "#0b151b");
-          map.setPaintProperty(layer.id, "fill-opacity", 0.48);
-        }
+    if (isBuilding) {
+      buildings.push(layer.id);
+      if (layer.type === "fill") {
+        safePaint(map, layer.id, "fill-color", "#71868b");
+        safePaint(map, layer.id, "fill-opacity", 0.62);
+        safePaint(map, layer.id, "fill-outline-color", "#9aadb1");
+      } else if (layer.type === "fill-extrusion") {
+        safePaint(map, layer.id, "fill-extrusion-color", "#71868b");
+        safePaint(map, layer.id, "fill-extrusion-opacity", 0.56);
+      } else if (layer.type === "line") {
+        safePaint(map, layer.id, "line-color", "#9aadb1");
+        safePaint(map, layer.id, "line-opacity", 0.66);
+      }
+      continue;
+    }
+
+    if (isTransportGeometry) {
+      transport.push(layer.id);
+      if (layer.type === "line") {
+        const isTrack = id.includes("path") || id.includes("track");
+        safePaint(map, layer.id, "line-color", isTrack ? "#64747a" : "#7c8d92");
+        safePaint(map, layer.id, "line-opacity", isTrack ? 0.36 : 0.58);
+      } else if (layer.type === "fill") {
+        safePaint(map, layer.id, "fill-color", "#5d6d72");
+        safePaint(map, layer.id, "fill-opacity", 0.48);
+      }
+      continue;
+    }
+
+    if (isAeroway) {
+      facilities.push(layer.id);
+      if (layer.type === "line") {
+        safePaint(map, layer.id, "line-color", "#9a927d");
+        safePaint(map, layer.id, "line-opacity", 0.52);
+      } else if (layer.type === "fill") {
+        safePaint(map, layer.id, "fill-color", "#756f60");
+        safePaint(map, layer.id, "fill-opacity", 0.34);
+      } else if (layer.type === "symbol") {
+        safeLayout(map, layer.id, "text-font", ["Noto Sans Regular"]);
+        safeLayout(map, layer.id, "text-size", [
+          "interpolate", ["linear"], ["zoom"],
+          7, 11.5,
+          11, 13,
+          15, 14.5,
+          19, 16,
+        ]);
+        safePaint(map, layer.id, "text-color", "#ddd5bc");
+        safePaint(map, layer.id, "text-halo-color", "rgba(3, 12, 17, .98)");
+        safePaint(map, layer.id, "text-halo-width", 1.8);
+        safePaint(map, layer.id, "text-halo-blur", 0.25);
+      }
+      continue;
+    }
+
+    if (isPoi) {
+      // Generic commercial / leisure POIs are noise for the Observatory.
+      // Keep only infrastructure/public-service style POI layers as context.
+      if (!isFacilityPoi) {
+        safeLayout(map, layer.id, "visibility", "none");
         continue;
       }
 
-      if (layer.type === "line") {
-        const isParkOrLandTheme =
-          sourceLayer === "park" ||
-          sourceLayer.includes("protected") ||
-          sourceLayer.includes("landcover") ||
-          sourceLayer.includes("landuse") ||
-          id.includes("park") ||
-          id.includes("protected") ||
-          id.includes("landcover") ||
-          id.includes("landuse");
-
-        if (isParkOrLandTheme) {
-          map.setLayoutProperty(layer.id, "visibility", "none");
-          continue;
-        }
-
-        const isWaterway =
-          sourceLayer === "waterway" ||
-          sourceLayer.includes("waterway") ||
-          id.includes("waterway") ||
-          id.includes("river");
-        if (isWaterway) {
-          waterways.push(layer.id);
-          map.setPaintProperty(layer.id, "line-color", "#2c7287");
-          map.setPaintProperty(layer.id, "line-opacity", 0.72);
-        } else if (sourceLayer.includes("transportation") || id.includes("road")) {
-          map.setPaintProperty(layer.id, "line-color", "#182a31");
-          map.setPaintProperty(layer.id, "line-opacity", 0.38);
-        } else if (sourceLayer.includes("boundary") || id.includes("boundary")) {
-          map.setPaintProperty(layer.id, "line-color", "#28404a");
-          map.setPaintProperty(layer.id, "line-opacity", 0.34);
-        }
+      facilities.push(layer.id);
+      if (layer.type === "symbol") {
+        safeLayout(map, layer.id, "text-font", ["Noto Sans Regular"]);
+        safeLayout(map, layer.id, "text-size", [
+          "interpolate", ["linear"], ["zoom"],
+          8, 11.5,
+          12, 13,
+          16, 14.5,
+          20, 15.5,
+        ]);
+        safePaint(map, layer.id, "text-color", "#c7dce1");
+        safePaint(map, layer.id, "text-halo-color", "rgba(3, 12, 17, .98)");
+        safePaint(map, layer.id, "text-halo-width", 1.75);
+        safePaint(map, layer.id, "text-halo-blur", 0.25);
+        safePaint(map, layer.id, "icon-opacity", 0.9);
       }
-    } catch {
-      // Upstream styles differ. Unsupported paint/layout properties are skipped.
+      continue;
+    }
+
+    if (isBoundary) {
+      if (layer.type === "line") {
+        safePaint(map, layer.id, "line-color", "#53676e");
+        safePaint(map, layer.id, "line-opacity", 0.42);
+      }
+      continue;
+    }
+
+    if (layer.type === "symbol") {
+      // Observatory owns community naming. Upstream place labels (city/town/
+      // village) duplicate the governed Kristal community label at the same
+      // coordinates, so suppress them while retaining water/road/context names.
+      const isPlaceLabel =
+        sourceLayer === "place" ||
+        sourceLayer.includes("place") ||
+        id.includes("place") ||
+        id.includes("city") ||
+        id.includes("town") ||
+        id.includes("village");
+      if (isPlaceLabel) {
+        safeLayout(map, layer.id, "visibility", "none");
+        continue;
+      }
+
+      // Force a single supported font to avoid mixed Open Sans + Arial Unicode
+      // glyph requests in MapLibre v6.
+      safeLayout(map, layer.id, "text-font", ["Noto Sans Regular"]);
+
+      const isTransportLabel =
+        sourceLayer.includes("transportation_name") ||
+        id.includes("road") ||
+        id.includes("street") ||
+        id.includes("highway");
+
+      safeLayout(map, layer.id, "text-size", isTransportLabel
+        ? ["interpolate", ["linear"], ["zoom"], 8, 11, 12, 12.5, 16, 14, 20, 15]
+        : ["interpolate", ["linear"], ["zoom"], 3, 11.5, 7, 12.5, 11, 13.5, 15, 14.5, 20, 15.5]);
+      safePaint(map, layer.id, "text-color", "#c5d9de");
+      safePaint(map, layer.id, "text-halo-color", "rgba(3, 12, 17, .94)");
+      safePaint(map, layer.id, "text-halo-width", 1.7);
+      safePaint(map, layer.id, "text-halo-blur", 0.25);
+      labels.push(layer.id);
+      continue;
+    }
+
+    // Everything else is intentionally suppressed in Atlas mode. This keeps
+    // regional and high-zoom views stable instead of revealing arbitrary OSM
+    // thematic fills as zoom thresholds are crossed.
+    if (layer.type === "fill" || layer.type === "line" || layer.type === "circle") {
+      safeLayout(map, layer.id, "visibility", "none");
     }
   }
 
-  return { labelLayerIds: labels, waterwayLayerIds: waterways };
+  return {
+    labelLayerIds: labels,
+    hydrographyLayerIds: hydrography,
+    waterwayLayerIds: waterways,
+    buildingLayerIds: buildings,
+    transportLayerIds: transport,
+
+    facilityLayerIds: facilities,
+  };
+}
+
+export function setBasemapLayerGroupVisible(
+  map: MapLibreMap,
+  layerIds: string[],
+  visible: boolean,
+) {
+  for (const id of layerIds) {
+    safeLayout(map, id, "visibility", visible ? "visible" : "none");
+  }
 }
 
 export function setBasemapLabelsVisible(
@@ -186,13 +368,7 @@ export function setBasemapLabelsVisible(
   layerIds: string[],
   visible: boolean,
 ) {
-  for (const id of layerIds) {
-    try {
-      map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
-    } catch {
-      // Style may have changed while the control was toggled.
-    }
-  }
+  setBasemapLayerGroupVisible(map, layerIds, visible);
 }
 
 export function setContextualHydrographyVisible(
@@ -200,27 +376,23 @@ export function setContextualHydrographyVisible(
   layerIds: string[],
   visible: boolean,
 ) {
-  for (const id of layerIds) {
-    try {
-      map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
-    } catch {
-      // Style may have changed while the control was toggled.
-    }
-  }
+  setBasemapLayerGroupVisible(map, layerIds, visible);
 }
-
 
 /**
  * Add a manually published local satellite tile pyramid.
  *
  * No external satellite provider is contacted at runtime. The manifest must
- * reference a local path such as /imagery/sentinel2-quebec-2020/{z}/{x}/{y}.png.
+ * reference a repo-local or loopback/local-network ZXY endpoint, e.g.
+ * http://127.0.0.1:8765/postville/{z}/{x}/{y}.webp.
+ *
+ * v0.3.2 deliberately keeps this layer hidden until the user turns it on.
  */
 export function addLocalSatelliteImagery(
   map: MapLibreMap,
   manifest: LocalImageryManifest | null,
 ): boolean {
-  if (!manifest?.available || !manifest.tile_template.startsWith("/")) return false;
+  if (!manifest?.available || !/^(\/|https?:\/\/)/i.test(manifest.tile_template)) return false;
 
   try {
     if (!map.getSource(LOCAL_SATELLITE_SOURCE_ID)) {
@@ -247,30 +419,23 @@ export function addLocalSatelliteImagery(
           source: LOCAL_SATELLITE_SOURCE_ID,
           minzoom: Math.max(0, manifest.minzoom - 0.25),
           maxzoom: 20.01,
-          layout: {
-            visibility: "none",
-          },
+          layout: { visibility: "none" },
           paint: {
             "raster-opacity": [
               "interpolate",
               ["linear"],
               ["zoom"],
-              Math.max(0, manifest.minzoom - 0.25),
-              0.0,
-              manifest.minzoom + 0.5,
-              0.18,
-              manifest.minzoom + 1.5,
-              0.52,
-              manifest.minzoom + 2.5,
-              0.82,
-              manifest.minzoom + 3.5,
-              0.96,
+              Math.max(0, manifest.minzoom - 0.25), 0.0,
+              manifest.minzoom + 0.5, 0.12,
+              manifest.minzoom + 1.5, 0.34,
+              manifest.minzoom + 2.5, 0.52,
+              manifest.minzoom + 3.5, 0.62,
             ],
-            "raster-saturation": -0.08,
-            "raster-contrast": 0.06,
-            "raster-brightness-min": 0.03,
-            "raster-brightness-max": 0.96,
-            "raster-fade-duration": 260,
+            "raster-saturation": -0.14,
+            "raster-contrast": 0.02,
+            "raster-brightness-min": 0.08,
+            "raster-brightness-max": 0.92,
+            "raster-fade-duration": 220,
           },
         },
         firstLineOrSymbol?.id,
@@ -279,21 +444,158 @@ export function addLocalSatelliteImagery(
 
     return true;
   } catch {
-    // A malformed local tile pyramid must never prevent the Observatory from loading.
     return false;
   }
 }
 
 export function setLocalSatelliteImageryVisible(map: MapLibreMap, visible: boolean) {
   if (!map.getLayer(LOCAL_SATELLITE_LAYER_ID)) return;
+  safeLayout(map, LOCAL_SATELLITE_LAYER_ID, "visibility", visible ? "visible" : "none");
+}
+
+const LOCAL_TERRAIN_SOURCE_ID = "kristal-local-terrain-source";
+const LOCAL_TERRAIN_RELIEF_LAYER_ID = "kristal-local-terrain-relief";
+const LOCAL_TERRAIN_BASIN_LAYER_ID = "kristal-local-terrain-basin";
+
+/**
+ * Add locally generated HRDEM screening cells. The source is deliberately a
+ * repo-local GeoJSON product so the public map never invents relief geometry
+ * or depends on a runtime DEM provider.
+ */
+export function addLocalTerrainScreening(
+  map: MapLibreMap,
+  manifest: LocalTerrainManifest | null,
+): boolean {
+  if (!manifest?.available || !manifest.geojson_url.startsWith("/")) return false;
 
   try {
-    map.setLayoutProperty(
-      LOCAL_SATELLITE_LAYER_ID,
-      "visibility",
-      visible ? "visible" : "none",
+    if (!map.getSource(LOCAL_TERRAIN_SOURCE_ID)) {
+      map.addSource(LOCAL_TERRAIN_SOURCE_ID, {
+        type: "geojson",
+        data: manifest.geojson_url,
+        attribution: `${manifest.source ?? "Local terrain"}${manifest.vertical_datum ? ` · ${manifest.vertical_datum}` : ""}`,
+      });
+    }
+
+    const firstLineOrSymbol = (map.getStyle().layers ?? []).find(
+      (layer) => layer.type === "line" || layer.type === "symbol",
     );
+
+    if (!map.getLayer(LOCAL_TERRAIN_RELIEF_LAYER_ID)) {
+      map.addLayer(
+        {
+          id: LOCAL_TERRAIN_RELIEF_LAYER_ID,
+          type: "fill",
+          source: LOCAL_TERRAIN_SOURCE_ID,
+          minzoom: Math.max(0, manifest.minzoom - 0.5),
+          maxzoom: Math.min(20.01, manifest.maxzoom + 1),
+          layout: { visibility: "none" },
+          paint: {
+            "fill-antialias": false,
+            "fill-color": [
+              "interpolate",
+              ["linear"],
+              ["get", "elevation_m"],
+              0, "#0e4d58",
+              40, "#26736f",
+              100, "#5a8a6b",
+              200, "#9b9867",
+              400, "#a77b5b",
+              700, "#8f6e68",
+              1000, "#c3bbb0",
+            ],
+            "fill-opacity": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              manifest.minzoom, 0.25,
+              Math.min(manifest.maxzoom, manifest.minzoom + 3), 0.46,
+              manifest.maxzoom, 0.58,
+            ],
+          },
+        },
+        firstLineOrSymbol?.id,
+      );
+    }
+
+    if (!map.getLayer(LOCAL_TERRAIN_BASIN_LAYER_ID)) {
+      map.addLayer(
+        {
+          id: LOCAL_TERRAIN_BASIN_LAYER_ID,
+          type: "fill",
+          source: LOCAL_TERRAIN_SOURCE_ID,
+          minzoom: Math.max(0, manifest.minzoom - 0.5),
+          maxzoom: Math.min(20.01, manifest.maxzoom + 1),
+          filter: ["==", ["get", "site_id"], "__none__"],
+          layout: { visibility: "none" },
+          paint: {
+            "fill-antialias": false,
+            "fill-color": basinDepthColorExpression(50),
+            "fill-opacity": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              manifest.minzoom, 0.52,
+              Math.min(manifest.maxzoom, manifest.minzoom + 3), 0.72,
+              manifest.maxzoom, 0.82,
+            ],
+          },
+        },
+        firstLineOrSymbol?.id,
+      );
+    }
+
+    return true;
   } catch {
-    // Style may be rebuilding during a toggle.
+    return false;
+  }
+}
+
+function basinDepthColorExpression(riseM: number): any {
+  const depth = ["max", 0, ["-", riseM, ["get", "relative_elevation_m"]]];
+  return [
+    "interpolate",
+    ["linear"],
+    depth,
+    0, "rgba(142, 231, 244, 0.34)",
+    5, "rgba(91, 201, 232, 0.50)",
+    15, "rgba(43, 153, 210, 0.66)",
+    30, "rgba(26, 105, 177, 0.76)",
+    60, "rgba(27, 67, 137, 0.84)",
+    120, "rgba(48, 43, 105, 0.90)",
+  ];
+}
+
+export function setLocalTerrainReliefVisible(map: MapLibreMap, visible: boolean) {
+  if (!map.getLayer(LOCAL_TERRAIN_RELIEF_LAYER_ID)) return;
+  safeLayout(map, LOCAL_TERRAIN_RELIEF_LAYER_ID, "visibility", visible ? "visible" : "none");
+}
+
+export function setLocalTerrainBasinsVisible(map: MapLibreMap, visible: boolean) {
+  if (!map.getLayer(LOCAL_TERRAIN_BASIN_LAYER_ID)) return;
+  safeLayout(map, LOCAL_TERRAIN_BASIN_LAYER_ID, "visibility", visible ? "visible" : "none");
+}
+
+export function setLocalTerrainBasinState(
+  map: MapLibreMap,
+  siteId: string | null,
+  riseM: number,
+) {
+  if (!map.getLayer(LOCAL_TERRAIN_BASIN_LAYER_ID)) return;
+  const safeRise = Math.max(0, Math.min(500, Number.isFinite(riseM) ? riseM : 0));
+  try {
+    map.setFilter(LOCAL_TERRAIN_BASIN_LAYER_ID,
+      siteId
+        ? [
+            "all",
+            ["==", ["get", "site_id"], siteId],
+            ["<=", ["get", "spill_rise_m"], safeRise],
+            ["<=", ["get", "relative_elevation_m"], safeRise],
+          ]
+        : ["==", ["get", "site_id"], "__none__"],
+    );
+    map.setPaintProperty(LOCAL_TERRAIN_BASIN_LAYER_ID, "fill-color", basinDepthColorExpression(safeRise));
+  } catch {
+    // Ignore style transitions during teardown/reload.
   }
 }

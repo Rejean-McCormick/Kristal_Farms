@@ -83,6 +83,10 @@ Use evidence appropriate to the risk. Review material findings concerning:
 
 Separate allegation from substantiated finding. Record source quality and date.
 
+## Stage 4.1 — Downstream/reseller capacity boundary
+
+If the prospect resells GPU/cloud capacity, determine whether Kristal Farms capacity would enter a global pool that can serve an `INELIGIBLE` or `SUSPENDED` downstream counterparty. If yes, require a dedicated eligibility-bounded pool or another auditable allocation mechanism before commercial advancement. Audit commercial eligibility records, not private workload content.
+
 ## Stage 5 — Technical/commercial fit
 
 Only after the counterparty may proceed, collect the minimum non-content information needed to design service:

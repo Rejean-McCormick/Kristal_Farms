@@ -2,6 +2,16 @@
 
 This changelog records product and repository releases. Superseded material is preserved under `archive/` for provenance.
 
+## 2026-08-31 — International mobilization and distributed-resilience plan (working update)
+
+- Added the owner-directed international mobilization plan: new renewable generation consumed locally, practical marine access, standard high-capacity telecom and comparatively low ecological sensitivity as the principal site doctrine.
+- Clarified that existing dams may support construction but are not the long-term commercial resource thesis.
+- Added a 12-slot international portfolio frame without fabricating a twelfth counterparty or treating research prospects as committed participants.
+- Added WS-17 for international demand validation, Canadian coordination, carrier feasibility and concentration-risk management.
+- Formalized distributed international resilience across tenants, jurisdictions, carriers, ports and sites while explicitly rejecting claims of automatic collective defence, extraterritoriality or foreign-government protection.
+- Added evidence gates for claims about fossil displacement, ecological sensitivity, international coalition status and diplomatic/security resilience.
+- Reaffirmed standards-based telecom handoff and tenant control of private compute; no proprietary Kristal data-transport protocol or shared tenant data plane is introduced.
+
 ## 2026-08-31 — Mine infrastructure reuse and pumped-storage research (working update)
 
 - Added WS-16 for mine infrastructure reuse and storage, preserving unranked screening and corridor/site dossier governance.

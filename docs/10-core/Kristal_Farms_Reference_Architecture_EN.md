@@ -49,7 +49,7 @@ Shared physical-service interfaces and tenant-controlled digital systems are a c
 
 ## International tenant governance
 
-Kristal Farms is intended to be internationally marketable while remaining selective about counterparties. Tenant eligibility is determined before access through jurisdictional, ownership/control, sanctions/trade-control and responsible-business due diligence. The current owner policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles.
+Kristal Farms is intended to be internationally marketable while remaining selective about counterparties. Tenant eligibility is determined before access through the jurisdiction schedule, ownership/control, sanctions/trade-control, downstream-customer exposure and responsible-business due diligence.
 
 This commercial exclusion does not itself create a technology-origin embargo.
 

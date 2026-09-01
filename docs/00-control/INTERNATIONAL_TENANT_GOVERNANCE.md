@@ -21,13 +21,15 @@ International tenancy is an intended commercial pathway. Prospecting should prio
 
 Commercial scale does not override the eligibility policy. A large prospective tenant is not automatically preferred over a smaller eligible tenant.
 
-### 2.1 Current owner-directed exclusion
+### 2.1 Current owner-directed jurisdiction schedule
 
-**United States-based or United States-controlled counterparties are not eligible for Kristal Farms tenant, anchor-offtaker or tenant-operator roles under the current owner policy.**
+The machine-readable jurisdiction schedule is the source of truth for country-level project posture. Under the proposed r2 C0 update, the following jurisdictions are **INELIGIBLE** for tenant, anchor-offtaker and tenant-operator roles: **United States, Russia, Belarus, China, Iran, North Korea, Syria and Myanmar**. The following are placed in **SUSPENDED** status pending a later explicit C0 review: **Afghanistan, Libya, Nicaragua, Somalia, Sudan, South Sudan, Venezuela, Yemen and Zimbabwe**.
 
-This is a project-level values and commercial-positioning decision. It is not a factual claim that every United States person or organization presents the same conduct or risk. Any future change requires an explicit C0 project-control decision.
+These are project-level values, risk and commercial-positioning controls. They are not factual claims that every person or organization associated with a listed jurisdiction presents the same conduct or risk. A country-level posture never replaces legal-counterparty, ownership/control, sanctions or transaction-specific legal review.
 
-This exclusion applies to the **counterparty relationship**. It does not, by itself, prohibit equipment, software, standards, components, financing instruments or supply-chain dependencies originating in the United States. Technology-origin policy is a separate decision and must not be inferred from tenant eligibility.
+The schedule applies to the **counterparty relationship** and to downstream legal counterparties where capacity is resold or subleased. It does not, by itself, prohibit equipment, software, standards, components, financing instruments or supply-chain dependencies originating in an ineligible jurisdiction. Technology-origin policy is a separate decision and must not be inferred from tenant eligibility.
+
+See `contracts/policy/jurisdiction-eligibility.yaml`. Applying the proposed r2 overlay constitutes an explicit C0 adoption decision.
 
 ## 3. Eligibility states
 
@@ -179,6 +181,14 @@ Where downstream tenancy is allowed, contracts should define:
 - notification of material control changes;
 - suspension rights where the downstream structure cannot be verified.
 
+### 11.1 Capacity-pool separation for resellers and GPU clouds
+
+A non-ineligible primary counterparty must not be used as a conduit for ineligible downstream customers. If the tenant/operator normally sells from a global pooled capacity service that may serve ineligible counterparties, the Kristal Farms capacity must be contractually and operationally assigned to a **dedicated eligibility-bounded pool** or another verifiable allocation mechanism.
+
+Kristal Farms may audit the downstream **eligibility process and commercial allocation records** needed to verify compliance. It must not use this audit right as a pretext to inspect private models, datasets, prompts, outputs or decrypted workload content.
+
+If downstream eligibility cannot be verified, new allocation, expansion or service may be suspended under the policy.
+
 ## 12. Governance and evidence discipline
 
 International eligibility decisions should record:
@@ -217,3 +227,19 @@ This document governs **commercial eligibility and confidentiality boundaries**.
 - establish that a specific prospective organization has expressed interest in Kristal Farms;
 - establish a technology-origin embargo;
 - create a blanket military/intelligence prohibition beyond the current enhanced-due-diligence treatment unless a later explicit C0 decision does so.
+
+## 15. International diversification and resilience boundary
+
+Kristal Farms may intentionally diversify eligible tenants across multiple jurisdictions to reduce commercial concentration risk and improve continuity incentives. A disruption affecting several independent foreign tenants may create broader commercial, insurance, supply-chain or diplomatic attention than a single-tenant asset would receive.
+
+That strategic benefit must remain bounded by evidence and contract. International tenancy does **not** by itself:
+
+- create a military or collective-defence alliance;
+- make Kristal Farms sovereign or extraterritorial territory of a tenant's home state;
+- guarantee intervention by a foreign government;
+- override Canadian law, sanctions, trade controls or lawful process;
+- permit a tenant to conceal its legal identity or effective control behind the black-box content boundary.
+
+The project should therefore describe this objective as **international stakeholder diversification** or **distributed international resilience** until actual agreements justify stronger language.
+
+See `docs/10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md`.

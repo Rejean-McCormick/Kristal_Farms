@@ -1,0 +1,1125 @@
+{
+  "schema": "kristal-community-infrastructure/v1",
+  "generated_at": "2026-09-01T12:55:12Z",
+  "ranking_allowed": false,
+  "semantics": {
+    "population": "Published census/context fact with explicit year and provenance.",
+    "airport": "Community access context; published runway dimensions are references, not operational flight-planning data.",
+    "marine": "Access/port context; null berth/dock/draft fields mean not verified, not zero.",
+    "runtime_basemap": "OpenMapTiles/OpenStreetMap may add mapped geometry/extent for display only and is not Kristal evidence."
+  },
+  "items": [
+    {
+      "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+      "name": "Akulivik",
+      "region": "Nunavik / Hudson coast",
+      "ranking_allowed": false,
+      "population": {
+        "value": 642,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YKO",
+        "name": "Akulivik Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+      "name": "Aupaluk",
+      "region": "Nunavik / Ungava coast",
+      "ranking_allowed": false,
+      "population": {
+        "value": 233,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YLA",
+        "name": "Aupaluk Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "26738a50-a36b-5cc6-bc87-39101cb50114",
+      "name": "Chisasibi",
+      "region": "James Bay / outside Nunavik territory",
+      "ranking_allowed": false,
+      "population": {
+        "value": 4985,
+        "year": 2021,
+        "geography": "Terres réservées aux Cris (TC)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": "Community count uses the Chisasibi Cree reserved-land census subdivision; the separate Chisasibi Village cri census subdivision reports 0 residents."
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YKU",
+        "name": "Chisasibi Airport",
+        "runway_length_m": null,
+        "runway_surface": null,
+        "dimension_status": "runtime_basemap_or_unknown",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/aide-financiere/aerien-maritime-ferroviaire/acces-aerien-regions/voyager-qc-meilleur-prix",
+          "reference_date": null
+        },
+        "dimension_source": null,
+        "note": "Air service/access confirmed; runway dimension is intentionally not published in this snapshot."
+      },
+      "marine": {
+        "access_known": false,
+        "context": null,
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "unknown",
+        "size_status": "unknown",
+        "source": null,
+        "note": "No facility-specific marine size source promoted in this snapshot."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+      "name": "Hopedale",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false,
+      "population": {
+        "value": 596,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YHO",
+        "name": "Hopedale Airport",
+        "runway_length_m": 762.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference; verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "scheduled_north_labrador_ferry_stop",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "664545fc-d0f4-5caa-9278-510a50261908",
+      "name": "Inukjuak",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 1821,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YPH",
+        "name": "Inukjuak Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+      "name": "Ivujivik",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false,
+      "population": {
+        "value": 412,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YIK",
+        "name": "Ivujivik Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "e00199cc-0e09-5984-a972-200508477085",
+      "name": "Kangiqsualujjuaq",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 956,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YLU",
+        "name": "Kangiqsualujjuaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+      "name": "Kangiqsujuaq",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false,
+      "population": {
+        "value": 837,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YKG",
+        "name": "Kangiqsujuaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "fb68046b-06d8-5282-adc5-58528d35e115",
+      "name": "Kangirsuk",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 561,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YAS",
+        "name": "Kangirsuk Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "2165eaf4-9f32-54db-9641-3467d2ab2320",
+      "name": "Kuujjuaq",
+      "region": "Nunavik / Koksoak-Ungava",
+      "ranking_allowed": false,
+      "population": {
+        "value": 2668,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": "Statistics Canada count carries a caution/amendment flag in the 2021 profile."
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YVP",
+        "name": "Kuujjuaq Airport",
+        "runway_length_m": 1829.0,
+        "runway_surface": null,
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "NAV CANADA",
+          "url": "https://www.navcanada.ca/en/ecfs_05_en.pdf",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_05_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Longest runway from static 2020 CFS sample (6000 ft); current operational data must be checked separately."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "50330e9a-b932-515e-a865-bceb668aadd3",
+      "name": "Kuujjuaraapik",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 792,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": "Statistics Canada count carries a caution/amendment flag in the 2021 profile."
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YGW",
+        "name": "Kuujjuarapik Airport",
+        "runway_length_m": 1549.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": "Quebec page gives 1,549 m; the feet value displayed on that page appears inconsistent, so only the metric value is stored."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+      "name": "Makkovik",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false,
+      "population": {
+        "value": 365,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YMN",
+        "name": "Makkovik Airport",
+        "runway_length_m": 790.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (2592 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "scheduled_north_labrador_ferry_stop",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+      "name": "Nain",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false,
+      "population": {
+        "value": 847,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YDP",
+        "name": "Nain Airport",
+        "runway_length_m": 605.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Existing-airstrip dimension is a static CFS reference (1986 ft). A new Nain airport project has been under assessment; verify current facility before use."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "scheduled_north_labrador_ferry_stop",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+      "name": "Postville",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false,
+      "population": {
+        "value": 188,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YSO",
+        "name": "Postville Airport",
+        "runway_length_m": 785.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (2576 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "scheduled_north_labrador_ferry_stop",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+      "name": "Puvirnituq",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 2129,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YPX",
+        "name": "Puvirnituq Airport",
+        "runway_length_m": 1920.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+      "name": "Quaqtaq",
+      "region": "Nunavik / Hudson Strait / Ungava side",
+      "ranking_allowed": false,
+      "population": {
+        "value": 453,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YHA",
+        "name": "Quaqtaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+      "name": "Rigolet",
+      "region": "Nunatsiavut / Labrador",
+      "ranking_allowed": false,
+      "population": {
+        "value": 327,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YRG",
+        "name": "Rigolet Airport",
+        "runway_length_m": 761.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (~2496–2500 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "context": "scheduled_north_labrador_ferry_stop",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+      "name": "Salluit",
+      "region": "Nunavik / Hudson Strait",
+      "ranking_allowed": false,
+      "population": {
+        "value": 1580,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YZG",
+        "name": "Salluit Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "97c7593b-446f-5d9a-a8b0-c866aff76414",
+      "name": "Tasiujaq",
+      "region": "Nunavik / Ungava Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 420,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YTQ",
+        "name": "Tasiujaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    },
+    {
+      "entity_id": "62ac2ffe-be96-5a7b-84df-3d82a892f092",
+      "name": "Umiujaq",
+      "region": "Nunavik / Hudson Bay",
+      "ranking_allowed": false,
+      "population": {
+        "value": 541,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "airport": {
+        "access_known": true,
+        "code": "YMU",
+        "name": "Umiujaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "context": "regional_14_port_system_context",
+        "facility_name": null,
+        "dock_length_m": null,
+        "max_draft_m": null,
+        "heavy_lift_status": "not_verified",
+        "size_status": "runtime_basemap_or_unknown",
+        "source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "runtime_enrichment": {
+        "basemap_facility_geometry_allowed": true,
+        "basemap_population_fallback_allowed": false,
+        "note": "Mapped airport/dock geometry may enrich display dimensions at runtime, but never overrides published population or provenance."
+      }
+    }
+  ]
+}

@@ -99,3 +99,39 @@ python ..\..\pipelines\imagery\build_local_satellite.py `
 ```
 
 See `docs/frontend/offline-satellite.md` and `pipelines/imagery/README.md`.
+
+## Kristal Observatory shell and International 12
+
+The application now uses `/` as the single **Kristal Observatory** entry point. A persistent workspace bar contains the two governed surfaces:
+
+- **Northern Atlas** — default geographic/evidence workspace;
+- **International 12** — open with `/?section=international`.
+
+The legacy `/international` route redirects to `/?section=international` so existing bookmarks continue to work. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the global shell deliberately uses `section=` to avoid colliding with map state.
+
+The International 12 interface:
+
+- shows all twelve current research portfolio slots;
+- filters by organization, home jurisdiction, engagement tier and target service offer;
+- exposes the candidate rationale, hard commercial gate, jurisdiction state and ring-fencing flag;
+- keeps "research candidate" visibly distinct from interest, commitment or contract;
+- links back to the Northern Atlas without mixing international commercial research into map geometry.
+
+The runtime data path follows the same publication boundary as the Observatory:
+
+```text
+research/commercial/international_portfolio_12.yaml
+contracts/policy/jurisdiction-eligibility.yaml
+        ↓ explicit publish / validation
+pipelines/publish/build_international_portfolio_public.py
+        ↓
+data/publish/current/international_portfolio_public.json
+        ↓ read only
+app/api/international/portfolio → Kristal Observatory → International 12
+```
+
+The Web application MUST NOT read `research/` or the policy YAML directly at runtime. Rebuild the public artifact after an adopted portfolio/policy change:
+
+```bash
+python pipelines/publish/build_international_portfolio_public.py
+```

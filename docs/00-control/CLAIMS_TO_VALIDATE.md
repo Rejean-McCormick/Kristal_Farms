@@ -67,3 +67,15 @@ Any project dossier must validate rights-holder/community process, decision righ
 | A tenant can use a northern site without material product impact | Workload-specific latency, network, reliability, curtailment, cooling, density, maintenance and data-residency requirements. |
 | Black-box tenancy means Kristal Farms can guarantee the tenant's private workload content is ethically compliant | Not supportable. The model intentionally avoids routine access to private encrypted content; governance occurs through counterparty selection, contract and lawful process. |
 | Excluding U.S. counterparties also excludes U.S.-origin technology | Not assumed. Technology-origin/export-control policy is a separate decision. |
+
+## International mobilization and resilience
+
+| Claim / assumption | Required evidence |
+|---|---|
+| Global compute growth necessarily increases fossil generation in a target country | Country- and time-specific grid mix, marginal-generation/emissions analysis and workload growth evidence. Do not generalize from annual average electricity mix alone. |
+| A named country or organization can deploy tenant-controlled server containers/modules at a Kristal Farms site | Direct counterparty requirements, Canadian legal/trade review, equipment import/export constraints, data-residency review, telecom requirements and an attributable commercial signal. |
+| Twelve international participants form a coalition | Multiple attributable expressions of interest/agreements from distinct eligible counterparties plus defined roles. A prospect list is not a coalition. |
+| International participation makes Kristal Farms protected from attack or equivalent to sovereign territory | Not supportable as a general claim. Any actual security/diplomatic commitment would require explicit legal/government evidence. Commercial stakeholder diversity may improve resilience but is not collective defence. |
+| International tenant diversity materially improves continuity and recovery | Concentration analysis, contractual continuity obligations, multi-carrier/multi-port/site topology, insurer/lender treatment and incident/recovery planning. |
+| A coastal site has “low biodiversity” or low ecological impact | Site-specific habitat/species data, protected-area review, seasonal surveys where required, cumulative-effects analysis and rights/governance/environmental assessment. Use “comparatively low ecological sensitivity” only as a screening hypothesis until validated. |
+| Local generation plus compute has a lower footprint than electrical export | Equal-scope lifecycle comparison including reservoirs, civil works, marine works, fibre, roads, lines, materials, habitat, water and restoration. |

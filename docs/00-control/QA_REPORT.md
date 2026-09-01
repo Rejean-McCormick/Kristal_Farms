@@ -11,7 +11,7 @@
 - Economics validator: **PASS** — 10 benchmarks, 3 scenarios, 64 sensitivity cases.
 - Active repository Markdown relative links: **160 checked, 0 broken**.
 - Repository-hygiene tests: **PASS** — no internal research numbering, retired product naming, unrelated project terminology or superseded siting rules in active surfaces.
-- International tenancy policy contracts: **PASS** — categorical eligibility, U.S. counterparty exclusion, non-listed jurisdiction EDD default and content-blind tenancy invariants parse and test successfully.
+- International tenancy policy contracts: **PASS** — categorical eligibility, jurisdiction schedule, non-listed jurisdiction EDD default, downstream eligibility/ring-fencing and content-blind tenancy invariants parse and test successfully.
 - Mine-reuse policy tests: **PASS** — recent-closure preference is limited to infrastructure reuse; historical open pits remain eligible for reservoir research; bunker/power/ranking inference guards are enforced.
 - Screening: **unranked**.
 

@@ -1,0 +1,9 @@
+{
+  "schema": "kristal-watershed-boundaries/v1",
+  "status": "placeholder",
+  "source": "Natural Resources Canada — National Hydro Network (NHN) Work Unit Limits",
+  "source_url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/vector/geobase_nhn_rhn/index/nhn_index_geobase.kmz",
+  "licence": "Open Government Licence - Canada",
+  "coverage": "pending one-time local fetch",
+  "note": "NHN work-unit limits are based on Water Survey of Canada sub-sub-drainage areas. They are contextual drainage divides, not exact site-specific upstream catchments."
+}

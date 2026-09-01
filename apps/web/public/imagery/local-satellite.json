@@ -1,17 +1,21 @@
 {
   "schema": "kristal-local-imagery/v1",
-  "id": "local-satellite",
-  "title": "Local satellite imagery",
-  "available": false,
-  "tile_template": "/imagery/local-satellite/{z}/{x}/{y}.png",
-  "tile_size": 256,
+  "id": "postville",
+  "title": "Sentinel-2 — Postville",
+  "available": true,
+  "tile_template": "http://127.0.0.1:8765/postville/{z}/{x}/{y}.webp",
+  "tile_size": 512,
   "minzoom": 7,
   "maxzoom": 13,
-  "bounds": null,
-  "source": null,
-  "acquired": null,
+  "bounds": [
+    -60.1016395,
+    54.6700126,
+    -59.3879653,
+    55.0235572
+  ],
+  "source": "Sentinel-2 L2A COG via Element 84 Earth Search",
+  "acquired": "2026-06-08",
   "license": null,
-  "attribution": null,
-  "source_sha256": null,
-  "generated_at": null
+  "attribution": "Contains modified Copernicus Sentinel data",
+  "generated_at": "2026-09-01T12:55:16.6416637Z"
 }

@@ -30,7 +30,7 @@ type SearchItem = {
   keywords: string;
 };
 
-export function ObservatoryExplorer() {
+export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean } = {}) {
   const [bootstrap, setBootstrap] = useState<ExplorerBootstrap | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
@@ -47,8 +47,11 @@ export function ObservatoryExplorer() {
 
   const [visibleLayers, setVisibleLayers] = useState<ObservatoryVisibleLayers>({
     communities: true,
-    hydrometric_stations: true,
+    hydrometric_stations: false,
     contextual_hydrography: true,
+    contextual_buildings: true,
+    contextual_transport: true,
+    contextual_facilities: true,
     satellite: false,
     labels: true,
   });
@@ -84,10 +87,10 @@ export function ObservatoryExplorer() {
       })
       .then((manifest) => {
         if (!manifest) return;
+        // v0.3 Vector Atlas: photographic imagery is available on demand, but
+        // never turns itself on. This prevents a local AOI rectangle from
+        // replacing the clean vector map unexpectedly.
         setLocalImagery(manifest);
-        if (manifest.available) {
-          setVisibleLayers((current) => ({ ...current, satellite: true }));
-        }
       })
       .catch((caught: unknown) => {
         if ((caught as Error).name !== "AbortError") setLocalImagery(null);
@@ -224,6 +227,7 @@ export function ObservatoryExplorer() {
   }
 
   const activeLayerCount = Object.values(visibleLayers).filter(Boolean).length;
+  const hydroOpportunityCount = bootstrap.hydroSites.length;
 
   return (
     <main className="observatory-shell">
@@ -248,6 +252,7 @@ export function ObservatoryExplorer() {
           <strong>OBSERVATORY · GEOGRAPHIC EXPLORER</strong>
         </div>
         <div className="top-actions">
+          {!embedded && <a className="top-actions__link" href="/international">International 12</a>}
           <button
             type="button"
             className={searchOpen ? "is-active" : ""}
@@ -344,6 +349,7 @@ export function ObservatoryExplorer() {
                 <span className={`layer-symbol is-${layer.id}`} aria-hidden="true" />
                 <span>
                   <strong>{layer.title}</strong>
+
                   <small>{layer.layer_group}</small>
                 </span>
                 <em>{enabled ? "ON" : "OFF"}</em>
@@ -351,31 +357,41 @@ export function ObservatoryExplorer() {
             );
           })}
 
-          <div className="layer-section-label">Photographic context</div>
-          <ContextLayerRow
-            id="satellite"
-            title={localImagery?.title ?? "Local satellite imagery"}
-            subtitle={
-              localImagery?.available
-                ? `Static repo snapshot · Z${localImagery.minzoom}–Z${localImagery.maxzoom}`
-                : "No local tile snapshot published yet"
-            }
-            checked={visibleLayers.satellite && Boolean(localImagery?.available)}
-            disabled={!localImagery?.available}
-            status={!localImagery?.available ? "LOCAL" : undefined}
-            onChange={(checked) =>
-              setVisibleLayers((current) => ({ ...current, satellite: checked }))
-            }
-          />
-
-          <div className="layer-section-label">Context map</div>
+          <div className="layer-section-label">Vector atlas</div>
           <ContextLayerRow
             id="contextual_hydrography"
-            title="Hydrography context"
+            title="Rivers + lakes"
             subtitle="OpenMapTiles / OpenStreetMap · interactive context"
             checked={visibleLayers.contextual_hydrography}
             onChange={(checked) =>
               setVisibleLayers((current) => ({ ...current, contextual_hydrography: checked }))
+            }
+          />
+          <ContextLayerRow
+            id="contextual_buildings"
+            title="Buildings"
+            subtitle="Context geometry · visible at local zoom"
+            checked={visibleLayers.contextual_buildings}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, contextual_buildings: checked }))
+            }
+          />
+          <ContextLayerRow
+            id="contextual_transport"
+            title="Roads + tracks"
+            subtitle="Transportation access context"
+            checked={visibleLayers.contextual_transport}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, contextual_transport: checked }))
+            }
+          />
+          <ContextLayerRow
+            id="contextual_facilities"
+            title="Infrastructure + access"
+            subtitle="Airports, docks, potential hydro + public facilities · context"
+            checked={visibleLayers.contextual_facilities}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, contextual_facilities: checked }))
             }
           />
           <ContextLayerRow
@@ -387,8 +403,25 @@ export function ObservatoryExplorer() {
               setVisibleLayers((current) => ({ ...current, labels: checked }))
             }
           />
+
+          <div className="layer-section-label">Photographic context</div>
+          <ContextLayerRow
+            id="satellite"
+            title={localImagery?.title ?? "Local satellite imagery"}
+            subtitle={
+              localImagery?.available
+                ? `Local PMTiles snapshot · Z${localImagery.minzoom}–Z${localImagery.maxzoom}`
+                : "No local PMTiles snapshot published yet"
+            }
+            checked={visibleLayers.satellite && Boolean(localImagery?.available)}
+            disabled={!localImagery?.available}
+            status={!localImagery?.available ? "LOCAL" : undefined}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, satellite: checked }))
+            }
+          />
           <div className="layer-panel__note">
-            Satellite imagery is a manually published static snapshot stored in the repo; it is context, not Kristal evidence. Context hydrography is also non-evidence. River research geometry remains unavailable until an authoritative connected flowline is ingested.
+            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Hydrometric stations remain available but start OFF. Hydro references are filtered to the coastal/community-scale Kristal scope (≤75 km to an active community and ≤30 km to the source mouth/coast proxy) and are never presented as engineered dam locations.
           </div>
         </section>
       )}
@@ -404,6 +437,7 @@ export function ObservatoryExplorer() {
       <div className="release-hud">
         <span>{bootstrap.rivers.length} RIVER REFERENCES</span>
         <span>{bootstrap.communities.features.length} COMMUNITIES</span>
+        <span>{hydroOpportunityCount} COASTAL HYDRO REFERENCES</span>
         <span>{bootstrap.stations.features.length} HYDROMETRIC STATIONS</span>
         <span>{activeLayerCount} LAYERS ACTIVE</span>
         <strong>RELEASE {bootstrap.release}</strong>
@@ -434,7 +468,13 @@ function ContextLayerRow({
   status,
   onChange,
 }: {
-  id: "contextual_hydrography" | "satellite" | "labels";
+  id:
+    | "contextual_hydrography"
+    | "contextual_buildings"
+    | "contextual_transport"
+    | "contextual_facilities"
+    | "satellite"
+    | "labels";
   title: string;
   subtitle: string;
   checked: boolean;

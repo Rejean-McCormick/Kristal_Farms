@@ -8,7 +8,7 @@ cd /d "%~dp0"
 
 echo.
 echo ==========================================
-echo   Kristal Farms - Observatory v0.2.4
+echo   Kristal Farms - Observatory v0.3.6
 echo ==========================================
 echo.
 
@@ -43,16 +43,26 @@ echo npm:
 call npm --version
 echo.
 
+echo Publishing coastal hydro screening scope...
+where py >nul 2>&1
+if not errorlevel 1 (
+    py pipelines\publish\build_kristal_hydro_scope.py
+) else (
+    where python >nul 2>&1
+    if not errorlevel 1 python pipelines\publish\build_kristal_hydro_scope.py
+)
+echo.
+
 pushd "apps\web"
 
-if not exist "node_modules" (
-    echo node_modules not found.
-    echo Installing frontend dependencies...
+if not exist "node_modules\maplibre-gl\package.json" (
+    echo Frontend dependencies are missing or incomplete.
+    echo Restoring the locked dependency set with npm ci...
     echo.
-    call npm install
+    call npm ci
     if errorlevel 1 (
         echo.
-        echo ERROR: npm install failed.
+        echo ERROR: npm ci failed.
         popd
         pause
         exit /b 1

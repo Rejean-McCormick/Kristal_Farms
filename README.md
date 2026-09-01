@@ -16,8 +16,11 @@ Kristal Farms combines six infrastructure and governance layers:
 4. **Digital export by fibre** — move computation and data products rather than defaulting to long-distance electrical export.
 5. **Responsible international tenancy** — screen jurisdictions, legal counterparties, beneficial ownership/control and sanctions/trade exposure before access; the current owner policy excludes United States-based or United States-controlled counterparties from tenant/anchor-offtaker/tenant-operator roles.
 6. **Content-blind tenant environments** — tenants control private compute and cryptographic keys; Kristal Farms operates shared physical services without routine inspection of private models, datasets or application content.
+7. **International distributed resilience** — diversify eligible tenants, jurisdictions, telecom paths and site dependencies while treating any diplomatic/security benefit as a hypothesis rather than a defence guarantee.
 
-Marine access, local roads, heat reuse, storage and short electrical interties are site-specific components, not universal requirements.
+The current site doctrine emphasizes **new renewable generation consumed locally + practical marine access + high-capacity standard telecom + comparatively low ecological sensitivity**. Existing dams may support construction where appropriate but are not the long-term commercial resource thesis.
+
+Marine access, local roads, heat reuse, storage and short electrical interties remain site-specific components; no individual port, fibre route or hydro project is established merely by this doctrine.
 
 ## Application
 
@@ -87,6 +90,7 @@ kristal-farms/
 - [Stratégie de déploiement — français](docs/10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 - [Corridor dossier strategy](docs/00-control/CORRIDOR_DOSSIER_STRATEGY.md)
 - [Responsible international tenant governance](docs/00-control/INTERNATIONAL_TENANT_GOVERNANCE.md)
+- [Plan de mobilisation internationale — français](docs/10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md)
 - [Tenant-controlled encrypted environment — English](docs/10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md)
 - [Environnement chiffré sous contrôle du locataire — français](docs/10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
 

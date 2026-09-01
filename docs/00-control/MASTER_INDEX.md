@@ -19,6 +19,7 @@
 - [Architecture de référence Kristal Farms — FR](../10-core/Architecture_de_reference_Kristal_Farms_FR.md)
 - [Kristal Farms Vision — EN](../10-core/strategy/KRISTAL_FARMS_VISION_EN.md)
 - [Vision Kristal Farms — FR](../10-core/strategy/VISION_KRISTAL_FARMS_FR.md)
+- [Plan de mobilisation internationale — FR](../10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md)
 - [Deployment Strategy — EN](../10-core/deployment/DEPLOYMENT_STRATEGY_EN.md)
 - [Stratégie de déploiement — FR](../10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 - [Tenant-Controlled Encrypted Environment — EN](../10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md)

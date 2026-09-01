@@ -1,90 +1,137 @@
-# International Tenant Landscape — Research Inventory
+# International Tenant Landscape — Optimized 12-Slot Research Portfolio
 
 **As of:** 2026-08-31  
-**Status:** Working commercial research (C4).  
+**Status:** Working commercial research (C4), proposed r2 update.  
 **Critical caveat:** Inclusion means **research candidate only**. It does not mean the organization has expressed interest in Kristal Farms, passed counterparty due diligence, or agreed to Canadian/northern deployment.
 
-## Screening assumptions
+## 1. Governance first
 
-This inventory applies the current project posture:
+Commercial screening follows:
 
-- United States-based or United States-controlled counterparties are excluded from tenant/anchor-offtaker/tenant-operator roles by owner policy;
-- international prospects remain subject to jurisdictional and counterparty due diligence;
-- the technical/commercial model is tenant-controlled encrypted compute on serviced infrastructure;
-- prospect fit is strongest for training, HPC, batch and other workloads that can tolerate non-metropolitan placement;
-- data-residency or domestic-sovereignty commitments may make an otherwise attractive organization a poor Canadian tenant;
-- United States technology dependencies are a separate supply-chain issue and are **not** automatically excluded by the current tenant policy.
+> **jurisdictional eligibility → legal-counterparty/control review → downstream-customer exposure → workload/site fit → non-binding requirements → service envelope → anchor/offtake discussion**
 
-## Priority research jurisdictions
+The proposed r2 jurisdiction schedule expands project-level exclusions/holds beyond the existing United States rule. The schedule remains a counterparty-risk control, not a judgment about individuals or populations. Technology-origin policy remains separate: U.S.-origin GPUs, software or standards are not automatically prohibited merely because a counterparty jurisdiction is ineligible.
 
-The initial outbound research set should emphasize stable, rules-based markets with significant AI/HPC/cloud operators and plausible international deployment behavior:
+A reseller, GPU cloud or operator does not bypass the policy. Where a global capacity pool can serve ineligible downstream counterparties, Kristal Farms should require a **dedicated, auditable, non-ineligible capacity pool** without inspecting private workload content.
 
-- France;
-- Netherlands;
-- United Kingdom;
-- Switzerland;
-- Norway, Sweden, Finland, Denmark and Iceland;
-- Germany;
-- Japan;
-- South Korea;
-- Australia and New Zealand.
+## 2. Why the portfolio is being changed
 
-This list is a prospecting focus, not an automatic country whitelist.
+The previous list mixed four different things: probable anchor tenants, AIDC/network operators, sovereignty-oriented clouds whose products may not travel to Canada, and AI-cloud resellers whose downstream customer mix can conflict with the jurisdiction policy.
 
-## Candidate organizations
+The optimized portfolio therefore uses role-specific outreach rather than treating twelve logos as equivalent tenants.
 
-| Organization | Home market | Potential Kristal Farms role | Research posture |
-|---|---|---|---|
-| **OVHcloud** | France | cloud / bare-metal / potential Canadian capacity operator | **Priority** — already operates Canadian infrastructure; investigate AI/HPC expansion fit. |
-| **Nebius** | Netherlands | AI-cloud platform / infrastructure-partnership offtaker | **Priority** — its 2026 partner model explicitly allows third parties to own/operate infrastructure hosting Nebius capacity. |
-| **Nscale** | United Kingdom | AI-cloud tenant/operator on partner-run sites | **Priority with enhanced review** — partner-run renewable sites fit the model; material U.S. activity means ownership/control and customer concentration should be reviewed against project policy. |
-| **SK Telecom** | South Korea | GPUaaS / AI-infrastructure operator | **Priority research** — operates large-scale Blackwell GPU infrastructure; investigate international node strategy. |
-| **NAVER / NAVER Cloud** | South Korea | cloud / AI infrastructure | **Research** — investigate international capacity and Canadian deployment appetite before any claim. |
-| **Sakura Internet** | Japan | GPU cloud / managed supercomputing | **Priority research** — substantial current AI-infrastructure investment; domestic sovereignty orientation may limit offshore workloads. |
-| **KDDI** | Japan | telecom + GPU cloud + data-center operator | **Priority research** — strong integration of network and AI compute; determine whether international capacity is strategically relevant. |
-| **Deutsche Telekom / T-Systems** | Germany | industrial AI cloud / HPC operator | **Selective research** — strong compute demand but current sovereign offerings emphasize European/German control. |
-| **Scaleway / iliad** | France | GPU cloud / dedicated AI clusters | **Selective research** — strong values/sovereignty fit, but explicit European data-residency posture may make Canadian placement unsuitable for core sovereign products. |
-| **Infomaniak** | Switzerland | sovereign cloud / AI services | **Comparative / selective** — strong privacy and sustainability alignment; Swiss-only processing commitments make Canadian tenancy less natural. |
-| **Exoscale** | Switzerland/Europe | sovereign European cloud | **Comparative / selective** — European-only residency positioning is a likely geographic constraint. |
+## 3. Optimized 12
 
-## Source starting points
+| Slot | Organization | Home | Engagement | Primary Kristal Farms role | Main gate |
+|---:|---|---|---|---|---|
+| 1 | **OVHcloud** | France | **Core outreach** | Anchor AI/HPC campus | Validate high-density Canadian expansion appetite |
+| 2 | **NAVER Cloud** | South Korea | **Core outreach** | Global AI-factory anchor | Validate Canada-eligible workloads and downstream allocation |
+| 3 | **SK Telecom / SK Hyper** | South Korea | **Core outreach** | AIDC co-development | Validate appetite outside Korea-centered 15 GW program |
+| 4 | **KDDI / Telehouse** | Japan | **Core outreach** | AIDC/network partner | Validate strategic value of a Canadian energy-side node |
+| 5 | **Verda** | Finland | **Core outreach** | Flexible training / AI-cloud anchor | Ownership/control and downstream eligibility review |
+| 6 | **Civo** | United Kingdom | **Core outreach** | Private/sovereign AI node | Validate Canadian deployment and residency model |
+| 7 | **Sakura Internet** | Japan | Secondary | Training/HPC pilot | Domestic sovereignty may constrain offshore workloads |
+| 8 | **IONOS** | Germany | Secondary | Sovereign/private AI capacity | Determine whether Canada can fit its sovereignty proposition |
+| 9 | **Firmus Technologies** | Australia | Strategic exploration | Energy-aware AIDC co-development | Ownership/control + downstream ring-fencing review |
+| 10 | **Deutsche Telekom / T-Systems** | Germany | Selective | Industrial AI/HPC node | Germany/Europe sovereignty orientation |
+| 11 | **Nebius** | Netherlands | **Conditional only** | Partner-hosted AI cloud | Dedicated non-US/non-ineligible capacity pool required |
+| 12 | **Scaleway / iliad** | France | Selective | Sovereign AI research | European residency posture may make Canada unsuitable |
 
-The following official/current sources support the **market-role observations only**. They do not establish interest in Kristal Farms.
+### Removed from the core twelve
 
-- OVHcloud global locations / Beauharnois and Toronto: https://www.ovhcloud.com/fr-ca/datacenter/
-- Nebius infrastructure-partnership model (2026-07-15): https://nebius.com/newsroom/nebius-introduces-business-model-to-scale-ai-cloud-globally-through-infrastructure-partnerships
-- Nscale AI infrastructure / partner-run sites: https://www.nscale.com/ai-infrastructure
-- SK Telecom Blackwell GPU infrastructure / GPUaaS: https://news.sktelecom.com/en/2812
-- Sakura Internet Blackwell infrastructure (2026-02-25): https://www.sakura.ad.jp/corporate/information/newsreleases/2026/02/25/1968223641/
-- KDDI GPU Cloud / GB200 NVL72: https://newsroom.kddi.com/news/detail/kddi_nr-796_4171.html
-- Deutsche Telekom / T-Systems Industrial AI Cloud: https://www.telekom.com/de/medien/medieninformationen/detail/t-systems-und-supplyon-bringen-ki-in-europas-lieferketten-1105618
+- **Nscale** — excellent technical fit, but current growth is materially concentrated in Microsoft-linked deployments. Keep on watchlist; re-enter only if a contractually isolated non-ineligible customer pool is credible.
+- **Infomaniak** — retain as a privacy/sustainability benchmark, not as a likely Canadian tenant while Swiss processing/residency is central to the product.
+- **Exoscale** — retain as a European sovereign-cloud benchmark; current residency logic makes Canadian deployment a weak prospect.
+
+## 4. Role-specific commercial offers
+
+### A. KF Anchor AI Campus
+
+For OVHcloud and NAVER first; potentially IONOS later.
+
+- firm high-density power envelope;
+- liquid-cooling interface;
+- redundant fibre handoff;
+- tenant-controlled hardware/software/data/keys;
+- staged expansion rather than a single all-or-nothing campus;
+- site-specific reliability/curtailment terms.
+
+Do not promise a fixed MW before corridor/site engineering and tenant requirements converge.
+
+### B. KF Flexible Training Node
+
+For Verda, Sakura and conditionally Nebius.
+
+- firm base capacity plus an optional flexible tranche;
+- workloads biased toward training, HPC, batch and checkpointable processing;
+- explicit curtailment profile rather than assuming GPUs can simply stop whenever generation falls;
+- commercial separation from any ineligible global customer pool.
+
+### C. KF AIDC Development Partnership
+
+For SK Telecom/SK Hyper, KDDI/Telehouse and Firmus.
+
+Kristal Farms develops the energy/site/community/logistics layer; the partner may contribute facility design, liquid cooling, network, DC operations and AI-factory integration. This is a different pitch from a normal rack lease.
+
+### D. KF Selective Sovereign Node
+
+For Civo, IONOS, Deutsche Telekom/T-Systems and Scaleway.
+
+The question is not whether these firms like sovereignty in the abstract. It is whether they have a workload/product class whose sovereignty requirements can be satisfied **in Canada** under tenant control. If not, they remain useful benchmarks but should not absorb major business-development effort.
+
+## 5. Concentration rules
+
+The twelve-slot portfolio is a resilience experiment, not a coalition. Commercial development should avoid hidden concentration by:
+
+- country/control structure;
+- one global customer appearing behind multiple resellers;
+- GPU supply chain;
+- carrier and landing route;
+- port/logistics route;
+- one site/corridor;
+- one financing source.
+
+No slot should be treated as committed capacity without attributable evidence such as an RFI/RFP response, requirements exchange, LOI or contract.
+
+## 6. Sources — current market-role signals only
+
+These sources support the **research posture**, not interest in Kristal Farms:
+
+- OVHcloud AI Training regions / Beauharnois: https://docs.ovhcloud.com/en/guides/public-cloud/ai-machine-learning/ai-training-capabilities
+- NAVER global AI-factory roadmap (2026-06-08): https://navercorp.com/en/media/pressReleasesDetail?seq=10034386
+- NAVER / Brookfield / NVIDIA 200 MW expansion (2026-07-25): https://www.navercorp.com/en/media/pressReleasesDetail?seq=10034518
+- SK Telecom 15 GW AIDC roadmap (2026-07-05): https://news.sktelecom.com/en/3155
+- SK Hyper launch (2026-07-23): https://news.sktelecom.com/en/3192
+- KDDI data-center renewables and liquid cooling (2026-04-30): https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html
+- Verda global Rubin deployments (2026-06-02): https://verda.com/blog/nvidia-vr200-r200-early-deployments
+- Civo sovereign/private AI: https://www.civo.com/ai/sovereign
+- Civo Vera Rubin allocation (2026-07-23): https://www.civo.com/newsroom/civo-to-host-nvidia-vera-rubin-sovereign-uk-infrastructure
+- Sakura Blackwell container infrastructure (2026-02-25): https://www.sakura.ad.jp/corporate/information/newsreleases/2026/02/25/1968223641/
+- IONOS H200 Cloud GPU VMs: https://docs.ionos.com/cloud/compute-services/compute-engine/cloud-gpu-vm
+- Firmus energy-aware AI factory software: https://firmus.co/newsroom/firmus-to-build-grid-integrated-ai-factory-software-with-nvidia
+- Firmus Australia renewable AI-factory network: https://firmus.co/newsroom/southgate-expansion
+- Deutsche Telekom / T-Systems Industrial AI Cloud: https://www.telekom.com/en/media/media-information/archive/t-systems-brings-ai-into-the-supply-chain-1105624
+- Nebius infrastructure-partner model (2026-07-15): https://nebius.com/newsroom/nebius-introduces-business-model-to-scale-ai-cloud-globally-through-infrastructure-partnerships
+- Nebius / Meta agreement (2026-03-16): https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta
+- Nebius / Microsoft agreement (2025-09-08): https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure
+- Nscale / Microsoft deployments: https://www.nscale.com/press-releases/nscale-microsoft-2025
 - Scaleway GPU clusters: https://www.scaleway.com/en/gpu-clusters/
-- Infomaniak sovereign AI services: https://www.infomaniak.com/en/hosting/ai-services
-- Exoscale AI cloud infrastructure: https://www.exoscale.com/ai-cloud-infrastructure/
 
-## Prospect-fit questions
+## 7. Prospect-fit questions
 
-Before a candidate becomes a commercial target, establish:
+Before moving any candidate past research, establish:
 
-1. minimum initial contracted MW and expansion increments;
-2. acceptable distance/latency from major peering markets;
-3. required fibre capacity, path diversity and repair SLA;
-4. rack/pod density and power-quality requirements;
-5. liquid-cooling and heat-rejection requirements;
-6. acceptable curtailment/interruption profile, if any;
+1. legal contracting entity, UBO and effective control;
+2. material downstream customer exposure and reseller structure;
+3. minimum initial MW and expansion increments;
+4. required fibre capacity, peering points, path diversity and repair SLA;
+5. rack/pod density, power quality and cooling envelope;
+6. firm-power requirement and acceptable flexible/curtailable tranche;
 7. data-residency and sovereignty constraints;
-8. tenant-owned versus operator-owned hardware preference;
-9. minimum contract term and credit/offtake structure;
-10. physical-security, access and maintenance model;
-11. whether black-box/content-blind operations are commercially valued or required;
-12. beneficial ownership, controlling jurisdiction and material downstream customer exposure;
-13. export-control implications for the intended hardware stack;
-14. whether the organization can contract directly or only through a Canadian affiliate/partner.
-
-## Commercial sequencing
-
-The preferred sequence is:
-
-> **screen eligibility → validate workload/site fit → obtain non-binding requirements → define service envelope → pursue anchor/offtake structure**
-
-Do not lead with a specific hydro site before the tenant requirement envelope is understood, and do not present a research candidate as a committed partner.
+8. tenant-owned versus operator-owned hardware;
+9. minimum contract term, credit/offtake structure and termination conditions;
+10. physical-security, access, spare-parts and maintenance model;
+11. whether black-box/content-blind operation is commercially valued or required;
+12. export-control implications for the intended hardware stack;
+13. whether capacity can be contractually isolated from ineligible downstream counterparties;
+14. whether the organization can contract directly or requires a Canadian affiliate/partner.

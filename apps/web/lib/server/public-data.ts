@@ -10,6 +10,8 @@ import type {
   ExplorerBootstrap,
   LayerCatalogEntry,
   PublicFeatureCollection,
+  PublicCommunityInfrastructure,
+  PublicHydroScreeningSite,
   PublicMapFeature,
   PublicRiverReference,
   RelationItem,
@@ -159,12 +161,30 @@ function buildRiverReferences(
   });
 }
 
+type HydroScopePayload = {
+  schema: "kristal-hydro-screening-scope/v2";
+  screening_mode: "unranked";
+  ranking_allowed: false;
+  model_scope: Record<string, unknown>;
+  sites: PublicHydroScreeningSite[];
+  review_sites: PublicHydroScreeningSite[];
+};
+
+type CommunityInfrastructurePayload = {
+  schema: "kristal-community-infrastructure/v1";
+  generated_at: string;
+  ranking_allowed: false;
+  items: PublicCommunityInfrastructure[];
+};
+
 export async function getExplorerBootstrap(): Promise<ExplorerBootstrap> {
-  const [release, communitiesRaw, stationsRaw, hydroMatrix, stableLayerCatalog] = await Promise.all([
+  const [release, communitiesRaw, stationsRaw, hydroMatrix, hydroScope, communityInfrastructure, stableLayerCatalog] = await Promise.all([
     readJson<ReleaseManifest>(path.join(publishRoot, "release_manifest.json")),
     readJson<PublicFeatureCollection>(path.join(publishRoot, "communities_public.geojson")),
     readJson<PublicFeatureCollection>(path.join(publishRoot, "hydrometric_stations_public.geojson")),
     readJson<HydroMatrixPayload>(path.join(publishRoot, "hydro_evidence_matrix_public.json")),
+    readJson<HydroScopePayload>(path.join(publishRoot, "kristal_hydro_screening_scope_public.json")),
+    readJson<CommunityInfrastructurePayload>(path.join(publishRoot, "community_infrastructure_public.json")),
     readJson<StableLayerCatalog>(catalogPath),
   ]);
 
@@ -185,6 +205,8 @@ export async function getExplorerBootstrap(): Promise<ExplorerBootstrap> {
     communities,
     stations,
     rivers: buildRiverReferences(hydroMatrix, stations),
+    hydroSites: [...hydroScope.sites, ...hydroScope.review_sites],
+    communityInfrastructure: communityInfrastructure.items,
     layers: mapLayers,
   };
 }
@@ -325,7 +347,7 @@ export async function getEntityDetail(entityId: string): Promise<EntityDetail | 
 
   if (p.feature_kind === "community") {
     const context = communityContextPayload.items.find((item) => item.entity_id === entityId);
-    const relations = [
+    const infrastructure = bootstrap.communityInfrastructure.find((item) => item.entity_id === entityId) ?? null;    const relations = [
       contextRelation("telecom", "Telecom", context?.telecom_context ?? p.telecom_context),
       contextRelation("marine", "Marine", context?.marine_context ?? p.marine_context),
       contextRelation("road", "Road", context?.road_context ?? p.road_context),
@@ -334,6 +356,31 @@ export async function getEntityDetail(entityId: string): Promise<EntityDetail | 
 
     const facts = [
       fact("Region", p.region),
+      infrastructure?.population.value != null
+        ? fact(
+            "Population",
+            `${Number(infrastructure.population.value).toLocaleString("en-CA")} · ${infrastructure.population.year ?? "year unknown"}`,
+          )
+        : null,
+      infrastructure?.airport.access_known
+        ? fact(
+            "Airport",
+            [
+              infrastructure.airport.code,
+              infrastructure.airport.runway_length_m != null
+                ? `runway ${Math.round(infrastructure.airport.runway_length_m).toLocaleString("en-CA")} m`
+                : "runway size not verified",
+            ].filter(Boolean).join(" · "),
+          )
+        : null,
+      infrastructure?.marine.access_known
+        ? fact(
+            "Marine access",
+            infrastructure.marine.dock_length_m != null
+              ? `dock ${Math.round(infrastructure.marine.dock_length_m).toLocaleString("en-CA")} m`
+              : "dock size not verified",
+          )
+        : null,
       fact("Screening", "Unranked"),
       fact("Geometry", "Approximate community reference"),
     ].filter((item): item is { label: string; value: string } => item !== null);

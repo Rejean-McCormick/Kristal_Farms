@@ -64,7 +64,7 @@ If individual nodes prove viable, they may form a chain of hydro/compute/fibre/p
 
 ## 13. International tenancy is selective, not indiscriminate
 
-Kristal Farms may serve an international compute market while declining counterparties or control structures that do not meet project governance, responsible-business or jurisdictional-risk criteria. Commercial scale does not override eligibility. The current owner policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles unless a later explicit C0 decision changes that rule.
+Kristal Farms may serve an international compute market while declining counterparties or control structures that do not meet project governance, responsible-business or jurisdictional-risk criteria. Commercial scale does not override eligibility. Explicit country-level exclusions/holds are controlled by the machine-readable jurisdiction schedule and may change only through an explicit C0 decision.
 
 Country and organization review must be evidence-backed and categorical, not a numerical moral score. The policy applies to legal counterparties and control structures, not to individuals based on nationality or other protected characteristics.
 
@@ -79,3 +79,17 @@ Responsible-tenancy controls therefore occur primarily through jurisdictional el
 Kristal Farms may reuse mine or brownfield infrastructure when reuse reduces total system cost, schedule, surface disturbance or operating risk **after** accounting for restoration, geotechnical, environmental, rights/governance and integration obligations.
 
 This principle does not make mining assets a siting requirement. Recent underground mines may be especially relevant to preserved industrial infrastructure; historical open pits remain eligible for pumped-storage research because reservoir suitability depends primarily on geometry and site condition rather than closure date.
+
+## 16. Generate locally, consume locally, ship equipment by sea, export value by fibre
+
+The primary site doctrine is new renewable generation consumed near the generating asset, with practical marine access and high-capacity telecom. Existing dams are not the commercial resource thesis; existing supply may support construction where appropriate. Candidate ensembles should prefer comparatively low ecological sensitivity, but that phrase is a screening objective, not a substitute for biodiversity, rights/governance or environmental assessment.
+
+## 17. International diversification is a resilience layer, not a defence guarantee
+
+Kristal Farms should avoid dependence on a single tenant, country, carrier, port, site or technology stack. A geographically and commercially diversified international tenant portfolio can improve continuity incentives and reduce concentration risk. If a major disruption affects several independent foreign commercial stakeholders, it may also attract broader restoration, commercial and diplomatic attention.
+
+This must not be represented as collective defence, extraterritoriality or an automatic state obligation. International participation does not make an attack on Kristal Farms legally equivalent to an attack on participating countries.
+
+## 18. Validate international demand before assigning countries to sites
+
+A 12-ensemble portfolio may be used as a planning frame, but named organizations remain research prospects until direct evidence exists. The preferred sequence is requirements exchange → non-binding interest → site/workload matching → contracting. Do not fabricate a twelfth partner or force a prospect onto a site merely to complete a matrix.

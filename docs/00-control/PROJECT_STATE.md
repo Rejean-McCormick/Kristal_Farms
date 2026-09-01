@@ -35,11 +35,19 @@ Kristal Farms can provide serviced compute sites rather than owning every server
 
 ## International tenancy and confidentiality
 
-International tenants are an intended market, subject to a selective counterparty-governance policy. The current owner-directed policy excludes United States-based or United States-controlled counterparties from tenant, anchor-offtaker and tenant-operator roles. Other jurisdictions default to enhanced due diligence until an explicit eligibility posture is documented.
+International tenants are an intended market, subject to a selective counterparty-governance policy. Explicit country-level exclusions/holds are governed by `contracts/policy/jurisdiction-eligibility.yaml`; non-listed jurisdictions default to enhanced due diligence. Downstream resellers/subtenants must remain within the same eligibility boundary.
 
 The normal service boundary is a **tenant-controlled encrypted environment** (black-box tenancy): Kristal Farms operates agreed shared physical services and minimum necessary service telemetry while the tenant controls private compute, models, datasets and cryptographic keys. Routine content inspection is not part of the operating model.
 
 No organization in the research prospect inventory should be presented as interested, committed or contracted without direct commercial evidence.
+
+## International mobilization and resilience
+
+A new owner-directed strategy seeks to validate a **12-ensemble international portfolio** built around new renewable generation consumed locally, practical marine access, high-capacity standard telecom and comparatively low ecological sensitivity. Existing dams are not the intended long-term supply base, although existing supply may be used for construction where appropriate and available.
+
+The portfolio is intended to diversify tenant, jurisdiction, carrier, port and site dependencies. This diversification is treated as a commercial/operational resilience mechanism and a possible source of broader diplomatic attention during a major disruption. It is **not** a military alliance, collective-defence commitment, extraterritorial status or guarantee that a foreign government will protect a Kristal Farms asset.
+
+The next international gate is evidence of demand: direct requirements exchanges and preferably non-binding expressions of interest from multiple eligible organizations before any claim that a coalition exists. See `docs/10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md`.
 
 ## Mine infrastructure reuse and storage
 

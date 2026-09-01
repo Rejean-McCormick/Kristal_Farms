@@ -1,0 +1,16 @@
+{
+  "schema": "kristal-local-terrain/v1",
+  "id": "hrdem-terrain-screening",
+  "title": "HRDEM terrain relief",
+  "available": false,
+  "geojson_url": "/terrain/terrain-screening.geojson",
+  "minzoom": 5,
+  "maxzoom": 13,
+  "bounds": null,
+  "source": "Natural Resources Canada HRDEM DTM",
+  "vertical_datum": "CGVD2013",
+  "cell_size_m": 500,
+  "generated_at": null,
+  "note": "Run pipelines/terrain/build_terrain_screening.py with a local HRDEM DTM mosaic to publish terrain screening cells. No synthetic terrain is shown when the local build is absent.",
+  "site_profiles": []
+}

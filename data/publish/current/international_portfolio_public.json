@@ -1,0 +1,277 @@
+{
+  "schema": "kristal-international-portfolio/v1",
+  "generated_at": "2026-08-31",
+  "portfolio_version": "2026.08.31-r2-proposed",
+  "status": "RESEARCH_ONLY",
+  "planning_slots": 12,
+  "commitments_claimed": false,
+  "policy_status": "PROPOSED_C0_ADOPTION",
+  "default_nonlisted_state": "ENHANCED_DUE_DILIGENCE",
+  "service_offers": [
+    {
+      "id": "ANCHOR_AI_CAMPUS",
+      "purpose": "firm high-density AI/HPC capacity with staged expansion",
+      "indicative_envelope": "20-100+ MW, to be validated with each prospect"
+    },
+    {
+      "id": "FLEXIBLE_TRAINING_NODE",
+      "purpose": "training/HPC/batch capacity using a firm base plus an optional flexible tranche",
+      "indicative_envelope": "initial tranche and curtailment profile to be prospect-defined"
+    },
+    {
+      "id": "AIDC_DEVELOPMENT_PARTNERSHIP",
+      "purpose": "co-development of facility, cooling, network and operations interfaces while Kristal Farms develops the energy/site layer"
+    },
+    {
+      "id": "SELECTIVE_SOVEREIGN_NODE",
+      "purpose": "jurisdiction-controlled or private-cloud deployment where Canadian placement is compatible with sovereignty requirements"
+    }
+  ],
+  "policy_summary": {
+    "ineligible_jurisdictions": [
+      {
+        "code": "US",
+        "name": "United States"
+      },
+      {
+        "code": "RU",
+        "name": "Russia"
+      },
+      {
+        "code": "BY",
+        "name": "Belarus"
+      },
+      {
+        "code": "CN",
+        "name": "China"
+      },
+      {
+        "code": "IR",
+        "name": "Iran"
+      },
+      {
+        "code": "KP",
+        "name": "North Korea"
+      },
+      {
+        "code": "SY",
+        "name": "Syria"
+      },
+      {
+        "code": "MM",
+        "name": "Myanmar"
+      }
+    ],
+    "suspended_jurisdictions": [
+      {
+        "code": "AF",
+        "name": "Afghanistan"
+      },
+      {
+        "code": "LY",
+        "name": "Libya"
+      },
+      {
+        "code": "NI",
+        "name": "Nicaragua"
+      },
+      {
+        "code": "SO",
+        "name": "Somalia"
+      },
+      {
+        "code": "SD",
+        "name": "Sudan"
+      },
+      {
+        "code": "SS",
+        "name": "South Sudan"
+      },
+      {
+        "code": "VE",
+        "name": "Venezuela"
+      },
+      {
+        "code": "YE",
+        "name": "Yemen"
+      },
+      {
+        "code": "ZW",
+        "name": "Zimbabwe"
+      }
+    ],
+    "counterparty_screening_before_access": true,
+    "technology_origin_embargo_implied": false
+  },
+  "candidates": [
+    {
+      "slot": 1,
+      "slug": "ovhcloud",
+      "organization": "OVHcloud",
+      "home_jurisdiction": "FR",
+      "home_country": "France",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "ANCHOR_AI_CAMPUS",
+      "rationale": "existing Canadian infrastructure and direct AI/HPC operating experience; test expansion beyond current Beauharnois AI footprint",
+      "hard_gate": "Canadian high-density GPU expansion appetite",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 2,
+      "slug": "naver-cloud",
+      "organization": "NAVER Cloud",
+      "home_jurisdiction": "KR",
+      "home_country": "South Korea",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "ANCHOR_AI_CAMPUS",
+      "rationale": "explicit 2026 global AI-factory expansion roadmap from 55 MW toward 100/200 MW and GW scale",
+      "hard_gate": "workloads legally/commercially deployable in Canada and non-US downstream allocation",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 3,
+      "slug": "sk-telecom-sk-hyper",
+      "organization": "SK Telecom / SK Hyper",
+      "home_jurisdiction": "KR",
+      "home_country": "South Korea",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
+      "rationale": "dedicated AI-data-center development capability, telecom integration and very large 2026 AIDC buildout ambition",
+      "hard_gate": "willingness to develop outside the Korea-centered 15 GW program",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 4,
+      "slug": "kddi-telehouse",
+      "organization": "KDDI / Telehouse",
+      "home_jurisdiction": "JP",
+      "home_country": "Japan",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
+      "rationale": "global data-center/network operations, renewable-power posture and commercial liquid-cooling experience",
+      "hard_gate": "strategic relevance of a Canadian energy-side node",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 5,
+      "slug": "verda",
+      "organization": "Verda",
+      "home_jurisdiction": "FI",
+      "home_country": "Finland",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "FLEXIBLE_TRAINING_NODE",
+      "rationale": "AI-native infrastructure company scaling internationally with next-generation GPU deployments",
+      "hard_gate": "beneficial ownership/control and downstream customer allocation under the jurisdiction policy",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 6,
+      "slug": "civo",
+      "organization": "Civo",
+      "home_jurisdiction": "GB",
+      "home_country": "United Kingdom",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "CORE_OUTREACH",
+      "target_role": "SELECTIVE_SOVEREIGN_NODE",
+      "rationale": "sovereign/private AI architecture can be deployed on controlled infrastructure rather than only in one fixed public-cloud region",
+      "hard_gate": "Canadian deployment appetite and workload residency constraints",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 7,
+      "slug": "sakura-internet",
+      "organization": "Sakura Internet",
+      "home_jurisdiction": "JP",
+      "home_country": "Japan",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "SECONDARY_OUTREACH",
+      "target_role": "FLEXIBLE_TRAINING_NODE",
+      "rationale": "operational containerized Blackwell GPU infrastructure and managed supercomputing experience",
+      "hard_gate": "domestic-sovereignty commitments may limit offshore workloads",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 8,
+      "slug": "ionos",
+      "organization": "IONOS",
+      "home_jurisdiction": "DE",
+      "home_country": "Germany",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "SECONDARY_OUTREACH",
+      "target_role": "SELECTIVE_SOVEREIGN_NODE",
+      "rationale": "European sovereign cloud with H200 GPU services and a growing AI product layer",
+      "hard_gate": "whether Canadian capacity can fit its sovereignty and data-control proposition",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 9,
+      "slug": "firmus-technologies",
+      "organization": "Firmus Technologies",
+      "home_jurisdiction": "AU",
+      "home_country": "Australia",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "STRATEGIC_EXPLORATION",
+      "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
+      "rationale": "renewable-powered AI-factory development, liquid cooling and grid-aware orchestration are unusually close to the Kristal Farms energy-to-compute thesis",
+      "hard_gate": "ownership/control review plus strict non-US downstream capacity separation where required",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 10,
+      "slug": "deutsche-telekom-t-systems",
+      "organization": "Deutsche Telekom / T-Systems",
+      "home_jurisdiction": "DE",
+      "home_country": "Germany",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "SELECTIVE_OUTREACH",
+      "target_role": "SELECTIVE_SOVEREIGN_NODE",
+      "rationale": "proven industrial AI cloud and large Blackwell deployment; useful for industrial/HPC requirements",
+      "hard_gate": "current Germany/Europe sovereignty orientation may make Canada unsuitable",
+      "ring_fencing_required": false
+    },
+    {
+      "slot": 11,
+      "slug": "nebius",
+      "organization": "Nebius",
+      "home_jurisdiction": "NL",
+      "home_country": "Netherlands",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "CONDITIONAL_RING_FENCE",
+      "engagement_tier": "CONDITIONAL_ONLY",
+      "target_role": "FLEXIBLE_TRAINING_NODE",
+      "rationale": "infrastructure-partnership model is structurally close to Kristal Farms",
+      "hard_gate": "dedicated Canadian non-US capacity pool, because global sales include major US counterparties",
+      "ring_fencing_required": true
+    },
+    {
+      "slot": 12,
+      "slug": "scaleway-iliad",
+      "organization": "Scaleway / iliad",
+      "home_jurisdiction": "FR",
+      "home_country": "France",
+      "jurisdiction_state": "ENHANCED_DUE_DILIGENCE",
+      "outreach_state": "DILIGENCE_REQUIRED",
+      "engagement_tier": "SELECTIVE_OUTREACH",
+      "target_role": "SELECTIVE_SOVEREIGN_NODE",
+      "rationale": "European GPU cloud and sovereignty alignment; retain as a low-cost test of whether non-European capacity can ever fit a separate product",
+      "hard_gate": "explicit European residency posture may make Canadian deployment unsuitable",
+      "ring_fencing_required": false
+    }
+  ],
+  "disclaimer": "Research portfolio only. Inclusion does not mean interest, commitment, eligibility clearance, or contract."
+}

@@ -123,3 +123,72 @@ def test_observatory_v024_has_reset_and_auto_fit():
     assert "Reset view" in explorer_source
     assert "fitToObservatoryExtent" in map_source
     assert "autoFitOnLoad" in map_source
+
+
+def test_observatory_v041_displaces_village_callouts_and_keeps_house_on_coordinate():
+    map_source = (WEB / "components" / "explorer" / "ObservatoryMap.tsx").read_text(encoding="utf-8")
+    css_source = (WEB / "app" / "globals.css").read_text(encoding="utf-8")
+
+    assert "getCommunityCalloutPlacement" in map_source
+    assert "community-house-marker" in map_source
+    assert "community-callout__leader" in map_source
+    assert 'new maplibregl.Marker({ element, anchor: "center" })' in map_source
+    assert ".community-map-marker" in css_source
+    assert ".community-callout__leader::after" in css_source
+
+
+def test_observatory_v042_moves_aupaluk_up_and_publishes_extended_hydro_review_sites():
+    map_source = (WEB / "components" / "explorer" / "ObservatoryMap.tsx").read_text(encoding="utf-8")
+    public_data_source = (WEB / "lib" / "server" / "public-data.ts").read_text(encoding="utf-8")
+
+    assert 'normalizePlaceName(feature.properties.name) === "aupaluk"' in map_source
+    assert 'return { x: 0, y: -74 };' in map_source
+    assert 'hydroSites: [...hydroScope.sites, ...hydroScope.review_sites]' in public_data_source
+
+
+def test_observatory_v043_leaders_use_nearest_panel_edge_geometry():
+    map_source = (WEB / "components" / "explorer" / "ObservatoryMap.tsx").read_text(encoding="utf-8")
+
+    assert "updateCommunityLeaderGeometry" in map_source
+    assert "panel.offsetWidth" in map_source
+    assert "panel.offsetHeight" in map_source
+    assert "const targetX = clamp" not in map_source  # target remains mutable for the defensive fallback
+    assert "let targetX = clamp(0, left, right);" in map_source
+    assert "let targetY = clamp(0, top, bottom);" in map_source
+    assert "const houseRadius = 13;" in map_source
+    assert "distance - 26" not in map_source
+
+
+def test_observatory_v044_declares_local_terrain_and_basin_layers():
+    explorer_source = (WEB / "components" / "explorer" / "ObservatoryExplorer.tsx").read_text(encoding="utf-8")
+    map_source = (WEB / "components" / "explorer" / "ObservatoryMap.tsx").read_text(encoding="utf-8")
+    style_source = (WEB / "lib" / "map-style.ts").read_text(encoding="utf-8")
+
+    assert 'fetch("/terrain/terrain-manifest.json"' in explorer_source
+    assert 'id="terrain_relief"' in explorer_source
+    assert 'id="terrain_basins"' in explorer_source
+    assert "addLocalTerrainScreening" in map_source
+    assert "Exploratory retention rise" in map_source
+    assert '"fill-color": basinDepthColorExpression(50)' in style_source
+    assert '"spill_rise_m"' in style_source
+
+
+def test_observatory_v044_terrain_manifest_is_local_and_non_fabricated_by_default():
+    manifest = json.loads((WEB / "public" / "terrain" / "terrain-manifest.json").read_text(encoding="utf-8"))
+    assert manifest["schema"] == "kristal-local-terrain/v1"
+    assert manifest["available"] is False
+    assert manifest["geojson_url"].startswith("/terrain/")
+    assert "://" not in manifest["geojson_url"]
+    assert manifest["source"] == "Natural Resources Canada HRDEM DTM"
+    assert manifest["vertical_datum"] == "CGVD2013"
+
+
+def test_observatory_v044_terrain_pipeline_computes_connectivity_offline():
+    helper = ROOT / "pipelines" / "terrain" / "build_terrain_screening.py"
+    assert helper.is_file()
+    source = helper.read_text(encoding="utf-8")
+    assert "minimax_spill" in source
+    assert "spill_rise_m" in source
+    assert "volume_m3" in source
+    assert "requests" not in source
+    assert "urllib" not in source

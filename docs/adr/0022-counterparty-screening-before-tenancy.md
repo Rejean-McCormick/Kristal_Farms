@@ -21,7 +21,7 @@ Responsible international tenancy will be governed primarily through:
 
 The project will use categorical states (`ELIGIBLE`, `ENHANCED_DUE_DILIGENCE`, `SUSPENDED`, `INELIGIBLE`) rather than a numerical ethics score.
 
-United States-based or United States-controlled counterparties are ineligible for tenant, anchor-offtaker and tenant-operator roles under the current owner-directed policy. This decision does not itself create a technology-origin embargo.
+Explicit country-level exclusions and holds are governed by `contracts/policy/jurisdiction-eligibility.yaml`. Downstream resellers/subtenants inherit the same eligibility boundary. These counterparty rules do not themselves create a technology-origin embargo.
 
 ## Consequences
 
