@@ -1,0 +1,277 @@
+{
+  "type": "FeatureCollection",
+  "schema": "kristal-grid-reach/v1",
+  "version": "2026-09-01",
+  "status": "research_context",
+  "ranking_allowed": false,
+  "default_visible": true,
+  "measurement_allowed": false,
+  "local_distribution_network_included": false,
+  "title": "Côte-Nord electrical grid reach",
+  "note": "Do not render the full provincial distribution network. Preserve only the regional transmission skeleton and the documented 34.5 kV eastern extension because the project question is network reach, not pole-by-pole distribution detail.",
+  "sources": [
+    {
+      "id": "hq_bape_romaine_corridor",
+      "publisher": "Hydro-Québec / BAPE archive",
+      "title": "Raccordement du complexe de la Romaine au réseau de transport — étude de corridors",
+      "url": "https://archives.bape.gouv.qc.ca/sections/mandats/La%20Romaine_raccordement/documents/PR3.1/PR3.1.pdf",
+      "reference_date": "2009"
+    },
+    {
+      "id": "hq_sm3_existing_315",
+      "publisher": "Hydro-Québec",
+      "title": "Suréquipement de la centrale de la Sainte-Marguerite-3",
+      "url": "https://www.hydroquebec.com/production-reseau/chantiers/projets/surequipementsm3/",
+      "reference_date": "2026"
+    },
+    {
+      "id": "hq_la_romaine_connection_2022",
+      "publisher": "Hydro-Québec",
+      "title": "Hydro-Québec franchit un jalon important dans la décarbonation de ses réseaux autonomes",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-franchit-un-jalon-important-dans-la-decarbonation-de-ses-reseaux-autonomes.html",
+      "reference_date": "2022-03-29"
+    },
+    {
+      "id": "hq_annual_2021_romaine_line",
+      "publisher": "Hydro-Québec",
+      "title": "Annual Report 2021",
+      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2021-hydro-quebec.pdf",
+      "reference_date": "2021"
+    },
+    {
+      "id": "hq_open_transport_corridors",
+      "publisher": "Hydro-Québec Open Data",
+      "title": "Planification des travaux de maîtrise de la végétation dans les emprises — réseau de transport",
+      "url": "https://donnees.hydroquebec.com/explore/dataset/calendrier-travaux-degagement-transport-json/",
+      "reference_date": "2023"
+    },
+    {
+      "id": "qc_toponymy",
+      "publisher": "Commission de toponymie du Québec / CGNDB",
+      "title": "Official place-name coordinates",
+      "url": "https://toponymie.gouv.qc.ca/",
+      "reference_date": "2026-09-01"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "cote_nord_735_north_reach",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -66.50056,
+            50.24805
+          ],
+          [
+            -65.72916,
+            51.89167
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Arnaud — Poste des Montagnais — northbound 735 kV corridor",
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "status": "existing",
+        "endpoint_semantics": "north_reach_reference",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "qc_toponymy"
+        ],
+        "note": "The cited corridor continues toward Churchill Falls in Labrador. The displayed Québec segment is a schematic connection between named anchors and is not the surveyed centerline of the transmission right-of-way."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sm3_arnaud_315",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -66.50056,
+            50.24805
+          ],
+          [
+            -66.77972,
+            50.705
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Sainte-Marguerite-3 — Arnaud",
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "status": "existing",
+        "endpoint_semantics": "inland_generation_branch",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_sm3_existing_315",
+          "hq_bape_romaine_corridor",
+          "qc_toponymy"
+        ],
+        "note": "Existing 315 kV line confirmed by Hydro-Québec; displayed route is schematic."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "coast_161_arnaud_natashquan",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -66.50056,
+            50.24805
+          ],
+          [
+            -64.77518,
+            50.27564
+          ],
+          [
+            -63.6,
+            50.23333
+          ],
+          [
+            -62.80373,
+            50.2893
+          ],
+          [
+            -61.82213,
+            50.18609
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Arnaud — Havre-Saint-Pierre — Johan-Beetz — Natashquan",
+        "voltage_kv": 161,
+        "design_voltage_kv": null,
+        "voltage_class": "regional",
+        "status": "existing",
+        "endpoint_semantics": "east_161kv_reach",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "qc_toponymy"
+        ],
+        "note": "Source documents identify circuit 1619 Arnaud–Havre-Saint-Pierre and circuit 1652 Havre-Saint-Pierre–Natashquan, with intermediate coastal substations including Rivière-au-Tonnerre and Johan-Beetz."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "natashquan_la_romaine_34_5",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -61.82213,
+            50.18609
+          ],
+          [
+            -60.67694,
+            50.21361
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Natashquan / Pointe-Parent — La Romaine / Unamen Shipu",
+        "voltage_kv": 34.5,
+        "design_voltage_kv": 161,
+        "voltage_class": "local_extension",
+        "status": "existing",
+        "endpoint_semantics": "east_main_grid_extension",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_la_romaine_connection_2022",
+          "hq_annual_2021_romaine_line",
+          "qc_toponymy"
+        ],
+        "note": "Hydro-Québec reports the line is about 75 km, designed to handle 161 kV and operated at 34.5 kV. This is the lightweight eastern reach reference; local distribution beyond the endpoint is intentionally omitted."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "north_735_reach",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -65.72916,
+          51.89167
+        ]
+      },
+      "properties": {
+        "feature_role": "reach_marker",
+        "name": "North reach · 735 kV",
+        "detail": "Poste des Montagnais; main corridor continues toward Churchill Falls, Labrador.",
+        "anchor_name": "Poste des Montagnais",
+        "geometry_precision": "official_toponymic_point",
+        "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "qc_toponymy"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "east_161_reach",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.82213,
+          50.18609
+        ]
+      },
+      "properties": {
+        "feature_role": "reach_marker",
+        "name": "East reach · 161 kV",
+        "detail": "Natashquan is the documented eastern terminal of coastal circuit 1652 in the cited transmission study.",
+        "anchor_name": "Natashquan",
+        "geometry_precision": "municipality_anchor",
+        "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "qc_toponymy"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "east_main_grid_extension",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.67694,
+          50.21361
+        ]
+      },
+      "properties": {
+        "feature_role": "reach_marker",
+        "name": "East main-grid extension · 34.5 kV",
+        "detail": "La Romaine / Unamen Shipu connected to the main grid by the 75 km line commissioned in 2022; designed for 161 kV.",
+        "anchor_name": "La Romaine / Unamen Shipu",
+        "geometry_precision": "village_anchor",
+        "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_la_romaine_connection_2022",
+          "hq_annual_2021_romaine_line",
+          "qc_toponymy"
+        ]
+      }
+    }
+  ]
+}

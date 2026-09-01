@@ -238,10 +238,38 @@ export type ObservatoryVisibleLayers = {
   contextual_buildings: boolean;
   contextual_transport: boolean;
   contextual_facilities: boolean;
+  grid_reach: boolean;
   satellite: boolean;
   terrain_relief: boolean;
   terrain_basins: boolean;
   labels: boolean;
+};
+
+
+export type GridReachManifest = {
+  type: "FeatureCollection";
+  schema: "kristal-grid-reach/v1";
+  version: string;
+  status: "research_context" | string;
+  ranking_allowed: false;
+  default_visible: boolean;
+  measurement_allowed: false;
+  local_distribution_network_included: false;
+  title: string;
+  note: string;
+  sources: Array<{
+    id: string;
+    publisher: string;
+    title: string;
+    url: string;
+    reference_date: string | null;
+  }>;
+  features: Array<{
+    type: "Feature";
+    id?: string | number;
+    geometry: { type: string; coordinates: unknown };
+    properties: Record<string, unknown>;
+  }>;
 };
 
 export type LocalImageryManifest = {

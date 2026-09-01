@@ -100,14 +100,17 @@ python ..\..\pipelines\imagery\build_local_satellite.py `
 
 See `docs/frontend/offline-satellite.md` and `pipelines/imagery/README.md`.
 
-## Kristal Observatory shell and International 12
+## Kristal Farms Observatory
 
-The application now uses `/` as the single **Kristal Observatory** entry point. A persistent workspace bar contains the two governed surfaces:
+The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes five governed workspaces:
 
 - **Northern Atlas** — default geographic/evidence workspace;
-- **International 12** — open with `/?section=international`.
+- **Corridors** — `/?section=corridors`, evidence-building dossier surface with ranking disabled;
+- **International 12** — `/?section=international`, governed twelve-position counterparty portfolio;
+- **Economics** — `/?section=economics`, non-bankable scenario/sensitivity workspace;
+- **Evidence** — `/?section=evidence`, provenance, uncertainty and publication-control workspace.
 
-The legacy `/international` route redirects to `/?section=international` so existing bookmarks continue to work. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the global shell deliberately uses `section=` to avoid colliding with map state.
+Direct routes `/atlas`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
 
 The International 12 interface:
 
@@ -115,9 +118,11 @@ The International 12 interface:
 - filters by organization, home jurisdiction, engagement tier and target service offer;
 - exposes the candidate rationale, hard commercial gate, jurisdiction state and ring-fencing flag;
 - keeps "research candidate" visibly distinct from interest, commitment or contract;
-- links back to the Northern Atlas without mixing international commercial research into map geometry.
+- remains inside the same Observatory cockpit rather than becoming a separate application.
 
-The runtime data path follows the same publication boundary as the Observatory:
+Corridors, Economics and Evidence are governed cockpit surfaces. Until dedicated published artifacts exist, they remain explicit non-ranking/non-bankable scaffolds rather than inventing project maturity.
+
+The International 12 runtime data path follows the same publication boundary as the Atlas:
 
 ```text
 research/commercial/international_portfolio_12.yaml
@@ -127,7 +132,7 @@ pipelines/publish/build_international_portfolio_public.py
         ↓
 data/publish/current/international_portfolio_public.json
         ↓ read only
-app/api/international/portfolio → Kristal Observatory → International 12
+app/api/international/portfolio → Kristal Farms Observatory → International 12
 ```
 
 The Web application MUST NOT read `research/` or the policy YAML directly at runtime. Rebuild the public artifact after an adopted portfolio/policy change:
@@ -135,3 +140,11 @@ The Web application MUST NOT read `research/` or the policy YAML directly at run
 ```bash
 python pipelines/publish/build_international_portfolio_public.py
 ```
+## Grid Reach v1 — Côte-Nord electrical context
+
+The Northern Atlas includes a lightweight **Electrical grid reach** context layer. It intentionally publishes only the regional transmission skeleton and the documented eastern 34.5 kV extension needed to answer how far the existing network reaches north/east. The displayed line geometry is schematic connectivity between documented anchors, not engineering or right-of-way geometry. Use **Focus grid reach · Côte-Nord** in the Layers panel to recenter the map on the reach markers.
+
+Source/research contract: `../../research/grid/cote_nord_grid_reach.yaml`  
+Published artifact: `../../data/publish/current/grid_reach_public.geojson`  
+Web asset: `public/grid/grid-reach.geojson`
+

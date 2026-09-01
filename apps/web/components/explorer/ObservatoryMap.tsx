@@ -12,6 +12,7 @@ import type {
   CommunityInfrastructureSummary,
   ContextInfrastructure,
   ExplorerBootstrap,
+  GridReachManifest,
   LocalImageryManifest,
   LocalTerrainManifest,
   MapCameraState,
@@ -23,6 +24,7 @@ import type {
 } from "../../lib/explorer-types";
 import { createPublishedCommunityFacilityProxy } from "../../lib/context-atlas";
 import {
+  addGridReach,
   addLocalSatelliteImagery,
   addLocalTerrainScreening,
   applyObservatoryBasemapTheme,
@@ -30,6 +32,7 @@ import {
   setBasemapLabelsVisible,
   setBasemapLayerGroupVisible,
   setContextualHydrographyVisible,
+  setGridReachVisible,
   setLocalSatelliteImageryVisible,
   setLocalTerrainBasinState,
   setLocalTerrainBasinsVisible,
@@ -88,6 +91,8 @@ type Props = {
   resetViewRequest: number;
   localImagery: LocalImageryManifest | null;
   localTerrain: LocalTerrainManifest | null;
+  gridReach: GridReachManifest | null;
+  gridFocusRequest: number;
   onSelect: (entityId: string | null) => void;
   onCameraChange: (camera: MapCameraState) => void;
   onCursorChange: (lng: number, lat: number) => void;
@@ -109,6 +114,8 @@ export function ObservatoryMap({
   resetViewRequest,
   localImagery,
   localTerrain,
+  gridReach,
+  gridFocusRequest,
   onSelect,
   onCameraChange,
   onCursorChange,
@@ -521,6 +528,9 @@ export function ObservatoryMap({
         setLocalTerrainBasinsVisible(map, visibleLayersRef.current.terrain_basins);
       }
 
+      const gridReachAvailable = addGridReach(map, gridReach);
+      if (gridReachAvailable) setGridReachVisible(map, visibleLayersRef.current.grid_reach);
+
       map.addSource(RIVER_HOVER_SOURCE, { type: "geojson", data: emptyFeatureCollection() });
       map.addSource(RIVER_SELECTED_SOURCE, { type: "geojson", data: emptyFeatureCollection() });
       addContextualRiverOverlayLayers(map);
@@ -633,6 +643,7 @@ export function ObservatoryMap({
     autoFitOnLoad,
     data,
     engageCandidate,
+    gridReach,
     initialCamera,
     onCameraChange,
     onCursorChange,
@@ -644,6 +655,25 @@ export function ObservatoryMap({
     setRiverOverlay,
     updateAnchor,
   ]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map || !gridReach) return;
+    if (addGridReach(map, gridReach)) setGridReachVisible(map, visibleLayers.grid_reach);
+  }, [gridReach, mapReady, visibleLayers.grid_reach]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map || !gridReach || gridFocusRequest <= 0) return;
+    const coordinates: [number, number][] = [];
+    for (const feature of gridReach.features) collectGridCoordinates(feature.geometry.coordinates, coordinates);
+    if (!coordinates.length) return;
+    const bounds = coordinates.reduce(
+      (current, coordinate) => current.extend(coordinate),
+      new maplibregl.LngLatBounds(coordinates[0], coordinates[0]),
+    );
+    map.fitBounds(bounds, { padding: 80, maxZoom: 6.25, duration: 650, essential: false });
+  }, [gridFocusRequest, gridReach, mapReady]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -702,6 +732,7 @@ export function ObservatoryMap({
       visibleLayers.hydrometric_stations && visibleLayers.labels,
     );
 
+    setGridReachVisible(map, visibleLayers.grid_reach);
     setLocalSatelliteImageryVisible(map, visibleLayers.satellite);
     setLocalTerrainReliefVisible(map, visibleLayers.terrain_relief);
     setLocalTerrainBasinsVisible(map, visibleLayers.terrain_basins);
@@ -1518,6 +1549,8 @@ function matchRiverReference(
 }
 
 
+type SourceGeoJSONFeature = ReturnType<MapLibreMap["querySourceFeatures"]>[number];
+
 type InfrastructureSnapshot = {
   infrastructure: ContextInfrastructure[];
   communities: Map<string, CommunityInfrastructureSummary>;
@@ -1551,7 +1584,7 @@ function collectInfrastructureSnapshot(
   const seen = new Set<string>();
 
   for (const { source, sourceLayer } of sourceLayers.values()) {
-    let features: MapGeoJSONFeature[] = [];
+    let features: SourceGeoJSONFeature[] = [];
     try {
       features = map.querySourceFeatures(source, { sourceLayer });
     } catch {
@@ -1742,7 +1775,7 @@ function findNearestCommunity(
 
 function classifyInfrastructureFeature(
   sourceLayer: string,
-  feature: MapGeoJSONFeature,
+  feature: SourceGeoJSONFeature,
 ): ContextInfrastructure["kind"] | null {
   const p = feature.properties ?? {};
   const text = [
@@ -1796,7 +1829,7 @@ function contextFeatureName(
 }
 
 function contextFeatureKey(
-  feature: MapGeoJSONFeature,
+  feature: SourceGeoJSONFeature,
   sourceLayer: string,
   kind: ContextInfrastructure["kind"],
   name: string,
@@ -1881,7 +1914,7 @@ function parseCapacityMw(properties: Record<string, unknown>): number | null {
   return null;
 }
 
-function contextSizeLabel(kind: ContextInfrastructure["kind"], feature: MapGeoJSONFeature): string | null {
+function contextSizeLabel(kind: ContextInfrastructure["kind"], feature: SourceGeoJSONFeature): string | null {
   const props = feature.properties ?? {};
   for (const key of ["length", "runway:length", "width", "diameter"]) {
     const raw = props[key];
@@ -2101,6 +2134,21 @@ function createCommunityMapMarkerElement(
 
   element.appendChild(panel);
   return { element, badges };
+}
+
+function collectGridCoordinates(value: unknown, output: [number, number][]) {
+  if (!Array.isArray(value)) return;
+  if (
+    value.length >= 2 &&
+    typeof value[0] === "number" &&
+    typeof value[1] === "number" &&
+    Number.isFinite(value[0]) &&
+    Number.isFinite(value[1])
+  ) {
+    output.push([value[0], value[1]]);
+    return;
+  }
+  for (const child of value) collectGridCoordinates(child, output);
 }
 
 function clamp(value: number, minimum: number, maximum: number) {

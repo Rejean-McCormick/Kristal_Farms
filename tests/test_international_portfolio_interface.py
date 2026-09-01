@@ -41,27 +41,38 @@ def test_web_international_surface_reads_only_published_artifact():
     assert "research/commercial" not in component
 
 
-def test_observatory_shell_unifies_atlas_and_international_portfolio():
-    shell_path = ROOT / "apps/web/components/shell/KristalObservatoryShell.tsx"
+def test_observatory_shell_unifies_five_governed_workspaces():
+    shell_path = ROOT / "apps/web/components/shell/KristalFarmsObservatoryShell.tsx"
     assert shell_path.exists()
     shell = shell_path.read_text()
     assert "<ObservatoryExplorer embedded />" in shell
     assert "<InternationalPortfolioExplorer embedded />" in shell
-    assert 'searchParams.set("section", "international")' in shell
-    assert 'searchParams.delete("section")' in shell
+    for section in ["atlas", "corridors", "international", "economics", "evidence"]:
+        assert f'id: "{section}"' in shell
+    assert 'url.searchParams.set("section", next)' in shell
+    assert 'url.searchParams.delete("section")' in shell
 
 
-def test_root_uses_shell_and_legacy_international_route_redirects():
+def test_root_uses_kristal_farms_observatory_and_direct_routes_redirect():
     page = (ROOT / "apps/web/app/page.tsx").read_text()
-    legacy = (ROOT / "apps/web/app/international/page.tsx").read_text()
-    assert "KristalObservatoryShell" in page
-    assert 'redirect("/?section=international")' in legacy
+    assert "KristalFarmsObservatoryShell" in page
+
+    expected = {
+        "atlas": 'redirect("/")',
+        "corridors": 'redirect("/?section=corridors")',
+        "international": 'redirect("/?section=international")',
+        "economics": 'redirect("/?section=economics")',
+        "evidence": 'redirect("/?section=evidence")',
+    }
+    for route, marker in expected.items():
+        source = (ROOT / "apps/web/app" / route / "page.tsx").read_text()
+        assert marker in source
 
 
 def test_shell_query_does_not_collide_with_atlas_camera_view_parameter():
-    shell = (ROOT / "apps/web/components/shell/KristalObservatoryShell.tsx").read_text()
+    shell = (ROOT / "apps/web/components/shell/KristalFarmsObservatoryShell.tsx").read_text()
     observatory = (ROOT / "apps/web/components/explorer/ObservatoryExplorer.tsx").read_text()
     assert 'get("section")' in shell
-    assert 'searchParams.set("section", "international")' in shell
+    assert 'url.searchParams.set("section", next)' in shell
     assert 'url.searchParams.set(' in observatory
     assert '"view"' in observatory

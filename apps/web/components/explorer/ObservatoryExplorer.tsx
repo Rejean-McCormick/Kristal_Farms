@@ -4,7 +4,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
   EntityKind,
   ExplorerBootstrap,
+  GridReachManifest,
   LocalImageryManifest,
+  LocalTerrainManifest,
   MapCameraState,
   ObservatoryVisibleLayers,
   PublicMapFeature,
@@ -42,7 +44,10 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
   const [zoom, setZoom] = useState(DEFAULT_CAMERA.zoom);
   const [initialView] = useState(() => readInitialViewFromUrl());
   const [resetViewRequest, setResetViewRequest] = useState(0);
+  const [gridFocusRequest, setGridFocusRequest] = useState(0);
   const [localImagery, setLocalImagery] = useState<LocalImageryManifest | null>(null);
+  const [localTerrain, setLocalTerrain] = useState<LocalTerrainManifest | null>(null);
+  const [gridReach, setGridReach] = useState<GridReachManifest | null>(null);
   const handleCursorChange = useCallback((lng: number, lat: number) => setCursor({ lng, lat }), []);
 
   const [visibleLayers, setVisibleLayers] = useState<ObservatoryVisibleLayers>({
@@ -52,7 +57,10 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
     contextual_buildings: true,
     contextual_transport: true,
     contextual_facilities: true,
+    grid_reach: true,
     satellite: false,
+    terrain_relief: false,
+    terrain_basins: false,
     labels: true,
   });
 
@@ -94,6 +102,44 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
       })
       .catch((caught: unknown) => {
         if ((caught as Error).name !== "AbortError") setLocalImagery(null);
+      });
+
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("/grid/grid-reach.geojson", { signal: controller.signal, cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return (await response.json()) as GridReachManifest;
+      })
+      .then((manifest) => {
+        if (!manifest || manifest.schema !== "kristal-grid-reach/v1") return;
+        setGridReach(manifest);
+      })
+      .catch((caught: unknown) => {
+        if ((caught as Error).name !== "AbortError") setGridReach(null);
+      });
+
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("/terrain/terrain-manifest.json", { signal: controller.signal, cache: "no-store" })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return (await response.json()) as LocalTerrainManifest;
+      })
+      .then((manifest) => {
+        if (!manifest) return;
+        setLocalTerrain(manifest);
+      })
+      .catch((caught: unknown) => {
+        if ((caught as Error).name !== "AbortError") setLocalTerrain(null);
       });
 
     return () => controller.abort();
@@ -240,6 +286,9 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
         autoFitOnLoad={!initialView.fromUrl}
         resetViewRequest={resetViewRequest}
         localImagery={localImagery}
+        localTerrain={localTerrain}
+        gridReach={gridReach}
+        gridFocusRequest={gridFocusRequest}
         onSelect={selectEntity}
         onCursorChange={handleCursorChange}
         onZoomChange={setZoom}
@@ -395,12 +444,70 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
             }
           />
           <ContextLayerRow
+            id="grid_reach"
+            title="Electrical grid reach"
+            subtitle={
+              gridReach
+                ? "735 / 315 / 161 kV skeleton + documented 34.5 kV eastern extension"
+                : "Loading lightweight Côte-Nord grid context"
+            }
+            checked={visibleLayers.grid_reach && Boolean(gridReach)}
+            disabled={!gridReach}
+            status={!gridReach ? "LOAD" : undefined}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, grid_reach: checked }))
+            }
+          />
+          <button
+            type="button"
+            className="layer-panel__focus-action"
+            disabled={!gridReach}
+            onClick={() => {
+              setVisibleLayers((current) => ({ ...current, grid_reach: true }));
+              setGridFocusRequest((value) => value + 1);
+            }}
+          >
+            Focus grid reach · Côte-Nord
+          </button>
+          <ContextLayerRow
             id="labels"
             title="Map labels"
             subtitle="Places, water names and Observatory labels"
             checked={visibleLayers.labels}
             onChange={(checked) =>
               setVisibleLayers((current) => ({ ...current, labels: checked }))
+            }
+          />
+
+          <div className="layer-section-label">Terrain screening</div>
+          <ContextLayerRow
+            id="terrain_relief"
+            title={localTerrain?.title ?? "Terrain relief"}
+            subtitle={
+              localTerrain?.available
+                ? `HRDEM-derived elevation cells · ${localTerrain.cell_size_m ?? "?"} m screening grid`
+                : "Local HRDEM terrain build not published yet"
+            }
+            checked={visibleLayers.terrain_relief && Boolean(localTerrain?.available)}
+            disabled={!localTerrain?.available}
+            status={!localTerrain?.available ? "LOCAL" : undefined}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, terrain_relief: checked }))
+            }
+          />
+          <ContextLayerRow
+            id="terrain_basins"
+            title="Potential basin depth"
+            subtitle={
+              localTerrain?.available
+                ? "Terrain-connected inundation depth · exploratory retention rise"
+                : "Build local terrain cells to enable basin screening"
+            }
+            checked={visibleLayers.terrain_basins && Boolean(localTerrain?.available)}
+            disabled={!localTerrain?.available}
+            status={!localTerrain?.available ? "LOCAL" : undefined}
+            onChange={(checked) =>
+              setVisibleLayers((current) => ({ ...current, terrain_basins: checked }))
             }
           />
 
@@ -421,7 +528,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
             }
           />
           <div className="layer-panel__note">
-            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Hydrometric stations remain available but start OFF. Hydro references are filtered to the coastal/community-scale Kristal scope (≤75 km to an active community and ≤30 km to the source mouth/coast proxy) and are never presented as engineered dam locations.
+            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Electrical grid reach is a lightweight, source-backed connectivity skeleton; its lines are schematic and must not be measured or interpreted as interconnection capacity. Hydrometric stations remain available but start OFF. Terrain/basin overlays are local HRDEM-derived screening products: connected inundation cells, areas and volumes are exploratory terrain geometry only, never engineered dam or reservoir design. Hydro references remain screening references, not dam locations.
           </div>
         </section>
       )}
@@ -473,6 +580,9 @@ function ContextLayerRow({
     | "contextual_buildings"
     | "contextual_transport"
     | "contextual_facilities"
+    | "grid_reach"
+    | "terrain_relief"
+    | "terrain_basins"
     | "satellite"
     | "labels";
   title: string;

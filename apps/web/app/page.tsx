@@ -1,5 +1,5 @@
-import { KristalObservatoryShell } from "../components/shell/KristalObservatoryShell";
+import { KristalFarmsObservatoryShell } from "../components/shell/KristalFarmsObservatoryShell";
 
 export default function HomePage() {
-  return <KristalObservatoryShell />;
+  return <KristalFarmsObservatoryShell />;
 }

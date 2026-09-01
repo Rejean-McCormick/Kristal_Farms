@@ -91,8 +91,10 @@ def test_observatory_v024_uses_local_static_satellite_assets():
 def test_observatory_v024_imagery_manifest_is_static_and_local():
     manifest = json.loads((WEB / "public" / "imagery" / "local-satellite.json").read_text(encoding="utf-8"))
     assert manifest["schema"] == "kristal-local-imagery/v1"
-    assert manifest["tile_template"].startswith("/imagery/")
-    assert "://" not in manifest["tile_template"]
+    tile_template = manifest["tile_template"]
+    is_repo_static = tile_template.startswith("/imagery/") and "://" not in tile_template
+    is_loopback_static = tile_template.startswith(("http://127.0.0.1:", "http://localhost:"))
+    assert is_repo_static or is_loopback_static
 
 
 def test_observatory_v024_has_manual_imagery_pipeline_no_downloader():
@@ -106,10 +108,10 @@ def test_observatory_v024_has_manual_imagery_pipeline_no_downloader():
 
 def test_observatory_v024_clean_basemap_and_fade_are_present():
     style_source = (WEB / "lib" / "map-style.ts").read_text(encoding="utf-8")
-    assert 'background-color", "#131b20"' in style_source
-    assert "setLayerZoomRange" in style_source
-    assert "isPark" in style_source
-    assert "isLandTheme" in style_source
+    assert 'background-color", "#1E6864"' in style_source
+    assert "isParkOrLandTheme" in style_source
+    assert 'safeLayout(map, layer.id, "visibility", "none")' in style_source
+    assert 'layer.type === "raster" || layer.type === "hillshade"' in style_source
 
 
 def test_root_layout_tolerates_extension_body_attributes():

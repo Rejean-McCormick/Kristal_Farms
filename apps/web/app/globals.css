@@ -1261,3 +1261,26 @@ button { color: inherit; }
   .kristal-app-shell__nav button { font-size: 10px; padding: 0 9px; }
   .kristal-app-shell__nav-index { display: none; }
 }
+.layer-symbol.is-grid_reach {
+  width: 18px;
+  height: 8px;
+  border-top: 2px solid #f2b35d;
+  border-bottom: 1px dashed #6bc7dc;
+  border-radius: 0;
+}
+.layer-panel__focus-action {
+  width: 100%;
+  min-height: 34px;
+  margin: 6px 0 10px;
+  border: 1px solid rgba(242, 179, 93, .28);
+  background: rgba(242, 179, 93, .055);
+  color: #e8d4ad;
+  font: inherit;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.layer-panel__focus-action:hover:not(:disabled) { background: rgba(242, 179, 93, .10); }
+.layer-panel__focus-action:disabled { opacity: .4; cursor: default; }
+

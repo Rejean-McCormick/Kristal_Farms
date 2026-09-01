@@ -1,5 +1,5 @@
 import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
-import type { LocalImageryManifest, LocalTerrainManifest } from "./explorer-types";
+import type { GridReachManifest, LocalImageryManifest, LocalTerrainManifest } from "./explorer-types";
 
 const DEFAULT_VECTOR_STYLE = "https://tiles.openfreemap.org/styles/liberty";
 
@@ -64,17 +64,20 @@ const FACILITY_LAYER_HINTS = [
   "telecom",
 ];
 
-function safeLayout(map: MapLibreMap, layerId: string, property: string, value: unknown) {
+type LayoutPropertyName = Parameters<MapLibreMap["setLayoutProperty"]>[1];
+type PaintPropertyName = Parameters<MapLibreMap["setPaintProperty"]>[1];
+
+function safeLayout(map: MapLibreMap, layerId: string, property: LayoutPropertyName, value: unknown) {
   try {
-    map.setLayoutProperty(layerId, property, value);
+    map.setLayoutProperty(layerId, property, value as never);
   } catch {
     // Upstream styles differ; unsupported properties are ignored.
   }
 }
 
-function safePaint(map: MapLibreMap, layerId: string, property: string, value: unknown) {
+function safePaint(map: MapLibreMap, layerId: string, property: PaintPropertyName, value: unknown) {
   try {
-    map.setPaintProperty(layerId, property, value);
+    map.setPaintProperty(layerId, property, value as never);
   } catch {
     // Upstream styles differ; unsupported properties are ignored.
   }
@@ -599,3 +602,117 @@ export function setLocalTerrainBasinState(
     // Ignore style transitions during teardown/reload.
   }
 }
+
+const GRID_REACH_SOURCE_ID = "kristal-grid-reach-source";
+const GRID_REACH_MAJOR_LAYER_ID = "kristal-grid-reach-major";
+const GRID_REACH_LOCAL_LAYER_ID = "kristal-grid-reach-local";
+const GRID_REACH_MARKER_LAYER_ID = "kristal-grid-reach-markers";
+const GRID_REACH_LABEL_LAYER_ID = "kristal-grid-reach-labels";
+
+/** Lightweight source-backed electrical reach context. Geometry is schematic. */
+export function addGridReach(map: MapLibreMap, manifest: GridReachManifest | null): boolean {
+  if (!manifest?.features?.length) return false;
+  try {
+    const existing = map.getSource(GRID_REACH_SOURCE_ID) as { setData?: (data: any) => void } | undefined;
+    if (existing?.setData) existing.setData(manifest as any);
+    else map.addSource(GRID_REACH_SOURCE_ID, { type: "geojson", data: manifest as any });
+
+    const before = (map.getStyle().layers ?? []).find((layer) => layer.type === "symbol")?.id;
+    if (!map.getLayer(GRID_REACH_MAJOR_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_MAJOR_LAYER_ID,
+        type: "line",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 3,
+        filter: ["all", ["==", ["get", "feature_role"], "grid_connection"], ["!=", ["get", "voltage_class"], "local_extension"]],
+        layout: { visibility: "visible", "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": [
+            "case",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], "#f2b35d",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 300], "#d9c36d",
+            "#6bc7dc",
+          ],
+          "line-width": [
+            "interpolate", ["linear"], ["zoom"],
+            3, ["case", [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], 2.2, 1.25],
+            8, ["case", [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], 4.4, 2.5],
+          ],
+          "line-opacity": 0.82,
+        },
+      }, before);
+    }
+    if (!map.getLayer(GRID_REACH_LOCAL_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_LOCAL_LAYER_ID,
+        type: "line",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 4,
+        filter: ["all", ["==", ["get", "feature_role"], "grid_connection"], ["==", ["get", "voltage_class"], "local_extension"]],
+        layout: { visibility: "visible", "line-cap": "round", "line-join": "round" },
+        paint: {
+          "line-color": "#9fb7be",
+          "line-width": ["interpolate", ["linear"], ["zoom"], 4, 1, 9, 2.2],
+          "line-opacity": 0.76,
+          "line-dasharray": [2, 2],
+        },
+      }, before);
+    }
+    if (!map.getLayer(GRID_REACH_MARKER_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_MARKER_LAYER_ID,
+        type: "circle",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 3.5,
+        filter: ["==", ["get", "feature_role"], "reach_marker"],
+        layout: { visibility: "visible" },
+        paint: {
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 3.5, 4.5, 8, 7],
+          "circle-color": "#07151a",
+          "circle-stroke-color": "#f2b35d",
+          "circle-stroke-width": 1.5,
+          "circle-opacity": 0.95,
+        },
+      });
+    }
+    if (!map.getLayer(GRID_REACH_LABEL_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_LABEL_LAYER_ID,
+        type: "symbol",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 4.25,
+        filter: ["==", ["get", "feature_role"], "reach_marker"],
+        layout: {
+          visibility: "visible",
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Regular"],
+          "text-size": ["interpolate", ["linear"], ["zoom"], 4.25, 10, 8, 12],
+          "text-offset": [0.9, 0],
+          "text-anchor": "left",
+          "text-allow-overlap": false,
+        },
+        paint: {
+          "text-color": "#e7f6f9",
+          "text-halo-color": "rgba(3, 12, 17, .94)",
+          "text-halo-width": 1.5,
+        },
+      });
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function setGridReachVisible(map: MapLibreMap, visible: boolean) {
+  for (const layerId of [
+    GRID_REACH_MAJOR_LAYER_ID,
+    GRID_REACH_LOCAL_LAYER_ID,
+    GRID_REACH_MARKER_LAYER_ID,
+    GRID_REACH_LABEL_LAYER_ID,
+  ]) {
+    if (!map.getLayer(layerId)) continue;
+    safeLayout(map, layerId, "visibility", visible ? "visible" : "none");
+  }
+}
+
