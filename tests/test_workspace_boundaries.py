@@ -15,9 +15,18 @@ FORBIDDEN_PRODUCT_TOKENS = (
     "'fixtures'",
 )
 
+# Vendor/build output is not Kristal product source and must not participate in
+# the architecture-boundary scan. public/maplibre is a generated vendor worker.
+IGNORED_RUNTIME_DIRS = {"node_modules", ".next"}
+
 
 def runtime_files(root: Path):
     for path in root.rglob("*"):
+        relative = path.relative_to(root)
+        if any(part in IGNORED_RUNTIME_DIRS for part in relative.parts):
+            continue
+        if len(relative.parts) >= 2 and relative.parts[:2] == ("public", "maplibre"):
+            continue
         if path.is_file() and path.suffix.lower() in RUNTIME_SUFFIXES:
             yield path
 

@@ -1,21 +1,23 @@
 schema: kristal-grid-reach-research/v1
-version: "2026-09-01"
+version: "2026-09-01-terminal"
 status: research_context
 ranking_allowed: false
 purpose: >-
-  Lightweight view of how far documented existing electrical infrastructure reaches north
-  and east across the Côte-Nord. Connectivity and voltage are source-backed; map lines are
+  Lightweight view of how far documented existing electrical infrastructure reaches across the
+  Northern Atlas study geography: comparative west via Abitibi, north via Poste des Montagnais,
+  and east via Natashquan and La Romaine. Connectivity and voltage are source-backed; map lines are
   schematic connections between documented place/facility anchors, not surveyed conductor alignments.
 
 map_policy:
   default_visible: true
   geometry_role: schematic_connectivity_not_engineering_geometry
   measurement_allowed: false
+  terminal_gap_degrees: 0.18
   local_distribution_network_included: false
   note: >-
-    Do not render the full provincial distribution network. Preserve only the regional
-    transmission skeleton and the documented 34.5 kV eastern extension because the project
-    question is network reach, not pole-by-pole distribution detail.
+    Do not render the full provincial distribution network. Preserve only the trunk transmission
+    skeleton needed to understand west, north and east reach, plus the documented 34.5 kV eastern
+    extension. This layer is for comparative network reach, not pole-by-pole distribution detail.
 
 sources:
   - id: hq_bape_romaine_corridor
@@ -44,6 +46,18 @@ sources:
     url: https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2021-hydro-quebec.pdf
     reference_date: "2021"
     role: States the 75 km eastern line was designed to handle 161 kV but is operated at 34.5 kV.
+  - id: hq_abitibi_temiscamingue_map_2019
+    publisher: Hydro-Québec
+    title: Abitibi-Témiscamingue — réseau de transport d'électricité (regional map)
+    url: https://www.hydroquebec.com/data/projets/abitibi-temiscamingue/pdf/2019E1480-a-abitibi-web.pdf
+    reference_date: "2019"
+    role: Regional map showing 735 kV/315 kV transport context around Abitibi, Amos and Lebel-sur-Quévillon.
+  - id: hq_annual_2014_abitibi
+    publisher: Hydro-Québec
+    title: Annual Report 2014
+    url: https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2014.pdf
+    reference_date: "2014"
+    role: Documents Abitibi as a 735/315 kV hub and the west/northwest transport backbone toward northern Québec.
   - id: hq_open_transport_corridors
     publisher: Hydro-Québec Open Data
     title: Planification des travaux de maîtrise de la végétation dans les emprises — réseau de transport
@@ -58,6 +72,21 @@ sources:
     role: Geographic anchors for named places/facilities where exact substation geometry is not published in this layer.
 
 anchors:
+  abitibi_hub:
+    name: Abitibi / Amos grid hub area
+    coordinates: [-78.11361, 48.57194]
+    coordinate_basis: Amos municipality anchor used as west grid-hub proxy
+    geometry_precision: area_anchor_not_substation
+  lebel_sur_quevillon:
+    name: Lebel-sur-Quévillon
+    coordinates: [-77.23917, 49.05056]
+    coordinate_basis: Commission de toponymie municipality anchor
+    geometry_precision: municipality_anchor
+  chibougamau:
+    name: Chibougamau
+    coordinates: [-74.36586, 49.91684]
+    coordinate_basis: Commission de toponymie municipality anchor
+    geometry_precision: municipality_anchor
   arnaud_area:
     name: Arnaud / Sept-Îles grid hub area
     coordinates: [-66.50056, 50.24805]
@@ -100,6 +129,26 @@ anchors:
     geometry_precision: village_anchor
 
 connections:
+  - id: abitibi_chibougamau_735
+    name: Abitibi / Amos hub — Chibougamau
+    voltage_kv: 735
+    voltage_class: major
+    status: existing
+    endpoint_semantics: west_northern_spine
+    source_ids: [hq_annual_2014_abitibi, hq_abitibi_temiscamingue_map_2019, qc_toponymy]
+    anchor_ids: [abitibi_hub, chibougamau]
+    note: >-
+      Comparative western/northwestern transport spine included so the Northern Atlas shows the Abitibi side of the integrated network.
+      Displayed route is schematic between regional anchors; it is not the surveyed transmission right-of-way.
+  - id: abitibi_lebel_315
+    name: Abitibi / Amos hub — Lebel-sur-Quévillon
+    voltage_kv: 315
+    voltage_class: major
+    status: existing
+    endpoint_semantics: west_regional_branch
+    source_ids: [hq_annual_2014_abitibi, hq_abitibi_temiscamingue_map_2019, qc_toponymy]
+    anchor_ids: [abitibi_hub, lebel_sur_quevillon]
+    note: Existing regional 315 kV context in western Québec; displayed route is schematic.
   - id: cote_nord_735_north_reach
     name: Arnaud — Poste des Montagnais — northbound 735 kV corridor
     voltage_kv: 735
@@ -145,18 +194,31 @@ connections:
       This is the lightweight eastern reach reference; local distribution beyond the endpoint is intentionally omitted.
 
 reach_markers:
+  - id: west_735_reach
+    anchor_id: abitibi_hub
+    label: West end · 735 kV
+    voltage_kv: 735
+    terminal_kind: transmission_end
+    detail: Abitibi / Amos area is the comparative western grid-hub marker for the Northern Atlas reach layer.
+    source_ids: [hq_annual_2014_abitibi, hq_abitibi_temiscamingue_map_2019, qc_toponymy]
   - id: north_735_reach
     anchor_id: montagnais
-    label: North reach · 735 kV
+    label: North end · 735 kV
+    voltage_kv: 735
+    terminal_kind: transmission_end
     detail: Poste des Montagnais; main corridor continues toward Churchill Falls, Labrador.
     source_ids: [hq_bape_romaine_corridor, qc_toponymy]
   - id: east_161_reach
     anchor_id: natashquan
-    label: East reach · 161 kV
+    label: East end · 161 kV
+    voltage_kv: 161
+    terminal_kind: transmission_end
     detail: Natashquan is the documented eastern terminal of coastal circuit 1652 in the cited transmission study.
     source_ids: [hq_bape_romaine_corridor, qc_toponymy]
   - id: east_main_grid_extension
     anchor_id: la_romaine
-    label: East main-grid extension · 34.5 kV
+    label: East grid end · 34.5 kV
+    voltage_kv: 34.5
+    terminal_kind: grid_extension_end
     detail: La Romaine / Unamen Shipu connected to the main grid by the 75 km line commissioned in 2022; designed for 161 kV.
     source_ids: [hq_la_romaine_connection_2022, hq_annual_2021_romaine_line, qc_toponymy]

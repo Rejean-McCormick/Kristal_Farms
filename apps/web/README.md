@@ -140,9 +140,9 @@ The Web application MUST NOT read `research/` or the policy YAML directly at run
 ```bash
 python pipelines/publish/build_international_portfolio_public.py
 ```
-## Grid Reach v1 — Côte-Nord electrical context
+## Grid Reach v1.2 — Northern Atlas electrical terminal context
 
-The Northern Atlas includes a lightweight **Electrical grid reach** context layer. It intentionally publishes only the regional transmission skeleton and the documented eastern 34.5 kV extension needed to answer how far the existing network reaches north/east. The displayed line geometry is schematic connectivity between documented anchors, not engineering or right-of-way geometry. Use **Focus grid reach · Côte-Nord** in the Layers panel to recenter the map on the reach markers.
+The Northern Atlas includes a lightweight **Electrical grid reach** context layer. It intentionally publishes only the trunk regional transmission skeleton needed to answer how far the existing network reaches west, north and east, plus the documented eastern 34.5 kV extension. The displayed line geometry is schematic connectivity between documented anchors, not engineering or right-of-way geometry. Lines are intentionally shortened before emphasized terminal markers so the UI communicates **documented reach** rather than a false exact line endpoint. Use **Focus grid reach · West / North / East** in the Layers panel to recenter the map on the reach markers.
 
 Source/research contract: `../../research/grid/cote_nord_grid_reach.yaml`  
 Published artifact: `../../data/publish/current/grid_reach_public.geojson`  

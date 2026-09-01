@@ -1,14 +1,14 @@
 {
   "type": "FeatureCollection",
   "schema": "kristal-grid-reach/v1",
-  "version": "2026-09-01",
+  "version": "2026-09-01-terminal",
   "status": "research_context",
   "ranking_allowed": false,
   "default_visible": true,
   "measurement_allowed": false,
   "local_distribution_network_included": false,
-  "title": "Côte-Nord electrical grid reach",
-  "note": "Do not render the full provincial distribution network. Preserve only the regional transmission skeleton and the documented 34.5 kV eastern extension because the project question is network reach, not pole-by-pole distribution detail.",
+  "title": "Northern Atlas electrical grid reach",
+  "note": "Do not render the full provincial distribution network. Preserve only the trunk transmission skeleton needed to understand west, north and east reach, plus the documented 34.5 kV eastern extension. This layer is for comparative network reach, not pole-by-pole distribution detail.",
   "sources": [
     {
       "id": "hq_bape_romaine_corridor",
@@ -39,6 +39,20 @@
       "reference_date": "2021"
     },
     {
+      "id": "hq_abitibi_temiscamingue_map_2019",
+      "publisher": "Hydro-Québec",
+      "title": "Abitibi-Témiscamingue — réseau de transport d'électricité (regional map)",
+      "url": "https://www.hydroquebec.com/data/projets/abitibi-temiscamingue/pdf/2019E1480-a-abitibi-web.pdf",
+      "reference_date": "2019"
+    },
+    {
+      "id": "hq_annual_2014_abitibi",
+      "publisher": "Hydro-Québec",
+      "title": "Annual Report 2014",
+      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2014.pdf",
+      "reference_date": "2014"
+    },
+    {
       "id": "hq_open_transport_corridors",
       "publisher": "Hydro-Québec Open Data",
       "title": "Planification des travaux de maîtrise de la végétation dans les emprises — réseau de transport",
@@ -56,6 +70,76 @@
   "features": [
     {
       "type": "Feature",
+      "id": "abitibi_chibougamau_735",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.94418854656205,
+            48.632737788734225
+          ],
+          [
+            -74.36586,
+            49.91684
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Abitibi / Amos hub — Chibougamau",
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "status": "existing",
+        "endpoint_semantics": "west_northern_spine",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_annual_2014_abitibi",
+          "hq_abitibi_temiscamingue_map_2019",
+          "qc_toponymy"
+        ],
+        "display_terminal_gap": true,
+        "note": "Comparative western/northwestern transport spine included so the Northern Atlas shows the Abitibi side of the integrated network. Displayed route is schematic between regional anchors; it is not the surveyed transmission right-of-way."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "abitibi_lebel_315",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -78.0086772,
+            48.629374399999996
+          ],
+          [
+            -77.23917,
+            49.05056
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Abitibi / Amos hub — Lebel-sur-Quévillon",
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "status": "existing",
+        "endpoint_semantics": "west_regional_branch",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_annual_2014_abitibi",
+          "hq_abitibi_temiscamingue_map_2019",
+          "qc_toponymy"
+        ],
+        "display_terminal_gap": true,
+        "note": "Existing regional 315 kV context in western Québec; displayed route is schematic."
+      }
+    },
+    {
+      "type": "Feature",
       "id": "cote_nord_735_north_reach",
       "geometry": {
         "type": "LineString",
@@ -65,8 +149,8 @@
             50.24805
           ],
           [
-            -65.72916,
-            51.89167
+            -65.80563555852856,
+            51.728723723737716
           ]
         ]
       },
@@ -84,6 +168,7 @@
           "hq_bape_romaine_corridor",
           "qc_toponymy"
         ],
+        "display_terminal_gap": true,
         "note": "The cited corridor continues toward Churchill Falls in Labrador. The displayed Québec segment is a schematic connection between named anchors and is not the surveyed centerline of the transmission right-of-way."
       }
     },
@@ -118,6 +203,7 @@
           "hq_bape_romaine_corridor",
           "qc_toponymy"
         ],
+        "display_terminal_gap": true,
         "note": "Existing 315 kV line confirmed by Hydro-Québec; displayed route is schematic."
       }
     },
@@ -144,8 +230,8 @@
             50.2893
           ],
           [
-            -61.82213,
-            50.18609
+            -61.939922,
+            50.1984752
           ]
         ]
       },
@@ -163,6 +249,7 @@
           "hq_bape_romaine_corridor",
           "qc_toponymy"
         ],
+        "display_terminal_gap": true,
         "note": "Source documents identify circuit 1619 Arnaud–Havre-Saint-Pierre and circuit 1652 Havre-Saint-Pierre–Natashquan, with intermediate coastal substations including Rivière-au-Tonnerre and Johan-Beetz."
       }
     },
@@ -173,12 +260,12 @@
         "type": "LineString",
         "coordinates": [
           [
-            -61.82213,
-            50.18609
+            -61.6847072,
+            50.1893924
           ],
           [
-            -60.67694,
-            50.21361
+            -60.797872064,
+            50.210703888000005
           ]
         ]
       },
@@ -197,7 +284,35 @@
           "hq_annual_2021_romaine_line",
           "qc_toponymy"
         ],
+        "display_terminal_gap": true,
         "note": "Hydro-Québec reports the line is about 75 km, designed to handle 161 kV and operated at 34.5 kV. This is the lightweight eastern reach reference; local distribution beyond the endpoint is intentionally omitted."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "west_735_reach",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.11361,
+          48.57194
+        ]
+      },
+      "properties": {
+        "feature_role": "reach_marker",
+        "name": "West end · 735 kV",
+        "detail": "Abitibi / Amos area is the comparative western grid-hub marker for the Northern Atlas reach layer.",
+        "anchor_name": "Abitibi / Amos grid hub area",
+        "geometry_precision": "area_anchor_not_substation",
+        "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "terminal_kind": "transmission_end",
+        "voltage_kv": 735,
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_annual_2014_abitibi",
+          "hq_abitibi_temiscamingue_map_2019",
+          "qc_toponymy"
+        ]
       }
     },
     {
@@ -212,11 +327,13 @@
       },
       "properties": {
         "feature_role": "reach_marker",
-        "name": "North reach · 735 kV",
+        "name": "North end · 735 kV",
         "detail": "Poste des Montagnais; main corridor continues toward Churchill Falls, Labrador.",
         "anchor_name": "Poste des Montagnais",
         "geometry_precision": "official_toponymic_point",
         "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "terminal_kind": "transmission_end",
+        "voltage_kv": 735,
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
@@ -236,11 +353,13 @@
       },
       "properties": {
         "feature_role": "reach_marker",
-        "name": "East reach · 161 kV",
+        "name": "East end · 161 kV",
         "detail": "Natashquan is the documented eastern terminal of coastal circuit 1652 in the cited transmission study.",
         "anchor_name": "Natashquan",
         "geometry_precision": "municipality_anchor",
         "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "terminal_kind": "transmission_end",
+        "voltage_kv": 161,
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
@@ -260,11 +379,13 @@
       },
       "properties": {
         "feature_role": "reach_marker",
-        "name": "East main-grid extension · 34.5 kV",
+        "name": "East grid end · 34.5 kV",
         "detail": "La Romaine / Unamen Shipu connected to the main grid by the 75 km line commissioned in 2022; designed for 161 kV.",
         "anchor_name": "La Romaine / Unamen Shipu",
         "geometry_precision": "village_anchor",
         "geometry_role": "reach_reference_not_grid_terminal_survey",
+        "terminal_kind": "grid_extension_end",
+        "voltage_kv": 34.5,
         "measurement_allowed": false,
         "source_ids": [
           "hq_la_romaine_connection_2022",

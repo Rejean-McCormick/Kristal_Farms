@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-01 — Root tooling cleanup and controlled Observatory rebuild
+
+- Replaced the ad-hoc post-update workflow with `REBUILD_OBSERVATORY.pyw` as the canonical Windows rebuild + due-process launcher.
+- Added automatic `.venv` creation/repair through `requirements-dev.txt`, full pytest, TypeScript typecheck, Next production build, safe cache cleanup and health-checked dev restart.
+- Kept `START_OBSERVATORY.bat` as a quick-start-only path.
+- Retired the stale root `PACK_MANIFEST.json`, `INSTALL_WATERSHED_OVERLAY.pyw` and `VERIFY_WATERSHEDS.ps1`; their overlay-era responsibilities are now integrated into the repository/tests.
+
+
 This changelog records product and repository releases. Superseded material is preserved under `archive/` for provenance.
 
 ## 2026-08-31 — International mobilization and distributed-resilience plan (working update)

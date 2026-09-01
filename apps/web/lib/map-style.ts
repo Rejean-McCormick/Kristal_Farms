@@ -606,7 +606,9 @@ export function setLocalTerrainBasinState(
 const GRID_REACH_SOURCE_ID = "kristal-grid-reach-source";
 const GRID_REACH_MAJOR_LAYER_ID = "kristal-grid-reach-major";
 const GRID_REACH_LOCAL_LAYER_ID = "kristal-grid-reach-local";
+const GRID_REACH_TERMINAL_HALO_LAYER_ID = "kristal-grid-reach-terminal-halo";
 const GRID_REACH_MARKER_LAYER_ID = "kristal-grid-reach-markers";
+const GRID_REACH_TERMINAL_CORE_LAYER_ID = "kristal-grid-reach-terminal-core";
 const GRID_REACH_LABEL_LAYER_ID = "kristal-grid-reach-labels";
 
 /** Lightweight source-backed electrical reach context. Geometry is schematic. */
@@ -658,20 +660,65 @@ export function addGridReach(map: MapLibreMap, manifest: GridReachManifest | nul
         },
       }, before);
     }
+    if (!map.getLayer(GRID_REACH_TERMINAL_HALO_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_TERMINAL_HALO_LAYER_ID,
+        type: "circle",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 3.25,
+        filter: ["==", ["get", "feature_role"], "reach_marker"],
+        layout: { visibility: "visible" },
+        paint: {
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 3.25, 8, 8, 13],
+          "circle-color": [
+            "case",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], "#f2b35d",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 100], "#6bc7dc",
+            "#9fb7be",
+          ],
+          "circle-opacity": 0.12,
+        },
+      });
+    }
     if (!map.getLayer(GRID_REACH_MARKER_LAYER_ID)) {
       map.addLayer({
         id: GRID_REACH_MARKER_LAYER_ID,
         type: "circle",
         source: GRID_REACH_SOURCE_ID,
-        minzoom: 3.5,
+        minzoom: 3.25,
         filter: ["==", ["get", "feature_role"], "reach_marker"],
         layout: { visibility: "visible" },
         paint: {
-          "circle-radius": ["interpolate", ["linear"], ["zoom"], 3.5, 4.5, 8, 7],
-          "circle-color": "#07151a",
-          "circle-stroke-color": "#f2b35d",
-          "circle-stroke-width": 1.5,
-          "circle-opacity": 0.95,
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 3.25, 5.5, 8, 8],
+          "circle-color": "#061217",
+          "circle-stroke-color": [
+            "case",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], "#f2b35d",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 100], "#6bc7dc",
+            "#9fb7be",
+          ],
+          "circle-stroke-width": 2,
+          "circle-opacity": 0.98,
+        },
+      });
+    }
+    if (!map.getLayer(GRID_REACH_TERMINAL_CORE_LAYER_ID)) {
+      map.addLayer({
+        id: GRID_REACH_TERMINAL_CORE_LAYER_ID,
+        type: "circle",
+        source: GRID_REACH_SOURCE_ID,
+        minzoom: 3.25,
+        filter: ["==", ["get", "feature_role"], "reach_marker"],
+        layout: { visibility: "visible" },
+        paint: {
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 3.25, 1.8, 8, 2.8],
+          "circle-color": [
+            "case",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 700], "#f2b35d",
+            [">=", ["coalesce", ["get", "voltage_kv"], 0], 100], "#6bc7dc",
+            "#9fb7be",
+          ],
+          "circle-opacity": 1,
         },
       });
     }
@@ -686,8 +733,8 @@ export function addGridReach(map: MapLibreMap, manifest: GridReachManifest | nul
           visibility: "visible",
           "text-field": ["get", "name"],
           "text-font": ["Noto Sans Regular"],
-          "text-size": ["interpolate", ["linear"], ["zoom"], 4.25, 10, 8, 12],
-          "text-offset": [0.9, 0],
+          "text-size": ["interpolate", ["linear"], ["zoom"], 4.25, 9.5, 8, 11.5],
+          "text-offset": [1.15, 0],
           "text-anchor": "left",
           "text-allow-overlap": false,
         },
@@ -708,7 +755,9 @@ export function setGridReachVisible(map: MapLibreMap, visible: boolean) {
   for (const layerId of [
     GRID_REACH_MAJOR_LAYER_ID,
     GRID_REACH_LOCAL_LAYER_ID,
+    GRID_REACH_TERMINAL_HALO_LAYER_ID,
     GRID_REACH_MARKER_LAYER_ID,
+    GRID_REACH_TERMINAL_CORE_LAYER_ID,
     GRID_REACH_LABEL_LAYER_ID,
   ]) {
     if (!map.getLayer(layerId)) continue;

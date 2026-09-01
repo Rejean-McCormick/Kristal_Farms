@@ -448,7 +448,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
             title="Electrical grid reach"
             subtitle={
               gridReach
-                ? "735 / 315 / 161 kV skeleton + documented 34.5 kV eastern extension"
+                ? "West / north / east transmission reach · terminal markers emphasize documented ends"
                 : "Loading lightweight Côte-Nord grid context"
             }
             checked={visibleLayers.grid_reach && Boolean(gridReach)}
@@ -467,7 +467,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
               setGridFocusRequest((value) => value + 1);
             }}
           >
-            Focus grid reach · Côte-Nord
+            Focus grid reach · West / North / East
           </button>
           <ContextLayerRow
             id="labels"
@@ -528,7 +528,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
             }
           />
           <div className="layer-panel__note">
-            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Electrical grid reach is a lightweight, source-backed connectivity skeleton; its lines are schematic and must not be measured or interpreted as interconnection capacity. Hydrometric stations remain available but start OFF. Terrain/basin overlays are local HRDEM-derived screening products: connected inundation cells, areas and volumes are exploratory terrain geometry only, never engineered dam or reservoir design. Hydro references remain screening references, not dam locations.
+            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Electrical grid reach is a lightweight, source-backed west/north/east connectivity skeleton. Lines stop before terminal markers on purpose: the marker means documented transmission/grid reach, not an exact conductor endpoint or interconnection point. Hydrometric stations remain available but start OFF. Terrain/basin overlays are local HRDEM-derived screening products: connected inundation cells, areas and volumes are exploratory terrain geometry only, never engineered dam or reservoir design. Hydro references remain screening references, not dam locations.
           </div>
         </section>
       )}

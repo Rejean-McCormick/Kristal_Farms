@@ -16,8 +16,9 @@ def test_grid_reach_research_is_non_ranked_and_lightweight():
     assert data["ranking_allowed"] is False
     assert data["map_policy"]["measurement_allowed"] is False
     assert data["map_policy"]["local_distribution_network_included"] is False
-    assert len(data["connections"]) == 4
-    assert len(data["reach_markers"]) == 3
+    assert float(data["map_policy"]["terminal_gap_degrees"]) > 0
+    assert len(data["connections"]) == 6
+    assert len(data["reach_markers"]) == 4
 
 
 def test_grid_reach_contains_documented_voltage_classes():
@@ -29,12 +30,27 @@ def test_grid_reach_contains_documented_voltage_classes():
     assert extension["status"] == "existing"
 
 
-def test_grid_reach_emphasizes_north_and_east_reach():
+def test_grid_reach_emphasizes_west_north_and_east_reach():
     payload = json.loads(PUBLIC.read_text(encoding="utf-8"))
     markers = {f["id"]: f for f in payload["features"] if f["properties"]["feature_role"] == "reach_marker"}
-    assert set(markers) == {"north_735_reach", "east_161_reach", "east_main_grid_extension"}
+    assert set(markers) == {"west_735_reach", "north_735_reach", "east_161_reach", "east_main_grid_extension"}
+    assert "Abitibi" in markers["west_735_reach"]["properties"]["anchor_name"]
     assert markers["east_161_reach"]["properties"]["anchor_name"] == "Natashquan"
     assert "La Romaine" in markers["east_main_grid_extension"]["properties"]["anchor_name"]
+    assert markers["west_735_reach"]["properties"]["name"] == "West end · 735 kV"
+    assert markers["north_735_reach"]["properties"]["terminal_kind"] == "transmission_end"
+
+
+def test_schematic_lines_stop_before_terminal_markers():
+    payload = json.loads(PUBLIC.read_text(encoding="utf-8"))
+    markers = {tuple(feature["geometry"]["coordinates"]) for feature in payload["features"] if feature["properties"]["feature_role"] == "reach_marker"}
+    connections = [feature for feature in payload["features"] if feature["properties"]["feature_role"] == "grid_connection"]
+    assert connections
+    for feature in connections:
+        assert feature["properties"]["display_terminal_gap"] is True
+        coordinates = feature["geometry"]["coordinates"]
+        assert tuple(coordinates[0]) not in markers
+        assert tuple(coordinates[-1]) not in markers
 
 
 def test_public_geometry_is_explicitly_schematic_and_not_measurable():
@@ -64,7 +80,10 @@ def test_web_layer_is_static_lightweight_and_not_distribution_dump():
     map_style = (ROOT / "apps/web/lib/map-style.ts").read_text(encoding="utf-8")
     assert 'fetch("/grid/grid-reach.geojson"' in explorer
     assert "grid_reach: true" in explorer
+    assert "Focus grid reach · West / North / East" in explorer
     assert "addGridReach" in map_code
     assert "setGridReachVisible" in map_code
     assert "kristal-grid-reach-source" in map_style
+    assert "kristal-grid-reach-terminal-halo" in map_style
+    assert "kristal-grid-reach-terminal-core" in map_style
     assert STATIC.stat().st_size < 100_000

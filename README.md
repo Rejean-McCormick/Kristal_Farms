@@ -132,3 +132,10 @@ The GitHub Wiki is maintained as a separate repository: `Kristal_Farms.wiki`. It
 ## Long-horizon concepts
 
 Optional human-infrastructure, learning and education concepts are isolated under [`docs/70-long-horizon/`](docs/70-long-horizon/README.md). They are not prerequisites for the first energy/compute project and must not be presented as committed institutions or programs.
+
+## Local Observatory workflow
+
+After repository files change, double-click `REBUILD_OBSERVATORY.pyw`. It is the controlled Windows rebuild path: it safely stops the current Kristal dev server, cleans generated caches, creates or repairs `.venv` from `requirements-dev.txt`, republishes governed artifacts, runs `pytest`, runs the web TypeScript typecheck and production build, then starts the Observatory only when all checks pass.
+
+Use `START_OBSERVATORY.bat` only for a quick start when repository files have not changed. `DIAG_OBSERVATORY.pyw`, the Sentinel/watershed fetchers, and the PMTiles installer remain specialist tools.
+

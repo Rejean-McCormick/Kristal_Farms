@@ -1,0 +1,11 @@
+# Kristal Farms development/test environment
+# Used automatically by REBUILD_OBSERVATORY.pyw when .venv is missing or incomplete.
+pytest>=8,<10
+pydantic>=2.8,<3
+PyYAML>=6,<7
+numpy>=2,<3
+rasterio>=1.4,<2
+geopandas>=1.0,<2
+shapely>=2,<3
+pyproj>=3.7,<4
+requests>=2.32,<3

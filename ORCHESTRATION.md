@@ -41,3 +41,9 @@ A public or partner-facing release should not ship unless:
 - current documentation, machine-readable contracts and publish outputs agree.
 
 See `docs/00-control/` and `docs/adr/`.
+## Windows post-update due process
+
+`REBUILD_OBSERVATORY.pyw` is the canonical local post-update launcher. A successful run means governed publishers completed, the Python test suite passed, the TypeScript typecheck passed, the Next.js production build passed, and the development Observatory was health-checked before browser launch. Generated caches may be cleaned automatically; source data, `.venv`, `node_modules`, and Git history are never part of that cleanup.
+
+`START_OBSERVATORY.bat` is intentionally a quick-start path and does not substitute for post-update validation.
+
