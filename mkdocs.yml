@@ -1,5 +1,5 @@
 site_name: Kristal Farms
-site_description: Architecture, data, APIs, operations and product documentation for Kristal Farms.
+site_description: Project, software/data-platform, API, operations and product documentation for Kristal Farms.
 docs_dir: docs
 site_dir: site
 
@@ -8,8 +8,8 @@ nav:
   - Project:
       - Project State: 00-control/PROJECT_STATE.md
       - Strategic Principles: 00-control/STRATEGIC_PRINCIPLES.md
-      - Reference Architecture — EN: 10-core/Kristal_Farms_Reference_Architecture_EN.md
-      - Architecture de référence — FR: 10-core/Architecture_de_reference_Kristal_Farms_FR.md
+      - Project Reference Architecture — EN: 10-core/Kristal_Farms_Project_Reference_Architecture_EN.md
+      - Architecture de référence du projet — FR: 10-core/Architecture_de_reference_du_projet_Kristal_Farms_FR.md
       - Deployment Strategy — EN: 10-core/deployment/DEPLOYMENT_STRATEGY_EN.md
       - Stratégie de déploiement — FR: 10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md
       - Corridor Dossier Strategy: 00-control/CORRIDOR_DOSSIER_STRATEGY.md
@@ -20,12 +20,16 @@ nav:
   - Product:
       - Vision: product/vision.md
       - Showcase: product/showcase.md
+      - Showcase Data Contract: product/showcase-data-contract.md
       - Explorer: product/explorer.md
+      - Explorer Data Contract: product/explorer-data-contract.md
+      - Integrated Atlas: product/integrated-atlas.md
       - Scenario Studio: product/scenario-studio.md
   - Getting Started:
       - Local Development: getting-started/local-development.md
-  - Architecture:
+  - Software & Data Platform Architecture:
       - Overview: architecture/overview.md
+      - Information Architecture: architecture/information-architecture.md
       - Technology Stack: architecture/technology-stack.md
       - Repository Structure: architecture/repository-structure.md
       - Workspace Boundaries: architecture/workspace-boundaries.md
@@ -43,6 +47,10 @@ nav:
   - Data:
       - Data Model: data/data-model.md
       - Evidence Model: data/evidence-model.md
+      - Application Data Model: data/application-data-model.md
+      - Hydrology Data Contract: data/hydrology-data-contract.md
+      - Integrated Atlas Data Contract: data/integrated-atlas-data-contract.md
+      - Economic Data Contract: data/economic-data-contract.md
       - Provenance: data/provenance.md
       - Temporal Model: data/temporal-model.md
       - Spatial Standards: data/spatial-standards.md
@@ -66,6 +74,7 @@ nav:
       - Errors: api/errors.md
   - Scenarios:
       - Scenario Model: scenarios/scenario-model.md
+      - Economic Method: scenarios/economic-method.md
       - Engine Contract: scenarios/engine-contract.md
       - Reproducibility: scenarios/reproducibility.md
   - Research:

@@ -8,7 +8,7 @@ Included:
 
 - canonical research provenance fixtures (`research_source`, `research_evidence`, evidence/source links, observations, economic benchmarks);
 - current public evidence, community infrastructure, grid-reach and economic benchmark artifacts;
-- the International 12 research portfolio and its public interface;
+- the International Portfolio research portfolio and its public interface;
 - current legal/reference context attached to the jurisdiction policy.
 
 Not certified by this pass:
@@ -58,9 +58,9 @@ Corrected values:
 
 A source-arithmetic validator now recomputes all 10 governed economic benchmarks from their source metadata.
 
-### 4. International 12: missing attribution fixed
+### 4. International Portfolio (12 planning slots): missing attribution fixed
 
-The International 12 public artifact previously published factual rationales without any visible source references. This was the largest hallucination risk on an otherwise governed public research surface.
+The International Portfolio public artifact previously published factual rationales without any visible source references. This was the largest hallucination risk on an otherwise governed public research surface.
 
 Fixes:
 
@@ -122,7 +122,7 @@ These high-value active claims were checked against authoritative/current source
 - `pipelines/validate/validate_public_references.py`
   - validates canonical evidence↔source relationships;
   - requires valid evidence references for observations and benchmarks;
-  - requires International 12 candidate sources and HTTPS URLs;
+  - requires International Portfolio candidate sources and HTTPS URLs;
   - validates community infrastructure source URLs;
   - validates grid `source_ids` against the source registry;
   - validates public evidence source records;
@@ -139,7 +139,7 @@ The TypeScript typecheck was not run because this snapshot does not contain `app
 
 ## Remaining risk / next-pass priorities
 
-1. **Primary-source bias:** the International 12 sources are mostly company/first-party sources. They prove attribution, not independent truth. A second pass should add independent corroboration for capacity, operating status, ownership/control and customer concentration where it affects decisions.
+1. **Primary-source bias:** the International Portfolio sources are mostly company/first-party sources. They prove attribution, not independent truth. A second pass should add independent corroboration for capacity, operating status, ownership/control and customer concentration where it affects decisions.
 2. **Legacy internal evidence:** public evidence still contains explicitly typed `internal_legacy_research` records without public URLs. These remain historical context only and should never be treated as current authority.
 3. **Source freshness:** fast-changing project schedules, tariffs, sanctions and infrastructure status need a `valid_through`/freshness policy or scheduled revalidation.
 4. **Legal status:** sanctions/export-control references are lookup aids; legal screening must resolve the governing regulations and facts for the specific counterparty and transaction.

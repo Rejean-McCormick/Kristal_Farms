@@ -1,47 +1,33 @@
 {
   "type": "FeatureCollection",
   "schema": "kristal-grid-reach/v1",
-  "version": "2026-09-01-terminal",
+  "version": "2026-09-01-assets",
   "status": "research_context",
   "ranking_allowed": false,
   "default_visible": true,
   "measurement_allowed": false,
   "local_distribution_network_included": false,
-  "title": "Northern Atlas electrical grid reach",
-  "note": "Do not render the full provincial distribution network. Preserve only the trunk transmission skeleton needed to understand west, north and east reach, plus the documented 34.5 kV eastern extension. This layer is for comparative network reach, not pole-by-pole distribution detail.",
+  "title": "Northern Atlas electrical network context",
+  "note": "Do not render the full provincial or local distribution network. Preserve the trunk transmission skeleton, material regional extensions and selected remote/isolated electrical assets needed to understand actual reach and asset scale. Node coordinates may be named-facility or area anchors and are not engineering survey points.",
   "sources": [
     {
-      "id": "hq_bape_romaine_corridor",
-      "publisher": "Hydro-Québec / BAPE archive",
-      "title": "Raccordement du complexe de la Romaine au réseau de transport — étude de corridors",
-      "url": "https://archives.bape.gouv.qc.ca/sections/mandats/La%20Romaine_raccordement/documents/PR3.1/PR3.1.pdf",
-      "reference_date": "2009"
-    },
-    {
-      "id": "hq_sm3_existing_315",
-      "publisher": "Hydro-Québec",
-      "title": "Suréquipement de la centrale de la Sainte-Marguerite-3",
-      "url": "https://www.hydroquebec.com/production-reseau/chantiers/projets/surequipementsm3/",
+      "id": "canada_geonames",
+      "publisher": "Natural Resources Canada / Geographical Names Board of Canada",
+      "title": "Canadian Geographical Names Database",
+      "url": "https://geonames.nrcan.gc.ca/search-place-names/",
       "reference_date": "2026"
     },
     {
-      "id": "hq_la_romaine_connection_2022",
-      "publisher": "Hydro-Québec",
-      "title": "Hydro-Québec franchit un jalon important dans la décarbonation de ses réseaux autonomes",
-      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-franchit-un-jalon-important-dans-la-decarbonation-de-ses-reseaux-autonomes.html",
-      "reference_date": "2022-03-29"
-    },
-    {
-      "id": "hq_annual_2021_romaine_line",
-      "publisher": "Hydro-Québec",
-      "title": "Annual Report 2021",
-      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2021-hydro-quebec.pdf",
-      "reference_date": "2021"
+      "id": "ec_menihek_station",
+      "publisher": "Environment and Climate Change Canada",
+      "title": "Water Survey of Canada station reference — Menihek Lake at Menihek Rapids Generating Station",
+      "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03OA002",
+      "reference_date": "2026"
     },
     {
       "id": "hq_abitibi_temiscamingue_map_2019",
       "publisher": "Hydro-Québec",
-      "title": "Abitibi-Témiscamingue — réseau de transport d'électricité (regional map)",
+      "title": "Abitibi-Témiscamingue — réseau de transport d'électricité",
       "url": "https://www.hydroquebec.com/data/projets/abitibi-temiscamingue/pdf/2019E1480-a-abitibi-web.pdf",
       "reference_date": "2019"
     },
@@ -53,18 +39,95 @@
       "reference_date": "2014"
     },
     {
-      "id": "hq_open_transport_corridors",
-      "publisher": "Hydro-Québec Open Data",
-      "title": "Planification des travaux de maîtrise de la végétation dans les emprises — réseau de transport",
-      "url": "https://donnees.hydroquebec.com/explore/dataset/calendrier-travaux-degagement-transport-json/",
-      "reference_date": "2023"
+      "id": "hq_annual_2021_romaine_line",
+      "publisher": "Hydro-Québec",
+      "title": "Annual Report 2021",
+      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2021-hydro-quebec.pdf",
+      "reference_date": "2021"
     },
     {
-      "id": "qc_toponymy",
-      "publisher": "Commission de toponymie du Québec / CGNDB",
-      "title": "Official place-name coordinates",
-      "url": "https://toponymie.gouv.qc.ca/",
-      "reference_date": "2026-09-01"
+      "id": "hq_bape_romaine_corridor",
+      "publisher": "Hydro-Québec / BAPE archive",
+      "title": "Raccordement du complexe de la Romaine au réseau de transport — étude de corridors",
+      "url": "https://archives.bape.gouv.qc.ca/sections/mandats/La%20Romaine_raccordement/documents/PR3.1/PR3.1.pdf",
+      "reference_date": "2009"
+    },
+    {
+      "id": "hq_fermont_capacity_2025",
+      "publisher": "Hydro-Québec",
+      "title": "Diffusion publique des capacités de raccordement au réseau de transport",
+      "url": "https://www.hydroquebec.com/data/projets/presentation-zones-raccordement-industriel.pdf",
+      "reference_date": "2025-12"
+    },
+    {
+      "id": "hq_generation_current",
+      "publisher": "Hydro-Québec",
+      "title": "Centrales — Hydro-Québec Production",
+      "url": "https://www.hydroquebec.com/production/centrales.html",
+      "reference_date": "2026"
+    },
+    {
+      "id": "hq_la_romaine_connection_2022",
+      "publisher": "Hydro-Québec",
+      "title": "Hydro-Québec franchit un jalon important dans la décarbonation de ses réseaux autonomes",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-franchit-un-jalon-important-dans-la-decarbonation-de-ses-reseaux-autonomes.html",
+      "reference_date": "2022-03-29"
+    },
+    {
+      "id": "hq_lac_robertson",
+      "publisher": "Hydro-Québec",
+      "title": "Entente visant à soutenir les initiatives futures de Pakua Shipi — Lac-Robertson facts",
+      "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/montreal/une-entente-visant-a-soutenir-les-initiatives-futures-de-pakua-shipi.html",
+      "reference_date": "2024"
+    },
+    {
+      "id": "hq_romaine_transmission_2014",
+      "publisher": "Hydro-Québec",
+      "title": "Rapport sur le développement durable 2014 — raccordement du complexe de la Romaine",
+      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/rapport-developpement-durable-2014.pdf",
+      "reference_date": "2014"
+    },
+    {
+      "id": "hq_sm3_existing_315",
+      "publisher": "Hydro-Québec",
+      "title": "Suréquipement de la centrale de la Sainte-Marguerite-3",
+      "url": "https://www.hydroquebec.com/production-reseau/chantiers/projets/surequipementsm3/",
+      "reference_date": "2026"
+    },
+    {
+      "id": "innergex_innavik",
+      "publisher": "Innergex Renewable Energy",
+      "title": "Innavik",
+      "url": "https://www.innergex.com/en/sites/innavik",
+      "reference_date": "2026"
+    },
+    {
+      "id": "nlh_generation_assets",
+      "publisher": "Newfoundland & Labrador Hydro",
+      "title": "Our Generation Assets",
+      "url": "https://nlhydro.com/about-us/our-electricity-system/our-generation-assets/",
+      "reference_date": "2026"
+    },
+    {
+      "id": "nlh_labrador_interconnected_system",
+      "publisher": "Newfoundland & Labrador Hydro",
+      "title": "Reliability and Resource Adequacy — Labrador Interconnected System summary",
+      "url": "https://nlhydro.com/wp-content/uploads/2024/01/RRA_Summary_FINAL.pdf",
+      "reference_date": "2024"
+    },
+    {
+      "id": "nlh_labrador_transco_2025",
+      "publisher": "Labrador Transmission Corporation / Newfoundland & Labrador Hydro",
+      "title": "Labrador Transmission Corporation Q3 2025 financial statements",
+      "url": "https://nlhydro.com/wp-content/uploads/2025/12/Labrador-Transco-Q3-2025-Final.pdf",
+      "reference_date": "2025"
+    },
+    {
+      "id": "nlh_labrador_west_transmission",
+      "publisher": "Newfoundland & Labrador Hydro",
+      "title": "Labrador West Transmission Expansion Study",
+      "url": "https://nlhydro.com/about-us/our-electricity-system/major-projects/labrador-west-transmission-expansion/",
+      "reference_date": "2026"
     }
   ],
   "features": [
@@ -75,8 +138,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            -77.94418854656205,
-            48.632737788734225
+            -78.11361,
+            48.57194
           ],
           [
             -74.36586,
@@ -90,17 +153,18 @@
         "voltage_kv": 735,
         "design_voltage_kv": null,
         "voltage_class": "major",
+        "network_mode": "integrated",
         "status": "existing",
-        "endpoint_semantics": "west_northern_spine",
+        "circuit_count": null,
+        "endpoint_semantics": "northern_backbone_context",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_annual_2014_abitibi",
           "hq_abitibi_temiscamingue_map_2019",
-          "qc_toponymy"
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
-        "note": "Comparative western/northwestern transport spine included so the Northern Atlas shows the Abitibi side of the integrated network. Displayed route is schematic between regional anchors; it is not the surveyed transmission right-of-way."
+        "note": "Comparative western/northwestern transmission spine; displayed route is schematic between regional anchors."
       }
     },
     {
@@ -110,8 +174,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            -78.0086772,
-            48.629374399999996
+            -78.11361,
+            48.57194
           ],
           [
             -77.23917,
@@ -125,22 +189,23 @@
         "voltage_kv": 315,
         "design_voltage_kv": null,
         "voltage_class": "major",
+        "network_mode": "integrated",
         "status": "existing",
-        "endpoint_semantics": "west_regional_branch",
+        "circuit_count": null,
+        "endpoint_semantics": "western_regional_branch",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_annual_2014_abitibi",
           "hq_abitibi_temiscamingue_map_2019",
-          "qc_toponymy"
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
         "note": "Existing regional 315 kV context in western Québec; displayed route is schematic."
       }
     },
     {
       "type": "Feature",
-      "id": "cote_nord_735_north_reach",
+      "id": "arnaud_montagnais_735",
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -149,27 +214,133 @@
             50.24805
           ],
           [
-            -65.80563555852856,
-            51.728723723737716
+            -65.72916,
+            51.89167
           ]
         ]
       },
       "properties": {
         "feature_role": "grid_connection",
-        "name": "Arnaud — Poste des Montagnais — northbound 735 kV corridor",
+        "name": "Arnaud — Poste des Montagnais",
         "voltage_kv": 735,
         "design_voltage_kv": null,
         "voltage_class": "major",
+        "network_mode": "integrated",
         "status": "existing",
-        "endpoint_semantics": "north_reach_reference",
+        "circuit_count": null,
+        "endpoint_semantics": "cote_nord_trunk",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
-          "qc_toponymy"
+          "hq_romaine_transmission_2014",
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
-        "note": "The cited corridor continues toward Churchill Falls in Labrador. The displayed Québec segment is a schematic connection between named anchors and is not the surveyed centerline of the transmission right-of-way."
+        "note": "Côte-Nord trunk context; this is not a terminal representation and the integrated system continues into Labrador."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "montagnais_churchill_falls_735",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -65.72916,
+            51.89167
+          ],
+          [
+            -63.964167,
+            53.536111
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Poste des Montagnais — Churchill Falls",
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "quebec_labrador_interconnection",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "nlh_labrador_interconnected_system"
+        ],
+        "note": "Schematic representation of the existing 735 kV Québec–Labrador transmission relationship; not surveyed right-of-way geometry."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "churchill_labrador_west_230",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.964167,
+            53.536111
+          ],
+          [
+            -66.8658,
+            52.9082
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Churchill Falls — Labrador West",
+        "voltage_kv": 230,
+        "design_voltage_kv": null,
+        "voltage_class": "regional",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "labrador_west_supply",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_labrador_west_transmission"
+        ],
+        "note": "Newfoundland & Labrador Hydro identifies the existing 230 kV lines from Churchill Falls to Labrador West as operationally constrained."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "churchill_muskrat_315",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.964167,
+            53.536111
+          ],
+          [
+            -60.773333,
+            53.244167
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Churchill Falls — Muskrat Falls",
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": 2,
+        "endpoint_semantics": "labrador_transmission_assets",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_labrador_transco_2025",
+          "nlh_generation_assets"
+        ],
+        "note": "Schematic representation of the two 315 kV AC Labrador Transmission Asset lines connecting Muskrat Falls and Churchill Falls."
       }
     },
     {
@@ -194,17 +365,158 @@
         "voltage_kv": 315,
         "design_voltage_kv": null,
         "voltage_class": "major",
+        "network_mode": "integrated",
         "status": "existing",
+        "circuit_count": null,
         "endpoint_semantics": "inland_generation_branch",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_sm3_existing_315",
           "hq_bape_romaine_corridor",
-          "qc_toponymy"
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
         "note": "Existing 315 kV line confirmed by Hydro-Québec; displayed route is schematic."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "romaine_1_romaine_2_315",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.26083,
+            50.38528
+          ],
+          [
+            -63.194335,
+            50.624377
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Romaine-1 — Romaine-2",
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "romaine_generation_collection",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_romaine_transmission_2014",
+          "hq_generation_current"
+        ],
+        "note": "Documented 315 kV line integrating Romaine-1 into the Romaine transmission system."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "romaine_2_arnaud_315_design_735",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.194335,
+            50.624377
+          ],
+          [
+            -66.50056,
+            50.24805
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Romaine-2 — Arnaud",
+        "voltage_kv": 315,
+        "design_voltage_kv": 735,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "romaine_south_export",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_romaine_transmission_2014",
+          "hq_generation_current"
+        ],
+        "note": "Line built for the Romaine connection project; structures are 735 kV class while the documented initial operating voltage is 315 kV."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "romaine_3_romaine_4_315_design_735",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.4,
+            51.11444
+          ],
+          [
+            -63.48667,
+            51.34778
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Romaine-3 — Romaine-4",
+        "voltage_kv": 315,
+        "design_voltage_kv": 735,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "romaine_north_collection",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_romaine_transmission_2014",
+          "hq_generation_current"
+        ],
+        "note": "Romaine-3–Romaine-4 connection, designed with 735 kV structures and documented for initial 315 kV operation."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "romaine_4_montagnais_315_design_735",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -63.48667,
+            51.34778
+          ],
+          [
+            -65.72916,
+            51.89167
+          ]
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_connection",
+        "name": "Romaine-4 — Poste des Montagnais",
+        "voltage_kv": 315,
+        "design_voltage_kv": 735,
+        "voltage_class": "major",
+        "network_mode": "integrated",
+        "status": "existing",
+        "circuit_count": null,
+        "endpoint_semantics": "romaine_north_export",
+        "geometry_role": "schematic_connectivity_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_romaine_transmission_2014",
+          "hq_generation_current"
+        ],
+        "note": "Northern Romaine export connection toward Montagnais; displayed route is schematic."
       }
     },
     {
@@ -230,8 +542,8 @@
             50.2893
           ],
           [
-            -61.939922,
-            50.1984752
+            -61.82213,
+            50.18609
           ]
         ]
       },
@@ -241,15 +553,16 @@
         "voltage_kv": 161,
         "design_voltage_kv": null,
         "voltage_class": "regional",
+        "network_mode": "integrated",
         "status": "existing",
-        "endpoint_semantics": "east_161kv_reach",
+        "circuit_count": null,
+        "endpoint_semantics": "cote_nord_coastal_network",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
-          "qc_toponymy"
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
         "note": "Source documents identify circuit 1619 Arnaud–Havre-Saint-Pierre and circuit 1652 Havre-Saint-Pierre–Natashquan, with intermediate coastal substations including Rivière-au-Tonnerre and Johan-Beetz."
       }
     },
@@ -260,12 +573,12 @@
         "type": "LineString",
         "coordinates": [
           [
-            -61.6847072,
-            50.1893924
+            -61.82213,
+            50.18609
           ],
           [
-            -60.797872064,
-            50.210703888000005
+            -60.67694,
+            50.21361
           ]
         ]
       },
@@ -275,22 +588,23 @@
         "voltage_kv": 34.5,
         "design_voltage_kv": 161,
         "voltage_class": "local_extension",
+        "network_mode": "integrated_extension",
         "status": "existing",
-        "endpoint_semantics": "east_main_grid_extension",
+        "circuit_count": null,
+        "endpoint_semantics": "cote_nord_eastern_extension",
         "geometry_role": "schematic_connectivity_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_la_romaine_connection_2022",
           "hq_annual_2021_romaine_line",
-          "qc_toponymy"
+          "canada_geonames"
         ],
-        "display_terminal_gap": true,
-        "note": "Hydro-Québec reports the line is about 75 km, designed to handle 161 kV and operated at 34.5 kV. This is the lightweight eastern reach reference; local distribution beyond the endpoint is intentionally omitted."
+        "note": "Hydro-Québec reports the line is about 75 km, designed to handle 161 kV and operated at 34.5 kV."
       }
     },
     {
       "type": "Feature",
-      "id": "west_735_reach",
+      "id": "node_abitibi_hub",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -299,25 +613,69 @@
         ]
       },
       "properties": {
-        "feature_role": "reach_marker",
-        "name": "West end · 735 kV",
-        "detail": "Abitibi / Amos area is the comparative western grid-hub marker for the Northern Atlas reach layer.",
+        "feature_role": "grid_node",
+        "name": "Abitibi / Amos grid hub",
+        "display_label": "Abitibi / Amos grid hub · 735 kV",
+        "node_kind": "grid_hub",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          315
+        ],
         "anchor_name": "Abitibi / Amos grid hub area",
         "geometry_precision": "area_anchor_not_substation",
-        "geometry_role": "reach_reference_not_grid_terminal_survey",
-        "terminal_kind": "transmission_end",
-        "voltage_kv": 735,
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_annual_2014_abitibi",
           "hq_abitibi_temiscamingue_map_2019",
-          "qc_toponymy"
+          "canada_geonames"
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "north_735_reach",
+      "id": "node_arnaud",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.50056,
+          50.24805
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Poste Arnaud area",
+        "display_label": "Poste Arnaud area · 735 kV",
+        "node_kind": "substation",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          315,
+          161
+        ],
+        "anchor_name": "Arnaud / Sept-Îles grid hub area",
+        "geometry_precision": "area_anchor_not_substation",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_bape_romaine_corridor",
+          "hq_romaine_transmission_2014",
+          "canada_geonames"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_montagnais",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -326,24 +684,333 @@
         ]
       },
       "properties": {
-        "feature_role": "reach_marker",
-        "name": "North end · 735 kV",
-        "detail": "Poste des Montagnais; main corridor continues toward Churchill Falls, Labrador.",
+        "feature_role": "grid_node",
+        "name": "Poste des Montagnais",
+        "display_label": "Poste des Montagnais · 735 kV",
+        "node_kind": "substation",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
         "anchor_name": "Poste des Montagnais",
         "geometry_precision": "official_toponymic_point",
-        "geometry_role": "reach_reference_not_grid_terminal_survey",
-        "terminal_kind": "transmission_end",
-        "voltage_kv": 735,
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
-          "qc_toponymy"
+          "hq_romaine_transmission_2014",
+          "canada_geonames"
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "east_161_reach",
+      "id": "node_sm3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.77972,
+          50.705
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Sainte-Marguerite-3",
+        "display_label": "Sainte-Marguerite-3 · 882 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 882,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Centrale de la Sainte-Marguerite-3",
+        "geometry_precision": "official_toponymic_point",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_generation_current",
+          "hq_sm3_existing_315",
+          "canada_geonames"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_romaine_1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.26083,
+          50.38528
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Romaine-1",
+        "display_label": "Romaine-1 · 270 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 270,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          161,
+          13.8
+        ],
+        "anchor_name": "Centrale de la Romaine-1",
+        "geometry_precision": "named_facility_point_not_survey",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_generation_current",
+          "hq_romaine_transmission_2014"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_romaine_2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.194335,
+          50.624377
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Romaine-2",
+        "display_label": "Romaine-2 · 640 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 640,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          315,
+          18
+        ],
+        "anchor_name": "Centrale de la Romaine-2",
+        "geometry_precision": "official_toponymic_point",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_generation_current",
+          "hq_romaine_transmission_2014",
+          "canada_geonames"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_romaine_3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.4,
+          51.11444
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Romaine-3",
+        "display_label": "Romaine-3 · 395 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 395,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          13.8
+        ],
+        "anchor_name": "Centrale de la Romaine-3",
+        "geometry_precision": "named_facility_point_not_survey",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_generation_current",
+          "hq_romaine_transmission_2014"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_romaine_4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.48667,
+          51.34778
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Romaine-4",
+        "display_label": "Romaine-4 · 245 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 245,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": [
+          13.8
+        ],
+        "anchor_name": "Centrale de la Romaine-4",
+        "geometry_precision": "named_facility_point_not_survey",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_generation_current",
+          "hq_romaine_transmission_2014"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_churchill_falls",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -63.964167,
+          53.536111
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Churchill Falls",
+        "display_label": "Churchill Falls · 5,428 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 5428,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 735,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Churchill Falls Generating Station",
+        "geometry_precision": "named_or_strong_proxy",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_generation_assets"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_muskrat_falls",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.773333,
+          53.244167
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Muskrat Falls",
+        "display_label": "Muskrat Falls · 824 MW",
+        "node_kind": "generating_station",
+        "network_mode": "integrated",
+        "installed_capacity_mw": 824,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 315,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Muskrat Falls Generating Station",
+        "geometry_precision": "named_or_strong_proxy",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_generation_assets",
+          "nlh_labrador_transco_2025"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_labrador_west",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8658,
+          52.9082
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Labrador West / Wabush",
+        "display_label": "Labrador West / Wabush · 230 kV",
+        "node_kind": "terminal_area",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 230,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Labrador West / Wabush terminal area",
+        "geometry_precision": "area_anchor_not_substation",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_labrador_west_transmission"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_fermont",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.083,
+          52.791
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Fermont",
+        "display_label": "Fermont · <10 MW available",
+        "node_kind": "grid_area",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": {
+          "value_mw": 10,
+          "operator": "<",
+          "as_of": "2025-12",
+          "context": "industrial_connection_residual_capacity"
+        },
+        "voltage_kv": null,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Fermont grid area",
+        "geometry_precision": "municipality_area_anchor",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_fermont_capacity_2025"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_natashquan",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -352,24 +1019,30 @@
         ]
       },
       "properties": {
-        "feature_role": "reach_marker",
-        "name": "East end · 161 kV",
-        "detail": "Natashquan is the documented eastern terminal of coastal circuit 1652 in the cited transmission study.",
+        "feature_role": "grid_node",
+        "name": "Natashquan",
+        "display_label": "Natashquan · 161 kV",
+        "node_kind": "substation_area",
+        "network_mode": "integrated",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 161,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
         "anchor_name": "Natashquan",
         "geometry_precision": "municipality_anchor",
-        "geometry_role": "reach_reference_not_grid_terminal_survey",
-        "terminal_kind": "transmission_end",
-        "voltage_kv": 161,
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_bape_romaine_corridor",
-          "qc_toponymy"
+          "canada_geonames"
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "east_main_grid_extension",
+      "id": "node_la_romaine",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -378,19 +1051,120 @@
         ]
       },
       "properties": {
-        "feature_role": "reach_marker",
-        "name": "East grid end · 34.5 kV",
-        "detail": "La Romaine / Unamen Shipu connected to the main grid by the 75 km line commissioned in 2022; designed for 161 kV.",
+        "feature_role": "grid_node",
+        "name": "La Romaine / Unamen Shipu",
+        "display_label": "La Romaine / Unamen Shipu · 34.5 kV",
+        "node_kind": "community_connection",
+        "network_mode": "integrated_extension",
+        "installed_capacity_mw": null,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 34.5,
+        "design_voltage_kv": 161,
+        "secondary_voltage_kv": null,
         "anchor_name": "La Romaine / Unamen Shipu",
         "geometry_precision": "village_anchor",
-        "geometry_role": "reach_reference_not_grid_terminal_survey",
-        "terminal_kind": "grid_extension_end",
-        "voltage_kv": 34.5,
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
         "measurement_allowed": false,
         "source_ids": [
           "hq_la_romaine_connection_2022",
           "hq_annual_2021_romaine_line",
-          "qc_toponymy"
+          "canada_geonames"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_menihek",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.625,
+          54.455
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Menihek",
+        "display_label": "Menihek · 18 MW",
+        "node_kind": "generating_station",
+        "network_mode": "isolated",
+        "installed_capacity_mw": 18,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": 69,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Menihek Hydroelectric Generating Station",
+        "geometry_precision": "named_or_strong_proxy",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "nlh_generation_assets",
+          "ec_menihek_station"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_lac_robertson",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.063056,
+          50.999167
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Lac-Robertson",
+        "display_label": "Lac-Robertson · 21 MW",
+        "node_kind": "generating_station",
+        "network_mode": "isolated",
+        "installed_capacity_mw": 21,
+        "backup_capacity_mw": 4.8,
+        "available_capacity": null,
+        "voltage_kv": null,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Centrale du Lac-Robertson",
+        "geometry_precision": "official_toponymic_point",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "hq_lac_robertson",
+          "canada_geonames"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node_innavik",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.01444,
+          58.50806
+        ]
+      },
+      "properties": {
+        "feature_role": "grid_node",
+        "name": "Innavik",
+        "display_label": "Innavik · 7.5 MW",
+        "node_kind": "generating_station",
+        "network_mode": "isolated",
+        "installed_capacity_mw": 7.5,
+        "backup_capacity_mw": null,
+        "available_capacity": null,
+        "voltage_kv": null,
+        "design_voltage_kv": null,
+        "secondary_voltage_kv": null,
+        "anchor_name": "Innavik hydroelectric facility",
+        "geometry_precision": "facility_area_anchor",
+        "geometry_role": "named_asset_or_area_anchor_not_engineering_geometry",
+        "measurement_allowed": false,
+        "source_ids": [
+          "innergex_innavik"
         ]
       }
     }

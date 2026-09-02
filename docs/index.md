@@ -8,24 +8,25 @@ This documentation covers the **Kristal Farms infrastructure project** and the a
 
 1. [Project state](00-control/PROJECT_STATE.md)
 2. [Strategic principles](00-control/STRATEGIC_PRINCIPLES.md)
-3. [Reference architecture — English](10-core/Kristal_Farms_Reference_Architecture_EN.md) or [français](10-core/Architecture_de_reference_Kristal_Farms_FR.md)
-4. [Deployment strategy — English](10-core/deployment/DEPLOYMENT_STRATEGY_EN.md) or [français](10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
+3. [Project reference architecture — English](10-core/Kristal_Farms_Project_Reference_Architecture_EN.md) or [architecture de référence du projet — français](10-core/Architecture_de_reference_du_projet_Kristal_Farms_FR.md)
+4. [Deployment strategy — English](10-core/deployment/DEPLOYMENT_STRATEGY_EN.md) or [stratégie de déploiement — français](10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 5. [Corridor dossier strategy](00-control/CORRIDOR_DOSSIER_STRATEGY.md)
 6. [Responsible international tenant governance](00-control/INTERNATIONAL_TENANT_GOVERNANCE.md)
 7. [Plan de mobilisation internationale — français](10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md)
-8. [Tenant-controlled encrypted environment — English](10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md) or [français](10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
+8. [Tenant-controlled encrypted environment — English](10-core/tenancy/BLACK_BOX_TENANCY_MODEL_EN.md) or [environnement chiffré sous contrôle du locataire — français](10-core/tenancy/MODELE_LOCATION_BLACK_BOX_FR.md)
 
 ### Application and data
 
 1. [Application product vision](product/vision.md)
-2. [Architecture overview](architecture/overview.md)
-3. [Kristal Farms domain principles](domain/kristal-farms-principles.md)
-4. [Data model](data/data-model.md)
-5. [Evidence model](data/evidence-model.md)
-6. [Map observatory interaction](frontend/map-observatory-interaction.md)
-7. [Layer catalog](frontend/layer-catalog.md)
-8. [API overview](api/overview.md)
-9. [Implementation plan](roadmap/implementation-plan.md)
+2. [Software & data platform architecture](architecture/overview.md)
+3. [Information architecture](architecture/information-architecture.md)
+4. [Kristal Farms domain principles](domain/kristal-farms-principles.md)
+5. [Data model](data/data-model.md)
+6. [Evidence model](data/evidence-model.md)
+7. [Map observatory interaction](frontend/map-observatory-interaction.md)
+8. [Layer catalog](frontend/layer-catalog.md)
+9. [API overview](api/overview.md)
+10. [Implementation plan](roadmap/implementation-plan.md)
 
 ### Mine infrastructure reuse and storage
 
@@ -47,7 +48,7 @@ This documentation covers the **Kristal Farms infrastructure project** and the a
 The active authority order is defined in [Document Authority](00-control/DOCUMENT_AUTHORITY.md). In short:
 
 - current project-control documents govern intent and interpretation;
-- current reference architecture governs the physical/commercial model;
+- current project reference architecture governs the physical/commercial model;
 - source evidence governs factual claims within its actual scope;
 - assumptions remain assumptions;
 - archived material never silently overrides active state.

@@ -8,3 +8,6 @@ In particular:
 - use layer catalog configuration for generic map layers;
 - keep scenario assumptions/results separate from observed research data;
 - update machine contracts and documentation when semantics change.
+
+- treat `archive/` as historical provenance only; do not use it as active architecture/context unless the task explicitly asks for history;
+- use `docs/architecture/information-architecture.md` when deciding where new documentation belongs.

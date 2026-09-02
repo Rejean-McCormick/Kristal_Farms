@@ -67,13 +67,21 @@
 
 .nav button {
   flex: 0 0 auto;
-  min-width: 126px;
+  min-width: 132px;
   padding: 0 14px;
   border-left: 1px solid rgba(144, 194, 214, 0.1);
-  font-size: 10px;
-  letter-spacing: 0.045em;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  text-align: left;
   color: #93a9b2;
   white-space: nowrap;
+}
+
+.nav button strong {
+  font-size: 10px;
+  font-weight: 520;
+  letter-spacing: 0.045em;
 }
 
 .nav button:last-child { border-right: 1px solid rgba(144, 194, 214, 0.1); }
@@ -84,14 +92,21 @@
   box-shadow: inset 0 -2px 0 var(--cyan);
 }
 
-.nav button span {
-  margin-right: 7px;
-  font-size: 8px;
-  letter-spacing: 0.12em;
+.navMeta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 7px;
+  letter-spacing: 0.13em;
   color: var(--faint);
 }
 
-.nav button.active span { color: var(--cyan); }
+.navMeta > span {
+  color: rgba(145, 170, 180, 0.72);
+}
+
+.nav button.active .navMeta,
+.nav button.active .navMeta > span { color: var(--cyan); }
 
 .context {
   display: grid;
@@ -205,7 +220,7 @@
   .bar { grid-template-columns: 185px minmax(0, 1fr); }
   .context { display: none; }
   .nav { justify-content: flex-start; }
-  .nav button { min-width: 118px; }
+  .nav button { min-width: 122px; }
 }
 
 @media (max-width: 760px) {
@@ -214,8 +229,9 @@
   .brand { padding: 0 12px; }
   .brand span { display: none; }
   .brand strong { font-size: 10px; }
-  .nav button { min-width: 104px; padding: 0 10px; font-size: 9px; }
-  .nav button span { display: none; }
+  .nav button { min-width: 108px; padding: 0 10px; }
+  .nav button strong { font-size: 9px; }
+  .navMeta { display: none; }
   .brief { padding-left: 18px; padding-right: 18px; }
   .briefHero { grid-template-columns: 1fr; gap: 20px; }
   .briefGrid { grid-template-columns: 1fr; }

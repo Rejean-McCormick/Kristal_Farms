@@ -1,6 +1,6 @@
 {
   "schema": "kristal-community-infrastructure/v1",
-  "generated_at": "2026-09-02T00:18:01Z",
+  "generated_at": "2026-09-02T00:22:05Z",
   "ranking_allowed": false,
   "semantics": {
     "population": "Published census/context fact with explicit year and provenance.",

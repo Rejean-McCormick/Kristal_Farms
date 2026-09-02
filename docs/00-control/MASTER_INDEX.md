@@ -13,10 +13,10 @@
 - [Corridor Dossier Strategy](CORRIDOR_DOSSIER_STRATEGY.md)
 - [Responsible International Tenant Governance](INTERNATIONAL_TENANT_GOVERNANCE.md)
 
-## Reference architecture
+## Project reference architecture
 
-- [Kristal Farms Reference Architecture — EN](../10-core/Kristal_Farms_Reference_Architecture_EN.md)
-- [Architecture de référence Kristal Farms — FR](../10-core/Architecture_de_reference_Kristal_Farms_FR.md)
+- [Kristal Farms Project Reference Architecture — EN](../10-core/Kristal_Farms_Project_Reference_Architecture_EN.md)
+- [Architecture de référence du projet Kristal Farms — FR](../10-core/Architecture_de_reference_du_projet_Kristal_Farms_FR.md)
 - [Kristal Farms Vision — EN](../10-core/strategy/KRISTAL_FARMS_VISION_EN.md)
 - [Vision Kristal Farms — FR](../10-core/strategy/VISION_KRISTAL_FARMS_FR.md)
 - [Plan de mobilisation internationale — FR](../10-core/strategy/PLAN_MOBILISATION_INTERNATIONALE_KRISTAL_FARMS_FR.md)
@@ -43,26 +43,27 @@
 - [Economic Benchmark Register](../40-economics/ECONOMIC_BENCHMARK_REGISTER.md)
 - [Scenario Policy](../40-economics/SCENARIO_POLICY.md)
 
-## Application data
+## Software / data-platform contracts
 
-- [Application Data Model](../60-application-data/APPLICATION_DATA_MODEL.md)
-- [Hydrology Observation Pipeline](../60-application-data/HYDROLOGY_OBSERVATION_PIPELINE.md)
-- [Hydrology Data Contract](../60-application-data/HYDROLOGY_DATA_CONTRACT.md)
-- [Hydrology Derivation Policy](../60-application-data/HYDROLOGY_DERIVATION_POLICY.md)
-- [Hydrology Source Versioning](../60-application-data/HYDROLOGY_SOURCE_VERSIONING_AND_TIME.md)
-- [Evidence Matrix](../60-application-data/EVIDENCE_MATRIX.md)
-- [Integrated Atlas](../60-application-data/INTEGRATED_ATLAS.md)
-- [Integrated Atlas Data Contract](../60-application-data/INTEGRATED_ATLAS_DATA_CONTRACT.md)
-- [Explorer Data Contract](../60-application-data/EXPLORER_DATA_CONTRACT.md)
-- [Showcase Data Contract](../60-application-data/SHOWCASE_DATA_CONTRACT.md)
-- [Economic Data Contract](../60-application-data/ECONOMIC_DATA_CONTRACT.md)
-- [Economic Method](../60-application-data/ECONOMIC_METHOD.md)
+- [Application Data Model](../data/application-data-model.md)
+- [Hydrology Observation Pipeline](../data/hydrology-observation-pipeline.md)
+- [Hydrology Data Contract](../data/hydrology-data-contract.md)
+- [Hydrology Derivation Policy](../data/hydrology-derivation-policy.md)
+- [Hydrology Source Versioning](../data/hydrology-source-versioning-and-time.md)
+- [Evidence Matrix](../data/evidence-matrix.md)
+- [Integrated Atlas](../product/integrated-atlas.md)
+- [Integrated Atlas Data Contract](../data/integrated-atlas-data-contract.md)
+- [Explorer Data Contract](../product/explorer-data-contract.md)
+- [Showcase Data Contract](../product/showcase-data-contract.md)
+- [Economic Data Contract](../data/economic-data-contract.md)
+- [Economic Method](../scenarios/economic-method.md)
 
-## Application implementation
+## Software / product implementation
 
 - [Documentation Home](../index.md)
 - [Product Vision](../product/vision.md)
-- [Architecture Overview](../architecture/overview.md)
+- [Software & Data Platform Architecture](../architecture/overview.md)
+- [Information Architecture](../architecture/information-architecture.md)
 - [Data Model](../data/data-model.md)
 - [Evidence Model](../data/evidence-model.md)
 - [Layer Catalog](../frontend/layer-catalog.md)

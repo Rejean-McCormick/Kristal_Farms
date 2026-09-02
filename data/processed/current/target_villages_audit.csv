@@ -1,0 +1,13 @@
+slug,community,entity_id,kf_status,runway_length_m,air_load_status,marine_access_mode,marine_depth_status,marine_load_status,open_gate_count,reviewed_at
+akulivik,Akulivik,7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
+aupaluk,Aupaluk,4816dcfd-4135-58ec-80ac-ce904fbd86b6,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,not_verified,not_verified,7,2026-09-01
+ivujivik,Ivujivik,34dfc3b5-8230-5f20-915d-9328af9a02c9,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
+kangiqsujuaq,Kangiqsujuaq,abe9c29a-f22e-5b33-b53b-15f04e7ae086,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,not_verified,not_verified,7,2026-09-01
+puvirnituq,Puvirnituq,64772c3a-4fd7-517d-9592-d1fd3c6fd84f,TARGET_SCREENING,1920.0,not_verified,lighterage_beach_ramp,published_reference,not_verified,7,2026-09-01
+quaqtaq,Quaqtaq,31124d89-b911-5605-bc5e-94a437c1bfcc,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
+salluit,Salluit,ce8c376c-5457-5ca1-bff5-f75919e66577,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
+nain,Nain,343f0773-986f-5312-a7f9-6119518f0dcf,TARGET_SCREENING,605.0,not_verified,ferry_and_local_ramp,not_verified,not_verified,7,2026-09-01
+hopedale,Hopedale,8b0d13b3-9042-5223-bde6-ef58e0a0e9cd,TARGET_SCREENING,762.0,not_verified,ferry_ro_ro_terminal,published_reference,not_verified,7,2026-09-01
+makkovik,Makkovik,c27fcd54-d754-5ec8-b69c-f31335a2d034,TARGET_SCREENING,790.0,not_verified,ferry_ro_ro_terminal,not_verified,not_verified,7,2026-09-01
+postville,Postville,7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8,TARGET_SCREENING,785.0,not_verified,ferry_ro_ro_terminal,not_verified,not_verified,7,2026-09-01
+rigolet,Rigolet,784a7c7f-68ae-5a8f-9fb8-29902b3df56d,TARGET_SCREENING,761.0,not_verified,ferry_ro_ro_terminal,published_reference,not_verified,7,2026-09-01

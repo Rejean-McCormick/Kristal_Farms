@@ -9,7 +9,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$Root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $Target = Join-Path $Root "apps\web\public\imagery\local-satellite.json"
 $TileJsonUrl = "http://127.0.0.1:8765/$Id.json"
 

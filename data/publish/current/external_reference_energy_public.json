@@ -1,57 +1,285 @@
 {
-  "release": "2026.08.30",
+  "schema": "kristal-external-reference-energy/v2",
+  "release": "2026.09.01",
+  "generated_at": "2026-09-02T00:22:06Z",
   "immutable": true,
+  "ranking_allowed": false,
+  "semantics": {
+    "external_reference": "External projects and assets are context only and are not Kristal Farms candidates.",
+    "geometry": "Null geometry means no governed route/site geometry is published; do not synthesize one.",
+    "status": "Study, funded, rejected and active statuses must not be interpreted as operating infrastructure."
+  },
   "items": [
     {
-      "entity_id": "6ab5eacd-2354-596f-8930-6b0ff539724e",
-      "name": "Labrador North Wireless Broadband Project",
-      "entity_type": "project",
-      "role": "external_reference",
-      "status": "provider_withdrawn_2025",
-      "technology": "broadband",
-      "capacity_mw": null,
-      "geometry": null
-    },
-    {
-      "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
-      "name": "Innavik",
-      "entity_type": "project",
-      "role": "external_reference",
-      "status": "operating",
-      "technology": "run_of_river_hydro",
-      "capacity_mw": 7.5,
-      "geometry": null
-    },
-    {
       "entity_id": "165aa1a2-ca63-5029-9f69-82048b6958c3",
+      "canonical_key": "asset:hydro-generating-station:qc:lac-robertson",
       "name": "Lac-Robertson generating station",
       "entity_type": "asset",
       "role": "external_reference",
+      "project_type": null,
       "status": "operating_reference",
       "technology": "hydroelectricity",
+      "capacity_mw": 21,
       "capacity_value": 21,
       "capacity_unit": "MW",
-      "geometry": null
+      "developer": null,
+      "operator": "Hydro-Québec",
+      "geometry": null,
+      "communities": [],
+      "community_relations": [],
+      "metadata": {
+        "diesel_backup_mw": 4.8,
+        "main_grid_connected": false,
+        "geometry_role": null
+      },
+      "evidence": [
+        {
+          "id": "ee5ce01d-7aa7-5fff-a8b4-8b0de6d7bc86",
+          "evidence_type": "external_reference_asset",
+          "claim": "Hydro-Québec documents Lac-Robertson as a 21 MW hydro station with 4.8 MW diesel backup and local transmission/distribution, not connected to its main transmission grid.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "fb795fed-a5e7-5026-8ebb-c49a63ac11ed",
+          "source_key": "SRC-HQ-LAC-ROBERTSON",
+          "title": "Lac-Robertson development — facts",
+          "publisher": "Hydro-Québec",
+          "source_type": "utility_release",
+          "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/montreal/une-entente-visant-a-soutenir-les-initiatives-futures-de-pakua-shipi.html",
+          "publication_date": null
+        }
+      ]
     },
     {
-      "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
-      "name": "Quaqtaq wind electricity-supply project",
+      "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
+      "canonical_key": "project:external:qc:innavik",
+      "name": "Innavik",
       "entity_type": "project",
       "role": "external_reference",
-      "status": "contract_authorized_2025",
-      "technology": "wind_plus_storage",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "run_of_river_hydro",
+      "capacity_mw": 7.5,
+      "developer": "Pituvik Landholding Corporation / Innergex",
+      "operator": "Innergex / Pituvik partnership",
+      "geometry": null,
+      "communities": [
+        "Inukjuak"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "664545fc-d0f4-5caa-9278-510a50261908",
+          "name": "Inukjuak",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "community": "Inukjuak",
+        "reported_diesel_dependence_reduction_percent": 80,
+        "geometry_role": null
+      },
+      "evidence": [
+        {
+          "id": "f7f3c7c7-728a-5b6b-8e19-1d32018cb5c3",
+          "evidence_type": "external_reference_project",
+          "claim": "Innergex documents Innavik as an operating 7.5 MW run-of-river hydro facility supplying Inukjuak through a 50/50 Innergex/Pituvik partnership, with an 80% reported reduction in diesel dependence.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "61794de9-8b7f-5f0c-81a3-bab837cf8b88",
+          "source_key": "SRC-INNERGEX-INNAVIK",
+          "title": "Innavik",
+          "publisher": "Innergex Renewable Energy",
+          "source_type": "operator_current_asset_page",
+          "url": "https://www.innergex.com/en/sites/innavik",
+          "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "6ab5eacd-2354-596f-8930-6b0ff539724e",
+      "canonical_key": "project:external:nl:labrador-north-wireless-broadband",
+      "name": "Labrador North Wireless Broadband Project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "telecom",
+      "status": "provider_withdrawn_2025",
+      "technology": "broadband",
       "capacity_mw": null,
-      "geometry": null
+      "developer": "Nunatsiavut Government / project partners",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Rigolet",
+        "Makkovik",
+        "Postville",
+        "Hopedale",
+        "Natuashish",
+        "Nain"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+          "name": "Rigolet",
+          "relation_type": "affects"
+        },
+        {
+          "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+          "name": "Makkovik",
+          "relation_type": "affects"
+        },
+        {
+          "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+          "name": "Postville",
+          "relation_type": "affects"
+        },
+        {
+          "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+          "name": "Hopedale",
+          "relation_type": "affects"
+        },
+        {
+          "entity_id": "e32d796e-ed8c-55a1-b0c2-aaa684b43231",
+          "name": "Natuashish",
+          "relation_type": "affects"
+        },
+        {
+          "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+          "name": "Nain",
+          "relation_type": "affects"
+        }
+      ],
+      "metadata": {
+        "completed_backbone_confirmed": false,
+        "alternative_solutions_being_sought": true
+      },
+      "evidence": [
+        {
+          "id": "77fbcc4a-c367-548e-abb2-31301cef90e9",
+          "evidence_type": "telecom_status",
+          "claim": "Nunatsiavut Government reports Bell formally withdrew from the Labrador North Wireless Broadband Project in May 2025 and alternatives/new partnerships were being pursued. A completed replacement backbone is not established here.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "15feba71-0d39-5c18-887e-e62672301817",
+          "source_key": "SRC-NUNATSIAVUT-BELL-WITHDRAWAL-2025",
+          "title": "Bell Canada’s decision to withdraw from Labrador North Wireless Broadband Project disappointing",
+          "publisher": "Nunatsiavut Government",
+          "source_type": "indigenous_government_release",
+          "url": "https://nunatsiavut.com/bell-canadas-decision-to-withdraw-from-labrador-north-wireless-broadband-project-disappointing/",
+          "publication_date": "2025-05-06"
+        }
+      ]
     },
     {
       "entity_id": "4f6a0b62-883c-5a64-8fc6-dca525c7ec42",
+      "canonical_key": "project:external:qc:puvirnituq-wind",
       "name": "Puvirnituq wind electricity-supply project",
       "entity_type": "project",
       "role": "external_reference",
+      "project_type": "renewable_generation",
       "status": "contract_authorized_2025",
       "technology": "wind_plus_storage",
       "capacity_mw": null,
-      "geometry": null
+      "developer": null,
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Puvirnituq"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+          "name": "Puvirnituq",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "construction_status": "not_verified_in_current_research_baseline",
+        "community": "Puvirnituq"
+      },
+      "evidence": [
+        {
+          "id": "29c9a290-95f1-507c-b9b6-f36eae981c9a",
+          "evidence_type": "external_reference_project",
+          "claim": "Régie docket R-4302-2025 is completed and lists final decision D-2025-104 for Puvirnituq/Puvirnituq wind supply contracts; this evidence record does not assert construction or operating status.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "54089b41-a0e8-565a-9afa-c410753dd2dc",
+          "source_key": "SRC-REGIE-R4302-2025",
+          "title": "R-4302-2025 — Quaqtaq and Puvirnituq wind contracts",
+          "publisher": "Régie de l’énergie du Québec",
+          "source_type": "regulator_docket",
+          "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+          "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
+      "canonical_key": "project:external:qc:quaqtaq-wind",
+      "name": "Quaqtaq wind electricity-supply project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "contract_authorized_2025",
+      "technology": "wind_plus_storage",
+      "capacity_mw": null,
+      "developer": null,
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Quaqtaq"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+          "name": "Quaqtaq",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "construction_status": "not_verified_in_current_research_baseline",
+        "community": "Quaqtaq"
+      },
+      "evidence": [
+        {
+          "id": "45dc24ca-fa2f-5fd2-992d-74edcd0571d2",
+          "evidence_type": "external_reference_project",
+          "claim": "Régie docket R-4302-2025 is completed and lists final decision D-2025-104 for Quaqtaq/Puvirnituq wind supply contracts; this evidence record does not assert construction or operating status.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "54089b41-a0e8-565a-9afa-c410753dd2dc",
+          "source_key": "SRC-REGIE-R4302-2025",
+          "title": "R-4302-2025 — Quaqtaq and Puvirnituq wind contracts",
+          "publisher": "Régie de l’énergie du Québec",
+          "source_type": "regulator_docket",
+          "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+          "publication_date": null
+        }
+      ]
     }
   ]
 }

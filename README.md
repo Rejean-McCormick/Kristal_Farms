@@ -8,7 +8,7 @@ The project focuses on northern Québec and Labrador, where hydro resources, mar
 
 ## What Kristal Farms is
 
-Kristal Farms combines six infrastructure and governance layers:
+Kristal Farms combines seven infrastructure and governance layers:
 
 1. **Remote renewable generation** — primarily hydro where technically, environmentally and socially justified.
 2. **Protected community interface** — community and critical loads have priority over flexible compute.
@@ -71,7 +71,8 @@ kristal-farms/
 ├── data/                   # Raw, processed/current and immutable publish artifacts
 ├── apps/                   # Product applications, including Observatory
 ├── services/               # Domain API, OGC API and tile services
-├── docs/                   # Project, research, architecture and product documentation
+├── docs/                   # Project/domain + software/data-platform documentation
+├── tools/                  # Specialist local/developer utilities
 ├── sources/                # Controlled source material and project-direction records
 ├── tests/                  # Automated model/data/economic/architecture tests
 ├── infra/                  # Deployment configuration
@@ -84,8 +85,8 @@ kristal-farms/
 
 - [Project state](docs/00-control/PROJECT_STATE.md)
 - [Strategic principles](docs/00-control/STRATEGIC_PRINCIPLES.md)
-- [Reference architecture — English](docs/10-core/Kristal_Farms_Reference_Architecture_EN.md)
-- [Architecture de référence — français](docs/10-core/Architecture_de_reference_Kristal_Farms_FR.md)
+- [Project reference architecture — English](docs/10-core/Kristal_Farms_Project_Reference_Architecture_EN.md)
+- [Architecture de référence du projet — français](docs/10-core/Architecture_de_reference_du_projet_Kristal_Farms_FR.md)
 - [Deployment strategy — English](docs/10-core/deployment/DEPLOYMENT_STRATEGY_EN.md)
 - [Stratégie de déploiement — français](docs/10-core/deployment/STRATEGIE_DE_DEPLOIEMENT_FR.md)
 - [Corridor dossier strategy](docs/00-control/CORRIDOR_DOSSIER_STRATEGY.md)
@@ -98,7 +99,8 @@ kristal-farms/
 
 - [Documentation index](docs/index.md)
 - [Product vision](docs/product/vision.md)
-- [Architecture overview](docs/architecture/overview.md)
+- [Software & data platform architecture](docs/architecture/overview.md)
+- [Information architecture](docs/architecture/information-architecture.md)
 - [Data model](docs/data/data-model.md)
 - [Evidence model](docs/data/evidence-model.md)
 - [Explorer](docs/product/explorer.md)
@@ -137,5 +139,5 @@ Optional human-infrastructure, learning and education concepts are isolated unde
 
 After repository files change, double-click `REBUILD_OBSERVATORY.pyw`. It is the controlled Windows rebuild path: it safely stops the current Kristal dev server, cleans generated caches, creates or repairs `.venv` from `requirements-dev.txt`, republishes governed artifacts, runs `pytest`, runs the web TypeScript typecheck and production build, then starts the Observatory only when all checks pass.
 
-Use `START_OBSERVATORY.bat` only for a quick start when repository files have not changed. `DIAG_OBSERVATORY.pyw`, the Sentinel/watershed fetchers, and the PMTiles installer remain specialist tools.
+Use `START_OBSERVATORY.bat` only for a quick start when repository files have not changed. Specialist diagnostics, Sentinel/watershed acquisition and PMTiles helpers live under `tools/`; see [`tools/README.md`](tools/README.md).
 

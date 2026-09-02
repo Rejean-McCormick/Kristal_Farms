@@ -64,7 +64,7 @@ def normalize_issue(value: object) -> str:
 
 
 def main() -> None:
-    root_dir = Path(__file__).resolve().parent
+    root_dir = Path(__file__).resolve().parents[2]
     out_path = root_dir / "next-devtools-issues.txt"
     raw_path = root_dir / "next-devtools-issues.raw.json"
 

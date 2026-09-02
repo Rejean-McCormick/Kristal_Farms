@@ -102,14 +102,13 @@ See `docs/frontend/offline-satellite.md` and `pipelines/imagery/README.md`.
 
 ## Kristal Farms Observatory
 
-The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes six governed workspaces:
+The application uses `/` as the single **Kristal Farms Observatory** entry point. The cockpit stays flat for fast access, but its six governed workspaces use three stable intent groups:
 
-- **Northern Atlas** — default geographic/evidence workspace;
-- **Villages** — `/?section=villages`, unranked target-community catalogue with full dossiers at `/villages/[slug]`;
-- **Corridors** — `/?section=corridors`, evidence-building dossier surface with ranking disabled;
-- **International 12** — `/?section=international`, governed twelve-position counterparty portfolio;
-- **Economics** — `/?section=economics`, non-bankable scenario/sensitivity workspace;
-- **Evidence** — `/?section=evidence`, provenance, uncertainty and publication-control workspace.
+- **Explore** — **Northern Atlas** (default geography/evidence), **Villages** (`/?section=villages`, unranked target-community catalogue) and **Corridors** (`/?section=corridors`, evidence-building dossiers with ranking disabled);
+- **Evaluate** — **Economics** (`/?section=economics`, non-bankable scenarios and sensitivities);
+- **Govern** — **Evidence** (`/?section=evidence`, provenance/uncertainty/publication control) and **International Portfolio** (`/?section=international`, governed counterparty portfolio).
+
+The international portfolio currently publishes twelve planning slots. Twelve is portfolio state, not navigation taxonomy, so the workspace name does not change if the portfolio size changes.
 
 Direct routes `/atlas`, `/villages`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
 
@@ -136,7 +135,7 @@ Rebuild after target-village research changes with:
 python pipelines/publish/build_target_villages_public.py
 ```
 
-The International 12 interface:
+The International Portfolio interface:
 
 - shows all twelve current research portfolio slots;
 - filters by organization, home jurisdiction, engagement tier and target service offer;
@@ -146,7 +145,7 @@ The International 12 interface:
 
 Corridors, Economics and Evidence are governed cockpit surfaces. Until dedicated published artifacts exist, they remain explicit non-ranking/non-bankable scaffolds rather than inventing project maturity.
 
-The International 12 runtime data path follows the same publication boundary as the Atlas:
+The International Portfolio runtime data path follows the same publication boundary as the Atlas:
 
 ```text
 research/commercial/international_portfolio_12.yaml
@@ -156,7 +155,7 @@ pipelines/publish/build_international_portfolio_public.py
         ↓
 data/publish/current/international_portfolio_public.json
         ↓ read only
-app/api/international/portfolio → Kristal Farms Observatory → International 12
+app/api/international/portfolio → Kristal Farms Observatory → International Portfolio
 ```
 
 The Web application MUST NOT read `research/` or the policy YAML directly at runtime. Rebuild the public artifact after an adopted portfolio/policy change:

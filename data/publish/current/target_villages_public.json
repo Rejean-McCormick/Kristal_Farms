@@ -1,0 +1,2050 @@
+{
+  "schema": "kristal-target-villages/v1",
+  "generated_at": "2026-09-02T00:22:06Z",
+  "portfolio_version": "2026-09-01",
+  "status": "ACTIVE_SCREENING",
+  "ranking_allowed": false,
+  "target_count": 12,
+  "selection_note": "Target-village portfolio for evidence deepening. Inclusion is not a site ranking, project selection, authorization, commitment, or bankability statement.",
+  "semantics": {
+    "target": "Portfolio inclusion means evidence deepening only; it is not ranking or site selection.",
+    "depth": "Approach and anchorage depths are not berth depths. Null depth means not verified.",
+    "load": "Null load limits mean not verified. Runway length or water depth alone never establishes cargo capacity.",
+    "seasonality": "Published/general service windows are planning context and remain weather/ice/operator dependent.",
+    "coordinates": "Village coordinates are approximate community references, not facility coordinates.",
+    "energy_projects": "External energy projects are source-backed context only. Study, funded, active, rejected and operating statuses remain distinct; null geometry never becomes a synthetic route."
+  },
+  "items": [
+    {
+      "order": 1,
+      "slug": "akulivik",
+      "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
+      "name": "Akulivik",
+      "region": "Nunavik / Hudson coast",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Akulivik without ranking the village.",
+      "coordinates": {
+        "longitude": -78.2041,
+        "latitude": 60.8006,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 642,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YKO",
+        "name": "Akulivik Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Community breakwaters",
+            "length_m": null
+          },
+          {
+            "type": "boat_ramp",
+            "label": "Boat ramp",
+            "length_m": null
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beach",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": 10.0,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "partial_reference",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule",
+          "strong_tidal_currents"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "operating_fibre",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": null
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "slug": "aupaluk",
+      "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
+      "name": "Aupaluk",
+      "region": "Nunavik / Ungava coast",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Aupaluk without ranking the village.",
+      "coordinates": {
+        "longitude": -69.5996,
+        "latitude": 59.2967,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 233,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YLA",
+        "name": "Aupaluk Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Community breakwaters",
+            "length_m": null
+          },
+          {
+            "type": "small_jetty",
+            "label": "Small jetty",
+            "length_m": null
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beach",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "not_verified",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "planned_fibre_2027",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": null
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "slug": "ivujivik",
+      "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
+      "name": "Ivujivik",
+      "region": "Nunavik / Hudson Strait",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Ivujivik without ranking the village.",
+      "coordinates": {
+        "longitude": -77.9253,
+        "latitude": 62.4173,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 412,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YIK",
+        "name": "Ivujivik Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Breakwater / landing areas",
+            "length_m": null
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beach",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": 55.0,
+        "berth_depth_range_m": null,
+        "depth_status": "partial_reference",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule",
+          "north_wind_exposure",
+          "strong_tidal_currents"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "operating_fibre",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": null
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "slug": "kangiqsujuaq",
+      "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
+      "name": "Kangiqsujuaq",
+      "region": "Nunavik / Hudson Strait",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Kangiqsujuaq without ranking the village.",
+      "coordinates": {
+        "longitude": -71.9603,
+        "latitude": 61.5973,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 837,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YKG",
+        "name": "Kangiqsujuaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Community breakwaters",
+            "length_m": null
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beach",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "not_verified",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule",
+          "terrain_induced_airport_turbulence"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "operating_fibre",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": null
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "slug": "puvirnituq",
+      "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
+      "name": "Puvirnituq",
+      "region": "Nunavik / Hudson Bay",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Use Puvirnituq as a high-value logistics reference because its existing runway and marine laydown context are less restrictive than most Nunavik peers, while keeping heavy-module limits unverified.",
+      "coordinates": {
+        "longitude": -77.2756,
+        "latitude": 60.0338,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 2129,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YPX",
+        "name": "Puvirnituq Airport",
+        "runway_length_m": 1920.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Breakwater",
+            "length_m": null
+          },
+          {
+            "type": "jetty",
+            "label": "Jetty",
+            "length_m": null
+          },
+          {
+            "type": "small_dock",
+            "label": "Small docks",
+            "length_m": null
+          },
+          {
+            "type": "boat_ramp",
+            "label": "Ramp",
+            "length_m": null
+          },
+          {
+            "type": "fishing_wharf",
+            "label": "Fishing wharf",
+            "length_m": null
+          },
+          {
+            "type": "laydown",
+            "label": "Cargo laydown area",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": 8.0,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": [
+          0.9,
+          1.5
+        ],
+        "depth_status": "published_reference",
+        "ro_ro": null,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "operating_fibre",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": "wind_supply_contract_authorized_operation_not_verified"
+      },
+      "energy_projects": [
+        {
+          "entity_id": "4f6a0b62-883c-5a64-8fc6-dca525c7ec42",
+          "canonical_key": "project:external:qc:puvirnituq-wind",
+          "name": "Puvirnituq wind electricity-supply project",
+          "project_type": "renewable_generation",
+          "status": "contract_authorized_2025",
+          "technology": "wind_plus_storage",
+          "capacity_mw": null,
+          "developer": null,
+          "metadata": {
+            "construction_status": "not_verified_in_current_research_baseline",
+            "community": "Puvirnituq"
+          },
+          "sources": [
+            {
+              "id": "54089b41-a0e8-565a-9afa-c410753dd2dc",
+              "source_key": "SRC-REGIE-R4302-2025",
+              "title": "R-4302-2025 — Quaqtaq and Puvirnituq wind contracts",
+              "publisher": "Régie de l’énergie du Québec",
+              "source_type": "regulator_docket",
+              "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+              "publication_date": null
+            }
+          ]
+        }
+      ],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "slug": "quaqtaq",
+      "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
+      "name": "Quaqtaq",
+      "region": "Nunavik / Hudson Strait / Ungava side",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Quaqtaq without ranking the village.",
+      "coordinates": {
+        "longitude": -69.6164,
+        "latitude": 61.0465,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 453,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YHA",
+        "name": "Quaqtaq Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Community breakwaters",
+            "length_m": null
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beaches",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "partial_reference",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule",
+          "partially_unsurveyed_local_waters"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "planned_fibre_2027",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": "wind_supply_contract_authorized_operation_not_verified"
+      },
+      "energy_projects": [
+        {
+          "entity_id": "dbd07e0a-dc99-57ae-b291-da6f01004945",
+          "canonical_key": "project:external:qc:quaqtaq-wind",
+          "name": "Quaqtaq wind electricity-supply project",
+          "project_type": "renewable_generation",
+          "status": "contract_authorized_2025",
+          "technology": "wind_plus_storage",
+          "capacity_mw": null,
+          "developer": null,
+          "metadata": {
+            "construction_status": "not_verified_in_current_research_baseline",
+            "community": "Quaqtaq"
+          },
+          "sources": [
+            {
+              "id": "54089b41-a0e8-565a-9afa-c410753dd2dc",
+              "source_key": "SRC-REGIE-R4302-2025",
+              "title": "R-4302-2025 — Quaqtaq and Puvirnituq wind contracts",
+              "publisher": "Régie de l’énergie du Québec",
+              "source_type": "regulator_docket",
+              "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+              "publication_date": null
+            }
+          ]
+        }
+      ],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "slug": "salluit",
+      "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
+      "name": "Salluit",
+      "region": "Nunavik / Hudson Strait",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunavik target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Salluit without ranking the village.",
+      "coordinates": {
+        "longitude": -75.6333,
+        "latitude": 62.2,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 1580,
+        "year": 2021,
+        "geography": "Village nordique (VN)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YZG",
+        "name": "Salluit Airport",
+        "runway_length_m": 1073.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "Gouvernement du Québec",
+          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
+          "reference_date": "current web reference"
+        },
+        "note": null
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "lighterage_beach_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "breakwater",
+            "label": "Community breakwaters",
+            "length_m": null
+          },
+          {
+            "type": "small_jetty",
+            "label": "Small jetty",
+            "length_m": null
+          },
+          {
+            "type": "dock",
+            "label": "Community dock",
+            "length_m": 54.9
+          },
+          {
+            "type": "landing_beach",
+            "label": "Landing beach / ramp",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": 7.3,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "partial_reference",
+        "ro_ro": null,
+        "laydown_available": null,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "sealift",
+          "start_month": 7,
+          "end_month": 10,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "tide_and_water_level",
+          "sealift_schedule",
+          "channel_constraint"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "chs-arc401-2026",
+          "arctic-sealift-schedule-2026"
+        ],
+        "baseline_context": "regional_14_port_system_context",
+        "baseline_source": {
+          "name": "Kativik Regional Government",
+          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "reference_date": null
+        },
+        "baseline_note": null
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ship_to_lighterage_or_landing_facility",
+        "air_delivery": "regional_aircraft_on_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "regional_14_port_system_context",
+        "telecom": "operating_fibre",
+        "road": "no_intercommunity_or_southern_road_link",
+        "energy": null
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_or_landing_depth",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "chs-arc401-2026",
+          "title": "Sailing Directions ARC 401",
+          "publisher": "Canadian Hydrographic Service",
+          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
+          "role": "marine_depth_and_navigation_context"
+        },
+        {
+          "id": "arctic-sealift-schedule-2026",
+          "title": "Nunavik sealift schedule",
+          "publisher": "Arctic Sealift / NEAS",
+          "url": "https://arcticsealift.com/schedule.php?language=en",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "slug": "nain",
+      "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+      "name": "Nain",
+      "region": "Nunatsiavut / Labrador",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunatsiavut target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Treat Nain as a marine-logistics hub candidate with a materially constrained existing airstrip; do not count the proposed new airport as available capacity until built and certified.",
+      "coordinates": {
+        "longitude": -61.6925,
+        "latitude": 56.5428,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 847,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YDP",
+        "name": "Nain Airport",
+        "runway_length_m": 605.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Existing-airstrip dimension is a static CFS reference (1986 ft). A new Nain airport project has been under assessment; verify current facility before use."
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "ferry_and_local_ramp",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "ferry_terminal",
+            "label": "Ferry terminal",
+            "length_m": null
+          },
+          {
+            "type": "jetty",
+            "label": "North jetty",
+            "length_m": null
+          },
+          {
+            "type": "jetty",
+            "label": "Secondary jetty",
+            "length_m": null
+          },
+          {
+            "type": "ramp",
+            "label": "Freight / vessel ramp",
+            "length_m": null
+          },
+          {
+            "type": "laydown",
+            "label": "Large cargo laydown area",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "not_verified",
+        "ro_ro": null,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "coastal_ferry_and_freight",
+          "start_month": 6,
+          "end_month": 11,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "ferry_schedule"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "nl-north-labrador-ferry",
+          "nunatsiavut-travel-distances"
+        ],
+        "baseline_context": "scheduled_north_labrador_ferry_stop",
+        "baseline_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
+        "air_delivery": "regional_aircraft_on_short_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "scheduled_north_labrador_ferry_stop",
+        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road": null,
+        "energy": "remote_diesel_plant_context"
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_depth_confirmation",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area_capacity",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "nl-north-labrador-ferry",
+          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+          "publisher": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "role": "marine_service_context"
+        },
+        {
+          "id": "nunatsiavut-travel-distances",
+          "title": "Nunatsiavut coastal travel context",
+          "publisher": "Nunatsiavut Government",
+          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "slug": "hopedale",
+      "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+      "name": "Hopedale",
+      "region": "Nunatsiavut / Labrador",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunatsiavut target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Hopedale without ranking the village.",
+      "coordinates": {
+        "longitude": -60.2117,
+        "latitude": 55.4542,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 596,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YHO",
+        "name": "Hopedale Airport",
+        "runway_length_m": 762.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference; verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "ferry_ro_ro_terminal",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "public_jetty",
+            "label": "Public jetty",
+            "length_m": null
+          },
+          {
+            "type": "ferry_terminal",
+            "label": "Ferry terminal",
+            "length_m": null
+          },
+          {
+            "type": "ro_ro_ramp",
+            "label": "Ro-Ro ramp",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": [
+          4.9,
+          5.2
+        ],
+        "depth_status": "published_reference",
+        "ro_ro": true,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "coastal_ferry_and_freight",
+          "start_month": 6,
+          "end_month": 11,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "ferry_schedule",
+          "nearby_shoal_and_reef"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "nl-north-labrador-ferry",
+          "nunatsiavut-travel-distances"
+        ],
+        "baseline_context": "scheduled_north_labrador_ferry_stop",
+        "baseline_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
+        "air_delivery": "regional_aircraft_on_short_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "scheduled_north_labrador_ferry_stop",
+        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road": null,
+        "energy": "remote_diesel_plant_context"
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_depth_confirmation",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area_capacity",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "nl-north-labrador-ferry",
+          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+          "publisher": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "role": "marine_service_context"
+        },
+        {
+          "id": "nunatsiavut-travel-distances",
+          "title": "Nunatsiavut coastal travel context",
+          "publisher": "Nunatsiavut Government",
+          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "slug": "makkovik",
+      "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+      "name": "Makkovik",
+      "region": "Nunatsiavut / Labrador",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunatsiavut target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Makkovik without ranking the village.",
+      "coordinates": {
+        "longitude": -59.1765,
+        "latitude": 55.0869,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 365,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YMN",
+        "name": "Makkovik Airport",
+        "runway_length_m": 790.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (2592 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "ferry_ro_ro_terminal",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "jetty",
+            "label": "Multiple jetties",
+            "length_m": null
+          },
+          {
+            "type": "ro_ro_ramp",
+            "label": "Ro-Ro ramp",
+            "length_m": null
+          },
+          {
+            "type": "freight_shed",
+            "label": "Freight shed",
+            "length_m": null
+          },
+          {
+            "type": "marine_service",
+            "label": "Marine service area",
+            "length_m": null
+          },
+          {
+            "type": "laydown",
+            "label": "Cargo laydown area",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "not_verified",
+        "ro_ro": true,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "coastal_ferry_and_freight",
+          "start_month": 6,
+          "end_month": 11,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "ferry_schedule"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "nl-north-labrador-ferry",
+          "nunatsiavut-travel-distances"
+        ],
+        "baseline_context": "scheduled_north_labrador_ferry_stop",
+        "baseline_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
+        "air_delivery": "regional_aircraft_on_short_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "scheduled_north_labrador_ferry_stop",
+        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road": null,
+        "energy": "remote_diesel_plant_context"
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_depth_confirmation",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area_capacity",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "nl-north-labrador-ferry",
+          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+          "publisher": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "role": "marine_service_context"
+        },
+        {
+          "id": "nunatsiavut-travel-distances",
+          "title": "Nunatsiavut coastal travel context",
+          "publisher": "Nunatsiavut Government",
+          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "slug": "postville",
+      "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+      "name": "Postville",
+      "region": "Nunatsiavut / Labrador",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunatsiavut target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Postville without ranking the village.",
+      "coordinates": {
+        "longitude": -59.7853,
+        "latitude": 54.9106,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 188,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YSO",
+        "name": "Postville Airport",
+        "runway_length_m": 785.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (2576 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "ferry_ro_ro_terminal",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "jetty",
+            "label": "Multiple jetties",
+            "length_m": null
+          },
+          {
+            "type": "boat_ramp",
+            "label": "Boat ramps",
+            "length_m": null
+          },
+          {
+            "type": "ro_ro_ramp",
+            "label": "Ro-Ro ramp",
+            "length_m": null
+          },
+          {
+            "type": "freight_building",
+            "label": "Freight buildings",
+            "length_m": null
+          },
+          {
+            "type": "laydown",
+            "label": "Cargo laydown area",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": null,
+        "depth_status": "not_verified",
+        "ro_ro": true,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "coastal_ferry_and_freight",
+          "start_month": 6,
+          "end_month": 11,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "ferry_schedule"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "nl-north-labrador-ferry",
+          "nunatsiavut-travel-distances"
+        ],
+        "baseline_context": "scheduled_north_labrador_ferry_stop",
+        "baseline_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
+        "air_delivery": "regional_aircraft_on_short_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "scheduled_north_labrador_ferry_stop",
+        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road": null,
+        "energy": "remote_diesel_plant_context"
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_depth_confirmation",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area_capacity",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "nl-north-labrador-ferry",
+          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+          "publisher": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "role": "marine_service_context"
+        },
+        {
+          "id": "nunatsiavut-travel-distances",
+          "title": "Nunatsiavut coastal travel context",
+          "publisher": "Nunatsiavut Government",
+          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
+          "role": "seasonality_context"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "slug": "rigolet",
+      "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+      "name": "Rigolet",
+      "region": "Nunatsiavut / Labrador",
+      "kf_status": "TARGET_SCREENING",
+      "screening_role": "Nunatsiavut target village",
+      "ranking_allowed": false,
+      "reviewed_at": "2026-09-01",
+      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Rigolet without ranking the village.",
+      "coordinates": {
+        "longitude": -58.4289,
+        "latitude": 54.1797,
+        "geometry_status": "approximate_reference",
+        "not_facility_coordinate": true
+      },
+      "population": {
+        "value": 327,
+        "year": 2021,
+        "geography": "Town (T)",
+        "source": {
+          "name": "Statistics Canada — 2021 Census population and dwelling counts",
+          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
+          "reference_date": null
+        },
+        "note": null
+      },
+      "air": {
+        "access_known": true,
+        "code": "YRG",
+        "name": "Rigolet Airport",
+        "runway_length_m": 761.0,
+        "runway_surface": "gravel",
+        "dimension_status": "published_reference",
+        "access_pattern": "year_round_community_air_access",
+        "load_status": "not_verified",
+        "pavement_strength": null,
+        "max_aircraft_mass_kg": null,
+        "operational_constraints": [
+          "weather",
+          "gravel_runway_performance",
+          "operator_and_aircraft_limits"
+        ],
+        "presence_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/airportservices/",
+          "reference_date": null
+        },
+        "dimension_source": {
+          "name": "NAV CANADA Canada Flight Supplement (static reference)",
+          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
+          "reference_date": "2020-12-31"
+        },
+        "note": "Runway dimension is a static CFS reference (~2496–2500 ft); verify current aeronautical data before operational use."
+      },
+      "marine": {
+        "access_known": true,
+        "access_mode": "ferry_ro_ro_terminal",
+        "commercial_access": "seasonal",
+        "facilities": [
+          {
+            "type": "l_jetty",
+            "label": "L-shaped jetty",
+            "length_m": null
+          },
+          {
+            "type": "ro_ro_ramp",
+            "label": "Ro-Ro ramp",
+            "length_m": null
+          },
+          {
+            "type": "floating_dock",
+            "label": "Floating dock",
+            "length_m": null
+          }
+        ],
+        "approach_depth_m": null,
+        "anchorage_depth_m": null,
+        "berth_depth_range_m": [
+          4.0,
+          7.0
+        ],
+        "depth_status": "published_reference",
+        "ro_ro": true,
+        "laydown_available": true,
+        "load_limits": {
+          "status": "not_verified",
+          "deck_load_t_m2": null,
+          "axle_load_t": null,
+          "max_unit_mass_t": null,
+          "crane_swl_t": null
+        },
+        "seasonality": {
+          "service_type": "coastal_ferry_and_freight",
+          "start_month": 6,
+          "end_month": 11,
+          "status": "general_operating_context"
+        },
+        "constraints": [
+          "sea_ice",
+          "weather",
+          "ferry_schedule",
+          "local_rock_hazard"
+        ],
+        "source_ids": [
+          "cmsn-arctic-infrastructure-2025",
+          "nl-north-labrador-ferry",
+          "nunatsiavut-travel-distances"
+        ],
+        "baseline_context": "scheduled_north_labrador_ferry_stop",
+        "baseline_source": {
+          "name": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "reference_date": null
+        },
+        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
+      },
+      "logistics_envelope": {
+        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
+        "air_delivery": "regional_aircraft_on_short_gravel_runway",
+        "heavy_module_status": "diligence_required",
+        "assessment_status": "partial"
+      },
+      "system_context": {
+        "marine": "scheduled_north_labrador_ferry_stop",
+        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
+        "road": null,
+        "energy": "remote_diesel_plant_context"
+      },
+      "energy_projects": [],
+      "open_gates": [
+        "berth_depth_confirmation",
+        "ramp_axle_load",
+        "maximum_unit_mass",
+        "crane_or_mobile_lift_capacity",
+        "laydown_area_capacity",
+        "airport_pavement_strength",
+        "aircraft_specific_payload"
+      ],
+      "sources": [
+        {
+          "id": "cmsn-arctic-infrastructure-2025",
+          "title": "Canadian Arctic Infrastructure Inventory",
+          "publisher": "Canadian Marine Shipping Network",
+          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
+          "role": "marine_facility_context"
+        },
+        {
+          "id": "nl-north-labrador-ferry",
+          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
+          "publisher": "Government of Newfoundland and Labrador",
+          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "role": "marine_service_context"
+        },
+        {
+          "id": "nunatsiavut-travel-distances",
+          "title": "Nunatsiavut coastal travel context",
+          "publisher": "Nunatsiavut Government",
+          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
+          "role": "seasonality_context"
+        }
+      ]
+    }
+  ]
+}

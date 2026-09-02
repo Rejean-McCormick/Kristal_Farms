@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish the governed International 12 research portfolio for read-only product use.
+"""Publish the governed International Portfolio research portfolio for read-only product use.
 
 The web application must not read research/ or policy YAML at runtime. This helper
 performs the explicit promotion step and writes only the public fields needed by

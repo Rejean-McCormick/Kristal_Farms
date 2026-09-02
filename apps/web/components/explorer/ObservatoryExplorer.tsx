@@ -301,7 +301,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
           <strong>OBSERVATORY · GEOGRAPHIC EXPLORER</strong>
         </div>
         <div className="top-actions">
-          {!embedded && <a className="top-actions__link" href="/international">International 12</a>}
+          {!embedded && <a className="top-actions__link" href="/international">International Portfolio</a>}
           <button
             type="button"
             className={searchOpen ? "is-active" : ""}

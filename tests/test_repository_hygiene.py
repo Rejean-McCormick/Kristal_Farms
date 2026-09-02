@@ -79,3 +79,35 @@ def test_public_release_does_not_expose_legacy_ranking_fields():
             if token in text:
                 hits.append(f"{p.name}: {token}")
     assert not hits, hits
+
+def test_information_architecture_has_single_active_application_doc_axis():
+    assert not (ROOT / "docs/60-application-data").exists()
+    assert (ROOT / "docs/architecture/information-architecture.md").is_file()
+    assert (ROOT / "docs/data/application-data-model.md").is_file()
+    assert (ROOT / "docs/product/explorer-data-contract.md").is_file()
+    assert (ROOT / "docs/scenarios/economic-method.md").is_file()
+
+
+def test_root_keeps_specialist_tools_out_of_primary_entry_surface():
+    retired_root_tools = [
+        "DIAG_OBSERVATORY.pyw",
+        "FETCH_SENTINEL2.pyw",
+        "FETCH_WATERSHEDS.pyw",
+        "INSTALL_PMTILES.pyw",
+        "REGISTER_LOCAL_IMAGERY.ps1",
+        "START_IMAGERY_SERVER.ps1",
+        "KF_target_villages.patch",
+        "CHANGED_FILES.txt",
+    ]
+    assert not [name for name in retired_root_tools if (ROOT / name).exists()]
+    assert (ROOT / "tools/observatory/DIAG_OBSERVATORY.pyw").is_file()
+    assert (ROOT / "tools/imagery/START_IMAGERY_SERVER.ps1").is_file()
+    assert (ROOT / "tools/geospatial/FETCH_WATERSHEDS.pyw").is_file()
+
+
+def test_archive_is_excluded_from_default_local_search_context():
+    ignore = (ROOT / ".ignore").read_text(encoding="utf-8")
+    assert "archive/" in ignore
+    agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+    assert "historical provenance" in agents
+

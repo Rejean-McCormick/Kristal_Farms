@@ -1,0 +1,5 @@
+# Local search/index hygiene
+# Historical material remains tracked by Git, but default text-search/index tools
+# should not treat it as active project authority. Use explicit archive paths when
+# performing historical/provenance work.
+archive/

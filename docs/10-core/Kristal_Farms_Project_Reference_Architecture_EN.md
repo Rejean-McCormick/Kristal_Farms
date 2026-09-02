@@ -1,4 +1,4 @@
-# Kristal Farms Reference Architecture
+# Kristal Farms Project Reference Architecture
 
 ## Core thesis
 

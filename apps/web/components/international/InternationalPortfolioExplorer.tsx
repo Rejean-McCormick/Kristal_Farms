@@ -102,7 +102,7 @@ export function InternationalPortfolioExplorer({ embedded = false }: { embedded?
   if (error) {
     return (
       <main className={`${styles.fatal} ${embedded ? styles.embeddedState : ""}`}>
-        <span>KRISTAL / INTERNATIONAL 12</span>
+        <span>KRISTAL / INTERNATIONAL PORTFOLIO</span>
         <h1>Portfolio unavailable</h1>
         <p>{error}</p>
         <a href="/">Return to Northern Atlas</a>
@@ -113,7 +113,7 @@ export function InternationalPortfolioExplorer({ embedded = false }: { embedded?
   if (!portfolio) {
     return (
       <main className={`${styles.boot} ${embedded ? styles.embeddedState : ""}`}>
-        <span>KRISTAL / INTERNATIONAL 12</span>
+        <span>KRISTAL / INTERNATIONAL PORTFOLIO</span>
         <strong>Loading governed portfolio</strong>
       </main>
     );
@@ -127,12 +127,12 @@ export function InternationalPortfolioExplorer({ embedded = false }: { embedded?
       {!embedded && (
         <header className={styles.header}>
           <div className={styles.brand}>
-            <span>KRISTAL / INTERNATIONAL 12</span>
+            <span>KRISTAL / INTERNATIONAL PORTFOLIO</span>
             <strong>PORTFOLIO OBSERVATORY · RESEARCH ONLY</strong>
           </div>
           <nav className={styles.nav} aria-label="Primary navigation">
             <a href="/">Northern Atlas</a>
-            <a className={styles.activeNav} href="/international">International 12</a>
+            <a className={styles.activeNav} href="/international">International Portfolio</a>
           </nav>
         </header>
       )}

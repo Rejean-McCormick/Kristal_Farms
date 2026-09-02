@@ -51,8 +51,8 @@ PMTILES_DIR = DATA_ROOT / "imagery" / "pmtiles"
 PMTILES_EXE = DATA_ROOT / "bin" / "pmtiles.exe"
 LOG_PATH = DATA_ROOT / "rebuild-observatory.log"
 
-IMAGERY_SERVER_SCRIPT = REPO_ROOT / "START_IMAGERY_SERVER.ps1"
-REGISTER_SCRIPT = REPO_ROOT / "REGISTER_LOCAL_IMAGERY.ps1"
+IMAGERY_SERVER_SCRIPT = REPO_ROOT / "tools" / "imagery" / "START_IMAGERY_SERVER.ps1"
+REGISTER_SCRIPT = REPO_ROOT / "tools" / "imagery" / "REGISTER_LOCAL_IMAGERY.ps1"
 
 PORT_IMAGERY = 8765
 PORT_WEB = 3000
@@ -64,7 +64,7 @@ PUBLISHERS = [
     ("Community infrastructure", "pipelines/publish/build_community_infrastructure.py"),
     ("External energy references", "pipelines/publish/build_external_reference_energy_public.py"),
     ("Target villages", "pipelines/publish/build_target_villages_public.py"),
-    ("International 12", "pipelines/publish/build_international_portfolio_public.py"),
+    ("International Portfolio", "pipelines/publish/build_international_portfolio_public.py"),
     ("Grid Reach", "pipelines/publish/build_grid_reach_public.py"),
     ("Observatory evidence", "pipelines/publish/build_observatory_public.py"),
 ]

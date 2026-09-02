@@ -1,4 +1,4 @@
-# Architecture overview
+# Software & data platform architecture
 
 ## Target architecture
 

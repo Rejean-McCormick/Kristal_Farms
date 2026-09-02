@@ -1,0 +1,4738 @@
+diff -ruN kf_base/REBUILD_OBSERVATORY.pyw kf_repo/REBUILD_OBSERVATORY.pyw
+--- kf_base/REBUILD_OBSERVATORY.pyw	2026-09-01 19:43:59.399953022 +0000
++++ kf_repo/REBUILD_OBSERVATORY.pyw	2026-09-01 19:42:04.269052743 +0000
+@@ -62,6 +62,7 @@
+ PUBLISHERS = [
+     ("Hydro scope", "pipelines/publish/build_kristal_hydro_scope.py"),
+     ("Community infrastructure", "pipelines/publish/build_community_infrastructure.py"),
++    ("Target villages", "pipelines/publish/build_target_villages_public.py"),
+     ("International 12", "pipelines/publish/build_international_portfolio_public.py"),
+     ("Grid Reach", "pipelines/publish/build_grid_reach_public.py"),
+     ("Observatory evidence", "pipelines/publish/build_observatory_public.py"),
+diff -ruN kf_base/apps/web/README.md kf_repo/apps/web/README.md
+--- kf_base/apps/web/README.md	2026-09-01 19:43:59.409044040 +0000
++++ kf_repo/apps/web/README.md	2026-09-01 19:43:31.222462261 +0000
+@@ -102,15 +102,39 @@
+ 
+ ## Kristal Farms Observatory
+ 
+-The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes five governed workspaces:
++The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes six governed workspaces:
+ 
+ - **Northern Atlas** — default geographic/evidence workspace;
++- **Villages** — `/?section=villages`, unranked target-community catalogue with full dossiers at `/villages/[slug]`;
+ - **Corridors** — `/?section=corridors`, evidence-building dossier surface with ranking disabled;
+ - **International 12** — `/?section=international`, governed twelve-position counterparty portfolio;
+ - **Economics** — `/?section=economics`, non-bankable scenario/sensitivity workspace;
+ - **Evidence** — `/?section=evidence`, provenance, uncertainty and publication-control workspace.
+ 
+-Direct routes `/atlas`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
++Direct routes `/atlas`, `/villages`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
++
++
++### Target village dossiers
++
++The Villages workspace uses the same research → publish → read-only product boundary:
++
++```text
++research/communities/targets/*.yaml
++        ↓ explicit publish / validation
++pipelines/publish/build_target_villages_public.py
++        ↓
++data/publish/current/target_villages_public.json
++        ↓ read only
++app/api/villages → Villages cards → /villages/[slug]
++```
++
++`community_infrastructure_public.json` remains the canonical baseline for population and airport facts. The target-village publication adds KF screening status, marine-mode detail, seasonality, logistics envelope, open gates and evidence references. Approach/anchorage/berth depth are separate fields, and unverified load limits remain null.
++
++Rebuild after target-village research changes with:
++
++```bash
++python pipelines/publish/build_target_villages_public.py
++```
+ 
+ The International 12 interface:
+ 
+diff -ruN kf_base/apps/web/app/api/villages/[slug]/route.ts kf_repo/apps/web/app/api/villages/[slug]/route.ts
+--- kf_base/apps/web/app/api/villages/[slug]/route.ts	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/app/api/villages/[slug]/route.ts	2026-09-01 19:41:41.473960520 +0000
+@@ -0,0 +1,16 @@
++import { NextResponse } from "next/server";
++import { getTargetVillage } from "../../../../lib/server/villages";
++
++export const dynamic = "force-dynamic";
++
++export async function GET(
++  _request: Request,
++  context: { params: Promise<{ slug: string }> },
++) {
++  const { slug } = await context.params;
++  const village = await getTargetVillage(slug);
++  if (!village) return NextResponse.json({ error: "Village not found" }, { status: 404 });
++  return NextResponse.json(village, {
++    headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" },
++  });
++}
+diff -ruN kf_base/apps/web/app/api/villages/route.ts kf_repo/apps/web/app/api/villages/route.ts
+--- kf_base/apps/web/app/api/villages/route.ts	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/app/api/villages/route.ts	2026-09-01 19:41:41.473797304 +0000
+@@ -0,0 +1,11 @@
++import { NextResponse } from "next/server";
++import { getTargetVillagePortfolio } from "../../../lib/server/villages";
++
++export const dynamic = "force-dynamic";
++
++export async function GET() {
++  const payload = await getTargetVillagePortfolio();
++  return NextResponse.json(payload, {
++    headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" },
++  });
++}
+diff -ruN kf_base/apps/web/app/globals.css kf_repo/apps/web/app/globals.css
+--- kf_base/apps/web/app/globals.css	2026-09-01 19:43:59.402962523 +0000
++++ kf_repo/apps/web/app/globals.css	2026-09-01 19:42:03.818607003 +0000
+@@ -1284,3 +1284,29 @@
+ .layer-panel__focus-action:hover:not(:disabled) { background: rgba(242, 179, 93, .10); }
+ .layer-panel__focus-action:disabled { opacity: .4; cursor: default; }
+ 
++
++.village-dossier-action {
++  margin-top: 10px;
++  min-height: 58px;
++  display: grid;
++  align-content: center;
++  gap: 4px;
++  padding: 10px 12px;
++  border: 1px solid rgba(84, 225, 193, 0.28);
++  background: rgba(84, 225, 193, 0.045);
++  color: #dff8f2;
++  text-decoration: none;
++}
++.village-dossier-action:hover {
++  border-color: rgba(84, 225, 193, 0.58);
++  background: rgba(84, 225, 193, 0.08);
++}
++.village-dossier-action span {
++  color: var(--teal);
++  font-size: 9px;
++  letter-spacing: 0.12em;
++}
++.village-dossier-action strong {
++  font-size: 12px;
++  font-weight: 600;
++}
+diff -ruN kf_base/apps/web/app/villages/[slug]/page.tsx kf_repo/apps/web/app/villages/[slug]/page.tsx
+--- kf_base/apps/web/app/villages/[slug]/page.tsx	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/app/villages/[slug]/page.tsx	2026-09-01 19:43:00.688399614 +0000
+@@ -0,0 +1,12 @@
++import { notFound } from "next/navigation";
++import { VillageDossier } from "../../../components/villages/VillageDossier";
++import { getTargetVillage } from "../../../lib/server/villages";
++
++export const dynamic = "force-dynamic";
++
++export default async function VillagePage({ params }: { params: Promise<{ slug: string }> }) {
++  const { slug } = await params;
++  const village = await getTargetVillage(slug);
++  if (!village) return notFound();
++  return <VillageDossier village={village} />;
++}
+diff -ruN kf_base/apps/web/app/villages/page.tsx kf_repo/apps/web/app/villages/page.tsx
+--- kf_base/apps/web/app/villages/page.tsx	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/app/villages/page.tsx	2026-09-01 19:39:37.822275398 +0000
+@@ -0,0 +1,5 @@
++import { redirect } from "next/navigation";
++
++export default function VillagesPage() {
++  redirect("/?section=villages");
++}
+diff -ruN kf_base/apps/web/components/explorer/EntityInspector.tsx kf_repo/apps/web/components/explorer/EntityInspector.tsx
+--- kf_base/apps/web/components/explorer/EntityInspector.tsx	2026-09-01 19:43:59.403465100 +0000
++++ kf_repo/apps/web/components/explorer/EntityInspector.tsx	2026-09-01 19:42:03.694355006 +0000
+@@ -124,6 +124,13 @@
+                     {compared ? "Pinned for comparison" : "Pin for comparison"}
+                   </button>
+                 )}
++
++                {detail.featureKind === "community" && detail.targetVillageSlug && (
++                  <a className="village-dossier-action" href={`/villages/${detail.targetVillageSlug}`}>
++                    <span>TARGET VILLAGE</span>
++                    <strong>Open full village dossier →</strong>
++                  </a>
++                )}
+               </section>
+             )}
+ 
+diff -ruN kf_base/apps/web/components/shell/KristalFarmsObservatoryShell.tsx kf_repo/apps/web/components/shell/KristalFarmsObservatoryShell.tsx
+--- kf_base/apps/web/components/shell/KristalFarmsObservatoryShell.tsx	2026-09-01 19:43:59.405915550 +0000
++++ kf_repo/apps/web/components/shell/KristalFarmsObservatoryShell.tsx	2026-09-01 19:41:41.474085017 +0000
+@@ -3,9 +3,10 @@
+ import { useCallback, useEffect, useState } from "react";
+ import { ObservatoryExplorer } from "../explorer/ObservatoryExplorer";
+ import { InternationalPortfolioExplorer } from "../international/InternationalPortfolioExplorer";
++import { VillagePortfolioExplorer } from "../villages/VillagePortfolioExplorer";
+ import styles from "./KristalFarmsObservatoryShell.module.css";
+ 
+-type WorkspaceSection = "atlas" | "corridors" | "international" | "economics" | "evidence";
++type WorkspaceSection = "atlas" | "villages" | "corridors" | "international" | "economics" | "evidence";
+ 
+ type SectionDefinition = {
+   id: WorkspaceSection;
+@@ -16,10 +17,11 @@
+ 
+ const SECTIONS: SectionDefinition[] = [
+   { id: "atlas", index: "01", label: "Northern Atlas", context: "GEOGRAPHY / EVIDENCE" },
+-  { id: "corridors", index: "02", label: "Corridors", context: "DOSSIERS / GATES" },
+-  { id: "international", index: "03", label: "International 12", context: "COUNTERPARTY / PORTFOLIO" },
+-  { id: "economics", index: "04", label: "Economics", context: "SCENARIOS / SENSITIVITY" },
+-  { id: "evidence", index: "05", label: "Evidence", context: "PROVENANCE / CONTROL" },
++  { id: "villages", index: "02", label: "Villages", context: "COMMUNITIES / DILIGENCE" },
++  { id: "corridors", index: "03", label: "Corridors", context: "DOSSIERS / GATES" },
++  { id: "international", index: "04", label: "International 12", context: "COUNTERPARTY / PORTFOLIO" },
++  { id: "economics", index: "05", label: "Economics", context: "SCENARIOS / SENSITIVITY" },
++  { id: "evidence", index: "06", label: "Evidence", context: "PROVENANCE / CONTROL" },
+ ];
+ 
+ const SECTION_IDS = new Set<WorkspaceSection>(SECTIONS.map((section) => section.id));
+@@ -87,6 +89,7 @@
+ 
+       <div className={styles.workspace}>
+         {section === "atlas" && <ObservatoryExplorer embedded />}
++        {section === "villages" && <VillagePortfolioExplorer embedded />}
+         {section === "international" && <InternationalPortfolioExplorer embedded />}
+         {section === "corridors" && (
+           <WorkspaceBrief
+diff -ruN kf_base/apps/web/components/villages/VillageDossier.tsx kf_repo/apps/web/components/villages/VillageDossier.tsx
+--- kf_base/apps/web/components/villages/VillageDossier.tsx	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/components/villages/VillageDossier.tsx	2026-09-01 19:43:00.688562149 +0000
+@@ -0,0 +1,182 @@
++import Link from "next/link";
++import type { ReactNode } from "react";
++import type { TargetVillage } from "../../lib/village-types";
++import { humanizeToken } from "../../lib/format";
++import styles from "./VillagePortfolio.module.css";
++
++export function VillageDossier({ village }: { village: TargetVillage }) {
++  const atlasView = `/?view=${village.coordinates.longitude},${village.coordinates.latitude},7,0,0`;
++  return (
++    <main className={`${styles.shell} ${styles.dossierShell}`}>
++      <header className={styles.dossierHeader}>
++        <Link href="/?section=villages" className={styles.backLink}>← Villages</Link>
++        <div className={styles.dossierHeaderTitle}>
++          <span>KRISTAL FARMS · TARGET VILLAGE DOSSIER</span>
++          <strong>{village.name}</strong>
++        </div>
++        <Link href={atlasView} className={styles.atlasLink}>Open in Northern Atlas</Link>
++      </header>
++
++      <section className={styles.dossierHero}>
++        <div>
++          <span className={styles.eyebrow}>{village.screening_role}</span>
++          <h1>{village.name}</h1>
++          <p>{village.region}</p>
++          <div className={styles.heroBadges}>
++            <Badge>{humanizeToken(village.kf_status)}</Badge>
++            <Badge>UNRANKED</Badge>
++            <Badge>{humanizeToken(village.logistics_envelope.assessment_status)}</Badge>
++          </div>
++        </div>
++        <div className={styles.heroSnapshot}>
++          <Snapshot label="Population" value={village.population.value != null ? village.population.value.toLocaleString("en-CA") : "Not verified"} note={village.population.year ? String(village.population.year) : undefined} />
++          <Snapshot label="Airport" value={village.air.code ?? "—"} note={village.air.runway_length_m != null ? `${Math.round(village.air.runway_length_m).toLocaleString("en-CA")} m · ${village.air.runway_surface ?? "surface ?"}` : "runway not verified"} />
++          <Snapshot label="Marine" value={humanizeToken(village.marine.access_mode)} note={seasonText(village)} />
++          <Snapshot label="Open gates" value={String(village.open_gates.length)} note={`reviewed ${village.reviewed_at}`} />
++        </div>
++      </section>
++
++      <section className={styles.thesisStrip}>
++        <span>KF DEVELOPMENT THESIS</span>
++        <p>{village.development_thesis}</p>
++      </section>
++
++      <div className={styles.dossierGrid}>
++        <section className={styles.dossierSection}>
++          <SectionHeading index="01" title="Air logistics" subtitle="Runway dimensions are context, not aircraft certification." />
++          <div className={styles.factMatrix}>
++            <Fact label="Airport" value={[village.air.name, village.air.code].filter(Boolean).join(" · ") || "Not verified"} />
++            <Fact label="Runway" value={village.air.runway_length_m != null ? `${Math.round(village.air.runway_length_m).toLocaleString("en-CA")} m` : "Not verified"} />
++            <Fact label="Surface" value={village.air.runway_surface ? humanizeToken(village.air.runway_surface) : "Not verified"} />
++            <Fact label="Access pattern" value={humanizeToken(village.air.access_pattern)} />
++            <Fact label="Pavement strength" value={village.air.pavement_strength ?? "NOT VERIFIED"} state={village.air.pavement_strength ? "known" : "unknown"} />
++            <Fact label="Aircraft mass limit" value={village.air.max_aircraft_mass_kg != null ? `${village.air.max_aircraft_mass_kg.toLocaleString("en-CA")} kg` : "NOT VERIFIED"} state={village.air.max_aircraft_mass_kg != null ? "known" : "unknown"} />
++          </div>
++          <TokenList title="Operational constraints" items={village.air.operational_constraints} />
++          {village.air.note && <p className={styles.sectionNote}>{village.air.note}</p>}
++        </section>
++
++        <section className={styles.dossierSection}>
++          <SectionHeading index="02" title="Marine logistics" subtitle="Approach, anchorage and berth depths are kept separate." />
++          <div className={styles.factMatrix}>
++            <Fact label="Access model" value={humanizeToken(village.marine.access_mode)} />
++            <Fact label="Commercial access" value={humanizeToken(village.marine.commercial_access)} />
++            <Fact label="Approach depth" value={depth(village.marine.approach_depth_m)} state={village.marine.approach_depth_m != null ? "known" : "unknown"} />
++            <Fact label="Anchorage depth" value={depth(village.marine.anchorage_depth_m)} state={village.marine.anchorage_depth_m != null ? "known" : "unknown"} />
++            <Fact label="Berth depth" value={rangeDepth(village.marine.berth_depth_range_m)} state={village.marine.berth_depth_range_m ? "known" : "unknown"} />
++            <Fact label="Depth evidence" value={humanizeToken(village.marine.depth_status)} />
++            <Fact label="Ro-Ro" value={boolText(village.marine.ro_ro)} state={village.marine.ro_ro == null ? "unknown" : "known"} />
++            <Fact label="Laydown" value={boolText(village.marine.laydown_available)} state={village.marine.laydown_available == null ? "unknown" : "known"} />
++          </div>
++
++          <div className={styles.facilities}>
++            {village.marine.facilities.map((facility, index) => (
++              <article key={`${facility.type}-${index}`}>
++                <span>{humanizeToken(facility.type)}</span>
++                <strong>{facility.label}</strong>
++                <em>{facility.length_m != null ? `${facility.length_m.toLocaleString("en-CA")} m` : "dimension not verified"}</em>
++              </article>
++            ))}
++          </div>
++
++          <div className={styles.loadBox}>
++            <div className={styles.loadBoxHeading}>
++              <span>MARINE LOAD LIMITS</span>
++              <strong>{humanizeToken(village.marine.load_limits.status)}</strong>
++            </div>
++            <div className={styles.loadGrid}>
++              <Fact label="Deck load" value={tonnage(village.marine.load_limits.deck_load_t_m2, "t/m²")} state="unknown" />
++              <Fact label="Axle load" value={tonnage(village.marine.load_limits.axle_load_t, "t")} state="unknown" />
++              <Fact label="Max unit mass" value={tonnage(village.marine.load_limits.max_unit_mass_t, "t")} state="unknown" />
++              <Fact label="Crane SWL" value={tonnage(village.marine.load_limits.crane_swl_t, "t")} state="unknown" />
++            </div>
++          </div>
++
++          <TokenList title="Marine constraints" items={village.marine.constraints} />
++        </section>
++
++        <section className={styles.dossierSection}>
++          <SectionHeading index="03" title="Logistics envelope" subtitle="Planning envelope only; no heavy-cargo certification is inferred." />
++          <div className={styles.envelopeGrid}>
++            <Envelope label="Marine delivery" value={humanizeToken(village.logistics_envelope.marine_delivery)} />
++            <Envelope label="Air delivery" value={humanizeToken(village.logistics_envelope.air_delivery)} />
++            <Envelope label="Heavy module" value={humanizeToken(village.logistics_envelope.heavy_module_status)} />
++            <Envelope label="Assessment" value={humanizeToken(village.logistics_envelope.assessment_status)} />
++          </div>
++          <div className={styles.gates}>
++            <span>OPEN LOGISTICS GATES</span>
++            {village.open_gates.map((gate) => (
++              <div key={gate}><i aria-hidden="true">○</i><strong>{humanizeToken(gate)}</strong><em>Not verified</em></div>
++            ))}
++          </div>
++        </section>
++
++        <section className={styles.dossierSection}>
++          <SectionHeading index="04" title="Community-system context" subtitle="Contextual records for the next diligence layers." />
++          <div className={styles.factMatrix}>
++            <Fact label="Telecom" value={humanizeToken(village.system_context.telecom)} state={village.system_context.telecom ? "known" : "unknown"} />
++            <Fact label="Energy" value={humanizeToken(village.system_context.energy)} state={village.system_context.energy ? "known" : "unknown"} />
++            <Fact label="Road" value={humanizeToken(village.system_context.road)} state={village.system_context.road ? "known" : "unknown"} />
++            <Fact label="Marine baseline" value={humanizeToken(village.system_context.marine)} state={village.system_context.marine ? "known" : "unknown"} />
++            <Fact label="Longitude" value={`${Math.abs(village.coordinates.longitude).toFixed(4)}° W`} />
++            <Fact label="Latitude" value={`${Math.abs(village.coordinates.latitude).toFixed(4)}° N`} />
++          </div>
++          <p className={styles.sectionNote}>Village coordinates are approximate community references and are not facility coordinates.</p>
++        </section>
++
++        <section className={`${styles.dossierSection} ${styles.sourcesSection}`}>
++          <SectionHeading index="05" title="Evidence & sources" subtitle="Research references used for logistics deepening." />
++          <div className={styles.sources}>
++            {village.sources.map((source) => (
++              <a key={source.id} href={source.url} target="_blank" rel="noreferrer">
++                <span>{humanizeToken(source.role)}</span>
++                <strong>{source.title}</strong>
++                <em>{source.publisher}</em>
++              </a>
++            ))}
++            {village.air.dimension_source && (
++              <a href={village.air.dimension_source.url} target="_blank" rel="noreferrer">
++                <span>AIRPORT DIMENSION SOURCE</span>
++                <strong>{village.air.dimension_source.name}</strong>
++                <em>{village.air.dimension_source.reference_date ?? "current reference"}</em>
++              </a>
++            )}
++          </div>
++        </section>
++      </div>
++
++      <footer className={styles.dossierFooter}>
++        <span>{village.entity_id}</span>
++        <p>Target-village research dossier · ranking disabled · null means not verified, not zero.</p>
++      </footer>
++    </main>
++  );
++}
++
++function SectionHeading({ index, title, subtitle }: { index: string; title: string; subtitle: string }) {
++  return <header className={styles.sectionHeading}><span>{index}</span><div><h2>{title}</h2><p>{subtitle}</p></div></header>;
++}
++function Snapshot({ label, value, note }: { label: string; value: string; note?: string }) {
++  return <div><span>{label}</span><strong>{value}</strong>{note && <em>{note}</em>}</div>;
++}
++function Fact({ label, value, state = "known" }: { label: string; value: string; state?: "known" | "unknown" }) {
++  return <div className={styles.fact}><span>{label}</span><strong className={state === "unknown" ? styles.unknown : ""}>{value}</strong></div>;
++}
++function Envelope({ label, value }: { label: string; value: string }) {
++  return <div><span>{label}</span><strong>{value}</strong></div>;
++}
++function Badge({ children }: { children: ReactNode }) { return <span className={styles.badge}>{children}</span>; }
++function TokenList({ title, items }: { title: string; items: string[] }) {
++  return <div className={styles.tokenList}><span>{title}</span><div>{items.map((item) => <em key={item}>{humanizeToken(item)}</em>)}</div></div>;
++}
++function depth(value: number | null) { return value == null ? "NOT VERIFIED" : `${value.toLocaleString("en-CA")} m`; }
++function rangeDepth(value: [number, number] | null) { return value ? `${value[0].toLocaleString("en-CA")}–${value[1].toLocaleString("en-CA")} m` : "NOT VERIFIED"; }
++function tonnage(value: number | null, unit: string) { return value == null ? "NOT VERIFIED" : `${value.toLocaleString("en-CA")} ${unit}`; }
++function boolText(value: boolean | null) { return value == null ? "NOT VERIFIED" : value ? "Yes" : "No"; }
++function seasonText(village: TargetVillage) {
++  const { start_month: start, end_month: end } = village.marine.seasonality;
++  if (start == null || end == null) return "season not verified";
++  const fmt = new Intl.DateTimeFormat("en-CA", { month: "short", timeZone: "UTC" });
++  const m = (n: number) => fmt.format(new Date(Date.UTC(2026, n - 1, 1)));
++  return `${m(start)}–${m(end)} · ${humanizeToken(village.marine.seasonality.service_type)}`;
++}
+diff -ruN kf_base/apps/web/components/villages/VillagePortfolio.module.css kf_repo/apps/web/components/villages/VillagePortfolio.module.css
+--- kf_base/apps/web/components/villages/VillagePortfolio.module.css	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/components/villages/VillagePortfolio.module.css	2026-09-01 19:41:25.834916986 +0000
+@@ -0,0 +1,220 @@
++.shell {
++  position: fixed;
++  inset: 0;
++  overflow: auto;
++  background:
++    radial-gradient(circle at 82% 10%, rgba(48, 121, 145, 0.14), transparent 30%),
++    radial-gradient(circle at 14% 26%, rgba(84, 225, 193, 0.055), transparent 25%),
++    #050a10;
++  color: #e8f1f4;
++}
++.shell * { box-sizing: border-box; }
++.embeddedShell { top: var(--kristal-shell-height, 56px); }
++.hero {
++  max-width: 1500px;
++  margin: 0 auto;
++  padding: 48px 28px 28px;
++  display: grid;
++  grid-template-columns: minmax(0, 1.4fr) minmax(340px, .6fr);
++  gap: 44px;
++  align-items: end;
++}
++.eyebrow,
++.policyStrip span,
++.searchBox > span,
++.filter > span,
++.catalogHeader,
++.cardTopline,
++.cardFacts span,
++.cardGate span,
++.footer,
++.dossierHeaderTitle span,
++.heroSnapshot span,
++.thesisStrip > span,
++.sectionHeading > span,
++.fact span,
++.loadBoxHeading span,
++.envelopeGrid span,
++.gates > span,
++.gates em,
++.tokenList > span,
++.sources span,
++.dossierFooter,
++.facilities span {
++  font-size: 10px;
++  line-height: 1.25;
++  letter-spacing: .13em;
++  text-transform: uppercase;
++  color: #8fa6b0;
++}
++.eyebrow { color: #54e1c1; }
++.hero h1 {
++  max-width: 900px;
++  margin: 10px 0 14px;
++  font-size: clamp(36px, 4.6vw, 68px);
++  line-height: .98;
++  letter-spacing: -.045em;
++  font-weight: 520;
++}
++.hero p { max-width: 850px; margin: 0; color: #9eb1b9; font-size: 14px; line-height: 1.65; }
++.metrics { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid rgba(144,194,214,.18); }
++.metrics div { min-height: 92px; padding: 17px; display: grid; align-content: space-between; border-right: 1px solid rgba(144,194,214,.12); border-bottom: 1px solid rgba(144,194,214,.12); }
++.metrics div:nth-child(even) { border-right: 0; }
++.metrics div:nth-last-child(-n+2) { border-bottom: 0; }
++.metrics strong { font-size: 28px; font-weight: 500; color: #dff8ff; }
++.metrics span { color: #7e929b; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
++.policyStrip {
++  max-width: 1444px;
++  margin: 0 auto 24px;
++  padding: 13px 16px;
++  display: grid;
++  grid-template-columns: 260px 1fr auto;
++  gap: 24px;
++  align-items: center;
++  border: 1px solid rgba(255,159,67,.22);
++  background: rgba(255,159,67,.045);
++}
++.policyStrip > div { display: grid; gap: 3px; }
++.policyStrip strong { font-size: 12px; letter-spacing: .05em; }
++.policyStrip p { margin: 0; color: #b1c1c7; font-size: 12px; line-height: 1.5; }
++.policyNote { color: #ffc27b !important; white-space: nowrap; }
++.catalog { max-width: 1500px; margin: 0 auto; padding: 0 28px 36px; }
++.filters { display: grid; grid-template-columns: minmax(260px,1.5fr) minmax(150px,.6fr) minmax(180px,.7fr); gap: 8px; }
++.searchBox,.filter { display: grid; gap: 6px; }
++.searchBox input,.filter select { min-height: 42px; width: 100%; padding: 0 11px; border: 1px solid rgba(144,194,214,.18); background: rgba(7,15,23,.92); color: #e8f1f4; outline: 0; border-radius: 0; }
++.searchBox input:focus,.filter select:focus { border-color: rgba(91,212,255,.6); }
++.catalogHeader { min-height: 40px; display: flex; align-items: center; justify-content: space-between; }
++.catalogHeader button { border: 0; background: transparent; color: #8fa6b0; cursor: pointer; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
++.catalogHeader button:hover { color: #dff8ff; }
++.cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
++.card {
++  min-height: 320px;
++  padding: 17px;
++  display: flex;
++  flex-direction: column;
++  gap: 14px;
++  color: inherit;
++  text-decoration: none;
++  border: 1px solid rgba(144,194,214,.16);
++  background: linear-gradient(145deg,rgba(8,18,27,.96),rgba(5,12,18,.9));
++  transition: border-color 120ms ease, transform 120ms ease, background 120ms ease;
++}
++.card:hover { transform: translateY(-2px); border-color: rgba(91,212,255,.46); background: linear-gradient(145deg,rgba(10,24,34,.98),rgba(6,14,21,.94)); }
++.cardTopline { display: flex; justify-content: space-between; gap: 14px; }
++.cardTopline span:last-child { text-align: right; }
++.slot { color: #5bd4ff !important; }
++.cardTitle { display: grid; gap: 6px; }
++.cardTitle strong { color: #effbff; font-size: 25px; line-height: 1; font-weight: 580; }
++.cardTitle span { color: #80d8f2; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
++.cardFacts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(144,194,214,.12); border-left: 1px solid rgba(144,194,214,.12); }
++.cardFacts div { min-height: 78px; padding: 11px; display: grid; align-content: space-between; border-right: 1px solid rgba(144,194,214,.12); border-bottom: 1px solid rgba(144,194,214,.12); }
++.cardFacts strong { font-size: 11px; line-height: 1.45; color: #d4e3e8; font-weight: 550; }
++.cardGate { margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(144,194,214,.12); display: grid; gap: 4px; }
++.cardGate strong { font-size: 12px; color: #ffc27b; letter-spacing: .03em; }
++.cardGate em { font-style: normal; font-size: 11px; color: #8fa6b0; }
++.empty { grid-column: 1/-1; padding: 42px; border: 1px solid rgba(144,194,214,.14); color: #8297a0; }
++.footer { max-width: 1444px; margin: 0 auto; padding: 18px 0 28px; display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid rgba(144,194,214,.12); }
++.state { position: fixed; inset: 0; display: grid; place-content: center; gap: 8px; text-align: center; background: #050a10; }
++.state span { color: #8fa6b0; font-size: 10px; letter-spacing: .14em; }
++.state h1,.state p { margin: 0; }
++.state p { color: #9eb1b9; }
++.embeddedState { top: var(--kristal-shell-height,56px); }
++
++/* Full dossier */
++.dossierShell { z-index: 300; padding-bottom: 60px; }
++.dossierHeader {
++  position: sticky;
++  top: 0;
++  z-index: 30;
++  min-height: 58px;
++  padding: 0 24px;
++  display: grid;
++  grid-template-columns: 180px 1fr 220px;
++  align-items: center;
++  gap: 18px;
++  border-bottom: 1px solid rgba(144,194,214,.18);
++  background: rgba(3,8,13,.96);
++  backdrop-filter: blur(18px);
++}
++.backLink,.atlasLink { color: #b8cbd1; text-decoration: none; font-size: 11px; letter-spacing: .05em; }
++.atlasLink { text-align: right; color: #80d8f2; }
++.backLink:hover,.atlasLink:hover { color: white; }
++.dossierHeaderTitle { display: grid; justify-content: center; gap: 2px; text-align: center; }
++.dossierHeaderTitle strong { font-size: 12px; letter-spacing: .08em; }
++.dossierHero { max-width: 1440px; margin: 0 auto; padding: 62px 28px 34px; display: grid; grid-template-columns: minmax(0,1fr) minmax(520px,.9fr); gap: 54px; align-items: end; }
++.dossierHero h1 { margin: 8px 0 5px; font-size: clamp(52px,8vw,104px); line-height: .9; letter-spacing: -.06em; font-weight: 500; }
++.dossierHero > div > p { margin: 0; color: #9db1b9; font-size: 16px; }
++.heroBadges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
++.badge { display: inline-flex; padding: 5px 7px; border: 1px solid rgba(84,225,193,.3); color: #9ce9d8; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
++.heroSnapshot { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(144,194,214,.16); border-left: 1px solid rgba(144,194,214,.16); }
++.heroSnapshot div { min-height: 112px; padding: 17px; display: grid; align-content: space-between; border-right: 1px solid rgba(144,194,214,.16); border-bottom: 1px solid rgba(144,194,214,.16); background: rgba(8,18,27,.54); }
++.heroSnapshot strong { font-size: 18px; line-height: 1.2; color: #e6f3f6; font-weight: 540; }
++.heroSnapshot em { font-style: normal; color: #7f969f; font-size: 10px; line-height: 1.4; }
++.thesisStrip { max-width: 1384px; margin: 0 auto 22px; padding: 17px 19px; display: grid; grid-template-columns: 220px 1fr; gap: 28px; border: 1px solid rgba(91,212,255,.18); background: rgba(91,212,255,.035); }
++.thesisStrip > span { color: #5bd4ff; }
++.thesisStrip p { margin: 0; color: #c0d0d5; font-size: 13px; line-height: 1.65; }
++.dossierGrid { max-width: 1384px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
++.dossierSection { min-width: 0; padding: 22px; border: 1px solid rgba(144,194,214,.16); background: rgba(6,16,23,.62); }
++.sectionHeading { display: grid; grid-template-columns: 38px 1fr; gap: 10px; align-items: start; padding-bottom: 18px; border-bottom: 1px solid rgba(144,194,214,.12); }
++.sectionHeading > span { color: #5bd4ff; }
++.sectionHeading h2 { margin: -2px 0 4px; font-size: 23px; font-weight: 540; letter-spacing: -.02em; }
++.sectionHeading p { margin: 0; color: #8399a2; font-size: 11px; line-height: 1.5; }
++.factMatrix,.loadGrid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; border-top: 1px solid rgba(144,194,214,.12); border-left: 1px solid rgba(144,194,214,.12); }
++.fact { min-height: 82px; padding: 12px; display: grid; align-content: space-between; gap: 10px; border-right: 1px solid rgba(144,194,214,.12); border-bottom: 1px solid rgba(144,194,214,.12); }
++.fact strong { font-size: 12px; line-height: 1.45; font-weight: 560; color: #dce9ed; }
++.unknown { color: #ffc27b !important; }
++.tokenList { margin-top: 17px; display: grid; gap: 9px; }
++.tokenList > div { display: flex; flex-wrap: wrap; gap: 5px; }
++.tokenList em { padding: 5px 7px; border: 1px solid rgba(144,194,214,.14); color: #9eb2ba; font-style: normal; font-size: 10px; }
++.sectionNote { margin: 14px 0 0; color: #81969e; font-size: 11px; line-height: 1.55; }
++.facilities { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
++.facilities article { min-height: 92px; padding: 12px; display: grid; align-content: space-between; gap: 6px; border: 1px solid rgba(144,194,214,.13); background: rgba(255,255,255,.015); }
++.facilities strong { font-size: 12px; line-height: 1.4; }
++.facilities em { color: #7f969f; font-size: 10px; font-style: normal; }
++.loadBox { margin-top: 16px; padding: 13px; border: 1px solid rgba(255,159,67,.2); background: rgba(255,159,67,.035); }
++.loadBoxHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
++.loadBoxHeading strong { color: #ffc27b; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
++.loadGrid { margin-top: 10px; }
++.envelopeGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 16px; }
++.envelopeGrid div { min-height: 110px; padding: 14px; display: grid; align-content: space-between; border: 1px solid rgba(144,194,214,.13); }
++.envelopeGrid strong { font-size: 13px; line-height: 1.45; color: #e2eef1; }
++.gates { margin-top: 18px; border-top: 1px solid rgba(144,194,214,.13); }
++.gates > span { display: block; padding: 14px 0 8px; color: #ffc27b; }
++.gates > div { min-height: 42px; display: grid; grid-template-columns: 24px 1fr auto; gap: 8px; align-items: center; border-top: 1px solid rgba(144,194,214,.09); }
++.gates i { color: #ffc27b; font-style: normal; }
++.gates strong { font-size: 11px; font-weight: 540; }
++.gates em { color: #7f929a; font-style: normal; }
++.sourcesSection { grid-column: 1/-1; }
++.sources { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; margin-top: 16px; }
++.sources a { min-height: 122px; padding: 14px; display: grid; align-content: space-between; gap: 8px; color: inherit; text-decoration: none; border: 1px solid rgba(144,194,214,.14); background: rgba(255,255,255,.015); }
++.sources a:hover { border-color: rgba(91,212,255,.4); }
++.sources strong { font-size: 12px; line-height: 1.4; }
++.sources em { color: #8399a2; font-size: 10px; font-style: normal; }
++.dossierFooter { max-width: 1384px; margin: 24px auto 0; padding-top: 16px; display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid rgba(144,194,214,.12); }
++.dossierFooter p { margin: 0; color: #7f929a; font-size: 10px; }
++
++@media (max-width: 1120px) {
++  .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
++  .policyStrip { grid-template-columns: 1fr; gap: 8px; }
++  .policyNote { white-space: normal; }
++  .dossierHero { grid-template-columns: 1fr; }
++  .dossierGrid { grid-template-columns: 1fr; margin-left: 20px; margin-right: 20px; }
++  .sourcesSection { grid-column: auto; }
++  .sources { grid-template-columns: 1fr 1fr; }
++  .thesisStrip { margin-left: 20px; margin-right: 20px; }
++}
++@media (max-width: 720px) {
++  .hero { grid-template-columns: 1fr; padding: 34px 16px 20px; }
++  .policyStrip,.catalog { margin-left: 16px; margin-right: 16px; padding-left: 0; padding-right: 0; }
++  .filters,.cards { grid-template-columns: 1fr; }
++  .footer { margin: 0 16px; flex-direction: column; }
++  .dossierHeader { grid-template-columns: 1fr auto; padding: 0 14px; }
++  .dossierHeaderTitle { display: none; }
++  .dossierHero { padding: 42px 18px 24px; }
++  .dossierHero h1 { font-size: 58px; }
++  .heroSnapshot,.factMatrix,.loadGrid,.envelopeGrid,.facilities { grid-template-columns: 1fr; }
++  .thesisStrip { grid-template-columns: 1fr; gap: 8px; }
++  .dossierSection { padding: 16px; }
++  .sources { grid-template-columns: 1fr; }
++  .dossierFooter { margin: 22px 18px 0; flex-direction: column; }
++}
+diff -ruN kf_base/apps/web/components/villages/VillagePortfolioExplorer.tsx kf_repo/apps/web/components/villages/VillagePortfolioExplorer.tsx
+--- kf_base/apps/web/components/villages/VillagePortfolioExplorer.tsx	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/components/villages/VillagePortfolioExplorer.tsx	2026-09-01 19:40:38.223116171 +0000
+@@ -0,0 +1,209 @@
++"use client";
++
++import Link from "next/link";
++import { useEffect, useMemo, useState } from "react";
++import type { TargetVillage, TargetVillagePortfolio } from "../../lib/village-types";
++import { humanizeToken } from "../../lib/format";
++import styles from "./VillagePortfolio.module.css";
++
++export function VillagePortfolioExplorer({ embedded = false }: { embedded?: boolean } = {}) {
++  const [portfolio, setPortfolio] = useState<TargetVillagePortfolio | null>(null);
++  const [error, setError] = useState<string | null>(null);
++  const [query, setQuery] = useState("");
++  const [region, setRegion] = useState("ALL");
++  const [marineMode, setMarineMode] = useState("ALL");
++
++  useEffect(() => {
++    const controller = new AbortController();
++    fetch("/api/villages", { signal: controller.signal })
++      .then(async (response) => {
++        if (!response.ok) throw new Error(`Village portfolio failed (${response.status})`);
++        return (await response.json()) as TargetVillagePortfolio;
++      })
++      .then(setPortfolio)
++      .catch((caught: unknown) => {
++        if ((caught as Error).name !== "AbortError") setError((caught as Error).message);
++      });
++    return () => controller.abort();
++  }, []);
++
++  const filtered = useMemo(() => {
++    if (!portfolio) return [];
++    const needle = query.trim().toLowerCase();
++    return portfolio.items.filter((village) => {
++      const regionMatch = region === "ALL"
++        || (region === "NUNAVIK" && village.region.includes("Nunavik"))
++        || (region === "NUNATSIAVUT" && village.region.includes("Nunatsiavut"));
++      const marineMatch = marineMode === "ALL" || village.marine.access_mode === marineMode;
++      const queryMatch = !needle || [
++        village.name,
++        village.region,
++        village.air.code,
++        village.marine.access_mode,
++        village.screening_role,
++      ].filter(Boolean).join(" ").toLowerCase().includes(needle);
++      return regionMatch && marineMatch && queryMatch;
++    });
++  }, [portfolio, query, region, marineMode]);
++
++  if (error) {
++    return (
++      <main className={`${styles.state} ${embedded ? styles.embeddedState : ""}`}>
++        <span>VILLAGE PORTFOLIO</span>
++        <h1>Publication unavailable</h1>
++        <p>{error}</p>
++      </main>
++    );
++  }
++
++  if (!portfolio) {
++    return (
++      <main className={`${styles.state} ${embedded ? styles.embeddedState : ""}`}>
++        <span>VILLAGE PORTFOLIO</span>
++        <strong>Loading governed village dossiers…</strong>
++      </main>
++    );
++  }
++
++  const nunavikCount = portfolio.items.filter((item) => item.region.includes("Nunavik")).length;
++  const nunatsiavutCount = portfolio.items.filter((item) => item.region.includes("Nunatsiavut")).length;
++  const depthReferenced = portfolio.items.filter((item) => item.marine.depth_status !== "not_verified").length;
++
++  return (
++    <main className={`${styles.shell} ${embedded ? styles.embeddedShell : ""}`}>
++      <section className={styles.hero}>
++        <div>
++          <span className={styles.eyebrow}>TARGET VILLAGES / COMMUNITY DOSSIERS</span>
++          <h1>One diligence surface for every KF target village.</h1>
++          <p>
++            Air, marine, seasonality, logistics gates and community-system context are published as evidence-deepening dossiers.
++            Inclusion remains unranked and does not imply project selection or cargo certification.
++          </p>
++        </div>
++        <div className={styles.metrics}>
++          <Metric value={String(portfolio.target_count)} label="target villages" />
++          <Metric value={String(nunavikCount)} label="Nunavik" />
++          <Metric value={String(nunatsiavutCount)} label="Nunatsiavut" />
++          <Metric value={String(depthReferenced)} label="depth references" />
++        </div>
++      </section>
++
++      <section className={styles.policyStrip}>
++        <div>
++          <span>SCREENING MODE</span>
++          <strong>UNRANKED · EVIDENCE DEEPENING</strong>
++        </div>
++        <p>{portfolio.selection_note}</p>
++        <span className={styles.policyNote}>Unknown capacity stays unknown.</span>
++      </section>
++
++      <section className={styles.catalog}>
++        <div className={styles.filters}>
++          <label className={styles.searchBox}>
++            <span>Search</span>
++            <input
++              type="search"
++              value={query}
++              placeholder="Village, airport, region, marine mode…"
++              onChange={(event) => setQuery(event.target.value)}
++            />
++          </label>
++          <Filter label="Region" value={region} onChange={setRegion} options={[
++            ["ALL", "All regions"],
++            ["NUNAVIK", "Nunavik"],
++            ["NUNATSIAVUT", "Nunatsiavut"],
++          ]} />
++          <Filter label="Marine access" value={marineMode} onChange={setMarineMode} options={[
++            ["ALL", "All access modes"],
++            ["lighterage_beach_ramp", "Lighterage / landing"],
++            ["ferry_ro_ro_terminal", "Ferry / Ro-Ro"],
++            ["ferry_and_local_ramp", "Ferry / local ramp"],
++          ]} />
++        </div>
++
++        <div className={styles.catalogHeader}>
++          <span>{filtered.length} / {portfolio.target_count} VISIBLE</span>
++          <button type="button" onClick={() => { setQuery(""); setRegion("ALL"); setMarineMode("ALL"); }}>
++            Reset filters
++          </button>
++        </div>
++
++        <div className={styles.cards}>
++          {filtered.map((village) => <VillageCard key={village.slug} village={village} />)}
++          {!filtered.length && <div className={styles.empty}>No village matches the active filters.</div>}
++        </div>
++      </section>
++
++      <footer className={styles.footer}>
++        <span>{portfolio.portfolio_version}</span>
++        <span>Ranking disabled · load limits remain unverified unless explicitly published.</span>
++        <span>Published {portfolio.generated_at}</span>
++      </footer>
++    </main>
++  );
++}
++
++function VillageCard({ village }: { village: TargetVillage }) {
++  return (
++    <Link href={`/villages/${village.slug}`} className={styles.card}>
++      <div className={styles.cardTopline}>
++        <span className={styles.slot}>#{String(village.order).padStart(2, "0")}</span>
++        <span>{village.region}</span>
++      </div>
++      <div className={styles.cardTitle}>
++        <strong>{village.name}</strong>
++        <span>{humanizeToken(village.kf_status)}</span>
++      </div>
++      <div className={styles.cardFacts}>
++        <CardFact label="Population" value={village.population.value != null ? `${village.population.value.toLocaleString("en-CA")} · ${village.population.year ?? "year ?"}` : "Not verified"} />
++        <CardFact label="Airport" value={village.air.runway_length_m != null ? `${village.air.code ?? "—"} · ${Math.round(village.air.runway_length_m).toLocaleString("en-CA")} m · ${village.air.runway_surface ?? "surface ?"}` : "Runway not verified"} />
++        <CardFact label="Marine" value={humanizeToken(village.marine.access_mode)} />
++        <CardFact label="Season" value={seasonLabel(village)} />
++      </div>
++      <div className={styles.cardGate}>
++        <span>LOGISTICS</span>
++        <strong>{humanizeToken(village.logistics_envelope.heavy_module_status)}</strong>
++        <em>{village.open_gates.length} open gates · full dossier →</em>
++      </div>
++    </Link>
++  );
++}
++
++function CardFact({ label, value }: { label: string; value: string }) {
++  return <div><span>{label}</span><strong>{value}</strong></div>;
++}
++
++function Metric({ value, label }: { value: string; label: string }) {
++  return <div><strong>{value}</strong><span>{label}</span></div>;
++}
++
++function Filter({
++  label,
++  value,
++  onChange,
++  options,
++}: {
++  label: string;
++  value: string;
++  onChange: (value: string) => void;
++  options: Array<[string, string]>;
++}) {
++  return (
++    <label className={styles.filter}>
++      <span>{label}</span>
++      <select value={value} onChange={(event) => onChange(event.target.value)}>
++        {options.map(([optionValue, optionLabel]) => <option key={optionValue} value={optionValue}>{optionLabel}</option>)}
++      </select>
++    </label>
++  );
++}
++
++function seasonLabel(village: TargetVillage): string {
++  const { start_month: start, end_month: end } = village.marine.seasonality;
++  if (start == null || end == null) return "Not verified";
++  return `${monthName(start)}–${monthName(end)} · ${humanizeToken(village.marine.seasonality.service_type)}`;
++}
++
++function monthName(month: number): string {
++  return new Intl.DateTimeFormat("en-CA", { month: "short", timeZone: "UTC" }).format(new Date(Date.UTC(2026, month - 1, 1)));
++}
+diff -ruN kf_base/apps/web/lib/explorer-types.ts kf_repo/apps/web/lib/explorer-types.ts
+--- kf_base/apps/web/lib/explorer-types.ts	2026-09-01 19:43:59.406270514 +0000
++++ kf_repo/apps/web/lib/explorer-types.ts	2026-09-01 19:42:03.693937497 +0000
+@@ -229,6 +229,7 @@
+   screeningDimensions: EntityScreeningDimension[];
+   release: string;
+   rankingAllowed: false;
++  targetVillageSlug?: string | null;
+ };
+ 
+ export type ObservatoryVisibleLayers = {
+diff -ruN kf_base/apps/web/lib/server/public-data.ts kf_repo/apps/web/lib/server/public-data.ts
+--- kf_base/apps/web/lib/server/public-data.ts	2026-09-01 19:43:59.407128877 +0000
++++ kf_repo/apps/web/lib/server/public-data.ts	2026-09-01 19:42:03.694190227 +0000
+@@ -18,6 +18,7 @@
+   RiverScreeningDimension,
+ } from "../explorer-types";
+ import { humanizeToken } from "../format";
++import type { TargetVillagePortfolio } from "../village-types";
+ 
+ const workingDirectory = process.cwd();
+ const repoRoot = process.env.KRISTAL_REPO_ROOT
+@@ -263,7 +264,7 @@
+ }
+ 
+ export async function getEntityDetail(entityId: string): Promise<EntityDetail | null> {
+-  const [bootstrap, communityContextPayload, evidencePayload, evidenceRecordsPayload] =
++  const [bootstrap, communityContextPayload, evidencePayload, evidenceRecordsPayload, targetVillagePayload] =
+     await Promise.all([
+       getExplorerBootstrap(),
+       readJson<{ items: CommunityContext[] }>(
+@@ -271,6 +272,7 @@
+       ),
+       readJson<EvidencePayload>(path.join(publishRoot, "evidence_panel_summary_public.json")),
+       readJson<EvidenceRecordsPayload>(path.join(publishRoot, "evidence_records_public.json")),
++      readJson<TargetVillagePortfolio>(path.join(publishRoot, "target_villages_public.json")),
+     ]);
+ 
+   const evidence = evidencePayload.items.find((item) => item.entity_id === entityId) ?? null;
+@@ -405,6 +407,7 @@
+       screeningDimensions: [],
+       release: bootstrap.release,
+       rankingAllowed: false,
++      targetVillageSlug: targetVillagePayload.items.find((item) => item.entity_id === entityId)?.slug ?? null,
+     };
+   }
+ 
+diff -ruN kf_base/apps/web/lib/server/villages.ts kf_repo/apps/web/lib/server/villages.ts
+--- kf_base/apps/web/lib/server/villages.ts	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/lib/server/villages.ts	2026-09-01 19:39:37.819990704 +0000
+@@ -0,0 +1,37 @@
++import "server-only";
++
++import { readFile } from "node:fs/promises";
++import path from "node:path";
++import type { TargetVillage, TargetVillagePortfolio } from "../village-types";
++
++const workingDirectory = process.cwd();
++const repoRoot = process.env.KRISTAL_REPO_ROOT
++  ? path.resolve(process.env.KRISTAL_REPO_ROOT)
++  : workingDirectory.endsWith(path.join("apps", "web"))
++    ? path.resolve(workingDirectory, "../..")
++    : workingDirectory;
++
++const villagesPath = path.join(
++  repoRoot,
++  "data",
++  "publish",
++  "current",
++  "target_villages_public.json",
++);
++
++export async function getTargetVillagePortfolio(): Promise<TargetVillagePortfolio> {
++  const payload = JSON.parse(await readFile(villagesPath, "utf8")) as TargetVillagePortfolio;
++  if (
++    payload.schema !== "kristal-target-villages/v1"
++    || payload.ranking_allowed !== false
++    || payload.target_count !== payload.items.length
++  ) {
++    throw new Error("Invalid target village publication");
++  }
++  return payload;
++}
++
++export async function getTargetVillage(slug: string): Promise<TargetVillage | null> {
++  const portfolio = await getTargetVillagePortfolio();
++  return portfolio.items.find((item) => item.slug === slug) ?? null;
++}
+diff -ruN kf_base/apps/web/lib/village-types.ts kf_repo/apps/web/lib/village-types.ts
+--- kf_base/apps/web/lib/village-types.ts	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/apps/web/lib/village-types.ts	2026-09-01 19:39:37.819147169 +0000
+@@ -0,0 +1,105 @@
++export type VillageSourceReference = {
++  id: string;
++  title: string;
++  publisher: string;
++  url: string;
++  role: string;
++};
++
++export type TargetVillage = {
++  order: number;
++  slug: string;
++  entity_id: string;
++  name: string;
++  region: string;
++  kf_status: "TARGET_SCREENING" | "REFERENCE_ONLY" | "PAUSED" | string;
++  screening_role: string;
++  ranking_allowed: false;
++  reviewed_at: string;
++  development_thesis: string;
++  coordinates: {
++    longitude: number;
++    latitude: number;
++    geometry_status: string;
++    not_facility_coordinate: boolean;
++  };
++  population: {
++    value: number | null;
++    year: number | null;
++    geography: string | null;
++    source: { name: string; url: string; reference_date: string | null } | null;
++    note: string | null;
++  };
++  air: {
++    access_known: boolean;
++    code: string | null;
++    name: string | null;
++    runway_length_m: number | null;
++    runway_surface: string | null;
++    dimension_status: string;
++    access_pattern: string;
++    load_status: string;
++    pavement_strength: string | null;
++    max_aircraft_mass_kg: number | null;
++    operational_constraints: string[];
++    presence_source: { name: string; url: string; reference_date: string | null } | null;
++    dimension_source: { name: string; url: string; reference_date: string | null } | null;
++    note: string | null;
++  };
++  marine: {
++    access_known: boolean;
++    access_mode: string;
++    commercial_access: string;
++    facilities: Array<{ type: string; label: string; length_m: number | null }>;
++    approach_depth_m: number | null;
++    anchorage_depth_m: number | null;
++    berth_depth_range_m: [number, number] | null;
++    depth_status: string;
++    ro_ro: boolean | null;
++    laydown_available: boolean | null;
++    load_limits: {
++      status: string;
++      deck_load_t_m2: number | null;
++      axle_load_t: number | null;
++      max_unit_mass_t: number | null;
++      crane_swl_t: number | null;
++    };
++    seasonality: {
++      service_type: string;
++      start_month: number | null;
++      end_month: number | null;
++      status: string;
++    };
++    constraints: string[];
++    source_ids: string[];
++    baseline_context: string | null;
++    baseline_source: { name: string; url: string; reference_date: string | null } | null;
++    baseline_note: string | null;
++  };
++  logistics_envelope: {
++    marine_delivery: string;
++    air_delivery: string;
++    heavy_module_status: "favourable" | "constrained" | "diligence_required" | "unknown" | string;
++    assessment_status: "partial" | "research_ready" | "diligence_required" | string;
++  };
++  system_context: {
++    marine: string | null;
++    telecom: string | null;
++    road: string | null;
++    energy: string | null;
++  };
++  open_gates: string[];
++  sources: VillageSourceReference[];
++};
++
++export type TargetVillagePortfolio = {
++  schema: "kristal-target-villages/v1";
++  generated_at: string;
++  portfolio_version: string;
++  status: string;
++  ranking_allowed: false;
++  target_count: number;
++  selection_note: string;
++  semantics: Record<string, string>;
++  items: TargetVillage[];
++};
+diff -ruN kf_base/contracts/schemas/target-village-dossier.schema.json kf_repo/contracts/schemas/target-village-dossier.schema.json
+--- kf_base/contracts/schemas/target-village-dossier.schema.json	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/contracts/schemas/target-village-dossier.schema.json	2026-09-01 19:38:33.795078231 +0000
+@@ -0,0 +1,149 @@
++{
++  "$schema": "https://json-schema.org/draft/2020-12/schema",
++  "$id": "https://kristal-farms.local/contracts/target-village-dossier.schema.json",
++  "title": "Kristal Farms target village research dossier",
++  "type": "object",
++  "required": [
++    "schema",
++    "slug",
++    "community_name",
++    "kf_status",
++    "screening_role",
++    "reviewed_at",
++    "development_thesis",
++    "air",
++    "marine",
++    "logistics_envelope",
++    "open_gates",
++    "sources"
++  ],
++  "properties": {
++    "schema": { "const": "kristal-target-village-research/v1" },
++    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
++    "community_name": { "type": "string", "minLength": 1 },
++    "kf_status": { "enum": ["TARGET_SCREENING", "REFERENCE_ONLY", "PAUSED"] },
++    "screening_role": { "type": "string", "minLength": 1 },
++    "reviewed_at": { "type": "string", "format": "date" },
++    "development_thesis": { "type": "string", "minLength": 1 },
++    "air": {
++      "type": "object",
++      "required": ["access_pattern", "load_status", "pavement_strength", "max_aircraft_mass_kg", "operational_constraints"],
++      "properties": {
++        "access_pattern": { "type": "string" },
++        "load_status": { "enum": ["published_reference", "not_verified", "unknown"] },
++        "pavement_strength": { "type": ["string", "null"] },
++        "max_aircraft_mass_kg": { "type": ["number", "null"], "minimum": 0 },
++        "operational_constraints": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
++      },
++      "additionalProperties": false
++    },
++    "marine": {
++      "type": "object",
++      "required": [
++        "access_mode",
++        "commercial_access",
++        "facilities",
++        "approach_depth_m",
++        "anchorage_depth_m",
++        "berth_depth_range_m",
++        "depth_status",
++        "ro_ro",
++        "laydown_available",
++        "load_limits",
++        "seasonality",
++        "constraints",
++        "source_ids"
++      ],
++      "properties": {
++        "access_mode": { "type": "string" },
++        "commercial_access": { "enum": ["seasonal", "year_round", "not_verified"] },
++        "facilities": {
++          "type": "array",
++          "items": {
++            "type": "object",
++            "required": ["type", "label"],
++            "properties": {
++              "type": { "type": "string" },
++              "label": { "type": "string" },
++              "length_m": { "type": ["number", "null"], "minimum": 0 }
++            },
++            "additionalProperties": false
++          }
++        },
++        "approach_depth_m": { "type": ["number", "null"], "minimum": 0 },
++        "anchorage_depth_m": { "type": ["number", "null"], "minimum": 0 },
++        "berth_depth_range_m": {
++          "oneOf": [
++            { "type": "null" },
++            {
++              "type": "array",
++              "prefixItems": [
++                { "type": "number", "minimum": 0 },
++                { "type": "number", "minimum": 0 }
++              ],
++              "minItems": 2,
++              "maxItems": 2
++            }
++          ]
++        },
++        "depth_status": { "enum": ["published_reference", "partial_reference", "not_verified"] },
++        "ro_ro": { "type": ["boolean", "null"] },
++        "laydown_available": { "type": ["boolean", "null"] },
++        "load_limits": {
++          "type": "object",
++          "required": ["status", "deck_load_t_m2", "axle_load_t", "max_unit_mass_t", "crane_swl_t"],
++          "properties": {
++            "status": { "enum": ["published_reference", "not_verified", "unknown"] },
++            "deck_load_t_m2": { "type": ["number", "null"], "minimum": 0 },
++            "axle_load_t": { "type": ["number", "null"], "minimum": 0 },
++            "max_unit_mass_t": { "type": ["number", "null"], "minimum": 0 },
++            "crane_swl_t": { "type": ["number", "null"], "minimum": 0 }
++          },
++          "additionalProperties": false
++        },
++        "seasonality": {
++          "type": "object",
++          "required": ["service_type", "start_month", "end_month", "status"],
++          "properties": {
++            "service_type": { "type": "string" },
++            "start_month": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
++            "end_month": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
++            "status": { "enum": ["published_schedule_context", "general_operating_context", "not_verified"] }
++          },
++          "additionalProperties": false
++        },
++        "constraints": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
++        "source_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
++      },
++      "additionalProperties": false
++    },
++    "logistics_envelope": {
++      "type": "object",
++      "required": ["marine_delivery", "air_delivery", "heavy_module_status", "assessment_status"],
++      "properties": {
++        "marine_delivery": { "type": "string" },
++        "air_delivery": { "type": "string" },
++        "heavy_module_status": { "enum": ["favourable", "constrained", "diligence_required", "unknown"] },
++        "assessment_status": { "enum": ["partial", "research_ready", "diligence_required"] }
++      },
++      "additionalProperties": false
++    },
++    "open_gates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
++    "sources": {
++      "type": "array",
++      "items": {
++        "type": "object",
++        "required": ["id", "title", "publisher", "url", "role"],
++        "properties": {
++          "id": { "type": "string" },
++          "title": { "type": "string" },
++          "publisher": { "type": "string" },
++          "url": { "type": "string" },
++          "role": { "type": "string" }
++        },
++        "additionalProperties": false
++      }
++    }
++  },
++  "additionalProperties": false
++}
+diff -ruN kf_base/data/processed/current/target_villages_audit.csv kf_repo/data/processed/current/target_villages_audit.csv
+--- kf_base/data/processed/current/target_villages_audit.csv	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/data/processed/current/target_villages_audit.csv	2026-09-01 19:43:31.918767171 +0000
+@@ -0,0 +1,13 @@
++slug,community,entity_id,kf_status,runway_length_m,air_load_status,marine_access_mode,marine_depth_status,marine_load_status,open_gate_count,reviewed_at
++akulivik,Akulivik,7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
++aupaluk,Aupaluk,4816dcfd-4135-58ec-80ac-ce904fbd86b6,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,not_verified,not_verified,7,2026-09-01
++ivujivik,Ivujivik,34dfc3b5-8230-5f20-915d-9328af9a02c9,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
++kangiqsujuaq,Kangiqsujuaq,abe9c29a-f22e-5b33-b53b-15f04e7ae086,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,not_verified,not_verified,7,2026-09-01
++puvirnituq,Puvirnituq,64772c3a-4fd7-517d-9592-d1fd3c6fd84f,TARGET_SCREENING,1920.0,not_verified,lighterage_beach_ramp,published_reference,not_verified,7,2026-09-01
++quaqtaq,Quaqtaq,31124d89-b911-5605-bc5e-94a437c1bfcc,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
++salluit,Salluit,ce8c376c-5457-5ca1-bff5-f75919e66577,TARGET_SCREENING,1073.0,not_verified,lighterage_beach_ramp,partial_reference,not_verified,7,2026-09-01
++nain,Nain,343f0773-986f-5312-a7f9-6119518f0dcf,TARGET_SCREENING,605.0,not_verified,ferry_and_local_ramp,not_verified,not_verified,7,2026-09-01
++hopedale,Hopedale,8b0d13b3-9042-5223-bde6-ef58e0a0e9cd,TARGET_SCREENING,762.0,not_verified,ferry_ro_ro_terminal,published_reference,not_verified,7,2026-09-01
++makkovik,Makkovik,c27fcd54-d754-5ec8-b69c-f31335a2d034,TARGET_SCREENING,790.0,not_verified,ferry_ro_ro_terminal,not_verified,not_verified,7,2026-09-01
++postville,Postville,7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8,TARGET_SCREENING,785.0,not_verified,ferry_ro_ro_terminal,not_verified,not_verified,7,2026-09-01
++rigolet,Rigolet,784a7c7f-68ae-5a8f-9fb8-29902b3df56d,TARGET_SCREENING,761.0,not_verified,ferry_ro_ro_terminal,published_reference,not_verified,7,2026-09-01
+diff -ruN kf_base/data/publish/current/release_manifest.json kf_repo/data/publish/current/release_manifest.json
+--- kf_base/data/publish/current/release_manifest.json	2026-09-01 19:43:59.395093925 +0000
++++ kf_repo/data/publish/current/release_manifest.json	2026-09-01 19:42:32.878219775 +0000
+@@ -16,7 +16,8 @@
+     "evidence_records_public.json",
+     "external_reference_energy_public.json",
+     "hydro_evidence_matrix_public.json",
+-    "hydrometric_stations_public.geojson"
++    "hydrometric_stations_public.geojson",
++    "target_villages_public.json"
+   ],
+   "semantics": [
+     "community and critical loads have priority over flexible compute",
+diff -ruN kf_base/data/publish/current/target_villages_public.json kf_repo/data/publish/current/target_villages_public.json
+--- kf_base/data/publish/current/target_villages_public.json	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/data/publish/current/target_villages_public.json	2026-09-01 19:43:31.918537746 +0000
+@@ -0,0 +1,1985 @@
++{
++  "schema": "kristal-target-villages/v1",
++  "generated_at": "2026-09-01T19:43:31Z",
++  "portfolio_version": "2026-09-01",
++  "status": "ACTIVE_SCREENING",
++  "ranking_allowed": false,
++  "target_count": 12,
++  "selection_note": "Target-village portfolio for evidence deepening. Inclusion is not a site ranking, project selection, authorization, commitment, or bankability statement.",
++  "semantics": {
++    "target": "Portfolio inclusion means evidence deepening only; it is not ranking or site selection.",
++    "depth": "Approach and anchorage depths are not berth depths. Null depth means not verified.",
++    "load": "Null load limits mean not verified. Runway length or water depth alone never establishes cargo capacity.",
++    "seasonality": "Published/general service windows are planning context and remain weather/ice/operator dependent.",
++    "coordinates": "Village coordinates are approximate community references, not facility coordinates."
++  },
++  "items": [
++    {
++      "order": 1,
++      "slug": "akulivik",
++      "entity_id": "7dccbf0b-2c5a-5f53-a8c9-52aad813f8d8",
++      "name": "Akulivik",
++      "region": "Nunavik / Hudson coast",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Akulivik without ranking the village.",
++      "coordinates": {
++        "longitude": -78.2041,
++        "latitude": 60.8006,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 642,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YKO",
++        "name": "Akulivik Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Community breakwaters",
++            "length_m": null
++          },
++          {
++            "type": "boat_ramp",
++            "label": "Boat ramp",
++            "length_m": null
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beach",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": 10.0,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "partial_reference",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule",
++          "strong_tidal_currents"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "operating_fibre",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": null
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 2,
++      "slug": "aupaluk",
++      "entity_id": "4816dcfd-4135-58ec-80ac-ce904fbd86b6",
++      "name": "Aupaluk",
++      "region": "Nunavik / Ungava coast",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Aupaluk without ranking the village.",
++      "coordinates": {
++        "longitude": -69.5996,
++        "latitude": 59.2967,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 233,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YLA",
++        "name": "Aupaluk Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Community breakwaters",
++            "length_m": null
++          },
++          {
++            "type": "small_jetty",
++            "label": "Small jetty",
++            "length_m": null
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beach",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "not_verified",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "planned_fibre_2027",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": null
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 3,
++      "slug": "ivujivik",
++      "entity_id": "34dfc3b5-8230-5f20-915d-9328af9a02c9",
++      "name": "Ivujivik",
++      "region": "Nunavik / Hudson Strait",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Ivujivik without ranking the village.",
++      "coordinates": {
++        "longitude": -77.9253,
++        "latitude": 62.4173,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 412,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YIK",
++        "name": "Ivujivik Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Breakwater / landing areas",
++            "length_m": null
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beach",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": 55.0,
++        "berth_depth_range_m": null,
++        "depth_status": "partial_reference",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule",
++          "north_wind_exposure",
++          "strong_tidal_currents"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "operating_fibre",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": null
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 4,
++      "slug": "kangiqsujuaq",
++      "entity_id": "abe9c29a-f22e-5b33-b53b-15f04e7ae086",
++      "name": "Kangiqsujuaq",
++      "region": "Nunavik / Hudson Strait",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Kangiqsujuaq without ranking the village.",
++      "coordinates": {
++        "longitude": -71.9603,
++        "latitude": 61.5973,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 837,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YKG",
++        "name": "Kangiqsujuaq Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Community breakwaters",
++            "length_m": null
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beach",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "not_verified",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule",
++          "terrain_induced_airport_turbulence"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "operating_fibre",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": null
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 5,
++      "slug": "puvirnituq",
++      "entity_id": "64772c3a-4fd7-517d-9592-d1fd3c6fd84f",
++      "name": "Puvirnituq",
++      "region": "Nunavik / Hudson Bay",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Use Puvirnituq as a high-value logistics reference because its existing runway and marine laydown context are less restrictive than most Nunavik peers, while keeping heavy-module limits unverified.",
++      "coordinates": {
++        "longitude": -77.2756,
++        "latitude": 60.0338,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 2129,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YPX",
++        "name": "Puvirnituq Airport",
++        "runway_length_m": 1920.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Breakwater",
++            "length_m": null
++          },
++          {
++            "type": "jetty",
++            "label": "Jetty",
++            "length_m": null
++          },
++          {
++            "type": "small_dock",
++            "label": "Small docks",
++            "length_m": null
++          },
++          {
++            "type": "boat_ramp",
++            "label": "Ramp",
++            "length_m": null
++          },
++          {
++            "type": "fishing_wharf",
++            "label": "Fishing wharf",
++            "length_m": null
++          },
++          {
++            "type": "laydown",
++            "label": "Cargo laydown area",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": 8.0,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": [
++          0.9,
++          1.5
++        ],
++        "depth_status": "published_reference",
++        "ro_ro": null,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "operating_fibre",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": "wind_supply_contract_authorized_operation_not_verified"
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 6,
++      "slug": "quaqtaq",
++      "entity_id": "31124d89-b911-5605-bc5e-94a437c1bfcc",
++      "name": "Quaqtaq",
++      "region": "Nunavik / Hudson Strait / Ungava side",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Quaqtaq without ranking the village.",
++      "coordinates": {
++        "longitude": -69.6164,
++        "latitude": 61.0465,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 453,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YHA",
++        "name": "Quaqtaq Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Community breakwaters",
++            "length_m": null
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beaches",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "partial_reference",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule",
++          "partially_unsurveyed_local_waters"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "planned_fibre_2027",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": "wind_supply_contract_authorized_operation_not_verified"
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 7,
++      "slug": "salluit",
++      "entity_id": "ce8c376c-5457-5ca1-bff5-f75919e66577",
++      "name": "Salluit",
++      "region": "Nunavik / Hudson Strait",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunavik target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Salluit without ranking the village.",
++      "coordinates": {
++        "longitude": -75.6333,
++        "latitude": 62.2,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 1580,
++        "year": 2021,
++        "geography": "Village nordique (VN)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YZG",
++        "name": "Salluit Airport",
++        "runway_length_m": 1073.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "Gouvernement du Québec",
++          "url": "https://www.quebec.ca/transports/infrastructures-projets/infrastructures/infrastructures-aeroportuaires",
++          "reference_date": "current web reference"
++        },
++        "note": null
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "lighterage_beach_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "breakwater",
++            "label": "Community breakwaters",
++            "length_m": null
++          },
++          {
++            "type": "small_jetty",
++            "label": "Small jetty",
++            "length_m": null
++          },
++          {
++            "type": "dock",
++            "label": "Community dock",
++            "length_m": 54.9
++          },
++          {
++            "type": "landing_beach",
++            "label": "Landing beach / ramp",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": 7.3,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "partial_reference",
++        "ro_ro": null,
++        "laydown_available": null,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "sealift",
++          "start_month": 7,
++          "end_month": 10,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "tide_and_water_level",
++          "sealift_schedule",
++          "channel_constraint"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "chs-arc401-2026",
++          "arctic-sealift-schedule-2026"
++        ],
++        "baseline_context": "regional_14_port_system_context",
++        "baseline_source": {
++          "name": "Kativik Regional Government",
++          "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
++          "reference_date": null
++        },
++        "baseline_note": null
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ship_to_lighterage_or_landing_facility",
++        "air_delivery": "regional_aircraft_on_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "regional_14_port_system_context",
++        "telecom": "operating_fibre",
++        "road": "no_intercommunity_or_southern_road_link",
++        "energy": null
++      },
++      "open_gates": [
++        "berth_or_landing_depth",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "chs-arc401-2026",
++          "title": "Sailing Directions ARC 401",
++          "publisher": "Canadian Hydrographic Service",
++          "url": "https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf",
++          "role": "marine_depth_and_navigation_context"
++        },
++        {
++          "id": "arctic-sealift-schedule-2026",
++          "title": "Nunavik sealift schedule",
++          "publisher": "Arctic Sealift / NEAS",
++          "url": "https://arcticsealift.com/schedule.php?language=en",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 8,
++      "slug": "nain",
++      "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
++      "name": "Nain",
++      "region": "Nunatsiavut / Labrador",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunatsiavut target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Treat Nain as a marine-logistics hub candidate with a materially constrained existing airstrip; do not count the proposed new airport as available capacity until built and certified.",
++      "coordinates": {
++        "longitude": -61.6925,
++        "latitude": 56.5428,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 847,
++        "year": 2021,
++        "geography": "Town (T)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YDP",
++        "name": "Nain Airport",
++        "runway_length_m": 605.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/airportservices/",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "NAV CANADA Canada Flight Supplement (static reference)",
++          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
++          "reference_date": "2020-12-31"
++        },
++        "note": "Existing-airstrip dimension is a static CFS reference (1986 ft). A new Nain airport project has been under assessment; verify current facility before use."
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "ferry_and_local_ramp",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "ferry_terminal",
++            "label": "Ferry terminal",
++            "length_m": null
++          },
++          {
++            "type": "jetty",
++            "label": "North jetty",
++            "length_m": null
++          },
++          {
++            "type": "jetty",
++            "label": "Secondary jetty",
++            "length_m": null
++          },
++          {
++            "type": "ramp",
++            "label": "Freight / vessel ramp",
++            "length_m": null
++          },
++          {
++            "type": "laydown",
++            "label": "Large cargo laydown area",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "not_verified",
++        "ro_ro": null,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "coastal_ferry_and_freight",
++          "start_month": 6,
++          "end_month": 11,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "ferry_schedule"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "nl-north-labrador-ferry",
++          "nunatsiavut-travel-distances"
++        ],
++        "baseline_context": "scheduled_north_labrador_ferry_stop",
++        "baseline_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "reference_date": null
++        },
++        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
++        "air_delivery": "regional_aircraft_on_short_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "scheduled_north_labrador_ferry_stop",
++        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
++        "road": null,
++        "energy": "remote_diesel_plant_context"
++      },
++      "open_gates": [
++        "berth_depth_confirmation",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area_capacity",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "nl-north-labrador-ferry",
++          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
++          "publisher": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "role": "marine_service_context"
++        },
++        {
++          "id": "nunatsiavut-travel-distances",
++          "title": "Nunatsiavut coastal travel context",
++          "publisher": "Nunatsiavut Government",
++          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 9,
++      "slug": "hopedale",
++      "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
++      "name": "Hopedale",
++      "region": "Nunatsiavut / Labrador",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunatsiavut target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Hopedale without ranking the village.",
++      "coordinates": {
++        "longitude": -60.2117,
++        "latitude": 55.4542,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 596,
++        "year": 2021,
++        "geography": "Town (T)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YHO",
++        "name": "Hopedale Airport",
++        "runway_length_m": 762.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/airportservices/",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "NAV CANADA Canada Flight Supplement (static reference)",
++          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
++          "reference_date": "2020-12-31"
++        },
++        "note": "Runway dimension is a static CFS reference; verify current aeronautical data before operational use."
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "ferry_ro_ro_terminal",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "public_jetty",
++            "label": "Public jetty",
++            "length_m": null
++          },
++          {
++            "type": "ferry_terminal",
++            "label": "Ferry terminal",
++            "length_m": null
++          },
++          {
++            "type": "ro_ro_ramp",
++            "label": "Ro-Ro ramp",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": [
++          4.9,
++          5.2
++        ],
++        "depth_status": "published_reference",
++        "ro_ro": true,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "coastal_ferry_and_freight",
++          "start_month": 6,
++          "end_month": 11,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "ferry_schedule",
++          "nearby_shoal_and_reef"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "nl-north-labrador-ferry",
++          "nunatsiavut-travel-distances"
++        ],
++        "baseline_context": "scheduled_north_labrador_ferry_stop",
++        "baseline_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "reference_date": null
++        },
++        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
++        "air_delivery": "regional_aircraft_on_short_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "scheduled_north_labrador_ferry_stop",
++        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
++        "road": null,
++        "energy": "remote_diesel_plant_context"
++      },
++      "open_gates": [
++        "berth_depth_confirmation",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area_capacity",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "nl-north-labrador-ferry",
++          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
++          "publisher": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "role": "marine_service_context"
++        },
++        {
++          "id": "nunatsiavut-travel-distances",
++          "title": "Nunatsiavut coastal travel context",
++          "publisher": "Nunatsiavut Government",
++          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 10,
++      "slug": "makkovik",
++      "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
++      "name": "Makkovik",
++      "region": "Nunatsiavut / Labrador",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunatsiavut target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Makkovik without ranking the village.",
++      "coordinates": {
++        "longitude": -59.1765,
++        "latitude": 55.0869,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 365,
++        "year": 2021,
++        "geography": "Town (T)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YMN",
++        "name": "Makkovik Airport",
++        "runway_length_m": 790.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/airportservices/",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "NAV CANADA Canada Flight Supplement (static reference)",
++          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
++          "reference_date": "2020-12-31"
++        },
++        "note": "Runway dimension is a static CFS reference (2592 ft); verify current aeronautical data before operational use."
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "ferry_ro_ro_terminal",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "jetty",
++            "label": "Multiple jetties",
++            "length_m": null
++          },
++          {
++            "type": "ro_ro_ramp",
++            "label": "Ro-Ro ramp",
++            "length_m": null
++          },
++          {
++            "type": "freight_shed",
++            "label": "Freight shed",
++            "length_m": null
++          },
++          {
++            "type": "marine_service",
++            "label": "Marine service area",
++            "length_m": null
++          },
++          {
++            "type": "laydown",
++            "label": "Cargo laydown area",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "not_verified",
++        "ro_ro": true,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "coastal_ferry_and_freight",
++          "start_month": 6,
++          "end_month": 11,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "ferry_schedule"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "nl-north-labrador-ferry",
++          "nunatsiavut-travel-distances"
++        ],
++        "baseline_context": "scheduled_north_labrador_ferry_stop",
++        "baseline_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "reference_date": null
++        },
++        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
++        "air_delivery": "regional_aircraft_on_short_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "scheduled_north_labrador_ferry_stop",
++        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
++        "road": null,
++        "energy": "remote_diesel_plant_context"
++      },
++      "open_gates": [
++        "berth_depth_confirmation",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area_capacity",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "nl-north-labrador-ferry",
++          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
++          "publisher": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "role": "marine_service_context"
++        },
++        {
++          "id": "nunatsiavut-travel-distances",
++          "title": "Nunatsiavut coastal travel context",
++          "publisher": "Nunatsiavut Government",
++          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 11,
++      "slug": "postville",
++      "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
++      "name": "Postville",
++      "region": "Nunatsiavut / Labrador",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunatsiavut target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Postville without ranking the village.",
++      "coordinates": {
++        "longitude": -59.7853,
++        "latitude": 54.9106,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 188,
++        "year": 2021,
++        "geography": "Town (T)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YSO",
++        "name": "Postville Airport",
++        "runway_length_m": 785.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/airportservices/",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "NAV CANADA Canada Flight Supplement (static reference)",
++          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
++          "reference_date": "2020-12-31"
++        },
++        "note": "Runway dimension is a static CFS reference (2576 ft); verify current aeronautical data before operational use."
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "ferry_ro_ro_terminal",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "jetty",
++            "label": "Multiple jetties",
++            "length_m": null
++          },
++          {
++            "type": "boat_ramp",
++            "label": "Boat ramps",
++            "length_m": null
++          },
++          {
++            "type": "ro_ro_ramp",
++            "label": "Ro-Ro ramp",
++            "length_m": null
++          },
++          {
++            "type": "freight_building",
++            "label": "Freight buildings",
++            "length_m": null
++          },
++          {
++            "type": "laydown",
++            "label": "Cargo laydown area",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": null,
++        "depth_status": "not_verified",
++        "ro_ro": true,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "coastal_ferry_and_freight",
++          "start_month": 6,
++          "end_month": 11,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "ferry_schedule"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "nl-north-labrador-ferry",
++          "nunatsiavut-travel-distances"
++        ],
++        "baseline_context": "scheduled_north_labrador_ferry_stop",
++        "baseline_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "reference_date": null
++        },
++        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
++        "air_delivery": "regional_aircraft_on_short_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "scheduled_north_labrador_ferry_stop",
++        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
++        "road": null,
++        "energy": "remote_diesel_plant_context"
++      },
++      "open_gates": [
++        "berth_depth_confirmation",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area_capacity",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "nl-north-labrador-ferry",
++          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
++          "publisher": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "role": "marine_service_context"
++        },
++        {
++          "id": "nunatsiavut-travel-distances",
++          "title": "Nunatsiavut coastal travel context",
++          "publisher": "Nunatsiavut Government",
++          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
++          "role": "seasonality_context"
++        }
++      ]
++    },
++    {
++      "order": 12,
++      "slug": "rigolet",
++      "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
++      "name": "Rigolet",
++      "region": "Nunatsiavut / Labrador",
++      "kf_status": "TARGET_SCREENING",
++      "screening_role": "Nunatsiavut target village",
++      "ranking_allowed": false,
++      "reviewed_at": "2026-09-01",
++      "development_thesis": "Deepen logistics, energy, fibre, heat-user and community diligence for Rigolet without ranking the village.",
++      "coordinates": {
++        "longitude": -58.4289,
++        "latitude": 54.1797,
++        "geometry_status": "approximate_reference",
++        "not_facility_coordinate": true
++      },
++      "population": {
++        "value": 327,
++        "year": 2021,
++        "geography": "Town (T)",
++        "source": {
++          "name": "Statistics Canada — 2021 Census population and dwelling counts",
++          "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000202",
++          "reference_date": null
++        },
++        "note": null
++      },
++      "air": {
++        "access_known": true,
++        "code": "YRG",
++        "name": "Rigolet Airport",
++        "runway_length_m": 761.0,
++        "runway_surface": "gravel",
++        "dimension_status": "published_reference",
++        "access_pattern": "year_round_community_air_access",
++        "load_status": "not_verified",
++        "pavement_strength": null,
++        "max_aircraft_mass_kg": null,
++        "operational_constraints": [
++          "weather",
++          "gravel_runway_performance",
++          "operator_and_aircraft_limits"
++        ],
++        "presence_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/airportservices/",
++          "reference_date": null
++        },
++        "dimension_source": {
++          "name": "NAV CANADA Canada Flight Supplement (static reference)",
++          "url": "https://www.navcanada.ca/en/ecfs_07_en.pdf",
++          "reference_date": "2020-12-31"
++        },
++        "note": "Runway dimension is a static CFS reference (~2496–2500 ft); verify current aeronautical data before operational use."
++      },
++      "marine": {
++        "access_known": true,
++        "access_mode": "ferry_ro_ro_terminal",
++        "commercial_access": "seasonal",
++        "facilities": [
++          {
++            "type": "l_jetty",
++            "label": "L-shaped jetty",
++            "length_m": null
++          },
++          {
++            "type": "ro_ro_ramp",
++            "label": "Ro-Ro ramp",
++            "length_m": null
++          },
++          {
++            "type": "floating_dock",
++            "label": "Floating dock",
++            "length_m": null
++          }
++        ],
++        "approach_depth_m": null,
++        "anchorage_depth_m": null,
++        "berth_depth_range_m": [
++          4.0,
++          7.0
++        ],
++        "depth_status": "published_reference",
++        "ro_ro": true,
++        "laydown_available": true,
++        "load_limits": {
++          "status": "not_verified",
++          "deck_load_t_m2": null,
++          "axle_load_t": null,
++          "max_unit_mass_t": null,
++          "crane_swl_t": null
++        },
++        "seasonality": {
++          "service_type": "coastal_ferry_and_freight",
++          "start_month": 6,
++          "end_month": 11,
++          "status": "general_operating_context"
++        },
++        "constraints": [
++          "sea_ice",
++          "weather",
++          "ferry_schedule",
++          "local_rock_hazard"
++        ],
++        "source_ids": [
++          "cmsn-arctic-infrastructure-2025",
++          "nl-north-labrador-ferry",
++          "nunatsiavut-travel-distances"
++        ],
++        "baseline_context": "scheduled_north_labrador_ferry_stop",
++        "baseline_source": {
++          "name": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "reference_date": null
++        },
++        "baseline_note": "Ferry/port-of-call context confirmed; berth/dock dimensions not verified."
++      },
++      "logistics_envelope": {
++        "marine_delivery": "ferry_or_coastal_freight_to_terminal",
++        "air_delivery": "regional_aircraft_on_short_gravel_runway",
++        "heavy_module_status": "diligence_required",
++        "assessment_status": "partial"
++      },
++      "system_context": {
++        "marine": "scheduled_north_labrador_ferry_stop",
++        "telecom": "replacement_backbone_unresolved_after_bell_withdrawal",
++        "road": null,
++        "energy": "remote_diesel_plant_context"
++      },
++      "open_gates": [
++        "berth_depth_confirmation",
++        "ramp_axle_load",
++        "maximum_unit_mass",
++        "crane_or_mobile_lift_capacity",
++        "laydown_area_capacity",
++        "airport_pavement_strength",
++        "aircraft_specific_payload"
++      ],
++      "sources": [
++        {
++          "id": "cmsn-arctic-infrastructure-2025",
++          "title": "Canadian Arctic Infrastructure Inventory",
++          "publisher": "Canadian Marine Shipping Network",
++          "url": "https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf",
++          "role": "marine_facility_context"
++        },
++        {
++          "id": "nl-north-labrador-ferry",
++          "title": "Goose Bay – Rigolet – Ports North to Nain ferry service",
++          "publisher": "Government of Newfoundland and Labrador",
++          "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
++          "role": "marine_service_context"
++        },
++        {
++          "id": "nunatsiavut-travel-distances",
++          "title": "Nunatsiavut coastal travel context",
++          "publisher": "Nunatsiavut Government",
++          "url": "https://nunatsiavut.com/plan-your-trip/travel-distances/",
++          "role": "seasonality_context"
++        }
++      ]
++    }
++  ]
++}
+diff -ruN kf_base/pipelines/publish/README.md kf_repo/pipelines/publish/README.md
+--- kf_base/pipelines/publish/README.md	2026-09-01 19:43:59.431758612 +0000
++++ kf_repo/pipelines/publish/README.md	2026-09-01 19:42:04.269185273 +0000
+@@ -1,3 +1,7 @@
+ # Publish pipelines
+ 
+ Implementation home for immutable public releases, PMTiles/COG/GeoJSON generation and release manifests.
++
++## Target villages
++
++`build_target_villages_public.py` promotes `research/communities/targets/*.yaml` into the governed `data/publish/current/target_villages_public.json` artifact and writes `data/processed/current/target_villages_audit.csv`. The web application consumes only the published artifact.
+diff -ruN kf_base/pipelines/publish/build_target_villages_public.py kf_repo/pipelines/publish/build_target_villages_public.py
+--- kf_base/pipelines/publish/build_target_villages_public.py	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/pipelines/publish/build_target_villages_public.py	2026-09-01 19:39:06.177952994 +0000
+@@ -0,0 +1,235 @@
++#!/usr/bin/env python3
++"""Publish governed target-village dossiers for read-only product use.
++
++Research YAML remains outside the product runtime. This promotion step joins target-village
++research with already governed community infrastructure/context artifacts and publishes a
++single read-only portfolio for the Villages workspace and full-page village dossiers.
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++from datetime import datetime, timezone
++import json
++from pathlib import Path
++from typing import Any
++
++import yaml
++
++SCHEMA = "kristal-target-villages/v1"
++RESEARCH_SCHEMA = "kristal-target-village-research/v1"
++PORTFOLIO_SCHEMA = "kristal-target-village-portfolio/v1"
++
++
++def read_json(path: Path) -> Any:
++    return json.loads(path.read_text(encoding="utf-8"))
++
++
++def read_yaml(path: Path) -> Any:
++    return yaml.safe_load(path.read_text(encoding="utf-8"))
++
++
++def validate_research_dossier(dossier: dict[str, Any], path: Path) -> None:
++    if dossier.get("schema") != RESEARCH_SCHEMA:
++        raise ValueError(f"{path}: invalid research schema")
++    required = {
++        "slug", "community_name", "kf_status", "screening_role", "reviewed_at",
++        "development_thesis", "air", "marine", "logistics_envelope", "open_gates", "sources",
++    }
++    missing = sorted(required - dossier.keys())
++    if missing:
++        raise ValueError(f"{path}: missing required keys {missing}")
++
++    marine = dossier["marine"]
++    if marine["load_limits"]["status"] == "not_verified":
++        numeric_limits = [
++            marine["load_limits"].get("deck_load_t_m2"),
++            marine["load_limits"].get("axle_load_t"),
++            marine["load_limits"].get("max_unit_mass_t"),
++            marine["load_limits"].get("crane_swl_t"),
++        ]
++        if any(value is not None for value in numeric_limits):
++            raise ValueError(f"{path}: unverified marine load limits must remain null")
++
++    if dossier["air"]["load_status"] == "not_verified":
++        if dossier["air"].get("max_aircraft_mass_kg") is not None:
++            raise ValueError(f"{path}: unverified aircraft mass limit must remain null")
++
++    source_ids = {source["id"] for source in dossier["sources"]}
++    missing_sources = sorted(set(marine.get("source_ids", [])) - source_ids)
++    if missing_sources:
++        raise ValueError(f"{path}: marine source ids not declared in sources: {missing_sources}")
++
++
++def build(repo_root: Path) -> dict[str, Any]:
++    research_root = repo_root / "research" / "communities" / "targets"
++    portfolio = read_yaml(research_root / "portfolio.yaml")
++    if portfolio.get("schema") != PORTFOLIO_SCHEMA:
++        raise ValueError("Invalid target-village portfolio schema")
++    if portfolio.get("ranking_allowed") is not False:
++        raise ValueError("Target-village portfolio must remain unranked")
++
++    publish_root = repo_root / "data" / "publish" / "current"
++    infrastructure = read_json(publish_root / "community_infrastructure_public.json")
++    communities = read_json(publish_root / "communities_public.geojson")
++    community_context = read_json(publish_root / "community_context_public.json")
++
++    infrastructure_by_name = {item["name"]: item for item in infrastructure["items"]}
++    feature_by_entity = {feature["properties"]["entity_id"]: feature for feature in communities["features"]}
++    context_by_entity = {item["entity_id"]: item for item in community_context["items"]}
++
++    targets = portfolio.get("targets", [])
++    if not targets:
++        raise ValueError("Target-village portfolio is empty")
++    slugs = [row["slug"] for row in targets]
++    names = [row["community_name"] for row in targets]
++    if len(slugs) != len(set(slugs)) or len(names) != len(set(names)):
++        raise ValueError("Target-village slugs and community names must be unique")
++
++    items: list[dict[str, Any]] = []
++    for order, target in enumerate(targets, start=1):
++        slug = target["slug"]
++        name = target["community_name"]
++        source_path = research_root / f"{slug}.yaml"
++        if not source_path.is_file():
++            raise ValueError(f"Missing target-village dossier: {source_path}")
++        research = read_yaml(source_path)
++        validate_research_dossier(research, source_path)
++        if research["slug"] != slug or research["community_name"] != name:
++            raise ValueError(f"{source_path}: portfolio identity mismatch")
++
++        base = infrastructure_by_name.get(name)
++        if base is None:
++            raise ValueError(f"{name}: no governed community infrastructure record")
++        entity_id = base["entity_id"]
++        feature = feature_by_entity.get(entity_id)
++        if feature is None:
++            raise ValueError(f"{name}: no governed community geometry")
++        coordinates = feature.get("geometry", {}).get("coordinates")
++        if not isinstance(coordinates, list) or len(coordinates) < 2:
++            raise ValueError(f"{name}: invalid community geometry")
++        context = context_by_entity.get(entity_id, {})
++
++        research_air = research["air"]
++        research_marine = research["marine"]
++        public_air = {
++            "access_known": base["airport"]["access_known"],
++            "code": base["airport"]["code"],
++            "name": base["airport"]["name"],
++            "runway_length_m": base["airport"]["runway_length_m"],
++            "runway_surface": base["airport"]["runway_surface"],
++            "dimension_status": base["airport"]["dimension_status"],
++            "access_pattern": research_air["access_pattern"],
++            "load_status": research_air["load_status"],
++            "pavement_strength": research_air["pavement_strength"],
++            "max_aircraft_mass_kg": research_air["max_aircraft_mass_kg"],
++            "operational_constraints": research_air["operational_constraints"],
++            "presence_source": base["airport"]["presence_source"],
++            "dimension_source": base["airport"]["dimension_source"],
++            "note": base["airport"]["note"],
++        }
++        public_marine = {
++            "access_known": base["marine"]["access_known"],
++            **research_marine,
++            "baseline_context": base["marine"]["context"],
++            "baseline_source": base["marine"]["source"],
++            "baseline_note": base["marine"]["note"],
++        }
++
++        item = {
++            "order": order,
++            "slug": slug,
++            "entity_id": entity_id,
++            "name": name,
++            "region": base["region"],
++            "kf_status": research["kf_status"],
++            "screening_role": research["screening_role"],
++            "ranking_allowed": False,
++            "reviewed_at": research["reviewed_at"],
++            "development_thesis": research["development_thesis"],
++            "coordinates": {
++                "longitude": coordinates[0],
++                "latitude": coordinates[1],
++                "geometry_status": feature["properties"].get("geometry_precision", "approximate_reference"),
++                "not_facility_coordinate": bool(feature["properties"].get("not_facility_coordinate", True)),
++            },
++            "population": base["population"],
++            "air": public_air,
++            "marine": public_marine,
++            "logistics_envelope": research["logistics_envelope"],
++            "system_context": {
++                "marine": context.get("marine_context"),
++                "telecom": context.get("telecom_context"),
++                "road": context.get("road_context"),
++                "energy": context.get("energy_context"),
++            },
++            "open_gates": research["open_gates"],
++            "sources": research["sources"],
++        }
++        items.append(item)
++
++    generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
++    return {
++        "schema": SCHEMA,
++        "generated_at": generated_at,
++        "portfolio_version": portfolio["portfolio_version"],
++        "status": portfolio["status"],
++        "ranking_allowed": False,
++        "target_count": len(items),
++        "selection_note": portfolio["selection_note"],
++        "semantics": {
++            "target": "Portfolio inclusion means evidence deepening only; it is not ranking or site selection.",
++            "depth": "Approach and anchorage depths are not berth depths. Null depth means not verified.",
++            "load": "Null load limits mean not verified. Runway length or water depth alone never establishes cargo capacity.",
++            "seasonality": "Published/general service windows are planning context and remain weather/ice/operator dependent.",
++            "coordinates": "Village coordinates are approximate community references, not facility coordinates.",
++        },
++        "items": items,
++    }
++
++
++def write_audit(payload: dict[str, Any], output: Path) -> None:
++    output.parent.mkdir(parents=True, exist_ok=True)
++    rows = []
++    for item in payload["items"]:
++        load_limits = item["marine"]["load_limits"]
++        rows.append({
++            "slug": item["slug"],
++            "community": item["name"],
++            "entity_id": item["entity_id"],
++            "kf_status": item["kf_status"],
++            "runway_length_m": item["air"]["runway_length_m"] if item["air"]["runway_length_m"] is not None else "",
++            "air_load_status": item["air"]["load_status"],
++            "marine_access_mode": item["marine"]["access_mode"],
++            "marine_depth_status": item["marine"]["depth_status"],
++            "marine_load_status": load_limits["status"],
++            "open_gate_count": len(item["open_gates"]),
++            "reviewed_at": item["reviewed_at"],
++        })
++    with output.open("w", encoding="utf-8", newline="") as handle:
++        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
++        writer.writeheader()
++        writer.writerows(rows)
++
++
++def main() -> None:
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[2])
++    parser.add_argument("--output", type=Path)
++    parser.add_argument("--audit", type=Path)
++    args = parser.parse_args()
++
++    repo_root = args.repo_root.resolve()
++    output = args.output or repo_root / "data" / "publish" / "current" / "target_villages_public.json"
++    audit = args.audit or repo_root / "data" / "processed" / "current" / "target_villages_audit.csv"
++    payload = build(repo_root)
++    output.parent.mkdir(parents=True, exist_ok=True)
++    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
++    write_audit(payload, audit)
++    print(f"Published {payload['target_count']} target village dossiers")
++    print(f"Output: {output}")
++    print(f"Audit: {audit}")
++
++
++if __name__ == "__main__":
++    main()
+diff -ruN kf_base/research/communities/README.md kf_repo/research/communities/README.md
+--- kf_base/research/communities/README.md	2026-09-01 19:43:59.435471152 +0000
++++ kf_repo/research/communities/README.md	2026-09-01 19:42:04.269236500 +0000
+@@ -3,3 +3,5 @@
+ Exploratory workspace for community infrastructure/context research before it is normalized, reviewed and promoted into governed data.
+ 
+ Community, Indigenous-rights, privacy and governance constraints still apply here. Research notes do not become product claims without explicit evidence review and publication.
++
++Active KF target-village research lives in `targets/`. It is promoted through `pipelines/publish/build_target_villages_public.py`; product runtime code must not read these YAML files directly.
+diff -ruN kf_base/research/communities/targets/README.md kf_repo/research/communities/targets/README.md
+--- kf_base/research/communities/targets/README.md	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/README.md	2026-09-01 19:38:34.424507166 +0000
+@@ -0,0 +1,13 @@
++# Target village dossiers
++
++This directory contains active research inputs for the Kristal Farms target-village portfolio.
++
++Rules:
++
++- these files are research inputs, never web-runtime dependencies;
++- inclusion is not ranking, selection, authorization, commitment, or bankability;
++- `null` means not verified, not zero;
++- approach/anchorage depths are not berth depths;
++- no aircraft or heavy-module capacity may be inferred from runway length or marine depth alone;
++- load limits remain `not_verified` until attributable structural/operational documentation is published;
++- `pipelines/publish/build_target_villages_public.py` is the only supported promotion path into the public product artifact.
+diff -ruN kf_base/research/communities/targets/akulivik.yaml kf_repo/research/communities/targets/akulivik.yaml
+--- kf_base/research/communities/targets/akulivik.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/akulivik.yaml	2026-09-01 19:43:31.216758613 +0000
+@@ -0,0 +1,86 @@
++schema: kristal-target-village-research/v1
++slug: akulivik
++community_name: Akulivik
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Akulivik without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Community breakwaters
++    length_m: null
++  - type: boat_ramp
++    label: Boat ramp
++    length_m: null
++  - type: landing_beach
++    label: Landing beach
++    length_m: null
++  approach_depth_m: 10.0
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: partial_reference
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  - strong_tidal_currents
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/aupaluk.yaml kf_repo/research/communities/targets/aupaluk.yaml
+--- kf_base/research/communities/targets/aupaluk.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/aupaluk.yaml	2026-09-01 19:43:31.222135409 +0000
+@@ -0,0 +1,85 @@
++schema: kristal-target-village-research/v1
++slug: aupaluk
++community_name: Aupaluk
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Aupaluk without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Community breakwaters
++    length_m: null
++  - type: small_jetty
++    label: Small jetty
++    length_m: null
++  - type: landing_beach
++    label: Landing beach
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: not_verified
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/hopedale.yaml kf_repo/research/communities/targets/hopedale.yaml
+--- kf_base/research/communities/targets/hopedale.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/hopedale.yaml	2026-09-01 19:43:31.171414937 +0000
+@@ -0,0 +1,87 @@
++schema: kristal-target-village-research/v1
++slug: hopedale
++community_name: Hopedale
++kf_status: TARGET_SCREENING
++screening_role: Nunatsiavut target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Hopedale without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: ferry_ro_ro_terminal
++  commercial_access: seasonal
++  facilities:
++  - type: public_jetty
++    label: Public jetty
++    length_m: null
++  - type: ferry_terminal
++    label: Ferry terminal
++    length_m: null
++  - type: ro_ro_ramp
++    label: Ro-Ro ramp
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m:
++  - 4.9
++  - 5.2
++  depth_status: published_reference
++  ro_ro: true
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: coastal_ferry_and_freight
++    start_month: 6
++    end_month: 11
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - ferry_schedule
++  - nearby_shoal_and_reef
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - nl-north-labrador-ferry
++  - nunatsiavut-travel-distances
++logistics_envelope:
++  marine_delivery: ferry_or_coastal_freight_to_terminal
++  air_delivery: regional_aircraft_on_short_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_depth_confirmation
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area_capacity
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: nl-north-labrador-ferry
++  title: Goose Bay – Rigolet – Ports North to Nain ferry service
++  publisher: Government of Newfoundland and Labrador
++  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
++  role: marine_service_context
++- id: nunatsiavut-travel-distances
++  title: Nunatsiavut coastal travel context
++  publisher: Nunatsiavut Government
++  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/ivujivik.yaml kf_repo/research/communities/targets/ivujivik.yaml
+--- kf_base/research/communities/targets/ivujivik.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/ivujivik.yaml	2026-09-01 19:43:31.192503251 +0000
+@@ -0,0 +1,84 @@
++schema: kristal-target-village-research/v1
++slug: ivujivik
++community_name: Ivujivik
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Ivujivik without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Breakwater / landing areas
++    length_m: null
++  - type: landing_beach
++    label: Landing beach
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: 55.0
++  berth_depth_range_m: null
++  depth_status: partial_reference
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  - north_wind_exposure
++  - strong_tidal_currents
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/kangiqsujuaq.yaml kf_repo/research/communities/targets/kangiqsujuaq.yaml
+--- kf_base/research/communities/targets/kangiqsujuaq.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/kangiqsujuaq.yaml	2026-09-01 19:43:31.206625645 +0000
+@@ -0,0 +1,83 @@
++schema: kristal-target-village-research/v1
++slug: kangiqsujuaq
++community_name: Kangiqsujuaq
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Kangiqsujuaq without
++  ranking the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Community breakwaters
++    length_m: null
++  - type: landing_beach
++    label: Landing beach
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: not_verified
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  - terrain_induced_airport_turbulence
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/makkovik.yaml kf_repo/research/communities/targets/makkovik.yaml
+--- kf_base/research/communities/targets/makkovik.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/makkovik.yaml	2026-09-01 19:43:31.166254617 +0000
+@@ -0,0 +1,90 @@
++schema: kristal-target-village-research/v1
++slug: makkovik
++community_name: Makkovik
++kf_status: TARGET_SCREENING
++screening_role: Nunatsiavut target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Makkovik without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: ferry_ro_ro_terminal
++  commercial_access: seasonal
++  facilities:
++  - type: jetty
++    label: Multiple jetties
++    length_m: null
++  - type: ro_ro_ramp
++    label: Ro-Ro ramp
++    length_m: null
++  - type: freight_shed
++    label: Freight shed
++    length_m: null
++  - type: marine_service
++    label: Marine service area
++    length_m: null
++  - type: laydown
++    label: Cargo laydown area
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: not_verified
++  ro_ro: true
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: coastal_ferry_and_freight
++    start_month: 6
++    end_month: 11
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - ferry_schedule
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - nl-north-labrador-ferry
++  - nunatsiavut-travel-distances
++logistics_envelope:
++  marine_delivery: ferry_or_coastal_freight_to_terminal
++  air_delivery: regional_aircraft_on_short_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_depth_confirmation
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area_capacity
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: nl-north-labrador-ferry
++  title: Goose Bay – Rigolet – Ports North to Nain ferry service
++  publisher: Government of Newfoundland and Labrador
++  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
++  role: marine_service_context
++- id: nunatsiavut-travel-distances
++  title: Nunatsiavut coastal travel context
++  publisher: Nunatsiavut Government
++  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/nain.yaml kf_repo/research/communities/targets/nain.yaml
+--- kf_base/research/communities/targets/nain.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/nain.yaml	2026-09-01 19:43:31.177041209 +0000
+@@ -0,0 +1,90 @@
++schema: kristal-target-village-research/v1
++slug: nain
++community_name: Nain
++kf_status: TARGET_SCREENING
++screening_role: Nunatsiavut target village
++reviewed_at: '2026-09-01'
++development_thesis: Treat Nain as a marine-logistics hub candidate with a materially constrained existing airstrip;
++  do not count the proposed new airport as available capacity until built and certified.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: ferry_and_local_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: ferry_terminal
++    label: Ferry terminal
++    length_m: null
++  - type: jetty
++    label: North jetty
++    length_m: null
++  - type: jetty
++    label: Secondary jetty
++    length_m: null
++  - type: ramp
++    label: Freight / vessel ramp
++    length_m: null
++  - type: laydown
++    label: Large cargo laydown area
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: not_verified
++  ro_ro: null
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: coastal_ferry_and_freight
++    start_month: 6
++    end_month: 11
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - ferry_schedule
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - nl-north-labrador-ferry
++  - nunatsiavut-travel-distances
++logistics_envelope:
++  marine_delivery: ferry_or_coastal_freight_to_terminal
++  air_delivery: regional_aircraft_on_short_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_depth_confirmation
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area_capacity
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: nl-north-labrador-ferry
++  title: Goose Bay – Rigolet – Ports North to Nain ferry service
++  publisher: Government of Newfoundland and Labrador
++  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
++  role: marine_service_context
++- id: nunatsiavut-travel-distances
++  title: Nunatsiavut coastal travel context
++  publisher: Nunatsiavut Government
++  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/portfolio.yaml kf_repo/research/communities/targets/portfolio.yaml
+--- kf_base/research/communities/targets/portfolio.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/portfolio.yaml	2026-09-01 19:38:33.797007551 +0000
+@@ -0,0 +1,22 @@
++schema: kristal-target-village-portfolio/v1
++portfolio_version: "2026-09-01"
++status: ACTIVE_SCREENING
++ranking_allowed: false
++selection_note: >-
++  Target-village portfolio for evidence deepening. Inclusion is not a site ranking,
++  project selection, authorization, commitment, or bankability statement.
++targets:
++  - { slug: akulivik, community_name: Akulivik }
++  - { slug: aupaluk, community_name: Aupaluk }
++  - { slug: ivujivik, community_name: Ivujivik }
++  - { slug: kangiqsujuaq, community_name: Kangiqsujuaq }
++  - { slug: puvirnituq, community_name: Puvirnituq }
++  - { slug: quaqtaq, community_name: Quaqtaq }
++  - { slug: salluit, community_name: Salluit }
++  - { slug: nain, community_name: Nain }
++  - { slug: hopedale, community_name: Hopedale }
++  - { slug: makkovik, community_name: Makkovik }
++  - { slug: postville, community_name: Postville }
++  - { slug: rigolet, community_name: Rigolet }
++reference_villages:
++  - inukjuak
+diff -ruN kf_base/research/communities/targets/postville.yaml kf_repo/research/communities/targets/postville.yaml
+--- kf_base/research/communities/targets/postville.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/postville.yaml	2026-09-01 19:43:31.187735562 +0000
+@@ -0,0 +1,90 @@
++schema: kristal-target-village-research/v1
++slug: postville
++community_name: Postville
++kf_status: TARGET_SCREENING
++screening_role: Nunatsiavut target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Postville without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: ferry_ro_ro_terminal
++  commercial_access: seasonal
++  facilities:
++  - type: jetty
++    label: Multiple jetties
++    length_m: null
++  - type: boat_ramp
++    label: Boat ramps
++    length_m: null
++  - type: ro_ro_ramp
++    label: Ro-Ro ramp
++    length_m: null
++  - type: freight_building
++    label: Freight buildings
++    length_m: null
++  - type: laydown
++    label: Cargo laydown area
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: not_verified
++  ro_ro: true
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: coastal_ferry_and_freight
++    start_month: 6
++    end_month: 11
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - ferry_schedule
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - nl-north-labrador-ferry
++  - nunatsiavut-travel-distances
++logistics_envelope:
++  marine_delivery: ferry_or_coastal_freight_to_terminal
++  air_delivery: regional_aircraft_on_short_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_depth_confirmation
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area_capacity
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: nl-north-labrador-ferry
++  title: Goose Bay – Rigolet – Ports North to Nain ferry service
++  publisher: Government of Newfoundland and Labrador
++  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
++  role: marine_service_context
++- id: nunatsiavut-travel-distances
++  title: Nunatsiavut coastal travel context
++  publisher: Nunatsiavut Government
++  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/puvirnituq.yaml kf_repo/research/communities/targets/puvirnituq.yaml
+--- kf_base/research/communities/targets/puvirnituq.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/puvirnituq.yaml	2026-09-01 19:43:31.182460219 +0000
+@@ -0,0 +1,96 @@
++schema: kristal-target-village-research/v1
++slug: puvirnituq
++community_name: Puvirnituq
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Use Puvirnituq as a high-value logistics reference because its existing runway and marine laydown
++  context are less restrictive than most Nunavik peers, while keeping heavy-module limits unverified.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Breakwater
++    length_m: null
++  - type: jetty
++    label: Jetty
++    length_m: null
++  - type: small_dock
++    label: Small docks
++    length_m: null
++  - type: boat_ramp
++    label: Ramp
++    length_m: null
++  - type: fishing_wharf
++    label: Fishing wharf
++    length_m: null
++  - type: laydown
++    label: Cargo laydown area
++    length_m: null
++  approach_depth_m: 8.0
++  anchorage_depth_m: null
++  berth_depth_range_m:
++  - 0.9
++  - 1.5
++  depth_status: published_reference
++  ro_ro: null
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/quaqtaq.yaml kf_repo/research/communities/targets/quaqtaq.yaml
+--- kf_base/research/communities/targets/quaqtaq.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/quaqtaq.yaml	2026-09-01 19:43:31.202024788 +0000
+@@ -0,0 +1,83 @@
++schema: kristal-target-village-research/v1
++slug: quaqtaq
++community_name: Quaqtaq
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Quaqtaq without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Community breakwaters
++    length_m: null
++  - type: landing_beach
++    label: Landing beaches
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: partial_reference
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  - partially_unsurveyed_local_waters
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/rigolet.yaml kf_repo/research/communities/targets/rigolet.yaml
+--- kf_base/research/communities/targets/rigolet.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/rigolet.yaml	2026-09-01 19:43:31.211740658 +0000
+@@ -0,0 +1,87 @@
++schema: kristal-target-village-research/v1
++slug: rigolet
++community_name: Rigolet
++kf_status: TARGET_SCREENING
++screening_role: Nunatsiavut target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Rigolet without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: ferry_ro_ro_terminal
++  commercial_access: seasonal
++  facilities:
++  - type: l_jetty
++    label: L-shaped jetty
++    length_m: null
++  - type: ro_ro_ramp
++    label: Ro-Ro ramp
++    length_m: null
++  - type: floating_dock
++    label: Floating dock
++    length_m: null
++  approach_depth_m: null
++  anchorage_depth_m: null
++  berth_depth_range_m:
++  - 4.0
++  - 7.0
++  depth_status: published_reference
++  ro_ro: true
++  laydown_available: true
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: coastal_ferry_and_freight
++    start_month: 6
++    end_month: 11
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - ferry_schedule
++  - local_rock_hazard
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - nl-north-labrador-ferry
++  - nunatsiavut-travel-distances
++logistics_envelope:
++  marine_delivery: ferry_or_coastal_freight_to_terminal
++  air_delivery: regional_aircraft_on_short_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_depth_confirmation
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area_capacity
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: nl-north-labrador-ferry
++  title: Goose Bay – Rigolet – Ports North to Nain ferry service
++  publisher: Government of Newfoundland and Labrador
++  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
++  role: marine_service_context
++- id: nunatsiavut-travel-distances
++  title: Nunatsiavut coastal travel context
++  publisher: Nunatsiavut Government
++  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
++  role: seasonality_context
+diff -ruN kf_base/research/communities/targets/salluit.yaml kf_repo/research/communities/targets/salluit.yaml
+--- kf_base/research/communities/targets/salluit.yaml	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/research/communities/targets/salluit.yaml	2026-09-01 19:43:31.197464251 +0000
+@@ -0,0 +1,89 @@
++schema: kristal-target-village-research/v1
++slug: salluit
++community_name: Salluit
++kf_status: TARGET_SCREENING
++screening_role: Nunavik target village
++reviewed_at: '2026-09-01'
++development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Salluit without ranking
++  the village.
++air:
++  access_pattern: year_round_community_air_access
++  load_status: not_verified
++  pavement_strength: null
++  max_aircraft_mass_kg: null
++  operational_constraints:
++  - weather
++  - gravel_runway_performance
++  - operator_and_aircraft_limits
++marine:
++  access_mode: lighterage_beach_ramp
++  commercial_access: seasonal
++  facilities:
++  - type: breakwater
++    label: Community breakwaters
++    length_m: null
++  - type: small_jetty
++    label: Small jetty
++    length_m: null
++  - type: dock
++    label: Community dock
++    length_m: 54.9
++  - type: landing_beach
++    label: Landing beach / ramp
++    length_m: null
++  approach_depth_m: 7.3
++  anchorage_depth_m: null
++  berth_depth_range_m: null
++  depth_status: partial_reference
++  ro_ro: null
++  laydown_available: null
++  load_limits:
++    status: not_verified
++    deck_load_t_m2: null
++    axle_load_t: null
++    max_unit_mass_t: null
++    crane_swl_t: null
++  seasonality:
++    service_type: sealift
++    start_month: 7
++    end_month: 10
++    status: general_operating_context
++  constraints:
++  - sea_ice
++  - weather
++  - tide_and_water_level
++  - sealift_schedule
++  - channel_constraint
++  source_ids:
++  - cmsn-arctic-infrastructure-2025
++  - chs-arc401-2026
++  - arctic-sealift-schedule-2026
++logistics_envelope:
++  marine_delivery: ship_to_lighterage_or_landing_facility
++  air_delivery: regional_aircraft_on_gravel_runway
++  heavy_module_status: diligence_required
++  assessment_status: partial
++open_gates:
++- berth_or_landing_depth
++- ramp_axle_load
++- maximum_unit_mass
++- crane_or_mobile_lift_capacity
++- laydown_area
++- airport_pavement_strength
++- aircraft_specific_payload
++sources:
++- id: cmsn-arctic-infrastructure-2025
++  title: Canadian Arctic Infrastructure Inventory
++  publisher: Canadian Marine Shipping Network
++  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
++  role: marine_facility_context
++- id: chs-arc401-2026
++  title: Sailing Directions ARC 401
++  publisher: Canadian Hydrographic Service
++  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
++  role: marine_depth_and_navigation_context
++- id: arctic-sealift-schedule-2026
++  title: Nunavik sealift schedule
++  publisher: Arctic Sealift / NEAS
++  url: https://arcticsealift.com/schedule.php?language=en
++  role: seasonality_context
+diff -ruN kf_base/tests/test_international_portfolio_interface.py kf_repo/tests/test_international_portfolio_interface.py
+--- kf_base/tests/test_international_portfolio_interface.py	2026-09-01 19:43:59.433467355 +0000
++++ kf_repo/tests/test_international_portfolio_interface.py	2026-09-01 19:42:32.878358814 +0000
+@@ -41,13 +41,14 @@
+     assert "research/commercial" not in component
+ 
+ 
+-def test_observatory_shell_unifies_five_governed_workspaces():
++def test_observatory_shell_unifies_six_governed_workspaces():
+     shell_path = ROOT / "apps/web/components/shell/KristalFarmsObservatoryShell.tsx"
+     assert shell_path.exists()
+     shell = shell_path.read_text()
+     assert "<ObservatoryExplorer embedded />" in shell
+     assert "<InternationalPortfolioExplorer embedded />" in shell
+-    for section in ["atlas", "corridors", "international", "economics", "evidence"]:
++    assert "<VillagePortfolioExplorer embedded />" in shell
++    for section in ["atlas", "villages", "corridors", "international", "economics", "evidence"]:
+         assert f'id: "{section}"' in shell
+     assert 'url.searchParams.set("section", next)' in shell
+     assert 'url.searchParams.delete("section")' in shell
+@@ -59,6 +60,7 @@
+ 
+     expected = {
+         "atlas": 'redirect("/")',
++        "villages": 'redirect("/?section=villages")',
+         "corridors": 'redirect("/?section=corridors")',
+         "international": 'redirect("/?section=international")',
+         "economics": 'redirect("/?section=economics")',
+diff -ruN kf_base/tests/test_target_village_interface.py kf_repo/tests/test_target_village_interface.py
+--- kf_base/tests/test_target_village_interface.py	1970-01-01 00:00:00.000000000 +0000
++++ kf_repo/tests/test_target_village_interface.py	2026-09-01 19:42:33.018496701 +0000
+@@ -0,0 +1,109 @@
++import json
++from pathlib import Path
++
++import yaml
++
++ROOT = Path(__file__).resolve().parents[1]
++PUBLISH = ROOT / "data" / "publish" / "current"
++WEB = ROOT / "apps" / "web"
++TARGETS = ROOT / "research" / "communities" / "targets"
++
++
++def test_target_village_portfolio_publishes_all_12_unranked_targets():
++    portfolio = yaml.safe_load((TARGETS / "portfolio.yaml").read_text())
++    public = json.loads((PUBLISH / "target_villages_public.json").read_text())
++    expected = [(row["slug"], row["community_name"]) for row in portfolio["targets"]]
++    actual = [(row["slug"], row["name"]) for row in public["items"]]
++    assert public["schema"] == "kristal-target-villages/v1"
++    assert public["ranking_allowed"] is False
++    assert public["target_count"] == 12
++    assert actual == expected
++    assert len({row["entity_id"] for row in public["items"]}) == 12
++
++
++def test_target_village_publication_reuses_governed_community_identity_and_airport_facts():
++    public = json.loads((PUBLISH / "target_villages_public.json").read_text())
++    infrastructure = json.loads((PUBLISH / "community_infrastructure_public.json").read_text())
++    infra_by_name = {row["name"]: row for row in infrastructure["items"]}
++    for village in public["items"]:
++        base = infra_by_name[village["name"]]
++        assert village["entity_id"] == base["entity_id"]
++        assert village["population"] == base["population"]
++        assert village["air"]["runway_length_m"] == base["airport"]["runway_length_m"]
++        assert village["air"]["runway_surface"] == base["airport"]["runway_surface"]
++
++
++def test_unverified_load_capacity_is_never_manufactured():
++    public = json.loads((PUBLISH / "target_villages_public.json").read_text())
++    for village in public["items"]:
++        if village["air"]["load_status"] == "not_verified":
++            assert village["air"]["max_aircraft_mass_kg"] is None
++        loads = village["marine"]["load_limits"]
++        if loads["status"] == "not_verified":
++            assert loads["deck_load_t_m2"] is None
++            assert loads["axle_load_t"] is None
++            assert loads["max_unit_mass_t"] is None
++            assert loads["crane_swl_t"] is None
++
++
++def test_marine_depth_contract_separates_approach_anchorage_and_berth():
++    public = json.loads((PUBLISH / "target_villages_public.json").read_text())
++    for village in public["items"]:
++        marine = village["marine"]
++        assert "approach_depth_m" in marine
++        assert "anchorage_depth_m" in marine
++        assert "berth_depth_range_m" in marine
++        assert "depth_status" in marine
++    puvirnituq = next(row for row in public["items"] if row["slug"] == "puvirnituq")
++    assert puvirnituq["marine"]["approach_depth_m"] == 8.0
++    assert puvirnituq["marine"]["berth_depth_range_m"] == [0.9, 1.5]
++
++
++def test_target_village_research_inputs_have_schema_and_open_gates():
++    portfolio = yaml.safe_load((TARGETS / "portfolio.yaml").read_text())
++    assert (ROOT / "contracts" / "schemas" / "target-village-dossier.schema.json").is_file()
++    for target in portfolio["targets"]:
++        dossier = yaml.safe_load((TARGETS / f"{target['slug']}.yaml").read_text())
++        assert dossier["schema"] == "kristal-target-village-research/v1"
++        assert dossier["community_name"] == target["community_name"]
++        assert dossier["open_gates"]
++        assert dossier["marine"]["load_limits"]["status"] == "not_verified"
++
++
++def test_village_web_runtime_reads_only_published_artifact():
++    server = (WEB / "lib" / "server" / "villages.ts").read_text()
++    portfolio_component = (WEB / "components" / "villages" / "VillagePortfolioExplorer.tsx").read_text()
++    assert '"data",\n  "publish",\n  "current"' in server
++    assert "research/" not in server
++    assert "pipelines/" not in server
++    assert 'fetch("/api/villages"' in portfolio_component
++    assert 'href={`/villages/${village.slug}`}' in portfolio_component
++
++
++def test_village_routes_and_full_dossier_exist():
++    assert (WEB / "app" / "villages" / "page.tsx").is_file()
++    assert (WEB / "app" / "villages" / "[slug]" / "page.tsx").is_file()
++    assert (WEB / "app" / "api" / "villages" / "route.ts").is_file()
++    assert (WEB / "app" / "api" / "villages" / "[slug]" / "route.ts").is_file()
++    dossier = (WEB / "components" / "villages" / "VillageDossier.tsx").read_text()
++    assert "Air logistics" in dossier
++    assert "Marine logistics" in dossier
++    assert "Logistics envelope" in dossier
++    assert "OPEN LOGISTICS GATES" in dossier
++    assert "Evidence & sources" in dossier
++
++
++def test_atlas_inspector_links_target_communities_to_full_village_dossier():
++    inspector = (WEB / "components" / "explorer" / "EntityInspector.tsx").read_text()
++    public_data = (WEB / "lib" / "server" / "public-data.ts").read_text()
++    assert "targetVillageSlug" in inspector
++    assert 'href={`/villages/${detail.targetVillageSlug}`}' in inspector
++    assert "target_villages_public.json" in public_data
++
++
++def test_rebuild_and_release_manifest_include_target_village_publication():
++    rebuild = (ROOT / "REBUILD_OBSERVATORY.pyw").read_text()
++    manifest = json.loads((PUBLISH / "release_manifest.json").read_text())
++    assert "pipelines/publish/build_target_villages_public.py" in rebuild
++    assert "target_villages_public.json" in manifest["public_outputs"]
++    assert (ROOT / "data" / "processed" / "current" / "target_villages_audit.csv").is_file()

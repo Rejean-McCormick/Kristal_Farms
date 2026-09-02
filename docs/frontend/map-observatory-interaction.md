@@ -18,7 +18,7 @@ Related documents:
 - [Accessibility](accessibility.md)
 - [State and permalinks](state-and-permalinks.md)
 - [Frontend architecture](../architecture/frontend.md)
-- [Explorer data contract](../60-application-data/EXPLORER_DATA_CONTRACT.md)
+- [Explorer data contract](../product/explorer-data-contract.md)
 - [ADR-014 — Integrated atlas uses relations, not synthetic geometry](../adr/0014-integrated-atlas-uses-relations-not-synthetic-geometry.md)
 
 ---
@@ -347,7 +347,6 @@ It SHOULD NOT render the complete entity record.
 ### 7.2 Example: hydrometric station
 
 Illustrative structure:
-
 ```text
 HYDROMETRIC STATION                       VERIFIED
 

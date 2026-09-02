@@ -50,6 +50,10 @@ def test_observatory_shell_unifies_six_governed_workspaces():
     assert "<VillagePortfolioExplorer embedded />" in shell
     for section in ["atlas", "villages", "corridors", "international", "economics", "evidence"]:
         assert f'id: "{section}"' in shell
+    for group in ["EXPLORE", "EVALUATE", "GOVERN"]:
+        assert f'group: "{group}"' in shell
+    assert 'label: "International Portfolio"' in shell
+    assert 'label: "International 12"' not in shell
     assert 'url.searchParams.set("section", next)' in shell
     assert 'url.searchParams.delete("section")' in shell
 

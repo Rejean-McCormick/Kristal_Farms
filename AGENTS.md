@@ -60,3 +60,9 @@ Visual design may be expressive, but uncertainty and hypothesis must remain visi
 ## AI-generated code
 
 AI-generated implementation is acceptable, but generated code must obey the same tests, typing, schema, migration, and review expectations as human-written code. Avoid large opaque generated modules when a declarative configuration or reusable abstraction is clearer.
+
+## Active-state search discipline
+
+Treat `archive/` as historical provenance, not active implementation context. Do not search, summarize or copy architecture from `archive/` unless the task explicitly asks for history, migration provenance or superseded behavior. The root `.ignore` excludes `archive/` from common local search/index tools by default.
+
+When documentation location is ambiguous, use the two-axis model in `docs/architecture/information-architecture.md`: numbered folders are project/domain authority and research maturity; responsibility folders (`architecture`, `data`, `product`, `frontend`, `api`, `scenarios`, etc.) are software/data-platform documentation.

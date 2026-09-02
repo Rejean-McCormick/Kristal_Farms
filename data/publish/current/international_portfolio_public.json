@@ -1,7 +1,7 @@
 {
   "schema": "kristal-international-portfolio/v1",
-  "generated_at": "2026-08-31",
-  "portfolio_version": "2026.08.31-r2-proposed",
+  "generated_at": "2026-09-01",
+  "portfolio_version": "2026.09.01-r3-validated",
   "status": "RESEARCH_ONLY",
   "planning_slots": 12,
   "commitments_claimed": false,
@@ -27,6 +27,11 @@
       "purpose": "jurisdiction-controlled or private-cloud deployment where Canadian placement is compatible with sovereignty requirements"
     }
   ],
+  "source_methodology": {
+    "validated_on": "2026-09-01",
+    "minimum_candidate_source_rule": "at_least_one_attributable_primary_source",
+    "interpretation": "Primary-source confirmation establishes attribution, not independent verification of capacity, commercial appetite, legal eligibility, or future delivery."
+  },
   "policy_summary": {
     "ineligible_jurisdictions": [
       {
@@ -101,7 +106,41 @@
       }
     ],
     "counterparty_screening_before_access": true,
-    "technology_origin_embargo_implied": false
+    "technology_origin_embargo_implied": false,
+    "legal_reference_sources": [
+      {
+        "id": "canada-sanctions-index",
+        "title": "Canadian sanctions",
+        "publisher": "Global Affairs Canada",
+        "url": "https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/index.aspx?lang=eng",
+        "retrieved_on": "2026-09-01",
+        "use": "Current sanctions framework and links to governing regulations; not a substitute for transaction-specific legal review."
+      },
+      {
+        "id": "canada-consolidated-autonomous-sanctions",
+        "title": "Consolidated Canadian Autonomous Sanctions List",
+        "publisher": "Global Affairs Canada",
+        "url": "https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/consolidated-consolide.aspx?lang=eng",
+        "retrieved_on": "2026-09-01",
+        "use": "Administrative screening aid only; the Government of Canada states that the consolidated list is not a regulation and has no force of law."
+      },
+      {
+        "id": "canada-eipa",
+        "title": "Export and Import Permits Act",
+        "publisher": "Justice Laws Website, Government of Canada",
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/E-19/index.html",
+        "retrieved_on": "2026-09-01",
+        "use": "Statutory framework for Canadian export/import controls."
+      },
+      {
+        "id": "canada-export-control-list",
+        "title": "Export Control List (SOR/89-202)",
+        "publisher": "Justice Laws Website, Government of Canada",
+        "url": "https://laws-lois.justice.gc.ca/eng/Regulations/SOR-89-202/index.html",
+        "retrieved_on": "2026-09-01",
+        "use": "Current regulatory list for controlled exports; technology-origin review remains separate from counterparty policy."
+      }
+    ]
   },
   "candidates": [
     {
@@ -114,9 +153,21 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "ANCHOR_AI_CAMPUS",
-      "rationale": "existing Canadian infrastructure and direct AI/HPC operating experience; test expansion beyond current Beauharnois AI footprint",
+      "rationale": "OVHcloud operates AI Training/Deploy in Beauharnois, Canada; current AI Training documentation lists BHS as an active physical region, while newer H100/H200 training hardware is listed in Gravelines, making Canadian high-density GPU expansion a concrete diligence question.",
       "hard_gate": "Canadian high-density GPU expansion appetite",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "ovh-ai-training-capabilities",
+          "title": "AI Training - Features, Capabilities and Limitations",
+          "publisher": "OVHcloud",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://docs.ovhcloud.com/en/guides/public-cloud/ai-machine-learning/ai-training-capabilities",
+          "retrieved_on": "2026-09-01",
+          "supports": "BHS/Beauharnois is an active AI Training region; published hardware availability differentiates BHS from GRA."
+        }
+      ]
     },
     {
       "slot": 2,
@@ -128,9 +179,32 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "ANCHOR_AI_CAMPUS",
-      "rationale": "explicit 2026 global AI-factory expansion roadmap from 55 MW toward 100/200 MW and GW scale",
+      "rationale": "NAVER announced in June 2026 a gigawatt-scale AI-factory alliance with NVIDIA, with initial 55 MW operations planned for 2027; a July 2026 update expanded the planned GAK Sejong deployment from 55 MW to 200 MW.",
       "hard_gate": "workloads legally/commercially deployable in Canada and non-US downstream allocation",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "naver-nvidia-gigawatt-ai-factory",
+          "title": "NAVER and NVIDIA Join Forces to Build Gigawatt-Scale AI Factory",
+          "publisher": "NAVER Corp.",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://navercorp.com/en/media/pressReleasesDetail?seq=10034386",
+          "published_on": "2026-06-08",
+          "retrieved_on": "2026-09-01",
+          "supports": "Initial 55 MW operations planned for 2027 and gigawatt-scale global AI-factory objective."
+        },
+        {
+          "id": "naver-brookfield-nvidia-200mw",
+          "title": "NAVER Partners with Brookfield and NVIDIA to Expand Korea’s National AI Factory Infrastructure Buildout",
+          "publisher": "NAVER Corp.",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://www.navercorp.com/en/media/pressReleasesDetail?seq=10034518",
+          "published_on": "2026-07-25",
+          "retrieved_on": "2026-09-01",
+          "supports": "Planned GAK Sejong deployment expanded from 55 MW to 200 MW."
+        }
+      ]
     },
     {
       "slot": 3,
@@ -142,9 +216,32 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
-      "rationale": "dedicated AI-data-center development capability, telecom integration and very large 2026 AIDC buildout ambition",
+      "rationale": "SK Telecom announced in July 2026 that it would pursue an AI data-center program of up to 15 GW in Korea, with the first 5 GW to be activated in stages from 2029; it also approved SK Hyper as a dedicated AIDC development company.",
       "hard_gate": "willingness to develop outside the Korea-centered 15 GW program",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "skt-15gw-aidc",
+          "title": "SK Telecom Pursues 15GW AI Data Center Buildout, Aiming to Become Asia’s AI Infrastructure Hub",
+          "publisher": "SK Telecom",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://news.sktelecom.com/en/3155",
+          "published_on": "2026-07-05",
+          "retrieved_on": "2026-09-01",
+          "supports": "Up-to-15-GW Korean AIDC plan; first 5 GW staged from 2029."
+        },
+        {
+          "id": "skt-sk-hyper",
+          "title": "SK Telecom Launches Dedicated AI Data Center Business Development Company",
+          "publisher": "SK Telecom",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://news.sktelecom.com/en/3192",
+          "published_on": "2026-07-23",
+          "retrieved_on": "2026-09-01",
+          "supports": "Creation of SK Hyper as a dedicated AI data-center development company."
+        }
+      ]
     },
     {
       "slot": 4,
@@ -156,9 +253,22 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
-      "rationale": "global data-center/network operations, renewable-power posture and commercial liquid-cooling experience",
+      "rationale": "KDDI reports that, as of March 31, 2026, its owned data centers worldwide use electricity matched with renewable-energy procurement; it also reports commercial liquid-cooling deployment at some sites and more than 45 Telehouse sites in over 10 countries/regions.",
       "hard_gate": "strategic relevance of a Canadian energy-side node",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "kddi-renewable-liquid-cooling-2026",
+          "title": "The KDDI Group Achieves 100% Renewable Energy Use Across All Data Centers Worldwide",
+          "publisher": "KDDI Corporation",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://news.kddi.com/kddi/corporate/csr-topic/2026/04/30/7739.html",
+          "published_on": "2026-04-30",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company-reported renewable-electricity procurement, commercial liquid cooling, and Telehouse operating footprint."
+        }
+      ]
     },
     {
       "slot": 5,
@@ -170,9 +280,22 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "FLEXIBLE_TRAINING_NODE",
-      "rationale": "AI-native infrastructure company scaling internationally with next-generation GPU deployments",
+      "rationale": "Verda announced June 2026 plans for NVIDIA Vera Rubin/Rubin deployments beginning in H2 2026 across Europe, the U.S. and APAC, with expected capacity exceeding 100,000 GPUs during 2027.",
       "hard_gate": "beneficial ownership/control and downstream customer allocation under the jurisdiction policy",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "verda-rubin-2026",
+          "title": "Verda to deploy NVIDIA VR200 NVL72 and R200 in H2 2026 across Europe, the US, and APAC",
+          "publisher": "Verda",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://verda.com/blog/nvidia-vr200-r200-early-deployments",
+          "published_on": "2026-06-02",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company-announced international Rubin deployment timing and expected 2027 GPU capacity."
+        }
+      ]
     },
     {
       "slot": 6,
@@ -184,9 +307,21 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "CORE_OUTREACH",
       "target_role": "SELECTIVE_SOVEREIGN_NODE",
-      "rationale": "sovereign/private AI architecture can be deployed on controlled infrastructure rather than only in one fixed public-cloud region",
+      "rationale": "Civo markets sovereign AI infrastructure across public and private-cloud deployments, including GPU-enabled environments where customers can control workload placement and data residency; Canadian availability is not established by the cited source.",
       "hard_gate": "Canadian deployment appetite and workload residency constraints",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "civo-sovereign-ai",
+          "title": "Sovereign AI Infrastructure - Control Where Your AI Runs",
+          "publisher": "Civo",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://www.civo.com/ai/sovereign",
+          "retrieved_on": "2026-09-01",
+          "supports": "Public/private sovereign-AI deployment model, GPU-enabled infrastructure and workload-placement controls."
+        }
+      ]
     },
     {
       "slot": 7,
@@ -198,9 +333,22 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "SECONDARY_OUTREACH",
       "target_role": "FLEXIBLE_TRAINING_NODE",
-      "rationale": "operational containerized Blackwell GPU infrastructure and managed supercomputing experience",
+      "rationale": "Sakura Internet announced that a containerized data center at Ishikari began operating in February 2026 with about 1,100 NVIDIA Blackwell GPUs, supporting its GPU-cloud and managed-supercomputer services.",
       "hard_gate": "domestic-sovereignty commitments may limit offshore workloads",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "sakura-blackwell-1100",
+          "title": "さくらインターネット、「NVIDIA Blackwell GPU」約1,100基を搭載したAIインフラの稼働を開始",
+          "publisher": "Sakura Internet",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://vip1b.www.sakura.ad.jp/corporate/information/newsreleases/2026/02/25/1968223641/",
+          "published_on": "2026-02-25",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company-announced operation of a containerized Ishikari AI infrastructure deployment with about 1,100 Blackwell GPUs and managed supercomputing services."
+        }
+      ]
     },
     {
       "slot": 8,
@@ -212,9 +360,30 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "SECONDARY_OUTREACH",
       "target_role": "SELECTIVE_SOVEREIGN_NODE",
-      "rationale": "European sovereign cloud with H200 GPU services and a growing AI product layer",
+      "rationale": "IONOS documents H200 GPU VM offerings in Frankfurt and states that its AI Model Hub services are hosted in German data centers with EU data-residency and sovereignty controls.",
       "hard_gate": "whether Canadian capacity can fit its sovereignty and data-control proposition",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "ionos-h200-service-catalog",
+          "title": "Service Catalog - Cloud GPU VMs",
+          "publisher": "IONOS",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://docs.ionos.com/cloud/support/general-information/service-catalog",
+          "retrieved_on": "2026-09-01",
+          "supports": "H200 GPU VM configurations in Frankfurt."
+        },
+        {
+          "id": "ionos-ai-model-hub-eu-ai-act",
+          "title": "European Union AI Act - AI Model Hub Governance and Compliance",
+          "publisher": "IONOS",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://docs.ionos.com/cloud/ai/ai-model-hub/governance-and-compliance/eu-ai-act",
+          "retrieved_on": "2026-09-01",
+          "supports": "AI Model Hub hosted in German data centers; EU data-residency/sovereignty statement."
+        }
+      ]
     },
     {
       "slot": 9,
@@ -226,9 +395,31 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "STRATEGIC_EXPLORATION",
       "target_role": "AIDC_DEVELOPMENT_PARTNERSHIP",
-      "rationale": "renewable-powered AI-factory development, liquid cooling and grid-aware orchestration are unusually close to the Kristal Farms energy-to-compute thesis",
+      "rationale": "Firmus describes Project Southgate as sovereign, energy-aligned and liquid-cooled AI infrastructure; in June 2026 it announced a 600 MW supply agreement linked to planned renewable generation, battery storage and demand-response obligations.",
       "hard_gate": "ownership/control review plus strict non-US downstream capacity separation where required",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "firmus-southgate",
+          "title": "Southgate - Australia’s AI infrastructure program",
+          "publisher": "Firmus Technologies",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://firmus.co/infrastructure/southgate",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company description of sovereign, energy-aligned, liquid-cooled AI factories."
+        },
+        {
+          "id": "firmus-600mw-energy",
+          "title": "Firmus secures 600 MW energy supply agreement in South Australia",
+          "publisher": "Firmus Technologies",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://firmus.co/newsroom/firmus-secures-600-mw-energy-supply-agreement-in-south-australia-linked-to-1-2-gw-of-new-renewable-generation-and-battery-storage",
+          "published_on": "2026-06",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company-announced 600 MW electricity supply agreement, renewable-generation/storage linkage and demand-response commitment."
+        }
+      ]
     },
     {
       "slot": 10,
@@ -240,9 +431,21 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "SELECTIVE_OUTREACH",
       "target_role": "SELECTIVE_SOVEREIGN_NODE",
-      "rationale": "proven industrial AI cloud and large Blackwell deployment; useful for industrial/HPC requirements",
+      "rationale": "T-Systems reports operating its Munich Industrial AI Cloud since February 2026 with 10,000 NVIDIA Blackwell GPUs and a European data-sovereignty positioning for industrial AI workloads.",
       "hard_gate": "current Germany/Europe sovereignty orientation may make Canada unsuitable",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "telekom-industrial-ai-cloud-operating",
+          "title": "T-Systems and SupplyOn Bring AI to Europe’s Supply Chains",
+          "publisher": "Deutsche Telekom / T-Systems",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://www.telekom.com/en/media/media-information/archive/t-systems-brings-ai-into-the-supply-chain-1105624",
+          "retrieved_on": "2026-09-01",
+          "supports": "Company-reported operational status since February 2026, 10,000 Blackwell GPUs, and sovereignty positioning."
+        }
+      ]
     },
     {
       "slot": 11,
@@ -254,9 +457,41 @@
       "outreach_state": "CONDITIONAL_RING_FENCE",
       "engagement_tier": "CONDITIONAL_ONLY",
       "target_role": "FLEXIBLE_TRAINING_NODE",
-      "rationale": "infrastructure-partnership model is structurally close to Kristal Farms",
-      "hard_gate": "dedicated Canadian non-US capacity pool, because global sales include major US counterparties",
-      "ring_fencing_required": true
+      "rationale": "Nebius explicitly offers an infrastructure-partner model in which a local partner funds/owns the facility and hardware while Nebius supplies the AI-cloud platform and global go-to-market capability.",
+      "hard_gate": "Dedicated Canadian non-US capacity pool and enforceable allocation controls, because Nebius has large dedicated-capacity agreements with U.S. counterparties including Meta and Microsoft.",
+      "ring_fencing_required": true,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "nebius-infrastructure-partners",
+          "title": "Nebius for infrastructure partners",
+          "publisher": "Nebius",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://nebius.com/infrastructure-partners",
+          "retrieved_on": "2026-09-01",
+          "supports": "Infrastructure-partner ownership/operations model and global sales model."
+        },
+        {
+          "id": "nebius-meta-2026",
+          "title": "Nebius signs new AI infrastructure agreement with Meta",
+          "publisher": "Nebius",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+          "published_on": "2026-03-16",
+          "retrieved_on": "2026-09-01",
+          "supports": "Large dedicated-capacity agreement with U.S.-based Meta."
+        },
+        {
+          "id": "nebius-microsoft-2025",
+          "title": "Commercial Agreement with Microsoft",
+          "publisher": "Nebius Group N.V.",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://assets.nebius.com/assets/86625727-9e66-46c1-af79-c27d57434e3c/25-25580-1_Nebius%2520Group%2520N.V._6-K.pdf%3Fcache-buster%3D2025-09-08T21%3A23%3A09.625Z",
+          "published_on": "2025-09-08",
+          "retrieved_on": "2026-09-01",
+          "supports": "Dedicated GPU infrastructure agreement with U.S.-based Microsoft."
+        }
+      ]
     },
     {
       "slot": 12,
@@ -268,9 +503,21 @@
       "outreach_state": "DILIGENCE_REQUIRED",
       "engagement_tier": "SELECTIVE_OUTREACH",
       "target_role": "SELECTIVE_SOVEREIGN_NODE",
-      "rationale": "European GPU cloud and sovereignty alignment; retain as a low-cost test of whether non-European capacity can ever fit a separate product",
+      "rationale": "Scaleway offers NVIDIA H100 GPU instances in Paris and Warsaw and explicitly positions those workloads and data under European jurisdiction, supporting the GPU-cloud fit while making Canadian placement a sovereignty-fit question.",
       "hard_gate": "explicit European residency posture may make Canadian deployment unsuitable",
-      "ring_fencing_required": false
+      "ring_fencing_required": false,
+      "verification_status": "PRIMARY_SOURCE_CONFIRMED_NOT_INDEPENDENTLY_AUDITED",
+      "sources": [
+        {
+          "id": "scaleway-h100-sovereign",
+          "title": "H100 PCIe GPU Instances",
+          "publisher": "Scaleway",
+          "source_class": "PRIMARY_COMPANY_SOURCE",
+          "url": "https://www.scaleway.com/en/h100/",
+          "retrieved_on": "2026-09-01",
+          "supports": "H100 GPU availability in Paris/Warsaw and explicit European-jurisdiction positioning."
+        }
+      ]
     }
   ],
   "disclaimer": "Research portfolio only. Inclusion does not mean interest, commitment, eligibility clearance, or contract."

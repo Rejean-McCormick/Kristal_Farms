@@ -47,3 +47,6 @@ See `docs/00-control/` and `docs/adr/`.
 
 `START_OBSERVATORY.bat` is intentionally a quick-start path and does not substitute for post-update validation.
 
+## Repository information architecture
+
+Project/domain authority is organized in the numbered documentation families, while software/data-platform implementation is organized by responsibility (`docs/architecture`, `docs/data`, `docs/product`, `docs/frontend`, `docs/api`, `docs/scenarios`). Historical material under `archive/` is provenance only and is excluded from default local search/index behavior. Specialist utilities live under `tools/`; the root retains only canonical launchers and repository-level control files.

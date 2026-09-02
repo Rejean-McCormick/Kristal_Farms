@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-01 — Information architecture consolidation
+
+- Removed the overlapping `docs/60-application-data/` bucket and relocated active contracts into `docs/data/`, `docs/product/` and `docs/scenarios/`.
+- Distinguished the physical/commercial **Project Reference Architecture** from the **Software & Data Platform Architecture**.
+- Added an explicit information-architecture guide and default archive-search exclusion through `.ignore`.
+- Moved specialist Observatory/imagery/geospatial utilities under `tools/`, keeping only canonical rebuild/quick-start launchers at root.
+- Reframed Observatory workspaces as **Explore / Evaluate / Govern** while preserving stable `section=` URLs.
+- Renamed the UI surface from **International 12** to **International Portfolio**; the twelve-slot count remains governed portfolio data.
+
 ## 2026-09-01 — Root tooling cleanup and controlled Observatory rebuild
 
 - Replaced the ad-hoc post-update workflow with `REBUILD_OBSERVATORY.pyw` as the canonical Windows rebuild + due-process launcher.

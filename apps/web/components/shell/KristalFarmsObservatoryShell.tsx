@@ -8,20 +8,23 @@ import styles from "./KristalFarmsObservatoryShell.module.css";
 
 type WorkspaceSection = "atlas" | "villages" | "corridors" | "international" | "economics" | "evidence";
 
+type WorkspaceGroup = "EXPLORE" | "EVALUATE" | "GOVERN";
+
 type SectionDefinition = {
   id: WorkspaceSection;
   index: string;
   label: string;
+  group: WorkspaceGroup;
   context: string;
 };
 
 const SECTIONS: SectionDefinition[] = [
-  { id: "atlas", index: "01", label: "Northern Atlas", context: "GEOGRAPHY / EVIDENCE" },
-  { id: "villages", index: "02", label: "Villages", context: "COMMUNITIES / DILIGENCE" },
-  { id: "corridors", index: "03", label: "Corridors", context: "DOSSIERS / GATES" },
-  { id: "international", index: "04", label: "International 12", context: "COUNTERPARTY / PORTFOLIO" },
-  { id: "economics", index: "05", label: "Economics", context: "SCENARIOS / SENSITIVITY" },
-  { id: "evidence", index: "06", label: "Evidence", context: "PROVENANCE / CONTROL" },
+  { id: "atlas", index: "01", label: "Northern Atlas", group: "EXPLORE", context: "GEOGRAPHY / EVIDENCE" },
+  { id: "villages", index: "02", label: "Villages", group: "EXPLORE", context: "COMMUNITIES / DILIGENCE" },
+  { id: "corridors", index: "03", label: "Corridors", group: "EXPLORE", context: "DOSSIERS / GATES" },
+  { id: "economics", index: "04", label: "Economics", group: "EVALUATE", context: "SCENARIOS / SENSITIVITY" },
+  { id: "evidence", index: "05", label: "Evidence", group: "GOVERN", context: "PROVENANCE / CONTROL" },
+  { id: "international", index: "06", label: "International Portfolio", group: "GOVERN", context: "COUNTERPARTY / PORTFOLIO" },
 ];
 
 const SECTION_IDS = new Set<WorkspaceSection>(SECTIONS.map((section) => section.id));
@@ -74,15 +77,19 @@ export function KristalFarmsObservatoryShell() {
               className={section === item.id ? styles.active : ""}
               onClick={() => navigate(item.id)}
               aria-pressed={section === item.id}
+              title={`${item.group}: ${item.label}`}
             >
-              <span>{item.index}</span>
-              {item.label}
+              <span className={styles.navMeta}>
+                <span>{item.index}</span>
+                {item.group}
+              </span>
+              <strong>{item.label}</strong>
             </button>
           ))}
         </nav>
 
         <div className={styles.context}>
-          <span>GOVERNED WORKSPACE</span>
+          <span>{current.group} WORKSPACE</span>
           <strong>{current.context}</strong>
         </div>
       </header>

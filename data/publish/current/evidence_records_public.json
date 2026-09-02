@@ -16,6 +16,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -24,6 +26,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -42,6 +46,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -50,6 +56,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -58,6 +66,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -66,6 +76,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -74,6 +86,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -92,6 +106,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -100,6 +116,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -108,6 +126,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -116,6 +136,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -124,6 +146,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -142,6 +166,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -150,6 +176,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -158,6 +186,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -166,6 +196,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -174,6 +206,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -192,6 +226,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -210,6 +246,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -218,6 +256,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -236,6 +276,8 @@
           "publisher": "Government of Newfoundland and Labrador — Water Resources Management Division",
           "source_type": "official_government_hydrology_report",
           "url": "https://www.gov.nl.ca/ecc/files/waterres-reports-hydrology-transboundary-rivers-southern-labrador.pdf",
+          "publication_date": "2013-04-01",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -254,6 +296,28 @@
           "publisher": "Kativik Regional Government",
           "source_type": "government_regional_report",
           "url": "https://www.krg.ca/en-CA/assets/Council/2026/feb/Transportation_Activity_Report.pdf",
+          "publication_date": "2026-02-01",
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "12d8f77e-cfc5-56d8-a78f-aff137592ba4",
+      "evidence_type": "economic_benchmark",
+      "claim": "Annual maintenance / 809 km.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "54b3a28e-f5f2-58f4-a1d4-27dc7b27ee2d",
+          "title": "Final Draft Project Summary Report — Pre-Feasibility Study for a Road into Northern Labrador",
+          "publisher": "Newfoundland and Labrador House of Assembly / Allnorth",
+          "source_type": "official_publicly_tabled_study",
+          "url": "https://www.assembly.nl.ca/business/electronicdocuments/Allnorth-ProjectSummaryReport-RoadToTheNorth.pdf",
+          "publication_date": "2026-06-02",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -272,6 +336,8 @@
           "publisher": "Government of Newfoundland and Labrador — Transportation and Infrastructure",
           "source_type": "government_service_page",
           "url": "https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -290,6 +356,8 @@
           "publisher": "Newfoundland & Labrador Hydro",
           "source_type": "utility_current_asset_page",
           "url": "https://nlhydro.com/about-us/our-electricity-system/our-generation-assets/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -308,6 +376,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -316,6 +386,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -334,6 +406,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -352,6 +426,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -370,6 +446,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -378,6 +456,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -396,6 +476,8 @@
           "publisher": "Régie de l’énergie du Québec",
           "source_type": "regulator_docket",
           "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -414,6 +496,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -422,6 +506,28 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "2e3dccc9-0314-5797-a6dc-84f01a782547",
+      "evidence_type": "economic_benchmark",
+      "claim": "Hydro-Québec proposed average unit price for large data centres; subject to Régie approval and not assumed applicable to dedicated local generation.",
+      "status": "scoped",
+      "confidence": "source_context_only",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "79377c26-acfd-5d98-966a-e05f4b8cf0d5",
+          "title": "Des tarifs pour les centres de données…",
+          "publisher": "Hydro-Québec",
+          "source_type": "official_tariff_proposal_release",
+          "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/tarifs-centres-donnees-chaines-blocs-refleteront-valeur-electricite-renouvelable.html",
+          "publication_date": "2026-02-19",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -440,6 +546,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -448,6 +556,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -466,6 +576,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -474,6 +586,48 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "327ea18c-61d3-566d-b4ce-46209079c1f4",
+      "evidence_type": "economic_benchmark",
+      "claim": "ROM construction plus paving / 809 km.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "54b3a28e-f5f2-58f4-a1d4-27dc7b27ee2d",
+          "title": "Final Draft Project Summary Report — Pre-Feasibility Study for a Road into Northern Labrador",
+          "publisher": "Newfoundland and Labrador House of Assembly / Allnorth",
+          "source_type": "official_publicly_tabled_study",
+          "url": "https://www.assembly.nl.ca/business/electronicdocuments/Allnorth-ProjectSummaryReport-RoadToTheNorth.pdf",
+          "publication_date": "2026-06-02",
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "340643e7-cf2a-55a2-ba92-e3b397840565",
+      "evidence_type": "economic_benchmark",
+      "claim": "Average PUE for facilities commissioned within five years in Uptime 2025 survey.",
+      "status": "supported",
+      "confidence": "source_context_only",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "298c2bec-b858-5cdf-8cf9-73a7f56d8c72",
+          "title": "Uptime Institute Global Data Center Survey 2025",
+          "publisher": "Uptime Institute",
+          "source_type": "industry_survey",
+          "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0",
+          "publication_date": "2025-07-29",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -492,6 +646,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -500,6 +656,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -518,6 +676,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -526,6 +686,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -544,6 +706,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -552,6 +716,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -570,6 +736,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -578,6 +746,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -596,6 +766,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -614,6 +786,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -622,6 +796,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -640,6 +816,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -648,6 +826,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -666,6 +846,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -674,6 +856,28 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "3e23f417-6aad-532a-9709-34191b6c45e2",
+      "evidence_type": "economic_benchmark",
+      "claim": "CRTC contribution / 1,300 km. Not total construction unit cost.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "5df8bfa0-269a-5a3b-b152-cbb9a603e9ba",
+          "title": "Telecom Decision CRTC 2024-149 — Nunavut transport fibre project",
+          "publisher": "CRTC",
+          "source_type": "official_funding_decision",
+          "url": "https://web.crtc.gc.ca/eng/archive/2024/2024-149.htm",
+          "publication_date": "2024-07-04",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -692,6 +896,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -700,6 +906,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -708,6 +916,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -716,6 +926,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -724,6 +936,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -742,6 +956,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -750,6 +966,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -758,6 +976,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -766,6 +986,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -774,6 +996,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -792,6 +1016,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -810,6 +1036,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -818,6 +1046,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -826,6 +1056,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -834,6 +1066,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -842,6 +1076,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -860,6 +1096,8 @@
           "publisher": "Régie de l’énergie du Québec",
           "source_type": "regulator_docket",
           "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -878,6 +1116,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -896,6 +1136,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -904,6 +1146,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -922,6 +1166,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -930,6 +1176,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -948,6 +1196,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -966,6 +1216,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -974,6 +1226,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -982,6 +1236,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -990,6 +1246,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -998,6 +1256,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1016,6 +1276,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1024,6 +1286,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1042,6 +1306,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1050,6 +1316,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1068,6 +1336,8 @@
           "publisher": "Newfoundland and Labrador Hydro / Hatch",
           "source_type": "official_public_hydrology_engineering_report",
           "url": "https://www.gov.nl.ca/em/files/publications-energy-annex-no-2-re-assessment-of-power-and-energy.pdf",
+          "publication_date": "2018-04-30",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1086,6 +1356,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1094,6 +1366,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1102,6 +1376,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1110,6 +1386,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1118,6 +1396,28 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "61b9024f-e209-5707-99e3-05bdfd3745ac",
+      "evidence_type": "economic_benchmark",
+      "claim": "ROM new-road construction / 809 km; excludes paving increment.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "54b3a28e-f5f2-58f4-a1d4-27dc7b27ee2d",
+          "title": "Final Draft Project Summary Report — Pre-Feasibility Study for a Road into Northern Labrador",
+          "publisher": "Newfoundland and Labrador House of Assembly / Allnorth",
+          "source_type": "official_publicly_tabled_study",
+          "url": "https://www.assembly.nl.ca/business/electronicdocuments/Allnorth-ProjectSummaryReport-RoadToTheNorth.pdf",
+          "publication_date": "2026-06-02",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1136,6 +1436,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1144,6 +1446,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1162,6 +1466,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1170,6 +1476,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1188,6 +1496,8 @@
           "publisher": "Kativik Regional Government",
           "source_type": "government_regional_release",
           "url": "https://www.krg.ca/en-CA/EAUFON-2-announcment",
+          "publication_date": "2024-02-12",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1206,6 +1516,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1214,6 +1526,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1222,6 +1536,8 @@
           "publisher": "Centre d’expertise hydrique du Québec",
           "source_type": "official_station_metadata_and_historical_data_portal",
           "url": "https://www.cehq.gouv.qc.ca/hydrometrie/historique_donnees/fiche_station.asp?NoStation=074903",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1240,6 +1556,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1258,6 +1576,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1266,6 +1586,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1284,6 +1606,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1302,6 +1626,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1310,6 +1636,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1328,6 +1656,8 @@
           "publisher": "Nunatsiavut Government",
           "source_type": "indigenous_government_release",
           "url": "https://nunatsiavut.com/bell-canadas-decision-to-withdraw-from-labrador-north-wireless-broadband-project-disappointing/",
+          "publication_date": "2025-05-06",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1346,6 +1676,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1354,6 +1686,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1372,6 +1706,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1380,6 +1716,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1388,6 +1726,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1396,6 +1736,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1404,6 +1746,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1422,6 +1766,8 @@
           "publisher": "Centre d’expertise hydrique du Québec",
           "source_type": "official_station_metadata_and_historical_data_portal",
           "url": "https://www.cehq.gouv.qc.ca/hydrometrie/historique_donnees/fiche_station.asp?NoStation=074903",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1440,6 +1786,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1448,6 +1796,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1466,6 +1816,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1474,6 +1826,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1492,6 +1846,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1510,6 +1866,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1518,6 +1876,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1526,6 +1886,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1534,6 +1896,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1542,6 +1906,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1560,6 +1926,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1568,6 +1936,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1586,6 +1956,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1594,6 +1966,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1612,6 +1986,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1620,6 +1996,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1628,6 +2006,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1636,6 +2016,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1644,6 +2026,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1662,6 +2046,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1670,6 +2056,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1688,6 +2076,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1696,6 +2086,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1704,6 +2096,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1712,6 +2106,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1720,6 +2116,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1738,6 +2136,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1746,6 +2146,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1764,6 +2166,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1772,6 +2176,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1790,6 +2196,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1808,6 +2216,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1816,6 +2226,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1824,6 +2236,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1832,6 +2246,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1840,6 +2256,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1858,6 +2276,28 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "9aaf1647-107f-584c-87bc-ab7b512b1218",
+      "evidence_type": "economic_benchmark",
+      "claim": "Project total / 262 line-km; includes full project scope.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "935146a7-40d1-5c1a-840b-6a9638abe802",
+          "title": "Ligne à 735 kV Micoua–Saguenay : un défi de 262 km",
+          "publisher": "Hydro-Québec",
+          "source_type": "official_completed_project_release",
+          "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/saguenay-lac-saint-jean/ligne-a-735-kv-micoua-saguenay-un-defi-de-262-km.html",
+          "publication_date": "2023-12-07",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1876,6 +2316,28 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "9ce18f4d-87dd-572b-931f-206bb42f4f20",
+      "evidence_type": "economic_benchmark",
+      "claim": "Project total / 439 line-km; includes Judith-Jasmin substation and line components.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "90f267f3-c417-5d71-8b0c-bd83ff41c8f5",
+          "title": "Projet à 735 kV Chamouchouane–Bout-de-l’Île — infrastructures construites au coût de 1,3 G$",
+          "publisher": "Hydro-Québec",
+          "source_type": "official_completed_project_release",
+          "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-inaugure-des-infrastructures-construites-au-cout-de-1-3-g.html",
+          "publication_date": "2019-09-20",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1894,6 +2356,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1902,6 +2366,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1910,6 +2376,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1918,6 +2386,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1926,6 +2396,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1944,6 +2416,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1952,6 +2426,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1960,6 +2436,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1968,6 +2446,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -1976,6 +2456,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -1994,6 +2476,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2012,6 +2496,8 @@
           "publisher": "Newfoundland and Labrador Hydro / Hatch",
           "source_type": "official_public_hydrology_engineering_report",
           "url": "https://www.gov.nl.ca/em/files/publications-energy-annex-no-2-re-assessment-of-power-and-energy.pdf",
+          "publication_date": "2018-04-30",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2030,6 +2516,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2038,6 +2526,28 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "a52d1525-e2e2-59cf-873b-a061dd2a361d",
+      "evidence_type": "economic_benchmark",
+      "claim": "Average PUE for 20 MW+ facilities in Uptime 2025 survey.",
+      "status": "supported",
+      "confidence": "source_context_only",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "298c2bec-b858-5cdf-8cf9-73a7f56d8c72",
+          "title": "Uptime Institute Global Data Center Survey 2025",
+          "publisher": "Uptime Institute",
+          "source_type": "industry_survey",
+          "url": "https://datacenter.uptimeinstitute.com/rs/711-RIA-145/images/2025.Annual.Survey.Report.pdf?version=0",
+          "publication_date": "2025-07-29",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2056,6 +2566,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2064,6 +2576,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2082,6 +2596,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2090,6 +2606,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2108,6 +2626,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2116,6 +2636,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2134,6 +2656,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2142,6 +2666,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2150,6 +2676,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2158,6 +2686,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2166,6 +2696,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2184,6 +2716,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2202,6 +2736,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2210,6 +2746,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2228,6 +2766,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2236,6 +2776,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2254,6 +2796,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2272,6 +2816,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2290,6 +2836,8 @@
           "publisher": "Kativik Regional Government",
           "source_type": "government_regional_project_update",
           "url": "https://www.krg.ca/en-CA/eaufon-mapping-tools-in-Ungava-Bay",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2308,6 +2856,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2316,6 +2866,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2334,6 +2886,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2352,6 +2906,8 @@
           "publisher": "Kativik Regional Government",
           "source_type": "government_regional_webpage",
           "url": "https://www.krg.ca/en-CA/general-information",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2370,6 +2926,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2388,6 +2946,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2396,6 +2956,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2414,6 +2976,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2422,6 +2986,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2430,6 +2996,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2438,6 +3006,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2446,6 +3016,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2464,6 +3036,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2482,6 +3056,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2490,6 +3066,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2508,6 +3086,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2516,6 +3096,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2524,6 +3106,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2532,6 +3116,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2540,6 +3126,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2558,6 +3146,8 @@
           "publisher": "Kativik Regional Government",
           "source_type": "government_regional_release",
           "url": "https://www.krg.ca/en-CA/EAUFON-2-announcment",
+          "publication_date": "2024-02-12",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2576,6 +3166,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2584,6 +3176,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2592,6 +3186,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2600,6 +3196,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2608,6 +3206,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2626,6 +3226,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2634,6 +3236,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2652,6 +3256,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2660,6 +3266,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2678,6 +3286,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2686,6 +3296,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2694,6 +3306,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2702,6 +3316,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2710,6 +3326,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2728,6 +3346,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2736,6 +3356,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2754,6 +3376,8 @@
           "publisher": "Newfoundland and Labrador Hydro / Hatch",
           "source_type": "official_public_hydrology_engineering_report",
           "url": "https://www.gov.nl.ca/em/files/publications-energy-annex-no-2-re-assessment-of-power-and-energy.pdf",
+          "publication_date": "2018-04-30",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2772,6 +3396,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2780,6 +3406,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2798,6 +3426,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2806,6 +3436,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2814,6 +3446,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2822,6 +3456,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2830,6 +3466,28 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
+          "role": "supports"
+        }
+      ]
+    },
+    {
+      "id": "e06d25cf-1a6d-5015-b34d-c05e337e888a",
+      "evidence_type": "economic_benchmark",
+      "claim": "CRTC contribution / 933 km. Not total construction unit cost.",
+      "status": "verified",
+      "confidence": "high_for_source_arithmetic_low_for_site_transferability",
+      "retrieved_at": "2026-08-30",
+      "sources": [
+        {
+          "id": "7177d6a1-c527-55b6-8bb2-444aa90e3fa5",
+          "title": "Telecom Decision CRTC 2024-163 — KRG transport fibre project",
+          "publisher": "CRTC",
+          "source_type": "official_funding_decision",
+          "url": "https://crtc.gc.ca/eng/archive/2024/2024-163.pdf",
+          "publication_date": "2024-07-22",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2848,6 +3506,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2866,6 +3526,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2884,6 +3546,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2892,6 +3556,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2910,6 +3576,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2928,6 +3596,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2936,6 +3606,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -2954,6 +3626,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2962,6 +3636,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2970,6 +3646,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2978,6 +3656,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -2986,6 +3666,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3004,6 +3686,8 @@
           "publisher": "Hydro-Québec",
           "source_type": "utility_release",
           "url": "https://nouvelles.hydroquebec.com/nouvelles/communiques/montreal/une-entente-visant-a-soutenir-les-initiatives-futures-de-pakua-shipi.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3022,6 +3706,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_metadata",
           "url": "https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3030,6 +3716,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_current_update",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3048,6 +3736,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3066,6 +3756,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3074,6 +3766,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3092,6 +3786,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3100,6 +3796,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3108,6 +3806,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3116,6 +3816,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3124,6 +3826,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3142,6 +3846,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_station_inclusion_registry",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/Included_stations.txt",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3150,6 +3856,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_distribution_directory",
           "url": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/HydrometricNetworkBasinPolygons/geojson/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3168,6 +3876,8 @@
           "publisher": "Innergex Renewable Energy",
           "source_type": "operator_current_asset_page",
           "url": "https://www.innergex.com/en/sites/innavik",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3186,6 +3896,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-daily-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3194,6 +3906,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3202,6 +3916,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "government_api",
           "url": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3210,6 +3926,8 @@
           "publisher": "Environment and Climate Change Canada / Meteorological Service of Canada",
           "source_type": "official_technical_documentation",
           "url": "https://eccc-msc.github.io/open-data/msc-geomet/ogc_api_en/",
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         },
         {
@@ -3218,6 +3936,8 @@
           "publisher": "Environment and Climate Change Canada / Water Survey of Canada",
           "source_type": "official_release_notice",
           "url": "https://wateroffice.ec.gc.ca/news_e.html",
+          "publication_date": "2026-07-17",
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
@@ -3236,6 +3956,8 @@
           "publisher": "Kristal Farms internal research archive",
           "source_type": "internal_legacy_research",
           "url": null,
+          "publication_date": null,
+          "retrieved_at": "2026-08-30",
           "role": "supports"
         }
       ]
