@@ -1,7 +1,7 @@
 {
   "schema": "kristal-external-reference-energy/v2",
   "release": "2026.09.01",
-  "generated_at": "2026-09-02T00:22:06Z",
+  "generated_at": "2026-09-02T00:29:30Z",
   "immutable": true,
   "ranking_allowed": false,
   "semantics": {
@@ -55,6 +55,155 @@
       ]
     },
     {
+      "entity_id": "54d80b0d-efc3-511b-a235-0d5fca24be9a",
+      "canonical_key": "project:external:nl:black-tickle-solar",
+      "name": "Black Tickle community solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.018,
+      "developer": "NunatuKavut Community Council",
+      "operator": "Newfoundland & Labrador Hydro system integration",
+      "geometry": null,
+      "communities": [
+        "Black Tickle"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "energized": "2023-09",
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Black Tickle"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "6968170b-929f-5405-a21a-a786e6ca1d1d",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "NL Hydro reports an 18 kW solar photovoltaic project energized in Black Tickle in September 2023.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2023-10-27"
+        }
+      ],
+      "sources": [
+        {
+          "id": "f1806525-4aa6-52dd-9d2d-7de60e1f74b1",
+          "source_key": "SRC-NLHYDRO-SOUTH-LABRADOR-SOLAR-2023",
+          "title": "Using solar energy to help power communities",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/using-solar-energy-to-help-power-communities/",
+          "publication_date": "2023-10-27"
+        }
+      ]
+    },
+    {
+      "entity_id": "9de2a880-fb18-5504-99d9-25a5e7e08608",
+      "canonical_key": "project:external:nl:cartwright-wind",
+      "name": "Cartwright Wind Project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "feasibility_completed_2025",
+      "technology": "wind",
+      "capacity_mw": null,
+      "developer": "Northern Energy Capital",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Cartwright"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "developer_claim": true,
+        "prospective_sites_only": true,
+        "construction_not_asserted": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Cartwright"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "ee37019d-714a-5c12-8948-0c9e672257b7",
+          "evidence_type": "feasibility_study",
+          "claim": "The developer reports completion of a feasibility study and site visits for a proposed Cartwright wind project; no construction approval or capacity is asserted.",
+          "status": "verified",
+          "confidence": "medium",
+          "published_at": "2025-12-10"
+        }
+      ],
+      "sources": [
+        {
+          "id": "e8fb6c98-fcb0-5965-b65b-548f94075daf",
+          "source_key": "SRC-NEC-CARTWRIGHT-WIND-2025",
+          "title": "A Productive Trip to Labrador — Advancing the Cartwright Wind Project",
+          "publisher": "Northern Energy Capital",
+          "source_type": "developer_project_update",
+          "url": "https://www.northernenergycapital.com/post/a-productive-trip-to-labrador-advancing-the-cartwright-wind-project",
+          "publication_date": "2025-12-10"
+        }
+      ]
+    },
+    {
+      "entity_id": "8cd7e817-174f-5a60-b508-c45324267e52",
+      "canonical_key": "project:external:nl:hopedale-community-solar",
+      "name": "Hopedale Nanuk Centre solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.024,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Hopedale"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+          "name": "Hopedale",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "commissioned_by_2022": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Hopedale"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "104c204f-2dc5-52f6-b9a2-9a2f33c5a817",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "Newfoundland and Labrador Hydro reports the 24 kW Hopedale Nanuk Centre solar system complete in 2022.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2022-09-23"
+        }
+      ],
+      "sources": [
+        {
+          "id": "c4c01a70-4df3-5103-8e42-d48ae9216d9b",
+          "source_key": "SRC-NLHYDRO-NUNATSIAVUT-SOLAR-2022",
+          "title": "Renewable Integration Project Complete in Northern Labrador",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/renewable-integration-project-complete-in-northern-labrador/",
+          "publication_date": "2022-09-23"
+        }
+      ]
+    },
+    {
       "entity_id": "b48b403c-09fc-5b14-b1cf-47de78ce9329",
       "canonical_key": "project:external:qc:innavik",
       "name": "Innavik",
@@ -101,6 +250,53 @@
           "source_type": "operator_current_asset_page",
           "url": "https://www.innergex.com/en/sites/innavik",
           "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "34d02e2e-be10-5b50-80a7-d4ba340091dc",
+      "canonical_key": "project:external:nl:labrador-isolated-interconnection-options-study",
+      "name": "Labrador isolated-community interconnection options study",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "electrical_system_study",
+      "status": "feasibility_study",
+      "technology": "interconnection_and_microgrid_options",
+      "capacity_mw": null,
+      "developer": "Newfoundland & Labrador Hydro",
+      "operator": null,
+      "geometry": null,
+      "communities": [],
+      "community_relations": [],
+      "metadata": {
+        "regional_scope": "Labrador isolated communities",
+        "fully_integrated_option_studied": true,
+        "multi_community_microgrids_studied": true,
+        "small_microgrids_studied": true,
+        "route_not_selected": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "f1d2ab90-d2d2-5596-b615-e9bba74a8f2e",
+          "evidence_type": "regional_system_study",
+          "claim": "NRCan funded an NL Hydro study of options for Labrador isolated communities including a fully integrated system",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2021-05-13"
+        }
+      ],
+      "sources": [
+        {
+          "id": "aa34c82f-cada-5e7d-9585-263eb220bbc6",
+          "source_key": "SRC-NRCAN-LABRADOR-INTERCONNECTION-STUDY-2021",
+          "title": "Reducing Diesel Dependency in Isolated Labrador Communities",
+          "publisher": "Natural Resources Canada",
+          "source_type": "official_federal_study_funding_announcement",
+          "url": "https://www.canada.ca/en/natural-resources-canada/news/2021/05/reducing-diesel-dependency-in-isolated-labrador-communities.html",
+          "publication_date": "2021-05-13"
         }
       ]
     },
@@ -180,6 +376,652 @@
           "source_type": "indigenous_government_release",
           "url": "https://nunatsiavut.com/bell-canadas-decision-to-withdraw-from-labrador-north-wireless-broadband-project-disappointing/",
           "publication_date": "2025-05-06"
+        }
+      ]
+    },
+    {
+      "entity_id": "61abb914-9f94-55a3-a3cc-b89aac61340b",
+      "canonical_key": "project:external:nl:makkovik-arena-solar",
+      "name": "Makkovik Arena solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating_reference",
+      "technology": "solar_pv",
+      "capacity_mw": 0.048,
+      "developer": "Nunatsiavut Government / Makkovik Inuit Community Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Makkovik"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+          "name": "Makkovik",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "net_metering_began": "2019-11-04",
+        "latest_operation_not_reverified_by_this_source": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Makkovik"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "ecac82a8-5550-55be-9079-df3a038a8671",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "NL Hydro's Q4 2019 regulatory report records an approved 48 kW Makkovik solar net-metering system in service from November 4 2019; current operating status is not independently reverified by that historical source.",
+          "status": "verified",
+          "confidence": "high_for_2019_operation",
+          "published_at": "2020-02-21"
+        }
+      ],
+      "sources": [
+        {
+          "id": "00e303ef-8a2b-5730-88fc-b40051a058c6",
+          "source_key": "SRC-NLHYDRO-MAKKOVIK-NETMETERING-2019",
+          "title": "Quarterly Regulatory Report for Q4 2019",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_regulatory_report",
+          "url": "https://nlhydro.com/wp-content/uploads/2020/02/2020-02-21-Quarterly-Regulatory-Report-for-Q4-2019-Updated.pdf",
+          "publication_date": "2020-02-21"
+        }
+      ]
+    },
+    {
+      "entity_id": "bdcc9094-6453-50da-b1c8-6959fe019c7c",
+      "canonical_key": "project:external:nl:makkovik-arena-solar-expansion-2025",
+      "name": "Makkovik Arena Solar Project — 2025 funding",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "funded_2025",
+      "technology": "solar_pv",
+      "capacity_mw": null,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Makkovik"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "c27fcd54-d754-5ec8-b69c-f31335a2d034",
+          "name": "Makkovik",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "funding_cad": 424000,
+        "funding_shared_with_solar_program": true,
+        "commissioning_not_asserted": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Makkovik"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "59663f1d-5112-5b26-9095-4cec8d2b839d",
+          "evidence_type": "external_project_funding",
+          "claim": "Canada announced Northern REACHE funding supporting the Makkovik Arena Solar Project; this registry does not infer commissioning from the funding announcement.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-11-28"
+        }
+      ],
+      "sources": [
+        {
+          "id": "1aa5d18d-65e1-5829-bf8e-47ab0cc04f01",
+          "source_key": "SRC-CIRNAC-NUNATSIAVUT-CLEAN-ENERGY-2025",
+          "title": "Canada supports the Nunatsiavut Government's leadership in Inuit-led, community-based clean energy initiatives",
+          "publisher": "Crown-Indigenous Relations and Northern Affairs Canada",
+          "source_type": "official_federal_funding_announcement",
+          "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2025/11/canada-supports-the-nunatsiavut-governments-leadership-in-inuit-led-community-based-clean-energy-initiatives.html",
+          "publication_date": "2025-11-28"
+        }
+      ]
+    },
+    {
+      "entity_id": "3565160a-369a-56fc-bc32-5bdbb7a6c82e",
+      "canonical_key": "project:external:nl:marys-harbour-renewables",
+      "name": "Mary's Harbour Renewables",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "hydro_solar_battery_microgrid",
+      "capacity_mw": 0.429,
+      "developer": "St. Mary's River Energy LP",
+      "operator": "St. Mary's River Energy LP / Newfoundland & Labrador Hydro system integration",
+      "geometry": null,
+      "communities": [
+        "Mary's Harbour"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "hydro_mw": 0.24,
+        "solar_mw": 0.189,
+        "battery_power_mw": 0.3345,
+        "battery_energy_mwh": 0.669,
+        "hydro_recommissioned": 2019,
+        "solar_battery_commissioned": 2021,
+        "diesel_reduction_percent_about": 30,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Mary's Harbour"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "273ea371-c929-5c3f-897b-ce0d966e3724",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "NRCan describes the completed Mary's Harbour system as 240 kW hydro plus 189 kW solar and 334.5 kW / 669 kWh battery storage integrated with the diesel grid.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-07-21"
+        }
+      ],
+      "sources": [
+        {
+          "id": "26ef9065-c738-57f0-9411-550115abef1e",
+          "source_key": "SRC-NRCAN-MARYS-HARBOUR-RENEWABLES",
+          "title": "Mary's Harbour Renewables",
+          "publisher": "Natural Resources Canada",
+          "source_type": "official_federal_project_page",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/mars-harbour-renewables",
+          "publication_date": "2025-07-21"
+        }
+      ]
+    },
+    {
+      "entity_id": "6ce71de5-e20d-5fb6-9345-1854dd41f217",
+      "canonical_key": "project:external:nl:nain-community-solar",
+      "name": "Nain Community Centre solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.024,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Nain"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+          "name": "Nain",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "commissioned_by_2022": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Nain"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "b9d9a196-462b-5abd-ba0a-d8d50a22043b",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "Newfoundland and Labrador Hydro reports the 24 kW Nain community-centre solar system complete in 2022.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2022-09-23"
+        }
+      ],
+      "sources": [
+        {
+          "id": "c4c01a70-4df3-5103-8e42-d48ae9216d9b",
+          "source_key": "SRC-NLHYDRO-NUNATSIAVUT-SOLAR-2022",
+          "title": "Renewable Integration Project Complete in Northern Labrador",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/renewable-integration-project-complete-in-northern-labrador/",
+          "publication_date": "2022-09-23"
+        }
+      ]
+    },
+    {
+      "entity_id": "f327609f-3f81-5d21-995c-3afeaa21d25c",
+      "canonical_key": "project:external:nl:nain-wind-microgrid",
+      "name": "Nain Wind Micro Grid",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "active_2026",
+      "technology": "wind_plus_battery_storage",
+      "capacity_mw": 3.0,
+      "developer": "Nunatsiavut Government / Natural Forces",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Nain"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+          "name": "Nain",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "turbine_count": 2,
+        "turbine_unit_mw": 1.5,
+        "existing_diesel_microgrid_integration": true,
+        "map_geometry_ingested": false,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Nain"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "b94fc618-d520-57ba-b074-b6e1e7d3b955",
+          "evidence_type": "external_project_status",
+          "claim": "Federal project records describe an active Nain project using two 1.5 MW wind turbines plus battery storage integrated with the existing isolated diesel microgrid; commissioning is not asserted.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-12-01"
+        }
+      ],
+      "sources": [
+        {
+          "id": "2e2fad78-eaf6-5c39-ae40-45c6cea7ba72",
+          "source_key": "SRC-NRCAN-NAIN-WIND-MICROGRID-2025",
+          "title": "Nain Wind Micro Grid",
+          "publisher": "Natural Resources Canada",
+          "source_type": "official_federal_project_page",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/nain-wind-micro-grid",
+          "publication_date": "2025-12-01"
+        },
+        {
+          "id": "1aa5d18d-65e1-5829-bf8e-47ab0cc04f01",
+          "source_key": "SRC-CIRNAC-NUNATSIAVUT-CLEAN-ENERGY-2025",
+          "title": "Canada supports the Nunatsiavut Government's leadership in Inuit-led, community-based clean energy initiatives",
+          "publisher": "Crown-Indigenous Relations and Northern Affairs Canada",
+          "source_type": "official_federal_funding_announcement",
+          "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2025/11/canada-supports-the-nunatsiavut-governments-leadership-in-inuit-led-community-based-clean-energy-initiatives.html",
+          "publication_date": "2025-11-28"
+        }
+      ]
+    },
+    {
+      "entity_id": "3ca630af-c955-570e-bc59-0fef87fd052d",
+      "canonical_key": "project:external:nl:nain-wind-collector",
+      "name": "Nain Wind Micro-Grid collector line",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "electrical_connection",
+      "status": "procurement_and_preconstruction_2026",
+      "technology": "34_5kv_collector",
+      "capacity_mw": null,
+      "developer": "Nunatsiavut Government / Natural Forces",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Nain"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+          "name": "Nain",
+          "relation_type": "affects"
+        }
+      ],
+      "metadata": {
+        "voltage_kv": 34.5,
+        "route_design_consultation": true,
+        "exact_route_geometry_ingested": false,
+        "route_length_km": null,
+        "not_main_grid_interconnection": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Nain"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "013dd34e-67ea-56d6-8301-d17cbf31ca96",
+          "evidence_type": "external_connection_status",
+          "claim": "Nunatsiavut procurement and community-routing material documents a 34.5 kV collector/transmission connection for the Nain wind micro-grid; the exact route and length are not published here and no main-grid interconnection is implied.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-11-17"
+        }
+      ],
+      "sources": [
+        {
+          "id": "94d40bee-8c5a-5ee3-b9c3-4923584d1678",
+          "source_key": "SRC-NUNATSIAVUT-NAIN-COLLECTOR-2025",
+          "title": "Nain Wind Micro-Grid Project — Collector Line Routing Between New Dam and Diesel Generator",
+          "publisher": "Nunatsiavut Government",
+          "source_type": "indigenous_government_public_notice",
+          "url": "https://nunatsiavut.com/nain-wind-micro-grid-project-collector-line-routing-between-new-dam-and-diesel-generator/",
+          "publication_date": "2025-11-17"
+        },
+        {
+          "id": "afdf529a-e955-516e-af2e-739bbc547116",
+          "source_key": "SRC-NUNATSIAVUT-NAIN-CIVIL-RFP-2025",
+          "title": "RFP — Nain Wind Micro-Grid Project Civil Works",
+          "publisher": "Nunatsiavut Government",
+          "source_type": "indigenous_government_procurement",
+          "url": "https://nunatsiavut.com/wp-content/uploads/2025/04/RFP-Nain-Wind-Micro-Grid-Project-Civil-Works.pdf",
+          "publication_date": "2025-04-01"
+        }
+      ]
+    },
+    {
+      "entity_id": "0bfd0c83-54e5-51b3-80d1-0a9d931e9b38",
+      "canonical_key": "project:external:nl:natuashish-community-heat-pumps",
+      "name": "Natuashish community-owned homes heat-pump project",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "energy_efficiency",
+      "status": "funded_2025",
+      "technology": "heat_pumps",
+      "capacity_mw": null,
+      "developer": "Mushuau Innu First Nation",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Natuashish"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "e32d796e-ed8c-55a1-b0c2-aaa684b43231",
+          "name": "Natuashish",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "federal_funding_cad_gt": 5800000,
+        "electricity_generation_project": false,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Natuashish"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "9e4a0d8b-cb38-55eb-8344-9530cdd630c7",
+          "evidence_type": "external_energy_efficiency_funding",
+          "claim": "Canada announced more than $5.8 million for Mushuau Innu First Nation to purchase and install heat pumps in community-owned homes in Natuashish.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-07-08"
+        }
+      ],
+      "sources": [
+        {
+          "id": "699b3916-5254-536d-b277-51cb48ccb672",
+          "source_key": "SRC-ECCC-NATUASHISH-HEATPUMPS-2025",
+          "title": "Government of Canada supporting 13 Indigenous-led clean energy projects through the Indigenous Leadership Fund",
+          "publisher": "Environment and Climate Change Canada",
+          "source_type": "official_federal_funding_announcement",
+          "url": "https://www.canada.ca/en/environment-climate-change/news/2025/07/the-government-of-canada-is-supporting-13-indigenous-led-clean-energy-projects-through-the-low-carbon-economy-funds-indigenous-leadership-fund.html",
+          "publication_date": "2025-07-08"
+        }
+      ]
+    },
+    {
+      "entity_id": "3129c457-b842-5e85-8f67-797df231e800",
+      "canonical_key": "project:external:nl:nunatsiavut-solar-expansion-2025",
+      "name": "Nunatsiavut community solar expansion",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "funded_2025",
+      "technology": "solar_pv",
+      "capacity_mw": 0.08,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Nain",
+        "Rigolet",
+        "Postville",
+        "Hopedale"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "343f0773-986f-5312-a7f9-6119518f0dcf",
+          "name": "Nain",
+          "relation_type": "serves_planned"
+        },
+        {
+          "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+          "name": "Rigolet",
+          "relation_type": "serves_planned"
+        },
+        {
+          "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+          "name": "Postville",
+          "relation_type": "serves_planned"
+        },
+        {
+          "entity_id": "8b0d13b3-9042-5223-bde6-ef58e0a0e9cd",
+          "name": "Hopedale",
+          "relation_type": "serves_planned"
+        }
+      ],
+      "metadata": {
+        "aggregate_capacity_mw": 0.08,
+        "allocation_by_community_not_stated": true,
+        "commissioning_not_asserted": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Nain",
+          "Rigolet",
+          "Postville",
+          "Hopedale"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "412be45e-ed91-57c3-82ae-5c6fdef13fbf",
+          "evidence_type": "external_project_funding",
+          "claim": "Canada announced funding for 80 kW of additional solar across Nunatsiavut community centres in Nain",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-11-28"
+        }
+      ],
+      "sources": [
+        {
+          "id": "1aa5d18d-65e1-5829-bf8e-47ab0cc04f01",
+          "source_key": "SRC-CIRNAC-NUNATSIAVUT-CLEAN-ENERGY-2025",
+          "title": "Canada supports the Nunatsiavut Government's leadership in Inuit-led, community-based clean energy initiatives",
+          "publisher": "Crown-Indigenous Relations and Northern Affairs Canada",
+          "source_type": "official_federal_funding_announcement",
+          "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2025/11/canada-supports-the-nunatsiavut-governments-leadership-in-inuit-led-community-based-clean-energy-initiatives.html",
+          "publication_date": "2025-11-28"
+        }
+      ]
+    },
+    {
+      "entity_id": "04ddddf8-0893-5da0-95b9-2c69daa6ce80",
+      "canonical_key": "project:external:nl:nunatukavut-home-energy-heat-pumps-2026",
+      "name": "NunatuKavut diesel-community home energy and heat-pump program",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "energy_efficiency",
+      "status": "active_program_2026",
+      "technology": "home_retrofits_and_cold_climate_heat_pumps",
+      "capacity_mw": null,
+      "developer": "NunatuKavut Community Council",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Black Tickle",
+        "Cartwright",
+        "Charlottetown",
+        "Lodge Bay",
+        "Mary's Harbour",
+        "Norman Bay",
+        "Paradise River",
+        "Pinsent's Arm",
+        "Port Hope Simpson",
+        "St. Lewis"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "diesel_dependent_communities": 10,
+        "home_energy_audits_completed_2025_2026": 24,
+        "heat_pump_application_deadline": "2026-08-09",
+        "generation_project": false,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Black Tickle",
+          "Cartwright",
+          "Charlottetown",
+          "Lodge Bay",
+          "Mary's Harbour",
+          "Norman Bay",
+          "Paradise River",
+          "Pinsent's Arm",
+          "Port Hope Simpson",
+          "St. Lewis"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "b7585aff-aa7e-5ff0-aafc-046599b3c130",
+          "evidence_type": "external_energy_efficiency_program",
+          "claim": "NunatuKavut reports a 2025-26 home energy retrofit and 2026 cold-climate heat-pump program for ten diesel-dependent Southern Labrador communities; this is demand-side context",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "b59f32a1-ca11-51ff-98a8-f9ad8404bd87",
+          "source_key": "SRC-NUNATUKAVUT-ENERGY-PROGRAMS-2026",
+          "title": "Community and Cultural Services — energy efficiency and Cold Climate Heat Pump Program",
+          "publisher": "NunatuKavut Community Council",
+          "source_type": "indigenous_organization_program_page",
+          "url": "https://nunatukavut.ca/community-and-cultural-development-services/",
+          "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "131282f4-4da3-5dff-b112-adb9142b830d",
+      "canonical_key": "project:external:nl:port-hope-simpson-solar",
+      "name": "Port Hope Simpson Aquatic Resource Centre solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.0204,
+      "developer": "Nunacor / NunatuKavut Energy",
+      "operator": "Nunacor / NL Hydro PPA",
+      "geometry": null,
+      "communities": [
+        "Port Hope Simpson"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "panel_count": 60,
+        "panel_watts": 340,
+        "operational_date": "2024-08-30",
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Port Hope Simpson"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "387c11b2-3829-5724-9af7-0ca7aa0758a9",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "Nunacor reports a 60-by-340 W rooftop solar system at the Port Hope Simpson Aquatic Resource Centre operational under a NL Hydro PPA from August 30 2024.",
+          "status": "verified",
+          "confidence": "medium_high",
+          "published_at": null
+        }
+      ],
+      "sources": [
+        {
+          "id": "bc1e2293-ba40-5925-9269-fa4b77dc32da",
+          "source_key": "SRC-NUNACOR-PHS-SOLAR-2024",
+          "title": "NunatuKavut Energy — Port Hope Simpson solar project",
+          "publisher": "Nunacor Development Corporation",
+          "source_type": "indigenous_development_corporation_project_page",
+          "url": "https://nunacor.com/group-of-companies/nunatukavut-energy/",
+          "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "9fa6a4bb-168b-5a4a-b9b5-c0d4bd19882f",
+      "canonical_key": "project:external:nl:postville-community-solar",
+      "name": "Postville Community Centre solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.01,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Postville"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "7e44170f-23dc-5a4e-ab16-9e6e9b54a2f8",
+          "name": "Postville",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "commissioned_by_2022": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Postville"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "15df557e-988a-52a2-9a80-0a6f2853164c",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "Newfoundland and Labrador Hydro reports the 10 kW Postville community-centre solar system complete in 2022.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2022-09-23"
+        }
+      ],
+      "sources": [
+        {
+          "id": "c4c01a70-4df3-5103-8e42-d48ae9216d9b",
+          "source_key": "SRC-NLHYDRO-NUNATSIAVUT-SOLAR-2022",
+          "title": "Renewable Integration Project Complete in Northern Labrador",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/renewable-integration-project-complete-in-northern-labrador/",
+          "publication_date": "2022-09-23"
         }
       ]
     },
@@ -278,6 +1120,242 @@
           "source_type": "regulator_docket",
           "url": "https://www.regie-energie.qc.ca/fr/participants/dossiers/R-4302-2025",
           "publication_date": null
+        }
+      ]
+    },
+    {
+      "entity_id": "8447fe11-0594-5e6f-ac40-c693d3252e24",
+      "canonical_key": "project:external:nl:rigolet-community-solar",
+      "name": "Rigolet Community Centre solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.015,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Rigolet"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+          "name": "Rigolet",
+          "relation_type": "serves"
+        }
+      ],
+      "metadata": {
+        "commissioned_by_2022": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Rigolet"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "b97afc29-53ff-5504-a15e-290bd6febed3",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "Newfoundland and Labrador Hydro reports the 15 kW Rigolet community-centre solar system complete in 2022.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2022-09-23"
+        }
+      ],
+      "sources": [
+        {
+          "id": "c4c01a70-4df3-5103-8e42-d48ae9216d9b",
+          "source_key": "SRC-NLHYDRO-NUNATSIAVUT-SOLAR-2022",
+          "title": "Renewable Integration Project Complete in Northern Labrador",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/renewable-integration-project-complete-in-northern-labrador/",
+          "publication_date": "2022-09-23"
+        }
+      ]
+    },
+    {
+      "entity_id": "8a39f86f-2e05-50ab-a8ee-7190488d59ca",
+      "canonical_key": "project:external:nl:rigolet-tidal-study",
+      "name": "Rigolet tidal-energy assessment",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation_study",
+      "status": "feasibility_study",
+      "technology": "tidal",
+      "capacity_mw": null,
+      "developer": "Nunatsiavut Government",
+      "operator": null,
+      "geometry": null,
+      "communities": [
+        "Rigolet"
+      ],
+      "community_relations": [
+        {
+          "entity_id": "784a7c7f-68ae-5a8f-9fb8-29902b3df56d",
+          "name": "Rigolet",
+          "relation_type": "study_area"
+        }
+      ],
+      "metadata": {
+        "funding_cad": 225000,
+        "measurement_program": true,
+        "candidate_site_not_selected": true,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Rigolet"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "b47748fe-5f5a-5ca0-abd0-d8e1152fb5df",
+          "evidence_type": "feasibility_study",
+          "claim": "Federal funding supports tidal-current measurements near Rigolet to assess the potential for a future tidal-energy project; no generation project or site is asserted.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-11-28"
+        }
+      ],
+      "sources": [
+        {
+          "id": "1aa5d18d-65e1-5829-bf8e-47ab0cc04f01",
+          "source_key": "SRC-CIRNAC-NUNATSIAVUT-CLEAN-ENERGY-2025",
+          "title": "Canada supports the Nunatsiavut Government's leadership in Inuit-led, community-based clean energy initiatives",
+          "publisher": "Crown-Indigenous Relations and Northern Affairs Canada",
+          "source_type": "official_federal_funding_announcement",
+          "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2025/11/canada-supports-the-nunatsiavut-governments-leadership-in-inuit-led-community-based-clean-energy-initiatives.html",
+          "publication_date": "2025-11-28"
+        }
+      ]
+    },
+    {
+      "entity_id": "c201e598-c5c1-5b27-a344-e5fa886bfe18",
+      "canonical_key": "project:external:nl:southern-labrador-regional-interconnection",
+      "name": "Southern Labrador Regional Interconnection",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "electrical_connection",
+      "status": "not_approved_2025_appeal_context",
+      "technology": "regional_diesel_plus_25kv_distribution",
+      "capacity_mw": 6.0,
+      "developer": "Newfoundland & Labrador Hydro",
+      "operator": "Newfoundland & Labrador Hydro",
+      "geometry": null,
+      "communities": [
+        "Port Hope Simpson",
+        "Charlottetown",
+        "Pinsent's Arm",
+        "Mary's Harbour",
+        "Lodge Bay",
+        "St. Lewis"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "proposed_voltage_kv": 25,
+        "proposed_length_km_about": 135,
+        "proposed_regional_plant_mw_about": 6,
+        "pub_approval_declined": true,
+        "reconsideration_declined_2025_10_24": true,
+        "appeal_context_exists": true,
+        "exact_route_geometry_ingested": false,
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "Port Hope Simpson",
+          "Charlottetown",
+          "Pinsent's Arm",
+          "Mary's Harbour",
+          "Lodge Bay",
+          "St. Lewis"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "619fc8a3-c3e2-544a-abff-535273b555c2",
+          "evidence_type": "rejected_external_infrastructure_project",
+          "claim": "NL Hydro proposed a regional plant and roughly 135 km of 25 kV interconnection in Southern Labrador; the PUB declined approval in March 2025 and later reconsideration was also declined",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2025-10-24"
+        }
+      ],
+      "sources": [
+        {
+          "id": "10936b85-704f-54d2-b659-a3b5e58b5916",
+          "source_key": "SRC-NLHYDRO-SOUTHERN-INTERCONNECT-2025",
+          "title": "Southern Labrador Regional Interconnection — Public Notice to Contractors",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_procurement_notice",
+          "url": "https://nlhydro.com/wp-content/uploads/2025/02/NLH-Public-Notice-to-Contractors-Jan2025_V4.pdf",
+          "publication_date": "2025-01-01"
+        },
+        {
+          "id": "ea5dd81e-1925-5234-8985-e16793c331ee",
+          "source_key": "SRC-PUB-SOUTHERN-INTERCONNECT-PU12-2025",
+          "title": "Order No. P.U.12(2025) — Southern Labrador Regional Interconnection",
+          "publisher": "Newfoundland and Labrador Board of Commissioners of Public Utilities",
+          "source_type": "regulator_order",
+          "url": "https://www.pub.nl.ca/PU/orders/2025/P.U.%2012%282025%29.PDF",
+          "publication_date": "2025-03-31"
+        },
+        {
+          "id": "7ab96ca2-c9d1-5bb4-b050-507cf978de8b",
+          "source_key": "SRC-NLHYDRO-Q3-2025-SOUTHERN-INTERCONNECT",
+          "title": "Newfoundland and Labrador Hydro Q3 2025 Financial Report",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_financial_report",
+          "url": "https://nlhydro.com/wp-content/uploads/2025/12/2025-Q3-Financial-Report-1-Final.pdf",
+          "publication_date": "2025-12-01"
+        }
+      ]
+    },
+    {
+      "entity_id": "f7e274a6-7357-5fa8-9f60-27f154e03821",
+      "canonical_key": "project:external:nl:st-lewis-solar",
+      "name": "St. Lewis community solar",
+      "entity_type": "project",
+      "role": "external_reference",
+      "project_type": "renewable_generation",
+      "status": "operating",
+      "technology": "solar_pv",
+      "capacity_mw": 0.018,
+      "developer": "NunatuKavut Community Council",
+      "operator": "Newfoundland & Labrador Hydro system integration",
+      "geometry": null,
+      "communities": [
+        "St. Lewis"
+      ],
+      "community_relations": [],
+      "metadata": {
+        "energized": "2023-09",
+        "not_kristal_farms_candidate": true,
+        "communities": [
+          "St. Lewis"
+        ],
+        "research_registry": "research/grid/electrical_projects.yaml"
+      },
+      "evidence": [
+        {
+          "id": "887c4c02-2ccf-5fd7-a6cc-897742201558",
+          "evidence_type": "operating_external_energy_asset",
+          "claim": "NL Hydro reports an 18 kW solar photovoltaic project energized in St. Lewis in September 2023.",
+          "status": "verified",
+          "confidence": "high",
+          "published_at": "2023-10-27"
+        }
+      ],
+      "sources": [
+        {
+          "id": "f1806525-4aa6-52dd-9d2d-7de60e1f74b1",
+          "source_key": "SRC-NLHYDRO-SOUTH-LABRADOR-SOLAR-2023",
+          "title": "Using solar energy to help power communities",
+          "publisher": "Newfoundland & Labrador Hydro",
+          "source_type": "utility_project_update",
+          "url": "https://nlhydro.com/good-to-know/using-solar-energy-to-help-power-communities/",
+          "publication_date": "2023-10-27"
         }
       ]
     }

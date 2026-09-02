@@ -16,7 +16,8 @@
     "evidence_records_public.json",
     "external_reference_energy_public.json",
     "hydro_evidence_matrix_public.json",
-    "hydrometric_stations_public.geojson"
+    "hydrometric_stations_public.geojson",
+    "target_villages_public.json"
   ],
   "semantics": [
     "community and critical loads have priority over flexible compute",
