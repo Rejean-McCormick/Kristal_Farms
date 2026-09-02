@@ -1,0 +1,22 @@
+schema: kristal-target-village-portfolio/v1
+portfolio_version: "2026-09-01"
+status: ACTIVE_SCREENING
+ranking_allowed: false
+selection_note: >-
+  Target-village portfolio for evidence deepening. Inclusion is not a site ranking,
+  project selection, authorization, commitment, or bankability statement.
+targets:
+  - { slug: akulivik, community_name: Akulivik }
+  - { slug: aupaluk, community_name: Aupaluk }
+  - { slug: ivujivik, community_name: Ivujivik }
+  - { slug: kangiqsujuaq, community_name: Kangiqsujuaq }
+  - { slug: puvirnituq, community_name: Puvirnituq }
+  - { slug: quaqtaq, community_name: Quaqtaq }
+  - { slug: salluit, community_name: Salluit }
+  - { slug: nain, community_name: Nain }
+  - { slug: hopedale, community_name: Hopedale }
+  - { slug: makkovik, community_name: Makkovik }
+  - { slug: postville, community_name: Postville }
+  - { slug: rigolet, community_name: Rigolet }
+reference_villages:
+  - inukjuak

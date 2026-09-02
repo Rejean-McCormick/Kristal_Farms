@@ -62,6 +62,8 @@ NEW_CONSOLE = getattr(subprocess, "CREATE_NEW_CONSOLE", 0)
 PUBLISHERS = [
     ("Hydro scope", "pipelines/publish/build_kristal_hydro_scope.py"),
     ("Community infrastructure", "pipelines/publish/build_community_infrastructure.py"),
+    ("External energy references", "pipelines/publish/build_external_reference_energy_public.py"),
+    ("Target villages", "pipelines/publish/build_target_villages_public.py"),
     ("International 12", "pipelines/publish/build_international_portfolio_public.py"),
     ("Grid Reach", "pipelines/publish/build_grid_reach_public.py"),
     ("Observatory evidence", "pipelines/publish/build_observatory_public.py"),

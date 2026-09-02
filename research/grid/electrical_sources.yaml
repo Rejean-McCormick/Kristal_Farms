@@ -1,0 +1,108 @@
+schema: kristal-electrical-source-registry/v1
+version: "2026-09-01"
+sources:
+  - id: hq_bape_romaine_corridor
+    publisher: Hydro-Québec / BAPE archive
+    title: Raccordement du complexe de la Romaine au réseau de transport — étude de corridors
+    url: https://archives.bape.gouv.qc.ca/sections/mandats/La%20Romaine_raccordement/documents/PR3.1/PR3.1.pdf
+    reference_date: "2009"
+    role: >-
+      Documents the Côte-Nord transmission context through Arnaud and Montagnais and the coastal 161 kV circuits.
+  - id: hq_romaine_transmission_2014
+    publisher: Hydro-Québec
+    title: Rapport sur le développement durable 2014 — raccordement du complexe de la Romaine
+    url: https://www.hydroquebec.com/data/documents-donnees/pdf/rapport-developpement-durable-2014.pdf
+    reference_date: "2014"
+    role: >-
+      Lists the Romaine-1–Romaine-2, Romaine-2–Arnaud, Romaine-3–Romaine-4 and Romaine-4–Montagnais lines,
+      plus the four Romaine substations and modifications at Arnaud and Montagnais.
+  - id: hq_sm3_existing_315
+    publisher: Hydro-Québec
+    title: Suréquipement de la centrale de la Sainte-Marguerite-3
+    url: https://www.hydroquebec.com/production-reseau/chantiers/projets/surequipementsm3/
+    reference_date: "2026"
+    role: Confirms the existing 315 kV transmission line from Sainte-Marguerite-3 to Arnaud remains in place.
+  - id: hq_generation_current
+    publisher: Hydro-Québec
+    title: Centrales — Hydro-Québec Production
+    url: https://www.hydroquebec.com/production/centrales.html
+    reference_date: "2026"
+    role: Current installed-capacity reference for Hydro-Québec generating stations, including Romaine and Sainte-Marguerite-3.
+  - id: hq_la_romaine_connection_2022
+    publisher: Hydro-Québec
+    title: Hydro-Québec franchit un jalon important dans la décarbonation de ses réseaux autonomes
+    url: https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-franchit-un-jalon-important-dans-la-decarbonation-de-ses-reseaux-autonomes.html
+    reference_date: "2022-03-29"
+    role: Documents commissioning of the 75 km, 34.5 kV line connecting the Natashquan/Pointe-Parent area to La Romaine and Unamen Shipu.
+  - id: hq_annual_2021_romaine_line
+    publisher: Hydro-Québec
+    title: Annual Report 2021
+    url: https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2021-hydro-quebec.pdf
+    reference_date: "2021"
+    role: States the 75 km eastern line was designed to handle 161 kV but is operated at 34.5 kV.
+  - id: hq_abitibi_temiscamingue_map_2019
+    publisher: Hydro-Québec
+    title: Abitibi-Témiscamingue — réseau de transport d'électricité
+    url: https://www.hydroquebec.com/data/projets/abitibi-temiscamingue/pdf/2019E1480-a-abitibi-web.pdf
+    reference_date: "2019"
+    role: Regional map showing 735 kV/315 kV transport context around Abitibi, Amos and Lebel-sur-Quévillon.
+  - id: hq_annual_2014_abitibi
+    publisher: Hydro-Québec
+    title: Annual Report 2014
+    url: https://www.hydroquebec.com/data/documents-donnees/pdf/annual-report-2014.pdf
+    reference_date: "2014"
+    role: Documents Abitibi as a 735/315 kV hub and the west/northwest transport backbone toward northern Québec.
+  - id: hq_fermont_capacity_2025
+    publisher: Hydro-Québec
+    title: Diffusion publique des capacités de raccordement au réseau de transport
+    url: https://www.hydroquebec.com/data/projets/presentation-zones-raccordement-industriel.pdf
+    reference_date: "2025-12"
+    role: Reports Zone Fermont residual industrial connection capacity below 10 MW, with the network under analysis.
+  - id: hq_lac_robertson
+    publisher: Hydro-Québec
+    title: Entente visant à soutenir les initiatives futures de Pakua Shipi — Lac-Robertson facts
+    url: https://nouvelles.hydroquebec.com/nouvelles/communiques/montreal/une-entente-visant-a-soutenir-les-initiatives-futures-de-pakua-shipi.html
+    reference_date: "2024"
+    role: Documents 21 MW hydro, 4.8 MW diesel backup and an isolated local transmission/distribution system.
+  - id: innergex_innavik
+    publisher: Innergex Renewable Energy
+    title: Innavik
+    url: https://www.innergex.com/en/sites/innavik
+    reference_date: "2026"
+    role: Current operator reference for the operating 7.5 MW Innavik run-of-river facility serving Inukjuak.
+  - id: nlh_labrador_interconnected_system
+    publisher: Newfoundland & Labrador Hydro
+    title: Reliability and Resource Adequacy — Labrador Interconnected System summary
+    url: https://nlhydro.com/wp-content/uploads/2024/01/RRA_Summary_FINAL.pdf
+    reference_date: "2024"
+    role: Confirms the Labrador Interconnected System is connected to the North American grid by 735 kV transmission lines from Churchill Falls to Québec.
+  - id: nlh_generation_assets
+    publisher: Newfoundland & Labrador Hydro
+    title: Our Generation Assets
+    url: https://nlhydro.com/about-us/our-electricity-system/our-generation-assets/
+    reference_date: "2026"
+    role: Current capacities for Churchill Falls (5,428 MW), Muskrat Falls (824 MW) and Menihek (18 MW).
+  - id: nlh_labrador_west_transmission
+    publisher: Newfoundland & Labrador Hydro
+    title: Labrador West Transmission Expansion Study
+    url: https://nlhydro.com/about-us/our-electricity-system/major-projects/labrador-west-transmission-expansion/
+    reference_date: "2026"
+    role: Confirms the existing 230 kV lines from Churchill Falls to Labrador West and their present operational limits.
+  - id: nlh_labrador_transco_2025
+    publisher: Labrador Transmission Corporation / Newfoundland & Labrador Hydro
+    title: Labrador Transmission Corporation Q3 2025 financial statements
+    url: https://nlhydro.com/wp-content/uploads/2025/12/Labrador-Transco-Q3-2025-Final.pdf
+    reference_date: "2025"
+    role: Confirms two 315 kV AC transmission lines connecting Muskrat Falls with Churchill Falls and Labrador transmission assets.
+  - id: ec_menihek_station
+    publisher: Environment and Climate Change Canada
+    title: Water Survey of Canada station reference — Menihek Lake at Menihek Rapids Generating Station
+    url: https://wateroffice.ec.gc.ca/station_metadata/reference_index_e.html?stnNum=03OA002
+    reference_date: "2026"
+    role: Coordinate cross-check for the Menihek generating-station area.
+  - id: canada_geonames
+    publisher: Natural Resources Canada / Geographical Names Board of Canada
+    title: Canadian Geographical Names Database
+    url: https://geonames.nrcan.gc.ca/search-place-names/
+    reference_date: "2026"
+    role: Official named-place and generating-station coordinate reference where available.

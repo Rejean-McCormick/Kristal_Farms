@@ -18,6 +18,7 @@ import type {
   RiverScreeningDimension,
 } from "../explorer-types";
 import { humanizeToken } from "../format";
+import type { TargetVillagePortfolio } from "../village-types";
 
 const workingDirectory = process.cwd();
 const repoRoot = process.env.KRISTAL_REPO_ROOT
@@ -263,7 +264,7 @@ function screeningDimension(
 }
 
 export async function getEntityDetail(entityId: string): Promise<EntityDetail | null> {
-  const [bootstrap, communityContextPayload, evidencePayload, evidenceRecordsPayload] =
+  const [bootstrap, communityContextPayload, evidencePayload, evidenceRecordsPayload, targetVillagePayload] =
     await Promise.all([
       getExplorerBootstrap(),
       readJson<{ items: CommunityContext[] }>(
@@ -271,6 +272,7 @@ export async function getEntityDetail(entityId: string): Promise<EntityDetail | 
       ),
       readJson<EvidencePayload>(path.join(publishRoot, "evidence_panel_summary_public.json")),
       readJson<EvidenceRecordsPayload>(path.join(publishRoot, "evidence_records_public.json")),
+      readJson<TargetVillagePortfolio>(path.join(publishRoot, "target_villages_public.json")),
     ]);
 
   const evidence = evidencePayload.items.find((item) => item.entity_id === entityId) ?? null;
@@ -405,6 +407,7 @@ export async function getEntityDetail(entityId: string): Promise<EntityDetail | 
       screeningDimensions: [],
       release: bootstrap.release,
       rankingAllowed: false,
+      targetVillageSlug: targetVillagePayload.items.find((item) => item.entity_id === entityId)?.slug ?? null,
     };
   }
 

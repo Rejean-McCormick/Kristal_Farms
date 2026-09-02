@@ -199,3 +199,42 @@
 .embeddedState {
   top: var(--kristal-shell-height, 52px);
 }
+.sourceList {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.sourceList li {
+  display: grid;
+  gap: 3px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(91, 212, 255, 0.22);
+}
+.sourceList a {
+  color: #8eddf4;
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.sourceList a:hover { text-decoration: underline; }
+.sourceList small {
+  color: #8298a1;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.sourceList p {
+  margin: 1px 0 0;
+  color: #94a9b1;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.sourceCaution {
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 194, 123, 0.15);
+  background: rgba(255, 194, 123, 0.035);
+  color: #b9a78e !important;
+  font-size: 10px !important;
+  line-height: 1.5 !important;
+}

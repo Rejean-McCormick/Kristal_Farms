@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal-farms.local/contracts/target-village-dossier.schema.json",
+  "title": "Kristal Farms target village research dossier",
+  "type": "object",
+  "required": [
+    "schema",
+    "slug",
+    "community_name",
+    "kf_status",
+    "screening_role",
+    "reviewed_at",
+    "development_thesis",
+    "air",
+    "marine",
+    "logistics_envelope",
+    "open_gates",
+    "sources"
+  ],
+  "properties": {
+    "schema": { "const": "kristal-target-village-research/v1" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "community_name": { "type": "string", "minLength": 1 },
+    "kf_status": { "enum": ["TARGET_SCREENING", "REFERENCE_ONLY", "PAUSED"] },
+    "screening_role": { "type": "string", "minLength": 1 },
+    "reviewed_at": { "type": "string", "format": "date" },
+    "development_thesis": { "type": "string", "minLength": 1 },
+    "air": {
+      "type": "object",
+      "required": ["access_pattern", "load_status", "pavement_strength", "max_aircraft_mass_kg", "operational_constraints"],
+      "properties": {
+        "access_pattern": { "type": "string" },
+        "load_status": { "enum": ["published_reference", "not_verified", "unknown"] },
+        "pavement_strength": { "type": ["string", "null"] },
+        "max_aircraft_mass_kg": { "type": ["number", "null"], "minimum": 0 },
+        "operational_constraints": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "marine": {
+      "type": "object",
+      "required": [
+        "access_mode",
+        "commercial_access",
+        "facilities",
+        "approach_depth_m",
+        "anchorage_depth_m",
+        "berth_depth_range_m",
+        "depth_status",
+        "ro_ro",
+        "laydown_available",
+        "load_limits",
+        "seasonality",
+        "constraints",
+        "source_ids"
+      ],
+      "properties": {
+        "access_mode": { "type": "string" },
+        "commercial_access": { "enum": ["seasonal", "year_round", "not_verified"] },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "label"],
+            "properties": {
+              "type": { "type": "string" },
+              "label": { "type": "string" },
+              "length_m": { "type": ["number", "null"], "minimum": 0 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "approach_depth_m": { "type": ["number", "null"], "minimum": 0 },
+        "anchorage_depth_m": { "type": ["number", "null"], "minimum": 0 },
+        "berth_depth_range_m": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "array",
+              "prefixItems": [
+                { "type": "number", "minimum": 0 },
+                { "type": "number", "minimum": 0 }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          ]
+        },
+        "depth_status": { "enum": ["published_reference", "partial_reference", "not_verified"] },
+        "ro_ro": { "type": ["boolean", "null"] },
+        "laydown_available": { "type": ["boolean", "null"] },
+        "load_limits": {
+          "type": "object",
+          "required": ["status", "deck_load_t_m2", "axle_load_t", "max_unit_mass_t", "crane_swl_t"],
+          "properties": {
+            "status": { "enum": ["published_reference", "not_verified", "unknown"] },
+            "deck_load_t_m2": { "type": ["number", "null"], "minimum": 0 },
+            "axle_load_t": { "type": ["number", "null"], "minimum": 0 },
+            "max_unit_mass_t": { "type": ["number", "null"], "minimum": 0 },
+            "crane_swl_t": { "type": ["number", "null"], "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "seasonality": {
+          "type": "object",
+          "required": ["service_type", "start_month", "end_month", "status"],
+          "properties": {
+            "service_type": { "type": "string" },
+            "start_month": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
+            "end_month": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
+            "status": { "enum": ["published_schedule_context", "general_operating_context", "not_verified"] }
+          },
+          "additionalProperties": false
+        },
+        "constraints": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "source_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "logistics_envelope": {
+      "type": "object",
+      "required": ["marine_delivery", "air_delivery", "heavy_module_status", "assessment_status"],
+      "properties": {
+        "marine_delivery": { "type": "string" },
+        "air_delivery": { "type": "string" },
+        "heavy_module_status": { "enum": ["favourable", "constrained", "diligence_required", "unknown"] },
+        "assessment_status": { "enum": ["partial", "research_ready", "diligence_required"] }
+      },
+      "additionalProperties": false
+    },
+    "open_gates": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "publisher", "url", "role"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "publisher": { "type": "string" },
+          "url": { "type": "string" },
+          "role": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

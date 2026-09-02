@@ -445,11 +445,11 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
           />
           <ContextLayerRow
             id="grid_reach"
-            title="Electrical grid reach"
+            title="Electrical network"
             subtitle={
               gridReach
-                ? "West / north / east transmission reach · terminal markers emphasize documented ends"
-                : "Loading lightweight Côte-Nord grid context"
+                ? "Transmission + generating assets · node size reflects MW or kV · isolated systems identified"
+                : "Loading electrical network context"
             }
             checked={visibleLayers.grid_reach && Boolean(gridReach)}
             disabled={!gridReach}
@@ -467,7 +467,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
               setGridFocusRequest((value) => value + 1);
             }}
           >
-            Focus grid reach · West / North / East
+            Focus electrical network · Québec / Côte-Nord / Labrador
           </button>
           <ContextLayerRow
             id="labels"
@@ -528,7 +528,7 @@ export function ObservatoryExplorer({ embedded = false }: { embedded?: boolean }
             }
           />
           <div className="layer-panel__note">
-            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Electrical grid reach is a lightweight, source-backed west/north/east connectivity skeleton. Lines stop before terminal markers on purpose: the marker means documented transmission/grid reach, not an exact conductor endpoint or interconnection point. Hydrometric stations remain available but start OFF. Terrain/basin overlays are local HRDEM-derived screening products: connected inundation cells, areas and volumes are exploratory terrain geometry only, never engineered dam or reservoir design. Hydro references remain screening references, not dam locations.
+            Infrastructure + access prioritizes airport, dock and coastal hydro screening context. Electrical network context now combines source-backed transmission links with documented generating stations, substations/grid areas and selected isolated systems. Generation-node size reflects installed MW; non-generation node size reflects voltage where known. Lines remain schematic and must not be used to infer an exact conductor alignment, interconnection capacity or buildable tie-in point. Hydrometric stations remain available but start OFF. Terrain/basin overlays are local HRDEM-derived screening products: connected inundation cells, areas and volumes are exploratory terrain geometry only, never engineered dam or reservoir design. Hydro references remain screening references, not dam locations.
           </div>
         </section>
       )}

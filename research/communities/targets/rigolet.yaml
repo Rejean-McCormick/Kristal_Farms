@@ -1,0 +1,87 @@
+schema: kristal-target-village-research/v1
+slug: rigolet
+community_name: Rigolet
+kf_status: TARGET_SCREENING
+screening_role: Nunatsiavut target village
+reviewed_at: '2026-09-01'
+development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Rigolet without ranking
+  the village.
+air:
+  access_pattern: year_round_community_air_access
+  load_status: not_verified
+  pavement_strength: null
+  max_aircraft_mass_kg: null
+  operational_constraints:
+  - weather
+  - gravel_runway_performance
+  - operator_and_aircraft_limits
+marine:
+  access_mode: ferry_ro_ro_terminal
+  commercial_access: seasonal
+  facilities:
+  - type: l_jetty
+    label: L-shaped jetty
+    length_m: null
+  - type: ro_ro_ramp
+    label: Ro-Ro ramp
+    length_m: null
+  - type: floating_dock
+    label: Floating dock
+    length_m: null
+  approach_depth_m: null
+  anchorage_depth_m: null
+  berth_depth_range_m:
+  - 4.0
+  - 7.0
+  depth_status: published_reference
+  ro_ro: true
+  laydown_available: true
+  load_limits:
+    status: not_verified
+    deck_load_t_m2: null
+    axle_load_t: null
+    max_unit_mass_t: null
+    crane_swl_t: null
+  seasonality:
+    service_type: coastal_ferry_and_freight
+    start_month: 6
+    end_month: 11
+    status: general_operating_context
+  constraints:
+  - sea_ice
+  - weather
+  - ferry_schedule
+  - local_rock_hazard
+  source_ids:
+  - cmsn-arctic-infrastructure-2025
+  - nl-north-labrador-ferry
+  - nunatsiavut-travel-distances
+logistics_envelope:
+  marine_delivery: ferry_or_coastal_freight_to_terminal
+  air_delivery: regional_aircraft_on_short_gravel_runway
+  heavy_module_status: diligence_required
+  assessment_status: partial
+open_gates:
+- berth_depth_confirmation
+- ramp_axle_load
+- maximum_unit_mass
+- crane_or_mobile_lift_capacity
+- laydown_area_capacity
+- airport_pavement_strength
+- aircraft_specific_payload
+sources:
+- id: cmsn-arctic-infrastructure-2025
+  title: Canadian Arctic Infrastructure Inventory
+  publisher: Canadian Marine Shipping Network
+  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
+  role: marine_facility_context
+- id: nl-north-labrador-ferry
+  title: Goose Bay – Rigolet – Ports North to Nain ferry service
+  publisher: Government of Newfoundland and Labrador
+  url: https://www.gov.nl.ca/ti/ferryservices/schedules/h-goosebay-nain/
+  role: marine_service_context
+- id: nunatsiavut-travel-distances
+  title: Nunatsiavut coastal travel context
+  publisher: Nunatsiavut Government
+  url: https://nunatsiavut.com/plan-your-trip/travel-distances/
+  role: seasonality_context

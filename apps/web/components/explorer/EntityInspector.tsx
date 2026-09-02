@@ -124,6 +124,13 @@ export function EntityInspector({ entityId, onClose, onAddCompare, compared }: P
                     {compared ? "Pinned for comparison" : "Pin for comparison"}
                   </button>
                 )}
+
+                {detail.featureKind === "community" && detail.targetVillageSlug && (
+                  <a className="village-dossier-action" href={`/villages/${detail.targetVillageSlug}`}>
+                    <span>TARGET VILLAGE</span>
+                    <strong>Open full village dossier →</strong>
+                  </a>
+                )}
               </section>
             )}
 

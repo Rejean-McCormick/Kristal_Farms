@@ -1,0 +1,34 @@
+schema: kristal-enabling-corridors-research/v1
+version: "2026-09-01"
+ranking_allowed: false
+corridors:
+  - canonical_key: corridor:road:nl:road-to-the-north
+    name: Road to the North — Northern Labrador pre-feasibility corridor
+    corridor_type: conceptual
+    corridor_status: prefeasibility_report_tabled_2026
+    geometry: null
+    operator: null
+    source_keys: [SRC-NL-ROAD-NORTH-ALLNORTH-2026]
+    communities:
+      - {name: Rigolet, entity_key: "place:community:nl:rigolet"}
+      - {name: Postville, entity_key: "place:community:nl:postville"}
+      - {name: Makkovik, entity_key: "place:community:nl:makkovik"}
+      - {name: Hopedale, entity_key: "place:community:nl:hopedale"}
+      - {name: Natuashish, entity_key: "place:community:nl:natuashish"}
+      - {name: Nain, entity_key: "place:community:nl:nain"}
+    metadata:
+      new_road_km: 809
+      electrical_commitment: false
+      enabling_infrastructure_context: true
+      exact_route_geometry_ingested: false
+      not_kristal_route: true
+      not_route: true
+      not_project_access_commitment: true
+    evidence:
+      evidence_type: enabling_corridor_study
+      claim: >-
+        The publicly tabled Allnorth pre-feasibility report studies an all-season road into Northern Labrador serving
+        Rigolet, Postville, Makkovik, Hopedale, Natuashish and Nain. It is enabling-infrastructure context only;
+        this record does not assert an electrical line, committed road construction or exact route geometry.
+      confidence: high
+      published_at: "2026-06-02"

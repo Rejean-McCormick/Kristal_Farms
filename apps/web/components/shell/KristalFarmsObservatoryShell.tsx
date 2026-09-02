@@ -3,9 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { ObservatoryExplorer } from "../explorer/ObservatoryExplorer";
 import { InternationalPortfolioExplorer } from "../international/InternationalPortfolioExplorer";
+import { VillagePortfolioExplorer } from "../villages/VillagePortfolioExplorer";
 import styles from "./KristalFarmsObservatoryShell.module.css";
 
-type WorkspaceSection = "atlas" | "corridors" | "international" | "economics" | "evidence";
+type WorkspaceSection = "atlas" | "villages" | "corridors" | "international" | "economics" | "evidence";
 
 type SectionDefinition = {
   id: WorkspaceSection;
@@ -16,10 +17,11 @@ type SectionDefinition = {
 
 const SECTIONS: SectionDefinition[] = [
   { id: "atlas", index: "01", label: "Northern Atlas", context: "GEOGRAPHY / EVIDENCE" },
-  { id: "corridors", index: "02", label: "Corridors", context: "DOSSIERS / GATES" },
-  { id: "international", index: "03", label: "International 12", context: "COUNTERPARTY / PORTFOLIO" },
-  { id: "economics", index: "04", label: "Economics", context: "SCENARIOS / SENSITIVITY" },
-  { id: "evidence", index: "05", label: "Evidence", context: "PROVENANCE / CONTROL" },
+  { id: "villages", index: "02", label: "Villages", context: "COMMUNITIES / DILIGENCE" },
+  { id: "corridors", index: "03", label: "Corridors", context: "DOSSIERS / GATES" },
+  { id: "international", index: "04", label: "International 12", context: "COUNTERPARTY / PORTFOLIO" },
+  { id: "economics", index: "05", label: "Economics", context: "SCENARIOS / SENSITIVITY" },
+  { id: "evidence", index: "06", label: "Evidence", context: "PROVENANCE / CONTROL" },
 ];
 
 const SECTION_IDS = new Set<WorkspaceSection>(SECTIONS.map((section) => section.id));
@@ -87,6 +89,7 @@ export function KristalFarmsObservatoryShell() {
 
       <div className={styles.workspace}>
         {section === "atlas" && <ObservatoryExplorer embedded />}
+        {section === "villages" && <VillagePortfolioExplorer embedded />}
         {section === "international" && <InternationalPortfolioExplorer embedded />}
         {section === "corridors" && (
           <WorkspaceBrief

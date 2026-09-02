@@ -194,3 +194,11 @@ def test_observatory_v044_terrain_pipeline_computes_connectivity_offline():
     assert "volume_m3" in source
     assert "requests" not in source
     assert "urllib" not in source
+
+
+def test_public_economic_benchmark_evidence_ids_resolve_in_public_evidence_ledger():
+    benchmarks = json.loads((PUBLISH / "economic_benchmarks_public.json").read_text(encoding="utf-8"))
+    evidence = json.loads((PUBLISH / "evidence_records_public.json").read_text(encoding="utf-8"))
+    evidence_ids = {item["id"] for item in evidence["items"]}
+    assert benchmarks["benchmarks"]
+    assert all(item["source_evidence_id"] in evidence_ids for item in benchmarks["benchmarks"])

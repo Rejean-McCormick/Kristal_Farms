@@ -1284,3 +1284,29 @@ button { color: inherit; }
 .layer-panel__focus-action:hover:not(:disabled) { background: rgba(242, 179, 93, .10); }
 .layer-panel__focus-action:disabled { opacity: .4; cursor: default; }
 
+
+.village-dossier-action {
+  margin-top: 10px;
+  min-height: 58px;
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid rgba(84, 225, 193, 0.28);
+  background: rgba(84, 225, 193, 0.045);
+  color: #dff8f2;
+  text-decoration: none;
+}
+.village-dossier-action:hover {
+  border-color: rgba(84, 225, 193, 0.58);
+  background: rgba(84, 225, 193, 0.08);
+}
+.village-dossier-action span {
+  color: var(--teal);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+.village-dossier-action strong {
+  font-size: 12px;
+  font-weight: 600;
+}

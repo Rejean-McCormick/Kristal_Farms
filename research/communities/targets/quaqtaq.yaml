@@ -1,0 +1,83 @@
+schema: kristal-target-village-research/v1
+slug: quaqtaq
+community_name: Quaqtaq
+kf_status: TARGET_SCREENING
+screening_role: Nunavik target village
+reviewed_at: '2026-09-01'
+development_thesis: Deepen logistics, energy, fibre, heat-user and community diligence for Quaqtaq without ranking
+  the village.
+air:
+  access_pattern: year_round_community_air_access
+  load_status: not_verified
+  pavement_strength: null
+  max_aircraft_mass_kg: null
+  operational_constraints:
+  - weather
+  - gravel_runway_performance
+  - operator_and_aircraft_limits
+marine:
+  access_mode: lighterage_beach_ramp
+  commercial_access: seasonal
+  facilities:
+  - type: breakwater
+    label: Community breakwaters
+    length_m: null
+  - type: landing_beach
+    label: Landing beaches
+    length_m: null
+  approach_depth_m: null
+  anchorage_depth_m: null
+  berth_depth_range_m: null
+  depth_status: partial_reference
+  ro_ro: null
+  laydown_available: null
+  load_limits:
+    status: not_verified
+    deck_load_t_m2: null
+    axle_load_t: null
+    max_unit_mass_t: null
+    crane_swl_t: null
+  seasonality:
+    service_type: sealift
+    start_month: 7
+    end_month: 10
+    status: general_operating_context
+  constraints:
+  - sea_ice
+  - weather
+  - tide_and_water_level
+  - sealift_schedule
+  - partially_unsurveyed_local_waters
+  source_ids:
+  - cmsn-arctic-infrastructure-2025
+  - chs-arc401-2026
+  - arctic-sealift-schedule-2026
+logistics_envelope:
+  marine_delivery: ship_to_lighterage_or_landing_facility
+  air_delivery: regional_aircraft_on_gravel_runway
+  heavy_module_status: diligence_required
+  assessment_status: partial
+open_gates:
+- berth_or_landing_depth
+- ramp_axle_load
+- maximum_unit_mass
+- crane_or_mobile_lift_capacity
+- laydown_area
+- airport_pavement_strength
+- aircraft_specific_payload
+sources:
+- id: cmsn-arctic-infrastructure-2025
+  title: Canadian Arctic Infrastructure Inventory
+  publisher: Canadian Marine Shipping Network
+  url: https://www.cmsn.ca/_files/ugd/0bcbee_ddf2cdb7dc1e41f08b47596fe2c61c1b.pdf
+  role: marine_facility_context
+- id: chs-arc401-2026
+  title: Sailing Directions ARC 401
+  publisher: Canadian Hydrographic Service
+  url: https://waves-vagues.dfo-mpo.gc.ca/library-bibliotheque/chs-shc-ARC401-eng-202602-41319606.pdf
+  role: marine_depth_and_navigation_context
+- id: arctic-sealift-schedule-2026
+  title: Nunavik sealift schedule
+  publisher: Arctic Sealift / NEAS
+  url: https://arcticsealift.com/schedule.php?language=en
+  role: seasonality_context

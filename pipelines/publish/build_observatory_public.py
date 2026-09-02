@@ -39,6 +39,17 @@ def main() -> None:
         for evidence_id in item.get("evidence_ids", [])
     }
 
+    # Public economics references canonical evidence directly. Keep those records
+    # resolvable in the same public evidence ledger instead of publishing dangling IDs.
+    economic_path = PUBLISH / "economic_benchmarks_public.json"
+    if economic_path.exists():
+        economic = json.loads(economic_path.read_text(encoding="utf-8"))
+        referenced_ids.update(
+            benchmark["source_evidence_id"]
+            for benchmark in economic.get("benchmarks", [])
+            if benchmark.get("source_evidence_id")
+        )
+
     sources_by_evidence: dict[str, list[dict]] = {}
     for link in links:
         evidence_id = link.get("evidence_id")
@@ -52,6 +63,8 @@ def main() -> None:
                 "publisher": source.get("publisher"),
                 "source_type": source.get("source_type") or "source",
                 "url": source.get("url"),
+                "publication_date": source.get("publication_date"),
+                "retrieved_at": source.get("retrieved_at"),
                 "role": link.get("source_role") or "supports",
             }
         )

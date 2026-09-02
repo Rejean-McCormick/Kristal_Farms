@@ -229,6 +229,7 @@ export type EntityDetail = {
   screeningDimensions: EntityScreeningDimension[];
   release: string;
   rankingAllowed: false;
+  targetVillageSlug?: string | null;
 };
 
 export type ObservatoryVisibleLayers = {

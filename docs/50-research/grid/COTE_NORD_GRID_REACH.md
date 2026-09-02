@@ -1,4 +1,4 @@
-# Northern Atlas electrical grid reach
+# Northern Atlas electrical network context
 
 **Status:** research context  
 **Ranking:** not allowed  
@@ -6,46 +6,64 @@
 
 ## Purpose
 
-This layer answers a narrow project question: **how far does documented existing electrical infrastructure reach west, north and east across the Northern Atlas study geography?** It is deliberately not a complete Hydro-Québec network map.
+This layer provides a lightweight, source-backed view of material electrical infrastructure across the Northern Atlas study geography. It represents documented transmission links and real electrical nodes rather than artificial map-edge or reach terminals. It is not a complete Hydro-Québec or Newfoundland and Labrador network map.
 
-The public web layer keeps only six connection classes:
+The machine-readable research model is split into three contracts:
 
-- the comparative western 735 kV Abitibi / Amos hub — Chibougamau spine;
-- the comparative western 315 kV Abitibi / Amos hub — Lebel-sur-Quévillon branch;
-- the 735 kV northbound transmission corridor between the Arnaud area and Poste des Montagnais, continuing toward Churchill Falls;
-- the existing 315 kV Sainte-Marguerite-3–Arnaud branch;
-- the coastal 161 kV Arnaud–Havre-Saint-Pierre–Johan-Beetz–Natashquan connection (circuits 1619 and 1652 in the cited study);
-- the eastern 75 km La Romaine / Unamen Shipu connection, designed for 161 kV and operated at 34.5 kV.
+- `research/grid/cote_nord_grid_reach.yaml` — documented connections and map policy;
+- `research/grid/electrical_assets.yaml` — generating stations, substations/grid areas, community connections and selected isolated assets;
+- `research/grid/electrical_sources.yaml` — source registry shared by the network and assets.
 
-## Reach interpretation
+## Network modes
 
-Four markers are emphasized instead of rendering every local conductor:
+Each node and connection is classified independently:
 
-1. **West reach — Abitibi / Amos area / 735 kV context.** This is the comparative western grid-hub marker that keeps Abitibi visible in the Northern Atlas.
-2. **North reach — Poste des Montagnais / 735 kV context.** This is a Côte-Nord reach marker on a corridor that continues into Labrador; it is not represented as a terminal station of the entire circuit.
-3. **East 161 kV reach — Natashquan.** Hydro-Québec's corridor study describes circuit 1652 as Havre-Saint-Pierre–Natashquan via Johan-Beetz.
-4. **East main-grid extension — La Romaine / Unamen Shipu.** Hydro-Québec commissioned the 75 km line in 2022; its annual reporting states it was designed to handle 161 kV but operates at 34.5 kV.
+- `integrated` — part of the interconnected Québec/Labrador transmission context;
+- `integrated_extension` — a material extension of the main grid, such as the La Romaine / Unamen Shipu connection;
+- `isolated` — a remote electrical system not represented as connected to the main transmission network.
 
-## Terminal-marker display
+This prevents an isolated generating station from being visually interpreted as the end of a 735 kV or 315 kV corridor.
 
-The web representation intentionally leaves a small visual gap between a schematic line and any emphasized reach marker. The marker means **documented transmission/grid reach**. It is not a surveyed conductor endpoint, switching point, available interconnection point or substation footprint.
+## Asset scale
+
+There is no single electrical "size" field. The public layer preserves separate concepts:
+
+- `installed_capacity_mw` — generating-station capacity;
+- `backup_capacity_mw` — separately identified backup generation;
+- `voltage_kv` and `design_voltage_kv` — transmission/substation voltage context;
+- `available_capacity` — published connection-capacity context, where available.
+
+Generation-node radius is driven by installed MW. Non-generation nodes are sized by voltage. Published available capacity is metadata only and must not be used as the node's physical or electrical size.
+
+## Material represented assets
+
+The initial asset-backed network includes the Romaine-1 through Romaine-4 generating stations and their documented transmission connections, Arnaud, Montagnais, Sainte-Marguerite-3, Churchill Falls, Muskrat Falls, Labrador West/Fermont context, Natashquan and the La Romaine / Unamen Shipu extension. Selected isolated assets include Menihek, Lac-Robertson and Innavik.
+
+The represented transmission classes include 735 kV, 315 kV, 230 kV, 161 kV, 69 kV asset context and the 34.5 kV eastern extension. Where a line was built for a higher design voltage but documented for lower initial operation, both values remain explicit.
 
 ## Geometry discipline
 
-The line coordinates in `grid_reach_public.geojson` are **schematic connections between documented named anchors**. They are intentionally simplified and must not be used to:
+Coordinates in `grid_reach_public.geojson` are schematic connections between documented named anchors. Node coordinates can be named-facility points or explicitly labelled area/municipality proxies. The layer must not be used to:
 
 - measure distance to a conductor or right-of-way;
-- infer interconnection capacity;
+- infer interconnection or residual hosting capacity except where a separately dated value is explicitly published;
 - infer a buildable tie-in point;
 - infer land rights, easements or access;
-- assert that an unshown distribution line does not exist.
+- assert that an unshown local/distribution line does not exist.
 
-Hydro-Québec's open transmission vegetation/right-of-way dataset can be used later as a medium-precision contextual geometry cross-check, but Hydro-Québec explicitly warns that geometric measurements must not be taken from that dataset.
+Hydro-Québec open right-of-way or vegetation data may later be used as a geometry cross-check, but this research layer deliberately keeps schematic geometry rather than implying surveyed conductor alignment.
 
 ## Why the full distribution network is omitted
 
-The project question is network **reach**, not a pole-by-pole inventory. Hydro-Québec's distribution vegetation dataset is very large and excludes some municipal/cooperative/off-grid territories. Publishing the whole dataset would add visual and payload weight while creating false certainty from gaps. The 34.5 kV La Romaine extension is retained because it materially changes the understood eastern reach of the main grid, and the Abitibi comparative spine is retained because it avoids a false east-only reading of the northern network.
+The layer is intended to show material network context and remote electrical assets, not a pole-by-pole inventory. Publishing the full distribution system would add payload and visual weight while creating false certainty from coverage gaps. Selected lower-voltage links are retained when they materially change interpretation of network reach or isolated-system context.
 
-## Source register
+## Publication
 
-The machine-readable source register is maintained in `research/grid/cote_nord_grid_reach.yaml`. Primary references include Hydro-Québec/BAPE corridor documentation, Hydro-Québec current project pages and annual reporting, the Hydro-Québec Abitibi-Témiscamingue regional transport map, Hydro-Québec's 2022 La Romaine connection announcement, and official Québec/Canadian place-name coordinates.
+`pipelines/publish/build_grid_reach_public.py` resolves the network, asset and source registries and publishes both `grid_connection` and `grid_node` features. Artificial `reach_marker` features and display gaps are not part of the model.
+
+Generated artifacts:
+
+- `data/publish/current/grid_reach_public.geojson`
+- `apps/web/public/grid/grid-reach.geojson`
+
+Both are generated outputs and should not be hand-edited.

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kristal.farms/schemas/electrical-projects.schema.json",
+  "title": "Kristal external electrical projects research registry",
+  "type": "object",
+  "required": ["schema", "version", "ranking_allowed", "sources", "projects"],
+  "properties": {
+    "schema": {"const": "kristal-electrical-projects-research/v1"},
+    "version": {"type": "string"},
+    "ranking_allowed": {"const": false},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_key", "title", "publisher", "source_type", "url", "retrieved_at"],
+        "properties": {
+          "source_key": {"type": "string"}, "title": {"type": "string"}, "publisher": {"type": "string"},
+          "source_type": {"type": "string"}, "url": {"type": "string", "pattern": "^https://"},
+          "publication_date": {"type": ["string", "null"]}, "retrieved_at": {"type": "string"},
+          "document_reference": {"type": ["string", "null"]}, "metadata": {"type": "object"}
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["canonical_key", "name", "project_type", "project_status", "technology", "communities", "source_keys", "evidence"],
+        "properties": {
+          "canonical_key": {"type": "string", "pattern": "^project:external:"}, "name": {"type": "string"},
+          "project_type": {"type": "string"}, "project_status": {"type": "string"}, "technology": {"type": "string"},
+          "capacity_mw": {"type": ["number", "null"]}, "developer": {"type": ["string", "null"]},
+          "operator": {"type": ["string", "null"]}, "geometry": {"type": "null"},
+          "communities": {"type": "array", "items": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}, "entity_key": {"type": ["string", "null"]}, "relation_type": {"type": ["string", "null"]}}}},
+          "metadata": {"type": "object"}, "source_keys": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "evidence": {"type": "object", "required": ["evidence_type", "claim", "confidence"], "properties": {"evidence_type": {"type": "string"}, "claim": {"type": "string"}, "confidence": {"type": "string"}, "published_at": {"type": ["string", "null"]}, "metadata": {"type": "object"}}}
+        }
+      }
+    }
+  }
+}

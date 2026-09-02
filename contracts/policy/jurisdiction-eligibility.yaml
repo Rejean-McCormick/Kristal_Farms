@@ -1,200 +1,310 @@
-policy_version: "2026.08.31-r2-proposed"
+policy_version: 2026.09.01-r3-proposed-sourced
 policy_name: jurisdiction_eligibility_schedule
 policy_status: PROPOSED_C0_ADOPTION
-
 default_nonlisted_state: ENHANCED_DUE_DILIGENCE
-
 jurisdictions:
-  - code: US
-    name: United States
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: owner_policy_commercial_positioning
-    rationale_codes: [owner_directed_exclusion]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: RU
-    name: Russia
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [armed_conflict, sanctions_exposure, human_rights_risk, state_security_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: BY
-    name: Belarus
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [armed_conflict_support, sanctions_exposure, political_repression_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: CN
-    name: China
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [state_surveillance_risk, forced_labour_risk, human_rights_risk, control_transparency_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: IR
-    name: Iran
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [state_repression_risk, sanctions_exposure, state_security_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: KP
-    name: North Korea
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [state_repression_risk, sanctions_exposure, proliferation_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: SY
-    name: Syria
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [armed_conflict, atrocity_risk, sanctions_exposure]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: MM
-    name: Myanmar
-    state: INELIGIBLE
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_values_policy
-    rationale_codes: [military_rule, political_repression_risk, human_rights_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: AF
-    name: Afghanistan
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [governance_uncertainty, human_rights_risk, sanctions_exposure, control_verification_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: LY
-    name: Libya
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [political_instability, sanctions_exposure, control_verification_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: NI
-    name: Nicaragua
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [political_repression_risk, sanctions_exposure, governance_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: SO
-    name: Somalia
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [state_fragility, security_risk, control_verification_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: SD
-    name: Sudan
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [armed_conflict, atrocity_risk, control_verification_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: SS
-    name: South Sudan
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [armed_conflict, state_fragility, control_verification_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: VE
-    name: Venezuela
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [governance_risk, human_rights_risk, sanctions_exposure, control_transparency_risk]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: YE
-    name: Yemen
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [armed_conflict, state_fragility, sanctions_exposure]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
-  - code: ZW
-    name: Zimbabwe
-    state: SUSPENDED
-    scope: [tenant, anchor_offtaker, tenant_operator]
-    basis: proposed_owner_precautionary_hold
-    rationale_codes: [governance_risk, human_rights_risk, sanctions_exposure]
-    effective_on_adoption: "2026-08-31"
-    legal_prohibition_claimed: false
-    technology_origin_embargo_implied: false
-    review_requires_explicit_c0_decision: true
-
+- code: US
+  name: United States
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: owner_policy_commercial_positioning
+  rationale_codes:
+  - owner_directed_exclusion
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: RU
+  name: Russia
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - armed_conflict
+  - sanctions_exposure
+  - human_rights_risk
+  - state_security_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: BY
+  name: Belarus
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - armed_conflict_support
+  - sanctions_exposure
+  - political_repression_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: CN
+  name: China
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - state_surveillance_risk
+  - forced_labour_risk
+  - human_rights_risk
+  - control_transparency_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: IR
+  name: Iran
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - state_repression_risk
+  - sanctions_exposure
+  - state_security_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: KP
+  name: North Korea
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - state_repression_risk
+  - sanctions_exposure
+  - proliferation_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: SY
+  name: Syria
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - armed_conflict
+  - atrocity_risk
+  - sanctions_exposure
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: MM
+  name: Myanmar
+  state: INELIGIBLE
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_values_policy
+  rationale_codes:
+  - military_rule
+  - political_repression_risk
+  - human_rights_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: AF
+  name: Afghanistan
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - governance_uncertainty
+  - human_rights_risk
+  - sanctions_exposure
+  - control_verification_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: LY
+  name: Libya
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - political_instability
+  - sanctions_exposure
+  - control_verification_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: NI
+  name: Nicaragua
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - political_repression_risk
+  - sanctions_exposure
+  - governance_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: SO
+  name: Somalia
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - state_fragility
+  - security_risk
+  - control_verification_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: SD
+  name: Sudan
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - armed_conflict
+  - atrocity_risk
+  - control_verification_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: SS
+  name: South Sudan
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - armed_conflict
+  - state_fragility
+  - control_verification_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: VE
+  name: Venezuela
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - governance_risk
+  - human_rights_risk
+  - sanctions_exposure
+  - control_transparency_risk
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: YE
+  name: Yemen
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - armed_conflict
+  - state_fragility
+  - sanctions_exposure
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
+- code: ZW
+  name: Zimbabwe
+  state: SUSPENDED
+  scope:
+  - tenant
+  - anchor_offtaker
+  - tenant_operator
+  basis: proposed_owner_precautionary_hold
+  rationale_codes:
+  - governance_risk
+  - human_rights_risk
+  - sanctions_exposure
+  effective_on_adoption: '2026-08-31'
+  legal_prohibition_claimed: false
+  technology_origin_embargo_implied: false
+  review_requires_explicit_c0_decision: true
 notes:
-  - "This overlay is a proposed C0 update; applying it should be treated as explicit project-control adoption."
-  - "Absence from this schedule does not mean automatic eligibility."
-  - "Country-level status is a counterparty-risk control and not a judgment about individuals or populations."
-  - "The schedule is project policy and may be stricter than minimum legal eligibility; transaction-specific Canadian legal review still applies."
-  - "Technology-origin restrictions are separate from counterparty eligibility and are not implied by this schedule."
+- This overlay is a proposed C0 update; applying it should be treated as explicit project-control adoption.
+- Absence from this schedule does not mean automatic eligibility.
+- Country-level status is a counterparty-risk control and not a judgment about individuals or populations.
+- The schedule is project policy and may be stricter than minimum legal eligibility; transaction-specific Canadian legal review still applies.
+- Technology-origin restrictions are separate from counterparty eligibility and are not implied by this schedule.
+legal_reference_sources:
+- id: canada-sanctions-index
+  title: Canadian sanctions
+  publisher: Global Affairs Canada
+  url: https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/index.aspx?lang=eng
+  retrieved_on: '2026-09-01'
+  use: Current sanctions framework and links to governing regulations; not a substitute for transaction-specific legal review.
+- id: canada-consolidated-autonomous-sanctions
+  title: Consolidated Canadian Autonomous Sanctions List
+  publisher: Global Affairs Canada
+  url: https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/consolidated-consolide.aspx?lang=eng
+  retrieved_on: '2026-09-01'
+  use: Administrative screening aid only; the Government of Canada states that the consolidated list is not a regulation and has no force of law.
+- id: canada-eipa
+  title: Export and Import Permits Act
+  publisher: Justice Laws Website, Government of Canada
+  url: https://laws-lois.justice.gc.ca/eng/acts/E-19/index.html
+  retrieved_on: '2026-09-01'
+  use: Statutory framework for Canadian export/import controls.
+- id: canada-export-control-list
+  title: Export Control List (SOR/89-202)
+  publisher: Justice Laws Website, Government of Canada
+  url: https://laws-lois.justice.gc.ca/eng/Regulations/SOR-89-202/index.html
+  retrieved_on: '2026-09-01'
+  use: Current regulatory list for controlled exports; technology-origin review remains separate from counterparty policy.

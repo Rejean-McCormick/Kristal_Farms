@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import type {
   InternationalCandidate,
   InternationalPortfolio,
+  InternationalSourceReference,
 } from "../../lib/international-types";
 import styles from "./InternationalPortfolioExplorer.module.css";
 
@@ -77,6 +78,7 @@ export function InternationalPortfolioExplorer({ embedded = false }: { embedded?
         candidate.rationale,
         candidate.hard_gate,
         ROLE_LABELS[candidate.target_role] ?? candidate.target_role,
+        ...candidate.sources.flatMap((source) => [source.title, source.publisher, source.supports ?? ""]),
       ].join(" ").toLocaleLowerCase().includes(normalized);
       return matchesQuery
         && (role === "ALL" || candidate.target_role === role)
@@ -313,11 +315,19 @@ function ProjectInspector({
         <strong>{candidate.hard_gate}</strong>
       </section>
 
+      <section className={styles.detailSection}>
+        <span>REFERENCES</span>
+        <SourceList sources={candidate.sources} />
+        <p className={styles.sourceCaution}>{portfolio.source_methodology.interpretation}</p>
+      </section>
+
       <section className={styles.detailGrid}>
         <div><span>Jurisdiction state</span><strong>{candidate.jurisdiction_state.replaceAll("_", " ")}</strong></div>
         <div><span>Outreach state</span><strong>{OUTREACH_LABELS[candidate.outreach_state] ?? candidate.outreach_state}</strong></div>
         <div><span>Ring fencing</span><strong>{candidate.ring_fencing_required ? "REQUIRED" : "NOT FLAGGED"}</strong></div>
         <div><span>Commitment</span><strong>NONE CLAIMED</strong></div>
+        <div><span>Evidence status</span><strong>{candidate.verification_status.replaceAll("_", " ")}</strong></div>
+        <div><span>Validated</span><strong>{portfolio.source_methodology.validated_on}</strong></div>
       </section>
 
       {offer && (
@@ -338,6 +348,29 @@ function ProjectInspector({
           <li>U.S.-origin technology is not automatically prohibited by the counterparty policy.</li>
         </ul>
       </section>
+
+      <section className={styles.detailSection}>
+        <span>POLICY / LEGAL LOOKUP SOURCES</span>
+        <SourceList sources={portfolio.policy_summary.legal_reference_sources} />
+      </section>
     </div>
+  );
+}
+
+function SourceList({ sources }: { sources: InternationalSourceReference[] }) {
+  return (
+    <ul className={styles.sourceList}>
+      {sources.map((source) => (
+        <li key={source.id}>
+          <a href={source.url} target="_blank" rel="noreferrer noopener">{source.title}</a>
+          <small>
+            {source.publisher}
+            {source.published_on ? ` · ${source.published_on}` : ""}
+          </small>
+          {source.supports && <p>{source.supports}</p>}
+          {source.use && <p>{source.use}</p>}
+        </li>
+      ))}
+    </ul>
   );
 }

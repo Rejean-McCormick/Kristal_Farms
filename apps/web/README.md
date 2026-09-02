@@ -102,15 +102,39 @@ See `docs/frontend/offline-satellite.md` and `pipelines/imagery/README.md`.
 
 ## Kristal Farms Observatory
 
-The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes five governed workspaces:
+The application uses `/` as the single **Kristal Farms Observatory** entry point. The persistent cockpit exposes six governed workspaces:
 
 - **Northern Atlas** — default geographic/evidence workspace;
+- **Villages** — `/?section=villages`, unranked target-community catalogue with full dossiers at `/villages/[slug]`;
 - **Corridors** — `/?section=corridors`, evidence-building dossier surface with ranking disabled;
 - **International 12** — `/?section=international`, governed twelve-position counterparty portfolio;
 - **Economics** — `/?section=economics`, non-bankable scenario/sensitivity workspace;
 - **Evidence** — `/?section=evidence`, provenance, uncertainty and publication-control workspace.
 
-Direct routes `/atlas`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
+Direct routes `/atlas`, `/villages`, `/corridors`, `/international`, `/economics` and `/evidence` redirect into the same shell, so bookmarks remain simple while global state stays under the `section=` query parameter. A selected portfolio project remains shareable with, for example, `/?section=international&project=naver-cloud`. The Atlas keeps its existing `view=` camera parameter; the shell deliberately uses `section=` to avoid colliding with map state.
+
+
+### Target village dossiers
+
+The Villages workspace uses the same research → publish → read-only product boundary:
+
+```text
+research/communities/targets/*.yaml
+        ↓ explicit publish / validation
+pipelines/publish/build_target_villages_public.py
+        ↓
+data/publish/current/target_villages_public.json
+        ↓ read only
+app/api/villages → Villages cards → /villages/[slug]
+```
+
+`community_infrastructure_public.json` remains the canonical baseline for population and airport facts. The target-village publication adds KF screening status, marine-mode detail, seasonality, logistics envelope, open gates and evidence references. Approach/anchorage/berth depth are separate fields, and unverified load limits remain null.
+
+Rebuild after target-village research changes with:
+
+```bash
+python pipelines/publish/build_target_villages_public.py
+```
 
 The International 12 interface:
 
@@ -140,11 +164,17 @@ The Web application MUST NOT read `research/` or the policy YAML directly at run
 ```bash
 python pipelines/publish/build_international_portfolio_public.py
 ```
-## Grid Reach v1.2 — Northern Atlas electrical terminal context
+## Electrical Network v2 — Northern Atlas context
 
-The Northern Atlas includes a lightweight **Electrical grid reach** context layer. It intentionally publishes only the trunk regional transmission skeleton needed to answer how far the existing network reaches west, north and east, plus the documented eastern 34.5 kV extension. The displayed line geometry is schematic connectivity between documented anchors, not engineering or right-of-way geometry. Lines are intentionally shortened before emphasized terminal markers so the UI communicates **documented reach** rather than a false exact line endpoint. Use **Focus grid reach · West / North / East** in the Layers panel to recenter the map on the reach markers.
+The Northern Atlas includes a lightweight **Electrical network** context layer backed by documented connections, real electrical assets, and source metadata. The former artificial west/north/east reach endpoints have been removed. The map publishes selected integrated transmission links, generating stations/substations/grid areas, the La Romaine / Unamen Shipu integrated extension, and selected isolated systems.
 
-Source/research contract: `../../research/grid/cote_nord_grid_reach.yaml`  
-Published artifact: `../../data/publish/current/grid_reach_public.geojson`  
-Web asset: `public/grid/grid-reach.geojson`
+Generation nodes are scaled by installed MW; non-generation nodes are scaled by voltage. Published connection-capacity values, when present, remain separate dated metadata and are not used as the physical size of a node. Displayed line geometry remains schematic connectivity between documented anchors, not engineering or right-of-way geometry. Use **Focus electrical network · Québec / Côte-Nord / Labrador** in the Layers panel to recenter the electrical context.
 
+Future, funded, studied and rejected electrical projects are **not** added to `grid_reach`. They remain governed external-reference records published through `external_reference_energy_public.json`; null geometry is intentional and must never be replaced by a synthetic route. Target-village dossiers join those records by canonical community relations.
+
+Network research contract: `../../research/grid/cote_nord_grid_reach.yaml`  
+Asset registry: `../../research/grid/electrical_assets.yaml`  
+External project research registry: `../../research/grid/electrical_projects.yaml`  
+Network published artifact: `../../data/publish/current/grid_reach_public.geojson`  
+External project artifact: `../../data/publish/current/external_reference_energy_public.json`  
+Web grid asset: `public/grid/grid-reach.geojson`

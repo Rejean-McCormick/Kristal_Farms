@@ -47,10 +47,22 @@ def build(repo_root: Path) -> dict:
 
     state_by_code = {item["code"]: item["state"] for item in policy["jurisdictions"]}
     public_candidates = []
+    seen_source_ids: set[str] = set()
     for item in candidates:
         code = item["home_jurisdiction"]
         jurisdiction_state = state_by_code.get(code, policy["default_nonlisted_state"])
         ring_fencing_required = bool(item.get("ring_fencing_required", False))
+        sources = item.get("sources", [])
+        if not sources:
+            raise SystemExit(f"International candidate {item['organization']} requires at least one attributable source")
+        for source in sources:
+            source_id = source.get("id")
+            url = source.get("url", "")
+            if not source_id or source_id in seen_source_ids:
+                raise SystemExit(f"International source id must be present and unique: {source_id!r}")
+            if not url.startswith("https://"):
+                raise SystemExit(f"International source must use HTTPS: {source_id}")
+            seen_source_ids.add(source_id)
         public_candidates.append({
             "slot": item["slot"],
             "slug": slugify(item["organization"]),
@@ -64,11 +76,20 @@ def build(repo_root: Path) -> dict:
             "rationale": item["rationale"],
             "hard_gate": item["hard_gate"],
             "ring_fencing_required": ring_fencing_required,
+            "verification_status": item["verification_status"],
+            "sources": [
+                {
+                    key: source[key]
+                    for key in ("id", "title", "publisher", "source_class", "url", "published_on", "retrieved_on", "supports")
+                    if key in source
+                }
+                for source in sources
+            ],
         })
 
     return {
         "schema": "kristal-international-portfolio/v1",
-        "generated_at": "2026-08-31",
+        "generated_at": "2026-09-01",
         "portfolio_version": portfolio["portfolio_version"],
         "status": portfolio["status"],
         "planning_slots": portfolio["planning_slots"],
@@ -76,6 +97,7 @@ def build(repo_root: Path) -> dict:
         "policy_status": policy.get("policy_status", "CURRENT"),
         "default_nonlisted_state": policy["default_nonlisted_state"],
         "service_offers": [{"id": key, **value} for key, value in portfolio["service_offers"].items()],
+        "source_methodology": portfolio["source_methodology"],
         "policy_summary": {
             "ineligible_jurisdictions": [
                 {"code": row["code"], "name": row["name"]}
@@ -87,6 +109,7 @@ def build(repo_root: Path) -> dict:
             ],
             "counterparty_screening_before_access": True,
             "technology_origin_embargo_implied": False,
+            "legal_reference_sources": policy.get("legal_reference_sources", []),
         },
         "candidates": public_candidates,
         "disclaimer": "Research portfolio only. Inclusion does not mean interest, commitment, eligibility clearance, or contract.",

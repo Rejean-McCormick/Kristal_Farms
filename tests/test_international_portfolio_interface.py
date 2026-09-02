@@ -41,13 +41,14 @@ def test_web_international_surface_reads_only_published_artifact():
     assert "research/commercial" not in component
 
 
-def test_observatory_shell_unifies_five_governed_workspaces():
+def test_observatory_shell_unifies_six_governed_workspaces():
     shell_path = ROOT / "apps/web/components/shell/KristalFarmsObservatoryShell.tsx"
     assert shell_path.exists()
     shell = shell_path.read_text()
     assert "<ObservatoryExplorer embedded />" in shell
     assert "<InternationalPortfolioExplorer embedded />" in shell
-    for section in ["atlas", "corridors", "international", "economics", "evidence"]:
+    assert "<VillagePortfolioExplorer embedded />" in shell
+    for section in ["atlas", "villages", "corridors", "international", "economics", "evidence"]:
         assert f'id: "{section}"' in shell
     assert 'url.searchParams.set("section", next)' in shell
     assert 'url.searchParams.delete("section")' in shell
@@ -59,6 +60,7 @@ def test_root_uses_kristal_farms_observatory_and_direct_routes_redirect():
 
     expected = {
         "atlas": 'redirect("/")',
+        "villages": 'redirect("/?section=villages")',
         "corridors": 'redirect("/?section=corridors")',
         "international": 'redirect("/?section=international")',
         "economics": 'redirect("/?section=economics")',

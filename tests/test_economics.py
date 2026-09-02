@@ -57,3 +57,30 @@ def test_current_release_is_immutable_and_unranked():
     release = rows('system_release.jsonl')[0]
     assert release['release_key'] == '2026.08.30'
     assert release['immutable'] is True and release['ranking_allowed'] is False
+
+
+def test_benchmark_arithmetic_matches_source_metadata():
+    sources = {row['source_key']: row for row in rows('research_source.jsonl')}
+    for benchmark in rows('research_economic_benchmark.jsonl'):
+        source = sources[benchmark['metadata']['source_key']]
+        meta = source['metadata']
+        key = benchmark['benchmark_key']
+        if key.startswith('transmission.'):
+            expected = meta['project_cost_cad'] / meta['line_length_km']
+        elif key == 'road.north_labrador_unpaved_rom_per_km':
+            expected = meta['road_construction_rom_cad'] / meta['new_road_km']
+        elif key == 'road.north_labrador_paved_total_per_km':
+            expected = (meta['road_construction_rom_cad'] + meta['paving_increment_cad']) / meta['new_road_km']
+        elif key == 'road.north_labrador_maintenance_per_km_year':
+            expected = meta['annual_maintenance_cad'] / meta['new_road_km']
+        elif key.startswith('fibre.'):
+            expected = meta['approved_funding_cad'] / meta['fibre_km']
+        elif key == 'datacenter.pue_new_facility_2025':
+            expected = meta['new_facility_pue_avg']
+        elif key == 'datacenter.pue_20mw_plus_2025':
+            expected = meta['large_20mw_plus_pue_avg']
+        elif key == 'regulation.hq_proposed_data_center_energy_price_2026':
+            expected = meta['proposed_average_price_cad_per_kwh']
+        else:
+            continue
+        assert abs(benchmark['value_numeric'] - expected) <= 1e-6

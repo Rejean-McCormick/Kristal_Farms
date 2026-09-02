@@ -1,0 +1,256 @@
+schema: kristal-electrical-assets-research/v1
+version: "2026-09-01"
+status: research_context
+ranking_allowed: false
+anchors:
+  abitibi_hub:
+    name: Abitibi / Amos grid hub area
+    coordinates: [-78.11361, 48.57194]
+    coordinate_basis: Amos municipality anchor used as west grid-hub proxy
+    geometry_precision: area_anchor_not_substation
+  lebel_sur_quevillon:
+    name: Lebel-sur-Quévillon
+    coordinates: [-77.23917, 49.05056]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  chibougamau:
+    name: Chibougamau
+    coordinates: [-74.36586, 49.91684]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  arnaud_area:
+    name: Arnaud / Sept-Îles grid hub area
+    coordinates: [-66.50056, 50.24805]
+    coordinate_basis: Canton-Arnaud official place anchor; not the substation footprint
+    geometry_precision: area_anchor_not_substation
+  montagnais:
+    name: Poste des Montagnais
+    coordinates: [-65.72916, 51.89167]
+    coordinate_basis: official toponymic point
+    geometry_precision: official_toponymic_point
+  sm3:
+    name: Centrale de la Sainte-Marguerite-3
+    coordinates: [-66.77972, 50.705]
+    coordinate_basis: official toponymic point
+    geometry_precision: official_toponymic_point
+  riviere_au_tonnerre:
+    name: Rivière-au-Tonnerre
+    coordinates: [-64.77518, 50.27564]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  havre_saint_pierre:
+    name: Havre-Saint-Pierre
+    coordinates: [-63.6, 50.23333]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  baie_johan_beetz:
+    name: Baie-Johan-Beetz
+    coordinates: [-62.80373, 50.2893]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  natashquan:
+    name: Natashquan
+    coordinates: [-61.82213, 50.18609]
+    coordinate_basis: official municipality anchor
+    geometry_precision: municipality_anchor
+  la_romaine:
+    name: La Romaine / Unamen Shipu
+    coordinates: [-60.67694, 50.21361]
+    coordinate_basis: official village anchor
+    geometry_precision: village_anchor
+  romaine_1:
+    name: Centrale de la Romaine-1
+    coordinates: [-63.26083, 50.38528]
+    coordinate_basis: named generating-station point cross-checked against public mapping
+    geometry_precision: named_facility_point_not_survey
+  romaine_2:
+    name: Centrale de la Romaine-2
+    coordinates: [-63.194335, 50.624377]
+    coordinate_basis: official Canadian Geographical Names Database generating-station point
+    geometry_precision: official_toponymic_point
+  romaine_3:
+    name: Centrale de la Romaine-3
+    coordinates: [-63.4, 51.11444]
+    coordinate_basis: named generating-station point cross-checked against public mapping
+    geometry_precision: named_facility_point_not_survey
+  romaine_4:
+    name: Centrale de la Romaine-4
+    coordinates: [-63.48667, 51.34778]
+    coordinate_basis: named generating-station point cross-checked against public mapping
+    geometry_precision: named_facility_point_not_survey
+  churchill_falls:
+    name: Churchill Falls Generating Station
+    coordinates: [-63.964167, 53.536111]
+    coordinate_basis: existing Kristal hydro inventory / named WSC powerhouse reference
+    geometry_precision: named_or_strong_proxy
+  muskrat_falls:
+    name: Muskrat Falls Generating Station
+    coordinates: [-60.773333, 53.244167]
+    coordinate_basis: existing Kristal hydro inventory / named WSC site reference
+    geometry_precision: named_or_strong_proxy
+  labrador_west:
+    name: Labrador West / Wabush terminal area
+    coordinates: [-66.8658, 52.9082]
+    coordinate_basis: Wabush community/terminal-area proxy; not a surveyed terminal footprint
+    geometry_precision: area_anchor_not_substation
+  fermont:
+    name: Fermont grid area
+    coordinates: [-67.083, 52.791]
+    coordinate_basis: Fermont municipality-area anchor; not a surveyed substation footprint
+    geometry_precision: municipality_area_anchor
+  menihek:
+    name: Menihek Hydroelectric Generating Station
+    coordinates: [-66.625, 54.455]
+    coordinate_basis: existing Kristal hydro inventory / WSC Menihek Rapids station reference
+    geometry_precision: named_or_strong_proxy
+  lac_robertson:
+    name: Centrale du Lac-Robertson
+    coordinates: [-59.063056, 50.999167]
+    coordinate_basis: official Canadian Geographical Names Database generating-station point
+    geometry_precision: official_toponymic_point
+  innavik:
+    name: Innavik hydroelectric facility
+    coordinates: [-78.01444, 58.50806]
+    coordinate_basis: project-area facility anchor near Inukjuak; not engineering survey geometry
+    geometry_precision: facility_area_anchor
+
+grid_nodes:
+  - id: node_abitibi_hub
+    anchor_id: abitibi_hub
+    name: Abitibi / Amos grid hub
+    node_kind: grid_hub
+    network_mode: integrated
+    voltage_kv: 735
+    secondary_voltage_kv: [315]
+    source_ids: [hq_annual_2014_abitibi, hq_abitibi_temiscamingue_map_2019, canada_geonames]
+  - id: node_arnaud
+    anchor_id: arnaud_area
+    name: Poste Arnaud area
+    node_kind: substation
+    network_mode: integrated
+    voltage_kv: 735
+    secondary_voltage_kv: [315, 161]
+    source_ids: [hq_bape_romaine_corridor, hq_romaine_transmission_2014, canada_geonames]
+  - id: node_montagnais
+    anchor_id: montagnais
+    name: Poste des Montagnais
+    node_kind: substation
+    network_mode: integrated
+    voltage_kv: 735
+    source_ids: [hq_bape_romaine_corridor, hq_romaine_transmission_2014, canada_geonames]
+  - id: node_sm3
+    anchor_id: sm3
+    name: Sainte-Marguerite-3
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 882
+    voltage_kv: 315
+    source_ids: [hq_generation_current, hq_sm3_existing_315, canada_geonames]
+  - id: node_romaine_1
+    anchor_id: romaine_1
+    name: Romaine-1
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 270
+    voltage_kv: 315
+    secondary_voltage_kv: [161, 13.8]
+    source_ids: [hq_generation_current, hq_romaine_transmission_2014]
+  - id: node_romaine_2
+    anchor_id: romaine_2
+    name: Romaine-2
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 640
+    voltage_kv: 735
+    secondary_voltage_kv: [315, 18]
+    source_ids: [hq_generation_current, hq_romaine_transmission_2014, canada_geonames]
+  - id: node_romaine_3
+    anchor_id: romaine_3
+    name: Romaine-3
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 395
+    voltage_kv: 315
+    secondary_voltage_kv: [13.8]
+    source_ids: [hq_generation_current, hq_romaine_transmission_2014]
+  - id: node_romaine_4
+    anchor_id: romaine_4
+    name: Romaine-4
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 245
+    voltage_kv: 315
+    secondary_voltage_kv: [13.8]
+    source_ids: [hq_generation_current, hq_romaine_transmission_2014]
+  - id: node_churchill_falls
+    anchor_id: churchill_falls
+    name: Churchill Falls
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 5428
+    voltage_kv: 735
+    source_ids: [nlh_generation_assets]
+  - id: node_muskrat_falls
+    anchor_id: muskrat_falls
+    name: Muskrat Falls
+    node_kind: generating_station
+    network_mode: integrated
+    installed_capacity_mw: 824
+    voltage_kv: 315
+    source_ids: [nlh_generation_assets, nlh_labrador_transco_2025]
+  - id: node_labrador_west
+    anchor_id: labrador_west
+    name: Labrador West / Wabush
+    node_kind: terminal_area
+    network_mode: integrated
+    voltage_kv: 230
+    source_ids: [nlh_labrador_west_transmission]
+  - id: node_fermont
+    anchor_id: fermont
+    name: Fermont
+    node_kind: grid_area
+    network_mode: integrated
+    available_capacity:
+      value_mw: 10
+      operator: "<"
+      as_of: "2025-12"
+      context: industrial_connection_residual_capacity
+    source_ids: [hq_fermont_capacity_2025]
+  - id: node_natashquan
+    anchor_id: natashquan
+    name: Natashquan
+    node_kind: substation_area
+    network_mode: integrated
+    voltage_kv: 161
+    source_ids: [hq_bape_romaine_corridor, canada_geonames]
+  - id: node_la_romaine
+    anchor_id: la_romaine
+    name: La Romaine / Unamen Shipu
+    node_kind: community_connection
+    network_mode: integrated_extension
+    voltage_kv: 34.5
+    design_voltage_kv: 161
+    source_ids: [hq_la_romaine_connection_2022, hq_annual_2021_romaine_line, canada_geonames]
+  - id: node_menihek
+    anchor_id: menihek
+    name: Menihek
+    node_kind: generating_station
+    network_mode: isolated
+    installed_capacity_mw: 18
+    voltage_kv: 69
+    source_ids: [nlh_generation_assets, ec_menihek_station]
+  - id: node_lac_robertson
+    anchor_id: lac_robertson
+    name: Lac-Robertson
+    node_kind: generating_station
+    network_mode: isolated
+    installed_capacity_mw: 21
+    backup_capacity_mw: 4.8
+    source_ids: [hq_lac_robertson, canada_geonames]
+  - id: node_innavik
+    anchor_id: innavik
+    name: Innavik
+    node_kind: generating_station
+    network_mode: isolated
+    installed_capacity_mw: 7.5
+    source_ids: [innergex_innavik]
